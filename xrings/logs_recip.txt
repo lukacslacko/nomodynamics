@@ -1,1 +1,11 @@
 == run recip ==
+  [recip] 6561 jobs, 322.9s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/recip.jsonl
+   m=3   consts=729    periods=[1, 2, 4] maxp=4 rotor_classes=1 balanced=0
+   m=4   consts=729    periods=[1, 2, 4, 6] maxp=6 rotor_classes=3 balanced=0
+   m=5   consts=729    periods=[1, 2, 4, 6, 8] maxp=8 rotor_classes=2 balanced=0
+   m=6   consts=729    periods=[1, 2, 3, 4, 6, 8, 14] maxp=14 rotor_classes=9 balanced=0
+   m=7   consts=729    periods=[1, 2, 4, 6, 8, 16] maxp=16 rotor_classes=2 balanced=0
+   m=8   consts=729    periods=[1, 2, 4, 6, 7, 8, 12, 14, 16, 30] maxp=30 rotor_classes=12 balanced=0
+   m=9   consts=729    periods=[1, 2, 4, 6, 8, 12, 16, 18, 30] maxp=30 rotor_classes=3 balanced=0
+   m=10  consts=729    periods=[1, 2, 4, 5, 6, 7, 8, 10, 12, 14, 15, 16, 18, 21] maxp=80 rotor_classes=19 balanced=0
+   m=11  consts=729    periods=[1, 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36, 64] maxp=64 rotor_classes=3 balanced=0

@@ -86,6 +86,27 @@ def chapter1_fauna():
     check("sunset wall of length L cleared at time exactly max(2L, x0+L)",
           obs == want, "12 (L, x0) pairs; index 2 is net, not instantaneous")
 
+    # Conversion wave: one planted colonizer turns a porous period-2 lattice
+    # into solid gridlock, one-way, anchored at the defect.
+    C = Const([(0, 1, 1), (-1, 1, 0)])
+    S = state_of([(0, 0)] + [(i, 1) for i in range(-40, 41, 2)])
+    runs = []
+    for t in range(61):
+        occ, r, i = set(S), 0, 0
+        while i in occ:
+            r += 1
+            i += 1
+        l, i = 0, -1
+        while i in occ:
+            l += 1
+            i -= 1
+        runs.append((r, l))
+        S = step(S, C)
+    speed = (runs[60][0] - runs[0][0]) / 60
+    check("conversion wave: solid front at speed 2/3, one-way",
+          abs(speed - 2 / 3) < 0.02 and max(l for _, l in runs) == 0,
+          "speed %.3f, nothing propagates left of the defect" % speed)
+
 
 def _laws(S):
     for cell, mask in S.items():
