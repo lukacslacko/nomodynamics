@@ -1,0 +1,19 @@
+    32/343 classes  12.9s  CAP=0  max min-d=1
+    64/343 classes  24.7s  CAP=0  max min-d=1
+    96/343 classes  58.3s  CAP=0  max min-d=1
+   128/343 classes  127.0s  CAP=0  max min-d=1
+   160/343 classes  223.7s  CAP=0  max min-d=1
+   192/343 classes  229.2s  CAP=0  max min-d=1
+   224/343 classes  259.2s  CAP=0  max min-d=2
+   256/343 classes  309.8s  CAP=0  max min-d=2
+   288/343 classes  362.4s  CAP=0  max min-d=3
+   320/343 classes  444.8s  CAP=0  max min-d=3
+
+cap sweep, mode=or, p<=6, d>=3
+  decisions      : 3430
+  GLIDER         : 241
+  CAP (undecided): 0
+  max d realised : 6
+  max MINIMAL d  : 3
+  minimal (p,d)  : [(1, 1), (2, 1), (2, 2), (3, 3)]
+  wrote /Users/lukacs/claude/math/program/phase6/proofs/t3_cap_or_p6.jsonl

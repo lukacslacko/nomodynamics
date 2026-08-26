@@ -1,0 +1,22 @@
+TRIPTYCH 0:[0|1|0]->0,1,2 1:[0|-1|1]->0,1,2 2:[0|1|-1]->0,1,2  glider p=1 d=+1 card=9 span=3
+mode=parity  208-code box -> 208 stationary codes {'OSC': 119, 'DEAD': 24, 'BAL': 65}
+   ...wall 0/208  2s
+   ...wall 50/208  98s
+   ...wall 100/208  179s
+   ...wall 150/208  290s
+   ...wall 200/208  381s
+  N=2943  [389s]
+    EXPLOSION               2943
+    by wall type DEAD: {'EXPLOSION': 216}
+    by wall type BAL : {'EXPLOSION': 585}
+    by wall type OSC : {'EXPLOSION': 2142}
+mode=or  208-code box -> 171 stationary codes {'OSC': 147, 'DEAD': 24}
+   ...wall 0/171  1s
+   ...wall 50/171  29s
+   ...wall 100/171  58s
+   ...wall 150/171  95s
+  N=2862  [107s]
+    EXPLOSION               2590
+    ABSORBED                 272
+    by wall type DEAD: {'ABSORBED': 24, 'EXPLOSION': 192}
+    by wall type OSC : {'ABSORBED': 248, 'EXPLOSION': 2398}

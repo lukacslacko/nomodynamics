@@ -1,0 +1,21 @@
+{
+ "N": 2943,
+ "buckets": {
+  "EXPLOSION": 2943
+ },
+ "by_tag": {
+  "DEAD": {
+   "EXPLOSION": 216
+  },
+  "BAL": {
+   "EXPLOSION": 585
+  },
+  "OSC": {
+   "EXPLOSION": 2142
+  }
+ },
+ "signatures": {
+  "-": 2943
+ },
+ "interesting": []
+}

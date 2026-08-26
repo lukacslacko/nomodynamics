@@ -1,0 +1,23 @@
+{
+ "M1/2 vs M1/2 L": {
+  "ARREST": 400
+ },
+ "M1/2 vs M2/5 L": {
+  "ARREST": 500
+ },
+ "M2/5 vs M1/6 L": {
+  "ARREST": 1500
+ },
+ "M1/6 vs M1/6 L": {
+  "ARREST": 2448
+ },
+ "M1/2 catches M2/5": {
+  "ARREST": 420
+ },
+ "M1/2 catches M1/6": {
+  "ARREST": 816
+ },
+ "M2/5 catches M1/6": {
+  "ARREST": 1020
+ }
+}

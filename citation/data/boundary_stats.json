@@ -1,0 +1,15 @@
+{
+ "stats": {
+  "runs": 2238660,
+  "oscillating_seam": 237202,
+  "travelling_seam": 444,
+  "nonperiodic": 292
+ },
+ "hits": 444,
+ "box": 944784,
+ "reps": 237006,
+ "moduli": [
+  11,
+  13
+ ]
+}

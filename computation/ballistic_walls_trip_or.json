@@ -1,0 +1,34 @@
+{
+ "N": 2862,
+ "buckets": {
+  "ABSORBED": 272,
+  "EXPLOSION": 2590
+ },
+ "by_tag": {
+  "DEAD": {
+   "ABSORBED": 24,
+   "EXPLOSION": 192
+  },
+  "BAL": {},
+  "OSC": {
+   "ABSORBED": 248,
+   "EXPLOSION": 2398
+  }
+ },
+ "signatures": {
+  "-": 2590,
+  "O(p2,c7)": 91,
+  "O(p2,c8)": 67,
+  "O(p2,c6)": 53,
+  "O(p2,c9)": 25,
+  "O(p2,c5)": 12,
+  "O(p5,c5)": 6,
+  "O(p5,c1)": 4,
+  "O(p2,c2)": 4,
+  "O(p4,c9)": 4,
+  "O(p4,c3)": 3,
+  "O(p4,c13)": 2,
+  "O(p2,c3)": 1
+ },
+ "interesting": []
+}

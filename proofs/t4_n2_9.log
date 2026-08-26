@@ -1,0 +1,20 @@
+  m=9   done  (742.2 s, 2124 rotor cycles so far)
+  wrote /Users/lukacs/claude/math/program/phase6/proofs/t4_data/t4_n2_9_9.jsonl (2124 rows, 16767 constitution-runs)
+
+### 2 kinds, all 729 rule pairs x all 16 target maps, m = 9..9, parity+or, COMPLETE
+  constitution-runs (constitution x ring x mode): 16767
+  rotor cycles found (d != 0, rot_d(S) != S): 2124
+  m      rotors  LC(<=p) LC2(<=2p)    LC&od=1   LC&od>=2    LC&lift
+  9        2124     1416     1788          0       1416       1024
+  *** light-cone-admissible rotors with out-degree <= 1: 0 ***
+  *** light-cone-admissible rotors FAILING the gap hypothesis (g < 2pW): 392 ***
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=6 d=-2 g=6 od=2 card=6
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=5 d=-2 g=4 od=2 card=8
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=5 d=-2 g=3 od=2 card=8
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=4 d=-4 g=3 od=2 card=10
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=4 d=-2 g=2 od=2 card=10
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=2 d=-2 g=2 od=2 card=10
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=12
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=6 d=-2 g=6 od=2 card=6
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=5 d=-2 g=4 od=2 card=8
+      m=9 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=5 d=-2 g=3 od=2 card=8

@@ -1,0 +1,1099 @@
+{
+ "box": "MIRROR parity; 352 stationary codes (support cells 0..4, all 768 anchored seeds); wall phase 0..min(q,2)-1; glider phase 0..4; gap 0..8; resolve(T_max=240,N_sep=100,max_card=250,max_span=500)",
+ "N": 29205,
+ "buckets": {
+  "ABSORBED": 29163,
+  "UNRESOLVED": 42
+ },
+ "by_tag": {
+  "DEAD": {
+   "ABSORBED": 1845
+  },
+  "BAL": {
+   "ABSORBED": 630
+  },
+  "OSC": {
+   "ABSORBED": 26688,
+   "UNRESOLVED": 42
+  }
+ },
+ "signatures": {
+  "O(p2,c18)": 4099,
+  "O(p2,c19)": 4046,
+  "O(p2,c17)": 3408,
+  "O(p2,c20)": 3159,
+  "O(p2,c16)": 1686,
+  "O(p2,c21)": 1392,
+  "O(p4,c19)": 996,
+  "O(p4,c18)": 921,
+  "O(p4,c17)": 901,
+  "O(p2,c15)": 866,
+  "BAL(c16)": 701,
+  "O(p4,c22)": 571,
+  "O(p4,c20)": 520,
+  "BAL(c17)": 493,
+  "O(p4,c16)": 447,
+  "O(p4,c21)": 438,
+  "BAL(c18)": 332,
+  "BAL(c14)": 308,
+  "O(p4,c34)": 305,
+  "O(p4,c31)": 294,
+  "BAL(c15)": 264,
+  "O(p4,c24)": 224,
+  "O(p2,c22)": 215,
+  "O(p2,c30)": 212,
+  "O(p4,c15)": 201
+ },
+ "non_absorbed_rows": [
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 0,
+   "gap": 3,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 0,
+   "gap": 7,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 1,
+   "gap": 1,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 1,
+   "gap": 5,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 2,
+   "gap": 2,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 2,
+   "gap": 6,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 3,
+   "gap": 4,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 3,
+   "gap": 8,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 4,
+   "gap": 2,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 4,
+   "gap": 6,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 0,
+   "gap": 1,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 0,
+   "gap": 5,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 1,
+   "gap": 3,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 1,
+   "gap": 7,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 2,
+   "gap": 0,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 2,
+   "gap": 4,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 2,
+   "gap": 8,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 3,
+   "gap": 2,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 3,
+   "gap": 6,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 4,
+   "gap": 4,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 4,
+   "gap": 8,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 0,
+   "gap": 1,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 0,
+   "gap": 5,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 1,
+   "gap": 3,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 1,
+   "gap": 7,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 2,
+   "gap": 0,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 2,
+   "gap": 4,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 2,
+   "gap": 8,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 3,
+   "gap": 2,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 3,
+   "gap": 6,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 4,
+   "gap": 4,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 0,
+   "gi": 4,
+   "gap": 8,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 0,
+   "gap": 3,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 0,
+   "gap": 7,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 1,
+   "gap": 1,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 1,
+   "gap": 5,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 2,
+   "gap": 2,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 2,
+   "gap": 6,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 3,
+   "gap": 4,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 3,
+   "gap": 8,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 4,
+   "gap": 2,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  },
+  {
+   "tag": "OSC",
+   "q": 2,
+   "wcells": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "wj": 1,
+   "gi": 4,
+   "gap": 6,
+   "bucket": "UNRESOLVED",
+   "parts": "-"
+  }
+ ]
+}

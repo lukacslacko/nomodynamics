@@ -1,3 +1,17 @@
 R phases spans: [19, 19, 20, 20, 21] cards: [32, 28, 32, 36, 32]
 L phases spans: [19, 19, 20, 20, 21] cards: [32, 28, 32, 36, 32]
-parity done  2s  n=1025
+parity done  8s  n=1025
+
+MIRROR head-on, mode=parity   box: i,j in 0..4, gap 0..40  N=1025
+   ARREST                  1025
+  distinct outcome signatures: 8
+     BAL(c36)                                         357
+     BAL(c24)                                         255
+     BAL(c48)                                         253
+     O(p12,c60)                                       102
+     BAL(c60)                                          50
+     O(p8,c48)                                          4
+     O(p8,c40)                                          2
+     O(p8,c36)                                          2
+
+wrote ballistic_mirror_headon.json

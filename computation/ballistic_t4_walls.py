@@ -78,6 +78,9 @@ def wall_bucket(res, wall_state, C, mode):
     return "OTHER"
 
 
+PHCAP = 4
+
+
 def run(name, WW, GAPMAX, modes=("parity", "or"), TMAX=220, limit_walls=None):
     C, G, p, d = UNIS[name]
     print("=" * 78)
@@ -102,7 +105,7 @@ def run(name, WW, GAPMAX, modes=("parity", "or"), TMAX=220, limit_walls=None):
         gph = orbit(G, C, mode, p)
         rows = []
         for wi, (tag, q, act, WS) in enumerate(walls):
-            wph = orbit(WS, C, mode, q)
+            wph = orbit(WS, C, mode, min(q, PHCAP))
             for wj, W in enumerate(wph):
                 for gi, A in enumerate(gph):
                     for gap in range(0, GAPMAX + 1):
@@ -145,6 +148,7 @@ if __name__ == "__main__":
         out += run("TANDEM-1", 5, 12)
         out += run("GUN", 4, 12)
         out += run("SOLO", 4, 12)
+    if which in ("all", "trip"):
         out += run("TRIPTYCH", 3, 12)
     if which in ("all", "mirror"):
         out += run("MIRROR", 5, 12, TMAX=260)

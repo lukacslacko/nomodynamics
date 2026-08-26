@@ -1,0 +1,67 @@
+  m=3   done  (0.0 s, 0 rotor cycles so far)
+  m=4   done  (0.0 s, 0 rotor cycles so far)
+  m=5   done  (0.0 s, 0 rotor cycles so far)
+  m=6   done  (0.0 s, 10 rotor cycles so far)
+  m=7   done  (0.0 s, 10 rotor cycles so far)
+  m=8   done  (0.0 s, 18 rotor cycles so far)
+  m=9   done  (0.0 s, 18 rotor cycles so far)
+  m=10  done  (0.0 s, 42 rotor cycles so far)
+  m=11  done  (0.0 s, 42 rotor cycles so far)
+  m=12  done  (0.1 s, 96 rotor cycles so far)
+  m=13  done  (0.3 s, 96 rotor cycles so far)
+  m=14  done  (0.7 s, 188 rotor cycles so far)
+  m=15  done  (1.6 s, 188 rotor cycles so far)
+  m=16  done  (3.4 s, 340 rotor cycles so far)
+  m=17  done  (7.0 s, 340 rotor cycles so far)
+  m=18  done  (15.2 s, 636 rotor cycles so far)
+  m=19  done  (30.8 s, 636 rotor cycles so far)
+  m=20  done  (63.1 s, 1232 rotor cycles so far)
+  m=21  done  (135.1 s, 1232 rotor cycles so far)
+  m=22  done  (276.8 s, 2300 rotor cycles so far)
+  wrote /Users/lukacs/claude/math/program/phase6/proofs/t4_data/t4_n1.jsonl (2300 rows, 1080 constitution-runs)
+
+### 1 kind, all 27 rules, both target maps ({0} and empty), m = 3..22, COMPLETE
+  constitution-runs (constitution x ring x mode): 1080
+  rotor cycles found (d != 0, rot_d(S) != S): 2300
+  m      rotors  LC(<=p) LC2(<=2p)    LC&od=1   LC&od>=2    LC&lift
+  6          10        0        4          0          0          0
+  8           8        0        0          0          0          0
+  10         24        4        4          4          0          0
+  12         54        0       10          0          0          0
+  14         92        0        0          0          0          0
+  16        152        0        0          0          0          0
+  18        296       16       18         16          0          0
+  20        596       34       34         34          0          0
+  22       1068       12       12         12          0          0
+  *** light-cone-admissible rotors with out-degree <= 1: 66 ***
+       {'m': 10, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 3, 'd': -2, 'L': 15, 'card': 6, 'od': 1, 'used': [0], 'g': 1, 'state': 343, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 10, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 3, 'd': -2, 'L': 15, 'card': 6, 'od': 1, 'used': [0], 'g': 1, 'state': 683, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 10, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 3, 'd': 2, 'L': 15, 'card': 6, 'od': 1, 'used': [0], 'g': 1, 'state': 343, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 10, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 3, 'd': 2, 'L': 15, 'card': 6, 'od': 1, 'used': [0], 'g': 1, 'state': 683, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 7, 'd': -2, 'L': 63, 'card': 10, 'od': 1, 'used': [0], 'g': 1, 'state': 87383, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 7, 'd': -2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 87423, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 7, 'd': -2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 87519, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 7, 'd': -2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 87543, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 7, 'd': -2, 'L': 63, 'card': 10, 'od': 1, 'used': [0], 'g': 1, 'state': 174763, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 7, 'd': -2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 174783, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 7, 'd': -2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 174831, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, -1, 1)], 'targets': [[0]], 'p': 7, 'd': -2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 174843, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 7, 'd': 2, 'L': 63, 'card': 10, 'od': 1, 'used': [0], 'g': 1, 'state': 87383, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 7, 'd': 2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 87423, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 7, 'd': 2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 87519, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 7, 'd': 2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 87543, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 7, 'd': 2, 'L': 63, 'card': 10, 'od': 1, 'used': [0], 'g': 1, 'state': 174763, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 7, 'd': 2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 174783, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 7, 'd': 2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 174831, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 18, 'n': 1, 'mode': 'parity', 'rules': [(0, 1, -1)], 'targets': [[0]], 'p': 7, 'd': 2, 'L': 63, 'card': 12, 'od': 1, 'used': [0], 'g': 1, 'state': 174843, 'lc': True, 'lc2': True, 'lift': False}
+  *** light-cone-admissible rotors FAILING the gap hypothesis (g < 2pW): 66 ***
+      m=10 [(0, -1, 1)]->[[0]] p=3 d=-2 g=1 od=1 card=6
+      m=10 [(0, -1, 1)]->[[0]] p=3 d=-2 g=1 od=1 card=6
+      m=10 [(0, 1, -1)]->[[0]] p=3 d=+2 g=1 od=1 card=6
+      m=10 [(0, 1, -1)]->[[0]] p=3 d=+2 g=1 od=1 card=6
+      m=18 [(0, -1, 1)]->[[0]] p=7 d=-2 g=1 od=1 card=10
+      m=18 [(0, -1, 1)]->[[0]] p=7 d=-2 g=1 od=1 card=12
+      m=18 [(0, -1, 1)]->[[0]] p=7 d=-2 g=1 od=1 card=12
+      m=18 [(0, -1, 1)]->[[0]] p=7 d=-2 g=1 od=1 card=12
+      m=18 [(0, -1, 1)]->[[0]] p=7 d=-2 g=1 od=1 card=10
+      m=18 [(0, -1, 1)]->[[0]] p=7 d=-2 g=1 od=1 card=12

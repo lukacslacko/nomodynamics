@@ -45,7 +45,7 @@ theorems for **every** k, not just the sixteen measured. The grading's max half
 is a theorem for every w; its **min half as published is a box artefact of
 `t < 2^17` and is corrected here.***
 
-Certificates: `python3 proofs/t1_jubilee.py --deep` — 15/15, complete over
+Certificates: `python3 proofs/t1_jubilee.py --deep` — 27/27, complete over
 `t < 2^17` against `xnomos.step` on the original 2-D specimen.
 
 ### 1.1 The specimen and the reduction to a ray *[established]*
@@ -109,6 +109,32 @@ with **no boundary case at all**:
 *A lazy binary counter*: bit `n` flips when the **two** bits below it are both
 set — where an honest counter would ask for **all** the bits below it. That one
 truncation is the whole of the Jubilee.
+
+The whole Jubilee, on one screen (`#` = a law of `y`, i.e. `WNE@(n+1,1)`):
+
+```
+t= 0 ......................    t=16 .....#................
+t= 1 #.....................    t=17 #....#................
+t= 2 .#....................    t=18 .#...#................
+t= 3 ##....................    t=19 ##...#................
+t= 4 ..#...................    t=20 ..#..#................
+t= 5 #.#...................    t=21 #.#..#................
+t= 6 .##...................    t=22 .##..#................
+t= 7 ####..................    t=23 ####.#................
+t= 8 ....#.................    t=24 ....##................
+t= 9 #...#.................    t=25 #...###...............
+t=10 .#..#.................    t=26 .#..##.#..............
+t=11 ##..#.................    t=27 ##..####..............
+t=12 ..#.#.................    t=28 ..#.##..#.............
+t=13 #.#.#.................    t=29 #.#.###.#.............
+t=14 .##.#.................    t=30 .##.##.##.............
+t=15 #####.................    t=31 ##########............
+                               t=32 ..........#...........
+```
+
+Read the left column: `t = 1,2,4,8,16` each show **exactly one** `#`, and rows
+`0…7` are reproduced verbatim in rows `8…15` with a `#` added at index 4. That
+repetition is Theorem 1.7.
 
 *Certificate*: the 2-D engine and this rule run in lockstep for every `t < 2^17`
 (131 072 steps), with `|S_t| = 3 + wt(y(t))` checked at each step. **Complete box.**
@@ -234,9 +260,17 @@ alone. **Four = three frame laws + one surviving monomial.**
 monotone, and if `W ⊊ [0,k−1]` misses a bit `i` then the singleton `M_n = {i}` of
 Corollary 1.8 is lost, so the count drops by at least 1. ∎
 
-This also **proves the "√t" reading**: the crest — and the reach — is
-`3·2^{⌊(k−1)/2⌋} + O(1) ≍ 1.5·√t`, doubling every *second* power of two exactly
-because the substitution of Theorem 1.7 consumes **two** new bits per doubling.
+This also **proves the "√t" reading**, which `nomos2d/RESULTS.md` reports as a
+measurement (*"sweeping the entire ~1.5√t-cell extent"*). Exactly: at `t = 2^k`
+the state is the frame plus `WNE@(0,1)` and `WNE@(m_k+1, 1)`, so the
+
+> **reach at `t = 2^k` is exactly `m_k + 1 = 3·2^{⌊(k−1)/2⌋} − 1` (odd `k`) or
+> `3·2^{(k−2)/2}` (even `k`)** — `1, 2, 3, 5, 6, 11, 12, 23, 24, 47, 48, 95, 96,
+> 191, …` — engine-verified for `k = 0..14`,
+
+and the crest is `3·2^{⌊(k−1)/2⌋} + O(1) ≍ 1.5·√t`, doubling every *second* power
+of two exactly because the substitution of Theorem 1.7 consumes **two** new bits
+per doubling.
 
 > ### **THEOREM 1.12 (the grading).** Write `w = w(t)` for the binary weight, and
 > group the bit positions into the singleton `{0}` and the pairs
@@ -269,6 +303,19 @@ puts the optimum at `d = ⌊w/2⌋`: `2^{w/2}·2 − 2` for even `w` and
 Hence `F ≥ w`, with equality realised by `W = {1,3,5,…,2w−1}` (one bit per pair,
 never a doubling). ∎
 
+This also explains `JUBILEE-LAW.md`'s remark that *"the record-holders are the
+nearly-all-ones times; the all-ones time `2^w − 1` is the maximum in its class for
+odd `w` only."* For odd `w` the optimum forces `d = (w−1)/2` doublings and
+`ε_0 + s = 1`, whose realisation `ε_0 = 1` is `W = [0, w−1]` — exactly the
+all-ones time `2^w − 1`. For even `w` an all-ones `W` wastes bit 0 on the
+initial value instead of on a pair; the optimum needs `ε_0 + s ∈ {0, 2}` and is
+attained by several `W`, among them `W = [1, w]` (`t = 2^{w+1} − 2`, all ones
+*except the last*) and `W = {0,1} ∪ [3,w]` — all of them **nearly**-all-ones
+times, exactly as the measurement reported. *Certificate*: brute force over
+`t < 2^18` gives maxima `4, 5, 7, 9, 13, 17, 25, 33, 49, 65, 97` for `w = 1..11`,
+matching the formula, with the smallest maximiser `2^w − 1` for every odd `w` and
+for no even `w ≥ 4` (`w = 2` ties: both `W = {0,1}` and `W = {1,2}` give `F = 2`).
+
 ### 1.5 A correction: the published min table is a box artefact *[established]*
 
 `JUBILEE-LAW.md` (3) reports
@@ -281,6 +328,18 @@ pair — and a filled pair forces a doubling. For `w ≥ 10` the box *compels* t
 expensive operation. Theorem 1.12 gives `min = w+3` for every `w`; the witnesses
 for `w = 10,…,16` need 20, 22, 24, 26, 28, 30, 32 bits and are invisible below
 `2^17`.
+
+*Certificate on the engine, at a scale the engine can reach.* Take `w = 8` and the
+box `t < 2^13` (thirteen bit positions: `{0}` plus six pairs, so `1+6 = 7` cheap
+units — one short of 8). Running `xnomos.step` from the Jubilee seed:
+
+```
+   min{ |S_t| : t < 2^13,  w(t) = 8 }   =  12  =  w + 4      (the box's answer)
+   |S_43690|,  43690 = 0b1010101010101010,  w = 8   =  11  =  w + 3   (the truth)
+```
+
+The true minimiser needs 16 bits and is invisible to the box — the same failure
+one octave down, demonstrated directly rather than through the closed form.
 
 *Certificate (both directions).* Restricted to `t < 2^17` the closed form
 reproduces the published tail **exactly** —
@@ -342,6 +401,69 @@ The same argument, through Theorem 2.3, gives **aperiodicity of THE ODOMETER**
 — previously "no recurrence in 300 000 hashed steps; 179 survivors of a 3-stage
 escalation."
 
+### 1.8 Why four: the general law, and a new family *[established]*
+
+The reset law is not a fact about *this* specimen. Nothing in §1.2 used the
+particular shape of the rule beyond "bit `n` flips when a fixed finite set of
+lower bits are all set". So let `I ⊆ {1,2,3,…}` be finite and consider the
+**lazy counter of profile `I`**:
+
+```
+    y_n(t+1) = y_n(t) ⊕ ∏_{i ∈ I} y_{n−i}(t),      y_{−1} ≡ y_{−2} ≡ … ≡ 1,  y(0)=0.
+```
+
+Lemma 1.4 applies verbatim, so `y_n(t) = f_{M_n}(t)` with, in integer form,
+
+```
+        μ_n = ( OR_{i ∈ I} μ_{n−i} ) + 1,          μ_{<0} = 0.
+```
+
+> ### **THEOREM 1.14 (the lazy-counter reset law).** If `1 ∈ I` then `(μ_n)` is
+> **strictly increasing** and contains **every power of two exactly once**. Hence
+> `wt(y(2^k)) = 1` for every `k ≥ 0`: every lazy counter with `1 ∈ I` resets.
+
+*Proof.* Strictly increasing: `1 ∈ I` gives `μ_n ≥ μ_{n−1} + 1`. Every power of
+two is hit: fix `k` and let `n` be least with `μ_n ≥ 2^k` (it exists, the sequence
+being strictly increasing in ℤ, hence unbounded). Every earlier term is `< 2^k`,
+so none has a bit at a position `≥ k`, so neither does their OR; therefore
+`μ_n = (OR) + 1 ≤ (2^k − 1) + 1 = 2^k`. Together with `μ_n ≥ 2^k` this gives
+`μ_n = 2^k`. Uniqueness is monotonicity. ∎
+
+**That is the reason there are four laws.** *A carry sequence cannot step over a
+power of two* — the `+1` is a carry, an OR of numbers below `2^k` stays below
+`2^k`, so the first term to reach `2^k` lands on it exactly. Everything else in
+the Jubilee — the block substitution, the `√t` crest, the pair recursion — is
+decoration on that one sentence.
+
+> **Corollary (the field's two clocks are one theorem).** `I = {1}` gives
+> `μ_n = n+1`, so `wt(y(t)) = 2^{w(t)} − 1`: these are chapter one's **Pascal
+> columns**, `|S_t| = 2^{popcount(t)}`. `I = {1,2}` is the **Jubilee**. The Pascal
+> growers and the Jubilee clock are the depth-1 and depth-2 members of one family,
+> and the reset law holds in both — unbounded in the first, bounded in the second.
+
+*Certificate*: complete over all 16 profiles `I ⊆ [1,5]` with `1 ∈ I` (strict
+monotonicity and one-hit-per-power-of-two over 3 000 terms each); `I = {1}`
+reproduces `2^{popcount(t)} − 1` for all `t < 2^12`.
+
+#### A prediction, then the engine
+
+Moving the Jubilee's *precedent* guard `s` cells west — kind 2 becomes
+`((−s,0), N, E)`, seeded with kind 2 at `c = 0,…,max(s,1)−1` — realises profile
+`I = {1, s+1}` with a frame of `2 + max(s,1)` permanently blocked laws. Theorem
+1.14 therefore predicts, **before running anything**:
+
+> `|S_{2^k}| = max(s,1) + 3`, constant in `k`, for every `s ≥ 0`.
+
+Engine result (`xnomos.step`, `k = 1..12`):
+
+| s | 0 | 1 (**the Jubilee**) | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| `\|S_{2^k}\|` | 4 | **4** | 5 | 6 | 7 |
+
+Exact, at every `k`, for every `s`. The Jubilee Code is `s = 1` of an infinite
+family of jubilee clocks, and its celebrated **4** is `1 + 3` — one surviving
+monomial on top of a three-law frame.
+
 ---
 
 ## 2. TARGET 2 — the four-law coincidence: **CLOSED, and it broke**
@@ -351,7 +473,7 @@ same machine.** THE ODOMETER is the Jubilee Code running at half speed, with its
 carry buffer materialised as laws. The map exists and is exhibited below; the
 Odometer's clock law is a corollary of Theorem 1.10.*
 
-Certificates: `python3 proofs/t2_odometer.py --deep` — 11/11.
+Certificates: `python3 proofs/t2_odometer.py --deep` — 16/16.
 
 **Pre-registration Y4 is REFUTED in its main clause** (I predicted 60 % that the
 two machines are *not* conjugate) and held in its subordinate one (the "4" is
@@ -362,7 +484,15 @@ written.
 
 Specimen (`xamend2d/`): two kinds, cross-amendment, three laws.
 `A = (O, E, W) → {B}`, `B = (N, NW, SE) → {A, B}`, seed
-`A@(0,0)`, `A@(1,0)`, `B@(0,1)`. (`O=(0,0)`, `NW=(−1,−1)`, `SE=(1,1)`.)
+`A@(0,0)`, `A@(1,0)`, `B@(0,1)`.
+
+> **Which Odometer.** Compass as in the root `verify.py` and `nomos2d/`:
+> `O=(0,0)`, `E=(1,0)`, `W=(−1,0)`, `N=(0,−1)`, `S=(0,1)`, `NW=(−1,−1)`,
+> `SE=(1,1)`. That is the specimen registered in the field's battery
+> (`verify.py`, "THE ODOMETER: |S| = 4 at every power of two") and the one whose
+> crest list `XFINDINGS.md` §3 quotes — i.e. the object Target 2 is about.
+> `xamend2d/xa2d.py` uses the **opposite** vertical compass, so the same specimen
+> string names a different machine there; §2.4 separates the two and it matters.
 
 > **Lemma 2.1 (the frame).** `A@(0,0)` and `A@(1,0)` stand forever;
 > `A@(0,0)` is permanently blocked and `A@(1,0)` is permanently active;
@@ -377,9 +507,11 @@ need `B@(−1,−1)` and `(1,0)` would need `B@(0,−1)`: neither column `−1` 
 `y<0` is ever reached (kind `B` is created at `p+W` from an `A`, i.e. in column
 `x−1`, and at `p+(1,1)` from a `B`), so both frame laws are permanent. `A@(0,0)`
 needs `¬occ((1,0))`, which fails forever. `A@(1,0)` needs `¬occ((2,0))`; column 2
-is shown empty in Lemma 2.2. `B@(0,1)` can only be toggled by an active `A@(1,1)`,
-and `(1,1)` is never occupied because kind `A` and kind `B` appear in column 1
-only at `p+(1,1)` for `p = (0,y)` with `y ≥ 1`. ∎
+is shown empty in Lemma 2.2. `B@(0,1)` has exactly two possible authors — an active `A@(1,1)` (which writes
+`B` at `p+W`) and an active `B@(−1,0)` (which writes `B` at `p+(1,1)`). Column
+`−1` is empty, and `(1,1)` is never occupied, because laws appear in column 1
+only at `p+(1,1)` for `p = (0,y)` with `y ≥ 1`, i.e. only at heights `≥ 2`. So
+`B@(0,1)` is permanent too. ∎
 
 > **Lemma 2.2 (two phases).** Write `D_u ⊆ ℕ` for `{y : B@(0,y)}` at time `2u`.
 > Then for every `u ≥ 0`:
@@ -402,11 +534,11 @@ At the odd tick: `A@(1,0)` fires again and *removes* `B@(0,0)`. `B@(0,0)` itself
 needs `occ((0,−1))` and is blocked. Each `A@(1,y+1)` of the buffer is active
 (guard `O`, and column 2 is empty) and toggles `B` at `(0,y+1)` — writing the
 carries back. The `B` laws of the buffer would toggle at `(2,·)`, but they are all
-blocked: `B@(1,z)` needs `occ((1,z−1))` and `¬occ((0,z−1))`; `occ((1,z−1))` with
-`z−1 ≥ 1` forces `z−1 ∈ α_u+1`, i.e. `z−2 ∈ α_u ⊆ D_u`, so `z−2 ∈ D_u`; but
-`z ∈ α_u+1` forces `z−1 ∈ α_u ⊆ D_u`, contradicting `¬occ((0,z−1))`. Meanwhile
-the column-0 `B` laws fire exactly as at the even tick, cancelling the buffer they
-created. So column 1 empties, column 2 is never written, and
+blocked, and in one line: a buffer law sits at `z ∈ α_u + 1`, so `z−1 ∈ α_u ⊆ D_u`,
+so `(0,z−1)` **is** occupied — and `B@(1,z)`'s vacancy clause asks precisely for
+`¬occ((0,z−1))`. *The carry marker is blocked by the very digit that raised it.*
+Meanwhile the column-0 `B` laws fire exactly as at the even tick, cancelling the
+buffer they created. So column 1 empties, column 2 is never written, and
 `D_{u+1} = D_u Δ (α_u+1)`. ∎
 
 ### 2.2 The map *[established — this is the answer to Target 2]*
@@ -480,31 +612,67 @@ is a simulation, and the simulation is exact. The reset constant is
 Both machines carry the same frame size, so both read 4. *The two binary counters
 of the field are one counter with two clocks.*
 
-### 2.4 A correction: the Odometer's reach is √t, not (log t)² *[established]*
+### 2.4 A correction: **two machines wear the name THE ODOMETER** *[established]*
 
-`xamend2d/RESULTS.md` headline 9 (and its `gallery.py` note) states: *"reach
-≈ 0.20 (log₂ t)², = 86 cells at t = 2²⁰ … the slowest clock in the fauna (the
-Jubilee code's reach is ≈ 1.5√t)."*
+`xamend2d/RESULTS.md` headline 9 says of `OEW>B NQR>AB`: *"Card collapses to
+four laws at every `t = 2^k` … reach ≈ 0.20 (log₂ t)², = 86 cells at `t = 2²⁰`
+… the slowest clock in the fauna."* Theorem 2.3 says the Odometer's reach must
+be the Jubilee's, `≍ 1.5√t`. Both cannot be right. Chasing it down produced a
+correction of a kind this program has not had before.
 
-**That is wrong, and Theorem 2.3 says why it had to be**: the Odometer *is* the
-Jubilee, so its reach is the Jubilee's, at half the clock. Exactly:
+**The repo carries two opposite compasses.** `xamend2d/xa2d.py` sets
+`N = (0,+1)`, `S = (0,−1)`, `NW = (−1,+1)`, `SE = (1,−1)`. The root `verify.py`
+and `nomos2d/` set `N = (0,−1)`, `S = (0,+1)`, `NW = (−1,−1)`, `SE = (1,+1)`.
+The string `"OEW>B NQR>AB"` therefore names **two different constitutions**, and
+because the seed `A@(0,0), A@(1,0), B@(0,1)` is *not* mirrored along with them,
+the two orbits are genuinely different dynamical systems — not reflections of one
+another.
 
-> **Proposition 2.5.** The Odometer's height at `t = 2^k` is `m_{k−1} + 3`, where
-> `m_k` is the unique index with `M_{m_k} = {k}` (Corollary 1.8): `m_k = k` for
-> `k ≤ 2`, `m_{2j+1} = 3·2^j − 2`, `m_{2j+2} = 3·2^j − 1`. Hence
-> height `= 3·2^{⌊(k−2)/2⌋} + O(1) ≍ 1.5·√t`.
+*The engines are innocent.* `xnomos.step` and `xa2d.step` were run in lockstep on
+**identical** constitutions and states: **0 divergences in 400 random 2-D systems
+× 6 steps**. The clash is the offset dictionary, nothing else.
 
-*Certificate (`xnomos.step`, engine, `k = 1..16`)*: measured heights
-`3, 4, 5, 7, 8, 13, 14, 25, 26, 49, 50, 97, 98, 193, 194, 385` — matching
-`m_{k−1}+3` at every one. The published fit gives `12.8` where the engine gives
-`25` (`k=8`) and `39.2` where the engine gives `193` (`k=14`); it is already
-wrong by 5× inside the range that was run. At `t = 2^20` the height is **1537**,
-not 86. `height(2^k)/2^{k/2}` oscillates in `(1.08, 1.57)` — it doubles every
-*second* power of two, which is the same Θ(√t) law as the Jubilee's, with the
-same constant 1.5.
+Run through one engine (`xnomos.step`), from the same seed, out to `t = 2^16`:
 
-The qualitative claims that rested on it survive untouched: bounded card,
-unbounded reach, hence **aperiodic**. What fails is only the rate, and with it
-the epithet "the slowest clock in the fauna" — there is no slower clock, because
-there is only one clock.
+| | `\|S_{2^k}\|`, k = 1…16 | crests at 2^k−1, k = 1…9 | height at 2^k, k = 10,12,14,16 |
+|---|---|---|---|
+| **O⁻** (root compass) | `4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4` | `6,9,12,18,21,36,39,72,75` | `49, 97, 193, 385` |
+| **O⁺** (xa2d compass) | `5,5,6,4,6,4,4,6,4,4,4,6,4,4,4,4` | `4,7,12,12,21,21,30,39,39` | `20, 26, 38, 47` |
+
+Two conclusions, and they pull in opposite directions.
+
+1. **`O⁻` is the machine of `XFINDINGS.md` §3 and of the root battery** — its crest
+   list `6, 9, 12, 18, 21, 36, 39, 72, 75` is quoted there verbatim, and
+   `verify.py`'s odometer check is on it. It resets to four laws at every power of
+   two, and by Theorem 2.3 that is now a **theorem** rather than a measurement.
+   Its reach is `≍ 1.5√t`. *This is the machine whose coincidence with the Jubilee
+   Target 2 asked about, and it **is** the Jubilee.*
+2. **`O⁺` is the machine tabulated in `xamend2d/RESULTS.md` §11.2** — its heights
+   `20, 26, 38, 47` and crests `57, 75, 111, 138` reproduce that table entry for
+   entry, so the table is *correct for the object it measured*. But **`O⁺` does not
+   have the four-law reset**: `|S_{2^k}|` is `5, 5, 6` at `k = 1,2,3` and `6` again
+   at `k = 5, 8, 12`. The published table records `card = 6` at `t = 2^12` in the
+   very row whose caption asserts the collapse to four — *the counterexample was
+   printed and not read.* So headline 9's four-law claim is **false for the machine
+   it tabulates**, while the `(log t)²` reach — a fit, never a theorem — does
+   belong to that machine.
+
+> **The correction, stated once.** *The Odometer's four-law reset and its
+> `(log t)²` reach are properties of two **different** machines.* The four-law
+> machine is the Jubilee, and its reach is `√t`; the polylog-reach machine does
+> not reset to four. The two claims were joined by a compass — and that join is
+> exactly what made the Jubilee coincidence look like a coincidence between
+> independent objects.
+
+The qualitative claims survive for both: bounded card, unbounded reach, hence
+aperiodic. And `xamend2d`'s own open question (§11.3 item 7) — *"[O] Is the
+Odometer's `(log t)²` reach exact?"* — is well posed for the first time: it is a
+question about `O⁺`, and it stays **open**. For `O⁻` there is no polylog reach to
+ask about.
+
+*Recommended repo fixes* — not applied here, since this expedition does not edit
+other expeditions' records: give the two compasses distinct names, or state the
+compass in every specimen string; re-label `xamend2d` headline 9 and its
+`gallery.py` note; and mark the four-law demo in `docs/index.html` and
+`demo/nomodynamics.html` as `O⁻`.
 

@@ -148,10 +148,15 @@ def stage1(procs):
 def _work2(chunk):
     out = Counter()
     gl, res = [], []
+    wcache = {}
     for (i, j, si, mode) in chunk:
         C = const_of(i, j)
+        if (i, j) not in wcache:
+            wcache[(i, j)] = len(ct.orbit_of(C))
+        w = wcache[(i, j)]
         r = ct.classify(list(SEEDS[si]), C, mode, **S2)
         out[r["kind"]] += 1
+        out[("W", mode, r["kind"])] += w
         if r["kind"] == ct.GLIDER:
             gl.append((i, j, si, mode, r["period"], r["displacement"],
                        r["card"]))
@@ -185,7 +190,7 @@ def stage2(procs):
         for r in res:
             fh.write("%d %d %d %s\n" % r)
     with open(os.path.join(DATA, "census2.json"), "w") as fh:
-        json.dump({"counts": dict(out), "budgets": S2,
+        json.dump({"counts": {repr(k): v for k, v in out.items()}, "budgets": S2,
                    "n_rows": len(rows), "n_new_gliders": len(gl),
                    "n_unresolved": len(res)}, fh, indent=1)
 

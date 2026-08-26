@@ -51,16 +51,13 @@ def sep_forever(comps, C, mode, N=200):
 
     Returns (ok_finite, ok_forever, certs) where certs is the per-component
     classification."""
-    certs = [classify(dict(X), C, mode, max_steps=400, max_card=400,
-                      max_span=1500) for X in comps]
-    runs = [[dict(X)] for X in comps]
-    for _ in range(N):
-        for i, X in enumerate(comps):
-            runs[i].append(step(runs[i][-1], C, mode))
+    # cheap screen first: interleave stepping with the (*) test and bail on
+    # the first violation, so an approaching pair costs O(1) not O(N).
+    cur = [dict(X) for X in comps]
     ok_fin = True
     for t in range(N + 1):
-        for i in range(len(comps) - 1):
-            A, B = runs[i][t], runs[i + 1][t]
+        for i in range(len(cur) - 1):
+            A, B = cur[i], cur[i + 1]
             if not A or not B:
                 continue
             if min(B) - max(A) < 3:
@@ -68,6 +65,12 @@ def sep_forever(comps, C, mode, N=200):
                 break
         if not ok_fin:
             break
+        if t < N:
+            cur = [step(X, C, mode) if X else X for X in cur]
+    if not ok_fin:
+        return False, False, [{"kind": UNRESOLVED} for _ in comps]
+    certs = [classify(dict(X), C, mode, max_steps=400, max_card=400,
+                      max_span=1500) for X in comps]
     ok_all = ok_fin
     if ok_fin and all(c["kind"] == GLIDER for c in certs):
         P = 1
@@ -122,12 +125,19 @@ def resolve(S0, C, mode, T_max=260, N_sep=140, gapmin=3,
                 "t_res": g["t"], "forever": True, "global": g["kind"],
                 "active": g.get("active", 0)}
     S = dict(S0)
+    merged = len(clusters(S0, gapmin)) <= 1
     for t in range(T_max):
         if not S:
             return {"out": "SINGLE", "parts": [(EXTINCT, 0, 0, 0)],
                     "t_res": t, "forever": True, "global": EXTINCT}
         comps = clusters(S, gapmin)
-        if len(comps) >= 2:
+        # The inputs start apart.  Testing separation before they have ever
+        # touched is pure waste, so wait until the packets have merged into a
+        # single cluster at least once, then look for a clean re-split.
+        if not merged:
+            if len(comps) <= 1:
+                merged = True
+        if merged and len(comps) >= 2:
             ok_fin, ok_all, certs = sep_forever(comps, C, mode, N=N_sep)
             if ok_fin and all(c["kind"] in RESOLVED for c in certs):
                 parts = [(c["kind"], c.get("period", 0),

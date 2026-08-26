@@ -1,0 +1,14 @@
+{
+ "stats": {
+  "runs": 7496602,
+  "nonperiodic": 87590,
+  "travelling": 11664
+ },
+ "hits": 11664,
+ "box": 944784,
+ "reps": 237006,
+ "moduli": [
+  11,
+  13
+ ]
+}

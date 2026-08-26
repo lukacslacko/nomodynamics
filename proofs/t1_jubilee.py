@@ -17,8 +17,8 @@ code in nomos2d/.
     (C)  the closed form    : |S_t| = 3 + #{n : M_n subset supp_2(t)}
     ==>  reset law, crest law, grading (max), grading (min, corrected).
 
-Run:  python3 proofs/t1_jubilee.py            (fast, ~40 s)
-      python3 proofs/t1_jubilee.py --deep     (adds the t < 2^17 engine sweep)
+Run:  python3 proofs/t1_jubilee.py            (~25 s)
+      python3 proofs/t1_jubilee.py --deep     (~6 min; complete box t < 2^17)
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -367,6 +367,122 @@ def main():
         X = step(X, JUB)
     check("...and the engine finds no exact recurrence in 2^13 steps", dup is None,
           "the theorem covers ALL t; this is a spot check")
+
+    # ---- the box artefact, demonstrated DIRECTLY ON THE ENGINE at small scale
+    print("\n     the box artefact, on the engine (w = 8, box t < 2^13)")
+    wt8 = sum(1 << (2 * i + 1) for i in range(8))     # W = {1,3,...,15}, 16 bits
+    Xe = dict(SEED)
+    best_small, at_wit = 10 ** 9, None
+    for t in range(wt8 + 1):
+        if bin(t).count("1") == 8:
+            c = card(Xe)
+            if t < (1 << 13) and c < best_small:
+                best_small = c
+            if t == wt8:
+                at_wit = c
+        Xe = step(Xe, JUB)
+    check("engine: min |S_t| over the box t < 2^13 at w=8 is 12 = w+4, "
+          "but |S_{43690}| = 11 = w+3", best_small == 12 and at_wit == 11,
+          "the true minimum needs 16 bits and is invisible to the box")
+
+    # ---- maximisers per weight class, brute force
+    from collections import defaultdict as _dd
+    bestv = _dd(lambda: -1)
+    bestt = {}
+    for t in range(1 << 18):
+        w = bin(t).count("1")
+        v = closed_card_mask(t, MK)
+        if v > bestv[w]:
+            bestv[w], bestt[w] = v, t
+    okmax = all(bestv[w] == ((1 << (w // 2 + 1)) + 1 if w % 2 == 0
+                             else 3 * (1 << ((w - 1) // 2)) + 1)
+                for w in range(1, 12))
+    check("brute force t < 2^18 confirms the max formula, w = 1..11", okmax,
+          "%s" % [bestv[w] for w in range(1, 12)])
+    check("smallest maximiser is the all-ones time 2^w-1 iff w is ODD (w >= 3)",
+          all((bestt[w] == (1 << w) - 1) == (w % 2 == 1) for w in range(3, 12)),
+          "%s   (w = 2 is a tie: F = 2 either way)"
+          % [bestt[w] for w in range(1, 12)])
+
+    # ---- the reach, exactly
+    print("\n     the reach at t = 2^k is exactly m_k + 1  (nomos2d measured ~1.5 sqrt t)")
+    def m_ix(k):
+        if k <= 2:
+            return k
+        j = (k - 1) // 2
+        return 3 * (1 << j) - 2 if k % 2 == 1 else 3 * (1 << j) - 1
+    Xr = dict(SEED)
+    obs = {}
+    for t in range((1 << 14) + 1):
+        if t and (t & (t - 1)) == 0:
+            obs[t.bit_length() - 1] = max(c[0] for c, kk in laws(Xr) if kk == 2)
+        Xr = step(Xr, JUB)
+    check("engine reach at 2^k equals m_k + 1 for k = 0..14",
+          all(obs[k] == m_ix(k) + 1 for k in obs),
+          "%s" % [obs[k] for k in sorted(obs)])
+
+    # ---- THE GENERAL LAW: lazy counters of any depth
+    print("\nTHEOREM 1.14 (the lazy-counter reset law)  1 in I  =>  reset weight 1")
+    import itertools as it
+    def or_fib_I(I, count):
+        R = max(I)
+        hist = [0] * R
+        out = []
+        for _ in range(count):
+            v = 0
+            for i in I:
+                v |= hist[-i]
+            m = v + 1
+            out.append(m)
+            hist.append(m)
+        return out
+    bad = []
+    fams = 0
+    for R in range(1, 6):
+        for r in range(1, R + 1):
+            for I in it.combinations(range(1, R + 1), r):
+                if 1 not in I or max(I) != R:
+                    continue
+                fams += 1
+                MUI = or_fib_I(I, 3000)
+                if any(MUI[i] >= MUI[i + 1] for i in range(len(MUI) - 1)):
+                    bad.append((I, "not increasing"))
+                    continue
+                KM = MUI[-1].bit_length() - 1
+                hit = {}
+                for m in MUI:
+                    if m & (m - 1) == 0:
+                        hit[m.bit_length() - 1] = hit.get(m.bit_length() - 1, 0) + 1
+                if any(hit.get(k, 0) != 1 for k in range(KM)):
+                    bad.append((I, "power of two missed/repeated"))
+    check("every I subset [1,5] with 1 in I: mu strictly increasing, each 2^k once",
+          not bad, "%d families, COMPLETE box over I subset [1,5]" % fams)
+    # I = {1} is the Pascal column law |S_t| = 2^popcount(t)
+    MU1 = or_fib_I((1,), 1 << 14)
+    ok = all(sum(1 for m in MU1 if m & ~t == 0) == (1 << bin(t).count("1")) - 1
+             for t in range(1 << 12))
+    check("I = {1} reproduces the Pascal columns: wt = 2^popcount(t) - 1", ok,
+          "the Jubilee (I={1,2}) and the Pascal columns (I={1}) are one theorem")
+
+    # ---- the predicted family of wider Jubilees, run on the ENGINE
+    print("\nCOROLLARY 1.15 (the Jubilee family)  guard moved s cells west")
+    Ejub, Wjub, Njub, Sjub = (1, 0), (-1, 0), (0, -1), (0, 1)
+    rows = []
+    for sw in range(0, 5):
+        Cn = Const([(Ejub, Sjub, Njub), (Sjub, Njub, Sjub),
+                    ((-sw, 0), (0, -1), (1, 0))], dim=2)
+        S0 = state_of([((-1, 0), 0), ((-1, 1), 1)]
+                      + [((c, 1), 2) for c in range(max(sw, 1))])
+        Xs = dict(S0)
+        vals = set()
+        for t in range(1 << 13):
+            if t and (t & (t - 1)) == 0:
+                vals.add(card(Xs))
+            Xs = step(Xs, Cn)
+        rows.append((sw, sorted(vals), max(sw, 1) + 3))
+    check("|S_{2^k}| is constant = max(s,1)+3 for s = 0..4, k = 1..12 (ENGINE)",
+          all(v == [pr] for _, v, pr in rows),
+          "s -> reset: %s" % [(sw, v[0]) for sw, v, _ in rows])
 
     print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
     return 1 if FAIL else 0

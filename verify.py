@@ -591,6 +591,101 @@ def impermanence():
           obs == want, "tau = 1..12, displacement fixed at 2, period = tau+1")
 
 
+def computation():
+    """Chapter five: the field computes (computation/RESULTS.md)."""
+    print("\ncomputation")
+    here = os.path.dirname(os.path.abspath(__file__))
+    sys.path.insert(0, os.path.join(here, "computation"))
+
+    # Rule 110, complete over the local map's inputs (all 2^7 on Z/7).
+    rules = [(0, 0, 0)] * 12 + [(0, 1, 0), (0, 0, 0), (0, 0, 0), (-1, 0, 0),
+                                (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0),
+                                (1, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0)]
+    targets = [(), (1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,),
+               (11,), (3, 4), (5,), (10, 4), (8,), (6,), (7,), (11,), (1, 2),
+               (1, 2), (1, 2), (1, 2), (9, 2)]
+    guards = [(0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0),
+              (8, 0), (9, 0), (10, 0), (11, 0), (1, 2), (1, 0), (9, 0), (5, 4),
+              (5, 0), (3, 0), (10, 0), (6, 0), (6, 0), (7, 0), (8, 0), (11, 0)]
+    local = all(all(abs(x) <= 1 for x in r) for r in rules)
+
+    def ref110(bits):
+        m = len(bits)
+        return [bits[n] ^ bits[(n + 1) % m]
+                ^ (bits[n] & bits[(n + 1) % m])
+                ^ (bits[(n - 1) % m] & bits[n] & bits[(n + 1) % m])
+                for n in range(m)]
+
+    m, bad = 7, 0
+    Cr = Const(rules, targets, dim=1, guards=guards, modulus=m)
+    for v in range(1 << m):
+        bits = [(v >> i) & 1 for i in range(m)]
+        seed = []
+        for cell in range(m):
+            for k in list(range(12, 24)) + [9]:
+                seed.append((cell, k))
+            seed.append((cell, 1 if bits[cell] else 2))
+        X, ref = state_of(seed), bits
+        for _ in range(3):
+            for _ in range(3):
+                X = step(X, Cr, "parity")
+            ref = ref110(ref)
+            if [1 if (X.get(c, 0) >> 1) & 1 else 0
+                    for c in range(m)] != ref:
+                bad += 1
+                break
+    check("Rule 110 runs inside a 24-kind constitution",
+          bad == 0 and local,
+          "all 2^7 = 128 configurations of Z/7: a COMPLETE local-map "
+          "certificate, every offset being within +-1")
+
+    # Theorem 5: a Turing machine compiled into a finite code of the FOUNDING
+    # (occupancy-guard) sector, checked against a reference written here.
+    import turing                                                # noqa: E402
+    DIR = {"L": -1, "S": 0, "R": 1}
+
+    def ref_tm(tm, tape, head, steps):
+        t, q, h, out = dict(tape), tm.start, head, []
+        for _ in range(steps):
+            out.append((dict(t), h, q))
+            g = t.get(h, 0)
+            if (q, g) not in tm.delta:
+                continue
+            q2, g2, d = tm.delta[(q, g)]
+            if g2:
+                t[h] = 1
+            else:
+                t.pop(h, None)
+            h += DIR[d]
+            q = q2
+        out.append((dict(t), h, q))
+        return out
+
+    okm = 0
+    machines = [turing.tm_binary_increment(), turing.tm_busy_beaver3(),
+                turing.tm_move_right()]
+    for tm in machines:
+        tape, steps = {0: 1, 1: 1}, 10
+        R = turing.Registry(tm)
+        X = R.code(dict(tape), 0, list(range(-4, 7)))
+        ref = ref_tm(tm, tape, 0, steps)
+        view = list(range(-4 - steps - 2, 7 + steps + 3))
+        good = True
+        for k in range(steps + 1):
+            rt, rh, rq = ref[k]
+            rt = {c: b for c, b in rt.items() if b}
+            if R.decode(X, view) != (rt, rh, rq):
+                good = False
+                break
+            if k < steps:
+                X = R.run(X, 3)
+        okm += good
+    check("every Turing machine compiles into a finite code",
+          okm == len(machines),
+          "3 machines x 10 steps vs an independent simulator; the founding "
+          "occupancy-guard sector is computation-universal")
+
+
 def main():
     print("nomodynamics — verification battery")
     chapter1_fauna()
@@ -599,6 +694,7 @@ def main():
     chapter1_jubilee()
     chapter2()
     impermanence()
+    computation()
     print("\n%d checks passed, %d failed" % (len(PASS), len(FAIL)))
     if FAIL:
         print("failed: " + ", ".join(FAIL))

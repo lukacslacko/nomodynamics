@@ -1,0 +1,4 @@
+rows: 241290  (light-cone-admissible 3186, sampled from the rest 20000)
+failures: NONE
+Theorem B: 1528 rows with g >= 2pW, 0 fail to lift
+out-degree<=1 LC rotors: 426, of which the cut-lift glides: 0

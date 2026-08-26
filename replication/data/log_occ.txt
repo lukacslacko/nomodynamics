@@ -1,3 +1,11 @@
 tasks=89  trials/task=681  kinds=2  cite=False  modes=['parity', 'or', 'super', 'super_or']
   0/89 hits=505 nonlin=348
   10/89 hits=5232 nonlin=3706
+  20/89 hits=9877 nonlin=6929
+  30/89 hits=14177 nonlin=10007
+  40/89 hits=19125 nonlin=13471
+  50/89 hits=23614 nonlin=16605
+  60/89 hits=28042 nonlin=19769
+  70/89 hits=32643 nonlin=23050
+  80/89 hits=37535 nonlin=26581
+done: 41166 hits (29076 nonlinear) -> data/s2d_occ.txt

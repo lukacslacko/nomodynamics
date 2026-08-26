@@ -302,6 +302,24 @@ def verify_glider(F0, C, p, d, mode="parity", reps=3):
     return True
 
 
+def advance(F0, C, t, mode="parity"):
+    F = list(F0)
+    for _ in range(t):
+        F = step_fields(F, C, mode)
+    return F
+
+
+def certify_glider(F0, C, mode="parity", **kw):
+    """Classify, then re-verify the GLIDER CORE (the seed may have a
+    pre-period, in which case Phi^p(seed) != sigma^d(seed) even though the
+    orbit is a glider).  Returns (result, core, ok)."""
+    r = classify(list(F0), C, mode, **kw)
+    if r["kind"] != GLIDER:
+        return r, None, False
+    core = advance(F0, C, r["t"], mode)
+    return r, core, verify_glider(core, C, r["period"], r["displacement"], mode)
+
+
 def verify_cycle(F0, C, p, mode="parity"):
     F = list(F0)
     for _ in range(p):

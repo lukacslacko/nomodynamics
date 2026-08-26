@@ -1,0 +1,17 @@
+{
+ "counts": {
+  "CYCLE": 245656,
+  "BALANCED": 566863,
+  "GROWING": 748107,
+  "UNRESOLVED": 222219,
+  "FIXED": 7997
+ },
+ "budgets": {
+  "max_steps": 1500,
+  "max_card": 1200,
+  "max_span": 1500
+ },
+ "n_rows": 1790842,
+ "n_new_gliders": 0,
+ "n_unresolved": 222219
+}

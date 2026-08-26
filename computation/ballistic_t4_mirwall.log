@@ -1,0 +1,17 @@
+MIRROR 0:[0|1|-1]->0,1 1:[0|-1|1]->0,1  glider p=5 d=+2 card=32 span=19
+mode=parity -> 352 stationary codes {'OSC': 297, 'DEAD': 41, 'BAL': 14}
+   wall 0/352 N=90 0s
+   wall 40/352 N=3285 12s
+   wall 80/352 N=6480 22s
+   wall 120/352 N=9630 33s
+   wall 160/352 N=12960 43s
+   wall 200/352 N=16515 57s
+   wall 240/352 N=19530 66s
+   wall 280/352 N=23130 75s
+   wall 320/352 N=26460 87s
+  N=29205  [97s]
+    ABSORBED               29163
+    UNRESOLVED                42
+    by wall type DEAD (n_walls=41): {'ABSORBED': 1845}
+    by wall type BAL  (n_walls=14): {'ABSORBED': 630}
+    by wall type OSC  (n_walls=297): {'ABSORBED': 26688, 'UNRESOLVED': 42}

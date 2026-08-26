@@ -245,3 +245,81 @@ def _selftest():
 
 if __name__ == "__main__":
     _selftest()
+
+
+# --------------------------------------------------- exact minimality decider
+
+def _prime_divisors(m):
+    out, x, f = [], m, 2
+    while f * f <= x:
+        if x % f == 0:
+            out.append(f)
+            while x % f == 0:
+                x //= f
+        f += 1
+    if x > 1:
+        out.append(x)
+    return out
+
+
+def decide_generator(cls, p, d, mode="parity", cap=3_000_000):
+    """Decide whether some glider has GENERATOR exactly (p,d).
+
+    (p0,d0) generates G(S) = {(t,x) : Phi^t S = sigma^x S}.  (p,d) = k(p0,d0),
+    and k > 1 iff Phi^{p/q} S = sigma^{d/q} S for some prime q | gcd(p,d).  So
+    we run the same column scan with one extra flag per prime q, set as soon as
+    a column y with occ(p/q, y) != occ(0, y - d/q) has been seen, and accept
+    only paths that return to the vacuum with every flag set.
+    """
+    tab = rule_table(cls, mode)
+    qs = _prime_divisors(__import__("math").gcd(p, d))
+    FULL = (1 << len(qs)) - 1
+    E = max(0, d - 2)
+    q0 = ((0, 0, 0, 0), (0,) * E, 0)
+
+    def bit0_of(win, olds, m):
+        """bit 0 of column x-1-m, 0 <= m <= d, given win = v_{x-3..x+1}."""
+        if m <= 2:
+            return win[2 - m] & 1
+        return olds[d - m]
+
+    def succ(st):
+        cols, olds, fl = st
+        out = []
+        for new in _succ_columns(tab, p, d, cols, olds, E):
+            win = cols + (new,)
+            nfl = fl
+            for i, q in enumerate(qs):
+                if (nfl >> i) & 1:
+                    continue
+                lhs = (win[2] >> (p // q)) & 1          # occ(p/q, x-1)
+                rhs = bit0_of(win, olds, d // q)        # occ(0, x-1-d/q)
+                if lhs != rhs:
+                    nfl |= 1 << i
+            ncols = (cols[1], cols[2], cols[3], new)
+            nolds = (olds[1:] + (cols[0] & 1,)) if E else ()
+            out.append((new, (ncols, nolds, nfl)))
+        return out
+
+    target = ((0, 0, 0, 0), (0,) * E, FULL)
+    seen = {q0: None}
+    dq = deque([q0])
+    while dq:
+        st = dq.popleft()
+        for new, ns in succ(st):
+            if ns == target and (st != q0 or new != 0):
+                path = [new]
+                cur = st
+                while seen[cur] is not None:
+                    par, col = seen[cur]
+                    path.append(col)
+                    cur = par
+                path.reverse()
+                return "GLIDER", path
+            if ns in seen:
+                continue
+            seen[ns] = (st, new)
+            if len(seen) > cap:
+                return "CAP", None
+            dq.append(ns)
+    return "NONE", None

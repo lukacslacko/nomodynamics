@@ -1,0 +1,25 @@
+    32/512 classes  13.6s  CAP=0  max min-d=2
+    64/512 classes  25.5s  CAP=0  max min-d=2
+    96/512 classes  53.6s  CAP=0  max min-d=2
+   128/512 classes  87.8s  CAP=0  max min-d=3
+   160/512 classes  200.2s  CAP=0  max min-d=3
+   192/512 classes  304.7s  CAP=0  max min-d=3
+   224/512 classes  313.8s  CAP=0  max min-d=3
+   256/512 classes  320.4s  CAP=0  max min-d=3
+   288/512 classes  356.9s  CAP=0  max min-d=3
+   320/512 classes  390.4s  CAP=0  max min-d=5
+   352/512 classes  421.9s  CAP=0  max min-d=5
+   384/512 classes  461.7s  CAP=0  max min-d=5
+   416/512 classes  560.2s  CAP=0  max min-d=5
+   448/512 classes  643.1s  CAP=0  max min-d=5
+   480/512 classes  653.1s  CAP=0  max min-d=5
+   512/512 classes  661.2s  CAP=0  max min-d=5
+
+full sweep, mode=parity, p<=6, d>=1
+  decisions      : 10752
+  GLIDER         : 762
+  CAP (undecided): 0
+  max d realised : 6
+  max MINIMAL d  : 5
+  minimal (p,d)  : [(1, 1), (2, 1), (2, 2), (3, 1), (3, 2), (3, 3), (4, 1), (4, 2), (5, 2), (5, 3), (5, 5), (6, 2)]
+  wrote /Users/lukacs/claude/math/program/phase6/proofs/t3_full_parity_p6.jsonl

@@ -1,0 +1,3 @@
+box: 944784 constitutions, 237006 symmetry representatives
+boundary {'runs': 2238660, 'oscillating_seam': 237202, 'travelling_seam': 444, 'nonperiodic': 292}
+hits: 444

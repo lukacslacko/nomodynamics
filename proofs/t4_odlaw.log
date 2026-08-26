@@ -1,0 +1,35 @@
+randomised: 8000 (constitution, code) pairs; exposure-bound violations 0 ; change-budget violations 0
+
+OUT-DEGREE <= 1 (the 9 maps with |T_k| <= 1) -- COMPLETE over all 2^(2m) codes, 729 rule pairs x 9 target maps, parity+or
+   m=3    codes with Phi(S) = rot_1(S) != S : 0         (1 s)
+   m=4    codes with Phi(S) = rot_1(S) != S : 0         (1 s)
+   m=5    codes with Phi(S) = rot_1(S) != S : 0         (1 s)
+   m=6    codes with Phi(S) = rot_1(S) != S : 0         (2 s)
+   m=7    codes with Phi(S) = rot_1(S) != S : 0         (4 s)
+   m=8    codes with Phi(S) = rot_1(S) != S : 0         (19 s)
+   m=9    codes with Phi(S) = rot_1(S) != S : 0         (57 s)
+   m=10   codes with Phi(S) = rot_1(S) != S : 0         (278 s)
+   >>> out-degree<=1 witnesses found: 0  <<<
+
+OUT-DEGREE 2 (the 7 maps with some |T_k| = 2) -- COMPLETE over all 2^(2m) codes, 729 rule pairs x 7 target maps, parity+or
+   m=3    codes with Phi(S) = rot_1(S) != S : 240       (0 s)
+   m=4    codes with Phi(S) = rot_1(S) != S : 384       (1 s)
+   m=5    codes with Phi(S) = rot_1(S) != S : 600       (1 s)
+   m=6    codes with Phi(S) = rot_1(S) != S : 1168      (2 s)
+   m=7    codes with Phi(S) = rot_1(S) != S : 1932      (6 s)
+   m=8    codes with Phi(S) = rot_1(S) != S : 3392      (20 s)
+   m=9    codes with Phi(S) = rot_1(S) != S : 6000      (56 s)
+   >>> out-degree-2 constitutions carrying a d=+1 rotor: 504 (m, rules, targets, mode, #codes, one witness) <<<
+   distinct out-degree-2 constitutions with a d=+1 rotor: 88
+      m=3 ((-1, 1, -1), (-1, 1, 1)) -> ((0, 1), (0, 1)) [parity] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, -1), (-1, 1, 1)) -> ((0, 1), (0, 1)) [or] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, -1), (0, -1, -1)) -> ((0, 1), (0, 1)) [parity] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, -1), (0, -1, -1)) -> ((0, 1), (0, 1)) [or] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, -1), (0, 1, 1)) -> ((0, 1), (0, 1)) [parity] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, -1), (0, 1, 1)) -> ((0, 1), (0, 1)) [or] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, -1), (1, -1, -1)) -> ((0, 1), (0, 1)) [parity] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, -1), (1, -1, -1)) -> ((0, 1), (0, 1)) [or] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, 1), (-1, 1, -1)) -> ((0, 1), (0, 1)) [parity] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, 1), (-1, 1, -1)) -> ((0, 1), (0, 1)) [or] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, 1), (0, -1, 0)) -> ((0, 1), (0, 1)) [parity] 3 codes; e.g. |XY XY . |
+      m=3 ((-1, 1, 1), (0, -1, 0)) -> ((0, 1), (0, 1)) [or] 3 codes; e.g. |XY XY . |

@@ -1,0 +1,4 @@
+==============================================================================
+MIRROR   0:[0|1|-1]->0,1 1:[0|-1|1]->0,1
+  glider p=5 d=+2 card=32 span=19
+  mode=parity  wall box: support in cells 0..4, all 768 anchored seeds  ->  352 stationary codes  {'OSC': 297, 'DEAD': 41, 'BAL': 14}

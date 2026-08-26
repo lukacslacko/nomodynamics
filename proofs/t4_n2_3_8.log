@@ -1,1 +1,50 @@
-  m=3   done  (22.3 s, 160 rotor cycles so far)
+  m=3   done  (2.5 s, 160 rotor cycles so far)
+  m=4   done  (6.2 s, 1864 rotor cycles so far)
+  m=5   done  (11.5 s, 2212 rotor cycles so far)
+  m=6   done  (31.7 s, 49362 rotor cycles so far)
+  m=7   done  (97.4 s, 50102 rotor cycles so far)
+  m=8   done  (268.2 s, 238990 rotor cycles so far)
+  wrote /Users/lukacs/claude/math/program/phase6/proofs/t4_data/t4_n2_3_8.jsonl (238990 rows, 100602 constitution-runs)
+
+### 2 kinds, all 729 rule pairs x all 16 target maps, m = 3..8, parity+or, COMPLETE
+  constitution-runs (constitution x ring x mode): 100602
+  rotor cycles found (d != 0, rot_d(S) != S): 238990
+  m      rotors  LC(<=p) LC2(<=2p)    LC&od=1   LC&od>=2    LC&lift
+  3         160      160      160          0        160         32
+  4        1704      232     1704         24        208         96
+  5         348      260      348          0        260        160
+  6       47150      456     8588         24        432        224
+  7         740      572      740          0        572        392
+  8      188888     1440     5888        312       1128        624
+  *** light-cone-admissible rotors with out-degree <= 1: 360 ***
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, -1, 0), (0, -1, 1)), 'targets': [[1], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 21, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, -1, 0), (0, -1, 1)), 'targets': [[1], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 42, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, -1, 0), (0, -1, 1)), 'targets': [[1], [1]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 21, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, -1, 0), (0, -1, 1)), 'targets': [[1], [1]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 42, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'or', 'rules': ((0, -1, 0), (0, -1, 1)), 'targets': [[1], [1]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 21, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'or', 'rules': ((0, -1, 0), (0, -1, 1)), 'targets': [[1], [1]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 42, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, -1, 1), (0, -1, 0)), 'targets': [[0], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 81, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, -1, 1), (0, -1, 0)), 'targets': [[0], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 162, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'or', 'rules': ((0, -1, 1), (0, -1, 0)), 'targets': [[0], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 81, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'or', 'rules': ((0, -1, 1), (0, -1, 0)), 'targets': [[0], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 162, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, -1, 1), (0, -1, 0)), 'targets': [[1], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 81, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, -1, 1), (0, -1, 0)), 'targets': [[1], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 162, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, 1, -1), (0, 1, 0)), 'targets': [[0], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 81, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, 1, -1), (0, 1, 0)), 'targets': [[0], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 162, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'or', 'rules': ((0, 1, -1), (0, 1, 0)), 'targets': [[0], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 81, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'or', 'rules': ((0, 1, -1), (0, 1, 0)), 'targets': [[0], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 162, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, 1, -1), (0, 1, 0)), 'targets': [[1], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 81, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, 1, -1), (0, 1, 0)), 'targets': [[1], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 162, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, 1, 0), (0, 1, -1)), 'targets': [[1], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 21, 'lc': True, 'lc2': True, 'lift': False}
+       {'m': 4, 'n': 2, 'mode': 'parity', 'rules': ((0, 1, 0), (0, 1, -1)), 'targets': [[1], [0]], 'p': 3, 'd': 2, 'L': 6, 'card': 3, 'od': 1, 'used': [0, 1], 'g': 1, 'state': 42, 'lc': True, 'lc2': True, 'lift': False}
+  *** light-cone-admissible rotors FAILING the gap hypothesis (g < 2pW): 1592 ***
+      m=3 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=4
+      m=3 ((-1, 1, -1), (-1, 1, 1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=4
+      m=3 ((-1, 1, -1), (0, -1, -1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=4
+      m=3 ((-1, 1, -1), (0, -1, -1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=4
+      m=3 ((-1, 1, -1), (0, 1, 1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=4
+      m=3 ((-1, 1, -1), (0, 1, 1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=4
+      m=3 ((-1, 1, -1), (1, -1, -1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=4
+      m=3 ((-1, 1, -1), (1, -1, -1))->[[0, 1], [0, 1]] p=1 d=+1 g=1 od=2 card=4
+      m=3 ((-1, 1, 0), (-1, 1, 1))->[[0, 1], [0, 1]] p=1 d=-1 g=1 od=2 card=4
+      m=3 ((-1, 1, 0), (-1, 1, 1))->[[0, 1], [0, 1]] p=1 d=-1 g=1 od=2 card=4

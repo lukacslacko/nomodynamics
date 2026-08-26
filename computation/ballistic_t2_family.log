@@ -1,0 +1,97 @@
+M2/5  p= 5 d=+2 span=19 card= 32  speed=2/5   mirror partner d=-2 OK
+M1/2  p= 4 d=+2 span=52 card= 72  speed=1/2   mirror partner d=-2 OK
+M1/6  p=12 d=+2 span=38 card= 58  speed=1/6   mirror partner d=-2 OK
+
+==============================================================================
+HEAD-ON, ACROSS SPECIES
+==============================================================================
+
+M1/2(right,left-hand) vs M1/2(left-mover, HEAD-ON)   box: phase 4 x 4, gap 0..24 -> N=400   [8s]
+    ARREST                     400
+    distinct signatures: 9
+       BAL(c96)                                       122
+       BAL(c84)                                       100
+       O(p28,c120)                                     50
+       O(p8,c84)                                       50
+       BAL(c72)                                        26
+       O(p60,c116)                                     25
+       BAL(c108)                                       24
+       O(p6,c80)                                        2
+
+M1/2(right,left-hand) vs M2/5(left-mover, HEAD-ON)   box: phase 4 x 5, gap 0..24 -> N=500   [6s]
+    ARREST                     500
+    distinct signatures: 13
+       BAL(c72)                                       139
+       BAL(c84)                                        84
+       O(p8,c72)                                       54
+       BAL(c60)                                        29
+       BAL(c36)                                        28
+       O(p8,c60)                                       28
+       O(p8,c68)                                       28
+       O(p8,c48)                                       27
+
+M2/5(right,left-hand) vs M1/6(left-mover, HEAD-ON)   box: phase 5 x 12, gap 0..24 -> N=1500   [28s]
+    ARREST                    1500
+    distinct signatures: 22
+       BAL(c66)                                       315
+       BAL(c42)                                       305
+       BAL(c54)                                       262
+       BAL(c78)                                        90
+       O(p12,c66)                                      46
+       BAL(c90)                                        46
+       O(p16,c86)                                      45
+       O(p8,c42)                                       45
+
+M1/6(right,left-hand) vs M1/6(left-mover, HEAD-ON)   box: phase 12 x 12, gap 0..16 -> N=2448   [81s]
+    ARREST                    2448
+    distinct signatures: 28
+       BAL(c60)                                       400
+       BAL(c84)                                       360
+       BAL(c72)                                       356
+       BAL(c96)                                       350
+       O(p8,c96)                                      196
+       O(p8,c84)                                      102
+       O(p8,c60)                                      100
+       O(p16,c72)                                     100
+
+==============================================================================
+REAR-END (fast catches slow)
+==============================================================================
+
+M1/2(right,left-hand) vs M2/5(right-mover, REAR-END)   box: phase 4 x 5, gap 0..20 -> N=420   [15s]
+    ARREST                     420
+    distinct signatures: 15
+       O(p5,c100)                                     187
+       O(p8,c48)                                      187
+       BAL(c72)                                        11
+       O(p8,c72)                                        9
+       BAL(c84)                                         8
+       O(p8,c80)                                        4
+       O(p24,c84)                                       3
+       O(p8,c96)                                        3
+
+M1/2(right,left-hand) vs M1/6(right-mover, REAR-END)   box: phase 4 x 12, gap 0..16 -> N=816   [28s]
+    ARREST                     816
+    distinct signatures: 17
+       BAL(c90)                                       295
+       O(p8,c78)                                       98
+       O(p12,c90)                                      97
+       O(p8,c102)                                      89
+       BAL(c66)                                        54
+       BAL(c114)                                       53
+       O(p8,c110)                                      46
+       O(p40,c110)                                     43
+
+M2/5(right,left-hand) vs M1/6(right-mover, REAR-END)   box: phase 5 x 12, gap 0..16 -> N=1020   [23s]
+    ARREST                    1020
+    distinct signatures: 24
+       BAL(c66)                                       474
+       O(p8,c54)                                      134
+       BAL(c78)                                        84
+       BAL(c90)                                        68
+       O(p12,c82)                                      67
+       O(p8,c78)                                       67
+       O(p8,c58)                                       62
+       BAL(c54)                                        23
+
+done

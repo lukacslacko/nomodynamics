@@ -358,7 +358,84 @@ exact counts, 0 violations) — and under the two-chamber veto **88.8 % of all
 fixed codes on ℤ/20 are balanced**, against 0 % for own-kind. X-C's own
 pre-registrations P5 (Σc predicts rotation), P8 and P9 were refuted and kept.
 
-## 7. Scorecard against the frozen predictions
+## 7. The field computes — and it does so standing still
+
+Expedition Y-B (`computation/RESULTS.md`, 21/21 own battery). Both headline
+constructions re-verified by the coordinator against independently written
+references.
+
+**The one idea.** A guard — citation *or* the founding occupancy guard — is an
+AND-NOT read at fixed offsets, and parity resolution makes several authors of
+the same provision XOR together. AND-NOT with XOR is functionally complete; the
+only missing ingredient is *assignment*, because a toggle accumulates. That is
+supplied by
+
+> **the self-clearing kind**: a provision that repeals *itself* every step. With
+> `f(t)` the XOR of every other author's toggle of that slot,
+> `x(t+1) = x(t) ⊕ x(t) ⊕ f(t) = f(t)`.
+> **A law that expires every step is a register: the code writes it rather than
+> amending it.**
+
+> **Theorem (Statute-Circuit).** A constitution in the resulting normal form
+> *is* a synchronous AND-NOT network with free XOR fan-in, free fan-out (guards
+> are read-only, so any number of gates may cite the same slot) and unit delay.
+> A law nobody amends is a **gate**; a law that repeals itself is a **wire**.
+
+**Rule 110 runs inside a constitution.** 24 kinds, window 1, parity, three
+nomodynamics steps per Rule-110 step, one cell per cell. The certificate is
+*complete rather than sampled*: every offset lies within ±1, so three steps form
+a local map on a 7-cell window, and running all 2⁷ = 128 configurations of ℤ/7
+evaluates that map at **every one of its inputs** — which decides ℤ entirely.
+Coordinator-verified independently: all 512 configurations of ℤ/9 for 8
+Rule-110 steps and 40 random configurations of ℤ/17 for 25 steps against a
+bit-parallel reference, zero mismatches; and the battery now carries the
+complete ℤ/7 certificate.
+
+> **Theorem (finite-code universality).** Every Turing machine compiles into a
+> **finite code** of the *founding* occupancy-guard sector, with unbounded tape
+> supplied by a self-extending front. Hence nomodynamics is
+> **computation-universal**, and halting for finite codes is **undecidable**.
+
+Coordinator-verified against a reference simulator written from scratch: 15
+machines — including binary increment and busy beavers 3 and 4, plus ten random
+3-state machines — 14 steps each, 225 configurations compared, zero mismatches.
+
+**Citation turned out to be unnecessary, refuting my own charter prediction Y3.**
+The founding guard *already* reads "some law stands at i+a **and** none at
+i+b" — an AND-NOT over the occupancy field. Citation only buys several bits per
+cell; spend cells instead of kinds and the whole circuit substrate reappears
+with plain occupancy guards.
+
+**And the deepest sentence the program has produced.** Chapter one spent its
+entire effort proving that nothing can move; chapter two priced motion exactly;
+chapter four found that motion needs mortality. Computation needs none of it:
+
+> Every gate law and every POWER law is exactly where it started — certified over
+> 60 steps at out-degree 1. **A statute book can compute while every one of its
+> provisions stands still.** What moves is not law but *information*, and
+> information moves because the guards read across cells.
+> *Motion was never the resource. The vacancy clause was.*
+
+**Complexity, and where computation is not.** Prediction is **P-complete** under
+log-space reductions already at dimension 1, window 0, one cell (complete
+certificate over all 256 Boolean functions of three variables). By contrast the
+single-author sector is 𝔽₂-linear with Φᵗ = Lᵗ, so prediction there is in **NC**
+and is not P-complete unless NC = P: chapter one's exactly solvable sector is
+*provably* the wrong place to look for computation, which is exactly why it was
+solvable.
+
+**Where it stops, honestly.** The ballistic route — Life-style glider collisions
+— does *not* work: 58,203 certified collision runs produced no reflector, no
+fan-out, no transparency and no annihilation, with MIRROR freezing everything it
+touches and TRIPTYCH detonating everything it touches. Both gateless, for
+opposite reasons. Every one of those zeros is labelled a **box** statement, and
+the expedition applies the width correction to itself: MIRROR's own gliders span
+20–616 cells and were invisible to every earlier census in this program. Also
+not claimed: minimality (24 and 31 kinds are what these constructions happened to
+need), and **the strict own-kind sector of chapter one remains open** — every
+construction here uses cross-amendment, even where out-degree is 1.
+
+## 8. Scorecard against the frozen predictions
 
 - **X1 (balance exists, minimum 2 laws, none under OR)** — **HELD** for the
   witness and the OR half (verified); the minimality claim is X-D's.

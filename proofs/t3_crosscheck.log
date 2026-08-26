@@ -1,0 +1,32 @@
+1. local rule tables, channel-list vs (u,v,w) type reduction
+   8000 tables compared, 0 disagreements
+
+2. width-unbounded deciders head to head (t3_decide vs xspeed/sft.py)
+   260 random questions, 0 disagreements
+
+3. replication of the published MIRROR table (xspeed/RESULTS.md 7.1)
+   p | d=2 parity        | d=2 or | d=3 parity | d=3 or
+   4 | GLIDER span 53     | NONE   | NONE       | NONE
+   5 | GLIDER span 20     | NONE   | NONE       | NONE
+   6 | GLIDER span 616    | NONE   | NONE       | NONE
+   7 | GLIDER span 438    | NONE   | NONE       | NONE
+   (published: GLIDER spans 53, 20, 616, 438 for p=4,5,6,7;
+    NONE for d=2 under OR and for d=3 under either)
+
+4. the n<=5 single-field sector, WITH the minimality test
+   mode=parity: 485 distinct classes reachable with n<=5 channels
+   minimal (p0,d0) realised with p0<=4:
+      (p0,d0)=(1, 1)   n=2 [(-1, 1, -1), (-1, 1, 1)] seed=[0, 1]
+      (p0,d0)=(2, 1)   n=3 [(-1, 1, -1), (-1, 1, 0), (0, -1, 1)] seed=[0, 1]
+      (p0,d0)=(2, 2)   n=3 [(-1, 1, -1), (-1, 1, 0), (0, 1, 1)] seed=[0]
+      (p0,d0)=(3, 1)   n=4 [(-1, 1, 0), (-1, 1, 1), (0, 1, -1), (1, -1, 1)] seed=[0, 1, 3, 4, 6]
+      (p0,d0)=(3, 2)   n=4 [(-1, 1, 1), (0, 1, -1), (1, -1, 0), (1, -1, 1)] seed=[1, 2]
+      (p0,d0)=(3, 3)   n=4 [(-1, 1, -1), (-1, 1, 1), (0, -1, 1), (1, -1, 0)] seed=[0, 1]   <-- BEATS THE PUBLISHED CAP
+      (p0,d0)=(4, 1)   n=4 [(-1, 1, 1), (0, 1, -1), (1, -1, 0), (1, -1, 1)] seed=[1, 2, 6, 8, 9, 10, 12]
+      (p0,d0)=(4, 2)   n=2 [(0, -1, 1), (0, 1, -1)] seed=[1, 2, 3, 4, 5, 7, 9, 10, 11, 13, 15, 17, 19, 21, 23, 26, 28, 30, 31, 32, 33, 34, 36, 38, 40, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53]
+   mode=or: 335 distinct classes reachable with n<=5 channels
+   minimal (p0,d0) realised with p0<=4:
+      (p0,d0)=(1, 1)   n=2 [(-1, 1, -1), (-1, 1, 1)] seed=[0, 1]
+      (p0,d0)=(2, 1)   n=3 [(-1, 1, 0), (-1, 1, 1), (0, 1, -1)] seed=[1]
+      (p0,d0)=(2, 2)   n=3 [(-1, 1, -1), (-1, 1, 0), (0, 1, 1)] seed=[0]
+      (p0,d0)=(3, 3)   n=4 [(-1, 1, 1), (0, -1, 1), (0, 1, -1), (1, -1, 0)] seed=[0, 1]   <-- BEATS THE PUBLISHED CAP

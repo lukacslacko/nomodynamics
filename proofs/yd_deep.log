@@ -1,0 +1,8 @@
+EXPEDITION Y-D — verification battery  (deep)
+
+  ok    TARGET 1  the Jubilee clock law                  27 passed, 0 failed
+  ok    TARGET 2  the four-law coincidence               16 passed, 0 failed
+  --  TARGET 3  the width-free speed cap              (no script)
+  --  TARGET 4  light-cone-admissible ring rotors     (no script)
+
+43 checks passed, 0 failed, 2 scripts missing

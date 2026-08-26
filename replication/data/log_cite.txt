@@ -1,0 +1,10 @@
+tasks=89  trials/task=681  kinds=2  cite=True  modes=['parity', 'or']
+  0/89 hits=277 nonlin=169
+  10/89 hits=3758 nonlin=2191
+  20/89 hits=7417 nonlin=4126
+  30/89 hits=10642 nonlin=5922
+  40/89 hits=14174 nonlin=7928
+  50/89 hits=17549 nonlin=9609
+  60/89 hits=20846 nonlin=11520
+  70/89 hits=24264 nonlin=13428
+  80/89 hits=27630 nonlin=15271

@@ -83,39 +83,83 @@ def transition(rules, targets, m, n, mode):
     return out
 
 
+def cycle_ids(f, N):
+    """Vectorised functional-graph analysis by pointer doubling.
+
+    Returns (g, cid) where g = f^(2^K) with 2^K >= N (so g maps every state
+    onto its cycle, and image(g) = exactly the cyclic states) and
+    cid[s] = min{ f^j(s) : 0 <= j < 2^K }, which on a cyclic state is the
+    smallest state of its cycle -- a canonical cycle identifier.
+    """
+    K = max(1, int(N - 1).bit_length())
+    h = f
+    cid = np.arange(N, dtype=f.dtype)
+    for _ in range(K):
+        cid = np.minimum(cid, cid[h])
+        h = h[h]
+    return h, cid
+
+
 def cyclic_states(f, N):
     """The set of states lying on a cycle of the functional graph f."""
-    img = np.zeros(N, dtype=bool)
-    img[f] = True
-    A = np.flatnonzero(img)
-    for _ in range(4096):
-        img2 = np.zeros(N, dtype=bool)
-        img2[f[A]] = True
-        B = np.flatnonzero(img2)
-        if B.size == A.size:
-            return B
-        A = B
-    raise RuntimeError("image did not stabilise")
+    g, _ = cycle_ids(f, N)
+    seen = np.zeros(N, dtype=bool)
+    seen[g] = True
+    return np.flatnonzero(seen)
 
 
-def cycles_of(f, cyc):
-    """Decompose the cyclic states into cycles (lists of packed states)."""
-    seen = set()
+def rotor_cycles(f, N, m, n, rots):
+    """All rotor cycles of the functional graph f, found VECTORISED.
+
+    A state s lies on a rotor cycle iff rot_d(s) lies on the SAME cycle for
+    some d != 0 (rot commutes with Phi, so rot_d maps cycles to cycles; and
+    Phi^p(s) = rot_d(s) for some p iff rot_d(s) is in the forward orbit of s
+    iff it is on the same cycle).  Cycle membership is read off the canonical
+    cycle identifier cid.  Only the -- few -- cycles that pass are then walked
+    in Python to extract the minimal (p, d).
+
+    rots[d] is the precomputed permutation s -> rot_d(s) of the state space.
+    """
+    g, cid = cycle_ids(f, N)
+    oncyc = np.zeros(N, dtype=bool)
+    oncyc[g] = True
+    hit = np.zeros(N, dtype=bool)
+    idx = np.arange(N, dtype=f.dtype)
+    for d in range(1, m):
+        rd = rots[d]
+        hit |= oncyc & (rd != idx) & (cid[rd] == cid)
+    if not hit.any():
+        return []
+    reps = np.unique(cid[hit])
     out = []
-    fl = f.tolist()
-    for s0 in cyc.tolist():
-        if s0 in seen:
-            continue
+    for s0 in reps.tolist():
         cycle, s = [], s0
-        while s not in seen:
-            seen.add(s)
+        while True:
             cycle.append(s)
-            s = fl[s]
+            s = int(f[s])
+            if s == s0:
+                break
         out.append(cycle)
     return out
 
 
 # ---------------------------------------------------------------- rotor tests
+
+def rot_perm_array(m, n, d, dt):
+    """The permutation of the packed state space induced by rot_d."""
+    N = 1 << (n * m)
+    s = np.arange(N, dtype=dt)
+    if d % m == 0:
+        return s
+    mask = (1 << m) - 1
+    r = d % m
+    out = np.zeros(N, dtype=dt)
+    for k in range(n):
+        x = (s >> dt(k * m)) & dt(mask)
+        x = ((x << dt(r)) | (x >> dt(m - r))) & dt(mask)
+        out |= x << dt(k * m)
+    return out
+
 
 def unpack(s, m, n):
     mask = (1 << m) - 1
@@ -169,6 +213,12 @@ def used_kinds(cycle, m, n):
     return u
 
 
+def single_author(targets, n):
+    """True when every kind has at most one source: then parity == or."""
+    return all(sum(1 for k in range(n) if t in targets[k]) <= 1
+               for t in range(n))
+
+
 def census(rules_list, target_maps, ms, n, modes=("parity", "or"),
            tag="census", verbose=True, dump=True):
     rows = []
@@ -176,15 +226,16 @@ def census(rules_list, target_maps, ms, n, modes=("parity", "or"),
     ncon = 0
     for m in ms:
         N = 1 << (n * m)
+        dt = np.uint32 if n * m <= 31 else np.uint64
+        rots = [rot_perm_array(m, n, d, dt) for d in range(m)]
         for rules in rules_list:
             for targets in target_maps:
                 for mode in modes:
-                    if n == 1 and mode == "or":
-                        continue          # single author: parity == or
+                    if mode == "or" and single_author(targets, n):
+                        continue          # Single-Author: parity == or
                     ncon += 1
                     f = transition(rules, targets, m, n, mode)
-                    cyc = cyclic_states(f, N)
-                    for cycle in cycles_of(f, cyc):
+                    for cycle in rotor_cycles(f, N, m, n, rots):
                         if all(s == 0 for s in cycle):
                             continue
                         r = rotor_of_cycle(cycle, f, m, n)

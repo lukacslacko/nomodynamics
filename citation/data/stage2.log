@@ -1,1 +1,4 @@
 stage-2 residue runs: 1790842
+stage2 done in 1892.7 s
+{'CYCLE': 245656, 'BALANCED': 566863, 'GROWING': 748107, 'UNRESOLVED': 222219, 'FIXED': 7997}
+new gliders found in the residue: 0

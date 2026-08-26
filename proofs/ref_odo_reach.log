@@ -1,0 +1,32 @@
+k  card  height  width  ymin ymax
+ 0     4       2      2     0    1
+ 1     5       3      2    -1    1
+ 2     5       4      2    -2    1
+ 3     6       5      3    -3    1
+ 4     4       5      2    -3    1
+ 5     6       8      3    -6    1
+ 6     4       8      2    -6    1
+ 7     4      11      2    -9    1
+ 8     6      14      3   -12    1
+ 9     4      14      2   -12    1
+10     4      20      2   -18    1
+11     4      23      2   -21    1
+12     6      26      3   -24    1
+13     4      26      2   -24    1
+14     4      38      2   -36    1
+15     4      44      2   -42    1
+16     4      47      2   -45    1
+17     6      50      3   -48    1
+18     4      50      2   -48    1
+19     4      74      2   -72    1
+20     4      86      2   -84    1
+
+published vs measured height:
+  k=10 published  20  measured  20  MATCH
+  k=12 published  26  measured  26  MATCH
+  k=14 published  38  measured  38  MATCH
+  k=15 published  44  measured  44  MATCH
+  k=16 published  47  measured  47  MATCH
+  k=17 published  50  measured  50  MATCH
+  k=19 published  74  measured  74  MATCH
+  k=20 published  86  measured  86  MATCH

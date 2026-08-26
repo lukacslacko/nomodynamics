@@ -17,8 +17,8 @@ where kappa reads off the counter word.  The Odometer's odd half-step is the
 materialised carry buffer: the pending carries stand as real laws in column
 x = 1 for one tick and are written back on the next.
 
-Run:  python3 proofs/t2_odometer.py            (~1 min)
-      python3 proofs/t2_odometer.py --deep     (engine lockstep to t = 2^17)
+Run:  python3 proofs/t2_odometer.py            (~30 s)
+      python3 proofs/t2_odometer.py --deep     (~4 min; lockstep to t = 2^17)
 """
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -210,6 +210,82 @@ def main():
           all(1.0 < r < 1.6 for r in ratios),
           "%s  (it oscillates because the reach doubles every SECOND power)"
           % [round(r, 3) for r in ratios])
+
+    # --------- TWO machines wear the name THE ODOMETER
+    print("\ntwo compasses, two machines  [xamend2d/xa2d.py sets N=(0,+1);"
+          " root verify.py and nomos2d set N=(0,-1)]")
+    ROOTC = {"O": (0, 0), "E": (1, 0), "W": (-1, 0), "N": (0, -1), "S": (0, 1),
+             "P": (1, -1), "Q": (-1, -1), "R": (1, 1), "T": (-1, 1)}
+    XA2DC = {"O": (0, 0), "E": (1, 0), "W": (-1, 0), "N": (0, 1), "S": (0, -1),
+             "P": (1, 1), "Q": (-1, 1), "R": (1, -1), "T": (-1, -1)}
+
+    def build(Vc):
+        return Const([tuple(Vc[c] for c in "OEW"), tuple(Vc[c] for c in "NQR")],
+                     [(1,), (0, 1)], dim=2)
+
+    prof = {}
+    KM = 16
+    for nm, Vc in (("root", ROOTC), ("xa2d", XA2DC)):
+        Cn = build(Vc)
+        Xn = dict(OSEED)
+        res, cre, hei = {}, {}, {}
+        for t in range((1 << KM) + 1):
+            k = t.bit_length() - 1
+            if t and (t & (t - 1)) == 0:
+                res[k] = card(Xn)
+                ys = [c[1] for c in Xn]
+                hei[k] = max(ys) - min(ys) + 1
+            if t and ((t + 1) & t) == 0 and t.bit_length() <= KM:
+                cre[t.bit_length()] = card(Xn)
+            Xn = step(Xn, Cn)
+        prof[nm] = (res, cre, hei)
+
+    check("ROOT-compass Odometer: |S_{2^k}| = 4 for k = 1..16 (the Jubilee's twin)",
+          {prof["root"][0][k] for k in range(1, 17)} == {4},
+          "crests %s" % [prof["root"][1][k] for k in range(1, 10)])
+    check("XA2D-compass Odometer is a DIFFERENT machine and does NOT reset to 4",
+          {prof["xa2d"][0][k] for k in range(1, 17)} != {4},
+          "|S_{2^k}|, k=1..16 = %s   (not 4 at k = 1,2,3,5,8,12)"
+          % [prof["xa2d"][0][k] for k in range(1, 17)])
+    check("XA2D-compass profile reproduces xamend2d Sec.11.2's table exactly",
+          [prof["xa2d"][2][k] for k in (10, 12, 14, 16)] == [20, 26, 38, 47]
+          and [prof["xa2d"][1][k] for k in (10, 12, 14, 16)] == [57, 75, 111, 138]
+          and prof["xa2d"][0][12] == 6,
+          "heights 20,26,38,47 and crests 57,75,111,138 at k=10,12,14,16, "
+          "card 6 at t=2^12 — all as published")
+    check("ROOT-compass profile is the one XFINDINGS Sec.3 quotes",
+          [prof["root"][1][k] for k in range(1, 10)]
+          == [6, 9, 12, 18, 21, 36, 39, 72, 75])
+
+    # the two engines themselves agree; the clash is in the offset dictionary
+    try:
+        sys.path.insert(0, os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "xamend2d"))
+        import xa2d
+        import random as _rnd
+        rng = _rnd.Random(11)
+        OFFS = [(dx, dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]
+        badn = 0
+        for _ in range(400):
+            n = rng.randrange(1, 4)
+            rules = [tuple(rng.choice(OFFS) for _ in range(3)) for _ in range(n)]
+            tg = [tuple(sorted(rng.sample(range(n), rng.randrange(1, n + 1))))
+                  for _ in range(n)]
+            P = [((rng.randrange(-3, 4), rng.randrange(-3, 4)), rng.randrange(n))
+                 for _ in range(rng.randrange(1, 7))]
+            A1, A2 = state_of(P), xa2d.state(P)
+            C1, C2 = Const(rules, tg, dim=2), xa2d.Const(rules, tg)
+            for _ in range(6):
+                A1, A2 = step(A1, C1), xa2d.step(A2, C2)
+                if A1 != A2:
+                    badn += 1
+                    break
+        check("the two ENGINES agree: xnomos.step == xa2d.step on identical "
+              "constitutions", badn == 0,
+              "400 random 2-D systems x 6 steps, 0 divergences — the clash is "
+              "the compass, not the engine")
+    except ImportError:
+        check("engine cross-validation (xa2d import)", False, "xa2d not importable")
 
     print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
     return 1 if FAIL else 0
