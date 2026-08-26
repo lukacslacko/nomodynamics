@@ -4,7 +4,7 @@
 system whose only substance is laws acting on laws — and the first census,
 theorems, and fauna of the resulting universe.
 
-📄 **[The founding note (PDF)](note/nomodynamics.pdf)** · 🖥 **[Live demo](https://lukacslacko.github.io/nomodynamics/)** · MIT licensed
+📄 **[The founding note (PDF)](note/nomodynamics.pdf)** · 🖥 **[Live demo](https://lukacslacko.github.io/nomodynamics/)** · 📇 **[Index of results](THEOREMS.md)** · MIT licensed
 
 *An exactly solvable founding sector where **the eldest law cannot be repealed**;
 a second where laws amend each other and **motion is bought with out-degree**; a
@@ -234,7 +234,8 @@ here must be a blueprint-carrying packet that moves*.
 | `nomos2.py` | reference 1D engine (bitmask, 27 kinds) |
 | `glider-question/` | the free-glider expedition: `RESULTS.md` (Anchor Theorem, full proofs, hypothesis audit), sweep code, ~15.3M certified classifications in `data/` |
 | `xamend1d/` | chapter two on ℤ: the Out-Degree Law and the first gliders — 1,930 SAT decisions, ~24.7bn certified classifications, `demo.py` re-certifies every specimen |
-| `XFINDINGS.md` | chapter-two findings and the scorecard against the frozen predictions |
+| `XFINDINGS.md` | chapters two to six: findings and the scorecard against the frozen predictions |
+| `THEOREMS.md` | **index of every named result** — one line each, with sector, status and location |
 | `rings/` | nomic rings: Single-Author Lemma, Dead Letter Theorem, Sunset Parliament resonances, exact fixed-point counts, Garden-of-Eden algebra |
 | `nomos2d/` | two dimensions: ray-confinement theorem, pinwheel rotors, Pascal columns, the Jubilee Code, interaction chart, cross-amendment teaser |
 | `note/` | the founding note (LaTeX source, figures, compiled PDF) |
