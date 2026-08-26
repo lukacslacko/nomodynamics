@@ -79,7 +79,11 @@ t=2  |.XX..X|      each step the bloc hops m/2 = 3 cells: Φ(S) = rot₃(S)
   blocks it; period-2 blinker.
 * **Sunset codes** `(−1,1,0)` — blocks that dissolve from their newest end.
 * **Welds** — colliding fronts fuse into frozen code with a double-law seam.
-* **Refraction ≈ 2** — a colonizer assimilates a sunset wall at half speed.
+* **Refraction ≈ 2** — a colonizer meets a sunset wall of length `L` and clears
+  it at time exactly `max(2L, x₀+L)`: the wall erodes from its far end on its
+  own while the front stands blocked, and the front then fills the vacated
+  ground. *The front never converts the wall — it waits for the old code to
+  expire and takes the vacancy.*
 * **Conversion waves** — speed 2/3, one-way, anchored at a point defect.
 * **The Sunset Parliament** — single-kind ring codes with exact maximal periods
   15, 63, **341** at resonant circumferences `m ≡ 2 (mod 4)`: orders of
@@ -87,9 +91,12 @@ t=2  |.XX..X|      each step the bloc hops m/2 = 3 cells: Φ(S) = rot₃(S)
 * **Pinwheel rotors** — 239 certified 2D half-turn rotors.
 * **Pascal columns** — growers with `|S_t| = 2^popcount(t)`.
 * **The Jubilee Code** — a ~26-law 2D machine, aperiodic through 300,000
-  fully-hashed steps, quiescent except at `t = 2^k` when the whole code ignites
-  (~770 laws) and collapses back to a handful. A binary counter native to
-  law-space — and an attractor: 791 of 60,000 random seeds fall into its family.
+  fully-hashed steps, quiescent except on the last tick before each power of
+  two, when the whole code ignites — and at `t = 2^k` itself **exactly four laws
+  stand**, every time (16/16 exact, complete through `t < 2^17`; crest height
+  doubles every second power of two). A binary counter native to law-space, and
+  an attractor: 791 of 60,000 random seeds fall into its family.
+  Details: `nomos2d/JUBILEE-LAW.md`.
 
 2D own-kind growth obeys a **ray-confinement theorem**: each kind is pinned to
 one axis ray, so the plane never fills (measured growth exponent α ≤ 0.99).
