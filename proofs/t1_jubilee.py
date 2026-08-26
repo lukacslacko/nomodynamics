@@ -132,7 +132,7 @@ def main():
     # ---- (R)+(L) lockstep, engine vs carry rule
     T = 1 << 17 if deep else 1 << 14
     print("(R)+(L)  ray reduction and the carry rule, engine lockstep")
-    err = check_reduction(T, 700)
+    err = check_reduction(T, 1400)
     check("2-D engine == carry rule for all t < 2^%d" % (T.bit_length() - 1),
           err is None, err or "kinds 0,1 frozen; kind 2 on the ray y=1")
 

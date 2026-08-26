@@ -184,7 +184,28 @@ and the right column, |S_t| = 2t+1.
 The settled interior is precisely what impermanence erases; what survives is the
 frontier where enactment is still happening.
 
-## 8. Status and scope
+## 8. Any dimension, and genuine ring transport
+
+**Theorem (Lone Survivor, general form).** *In any dimension, under τ = 1, a
+lone law of kind (a,b,c) survives iff a = 0 and b ≠ 0, and it then translates by
+exactly **c** per step: its velocity **is** its target offset.* [established]
+
+Complete verification over all 729 single-kind laws on ℤ²: 657 die immediately,
+**64 walk with velocity exactly c**, 8 renew themselves in place (c = 0), zero
+violations. The 64 include every diagonal — and own-kind permanence forbids
+diagonal motion outright, since ray confinement pins all growth to axis rays and
+the Anchor Theorem forbids translation altogether.
+
+**Rings.** A single colonizer law circulates a ring, one cell per step, on every
+ℤ/m for m = 2…15, odd and even alike. Since min(r, m−r) = 1 ≤ p = 1, this is
+**inside the light cone**: genuine transport, not the barber pole of chapter one
+(where Φ(S) = rot_{m/2}(S) held while only two cells changed and nothing
+travelled). So there are exactly two known routes to real transport on a ring:
+
+* wrap a cross-amendment glider (out-degree ≥ 2), or
+* make the laws impermanent — where a *single* own-kind provision goes round.
+
+## 9. Status and scope
 
 Complete enumerations: all 27 single-kind laws; the 3,645-code two-law box at
 each of six lifetimes (21,870 classifications). Certificates: every glider

@@ -1,2 +1,21 @@
 orbit representatives: 237006   (box: 944784 constitutions)
   weight check: sum of orbit sizes = 944784
+stage1 done in 157.9 s
+
+-- parity (weighted runs: 45349632)
+   EXTINCT           308094   0.679%
+   FIXED           27880408  61.479%
+   BALANCED         6122364  13.500%
+   CYCLE            7489936  16.516%
+   GLIDER             13300   0.029%
+   GROWING          3136788   6.917%
+   UNRESOLVED        398742   0.879%
+
+-- or (weighted runs: 45349632)
+   EXTINCT           325646   0.718%
+   FIXED           27956342  61.646%
+   BALANCED         5786820  12.760%
+   CYCLE            7651568  16.872%
+   GLIDER             14036   0.031%
+   GROWING          3210014   7.078%
+   UNRESOLVED        405206   0.894%

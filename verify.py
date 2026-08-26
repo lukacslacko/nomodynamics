@@ -516,6 +516,40 @@ def impermanence():
           card(h[1]) == 1 and card(h[0]) == 8,
           "under permanence the same block is frozen but for its front")
 
+    # Lone Survivor in 2-D: velocity IS the target offset (all 729 kinds).
+    OFF2 = [(dx, dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]
+    Zc, walk, still, bad = (0, 0), 0, 0, 0
+    for a in OFF2:
+        for b in OFF2:
+            for c in OFF2:
+                Cx = Const([(a, b, c)], dim=2)
+                X, ages = state_of([(Zc, 0)]), None
+                X, ages = step_sunset(X, Cx, 1, ages)
+                if not (a == Zc and b != Zc):
+                    bad += bool(X)
+                    continue
+                if sorted(X) != [c]:
+                    bad += 1
+                    continue
+                walk += c != Zc
+                still += c == Zc
+    check("Lone Survivor in 2-D: a walker's velocity is its target offset",
+          bad == 0 and walk == 64 and still == 8,
+          "complete over all 729 kinds; 64 walk, 8 renew in place")
+
+    # Genuine ring transport: one law circulates, inside the light cone.
+    okm = []
+    for m in range(2, 16):
+        Cx = Const([(0, 1, 1)], modulus=m)
+        X, ages, good = state_of([(0, 0)]), None, True
+        for _ in range(m):
+            Y, ages = step_sunset(X, Cx, 1, ages)
+            good = good and set(Y) == {(c + 1) % m for c in X}
+            X = Y
+        okm.append(good)
+    check("a lone law genuinely circulates every ring, odd m included",
+          all(okm), "m = 2..15, rotation 1 per step: inside the light cone")
+
     # Conservation: out-degree 1 can never grow an impermanent code.
     rng2 = random.Random(3)
     worst = 0
