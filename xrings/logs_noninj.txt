@@ -1,1 +1,11 @@
 == run noninj ==
+  [noninj] 6561 jobs, 286.6s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/noninj.jsonl
+   m=3   consts=729    periods=[1, 2, 4] maxp=4 rotor_classes=0 balanced=540
+   m=4   consts=729    periods=[1, 2, 3, 4, 6] maxp=6 rotor_classes=2 balanced=2296
+   m=5   consts=729    periods=[1, 2, 3, 4, 6, 8] maxp=8 rotor_classes=0 balanced=8390
+   m=6   consts=729    periods=[1, 2, 3, 4, 5, 6, 7, 8, 14] maxp=14 rotor_classes=6 balanced=32800
+   m=7   consts=729    periods=[1, 2, 3, 4, 6, 8, 10, 16] maxp=16 rotor_classes=0 balanced=122738
+   m=8   consts=729    periods=[1, 2, 3, 4, 5, 6, 7, 8, 12, 14, 15, 16, 30] maxp=30 rotor_classes=10 balanced=460872
+   m=9   consts=729    periods=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 18] maxp=18 rotor_classes=0 balanced=1685538
+   m=10  consts=729    periods=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15] maxp=65 rotor_classes=14 balanced=6120850
+   m=11  consts=729    periods=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16] maxp=64 rotor_classes=0 balanced=22040612

@@ -17,9 +17,8 @@
 #include <pthread.h>
 
 #define NK 3
-#define ROWS 64
-#define PAD 1
-#define NROW (ROWS + 2 * PAD)
+#define NROW 68
+#define ORG 2          /* normalised min index (x bit and y row) */
 #define MAXSPAN 59
 #define TBITS 11
 #define TSIZE (1 << TBITS)
@@ -72,13 +71,14 @@ static int stepB(Board *B, const Univ *U, int sem, int *nact_out) {
         for (int k = 0; k < n; k++) o |= B->p[k][y];
         occ[y] = o;
     }
+    memset(act, 0, sizeof(act));
     memset(tog, 0, sizeof(uint64_t) * NK * NROW);
     for (int k = 0; k < n; k++) {
         int ax = OX[U->a[k]], ay = OY[U->a[k]];
         int bx = OX[U->b[k]], by = OY[U->b[k]];
         int cx = OX[U->c[k]], cy = OY[U->c[k]];
         int any = 0;
-        for (int y = PAD; y < NROW - PAD; y++) {
+        for (int y = 1; y < NROW - 1; y++) {
             uint64_t la = shx(occ[y + ay], ax);
             uint64_t lb = shx(occ[y + by], bx);
             uint64_t w = B->p[k][y] & la & ~lb;
@@ -86,7 +86,7 @@ static int stepB(Board *B, const Univ *U, int sem, int *nact_out) {
             if (w) { any = 1; nact += __builtin_popcountll(w); }
         }
         if (!any) continue;
-        for (int y = PAD; y < NROW - PAD; y++) {
+        for (int y = 1; y < NROW - 1; y++) {
             if (!act[y]) continue;
             uint64_t e = emx(act[y], cx);
             int yy = y + cy;
@@ -97,12 +97,9 @@ static int stepB(Board *B, const Univ *U, int sem, int *nact_out) {
         }
     }
     int changed = 0;
-    for (int k = 0; k < n; k++) {
-        for (int y = PAD; y < NROW - PAD; y++) {
+    for (int k = 0; k < n; k++)
+        for (int y = 0; y < NROW; y++)
             if (tog[k][y]) { B->p[k][y] ^= tog[k][y]; changed = 1; }
-        }
-        B->p[k][0] = 0; B->p[k][NROW - 1] = 0;
-    }
     if (nact_out) *nact_out = nact;
     return changed;
 }
@@ -121,7 +118,7 @@ static int normB(Board *B, int n, int *sx, int *sy) {
     int xmin = __builtin_ctzll(all);
     int xmax = 63 - __builtin_clzll(all);
     if (xmax - xmin > MAXSPAN || ymax - ymin > MAXSPAN) return -1;
-    int dy = 1 - ymin, dx = 1 - xmin;
+    int dy = ORG - ymin, dx = ORG - xmin;
     *sx = -dx; *sy = -dy;                    /* anchor moved by (-dx,-dy) */
     if (dx || dy) {
         for (int k = 0; k < n; k++) {
@@ -141,7 +138,7 @@ static int normB(Board *B, int n, int *sx, int *sy) {
 static uint64_t hashB(const Board *B, int n) {
     uint64_t h = 1469598103934665603ULL;
     for (int k = 0; k < n; k++)
-        for (int y = PAD; y < NROW - PAD; y++) {
+        for (int y = 0; y < NROW; y++) {
             h ^= B->p[k][y];
             h *= 1099511628211ULL;
         }
@@ -157,7 +154,7 @@ static void run(const Univ *U, const int *seed, int nseed, int sem,
     for (int i = 0; i < nseed; i++) {
         int x = seed[3 * i], y = seed[3 * i + 1], k = seed[3 * i + 2];
         if (k >= U->n) continue;
-        B.p[k][y + 8 + PAD] |= 1ULL << (x + 8);
+        B.p[k][y + 20] |= 1ULL << (x + 20);
     }
     Ent tab[TSIZE];
     memset(tab, 0, sizeof(tab));
