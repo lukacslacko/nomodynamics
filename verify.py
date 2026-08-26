@@ -341,10 +341,11 @@ def chapter2():
     # --- two dimensions (expedition X-B) --------------------------------
     V = {"O": (0, 0), "E": (1, 0), "W": (-1, 0), "N": (0, -1), "S": (0, 1),
          "P": (1, -1), "Q": (-1, -1), "R": (1, 1), "T": (-1, 1)}
-    r = lambda s: tuple(V[ch] for ch in s)          # noqa: E731
+    def off(s):
+        return tuple(V[ch] for ch in s)
 
     # LAND GRANT: one law, and the plane fills — |S_t| = (t+1)^2 exactly.
-    C = Const([r("OPP"), r("OEE"), r("ONN")], [(0, 1, 2), (1,), (2,)], dim=2)
+    C = Const([off("OPP"), off("OEE"), off("ONN")], [(0, 1, 2), (1,), (2,)], dim=2)
     S = state_of([((0, 0), 0)])
     sizes, X = [], dict(S)
     for _ in range(10):
@@ -366,7 +367,7 @@ def chapter2():
           "in-degree 0 is the pump the Anchor Theorem could not have")
 
     # THE ODOMETER: the second binary counter, also resetting to four laws.
-    C = Const([r("OEW"), r("NQR")], [(1,), (0, 1)], dim=2)
+    C = Const([off("OEW"), off("NQR")], [(1,), (0, 1)], dim=2)
     S = state_of([((0, 0), 0), ((1, 0), 0), ((0, 1), 1)])
     z, X = [], dict(S)
     for _ in range(1 << 12):
@@ -377,7 +378,7 @@ def chapter2():
           "crests %s" % [z[(1 << k) - 1] for k in range(3, 9)])
 
     # PERPETUAL SESSION: a large balanced code, every law active.
-    C = Const([r("OEO"), r("OEO")], [(0,), (0,)], dim=2)
+    C = Const([off("OEO"), off("OEO")], [(0,), (0,)], dim=2)
     S = state_of([((0, y), k) for y in range(20) for k in (0, 1)])
     check("PERPETUAL SESSION: 40 laws, all 40 active, fixed forever",
           verify_balanced(S, C) and len(active_laws(S, C)) == 40
@@ -385,7 +386,7 @@ def chapter2():
           "balance needs in-degree 2 and parity; OR breaks it")
 
     # Collision algebra: even gap passes through, odd gap freezes.
-    C = Const([r("OEO"), r("OEE"), r("OWO"), r("OWW")],
+    C = Const([off("OEO"), off("OEE"), off("OWO"), off("OWW")],
               [(0, 1), (0, 1), (2, 3), (2, 3)], dim=2)
     verdict = []
     for gap in (6, 7, 8, 9):
@@ -406,20 +407,20 @@ def chapter2():
 
     C = Const([(0, -1, 1), (0, 1, -1), (-1, 1, 0)], targets=[2, 0, 1])
     S = state_of([(-2, 2), (2, 0), (2, 2), (3, 0), (3, 1)])
-    r = classify(S, C, max_steps=200)
+    res = classify(S, C, max_steps=200)
     check("CRY-1: a period-3 cycle at constant occupancy",
-          r["kind"] == CYCLE and r["period"] == 3,
+          res["kind"] == CYCLE and res["period"] == 3,
           "own-kind linearity would force a power of two")
 
     C = Const([(0, -1, 1)])
     S = state_of([(0, 0), (2, 0), (4, 0), (6, 0)])
-    r = classify(S, C, max_steps=200)
+    res = classify(S, C, max_steps=200)
     check("OWN-8: an own-kind period-8 oscillator",
-          r["kind"] == CYCLE and r["period"] == 8,
+          res["kind"] == CYCLE and res["period"] == 8,
           "refutes the census remark that random cycles carry only p = 2, 4")
 
     # Subluminal motion: a parity glider at speed 1/6.
-    C = Const([r("ONO"), r("OEW"), r("WTE")], [(0, 1), (0, 2), (0,)], dim=2)
+    C = Const([off("ONO"), off("OEW"), off("WTE")], [(0, 1), (0, 2), (0,)], dim=2)
     S = state_of([((0, 0), 0), ((0, 0), 1)])
     check("a subluminal glider: speed 1/6", verify_glider(S, C, 6, (-1, 0)),
           "the speed spectrum is not just 1 and 1/2")

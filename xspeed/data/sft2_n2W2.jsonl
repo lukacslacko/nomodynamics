@@ -1,0 +1,6 @@
+{"n": 2, "W": 2, "p": 1, "d": 1, "mode": "parity", "verdict": "GLIDER", "caps": 0, "secs": 1.2, "chans": [[-2, -1, 2], [0, 2, -1]], "cells": [0, 1, 2, 4, 5], "verified": true}
+{"n": 2, "W": 2, "p": 1, "d": 1, "mode": "or", "verdict": "GLIDER", "caps": 0, "secs": 1.1, "chans": [[-2, -1, 2], [0, 2, -1]], "cells": [0, 1, 2, 4, 5], "verified": true}
+{"n": 2, "W": 2, "p": 1, "d": 2, "mode": "parity", "verdict": "GLIDER", "caps": 0, "secs": 0.6, "chans": [[-2, -1, -2], [-2, -1, 2]], "cells": [0, 2], "verified": true}
+{"n": 2, "W": 2, "p": 1, "d": 2, "mode": "or", "verdict": "GLIDER", "caps": 0, "secs": 0.7, "chans": [[-2, -1, -2], [-2, -1, 2]], "cells": [0, 2], "verified": true}
+{"n": 2, "W": 2, "p": 2, "d": 1, "mode": "parity", "verdict": "GLIDER", "caps": 0, "secs": 9.1, "chans": [[-2, -1, -2], [0, -2, 1]], "cells": [0, 2], "verified": true}
+{"n": 2, "W": 2, "p": 2, "d": 1, "mode": "or", "verdict": "GLIDER", "caps": 0, "secs": 9.6, "chans": [[-2, -1, -2], [0, -2, 1]], "cells": [0, 2], "verified": true}

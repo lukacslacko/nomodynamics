@@ -12,3 +12,4 @@ p=3 d=2 or     NONE    caps=0 9s
 p=3 d=3 parity GLIDER  caps=0 11s [[-1, 0, -1], [-1, 0, -1], [-1, 1, -1], [-1, 1, 1]]
 p=3 d=3 or     GLIDER  caps=0 12s [[-1, 0, -1], [-1, 0, -1], [-1, 1, -1], [-1, 1, 1]]
 p=4 d=1 parity GLIDER  caps=0 35s [[-1, 1, 1], [0, 1, -1], [1, -1, 0], [1, -1, 1]]
+p=4 d=1 or     NONE    caps=0 37s 

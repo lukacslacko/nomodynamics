@@ -6,3 +6,10 @@ where 1+zeta is a unit of ODD order dividing 2^d-1.
   L=4 -> only 2-powers.  L=5 -> F16, orders dividing 15.
   L=6 -> odd part 3 -> order 3.
 
+  L=4 (odd part 1)  m in [3, 4], 400 random constitutions per m: q(M) = [1, 2, 4, 8]
+        odd q(M) values: none but 1
+  L=5 (odd part 5)  m in [3], 400 random constitutions per m: q(M) = [1, 2, 4, 8, 15]
+        odd q(M) values: [1, 15]
+        q=15  first at m=3 [(0, -1, -1), (1, -1, 0), (1, -1, 0), (1, -1, -1), (-1, 1, -1)] O=001
+  L=6 (odd part 3)  m in [3], 250 random constitutions per m: q(M) = [1, 2, 4, 8]
+        odd q(M) values: none but 1

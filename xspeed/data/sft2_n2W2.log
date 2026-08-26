@@ -1,0 +1,7 @@
+n=2 W=2: 5050 constitutions
+p=1 d=1 parity GLIDER  caps=0 1s [[-2, -1, 2], [0, 2, -1]]
+p=1 d=1 or     GLIDER  caps=0 1s [[-2, -1, 2], [0, 2, -1]]
+p=1 d=2 parity GLIDER  caps=0 1s [[-2, -1, -2], [-2, -1, 2]]
+p=1 d=2 or     GLIDER  caps=0 1s [[-2, -1, -2], [-2, -1, 2]]
+p=2 d=1 parity GLIDER  caps=0 9s [[-2, -1, -2], [0, -2, 1]]
+p=2 d=1 or     GLIDER  caps=0 10s [[-2, -1, -2], [0, -2, 1]]
