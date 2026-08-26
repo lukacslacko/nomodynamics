@@ -10,6 +10,7 @@ reader can confirm the note's claims without reading any of it.
 """
 from __future__ import annotations
 
+import os
 import random
 import sys
 
@@ -479,6 +480,54 @@ def chapter2():
           "the speed spectrum is not just 1 and 1/2")
 
 
+def impermanence():
+    """Chapter four: laws that lapse unless re-enacted (sunset/RESULTS.md)."""
+    print("\nimpermanence (sunset-by-default)")
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                    "sunset"))
+    from sunset import (classify_sunset, verify_glider_sunset, run,
+                        spacetime_sunset, step_sunset, GLIDER as SGLIDER,
+                        FIXED as SFIXED, EXTINCT as SEXTINCT)
+
+    # The walking clause: chapter one's colonizer becomes a glider.
+    C = Const([(0, 1, 1)])
+    S = state_of([(0, 0)])
+    r = classify_sunset(S, C)
+    check("the colonizer WALKS under impermanence",
+          r["kind"] == SGLIDER and r["displacement"] == 1
+          and verify_glider_sunset(S, C, 1, 1)
+          and spacetime_sunset(S, C, 3, 0, 4) == ["A....", ".A...", "..A..",
+                                                  "...A."],
+          "the Anchor Theorem's hypothesis is permanence")
+
+    # Lone Survivor: exactly the 6 kinds with a = 0, b != 0 survive.
+    surv = [(a, b, c) for a, b, c in RULES1
+            if classify_sunset(state_of([(0, 0)]), Const([(a, b, c)]))["kind"]
+            != SEXTINCT]
+    check("Lone Survivor: a lone law lives iff a = 0 and b != 0",
+          sorted(surv) == sorted([(0, b, c) for b in (-1, 1)
+                                  for c in (-1, 0, 1)]),
+          "%d of 27 kinds; 4 walk, 2 renew themselves in place" % len(surv))
+
+    # Gridlock's mirror: a solid block evaporates to its surface.
+    S = state_of([(i, 0) for i in range(8)])
+    h = run(S, C, 1)
+    check("Gridlock's mirror: a solid block evaporates in one step",
+          card(h[1]) == 1 and card(h[0]) == 8,
+          "under permanence the same block is frozen but for its front")
+
+    # The Longevity Law: one code, speed exactly 2/(tau+1).
+    C = Const([(0, 1, -1), (0, -1, -1)])
+    S = state_of([(0, 0), (2, 1)])
+    obs, want = [], []
+    for tau in range(1, 13):
+        r = classify_sunset(S, C, tau=tau, max_steps=400)
+        obs.append((abs(r.get("displacement", 0)), r["period"]))
+        want.append((2, tau + 1) if tau > 1 else (1, 1))
+    check("the Longevity Law: the same packet moves at speed 2/(tau+1)",
+          obs == want, "tau = 1..12, displacement fixed at 2, period = tau+1")
+
+
 def main():
     print("nomodynamics — verification battery")
     chapter1_fauna()
@@ -486,6 +535,7 @@ def main():
     chapter1_rings()
     chapter1_jubilee()
     chapter2()
+    impermanence()
     print("\n%d checks passed, %d failed" % (len(PASS), len(FAIL)))
     if FAIL:
         print("failed: " + ", ".join(FAIL))
