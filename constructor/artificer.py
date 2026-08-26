@@ -145,7 +145,7 @@ def build(dirs=("u", "d"), cite_symbols=True):
     n = len(K)
     NIL = K["NIL"]
     rules = [(O, O, O)] * n
-    targets = [(0,) for _ in range(n)]
+    targets = [(k,) for k in range(n)]   # default: own kind (never fires anyway)
     guards = [(NIL, NIL)] * n           # default: never active (cites the phantom)
 
     def law(name, a, b, c, g, h, tgt):
