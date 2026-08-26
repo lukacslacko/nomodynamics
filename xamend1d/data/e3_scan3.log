@@ -1,0 +1,17 @@
+T=[(1, 2), (0, 2), (0, 1)] parity : 4 (p,d) classes, max minimal period 3
+T=[(1, 2), (0, 2), (0, 1)] or     : 2 (p,d) classes, max minimal period 2
+T=[(1, 2), (0,), (0,)] parity : 8 (p,d) classes, max minimal period 5
+T=[(1, 2), (0,), (0,)] or     : 8 (p,d) classes, max minimal period 5
+T=[(0, 1, 2), (0, 1, 2), (0, 1, 2)] or     : 6 (p,d) classes, max minimal period 2
+T=[(0, 1, 2), (0, 1, 2), (0, 1, 2)] parity : 6 (p,d) classes, max minimal period 2
+T=[(0, 1, 2), (0,), (0,)] parity : 8 (p,d) classes, max minimal period 4
+T=[(0, 1), (2,), (0, 1, 2)] parity : 12 (p,d) classes, max minimal period 4
+T=[(0, 1), (2,), (0, 1, 2)] or     : 8 (p,d) classes, max minimal period 5
+T=[(0, 1, 2), (0,), (0,)] or     : 10 (p,d) classes, max minimal period 6
+T=[(0, 2), (0, 2), (0, 1, 2)] parity : 14 (p,d) classes, max minimal period 9
+T=[(0, 2), (0, 2), (0, 1, 2)] or     : 12 (p,d) classes, max minimal period 6
+T=[(0, 1), (0, 1), (0, 1, 2)] parity : 2 (p,d) classes, max minimal period 1
+T=[(0, 1), (0, 1), (0, 1, 2)] or     : 2 (p,d) classes, max minimal period 1
+T=[(1, 2), (0, 1), (0, 2)] parity : 12 (p,d) classes, max minimal period 7
+T=[(1, 2), (0, 1), (0, 2)] or     : 6 (p,d) classes, max minimal period 3
+DONE

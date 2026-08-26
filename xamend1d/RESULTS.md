@@ -564,8 +564,26 @@ kinds, `2` at three kinds, and then **vanishes at four**, where every coprime
 `(p,d)` tested is realisable. The honest statement:
 
 > **Fact (complete SAT decision, `W = 1`).** `n = 2` realises only speed 1;
-> `n = 3` realises exactly the coprime `(p,d)` with `|d| ≤ 2` (`p ≤ 8`);
-> `n ≥ 4` realises every coprime `(p,d)` tested (`p ≤ 7`).
+> `n = 3` realises exactly the speeds whose lowest-terms **numerator is ≤ 2**
+> (`p ≤ 8`); `n ≥ 4` realises every coprime `(p,d)` tested (`p ≤ 7`).
+
+**What is capped is the numerator of the reduced speed, not the displacement
+per minimal period.** These come apart, because a glider's minimal period need
+not be coprime to its displacement. Certified counter-instance at `n = 3`
+(found by the sub-expedition, re-verified here — `verify_glider(6,3)` = True
+under OR, and no smaller `(p,d)` works, so 6 really is the minimal period):
+
+```
+rules [(0,−1,1), (0,−1,0), (0,1,−1)]   T = [{0,1,2}, {1}, {0,2}]
+seed  {(1,0),(1,2),(2,1),(3,0),(3,2),(4,0),(4,2),(6,0),(6,1),(6,2)}
+minimal period 6, displacement +3   ->   gcd = 3, so the SPEED is 3/6 = 1/2
+```
+
+Its displacement per minimal period is 3, exceeding the `n = 3` cap of 2 — but
+its speed, `1/2`, was already realisable at `n = 3` (DRIFTER-1/2, §4.3), so it
+adds no new speed and the Fact above is untouched. It is also **a third
+parity/OR split**: on that same constitution and seed, parity gives GROWING
+where OR gives a glider (compare §4.4 and §9.4).
 
 The trivial bound is `|d|/p ≤ W`; Theorem 1 sharpens it to the maximum cycle
 mean of `D[C]`. **Neither involves the number of kinds at all.** Why two and
@@ -1270,8 +1288,9 @@ truncated one (§9.5).
 1. **The displacement cap, and why it vanishes at four kinds.** At `W = 1`
    the realisable displacements are: `|d| = 1` only at `n = 2`; `|d| ≤ 2` at
    `n = 3` (exactly — every coprime `(p,d)` with `|d| ≥ 3` is UNSAT to
-   `p ≤ 8`, while `2/3, 2/5, 2/7` all exist); and **at `n = 4` every coprime
-   `(p,d)` tested is realisable**, up to `6/7`. I conjectured `|d| ≤ (n−1)W`
+   `p ≤ 8`, while `2/3, 2/5, 2/7` all exist — and the cap is on the *reduced*
+   numerator, since a minimal-period-6 `d = 3` glider exists there under OR);
+   and **at `n = 4` every coprime `(p,d)` tested is realisable**, up to `6/7`. I conjectured `|d| ≤ (n−1)W`
    and refuted it myself at `n = 4` (§4.6). Neither the trivial bound
    `|d|/p ≤ W` nor Theorem 1's cycle-mean bound involves the number of kinds
    at all, so the `n = 2, 3` caps ask for a genuinely new invariant —

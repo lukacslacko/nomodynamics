@@ -36,8 +36,14 @@ and on the integer line \emph{the eldest law cannot be repealed}, which makes
 free-moving law-packets impossible---while on circular codes, which have no
 eldest law, moving packets provably exist. The solvable sector exhibits a small
 charismatic fauna (colonizers, sunset clauses, welds, refraction, rotating
-packets, and an aperiodic avalanche machine locked to powers of two), and its
-unique escape hatch---laws amending \emph{other} laws---is located by theorem.
+packets, and an aperiodic avalanche machine locked to powers of two). Letting
+laws amend \emph{other} laws then settles what motion costs: a tropical
+monovariant shows that a constitution in which every law amends a single
+kind---anyone's kind---is motionless in every dimension, window and resolution,
+while two targets suffice, and the smallest traveller is one placed law. The
+same generalization splits the stability theorem by resolution convention and
+produces \emph{balanced constitutions}: codes perpetually active and perfectly
+unchanging.
 \end{abstract}
 
 \section{The vacancy}
@@ -166,21 +172,99 @@ brute-force verified), a predecessor algebra with Garden-of-Eden fraction
 peaking $\approx33\%$ at mid-density, and a unique minimal taut architecture
 (the two-law \emph{mutual-veto} pair).
 
+\section{Cross-amendment: what motion costs}
+Own-kind amendment is the tame simplification; real statutes amend other
+statutes. Generalize minimally: a \emph{constitution} is a finite kind set $K$,
+each $k\in K$ carrying a rule $(a_k,b_k,c_k)$ and a \emph{target set}
+$T_k\subseteq K$; an active law of kind $k$ at $i$ toggles every kind of $T_k$
+at $i+c_k$. Own-kind is $T_k=\{k\}$. Nothing external is added: out-degree~1
+makes the amendment digraph a functional graph, so a kind is a pointed finite
+graph with a triple at each node---\emph{``I am $(a,b,c)$, and I amend the law
+that is $(a',b',c')$ and amends\dots''}---and own-kind laws are exactly the
+self-loops. The law is still the only substance.
+
+The expectation was that cross-kind targeting is the escape from the Anchor
+Theorem. It is not.
+\begin{theorem}[Out-Degree Law]
+If, restricted to the kinds a pattern uses, every law amends \emph{at most one}
+kind, no free glider exists---any offsets, any window, any dimension, parity or
+OR. This contains the Anchor Theorem (self-loops), reciprocal amendment, and
+every permutation constitution of every cycle length.
+\end{theorem}
+The proof is a tropical monovariant: with weights $w$ satisfying
+$w_k-c_k\le w_{t(k)}$, the quantity $\Psi=\min_t(\alpha_t+w_t)$ over the kinds'
+trailing edges can rise only through a tight cycle of weight~$0$. The same
+argument bounds speed.
+\begin{theorem}[Tropical Speed Law]
+For a glider of period $p$ and displacement $d$,
+$p\min(\lambda_{\min},0)\le d\le p\max(\lambda_{\max},0)$, where
+$\lambda_{\min},\lambda_{\max}$ are the extreme cycle means of the amendment
+digraph (edge $k\to m$ of weight $c_k$ for each $m\in T_k$). If every cycle has
+weight zero, or the digraph is acyclic, nothing moves.
+\end{theorem}
+\begin{theorem}[Supersession no-go]
+State-dependent \emph{supersession} targeting---enact your own kind on empty
+ground, clear the whole cell if occupied---admits no free glider in any
+dimension: its creation channel is still own-kind, so every present kind must
+push forward, and then nothing can clear the rearmost cell.
+\end{theorem}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig4_gliders.pdf}
+\caption{The first free gliders of nomodynamics (time downward).
+\emph{SOLO}: one placed law travelling forever at speed $\frac12$ under a
+fully-cross constitution. \emph{TANDEM-1}: two laws in a \emph{single} cell,
+period~1, speed~1---the maximum; it lifts to $\mathbb{Z}^2$ at any velocity,
+knight moves included, and revolves on every ring $m\ge3$, where own-kind
+rotors need even $m\ge6$. \emph{TRIPTYCH}: a glider under parity that under OR
+does not travel at all but detonates into a lattice growing by three laws per
+step.}
+\label{fig:gliders}
+\end{figure}
+\emph{The threshold is exact}: out-degree $2$ suffices and the specimens are
+tiny (Fig.~\ref{fig:gliders}). The cleanest evidence is a controlled
+experiment---identical guards, offsets and cell-clearing, varying only the
+creation out-degree---giving $0$ gliders in $1{,}119{,}744$ complete
+classifications at out-degree~$1$ and $1{,}744$ at out-degree~$2$. So
+\emph{cross-amendment was never the obstruction: narrowness was.} A law that
+amends one provision, even somebody else's, cannot move; a law that amends two
+can. Entrenchment, in chapter one a consequence of linear order, is equally a
+consequence of legislative narrowness.
+
+Multi-authorship also revives the resolution axis that the Single-Author Lemma
+had made vacuous, and it kills the Dead Letter Theorem in exactly one
+convention.
+\begin{theorem}[Balance]
+Under parity, two active laws whose enactments cancel leave a code fixed
+forever while remaining alive---a \emph{balanced constitution}; the minimal
+witness is two placed laws. Under OR no such code exists at any size: a fixed
+point still requires every law blocked, and Dead Letter survives verbatim.
+\end{theorem}
+\noindent A constitution can be perpetually active and perfectly unchanging---
+but only where simultaneous contradictory amendments annul one another instead
+of both taking effect.
+
 \section{The frontier, located by theorem}
-Everything above holds because laws amend only their own kind---the tame
-simplification. Real law amends \emph{other} law, and by the Single Author
-Lemma, \emph{cross-amendment} (effects that target other kinds) is precisely
-the escape from the solvable sector: multi-author targets break both the
-anchor and the linearity. First probes confirm the door is real: parity and
-OR semantics genuinely diverge there, and diagonal motion---impossible under
-ray confinement---unlocks in 2D. Open problems: (1)~does cross-amendment
-admit free gliders on $\mathbb{Z}$, or does a deeper no-go extend?
-(2)~is any small cross-amendment universe computation-universal?
-(3)~classify ring-rotor families (which $m$, which hop groups);
-(4)~the Jubilee attractor's basin: why do $>1\%$ of random seeds fall in?
-(5)~the reception question the founding practice suggests: which theorems of
-own-kind nomodynamics survive into semantics faithful to actual amendment
-procedures (supersession, entrenchment clauses, quorum guards)?
+The theorems above are cheap to state and were found within two days of the
+definition, which is the usual sign that a territory has been entered rather
+than exhausted. Open problems, in the order we would attack them.
+(1)~\emph{Displacement quantisation.} At $W=1$ two kinds realize only $|d|=1$,
+three kinds exactly $|d|\le2$ (speeds $2/3$, $2/5$, $2/7$ exist; everything
+faster is decided impossible up to $p\le8$), and four kinds realize every
+coprime $(p,d)$ tested. Neither the trivial bound $|d|/p\le W$ nor the Tropical
+Speed Law mentions the number of kinds: what invariant does?
+(2)~Is any small cross-amendment universe computation-universal? The gate-level
+inventory---what reflects, what annihilates, what survives collision---comes
+first; the claim comes much later, if at all.
+(3)~Classify ring-rotor families (which $m$, which hop groups) and the period
+spectrum: own-kind periods are locked to powers of two by linearity, and
+multi-authorship should break that lock.
+(4)~Prove the Jubilee clock law---$|S_t|=4$ at \emph{every} power of two,
+crest at $2^k-1$ doubling every second power---and explain its basin: $791$ of
+$60{,}000$ random seeds fall into this one attractor.
+(5)~The reception question the founding practice suggests: which theorems
+survive into semantics faithful to actual amendment procedure---entrenchment
+clauses, quorum guards, later-law-wins, sunset by default?
 
 \vspace{4pt}
 \noindent\textbf{Methods.} Definition and predictions were frozen before the
