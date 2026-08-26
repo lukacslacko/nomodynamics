@@ -16,3 +16,7 @@ jobs:
         run: |
           python3 demo/gen_vectors.py > /tmp/xn_vectors.json
           node demo/xengine.test.js
+      - name: demo inlined engine is verbatim
+        run: python3 check_inline.py
+      - name: demo runs headless without hanging
+        run: node demo/headless_test.js 3000

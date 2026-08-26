@@ -77,8 +77,10 @@ is fixed iff every law in it is blocked. Under cross-amendment it fails.
 > code *fixed forever while remaining alive*. Minimal witness, 2 placed laws:
 > kinds 0:(0,1,1)→2, 1:(0,−1,−1)→2, 2:(0,1,0)→2 with kind 0 at cell 0 and kind 1
 > at cell 2. Both laws are active at every step; their enactments of kind 2 at
-> cell 1 annihilate. Under **OR** the same seed ignites, and Dead Letter
-> survives verbatim: balance is a parity-only phenomenon.
+> cell 1 annihilate. Under **OR** the enactment passes at t = 1 — and the new
+> provision, standing between them, blocks both of its own authors: the code
+> becomes a genuine dead letter (fixed, zero active laws). Dead Letter survives
+> OR verbatim; balance is a parity-only phenomenon.
 
 *A constitution can be perpetually active and perfectly unchanging — but only if
 contradictory simultaneous amendments cancel rather than both taking effect.*

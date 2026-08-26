@@ -10,7 +10,7 @@ bounding-box fill → 1** (the plane genuinely fills) and **the first free glide
 of nomodynamics** — plus a gun, a rake, and a collision algebra. In-degree ≥ 2
 is what breaks single-authorship: it is the exact condition for *balanced
 constitutions* (which exist only under parity — never under OR, proved and
-confirmed on 28.7 M runs) and it is *not* needed for non-2-adic periods, which
+confirmed on 81.4 M OR runs) and it is *not* needed for non-2-adic periods, which
 turn out to exist even in pure own-kind 2-D once diagonal offsets are allowed.
 
 ---
@@ -22,10 +22,10 @@ turn out to exist even in pure own-kind 2-D once diagonal offsets are allowed.
 | 1 | **α = 2 achieved.** `OPP>ABC OEE>B ONN>C` from ONE law fills a solid square: \|S_t\| = (t+1)² exactly, cell support = {(0,0)} ∪ [1,t]², **bounding-box fill → 1**. | proved + certified to t = 200 on an independent engine |
 | 2 | **Generalised Ray-Confinement Theorem.** Every *single-target* constitution (own-kind, relay cross-amendment, supersession) confines its support to a fixed finite union of **parallel rays** of direction V = the cycle sum ⟹ α ≤ 1 in every dimension; V = 0 ⟹ bounded ⟹ eventually periodic. | proved (Thm 3 / Cor 3.1) |
 | 3 | **THE WRIT OF REMOVAL** — `OEO>AB OEE>AB`, seed A+B at one cell: a **2-law free glider**, Φ(S) = σ^(1,0)(S). The first glider in nomodynamics, in *any* dimension. Diagonal variants Φ(S) = σ^(±1,±1)(S) exist — a direction own-kind 2-D provably cannot take. | certified over 5 periods on `xnomos.py` |
-| 4 | **Potential-Anchor Theorem.** No glider exists whenever some u has ⟨d,u⟩ > 0 and ⟨V_Z,u⟩ > 0 for every reachable amendment cycle Z. Corollary: **single-target ⟹ no gliders, any dimension, parity/OR/supersession.** Machine-checked: of 4,782,969 complete 2-kind Moore universes, **0 single-target gliders**; all 8,769 certified gliders possess a **null amendment cycle** (V_Z = 0) — exactly the escape hatch the proof leaves open. | proved + complete enumeration |
+| 4 | **Potential-Anchor Theorem.** No glider exists whenever some u has ⟨d,u⟩ > 0 and ⟨V_Z,u⟩ > 0 for every reachable amendment cycle Z. Corollary: **single-target ⟹ no gliders, any dimension, parity/OR/supersession.** Machine-checked: **0 single-target gliders** anywhere in 199.5 M runs; of the 8,769 two-kind gliders, 100 % possess a **null amendment cycle** (V_Z = 0), and in the 3-kind sample the other permitted hatch — **opposed cycle sums** — accounts for the remaining 4. No glider anywhere admits a separating u. | proved + complete enumeration |
 | 5 | **A GUN and a RAKE.** `OEO>AB OEE>AB OEO>AB` from one pump law emits a Writ every 2 steps, forever. Adding a north-walking pump gives a rake: one glider dropped per step, \|S_t\| = 2t+2. | certified |
 | 6 | **Collision algebra of writs.** Head-on: **even gap ⟹ mutual transparency** (they occupy one cell and pass through); **odd gap ⟹ mutual arrest** into a frozen 4-law block. A single inert law stops a writ dead. | complete gap sweep 1–14, certified |
-| 7 | **Balance ⟺ two authors, and only under parity.** Φ(S) = S with an active law requires in-degree ≥ 2 *and* parity. Complete OR census: **0 balanced runs in 28,697,814**. Balanced codes are unbounded in size and can be **100 % active**: a column of n doubly-occupied cells under `OEO>A OEO>A` is fixed forever with all 2n laws active. | proved + z3-maximal witnesses |
+| 7 | **Balance ⟺ two authors, and only under parity.** Φ(S) = S with an active law requires in-degree ≥ 2 *and* parity. OR censuses: **0 balanced runs in 81,400,939**. Balanced codes are unbounded in size and can be **100 % active**: a column of n doubly-occupied cells under `OEO>A OEO>A` is fixed forever with all 2n laws active. | proved + z3-maximal witnesses |
 | 8 | **The 2-adic period conjecture of own-kind nomodynamics is false.** Period 3 occurs in *pure own-kind* 2-D (`EQN>A TQS>B`, 3 laws) as soon as diagonal offsets are admitted. The full sector's period spectrum includes 3, 5, 6, 7, 10, 12, 14, 18, 20, 21, 24, 28, 30, 36, 40, 48, 56, 72, 96, 112, 192. | certified specimens |
 | 9 | **THE ODOMETER** — `OEW>B NQR>AB`, three laws: a width-2 column that **counts in binary**. Card collapses to **four laws** at every t = 2^k and avalanches at t = 2^k − 1; reach ≈ 0.20 (log₂ t)², = 86 cells at t = 2²⁰. Bounded card, unbounded reach ⟹ aperiodic. The slowest clock in the fauna (the Jubilee code's reach is ≈ 1.5√t). | no recurrence in 300,000 hashed steps; 179 survivors of a 3-stage escalation |
 | 10 | **Supersession is inert.** Complete 2-kind Moore + 3-kind sample under supersession, 36.7 M runs: **0 gliders**, in every class — as Cor. 4.2 requires. Its class-0 and class-1 tallies are identical entry by entry, because the semantics ignores the target map altogether. | complete enumeration |
@@ -514,10 +514,17 @@ Named specimens (all certified in `verify.py`):
   three cells and collapses back. Under parity the same universe has no glider
   at all: the toggle OR keeps is exactly the one parity cancels.
 
-**Luminality.** Every parity glider found travels at exactly speed 1 (the
-offsets bound the speed by 1, so these are *luminal*). Subluminal gliders exist
-only under OR, and only at speed 1/2. Whether a subluminal parity glider exists
-is open (§11).
+The **von Neumann** complete census with the richer 255-code seed family
+(35,859,375 runs per semantics) gives the same verdict from a different
+direction: 4,984 parity gliders and 10,944 OR gliders, **all class 2**, with
+cards up to 12 and periods up to 8 — and, since von Neumann offsets have no
+diagonals, all displacements axis-aligned.
+
+**Luminality.** In the **two-kind** sector every one of the 7,788 certified
+parity gliders travels at exactly speed 1 — |d|_∞ = p — while OR admits speed
+1/2. That is a property of the small sector, not of the theory: three kinds
+produce parity gliders at speeds 1/2, 2/5, 1/3, 1/4 and **1/6** (§8b). Whether
+a *two-kind* subluminal parity glider exists is open (§12, Q1).
 
 ### 6.3 THE ASSIZE — a glider gun
 

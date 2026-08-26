@@ -200,9 +200,11 @@ periods {3,5,7,9,13,15,21,23,31,65}.
 **New resonance family.** Own-kind resonances are Mersenne-flavoured
 (15 = 2⁴−1 at m=10, 63 = 2⁶−1 at m=18, 341 = (2¹⁰−1)/3 at m=22, always at
 m ≡ 2 mod 4). The 3-cycle class at m=6 produces **27, 45, 81** — powers of 3 —
-from four laws. 81 = 3⁴ is *not* the order of any element of GL(18,2) whose
-semisimple part alone could carry it… but it is 3 × 27, and 27 is: the period
-factorises through an occupancy loop, exactly as §2.3 says.
+from four laws. And 81 = 3⁴ cannot come from the linear layer at all: a
+semisimple element of GL(18,2) has order dividing lcm{2^d − 1 : d ≤ 18}, whose
+3-part is only 3³ = 27, and unipotent parts contribute only powers of 2. So the
+81-cycle is *forced* to be an occupancy phenomenon — which is exactly what §2.3
+measures (its occupancy word has period 81 on the nose).
 
 ### 2.3 Where the periods come from — mechanism, proved and measured
 
@@ -224,10 +226,13 @@ period a power of 2. Complete check: over all 27 kinds and m ≤ 9 the only
 constant-occupancy period is **1**; over all 144 live two-kind own-kind
 constitutions, m ≤ 7, the only ones are **{1,2}**.
 
-**Theorem 2.2 (cross-amendment: block-cyclic, still nilpotent).** *For an
+**Theorem 2.2 (cross-amendment is block-cyclic).** *(proved)* *For an
 L-cycle permutation constitution the frozen-occupancy step is I+N with N
-block-cyclic: (NX)_{k+1} = σ^{c_k}(g_k · X_k). Then N^L is block-diagonal with
-k-th block σ^s ∘ diag(mask), s = Σ_{cycle} c_k.* Measured: over **217,728
+block-cyclic: (NX)_{k+1} = σ^{c_k}(g_k · X_k), and N^L is block-diagonal with
+k-th block σ^s ∘ diag(mask), s = Σ_{cycle} c_k.* This is where the
+pre-registration expected unipotency to fail — a nonzero mask on a σ^s block
+would give the operator an element of order m/gcd(s,m). It does not fail.
+*(measured, not proved)*: over **217,728
 (constitution, m, occupancy) triples** (m ≤ 8, all 144 live two-kind rule
 pairs, all three target classes) N is **always nilpotent** — so single steps are
 unipotent under cross-amendment too, and the constant-occupancy period sets are
@@ -256,20 +261,20 @@ targeting only one author can edit a slot, so occupancy changes are a thin
 sub-dynamics; under cross-amendment the occupancy word can wander much further
 before repeating.
 
-**A second collapse.** The `super` / `super_or` clear-resolution axis changes
-**nothing** about the period spectrum: at every m ≤ 10 the two-kind
-supersession classes have identical maximal periods and identical period sets
-under both resolutions (complete enumeration, 729 rule pairs each). It changes
-everything about *balance* (§5.1): 4,337,972 balanced codes under `super`,
-**zero** under `super_or`. The resolution axis is a statement about
-simultaneous cancellation, not about dynamics.
-
-**Lemma S (supersession collapse).** *With a single kind, supersession is
-own-kind toggling.* With n=1 a cell is occupied iff kind 0 stands there, so
+**Lemma S (supersession collapse).** *With a single kind, supersession IS
+own-kind toggling.* With n = 1 a cell is occupied iff kind 0 stands there, so
 "enact if empty, clear if occupied" is exactly "toggle kind 0", and the clear
-resolution is vacuous. Hence the n=1 rows of the tables coincide identically at
-every m ≤ 20, both clear resolutions. *(This is why P8 failed: supersession is
-not a variant at all until there are two kinds.)*
+resolution is vacuous. Hence the n = 1 rows of the tables coincide identically
+at every m ≤ 20, under both clear resolutions — and inherit the Sunset
+Parliament unchanged. *(This is why P8 failed: supersession is not a variant at
+all until there are two kinds.)*
+
+**And the clear-resolution axis is dynamically vacuous even then.** At every
+m ≤ 10 the two-kind supersession class has identical maximal periods and
+identical period sets under `super` and `super_or` (complete enumeration, 729
+rule pairs under each). What the axis does change is *balance*: 4,337,972
+balanced codes under `super`, **zero** under `super_or` (§5.1). The resolution
+rule is a statement about simultaneous cancellation, not about dynamics.
 
 ---
 

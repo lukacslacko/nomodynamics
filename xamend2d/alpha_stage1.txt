@@ -1,0 +1,106 @@
+refining 36796 stage-1 candidates (alpha >= 1.05) on a 640x650 board, 300 steps
+
+refined alpha_oct histogram (bin 0.05):
+   0.35  1
+   0.40  128
+   0.45  128
+   0.50  24
+   0.55  9
+   0.60  58
+   0.65  338
+   0.70  344
+   0.75  17
+   0.80  366
+   0.85  271
+   0.90  51
+   0.95  289
+   1.00  1547
+   1.05  34
+   1.10  139
+   1.15  276
+   1.20  60
+   1.25  107
+   1.30  135
+   1.35  170
+   1.40  227
+   1.45  88
+   1.50  180
+   1.55  648
+   1.60  619
+   1.65  318
+   1.70  284
+   1.75  674
+   1.80  387
+   1.85  615
+   1.90  1096
+   1.95  4978
+   2.00  9759
+   2.05  5801
+   2.10  2845
+   2.15  1350
+   2.20  719
+   2.25  730
+   2.30  279
+   2.35  185
+   2.40  198
+   2.45  55
+   2.50  24
+   2.55  71
+   2.60  5
+   2.65  34
+   2.70  8
+   2.80  32
+   2.85  12
+   2.90  26
+   2.95  33
+   3.05  2
+   3.25  21
+   3.30  1
+
+max alpha_oct = 3.3119 ; number with alpha_oct > 2.02 = 13648
+
+top 20 by alpha_oct:
+   a_oct=3.312 a_fit=3.672 fill=0.256 |S_300|=1857 bbox=101x36 U=WTN>AB EPW>AB seedcells=[(0, 0, 0), (1, 0, 0), (0, 1, 1)]
+   a_oct=3.251 a_fit=3.453 fill=0.275 |S_300|=2257 bbox=76x54 U=OPT>AB ETN>AB seedcells=[(0, 0, 0), (1, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.222 |S_300|=1942 bbox=125x35 U=ENW>AB WSQ>AB seedcells=[(0, 0, 0), (1, 0, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.222 |S_300|=1942 bbox=125x35 U=ENR>AB WSE>AB seedcells=[(0, 0, 0), (1, 0, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.222 |S_300|=1942 bbox=125x35 U=ESW>AB WNT>AB seedcells=[(0, 0, 0), (1, 0, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.222 |S_300|=1942 bbox=125x35 U=ESP>AB WNE>AB seedcells=[(0, 0, 0), (1, 0, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.272 |S_300|=1942 bbox=102x35 U=EPW>AB WTN>AB seedcells=[(0, 0, 0), (1, 0, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.272 |S_300|=1942 bbox=102x35 U=EPS>AB WTE>AB seedcells=[(0, 0, 0), (1, 0, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.272 |S_300|=1942 bbox=102x35 U=ERW>AB WQS>AB seedcells=[(0, 0, 0), (1, 0, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.272 |S_300|=1942 bbox=102x35 U=ERN>AB WQE>AB seedcells=[(0, 0, 0), (1, 0, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.222 |S_300|=1942 bbox=35x125 U=NES>AB SWR>AB seedcells=[(0, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.222 |S_300|=1942 bbox=35x125 U=NEQ>AB SWN>AB seedcells=[(0, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.222 |S_300|=1942 bbox=35x125 U=NWS>AB SET>AB seedcells=[(0, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.222 |S_300|=1942 bbox=35x125 U=NWP>AB SEN>AB seedcells=[(0, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.272 |S_300|=1942 bbox=35x102 U=NPW>AB STN>AB seedcells=[(0, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.272 |S_300|=1942 bbox=35x102 U=NPS>AB STE>AB seedcells=[(0, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.272 |S_300|=1942 bbox=35x102 U=NQE>AB SRN>AB seedcells=[(0, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.272 |S_300|=1942 bbox=35x102 U=NQS>AB SRW>AB seedcells=[(0, 0, 0), (0, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.076 |S_300|=1942 bbox=102x125 U=PEN>AB TWP>AB seedcells=[(0, 0, 0), (1, 1, 1)]
+   a_oct=3.237 a_fit=3.669 fill=0.076 |S_300|=1942 bbox=102x125 U=PET>AB TWS>AB seedcells=[(0, 0, 0), (1, 1, 1)]
+
+top 20 by FILL among alpha_oct > 1.7 (30134 such):
+   fill=0.6792 a_oct=2.042 |S_300|=22790 bbox=302x58 U=OQP>B WEE>AB
+   fill=0.6792 a_oct=2.042 |S_300|=22790 bbox=58x302 U=OTQ>B SNN>AB
+   fill=0.6792 a_oct=2.042 |S_300|=22790 bbox=302x58 U=OTR>B WEE>AB
+   fill=0.6792 a_oct=2.042 |S_300|=22790 bbox=302x58 U=EWW>AB OPQ>A
+   fill=0.6792 a_oct=2.042 |S_300|=22790 bbox=302x58 U=EWW>AB ORT>A
+   fill=0.6792 a_oct=2.042 |S_300|=22790 bbox=58x302 U=NSS>AB OPR>A
+   fill=0.6632 a_oct=2.066 |S_300|=22494 bbox=300x59 U=OPQ>B EWW>AB
+   fill=0.6632 a_oct=2.066 |S_300|=22494 bbox=59x300 U=OPR>B NSS>AB
+   fill=0.6632 a_oct=2.066 |S_300|=22494 bbox=59x300 U=ORP>B SNN>AB
+   fill=0.6632 a_oct=2.066 |S_300|=22494 bbox=300x59 U=WEE>AB OTR>A
+   fill=0.6632 a_oct=2.066 |S_300|=22494 bbox=59x300 U=NSS>AB OQT>A
+   fill=0.6632 a_oct=2.066 |S_300|=22494 bbox=59x300 U=SNN>AB OTQ>A
+   fill=0.6532 a_oct=2.003 |S_300|=21999 bbox=301x59 U=EPQ>B EWW>AB
+   fill=0.6532 a_oct=2.003 |S_300|=21999 bbox=59x301 U=NPR>B NSS>AB
+   fill=0.6501 a_oct=2.066 |S_300|=22495 bbox=301x60 U=ORT>B EWW>AB
+   fill=0.6411 a_oct=1.997 |S_300|=21745 bbox=302x59 U=WEE>AB WQP>A
+   fill=0.6410 a_oct=1.998 |S_300|=21744 bbox=302x59 U=EWW>AB EPQ>A
+   fill=0.6410 a_oct=1.998 |S_300|=21744 bbox=302x59 U=EWW>AB ERT>A
+   fill=0.6410 a_oct=1.998 |S_300|=21744 bbox=302x59 U=WQP>B WEE>AB
+   fill=0.6410 a_oct=1.998 |S_300|=21744 bbox=302x59 U=WTR>B WEE>AB
+
+wrote data/alpha_refined.json (36796 records)

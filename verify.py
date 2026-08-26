@@ -248,9 +248,11 @@ def chapter2():
     check("two-chamber deadlock is a BALANCED constitution (parity)",
           verify_balanced(S, C) and classify(S, C)["kind"] == BALANCED,
           "fixed forever, 2 laws active")
-    check("...and it ignites under OR resolution",
-          step(S, C, "or") == state_of([(0, 0), (2, 1), (1, 2)]),
-          "Dead Letter survives OR, fails under parity")
+    T = step(S, C, "or")
+    check("...and under OR the enactment passes and silences both authors",
+          T == state_of([(0, 0), (2, 1), (1, 2)]) and not active_laws(T, C)
+          and step(T, C, "or") == T,
+          "Dead Letter survives OR verbatim, fails under parity")
     show("two-chamber (parity)", spacetime(S, C, 4, lo=-1, hi=3))
     show("two-chamber (OR)", spacetime(S, C, 4, mode="or", lo=-1, hi=3))
 
