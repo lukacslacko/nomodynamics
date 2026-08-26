@@ -1,0 +1,8 @@
+== run super3 ==
+  [super3] 8640 jobs, 248.8s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/super3.jsonl
+   m=3   consts=1728   periods=[1, 2] maxp=2 rotor_classes=0 balanced=25704
+   m=4   consts=1728   periods=[1, 2, 3] maxp=3 rotor_classes=1 balanced=205008
+   m=5   consts=1728   periods=[1, 2, 3, 4, 6] maxp=6 rotor_classes=0 balanced=1285620
+   m=6   consts=1728   periods=[1, 2, 3, 4, 5, 6, 7] maxp=7 rotor_classes=6 balanced=10477968
+   m=7   consts=1728   periods=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10] maxp=10 rotor_classes=0 balanced=84999012
+== run big2 ==

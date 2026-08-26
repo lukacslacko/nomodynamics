@@ -1,0 +1,9 @@
+T1 fidelity: 1077/1200 random universes match xnomos frame-for-frame (all four modes, Z and rings); 123 further universes escaped the interior and were correctly REFUSED by the bounded model
+T2a ring rotor found from scratch: rule (0, 1, -1), cells [0, 2, 3], rot 3 (re-verified by xnomos)
+T2b published rotor {1,2,5} on Z/6 reproduced by the encoder
+T2c period-2 oscillator found & xnomos-verified: [(0, 1, 0), (0, 1, 0)] tgt=[(0, 1), (0, 1)] S=[(1, 2)]
+T2c period-3 oscillator found & xnomos-verified: [(0, 1, 0), (0, 1, 0)] tgt=[(1,), (0, 1)] S=[(1, 2)]
+T2c period-4 oscillator found & xnomos-verified: [(-1, 1, -1), (0, -1, 1)] tgt=[(0,), (0,)] S=[(1, 2)]
+T3 own-kind on Z: UNSAT for n<=2, p<=4, d<=3, N=12 — agrees with the Anchor Theorem
+
+ALL VALIDATION PASSED — the instrument may be trusted.

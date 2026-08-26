@@ -1,0 +1,9 @@
+== run goe ==
+  [goe] 4032 jobs, 47.3s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/goe.jsonl
+   m=3   consts=576    periods=[1, 2, 4] maxp=4 rotor_classes=1 balanced=888
+   m=4   consts=576    periods=[1, 2, 3, 4, 6] maxp=6 rotor_classes=3 balanced=3728
+   m=5   consts=576    periods=[1, 2, 3, 4, 6, 8] maxp=8 rotor_classes=2 balanced=13090
+   m=6   consts=576    periods=[1, 2, 3, 4, 5, 6, 7, 8, 14] maxp=14 rotor_classes=9 balanced=50652
+   m=7   consts=576    periods=[1, 2, 3, 4, 6, 8, 10, 16] maxp=16 rotor_classes=2 balanced=187502
+   m=8   consts=576    periods=[1, 2, 3, 4, 5, 6, 7, 8, 12, 14, 15, 16, 30] maxp=30 rotor_classes=13 balanced=702528
+   m=9   consts=576    periods=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 18, 30] maxp=30 rotor_classes=3 balanced=2557230

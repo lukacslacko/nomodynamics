@@ -1,0 +1,18 @@
+== run own2 ==
+  [own2] 6561 jobs, 267.1s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/own2.jsonl
+   m=3   consts=729    periods=[1, 2] maxp=2 rotor_classes=0 balanced=0
+   m=4   consts=729    periods=[1, 2] maxp=2 rotor_classes=0 balanced=0
+   m=5   consts=729    periods=[1, 2, 4] maxp=4 rotor_classes=0 balanced=0
+   m=6   consts=729    periods=[1, 2, 3, 4, 6] maxp=6 rotor_classes=3 balanced=0
+   m=7   consts=729    periods=[1, 2, 4, 6] maxp=6 rotor_classes=0 balanced=0
+   m=8   consts=729    periods=[1, 2, 4, 6, 8] maxp=8 rotor_classes=3 balanced=0
+   m=9   consts=729    periods=[1, 2, 4, 6, 8] maxp=8 rotor_classes=0 balanced=0
+   m=10  consts=729    periods=[1, 2, 4, 6, 8, 10, 12, 15, 21, 80] maxp=80 rotor_classes=8 balanced=0
+   m=11  consts=729    periods=[1, 2, 4, 6, 8, 12] maxp=12 rotor_classes=0 balanced=0
+== run own3 ==
+  [own3] 8640 jobs, 924.6s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/own3.jsonl
+   m=3   consts=1728   periods=[1, 2] maxp=2 rotor_classes=0 balanced=0
+   m=4   consts=1728   periods=[1, 2] maxp=2 rotor_classes=0 balanced=0
+   m=5   consts=1728   periods=[1, 2, 4] maxp=4 rotor_classes=0 balanced=0
+   m=6   consts=1728   periods=[1, 2, 3, 4, 6] maxp=6 rotor_classes=3 balanced=0
+   m=7   consts=1728   periods=[1, 2, 4, 6] maxp=6 rotor_classes=0 balanced=0

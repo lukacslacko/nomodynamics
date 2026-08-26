@@ -1,0 +1,1746 @@
+[
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 1,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.01,
+  "status": "SAT",
+  "rules": [
+   [
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0
+   ]
+  ],
+  "targets": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "laws": [
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "ncard": 2,
+  "recertified": true,
+  "classify": [
+   "GLIDER",
+   1,
+   1,
+   0
+  ]
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 2,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.03,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 3,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.08,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 3,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.14,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 2,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.17,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 4,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.21,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 3,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.3,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 4,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.31,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 4,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.54,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 4,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.57,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.33,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.59,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.34,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.63,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 5,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.34,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 5,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.2,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 6,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.22,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.39,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.68,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.77,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.73,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 6,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.18,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.59,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 7,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.34,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.18,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 5,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.94,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.51,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.53,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 6,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.55,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 5,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.77,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 7,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.3,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 1,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.0,
+  "status": "SAT",
+  "rules": [
+   [
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0
+   ]
+  ],
+  "targets": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "laws": [
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "ncard": 2,
+  "recertified": true,
+  "classify": [
+   "GLIDER",
+   1,
+   1,
+   0
+  ]
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 2,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.19,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 8,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.38,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 3,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.43,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.96,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 2,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.6,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.03,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.56,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.83,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 3,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.5,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 4,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.36,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 4,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.8,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 4,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.71,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 3,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.99,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.89,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 4,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.93,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.85,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.12,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.88,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 5,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.41,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 5,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.29,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.4,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.16,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.39,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 6,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.99,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.9,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 6,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.66,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 5,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.06,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.38,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.11,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.3,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 7,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.13,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.68,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 6,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.07,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 5,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 1.41,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 1,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.45,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 3,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.23,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 1,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.01,
+  "status": "SAT",
+  "rules": [
+   [
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0
+   ]
+  ],
+  "targets": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "laws": [
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "ncard": 2,
+  "recertified": true,
+  "classify": [
+   "GLIDER",
+   1,
+   1,
+   0
+  ]
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 2,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.08,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 7,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.31,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 3,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.15,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 2,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.22,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 3,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.2,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 8,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 0.63,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 4,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.8,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 3,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.35,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 4,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.32,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 2,
+  "mode": "parity",
+  "prime_period": true,
+  "secs": 2.97,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 4,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.45,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 4,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.23,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.28,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 4,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.5,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 5,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.4,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.71,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.68,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 5,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.77,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 5,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.3,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.49,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 6,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.44,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.74,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.09,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 6,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.08,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 6,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.24,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.91,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 5,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.46,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 7,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.28,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.82,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.1,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 7,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.99,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 6,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.44,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 7,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.23,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 5,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.85,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 1,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.02,
+  "status": "SAT",
+  "rules": [
+   [
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0
+   ]
+  ],
+  "targets": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "laws": [
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "ncard": 2,
+  "recertified": true,
+  "classify": [
+   "GLIDER",
+   1,
+   1,
+   0
+  ]
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 2,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.03,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 8,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.21,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.15,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.38,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.42,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 3,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.25,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 16,
+  "p": 8,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.25,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 3,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.29,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 2,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.52,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 4,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.44,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 3,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.66,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 4,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.6,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 4,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.63,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.4,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 4,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.87,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.72,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.73,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 5,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.61,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 5,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.83,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 5,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.62,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.1,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.19,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.06,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 6,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.95,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 6,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.13,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.85,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 5,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.88,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 6,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.87,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.37,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 7,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.75,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.76,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 7,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.95,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 6,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.22,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 2,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.99,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 5,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.38,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 1,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 2.26,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 3,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 1.98,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 7,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.59,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 4,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 2.16,
+  "status": "UNSAT"
+ },
+ {
+  "set": "n2",
+  "n": 2,
+  "N": 20,
+  "p": 8,
+  "d": 8,
+  "mode": "or",
+  "prime_period": true,
+  "secs": 0.73,
+  "status": "UNSAT"
+ }
+]

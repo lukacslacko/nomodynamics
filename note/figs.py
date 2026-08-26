@@ -8,7 +8,7 @@ Every panel is produced by `xnomos.py`, so running this file is also a
 cross-validation of the general cross-amendment engine against the specimens
 that were originally found with the chapter-one engines (nomos2.py,
 nomos2d/engine2d.py, rings/ring.py): the Jubilee panel, for instance, must
-reproduce avalanches exactly at t = 2^k.
+reproduce the clock law |S_t| = 4 at every t = 2^k.
 """
 from __future__ import annotations
 
@@ -22,7 +22,8 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from xnomos import Const, state_of, step, card                      # noqa: E402
+from xnomos import (Const, state_of, step, card,                    # noqa: E402
+                    verify_glider)
 
 HERE = pathlib.Path(__file__).resolve().parent
 
@@ -69,11 +70,12 @@ def fig1():
     panel(axes[1], raster(state_of([(4, 0), (52, 1)]), C, 60, 0, 56),
           "weld: two traditions meet")
 
-    # (c) a colonizer assimilates a self-eroding sunset wall at half speed.
+    # (c) the wall erodes from its far end on its own; the front then fills
+    #     the vacated ground -- crossing time max(2L, x0+L), "refraction 2".
     C = Const([(0, 1, 1), (-1, 1, 0)])
     seed = [(2, 0)] + [(i, 1) for i in range(15, 36)]
     panel(axes[2], raster(state_of(seed), C, 70, 0, 62),
-          "assimilation through a sunset wall")
+          "sunset wall: it erodes, the front inherits")
 
     fig.tight_layout()
     save(fig, "fig1_spacetime")
@@ -148,6 +150,34 @@ def fig3(steps=1 << 15):
     save(fig, "fig3_jubilee")
 
 
+def fig4():
+    """The first free gliders: motion bought with out-degree (chapter two)."""
+    fig, axes = plt.subplots(1, 3, figsize=(11, 3.2))
+
+    # SOLO: one placed law, period 2, displacement 1.
+    C = Const([(0, 1, 0), (0, 1, 1), (0, 1, 0)], [(1, 2), (0,), (0,)])
+    S = state_of([(1, 0)])
+    assert verify_glider(S, C, 2, 1)
+    panel(axes[0], raster(S, C, 40, 0, 24), "SOLO: one law, speed 1/2")
+    axes[0].set_ylabel("time  " + r"$\rightarrow$", fontsize=9)
+
+    # TANDEM-1: two laws in a single cell, period 1, displacement 1.
+    C = Const([(0, -1, 1), (0, -1, 0)], [(0, 1), (0, 1)])
+    S = state_of([(1, 0), (1, 1)])
+    assert verify_glider(S, C, 1, 1)
+    panel(axes[1], raster(S, C, 40, 0, 44), "TANDEM-1: two laws, speed 1")
+
+    # TRIPTYCH: a glider under parity that dies under OR.
+    C = Const([(0, 1, 0), (0, -1, 1), (0, 1, -1)], [(0, 1, 2)] * 3)
+    S = state_of([(c, k) for c in (1, 2, 4) for k in range(3)])
+    assert verify_glider(S, C, 1, 1)
+    panel(axes[2], raster(S, C, 40, 0, 44),
+          "TRIPTYCH: moves under parity, dies under OR")
+
+    fig.tight_layout()
+    save(fig, "fig4_gliders")
+
+
 def save(fig, stem):
     for ext in ("pdf", "png"):
         fig.savefig(HERE / ("%s.%s" % (stem, ext)), dpi=170)
@@ -155,7 +185,7 @@ def save(fig, stem):
     print("wrote %s.{pdf,png}" % stem)
 
 
-FIGS = {"fig1": fig1, "fig2": fig2, "fig3": fig3}
+FIGS = {"fig1": fig1, "fig2": fig2, "fig3": fig3, "fig4": fig4}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(FIGS)

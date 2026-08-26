@@ -1,0 +1,59 @@
+n=3 parity: 9261 (target-matrix, c-vector) universes, COMPLETE
+  glider EXISTS in 1800 universes (decided by SAT, p<=3, N=12)
+  theory & machine agree      : 7035
+  glider exists but theory forbids it (WOULD REFUTE THE THEOREMS): 0
+  theory permits but no glider found in the box                  : 2226
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [-1, 1, 0])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [0, -1, 0])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [0, -1, 1])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [-1, -1, 0])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [-1, -1, 1])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [-1, 1, -1])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [0, 1, -1])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [0, 1, 0])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [1, -1, 0])
+    ('permitted-but-empty', [(0,), (2,), (1, 2)], [1, -1, 1])
+    ('permitted-but-empty', [(0,), (2,), (0, 1, 2)], [0, 1, -1])
+    ('permitted-but-empty', [(0,), (2,), (0, 1, 2)], [0, 1, 0])
+  gliding universes:
+    T=[[0], [1, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0], [1, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0], [0, 1, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0], [0, 1, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[1], [0, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[1], [1, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[1], [0, 1, 2], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[1], [0, 1, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[2], [0, 1], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[2], [1, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[2], [0, 1, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1], [2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1], [0, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1], [1, 2], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1], [1, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1], [0, 1, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [0], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [1], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [1], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [2], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [0, 1], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [0, 1], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [0, 2], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [1, 2], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [1, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [0, 1, 2], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 2], [0, 1, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[1, 2], [0], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[1, 2], [0, 1], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[1, 2], [1, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[1, 2], [0, 1, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [0], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [0], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [1], [0, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [1], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [0, 1], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [0, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [1, 2], [1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+    T=[[0, 1, 2], [1, 2], [0, 1, 2]] c=[-1, -1, 0]  minimal p=1 d=-1
+written /Users/lukacs/claude/math/program/phase6/xamend1d/data/sharpness_n3_parity.json

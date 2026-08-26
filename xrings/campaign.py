@@ -184,7 +184,48 @@ def do_tgt3():
         aggregate(sub, "tgt3_%d%d%d" % t)
 
 
+def do_own2():
+    """CONTROL: two kinds, own-kind targeting — same state space as `recip`
+    and `noninj`, no cross-amendment.  Isolates what cross-amendment buys."""
+    jobs = [jobline([r1, r2], [0, 1], m, "parity")
+            for m in range(3, 12) for r1 in RULES27 for r2 in RULES27]
+    aggregate(run(jobs, "own2"), "own2")
+
+
+def do_own3():
+    """CONTROL: three own-kind kinds, live rules — matches `cyc3`."""
+    jobs = [jobline(list(c), [0, 1, 2], m, "parity")
+            for m in range(3, 8) for c in itertools.product(RULES12, repeat=3)]
+    aggregate(run(jobs, "own3"), "own3")
+
+
+def do_super3():
+    jobs = [jobline(list(c), [0, 1, 2], m, "super")
+            for m in range(3, 8) for c in itertools.product(RULES12, repeat=3)]
+    aggregate(run(jobs, "super3"), "super3")
+
+
+def do_big2():
+    """m = 12, 13 for the live-live two-kind classes (permutation + non-inj)."""
+    jobs = [jobline([r1, r2], tg, m, "parity")
+            for m in (12, 13) for tg in ([1, 0], [0, 0], [0, 1])
+            for r1 in RULES12 for r2 in RULES12]
+    aggregate(run(jobs, "big2"), "big2")
+
+
+def do_goe():
+    """Garden-of-Eden census on the live-live two-kind classes, m = 3..9."""
+    jobs = [jobline([r1, r2], tg, m, md)
+            for m in range(3, 10)
+            for (tg, md) in (([0, 1], "parity"), ([1, 0], "parity"),
+                             ([0, 0], "parity"), ([0, 1], "super"))
+            for r1 in RULES12 for r2 in RULES12]
+    aggregate(run(jobs, "goe", goe=True), "goe")
+
+
 RUNS = {"own": do_own, "recip": do_recip, "recip12": do_recip12,
+        "own2": do_own2, "own3": do_own3, "super3": do_super3,
+        "big2": do_big2, "goe": do_goe,
         "noninj": do_noninj,
         "noninjor": lambda: do_noninj("or", 11, "noninjor"),
         "super1": do_super1, "super2": do_super2,

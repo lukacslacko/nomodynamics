@@ -18,7 +18,7 @@ TNAME = {(0, 1): "id (own-kind)", (1, 0): "swap (reciprocal)",
 
 def load(mode):
     rows = []
-    with open("data/census_%s.csv" % mode) as f:
+    with open("data/census%s.csv" % mode) as f:
         for d in csv.DictReader(f):
             d = {k: int(v) for k, v in d.items()}
             rows.append(d)

@@ -1,0 +1,1555 @@
+RUNS 843750
+TALLY extinct 5155
+TALLY fixed 600436
+TALLY balanced 3256
+TALLY cycle 127064
+TALLY glider 312
+TALLY escape 97472
+TALLY unres 10055
+PERIOD 2 117163
+PERIOD 3 522
+PERIOD 4 7671
+PERIOD 6 78
+PERIOD 8 1530
+PERIOD 16 79
+PERIOD 32 6
+PERIOD 64 2
+PERIOD 128 13
+COUNT GLIDER 312
+COUNT NONPOW2 600
+COUNT BALANCED 3256
+COUNT LONGCYCLE 21
+COUNT UNRES 10055
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OEO>AB OEE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OEO>AB OEW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OEO>AB OEN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OEO>AB OES>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OEO>AB OWE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OEO>AB OWW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OEO>AB OWN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OEO>AB OWS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OEO>AB ONE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OEO>AB ONW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OEO>AB ONN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OEO>AB ONS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OEO>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OEO>AB OSW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OEO>AB OSN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OEO>AB OSS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OEE>AB OEO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OEE>AB OWO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OEE>AB ONO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OEE>AB OSO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEE>AB EWO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEE>AB ENO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEE>AB ESO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEE>AB WEW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEE>AB WNW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEE>AB WSW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OEW>AB OEO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OEW>AB OWO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OEW>AB ONO>AB
+FIND GLIDER p=4 d=(4,0) seed=1 card=2 t0=0 U=OEW>AB ONE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OEW>AB OSO>AB
+FIND GLIDER p=4 d=(4,0) seed=1 card=2 t0=0 U=OEW>AB OSE>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEW>AB WEE>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEW>AB WNE>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=OEW>AB WSE>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OEN>AB OEO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OEN>AB OWO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OEN>AB ONO>AB
+FIND GLIDER p=4 d=(0,4) seed=1 card=2 t0=0 U=OEN>AB ONS>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OEN>AB OSO>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OEN>AB NEO>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OEN>AB NWO>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OEN>AB NSO>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OEN>AB SES>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OEN>AB SWS>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OEN>AB SNS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OES>AB OEO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OES>AB OWO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OES>AB ONO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OES>AB OSO>AB
+FIND GLIDER p=4 d=(0,-4) seed=1 card=2 t0=0 U=OES>AB OSN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OES>AB NEN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OES>AB NWN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OES>AB NSN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OES>AB SEO>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OES>AB SWO>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OES>AB SNO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OWO>AB OEE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OWO>AB OEW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OWO>AB OEN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OWO>AB OES>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OWO>AB OWE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OWO>AB OWW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OWO>AB OWN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OWO>AB OWS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OWO>AB ONE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OWO>AB ONW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OWO>AB ONN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OWO>AB ONS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OWO>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OWO>AB OSW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OWO>AB OSN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OWO>AB OSS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OWE>AB OEO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OWE>AB OWO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OWE>AB ONO>AB
+FIND GLIDER p=4 d=(-4,0) seed=1 card=2 t0=0 U=OWE>AB ONW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OWE>AB OSO>AB
+FIND GLIDER p=4 d=(-4,0) seed=1 card=2 t0=0 U=OWE>AB OSW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWE>AB EWW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWE>AB ENW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWE>AB ESW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OWW>AB OEO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OWW>AB OWO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OWW>AB ONO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OWW>AB OSO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWW>AB EWE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWW>AB ENE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWW>AB ESE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWW>AB WEO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWW>AB WNO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=OWW>AB WSO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OWN>AB OEO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OWN>AB OWO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OWN>AB ONO>AB
+FIND GLIDER p=4 d=(0,4) seed=1 card=2 t0=0 U=OWN>AB ONS>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OWN>AB OSO>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OWN>AB NEO>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OWN>AB NWO>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OWN>AB NSO>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OWN>AB SES>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OWN>AB SWS>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=OWN>AB SNS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OWS>AB OEO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OWS>AB OWO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OWS>AB ONO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OWS>AB OSO>AB
+FIND GLIDER p=4 d=(0,-4) seed=1 card=2 t0=0 U=OWS>AB OSN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OWS>AB NEN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OWS>AB NWN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OWS>AB NSN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OWS>AB SEO>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OWS>AB SWO>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=OWS>AB SNO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=ONO>AB OEE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=ONO>AB OEW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=ONO>AB OEN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=ONO>AB OES>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=ONO>AB OWE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=ONO>AB OWW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=ONO>AB OWN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=ONO>AB OWS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=ONO>AB ONE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=ONO>AB ONW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=ONO>AB ONN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=ONO>AB ONS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=ONO>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=ONO>AB OSW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=ONO>AB OSN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=ONO>AB OSS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=ONE>AB OEO>AB
+FIND GLIDER p=4 d=(4,0) seed=1 card=2 t0=0 U=ONE>AB OEW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=ONE>AB OWO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=ONE>AB ONO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=ONE>AB OSO>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ONE>AB EWO>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ONE>AB ENO>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ONE>AB ESO>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ONE>AB WEW>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ONE>AB WNW>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ONE>AB WSW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=ONW>AB OEO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=ONW>AB OWO>AB
+FIND GLIDER p=4 d=(-4,0) seed=1 card=2 t0=0 U=ONW>AB OWE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=ONW>AB ONO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=ONW>AB OSO>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ONW>AB EWE>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ONW>AB ENE>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ONW>AB ESE>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ONW>AB WEO>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ONW>AB WNO>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ONW>AB WSO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=ONN>AB OEO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=ONN>AB OWO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=ONN>AB ONO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=ONN>AB OSO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONN>AB NEO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONN>AB NWO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONN>AB NSO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONN>AB SES>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONN>AB SWS>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONN>AB SNS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=ONS>AB OEO>AB
+FIND GLIDER p=4 d=(0,4) seed=1 card=2 t0=0 U=ONS>AB OEN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=ONS>AB OWO>AB
+FIND GLIDER p=4 d=(0,4) seed=1 card=2 t0=0 U=ONS>AB OWN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=ONS>AB ONO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=ONS>AB OSO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONS>AB SEN>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONS>AB SWN>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=ONS>AB SNN>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OSO>AB OEE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OSO>AB OEW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OSO>AB OEN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OSO>AB OES>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OSO>AB OWE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OSO>AB OWW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OSO>AB OWN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OSO>AB OWS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OSO>AB ONE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OSO>AB ONW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OSO>AB ONN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OSO>AB ONS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OSO>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OSO>AB OSW>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OSO>AB OSN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OSO>AB OSS>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OSE>AB OEO>AB
+FIND GLIDER p=4 d=(4,0) seed=1 card=2 t0=0 U=OSE>AB OEW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OSE>AB OWO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OSE>AB ONO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=2 t0=0 U=OSE>AB OSO>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=OSE>AB EWO>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=OSE>AB ENO>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=OSE>AB ESO>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=OSE>AB WEW>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=OSE>AB WNW>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=OSE>AB WSW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OSW>AB OEO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OSW>AB OWO>AB
+FIND GLIDER p=4 d=(-4,0) seed=1 card=2 t0=0 U=OSW>AB OWE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OSW>AB ONO>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=2 t0=0 U=OSW>AB OSO>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=OSW>AB EWE>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=OSW>AB ENE>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=OSW>AB ESE>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=OSW>AB WEO>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=OSW>AB WNO>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=OSW>AB WSO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OSN>AB OEO>AB
+FIND GLIDER p=4 d=(0,-4) seed=1 card=2 t0=0 U=OSN>AB OES>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OSN>AB OWO>AB
+FIND GLIDER p=4 d=(0,-4) seed=1 card=2 t0=0 U=OSN>AB OWS>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OSN>AB ONO>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=2 t0=0 U=OSN>AB OSO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSN>AB NES>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSN>AB NWS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSN>AB NSS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OSS>AB OEO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OSS>AB OWO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OSS>AB ONO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=2 t0=0 U=OSS>AB OSO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSS>AB NEN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSS>AB NWN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSS>AB NSN>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSS>AB SEO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSS>AB SWO>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=OSS>AB SNO>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=EWO>AB OEE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=EWO>AB ONE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=EWO>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=EWE>AB OWW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=EWE>AB ONW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=EWE>AB OSW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=EWW>AB OWE>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=ENO>AB OEE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ENO>AB ONE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ENO>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=ENE>AB OWW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ENE>AB ONW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ENE>AB OSW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=ENW>AB OWE>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=ESO>AB OEE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ESO>AB ONE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=ESO>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=ESE>AB OWW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ESE>AB ONW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=ESE>AB OSW>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=ESW>AB OWE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=WEO>AB OWW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=WEO>AB ONW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=WEO>AB OSW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=WEE>AB OEW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=WEW>AB OEE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=WEW>AB ONE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=WEW>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=WNO>AB OWW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=WNO>AB ONW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=WNO>AB OSW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=WNE>AB OEW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=WNW>AB OEE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=WNW>AB ONE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=WNW>AB OSE>AB
+FIND GLIDER p=1 d=(-1,0) seed=1 card=4 t0=1 U=WSO>AB OWW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=WSO>AB ONW>AB
+FIND GLIDER p=2 d=(-2,0) seed=1 card=2 t0=0 U=WSO>AB OSW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=WSE>AB OEW>AB
+FIND GLIDER p=1 d=(1,0) seed=1 card=4 t0=1 U=WSW>AB OEE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=WSW>AB ONE>AB
+FIND GLIDER p=2 d=(2,0) seed=1 card=2 t0=0 U=WSW>AB OSE>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=NEO>AB OEN>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=NEO>AB OWN>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=NEO>AB ONN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=NEN>AB OES>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=NEN>AB OWS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=NEN>AB OSS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=NES>AB OSN>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=NWO>AB OEN>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=NWO>AB OWN>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=NWO>AB ONN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=NWN>AB OES>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=NWN>AB OWS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=NWN>AB OSS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=NWS>AB OSN>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=NSO>AB OEN>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=NSO>AB OWN>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=NSO>AB ONN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=NSN>AB OES>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=NSN>AB OWS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=NSN>AB OSS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=NSS>AB OSN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=SEO>AB OES>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=SEO>AB OWS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=SEO>AB OSS>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=SEN>AB ONS>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=SES>AB OEN>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=SES>AB OWN>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=SES>AB ONN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=SWO>AB OES>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=SWO>AB OWS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=SWO>AB OSS>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=SWN>AB ONS>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=SWS>AB OEN>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=SWS>AB OWN>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=SWS>AB ONN>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=SNO>AB OES>AB
+FIND GLIDER p=2 d=(0,-2) seed=1 card=2 t0=0 U=SNO>AB OWS>AB
+FIND GLIDER p=1 d=(0,-1) seed=1 card=4 t0=1 U=SNO>AB OSS>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=SNN>AB ONS>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=SNS>AB OEN>AB
+FIND GLIDER p=2 d=(0,2) seed=1 card=2 t0=0 U=SNS>AB OWN>AB
+FIND GLIDER p=1 d=(0,1) seed=1 card=4 t0=1 U=SNS>AB ONN>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OEO>B OEO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OEO>B OEO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>B OEO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>B OEO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OEO>B OEO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>B OEO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OEO>AB OEO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OEO>AB OEO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>AB OEO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>AB OEO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OEO>AB OEO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>AB OEO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OEO>B OWO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OEO>B OWO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>B OWO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OEO>B OWO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OEO>B OWO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OEO>AB OWO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OEO>AB OWO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>AB OWO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OEO>AB OWO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OEO>AB OWO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OEO>B ONO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OEO>B ONO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>B ONO>AB
+FIND NONPOW2 p=6 seed=3 card=2 U=OEO>B ONO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OEO>B ONO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>B ONO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OEO>AB ONO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OEO>AB ONO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>AB ONO>A
+FIND NONPOW2 p=3 seed=3 card=3 U=OEO>AB ONO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OEO>AB ONO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>AB ONO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OEO>B OSO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OEO>B OSO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>B OSO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>B OSO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OEO>B OSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>B OSO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OEO>AB OSO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OEO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>AB OSO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>AB OSO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OEO>AB OSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>B WEO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>B WEO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>AB WEO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>AB WEO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>B WNO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>B WNO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>AB WNO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>AB WNO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>B WSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>B WSO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OEO>AB WSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OEO>AB WSO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>B NEO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>AB NEO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>B NWO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>AB NWO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>B NSO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OEO>AB NSO>A
+FIND NONPOW2 p=6 seed=3 card=2 U=OEO>B SEO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OEO>B SEO>AB
+FIND NONPOW2 p=3 seed=3 card=3 U=OEO>AB SEO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OEO>AB SEO>A
+FIND NONPOW2 p=6 seed=3 card=2 U=OEO>B SWO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OEO>B SWO>AB
+FIND NONPOW2 p=3 seed=3 card=3 U=OEO>AB SWO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OEO>AB SWO>A
+FIND NONPOW2 p=6 seed=3 card=2 U=OEO>B SNO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OEO>B SNO>AB
+FIND NONPOW2 p=3 seed=3 card=3 U=OEO>AB SNO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OEO>AB SNO>A
+FIND NONPOW2 p=3 seed=5 card=5 U=OEO>AB SNE>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OEN>B ENO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OWO>B OEO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OWO>B OEO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>B OEO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OWO>B OEO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OWO>B OEO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OWO>AB OEO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OWO>AB OEO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>AB OEO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OWO>AB OEO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OWO>AB OEO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OWO>B OWO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OWO>B OWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OWO>B OWO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>B OWO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OWO>B OWO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>B OWO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OWO>AB OWO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OWO>AB OWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OWO>AB OWO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>AB OWO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OWO>AB OWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>AB OWO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OWO>B ONO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OWO>B ONO>AB
+FIND NONPOW2 p=3 seed=2 card=3 U=OWO>B ONO>AB
+FIND NONPOW2 p=6 seed=3 card=2 U=OWO>B ONO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OWO>B ONO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OWO>B ONO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OWO>AB ONO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OWO>AB ONO>A
+FIND NONPOW2 p=6 seed=2 card=2 U=OWO>AB ONO>A
+FIND NONPOW2 p=3 seed=3 card=3 U=OWO>AB ONO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OWO>AB ONO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OWO>AB ONO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OWO>B OSO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OWO>B OSO>AB
+FIND NONPOW2 p=3 seed=2 card=3 U=OWO>B OSO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>B OSO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OWO>B OSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>B OSO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OWO>AB OSO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OWO>AB OSO>A
+FIND NONPOW2 p=6 seed=2 card=2 U=OWO>AB OSO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>AB OSO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OWO>AB OSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OWO>B EWO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>B EWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OWO>AB EWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>AB EWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OWO>B ENO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OWO>AB ENO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OWO>B ESO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>B ESO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OWO>AB ESO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>AB ESO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>B NEO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>AB NEO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>B NWO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>B NWO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>AB NWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>AB NWO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>B NSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>B NSO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OWO>AB NSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OWO>AB NSO>A
+FIND NONPOW2 p=6 seed=3 card=2 U=OWO>B SEO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OWO>B SEO>AB
+FIND NONPOW2 p=3 seed=3 card=3 U=OWO>AB SEO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OWO>AB SEO>A
+FIND NONPOW2 p=6 seed=3 card=2 U=OWO>B SWO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OWO>B SWO>AB
+FIND NONPOW2 p=3 seed=3 card=3 U=OWO>AB SWO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OWO>AB SWO>A
+FIND NONPOW2 p=6 seed=3 card=2 U=OWO>B SNO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OWO>B SNO>AB
+FIND NONPOW2 p=3 seed=3 card=3 U=OWO>AB SNO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=OWO>AB SNO>A
+FIND NONPOW2 p=6 seed=4 card=2 U=OWN>B WNO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=ONO>B OEO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=ONO>B OEO>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=ONO>B OEO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>B OEO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=ONO>B OEO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>B OEO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=ONO>AB OEO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=ONO>AB OEO>A
+FIND NONPOW2 p=3 seed=2 card=3 U=ONO>AB OEO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>AB OEO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=ONO>AB OEO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>AB OEO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=ONO>B OWO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=ONO>B OWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>B OWO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>B OWO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=ONO>B OWO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=ONO>B OWO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=ONO>AB OWO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=ONO>AB OWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>AB OWO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>AB OWO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=ONO>AB OWO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=ONO>AB OWO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=ONO>B ONO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=ONO>B ONO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>B ONO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>B ONO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=ONO>B ONO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>B ONO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=ONO>AB ONO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=ONO>AB ONO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>AB ONO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>AB ONO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=ONO>AB ONO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>AB ONO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=ONO>B OSO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=ONO>B OSO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>B OSO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=ONO>B OSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>B OSO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=ONO>AB OSO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=ONO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>AB OSO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=ONO>AB OSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>B EWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>AB EWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>B ENO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>AB ENO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>B ESO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ONO>AB ESO>A
+FIND NONPOW2 p=6 seed=2 card=2 U=ONO>B WEO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>B WEO>AB
+FIND NONPOW2 p=3 seed=2 card=3 U=ONO>AB WEO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>AB WEO>A
+FIND NONPOW2 p=3 seed=5 card=5 U=ONO>AB WEN>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=ONO>B WNO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>B WNO>AB
+FIND NONPOW2 p=3 seed=2 card=3 U=ONO>AB WNO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>AB WNO>A
+FIND NONPOW2 p=6 seed=2 card=2 U=ONO>B WSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>B WSO>AB
+FIND NONPOW2 p=3 seed=2 card=3 U=ONO>AB WSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ONO>AB WSO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>B SEO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=ONO>B SEO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>AB SEO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=ONO>AB SEO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>B SWO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=ONO>B SWO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>AB SWO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=ONO>AB SWO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>B SNO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=ONO>B SNO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=ONO>AB SNO>A
+FIND NONPOW2 p=3 seed=5 card=4 U=ONO>AB SNO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OSO>B OEO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OSO>B OEO>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=OSO>B OEO>AB
+FIND NONPOW2 p=3 seed=3 card=3 U=OSO>B OEO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OSO>B OEO>AB
+FIND NONPOW2 p=6 seed=5 card=5 U=OSO>B OEO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OSO>AB OEO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OSO>AB OEO>A
+FIND NONPOW2 p=3 seed=2 card=3 U=OSO>AB OEO>A
+FIND NONPOW2 p=6 seed=3 card=2 U=OSO>AB OEO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OSO>AB OEO>A
+FIND NONPOW2 p=6 seed=5 card=4 U=OSO>AB OEO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OSO>B OWO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OSO>B OWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>B OWO>AB
+FIND NONPOW2 p=3 seed=3 card=3 U=OSO>B OWO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OSO>B OWO>AB
+FIND NONPOW2 p=6 seed=5 card=5 U=OSO>B OWO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OSO>AB OWO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OSO>AB OWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>AB OWO>A
+FIND NONPOW2 p=6 seed=3 card=2 U=OSO>AB OWO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OSO>AB OWO>A
+FIND NONPOW2 p=6 seed=5 card=4 U=OSO>AB OWO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OSO>B ONO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OSO>B ONO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>B ONO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OSO>B ONO>AB
+FIND NONPOW2 p=6 seed=5 card=5 U=OSO>B ONO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OSO>AB ONO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OSO>AB ONO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>AB ONO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OSO>AB ONO>A
+FIND NONPOW2 p=6 seed=5 card=4 U=OSO>AB ONO>A
+FIND NONPOW2 p=3 seed=0 card=1 U=OSO>B OSO>AB
+FIND NONPOW2 p=3 seed=1 card=2 U=OSO>B OSO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>B OSO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OSO>B OSO>AB
+FIND NONPOW2 p=3 seed=4 card=2 U=OSO>B OSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>B OSO>AB
+FIND NONPOW2 p=3 seed=0 card=1 U=OSO>AB OSO>A
+FIND NONPOW2 p=3 seed=1 card=2 U=OSO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>AB OSO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OSO>AB OSO>A
+FIND NONPOW2 p=3 seed=4 card=2 U=OSO>AB OSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>B EWO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OSO>B EWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>AB EWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>AB EWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>B ENO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>AB ENO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>B ESO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OSO>B ESO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=OSO>AB ESO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>AB ESO>A
+FIND NONPOW2 p=6 seed=2 card=2 U=OSO>B WEO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OSO>B WEO>AB
+FIND NONPOW2 p=3 seed=2 card=3 U=OSO>AB WEO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>AB WEO>A
+FIND NONPOW2 p=6 seed=2 card=2 U=OSO>B WNO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OSO>B WNO>AB
+FIND NONPOW2 p=3 seed=2 card=3 U=OSO>AB WNO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>AB WNO>A
+FIND NONPOW2 p=6 seed=2 card=2 U=OSO>B WSO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OSO>B WSO>AB
+FIND NONPOW2 p=3 seed=2 card=3 U=OSO>AB WSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>AB WSO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OSO>B NEO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OSO>AB NEO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OSO>B NWO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OSO>B NWO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OSO>AB NWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>AB NWO>A
+FIND NONPOW2 p=3 seed=3 card=2 U=OSO>B NSO>AB
+FIND NONPOW2 p=6 seed=5 card=3 U=OSO>B NSO>AB
+FIND NONPOW2 p=3 seed=3 card=2 U=OSO>AB NSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=OSO>AB NSO>A
+FIND NONPOW2 p=6 seed=4 card=2 U=OSE>B SEO>A
+FIND NONPOW2 p=6 seed=5 card=5 U=OSN>AB WES>B
+FIND NONPOW2 p=3 seed=2 card=2 U=EWO>B OWO>AB
+FIND NONPOW2 p=3 seed=5 card=4 U=EWO>B OWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=EWO>AB OWO>A
+FIND NONPOW2 p=6 seed=5 card=3 U=EWO>AB OWO>A
+FIND NONPOW2 p=3 seed=2 card=3 U=EWO>B ONO>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=EWO>AB ONO>A
+FIND NONPOW2 p=3 seed=2 card=3 U=EWO>B OSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>B OSO>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=EWO>AB OSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=EWO>B EWO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>B EWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=EWO>AB EWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>AB EWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=EWO>B ENO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=EWO>AB ENO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=EWO>B ESO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>B ESO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=EWO>AB ESO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>AB ESO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>B NWO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>AB NWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>B NSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=EWO>AB NSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ENO>B OWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ENO>AB OWO>A
+FIND NONPOW2 p=3 seed=2 card=3 U=ENO>B ONO>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=ENO>AB ONO>A
+FIND NONPOW2 p=3 seed=2 card=3 U=ENO>B OSO>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=ENO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ENO>B EWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ENO>AB EWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ENO>B ENO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ENO>AB ENO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ENO>B ESO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ENO>AB ESO>A
+FIND NONPOW2 p=3 seed=5 card=5 U=ENO>AB SNE>AB
+FIND NONPOW2 p=6 seed=4 card=2 U=ESO>B OES>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ESO>B OWO>AB
+FIND NONPOW2 p=3 seed=5 card=4 U=ESO>B OWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ESO>AB OWO>A
+FIND NONPOW2 p=6 seed=5 card=3 U=ESO>AB OWO>A
+FIND NONPOW2 p=3 seed=2 card=3 U=ESO>B ONO>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=ESO>AB ONO>A
+FIND NONPOW2 p=3 seed=2 card=3 U=ESO>B OSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>B OSO>AB
+FIND NONPOW2 p=6 seed=2 card=2 U=ESO>AB OSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ESO>B EWO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>B EWO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ESO>AB EWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>AB EWO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ESO>B ENO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ESO>AB ENO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=ESO>B ESO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>B ESO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=ESO>AB ESO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>AB ESO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>B NWO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>AB NWO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>B NSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=ESO>AB NSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>B OEO>AB
+FIND NONPOW2 p=3 seed=5 card=4 U=WEO>B OEO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>AB OEO>A
+FIND NONPOW2 p=6 seed=5 card=3 U=WEO>AB OEO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>B ONO>AB
+FIND NONPOW2 p=3 seed=5 card=4 U=WEO>B ONO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>AB ONO>A
+FIND NONPOW2 p=6 seed=5 card=3 U=WEO>AB ONO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>B OSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=WEO>B OSO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>AB OSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=WEO>AB OSO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>B WEO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=WEO>B WEO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>AB WEO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=WEO>AB WEO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>B WNO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=WEO>B WNO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>AB WNO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=WEO>AB WNO>A
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>B WSO>AB
+FIND NONPOW2 p=3 seed=5 card=3 U=WEO>B WSO>AB
+FIND NONPOW2 p=3 seed=2 card=2 U=WEO>AB WSO>A
+FIND NONPOW2 p=3 seed=5 card=3 U=WEO>AB WSO>A
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OEO>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A OEO>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OEO>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OEO>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OEO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEO>B OEO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEO>B OEO>B
+FIND BALANCED act=2 seed=2 card=2 U=OEO>B OEO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B OEO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEO>B OEO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEO>B OEO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEO>AB OEO>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OEN>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A OEN>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OEN>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OEN>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OEN>A
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OES>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A OES>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OES>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OES>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OES>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B OES>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB OES>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OWO>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OWO>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OWO>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OWO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEO>B OWO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEO>B OWO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B OWO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEO>B OWO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEO>AB OWO>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OWE>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OWE>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OWE>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OWE>A
+FIND BALANCED act=2 seed=0 card=3 U=OEO>AB OWE>AB
+FIND BALANCED act=4 seed=3 card=6 U=OEO>AB OWE>AB
+FIND BALANCED act=4 seed=4 card=6 U=OEO>AB OWE>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEO>AB OWE>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OWN>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OWN>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OWN>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OWN>A
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OWS>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OWS>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OWS>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OWS>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B OWS>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB OWS>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A ONO>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A ONO>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A ONO>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A ONO>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A ONO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEO>B ONO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEO>B ONO>B
+FIND BALANCED act=2 seed=2 card=2 U=OEO>B ONO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B ONO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEO>B ONO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEO>B ONO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEO>AB ONO>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A ONE>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A ONE>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A ONE>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A ONE>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A ONE>A
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A ONS>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A ONS>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A ONS>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A ONS>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A ONS>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B ONS>B
+FIND BALANCED act=2 seed=0 card=3 U=OEO>AB ONS>AB
+FIND BALANCED act=2 seed=2 card=4 U=OEO>AB ONS>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB ONS>AB
+FIND BALANCED act=4 seed=4 card=6 U=OEO>AB ONS>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OSO>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A OSO>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OSO>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OSO>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OSO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEO>B OSO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEO>B OSO>B
+FIND BALANCED act=2 seed=2 card=2 U=OEO>B OSO>B
+FIND BALANCED act=2 seed=3 card=3 U=OEO>B OSO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEO>B OSO>B
+FIND BALANCED act=2 seed=5 card=4 U=OEO>B OSO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEO>AB OSO>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OSE>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A OSE>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OSE>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OSE>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OSE>A
+FIND BALANCED act=2 seed=1 card=2 U=OEO>A OSN>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A OSN>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A OSN>A
+FIND BALANCED act=2 seed=4 card=2 U=OEO>A OSN>A
+FIND BALANCED act=2 seed=5 card=2 U=OEO>A OSN>A
+FIND BALANCED act=2 seed=0 card=3 U=OEO>AB OSN>AB
+FIND BALANCED act=2 seed=2 card=4 U=OEO>AB OSN>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB OSN>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEO>AB OSN>AB
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WEO>A
+FIND BALANCED act=2 seed=5 card=4 U=OEO>B WEO>B
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WEN>A
+FIND BALANCED act=2 seed=2 card=4 U=OEO>AB WEN>AB
+FIND BALANCED act=4 seed=5 card=7 U=OEO>AB WEN>AB
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WES>A
+FIND BALANCED act=2 seed=2 card=4 U=OEO>AB WES>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEO>AB WES>AB
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WNO>A
+FIND BALANCED act=2 seed=5 card=4 U=OEO>B WNO>B
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WNE>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WNS>A
+FIND BALANCED act=2 seed=2 card=4 U=OEO>AB WNS>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEO>AB WNS>AB
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WSO>A
+FIND BALANCED act=2 seed=5 card=4 U=OEO>B WSO>B
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WSE>A
+FIND BALANCED act=2 seed=2 card=3 U=OEO>A WSN>A
+FIND BALANCED act=2 seed=2 card=4 U=OEO>AB WSN>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEO>AB WSN>AB
+FIND BALANCED act=2 seed=3 card=3 U=OEO>B NEO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB NEN>AB
+FIND BALANCED act=2 seed=3 card=3 U=OEO>B NWO>B
+FIND BALANCED act=2 seed=3 card=4 U=OEO>AB NWE>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB NWN>AB
+FIND BALANCED act=2 seed=3 card=3 U=OEO>B NSO>B
+FIND BALANCED act=2 seed=3 card=4 U=OEO>AB NSE>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB NSN>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A SES>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B SES>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB SES>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEO>AB SWE>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEO>AB SWE>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A SWS>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B SWS>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB SWS>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEO>AB SNE>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEO>A SNS>A
+FIND BALANCED act=2 seed=3 card=2 U=OEO>B SNS>B
+FIND BALANCED act=2 seed=3 card=2 U=OEO>AB SNS>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEE>A OEE>A
+FIND BALANCED act=2 seed=1 card=2 U=OEE>B OEE>B
+FIND BALANCED act=2 seed=0 card=3 U=OEE>AB OEE>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEE>AB OEE>AB
+FIND BALANCED act=2 seed=2 card=4 U=OEE>AB OEE>AB
+FIND BALANCED act=4 seed=3 card=6 U=OEE>AB OEE>AB
+FIND BALANCED act=4 seed=4 card=6 U=OEE>AB OEE>AB
+FIND BALANCED act=4 seed=5 card=7 U=OEE>AB OEE>AB
+FIND BALANCED act=2 seed=4 card=2 U=OEE>A OES>A
+FIND BALANCED act=2 seed=4 card=2 U=OEE>B OES>B
+FIND BALANCED act=2 seed=4 card=2 U=OEE>AB OES>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEE>A OWE>A
+FIND BALANCED act=2 seed=1 card=2 U=OEE>B OWE>B
+FIND BALANCED act=2 seed=1 card=2 U=OEE>AB OWE>AB
+FIND BALANCED act=2 seed=4 card=2 U=OEE>A OWS>A
+FIND BALANCED act=2 seed=4 card=2 U=OEE>B OWS>B
+FIND BALANCED act=2 seed=4 card=2 U=OEE>AB OWS>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEE>A ONE>A
+FIND BALANCED act=2 seed=1 card=2 U=OEE>B ONE>B
+FIND BALANCED act=2 seed=0 card=3 U=OEE>AB ONE>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEE>AB ONE>AB
+FIND BALANCED act=2 seed=4 card=2 U=OEE>A ONS>A
+FIND BALANCED act=2 seed=4 card=2 U=OEE>B ONS>B
+FIND BALANCED act=2 seed=4 card=2 U=OEE>AB ONS>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEE>A OSE>A
+FIND BALANCED act=2 seed=1 card=2 U=OEE>B OSE>B
+FIND BALANCED act=2 seed=0 card=3 U=OEE>AB OSE>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEE>AB OSE>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEE>AB OSE>AB
+FIND BALANCED act=4 seed=4 card=6 U=OEE>AB OSE>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEE>AB OSE>AB
+FIND BALANCED act=2 seed=4 card=2 U=OEE>A OSS>A
+FIND BALANCED act=2 seed=4 card=2 U=OEE>B OSS>B
+FIND BALANCED act=2 seed=4 card=2 U=OEE>AB OSS>AB
+FIND BALANCED act=2 seed=0 card=3 U=OEE>AB WEE>AB
+FIND BALANCED act=2 seed=1 card=4 U=OEE>AB WEE>AB
+FIND BALANCED act=2 seed=2 card=4 U=OEE>AB WEE>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEE>AB WEE>AB
+FIND BALANCED act=2 seed=4 card=4 U=OEE>AB WEE>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEE>AB WEE>AB
+FIND BALANCED act=2 seed=0 card=3 U=OEE>AB WNE>AB
+FIND BALANCED act=2 seed=1 card=4 U=OEE>AB WNE>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEE>AB WNE>AB
+FIND BALANCED act=2 seed=4 card=6 U=OEE>AB WNE>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEE>AB WNE>AB
+FIND BALANCED act=2 seed=0 card=3 U=OEE>AB WSE>AB
+FIND BALANCED act=2 seed=1 card=4 U=OEE>AB WSE>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEE>AB WSE>AB
+FIND BALANCED act=2 seed=4 card=4 U=OEE>AB WSE>AB
+FIND BALANCED act=2 seed=5 card=5 U=OEE>AB WSE>AB
+FIND BALANCED act=2 seed=4 card=4 U=OEE>AB NEE>AB
+FIND BALANCED act=2 seed=4 card=4 U=OEE>AB NSE>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEW>A OEW>A
+FIND BALANCED act=2 seed=1 card=2 U=OEW>B OEW>B
+FIND BALANCED act=2 seed=1 card=2 U=OEW>AB OEW>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>A OES>A
+FIND BALANCED act=2 seed=5 card=3 U=OEW>B OES>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB OES>AB
+FIND BALANCED act=2 seed=0 card=2 U=OEW>B OWO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEW>B OWO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEW>B OWO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEW>B OWO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>B OWO>B
+FIND BALANCED act=2 seed=0 card=3 U=OEW>AB OWO>AB
+FIND BALANCED act=4 seed=3 card=6 U=OEW>AB OWO>AB
+FIND BALANCED act=4 seed=4 card=6 U=OEW>AB OWO>AB
+FIND BALANCED act=4 seed=5 card=5 U=OEW>AB OWO>AB
+FIND BALANCED act=2 seed=1 card=6 U=OEW>AB OWE>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEW>A OWW>A
+FIND BALANCED act=2 seed=1 card=2 U=OEW>B OWW>B
+FIND BALANCED act=2 seed=1 card=2 U=OEW>AB OWW>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>A OWS>A
+FIND BALANCED act=2 seed=5 card=3 U=OEW>B OWS>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB OWS>AB
+FIND BALANCED act=2 seed=0 card=2 U=OEW>B ONO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEW>B ONO>B
+FIND BALANCED act=2 seed=2 card=2 U=OEW>B ONO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEW>B ONO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEW>B ONO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>B ONO>B
+FIND BALANCED act=2 seed=0 card=3 U=OEW>AB ONO>AB
+FIND BALANCED act=2 seed=2 card=2 U=OEW>AB ONO>AB
+FIND BALANCED act=4 seed=4 card=6 U=OEW>AB ONO>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEW>A ONW>A
+FIND BALANCED act=2 seed=1 card=2 U=OEW>B ONW>B
+FIND BALANCED act=2 seed=1 card=2 U=OEW>AB ONW>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>A ONS>A
+FIND BALANCED act=2 seed=5 card=3 U=OEW>B ONS>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB ONS>AB
+FIND BALANCED act=2 seed=0 card=2 U=OEW>B OSO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEW>B OSO>B
+FIND BALANCED act=2 seed=2 card=2 U=OEW>B OSO>B
+FIND BALANCED act=2 seed=3 card=3 U=OEW>B OSO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEW>B OSO>B
+FIND BALANCED act=2 seed=5 card=4 U=OEW>B OSO>B
+FIND BALANCED act=2 seed=0 card=3 U=OEW>AB OSO>AB
+FIND BALANCED act=2 seed=2 card=2 U=OEW>AB OSO>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEW>AB OSO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB OSO>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEW>A OSW>A
+FIND BALANCED act=2 seed=1 card=2 U=OEW>B OSW>B
+FIND BALANCED act=2 seed=1 card=2 U=OEW>AB OSW>AB
+FIND BALANCED act=2 seed=5 card=2 U=OEW>A OSS>A
+FIND BALANCED act=2 seed=0 card=2 U=OEW>B EWO>B
+FIND BALANCED act=2 seed=1 card=3 U=OEW>B EWO>B
+FIND BALANCED act=2 seed=3 card=3 U=OEW>B EWO>B
+FIND BALANCED act=2 seed=4 card=3 U=OEW>B EWO>B
+FIND BALANCED act=2 seed=5 card=4 U=OEW>B EWO>B
+FIND BALANCED act=2 seed=0 card=3 U=OEW>AB EWO>AB
+FIND BALANCED act=2 seed=1 card=4 U=OEW>AB EWO>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEW>AB EWO>AB
+FIND BALANCED act=2 seed=4 card=4 U=OEW>AB EWO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB EWO>AB
+FIND BALANCED act=2 seed=0 card=2 U=OEW>B ENO>B
+FIND BALANCED act=2 seed=1 card=3 U=OEW>B ENO>B
+FIND BALANCED act=2 seed=3 card=3 U=OEW>B ENO>B
+FIND BALANCED act=2 seed=4 card=3 U=OEW>B ENO>B
+FIND BALANCED act=2 seed=0 card=3 U=OEW>AB ENO>AB
+FIND BALANCED act=2 seed=1 card=4 U=OEW>AB ENO>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEW>AB ENO>AB
+FIND BALANCED act=2 seed=4 card=4 U=OEW>AB ENO>AB
+FIND BALANCED act=2 seed=0 card=2 U=OEW>B ESO>B
+FIND BALANCED act=2 seed=1 card=3 U=OEW>B ESO>B
+FIND BALANCED act=2 seed=3 card=3 U=OEW>B ESO>B
+FIND BALANCED act=2 seed=4 card=3 U=OEW>B ESO>B
+FIND BALANCED act=2 seed=5 card=4 U=OEW>B ESO>B
+FIND BALANCED act=2 seed=0 card=3 U=OEW>AB ESO>AB
+FIND BALANCED act=2 seed=1 card=4 U=OEW>AB ESO>AB
+FIND BALANCED act=2 seed=3 card=4 U=OEW>AB ESO>AB
+FIND BALANCED act=2 seed=4 card=4 U=OEW>AB ESO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB ESO>AB
+FIND BALANCED act=2 seed=1 card=3 U=OEW>A WEW>A
+FIND BALANCED act=2 seed=1 card=3 U=OEW>B WEW>B
+FIND BALANCED act=2 seed=1 card=4 U=OEW>AB WEW>AB
+FIND BALANCED act=2 seed=1 card=3 U=OEW>A WNW>A
+FIND BALANCED act=2 seed=1 card=3 U=OEW>B WNW>B
+FIND BALANCED act=2 seed=1 card=4 U=OEW>AB WNW>AB
+FIND BALANCED act=2 seed=1 card=3 U=OEW>A WSW>A
+FIND BALANCED act=2 seed=1 card=3 U=OEW>B WSW>B
+FIND BALANCED act=2 seed=1 card=4 U=OEW>AB WSW>AB
+FIND BALANCED act=2 seed=5 card=4 U=OEW>B NWO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB NWO>AB
+FIND BALANCED act=2 seed=5 card=4 U=OEW>B NSO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB NSO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>A SES>A
+FIND BALANCED act=2 seed=5 card=3 U=OEW>B SES>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB SES>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>A SWS>A
+FIND BALANCED act=2 seed=5 card=3 U=OEW>B SWS>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB SWS>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEW>A SNS>A
+FIND BALANCED act=2 seed=5 card=3 U=OEW>B SNS>B
+FIND BALANCED act=2 seed=5 card=3 U=OEW>AB SNS>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEN>A OEO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEN>B OEO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEN>B OEO>B
+FIND BALANCED act=2 seed=2 card=2 U=OEN>B OEO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>B OEO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEN>B OEO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B OEO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>AB OEO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEN>A OEE>A
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B OEE>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>AB OEE>AB
+FIND BALANCED act=2 seed=4 card=2 U=OEN>A OEW>A
+FIND BALANCED act=2 seed=4 card=2 U=OEN>B OEW>B
+FIND BALANCED act=2 seed=4 card=2 U=OEN>AB OEW>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEN>A OEN>A
+FIND BALANCED act=2 seed=1 card=2 U=OEN>B OEN>B
+FIND BALANCED act=2 seed=1 card=2 U=OEN>AB OEN>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEN>A OWO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEN>B OWO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEN>B OWO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>B OWO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEN>B OWO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B OWO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>AB OWO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEN>A OWE>A
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B OWE>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>AB OWE>AB
+FIND BALANCED act=2 seed=4 card=2 U=OEN>A OWW>A
+FIND BALANCED act=2 seed=4 card=2 U=OEN>B OWW>B
+FIND BALANCED act=2 seed=4 card=2 U=OEN>AB OWW>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEN>A OWN>A
+FIND BALANCED act=2 seed=1 card=2 U=OEN>B OWN>B
+FIND BALANCED act=2 seed=1 card=2 U=OEN>AB OWN>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEN>A ONO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEN>B ONO>B
+FIND BALANCED act=2 seed=1 card=2 U=OEN>B ONO>B
+FIND BALANCED act=2 seed=2 card=2 U=OEN>B ONO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>B ONO>B
+FIND BALANCED act=2 seed=4 card=2 U=OEN>B ONO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B ONO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>AB ONO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEN>A ONE>A
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B ONE>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>AB ONE>AB
+FIND BALANCED act=2 seed=4 card=2 U=OEN>A ONW>A
+FIND BALANCED act=2 seed=4 card=2 U=OEN>B ONW>B
+FIND BALANCED act=2 seed=4 card=2 U=OEN>AB ONW>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEN>A ONN>A
+FIND BALANCED act=2 seed=1 card=2 U=OEN>B ONN>B
+FIND BALANCED act=2 seed=1 card=2 U=OEN>AB ONN>AB
+FIND BALANCED act=2 seed=2 card=4 U=OEN>AB ONN>AB
+FIND BALANCED act=2 seed=4 card=2 U=OEN>A OSW>A
+FIND BALANCED act=2 seed=4 card=2 U=OEN>B OSW>B
+FIND BALANCED act=2 seed=4 card=2 U=OEN>AB OSW>AB
+FIND BALANCED act=2 seed=1 card=2 U=OEN>A OSN>A
+FIND BALANCED act=2 seed=1 card=2 U=OEN>B OSN>B
+FIND BALANCED act=2 seed=1 card=2 U=OEN>AB OSN>AB
+FIND BALANCED act=2 seed=4 card=3 U=OEN>B EWO>B
+FIND BALANCED act=2 seed=4 card=4 U=OEN>AB EWO>AB
+FIND BALANCED act=2 seed=5 card=4 U=OEN>B EWE>B
+FIND BALANCED act=2 seed=4 card=3 U=OEN>B ENO>B
+FIND BALANCED act=2 seed=4 card=4 U=OEN>AB ENO>AB
+FIND BALANCED act=2 seed=5 card=4 U=OEN>B ENE>B
+FIND BALANCED act=2 seed=5 card=4 U=OEN>B WEO>B
+FIND BALANCED act=2 seed=4 card=3 U=OEN>A WEW>A
+FIND BALANCED act=2 seed=4 card=3 U=OEN>B WEW>B
+FIND BALANCED act=2 seed=4 card=4 U=OEN>AB WEW>AB
+FIND BALANCED act=2 seed=5 card=4 U=OEN>B WNO>B
+FIND BALANCED act=2 seed=4 card=3 U=OEN>A WNW>A
+FIND BALANCED act=2 seed=4 card=3 U=OEN>B WNW>B
+FIND BALANCED act=2 seed=4 card=4 U=OEN>AB WNW>AB
+FIND BALANCED act=2 seed=4 card=3 U=OEN>A WSW>A
+FIND BALANCED act=2 seed=4 card=3 U=OEN>B WSW>B
+FIND BALANCED act=2 seed=4 card=4 U=OEN>AB WSW>AB
+FIND BALANCED act=2 seed=1 card=3 U=OEN>B NEN>B
+FIND BALANCED act=2 seed=1 card=3 U=OEN>B NWN>B
+FIND BALANCED act=2 seed=1 card=3 U=OEN>B NSN>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>A SEO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEN>B SEO>B
+FIND BALANCED act=2 seed=1 card=3 U=OEN>B SEO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>B SEO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B SEO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>AB SEO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEN>A SEE>A
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B SEE>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>AB SEE>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEN>A SWO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEN>B SWO>B
+FIND BALANCED act=2 seed=1 card=3 U=OEN>B SWO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>B SWO>B
+FIND BALANCED act=2 seed=4 card=3 U=OEN>B SWO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B SWO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>AB SWO>AB
+FIND BALANCED act=2 seed=4 card=4 U=OEN>AB SWO>AB
+FIND BALANCED act=2 seed=5 card=3 U=OEN>A SWE>A
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B SWE>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>AB SWE>AB
+FIND BALANCED act=2 seed=3 card=2 U=OEN>A SNO>A
+FIND BALANCED act=2 seed=0 card=2 U=OEN>B SNO>B
+FIND BALANCED act=2 seed=1 card=3 U=OEN>B SNO>B
+FIND BALANCED act=2 seed=3 card=2 U=OEN>B SNO>B
+FIND BALANCED act=2 seed=4 card=3 U=OEN>B SNO>B
+FIND BALANCED act=2 seed=5 card=3 U=OEN>B SNO>B
+FIND LONGCYCLE p=128 seed=2 card=2 U=OEW>AB WEN>A
+FIND LONGCYCLE p=128 seed=2 card=2 U=OEW>AB WES>A
+FIND LONGCYCLE p=32 seed=5 card=3 U=OWS>B SNE>AB
+FIND LONGCYCLE p=128 seed=3 card=2 U=ONS>AB SNE>A
+FIND LONGCYCLE p=128 seed=3 card=2 U=ONS>AB SNW>A
+FIND LONGCYCLE p=128 seed=5 card=3 U=ONS>AB SNW>A
+FIND LONGCYCLE p=32 seed=5 card=3 U=OSN>B OEN>A
+FIND LONGCYCLE p=32 seed=5 card=3 U=OSN>B OWN>A
+FIND LONGCYCLE p=32 seed=5 card=3 U=OSN>B SEN>A
+FIND LONGCYCLE p=32 seed=5 card=3 U=OSN>B SWN>A
+FIND LONGCYCLE p=128 seed=2 card=2 U=EWN>B OWE>AB
+FIND LONGCYCLE p=128 seed=5 card=3 U=EWN>B OWE>AB
+FIND LONGCYCLE p=128 seed=2 card=2 U=EWS>B OWE>AB
+FIND LONGCYCLE p=128 seed=5 card=3 U=EWS>B OWE>AB
+FIND LONGCYCLE p=32 seed=5 card=3 U=WEN>AB OSW>A
+FIND LONGCYCLE p=128 seed=5 card=3 U=WES>B OEW>AB
+FIND LONGCYCLE p=128 seed=3 card=2 U=NSE>B OSN>AB
+FIND LONGCYCLE p=64 seed=5 card=3 U=NSE>B OSN>AB
+FIND LONGCYCLE p=64 seed=5 card=3 U=NSE>B WSN>AB
+FIND LONGCYCLE p=128 seed=3 card=2 U=NSW>B OSN>AB
+FIND LONGCYCLE p=128 seed=5 card=3 U=NSW>B OSN>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOO>A WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOO>A WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOO>B WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOO>B WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOO>AB WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOO>AB WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOO>A WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOO>A WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOO>B WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOO>B WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOO>AB WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOO>AB WSE>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOO>A SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOO>A SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOO>A SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOO>A SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOO>B SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOO>B SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOO>B SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOO>B SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOO>AB SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOO>AB SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOO>AB SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOO>AB SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOO>A SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOO>A SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOO>A SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOO>A SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOO>B SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOO>B SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOO>B SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOO>B SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOO>AB SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOO>AB SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOO>AB SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOO>AB SWN>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOE>A WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOE>A WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOE>B WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOE>B WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOE>AB WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOE>AB WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOE>A WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOE>A WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOE>B WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOE>B WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOE>AB WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOE>AB WSE>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOE>A SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOE>A SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOE>A SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOE>A SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOE>B SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOE>B SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOE>B SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOE>B SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOE>AB SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOE>AB SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOE>AB SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOE>AB SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOE>A SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOE>A SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOE>A SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOE>A SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOE>B SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOE>B SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOE>B SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOE>B SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOE>AB SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOE>AB SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOE>AB SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOE>AB SWN>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOW>A WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOW>A WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOW>B WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOW>B WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOW>AB WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOW>AB WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOW>A WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOW>A WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOW>B WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOW>B WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOW>AB WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOW>AB WSE>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOW>A SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOW>A SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOW>A SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOW>A SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOW>B SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOW>B SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOW>B SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOW>B SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOW>AB SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOW>AB SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOW>AB SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOW>AB SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOW>A SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOW>A SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOW>A SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOW>A SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOW>B SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOW>B SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOW>B SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOW>B SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOW>AB SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOW>AB SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOW>AB SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOW>AB SWN>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OON>A WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OON>A WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OON>B WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OON>B WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OON>AB WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OON>AB WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OON>A WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OON>A WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OON>B WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OON>B WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OON>AB WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OON>AB WSE>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OON>A SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OON>A SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OON>A SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OON>A SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OON>B SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OON>B SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OON>B SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OON>B SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OON>AB SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OON>AB SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OON>AB SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OON>AB SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OON>A SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OON>A SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OON>A SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OON>A SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OON>B SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OON>B SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OON>B SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OON>B SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OON>AB SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OON>AB SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OON>AB SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OON>AB SWN>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOS>A WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOS>A WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOS>B WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOS>B WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOS>AB WNE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOS>AB WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOS>A WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOS>A WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOS>B WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOS>B WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OOS>AB WSE>B
+FIND UNRES card=10 maxcard=48 seed=2 U=OOS>AB WSE>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOS>A SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOS>A SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOS>A SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOS>A SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOS>B SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOS>B SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOS>B SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOS>B SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOS>AB SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOS>AB SEN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOS>AB SEN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOS>AB SEN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOS>A SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOS>A SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOS>A SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOS>A SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOS>B SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOS>B SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOS>B SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOS>B SWN>AB
+FIND UNRES card=6 maxcard=25 seed=3 U=OOS>AB SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OOS>AB SWN>B
+FIND UNRES card=10 maxcard=48 seed=3 U=OOS>AB SWN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OOS>AB SWN>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OEO>A WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEO>B WNE>B
+FIND UNRES card=8 maxcard=27 seed=5 U=OEO>B WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEO>AB WNE>B
+FIND UNRES card=8 maxcard=26 seed=5 U=OEO>AB WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEO>A WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEO>B WSE>B
+FIND UNRES card=8 maxcard=27 seed=5 U=OEO>B WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEO>AB WSE>B
+FIND UNRES card=8 maxcard=26 seed=5 U=OEO>AB WSE>B
+FIND UNRES card=6 maxcard=47 seed=3 U=OEO>B NES>A
+FIND UNRES card=6 maxcard=24 seed=3 U=OEO>B NES>B
+FIND UNRES card=7 maxcard=25 seed=3 U=OEO>AB NES>B
+FIND UNRES card=6 maxcard=47 seed=3 U=OEO>B NWS>A
+FIND UNRES card=6 maxcard=24 seed=3 U=OEO>B NWS>B
+FIND UNRES card=7 maxcard=25 seed=3 U=OEO>AB NWS>B
+FIND UNRES card=7 maxcard=25 seed=3 U=OEO>A SEN>B
+FIND UNRES card=6 maxcard=26 seed=3 U=OEO>B SEN>B
+FIND UNRES card=7 maxcard=27 seed=5 U=OEO>B SEN>B
+FIND UNRES card=6 maxcard=25 seed=3 U=OEO>AB SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OEO>AB SEN>B
+FIND UNRES card=7 maxcard=25 seed=3 U=OEO>A SWN>B
+FIND UNRES card=6 maxcard=26 seed=3 U=OEO>B SWN>B
+FIND UNRES card=7 maxcard=27 seed=5 U=OEO>B SWN>B
+FIND UNRES card=6 maxcard=25 seed=3 U=OEO>AB SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OEO>AB SWN>B
+FIND UNRES card=8 maxcard=26 seed=1 U=OEE>B ENW>B
+FIND UNRES card=8 maxcard=26 seed=1 U=OEE>B ESW>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEE>A WNE>B
+FIND UNRES card=7 maxcard=25 seed=0 U=OEE>B WNE>B
+FIND UNRES card=8 maxcard=26 seed=1 U=OEE>B WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEE>B WNE>B
+FIND UNRES card=8 maxcard=26 seed=3 U=OEE>B WNE>B
+FIND UNRES card=9 maxcard=27 seed=5 U=OEE>B WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEE>AB WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEE>A WSE>B
+FIND UNRES card=7 maxcard=25 seed=0 U=OEE>B WSE>B
+FIND UNRES card=8 maxcard=26 seed=1 U=OEE>B WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEE>B WSE>B
+FIND UNRES card=8 maxcard=26 seed=3 U=OEE>B WSE>B
+FIND UNRES card=8 maxcard=26 seed=4 U=OEE>B WSE>B
+FIND UNRES card=9 maxcard=27 seed=5 U=OEE>B WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEE>AB WSE>B
+FIND UNRES card=8 maxcard=26 seed=4 U=OEE>B NES>B
+FIND UNRES card=7 maxcard=26 seed=3 U=OEE>B SEN>B
+FIND UNRES card=8 maxcard=26 seed=4 U=OEE>B SEN>B
+FIND UNRES card=8 maxcard=27 seed=5 U=OEE>B SEN>B
+FIND UNRES card=7 maxcard=26 seed=3 U=OEE>B SWN>B
+FIND UNRES card=8 maxcard=26 seed=4 U=OEE>B SWN>B
+FIND UNRES card=8 maxcard=27 seed=5 U=OEE>B SWN>B
+FIND UNRES card=57 maxcard=93 seed=3 U=OEE>B SWN>AB
+FIND UNRES card=59 maxcard=93 seed=4 U=OEE>B SWN>AB
+FIND UNRES card=58 maxcard=94 seed=5 U=OEE>B SWN>AB
+FIND UNRES card=51 maxcard=63 seed=0 U=OEW>AB ONW>A
+FIND UNRES card=52 maxcard=63 seed=1 U=OEW>AB ONW>A
+FIND UNRES card=52 maxcard=65 seed=4 U=OEW>AB ONW>A
+FIND UNRES card=9 maxcard=47 seed=0 U=OEW>AB ONW>AB
+FIND UNRES card=10 maxcard=44 seed=2 U=OEW>AB ONW>AB
+FIND UNRES card=10 maxcard=50 seed=3 U=OEW>AB ONW>AB
+FIND UNRES card=30 maxcard=66 seed=4 U=OEW>AB ONW>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OEW>AB ONW>AB
+FIND UNRES card=9 maxcard=69 seed=0 U=OEW>AB ONS>AB
+FIND UNRES card=20 maxcard=72 seed=3 U=OEW>AB ONS>AB
+FIND UNRES card=51 maxcard=63 seed=0 U=OEW>AB OSW>A
+FIND UNRES card=52 maxcard=63 seed=1 U=OEW>AB OSW>A
+FIND UNRES card=52 maxcard=64 seed=3 U=OEW>AB OSW>A
+FIND UNRES card=52 maxcard=65 seed=4 U=OEW>AB OSW>A
+FIND UNRES card=9 maxcard=47 seed=0 U=OEW>AB OSW>AB
+FIND UNRES card=10 maxcard=44 seed=2 U=OEW>AB OSW>AB
+FIND UNRES card=10 maxcard=48 seed=3 U=OEW>AB OSW>AB
+FIND UNRES card=10 maxcard=50 seed=4 U=OEW>AB OSW>AB
+FIND UNRES card=11 maxcard=45 seed=5 U=OEW>AB OSW>AB
+FIND UNRES card=9 maxcard=69 seed=0 U=OEW>AB OSN>AB
+FIND UNRES card=11 maxcard=71 seed=5 U=OEW>AB OSN>AB
+FIND UNRES card=5 maxcard=24 seed=0 U=OEW>B ENW>B
+FIND UNRES card=6 maxcard=25 seed=1 U=OEW>B ENW>B
+FIND UNRES card=6 maxcard=25 seed=3 U=OEW>B ENW>B
+FIND UNRES card=6 maxcard=25 seed=4 U=OEW>B ENW>B
+FIND UNRES card=37 maxcard=43 seed=0 U=OEW>AB ENW>A
+FIND UNRES card=38 maxcard=44 seed=1 U=OEW>AB ENW>A
+FIND UNRES card=38 maxcard=44 seed=3 U=OEW>AB ENW>A
+FIND UNRES card=38 maxcard=44 seed=4 U=OEW>AB ENW>A
+FIND UNRES card=5 maxcard=25 seed=0 U=OEW>AB ENW>B
+FIND UNRES card=6 maxcard=26 seed=1 U=OEW>AB ENW>B
+FIND UNRES card=6 maxcard=26 seed=3 U=OEW>AB ENW>B
+FIND UNRES card=6 maxcard=26 seed=4 U=OEW>AB ENW>B
+FIND UNRES card=5 maxcard=24 seed=0 U=OEW>B ESW>B
+FIND UNRES card=6 maxcard=25 seed=1 U=OEW>B ESW>B
+FIND UNRES card=6 maxcard=25 seed=3 U=OEW>B ESW>B
+FIND UNRES card=6 maxcard=25 seed=4 U=OEW>B ESW>B
+FIND UNRES card=7 maxcard=25 seed=5 U=OEW>B ESW>B
+FIND UNRES card=37 maxcard=43 seed=0 U=OEW>AB ESW>A
+FIND UNRES card=38 maxcard=44 seed=1 U=OEW>AB ESW>A
+FIND UNRES card=38 maxcard=44 seed=3 U=OEW>AB ESW>A
+FIND UNRES card=38 maxcard=44 seed=4 U=OEW>AB ESW>A
+FIND UNRES card=5 maxcard=25 seed=0 U=OEW>AB ESW>B
+FIND UNRES card=6 maxcard=26 seed=1 U=OEW>AB ESW>B
+FIND UNRES card=6 maxcard=26 seed=3 U=OEW>AB ESW>B
+FIND UNRES card=6 maxcard=26 seed=4 U=OEW>AB ESW>B
+FIND UNRES card=7 maxcard=24 seed=5 U=OEW>AB ESW>B
+FIND UNRES card=7 maxcard=26 seed=1 U=OEW>A WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEW>A WNE>B
+FIND UNRES card=7 maxcard=26 seed=1 U=OEW>B WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEW>B WNE>B
+FIND UNRES card=7 maxcard=26 seed=1 U=OEW>AB WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEW>AB WNE>B
+FIND UNRES card=7 maxcard=26 seed=1 U=OEW>A WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEW>A WSE>B
+FIND UNRES card=7 maxcard=26 seed=1 U=OEW>B WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEW>B WSE>B
+FIND UNRES card=7 maxcard=26 seed=1 U=OEW>AB WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEW>AB WSE>B
+FIND UNRES card=7 maxcard=25 seed=5 U=OEW>B NWS>B
+FIND UNRES card=7 maxcard=24 seed=5 U=OEW>AB NWS>B
+FIND UNRES card=6 maxcard=26 seed=3 U=OEW>A SEN>B
+FIND UNRES card=8 maxcard=24 seed=5 U=OEW>A SEN>B
+FIND UNRES card=14 maxcard=73 seed=3 U=OEW>A SEN>AB
+FIND UNRES card=22 maxcard=67 seed=5 U=OEW>A SEN>AB
+FIND UNRES card=6 maxcard=26 seed=3 U=OEW>B SEN>B
+FIND UNRES card=7 maxcard=27 seed=5 U=OEW>B SEN>B
+FIND UNRES card=14 maxcard=72 seed=3 U=OEW>B SEN>AB
+FIND UNRES card=15 maxcard=73 seed=5 U=OEW>B SEN>AB
+FIND UNRES card=6 maxcard=27 seed=3 U=OEW>AB SEN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OEW>AB SEN>B
+FIND UNRES card=20 maxcard=96 seed=3 U=OEW>AB SEN>AB
+FIND UNRES card=21 maxcard=95 seed=5 U=OEW>AB SEN>AB
+FIND UNRES card=6 maxcard=26 seed=3 U=OEW>A SWN>B
+FIND UNRES card=8 maxcard=24 seed=5 U=OEW>A SWN>B
+FIND UNRES card=6 maxcard=26 seed=3 U=OEW>B SWN>B
+FIND UNRES card=7 maxcard=27 seed=5 U=OEW>B SWN>B
+FIND UNRES card=6 maxcard=27 seed=3 U=OEW>AB SWN>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OEW>AB SWN>B
+FIND UNRES card=52 maxcard=63 seed=1 U=OEN>B OSN>AB
+FIND UNRES card=52 maxcard=64 seed=2 U=OEN>B OSN>AB
+FIND UNRES card=52 maxcard=65 seed=4 U=OEN>B OSN>AB
+FIND UNRES card=9 maxcard=47 seed=0 U=OEN>AB OSN>AB
+FIND UNRES card=10 maxcard=48 seed=2 U=OEN>AB OSN>AB
+FIND UNRES card=10 maxcard=44 seed=3 U=OEN>AB OSN>AB
+FIND UNRES card=10 maxcard=50 seed=4 U=OEN>AB OSN>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OEN>AB OSN>AB
+FIND UNRES card=6 maxcard=25 seed=4 U=OEN>B ENW>B
+FIND UNRES card=7 maxcard=25 seed=5 U=OEN>B ENW>B
+FIND UNRES card=6 maxcard=26 seed=4 U=OEN>AB ENW>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEN>A WNE>B
+FIND UNRES card=6 maxcard=24 seed=4 U=OEN>A WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEN>B WNE>B
+FIND UNRES card=6 maxcard=24 seed=4 U=OEN>B WNE>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OEN>B WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEN>AB WNE>B
+FIND UNRES card=6 maxcard=25 seed=4 U=OEN>AB WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEN>A WSE>B
+FIND UNRES card=6 maxcard=24 seed=4 U=OEN>A WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEN>B WSE>B
+FIND UNRES card=6 maxcard=24 seed=4 U=OEN>B WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OEN>AB WSE>B
+FIND UNRES card=6 maxcard=25 seed=4 U=OEN>AB WSE>B
+FIND UNRES card=6 maxcard=24 seed=1 U=OEN>B NES>B
+FIND UNRES card=6 maxcard=24 seed=1 U=OEN>B NWS>B
+FIND UNRES card=5 maxcard=24 seed=0 U=OEN>B SEN>B
+FIND UNRES card=6 maxcard=25 seed=1 U=OEN>B SEN>B
+FIND UNRES card=6 maxcard=24 seed=3 U=OEN>B SEN>B
+FIND UNRES card=10 maxcard=26 seed=5 U=OEN>B SEN>B
+FIND UNRES card=5 maxcard=24 seed=0 U=OEN>B SWN>B
+FIND UNRES card=6 maxcard=25 seed=1 U=OEN>B SWN>B
+FIND UNRES card=6 maxcard=24 seed=3 U=OEN>B SWN>B
+FIND UNRES card=6 maxcard=25 seed=4 U=OEN>B SWN>B
+FIND UNRES card=7 maxcard=27 seed=5 U=OEN>B SWN>B
+FIND UNRES card=6 maxcard=26 seed=4 U=OEN>AB SWN>B
+FIND UNRES card=17 maxcard=57 seed=5 U=OEN>AB SWN>AB
+FIND UNRES card=52 maxcard=63 seed=1 U=OES>B ONS>AB
+FIND UNRES card=52 maxcard=64 seed=2 U=OES>B ONS>AB
+FIND UNRES card=52 maxcard=64 seed=4 U=OES>B ONS>AB
+FIND UNRES card=9 maxcard=47 seed=0 U=OES>AB ONS>AB
+FIND UNRES card=10 maxcard=48 seed=2 U=OES>AB ONS>AB
+FIND UNRES card=12 maxcard=44 seed=3 U=OES>AB ONS>AB
+FIND UNRES card=11 maxcard=49 seed=5 U=OES>AB ONS>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OES>A WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OES>B WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OES>AB WNE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OES>A WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OES>B WSE>B
+FIND UNRES card=6 maxcard=25 seed=2 U=OES>AB WSE>B
+FIND UNRES card=5 maxcard=24 seed=0 U=OES>B NES>B
+FIND UNRES card=6 maxcard=25 seed=1 U=OES>B NES>B
+FIND UNRES card=6 maxcard=25 seed=3 U=OES>B NES>B
+FIND UNRES card=6 maxcard=25 seed=4 U=OES>B NES>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OES>B NES>B
+FIND UNRES card=5 maxcard=24 seed=0 U=OES>B NWS>B
+FIND UNRES card=6 maxcard=25 seed=1 U=OES>B NWS>B
+FIND UNRES card=6 maxcard=25 seed=3 U=OES>B NWS>B
+FIND UNRES card=6 maxcard=25 seed=4 U=OES>B NWS>B
+FIND UNRES card=7 maxcard=26 seed=5 U=OES>B NWS>B
+FIND UNRES card=6 maxcard=24 seed=1 U=OES>B SEN>B
+FIND UNRES card=6 maxcard=26 seed=3 U=OES>B SEN>B
+FIND UNRES card=7 maxcard=27 seed=5 U=OES>B SEN>B
+FIND UNRES card=6 maxcard=24 seed=1 U=OES>B SWN>B
+FIND UNRES card=6 maxcard=26 seed=3 U=OES>B SWN>B
+FIND UNRES card=7 maxcard=27 seed=5 U=OES>B SWN>B
+FIND UNRES card=7 maxcard=26 seed=2 U=OWO>B ENW>B
+FIND UNRES card=7 maxcard=25 seed=2 U=OWO>AB ENW>B
+FIND UNRES card=7 maxcard=26 seed=2 U=OWO>B ESW>B
+FIND UNRES card=8 maxcard=27 seed=5 U=OWO>B ESW>B
+FIND UNRES card=7 maxcard=25 seed=2 U=OWO>AB ESW>B
+FIND UNRES card=8 maxcard=26 seed=5 U=OWO>AB ESW>B
+FIND UNRES card=7 maxcard=25 seed=2 U=OWO>A WNE>B
+FIND UNRES card=6 maxcard=26 seed=2 U=OWO>B WNE>B
+FIND UNRES card=8 maxcard=48 seed=2 U=OWO>B WNE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OWO>AB WNE>B
+FIND UNRES card=7 maxcard=25 seed=2 U=OWO>A WSE>B
+FIND UNRES card=6 maxcard=26 seed=2 U=OWO>B WSE>B
+FIND UNRES card=8 maxcard=48 seed=2 U=OWO>B WSE>AB
+FIND UNRES card=6 maxcard=25 seed=2 U=OWO>AB WSE>B
+FIND UNRES card=6 maxcard=47 seed=3 U=OWO>B NES>A
+FIND UNRES card=6 maxcard=24 seed=3 U=OWO>B NES>B
+FIND UNRES card=7 maxcard=25 seed=3 U=OWO>AB NES>B
+FIND UNRES card=6 maxcard=47 seed=3 U=OWO>B NWS>A
+FIND UNRES card=7 maxcard=48 seed=5 U=OWO>B NWS>A
+FIND UNRES card=6 maxcard=24 seed=3 U=OWO>B NWS>B
+FIND UNRES card=7 maxcard=25 seed=5 U=OWO>B NWS>B
+FIND UNRES card=7 maxcard=25 seed=3 U=OWO>AB NWS>B

@@ -208,12 +208,12 @@ int main(int argc,char**argv){
     }
     fprintf(stderr,"seeds=%d (predicted %d)\n",nseed,seedcount(spanmax));
 
-    printf("r0a,r0b,r0c,r1a,r1b,r1c,t0,t1,extinct,fixed,balanced,cycle,glider,growing,unresolved,maxperiod,periodmask,maxtransient,nonpow2,maxactive\n");
+    printf("r0a,r0b,r0c,r1a,r1b,r1c,t0,t1,extinct,fixed,balanced,cycle,glider,growing,unresolved,maxperiod,periodmask,maxtransient,nonpow2,maxactive,balanced0,cycle0\n");
 
     for(int i0=0;i0<27;i0++) for(int i1=0;i1<27;i1++) for(int tm=0;tm<4;tm++){
         Cons C; C.r[0]=R27[i0]; C.r[1]=R27[i1]; C.t[0]=TM[tm][0]; C.t[1]=TM[tm][1];
         long cnt[NCLS]; for(int i=0;i<NCLS;i++) cnt[i]=0;
-        int maxp=0, maxtr=0, nonpow2=0, maxact=0;
+        int maxp=0, maxtr=0, nonpow2=0, maxact=0; long bal0=0, cyc0=0;
         uint64_t pmask=0;
         for(int si=0;si<nseed;si++){
             St s; bb_zero(&s.p[0]); bb_zero(&s.p[1]);
@@ -231,11 +231,13 @@ int main(int argc,char**argv){
             }
             if(R.cls!=GROWING&&R.cls!=UNRESOLVED&&R.t0>maxtr) maxtr=R.t0;
             if(R.cls==BALANCED&&R.active>maxact) maxact=R.active;
+            if(R.cls==BALANCED&&R.t0==0) bal0++;
+            if(R.cls==CYCLE&&R.t0==0) cyc0++;
         }
-        printf("%d,%d,%d,%d,%d,%d,%d,%d,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%d,%llu,%d,%d,%d\n",
+        printf("%d,%d,%d,%d,%d,%d,%d,%d,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%d,%llu,%d,%d,%d,%ld,%ld\n",
             C.r[0].a,C.r[0].b,C.r[0].c,C.r[1].a,C.r[1].b,C.r[1].c,C.t[0],C.t[1],
             cnt[EXTINCT],cnt[FIXED],cnt[BALANCED],cnt[CYCLE],cnt[GLIDER],cnt[GROWING],cnt[UNRESOLVED],
-            maxp,(unsigned long long)pmask,maxtr,nonpow2,maxact);
+            maxp,(unsigned long long)pmask,maxtr,nonpow2,maxact,bal0,cyc0);
     }
     return 0;
 }

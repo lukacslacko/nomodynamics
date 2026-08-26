@@ -1,0 +1,23 @@
+hypaudit engine validated against xnomos on 4000 random states (phi = id, both clear-resolutions): exact match
+
+SUPER-CROSS n=2, phi = swap, clear-resolution OR
+  COMPLETE: 27^2 = 729 constitutions x 768 canonical seeds in 5 cells = 559872 classifications  (74s)
+  GLIDERS (all re-verified over 3 periods): 0
+
+SUPER-CROSS n=2, phi = swap, clear-resolution parity
+  COMPLETE: 27^2 = 729 constitutions x 768 canonical seeds in 5 cells = 559872 classifications  (82s)
+  GLIDERS (all re-verified over 3 periods): 0
+
+SUPER-MULTI n=2, T_0 = T_1 = {0,1}, clear-resolution OR
+  COMPLETE: 729 constitutions x 192 canonical seeds in 4 cells = 139968 classifications
+  GLIDERS (all re-verified over 3 periods): 1744
+    rules=[(-1, 1, -1), (-1, 1, 1)] seed=[(1, 3), (2, 3)] p=1 d=+1
+    rules=[(-1, 1, -1), (-1, 1, 1)] seed=[(1, 3), (2, 3)] p=1 d=+1
+    rules=[(-1, 1, -1), (-1, 1, 1)] seed=[(0, 3), (1, 3)] p=1 d=+1
+
+SUPER-MULTI n=2, T_0 = T_1 = {0,1}, clear-resolution parity
+  COMPLETE: 729 constitutions x 192 canonical seeds in 4 cells = 139968 classifications
+  GLIDERS (all re-verified over 3 periods): 1680
+    rules=[(-1, 1, -1), (-1, 1, 1)] seed=[(1, 3), (2, 3)] p=1 d=+1
+    rules=[(-1, 1, -1), (-1, 1, 1)] seed=[(1, 3), (2, 3)] p=1 d=+1
+    rules=[(-1, 1, -1), (-1, 1, 1)] seed=[(0, 3), (1, 3)] p=1 d=+1

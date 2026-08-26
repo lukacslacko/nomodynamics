@@ -157,16 +157,26 @@ def main():
 
     print("\n=== Theorem check: B(m) == 0 for OR / SUPER_OR / permutation "
           "targets, all 729 two-kind constitutions, m = 4..12 ===")
+    ms = list(range(4, 13))
     viol = 0
+    nz_noninj = 0
     for r1, r2 in itertools.product(RULES27, repeat=2):
+        Tz = transfer([r1, r2], [0, 0], "parity", 2, "blocked")
+        Z = trace_powers(Tz, ms)
         for tg, mode in (([0, 0], "or"), ([1, 0], "parity"), ([0, 1], "parity"),
                          ([0, 1], "super_or")):
-            Tf = transfer([r1, r2], tg, mode, 2, "fixed")
-            Tz = transfer([r1, r2], tg, mode, 2, "blocked")
-            if not np.array_equal(Tf, Tz):
-                viol += 1
-                print("  VIOLATION", r1, r2, tg, mode)
-    print("  constitutions checked: 729 x 4 semantics; violations:", viol)
+            F = trace_powers(transfer([r1, r2], tg, mode, 2, "fixed"), ms)
+            for m in ms:
+                if F[m] != Z[m]:
+                    viol += 1
+                    print("  VIOLATION", r1, r2, tg, mode, m, F[m], Z[m])
+        F = trace_powers(transfer([r1, r2], [0, 0], "parity", 2, "fixed"), ms)
+        if any(F[m] > Z[m] for m in ms):
+            nz_noninj += 1
+    print("  729 constitutions x 4 balance-free semantics x m=4..12 = %d "
+          "exact counts; violations: %d" % (729 * 4 * len(ms), viol))
+    print("  non-injective targets [0,0] under parity: %d of 729 "
+          "constitutions carry balanced codes" % nz_noninj)
 
 
 if __name__ == "__main__":

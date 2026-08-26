@@ -177,7 +177,11 @@ class Spec:
                  max_laws=None, fixed_rules=None, fixed_targets=None,
                  min_laws=None, allow_self_target=True, kinds_used=None,
                  assert_glider=True, symbreak=True, nonfixed=False,
-                 prime_period=False):
+                 prime_period=False, max_outdeg=None, min_outdeg=None,
+                 require_collision=False):
+        self.require_collision = require_collision
+        self.max_outdeg = max_outdeg
+        self.min_outdeg = min_outdeg
         self.assert_glider = assert_glider
         self.symbreak = symbreak
         self.nonfixed = nonfixed          # forbid Phi(S) = S
@@ -228,7 +232,7 @@ def build(sp: Spec):
     Cc = [[None] * len(offs) for _ in range(n)]
     for k in range(n):
         for arr, idx in ((A, 0), (B, 1), (Cc, 2)):
-            if sp.fixed_rules is not None:
+            if sp.fixed_rules is not None and sp.fixed_rules[k][idx] is not None:
                 val = sp.fixed_rules[k][idx]
                 for vi, v in enumerate(offs):
                     arr[k][vi] = (v == val)
@@ -265,6 +269,10 @@ def build(sp: Spec):
                 tgt[k][m] = v
                 row.append(v)
             C.add(*row)                    # every kind amends something
+            if sp.max_outdeg is not None:
+                _atmost(C, row, sp.max_outdeg)
+            if sp.min_outdeg is not None and sp.min_outdeg > 1:
+                _atmost(C, [-l for l in row], len(row) - sp.min_outdeg)
 
     # ---- state variables -------------------------------------------------
     x = [[[None] * n for _ in range(N)] for _ in range(p + 1)]
@@ -291,6 +299,7 @@ def build(sp: Spec):
         return False if j is None else occ[s][j]
 
     # ---- dynamics --------------------------------------------------------
+    collisions = []
     for s in range(p):
         # activity
         act = [[None] * n for _ in range(N)]
@@ -321,6 +330,9 @@ def build(sp: Spec):
             for j in range(N):
                 for m in range(n):
                     contrib = [C.AND([tgt[k][m], hit[j][k]]) for k in range(n)]
+                    if sp.require_collision:
+                        collisions += [C.AND([contrib[i1], contrib[i2]])
+                                       for i1 in range(n) for i2 in range(i1 + 1, n)]
                     tog = (C.XOR(contrib) if sp.mode == "parity"
                            else C.OR(contrib))
                     C.IFF(x[s + 1][j][m], C.XOR2(x[s][j][m], tog))
@@ -376,6 +388,9 @@ def build(sp: Spec):
                 src = cell(j - d)
                 for k in range(n):
                     C.IFF(x[p][j][k], False if src is None else x[0][src][k])
+
+    if sp.require_collision:
+        C.assert_(C.OR(collisions))
 
     # ---- non-degeneracy --------------------------------------------------
     def differ(s1, s2, sh=0):
@@ -437,6 +452,14 @@ def _atmost(C, lits, k):
 # ------------------------------------------------------------------ solving
 
 
+_WARNED = []
+
+
+def _interruptible(name):
+    """pysat solvers whose interrupt() is actually implemented."""
+    return not name.startswith("cadical")
+
+
 def solve(sp: Spec, solver="cadical195", timeout=None, verbose=False,
           built=None):
     """Returns (status, model_info).  status in {'SAT','UNSAT','TIMEOUT'}."""
@@ -445,7 +468,20 @@ def solve(sp: Spec, solver="cadical195", timeout=None, verbose=False,
     if verbose:
         print("  vars=%d clauses=%d" % (C.nv, len(C.cls)))
     with Solver(name=solver, bootstrap_with=C.cls) as S:
-        if timeout is not None:
+        if timeout is not None and not _interruptible(solver):
+            # pysat's CaDiCaL bindings do not implement interrupt(): a Timer
+            # would raise NotImplementedError in its own thread and the solve
+            # would run to completion with the exception swallowed.  Say so
+            # rather than pretending the budget is enforced.  (Consequence:
+            # every result from such a run is a COMPLETED decision, never a
+            # truncated one -- which is why the campaign's UNSATs stand.)
+            if not _WARNED:
+                _WARNED.append(1)
+                print("  [xsat] note: solver %r cannot be interrupted; "
+                      "timeout=%s is advisory and every solve runs to "
+                      "completion." % (solver, timeout))
+            r = S.solve()
+        elif timeout is not None:
             import threading
             timer = threading.Timer(timeout, S.interrupt)
             timer.start()

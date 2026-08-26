@@ -1,0 +1,8 @@
+{
+ "own-kind W=1 admits periods outside {2,4}": true,
+ "cryptic codes exist (constant occupancy, live interior)": true,
+ "every cryptic period in the 2-kind box is a power of 2": true,
+ "frozen-occupancy non-2-power period requires a ZERO-SUM cycle": true,
+ "zero-sum 3-cycle: cryptic code of period 3 (constant occupancy)": true,
+ "period-30 reciprocal cycle exists and re-verifies": true
+}

@@ -1,0 +1,5782 @@
+[
+ {
+  "label": "E2-L2-parity-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-parity-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-parity-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L4-parity-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.9,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 1.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 1.3,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 1.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 1.1,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 1.1,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 1.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 1.5,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 1.7,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 1.9,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2+L2-parity-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 2.3,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.9,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L5-parity-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 2.8,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-parity-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2-or-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-parity-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 3.4,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-parity-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-parity-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 1.2,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3+L2-parity-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 1.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-parity-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3-or-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 3,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L4-or-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 1.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 1.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 1.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 1.1,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 1.2,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.9,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 1.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 1.4,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 1.7,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 1.9,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 4,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L2+L2-or-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 2.3,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p5",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p6",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p7",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L5-or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 2.7,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p12",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N18-p11",
+  "status": "UNSAT",
+  "secs": 0.9,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p8",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p9",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 9,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p10",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 10,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E2-L3+L2-or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E2-L5-or-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 3.4,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n3-super-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E2-L3+L2-or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.6,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E2-L3+L2-or-W2-N16-p8",
+  "status": "UNSAT",
+  "secs": 0.7,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 8,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n3-super-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E2-L3+L2-or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.8,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n4-super-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p11",
+  "status": "UNSAT",
+  "secs": 1.2,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 11,
+  "mode": "or"
+ },
+ {
+  "label": "E2-L3+L2-or-W1-N22-p12",
+  "status": "UNSAT",
+  "secs": 1.0,
+  "n": 5,
+  "W": 1,
+  "N": 22,
+  "p": 12,
+  "mode": "or"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n1-super_or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super_or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n2-super_or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n2-super_or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 2,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n3-super_or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super"
+ },
+ {
+  "label": "E1-n4-super_or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 3,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n3-super_or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 3,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W2-N16-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 1,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p5",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W2-N16-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 2,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n4-super_or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 4,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p6",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W2-N16-p3",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 3,
+  "mode": "super_or"
+ },
+ {
+  "label": "OWN-n1-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n1-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p7",
+  "status": "UNSAT",
+  "secs": 0.2,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "OWN-n1-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n1-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n1-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n1-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n1-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "E1-n5-super_or-W2-N16-p4",
+  "status": "UNSAT",
+  "secs": 0.1,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 4,
+  "mode": "super_or"
+ },
+ {
+  "label": "OWN-n2-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n2-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "E1-n4-super_or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 4,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super_or"
+ },
+ {
+  "label": "OWN-n1-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 1,
+  "W": 1,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n2-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n2-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n2-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n3-p1",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 16,
+  "p": 1,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n2-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n3-p2",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 16,
+  "p": 2,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n3-p3",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 16,
+  "p": 3,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n2-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n2-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 2,
+  "W": 1,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n3-p4",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 16,
+  "p": 4,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n3-p6",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 16,
+  "p": 6,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n3-p5",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 16,
+  "p": 5,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n3-p7",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 16,
+  "p": 7,
+  "mode": "parity"
+ },
+ {
+  "label": "OWN-n3-p8",
+  "status": "UNSAT",
+  "secs": 0.0,
+  "n": 3,
+  "W": 1,
+  "N": 16,
+  "p": 8,
+  "mode": "parity"
+ },
+ {
+  "label": "E1-n5-super_or-W2-N16-p6",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 6,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p8",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 8,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W2-N16-p5",
+  "status": "UNSAT",
+  "secs": 0.3,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 5,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p9",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 9,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W2-N16-p7",
+  "status": "UNSAT",
+  "secs": 0.4,
+  "n": 5,
+  "W": 2,
+  "N": 16,
+  "p": 7,
+  "mode": "super_or"
+ },
+ {
+  "label": "E1-n5-super_or-W1-N18-p10",
+  "status": "UNSAT",
+  "secs": 0.5,
+  "n": 5,
+  "W": 1,
+  "N": 18,
+  "p": 10,
+  "mode": "super_or"
+ }
+]

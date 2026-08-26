@@ -1,0 +1,21 @@
+
+=== TASK 2 — E2: fixed single targeting by a PERMUTATION (attack on Theorem A) ===
+E2 L=2 [1,0] <=4laws/6cells        parity   COMPLETE  C=729     S=408    runs=297432          0.0s  ext1362     fix199844    bal0      cyc86556     GLIDER=0    grow9670      unres0
+E2 L=2 [1,0] <=6laws/8cells        parity   COMPLETE  C=729     S=8417   runs=6135993         0.3s  ext20274    fix3780279   bal0      cyc2124042   GLIDER=0    grow211398    unres0
+E2 L=2 [1,0] <=4laws/6cells        or       COMPLETE  C=729     S=408    runs=297432          0.0s  ext1362     fix199844    bal0      cyc86556     GLIDER=0    grow9670      unres0
+E2 L=2 [1,0] <=6laws/8cells        or       COMPLETE  C=729     S=8417   runs=6135993         0.3s  ext20274    fix3780279   bal0      cyc2124042   GLIDER=0    grow211398    unres0
+E2 L=3 [1,2,0] <=3laws/5cells      parity   COMPLETE  C=19683   S=277    runs=5452191         0.1s  ext440      fix3750495   bal0      cyc1673990   GLIDER=0    grow26690     unres576
+E2 L=3 [1,2,0] <=4laws/6cells      parity   COMPLETE  C=19683   S=2107   runs=41472081        1.7s  ext1352     fix26456589  bal0      cyc14788526  GLIDER=0    grow221636    unres3978
+E2 L=3 [1,2,0] <=3laws/5cells      or       COMPLETE  C=19683   S=277    runs=5452191         0.1s  ext440      fix3750495   bal0      cyc1673990   GLIDER=0    grow26690     unres576
+E2 L=3 [1,2,0] <=4laws/6cells      or       COMPLETE  C=19683   S=2107   runs=41472081        1.6s  ext1352     fix26456589  bal0      cyc14788526  GLIDER=0    grow221636    unres3978
+E2 L=3 [1,2,0] <=5laws/7cells      parity   COMPLETE  C=19683   S=15280  runs=300756240      12.4s  ext4100     fix180425328 bal0      cyc118616954 GLIDER=0    grow1683506   unres26352
+E2 L=4 [1,2,3,0] <=3laws/5cells    parity   COMPLETE  C=531441  S=654    runs=347562414      12.0s  ext23048    fix234148678 bal0      cyc113113900 GLIDER=0    grow276604    unres184
+E2 L=4 [1,2,3,0] <=3laws/5cells    or       COMPLETE  C=531441  S=654    runs=347562414      17.0s  ext23048    fix234148678 bal0      cyc113113900 GLIDER=0    grow276604    unres184
+E2 L=4 [1,2,3,0] <=4laws/6cells    parity   COMPLETE  C=531441  S=6755   runs=3589883955    188.2s  ext144692   fix2222018489 bal0      cyc1364611292 GLIDER=0    grow3108026   unres1456
+E2 2+2 [1,0,3,2] <=3laws/5cells    parity   COMPLETE  C=531441  S=654    runs=347562414      40.3s  ext557688   fix234898914 bal0      cyc101503160 GLIDER=0    grow10602652  unres0
+E2 2+2 [1,0,3,2] <=3laws/5cells    or       COMPLETE  C=531441  S=654    runs=347562414      42.5s  ext557688   fix234898914 bal0      cyc101503160 GLIDER=0    grow10602652  unres0
+E2 2+2 [1,0,3,2] <=4laws/6cells    parity   COMPLETE  C=531441  S=6755   runs=3589883955    336.4s  ext2203188  fix2227681361 bal0      cyc1240930154 GLIDER=0    grow119069252 unres0
+E2 L=5 cycle <=4laws/6cells        parity   SAMPLE    C=60000   S=16655  runs=999300000      49.8s  ext0        fix604925833 bal0      cyc394300031 GLIDER=0    grow74024     unres112
+E2 L=6 cycle <=4laws/6cells        parity   SAMPLE    C=60000   S=34781  runs=2086860000    103.1s  ext0        fix1246138993 bal0      cyc840720217 GLIDER=0    grow0         unres790
+
+TOTAL: 17 blocks, 12,063,649,200 (constitution x seed) runs, 14.0 min, GLIDERS = 0

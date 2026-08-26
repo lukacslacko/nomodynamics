@@ -1,0 +1,8 @@
+invariant fuzz: 6000 trajectories, 80450 steps
+  Lemma S  (support recursion)          :   80450 checks, 0 violations
+  Lemma R  (repeal witness)             :   80450 checks, 0 violations
+  Lemma M  (Psi non-decreasing)         :   18377 checks, 0 violations
+  Lemma M2 (strict rise => tight cycle) :      44 checks, 0 violations
+  F1 super (own-kind creation)          :   40246 checks, 0 violations
+  F2 super (occupied cell only dies)    :   40246 checks, 0 violations
+  F0 super (c=0 support non-increasing) :   40246 checks, 0 violations

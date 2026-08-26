@@ -1,0 +1,22 @@
+
+=== TASK 3 — E1 supersession (attack on Theorem B) ===
+SUP n=1 <=6laws/8cells             super    COMPLETE  C=27      S=120    runs=3240            0.0s  ext240      fix2322      bal0      cyc240       GLIDER=0    grow438       unres0
+SUP n=2 <=6laws/8cells             super    COMPLETE  C=729     S=8417   runs=6135993         0.5s  ext92940    fix4301337   bal65300  cyc721630    GLIDER=0    grow954786    unres0
+SUP n=2 <=7laws/9cells             super    COMPLETE  C=729     S=36671  runs=26733159        2.8s  ext305996   fix18595283  bal323184 cyc3226764   GLIDER=0    grow4281932   unres0
+SUP n=1 <=6laws/8cells             super_or COMPLETE  C=27      S=120    runs=3240            0.0s  ext240      fix2322      bal0      cyc240       GLIDER=0    grow438       unres0
+SUP n=2 <=6laws/8cells             super_or COMPLETE  C=729     S=8417   runs=6135993         0.6s  ext109676   fix4333761   bal0      cyc737770    GLIDER=0    grow954786    unres0
+SUP n=2 <=7laws/9cells             super_or COMPLETE  C=729     S=36671  runs=26733159        3.0s  ext387870   fix18770461  bal0      cyc3292896   GLIDER=0    grow4281932   unres0
+SUP n=3 <=4laws/6cells             super    COMPLETE  C=19683   S=2107   runs=41472081        4.8s  ext684584   fix29333559  bal420690 cyc5098580   GLIDER=0    grow5934668   unres0
+SUP n=3 <=5laws/7cells             super    COMPLETE  C=19683   S=15280  runs=300756240      35.2s  ext3203258  fix208165512 bal3759534 cyc39582752  GLIDER=0    grow46045184  unres0
+SUP n=3 <=4laws/6cells             super_or COMPLETE  C=19683   S=2107   runs=41472081        4.6s  ext742622   fix29509785  bal0      cyc5282930   GLIDER=0    grow5936744   unres0
+SUP n=3 <=5laws/7cells             super_or COMPLETE  C=19683   S=15280  runs=300756240      40.5s  ext3658760  fix210000306 bal0      cyc41025464  GLIDER=0    grow46071710  unres0
+SUP n=4 <=4laws/6cells             super    COMPLETE  C=531441  S=6755   runs=3589883955    456.1s  ext44203584 fix2515976349 bal42164258 cyc467793800 GLIDER=0    grow519745964 unres0
+SUP n=4 <=4laws/6cells             super_or COMPLETE  C=531441  S=6755   runs=3589883955    481.0s  ext48288172 fix2533805597 bal0      cyc487760602 GLIDER=0    grow520029584 unres0
+SUP n=4 <=5laws/7cells             super    SAMPLE    C=30000   S=66983  runs=2009490000    135.2s  ext14571021 fix1370799805 bal28867911 cyc283895715 GLIDER=0    grow311355548 unres0
+SUP n=4 <=5laws/7cells             super_or SAMPLE    C=30000   S=66983  runs=2009490000    176.1s  ext16766581 fix1384824761 bal0      cyc296265667 GLIDER=0    grow311632991 unres0
+SUP n=5 <=4laws/6cells             super    SAMPLE    C=40000   S=16655  runs=666200000      79.4s  ext6809109  fix463197527 bal8419754 cyc89560952  GLIDER=0    grow98212658  unres0
+SUP n=5 <=4laws/6cells             super_or SAMPLE    C=40000   S=16655  runs=666200000      84.3s  ext7460147  fix466751903 bal0      cyc93706263  GLIDER=0    grow98281687  unres0
+SUP n=6 <=4laws/6cells             super    SAMPLE    C=40000   S=34781  runs=1391240000    187.8s  ext12095364 fix963808277 bal18551146 cyc191701517 GLIDER=0    grow205083696 unres0
+SUP n=6 <=4laws/6cells             super_or SAMPLE    C=40000   S=34781  runs=1391240000    134.0s  ext13264955 fix971557691 bal0      cyc201185170 GLIDER=0    grow205232184 unres0
+
+TOTAL: 18 blocks, 16,063,829,336 (constitution x seed) runs, 30.7 min, GLIDERS = 0
