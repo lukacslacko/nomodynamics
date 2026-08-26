@@ -795,6 +795,51 @@ def c3():
     return True, "%d records, Phi^p = sigma^d over three full periods" % n
 
 
+@check("X1  xnomos.verify_glider certifies a census glider (its own routine)")
+def x1():
+    import census
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "data", "gliders1.txt")
+    if not os.path.exists(path):
+        return True, "SKIPPED (data/gliders1.txt absent)"
+    rng = random.Random(24)
+    rows = [l.split() for l in open(path)]
+    n = 0
+    for a in rng.sample(rows, min(60, len(rows))):
+        C = census.const_of(int(a[0]), int(a[1]))
+        seed = census.SEEDS[int(a[2])]
+        res, core, ok = ct.certify_glider(list(seed), C, a[3], **census.S1)
+        if not ok:
+            return False, C.label()
+        XS = X.state_of(ct.fields_to_pairs(core), C.n)
+        if not X.verify_glider(XS, C.to_xnomos(), res["period"],
+                               res["displacement"], a[3]):
+            return False, ("xnomos disagrees", C.label())
+        n += 1
+    return True, "%d census gliders re-certified by xnomos.verify_glider" % n
+
+
+@check("X2  xnomos.verify_balanced certifies citation balanced codes")
+def x2():
+    rng = random.Random(25)
+    found = 0
+    for _ in range(40000):
+        n = rng.randrange(2, 5)
+        C = rnd_const(rng, n)
+        pairs = rnd_code(rng, n, -2, 3, 5)
+        F = ct.state_fields(pairs, n)
+        if ct.step_fields(F, C, "parity") != F or not any(
+                ct.active_fields(F, C)):
+            continue
+        found += 1
+        if not X.verify_balanced(X.state_of(pairs, n), C.to_xnomos(),
+                                 "parity"):
+            return False, C.label()
+        if found >= 400:
+            break
+    return True, "%d balanced citation codes confirmed by xnomos" % found
+
+
 if __name__ == "__main__":
     npass = 0
     for name, fn in CHECKS:

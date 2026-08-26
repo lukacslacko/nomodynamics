@@ -1,0 +1,8 @@
+PASS  E1  bitfield engine == xnomos, random citation universes       600 universes x 2 resolutions x 8 steps
+PASS  E2  ring engine == xnomos on Z/m, random citation universes    300 universes x 2 resolutions x 6 steps
+PASS  T1  citation is INERT at n = 1 (complete: 216 constitutions)   216 one-kind constitutions, all guard choices identical
+PASS  T2  PLENUM: beta(K) = K, i.e. the full plenum is always frozen 20,000 random constitutions, n <= 5
+PASS  T2' PLENUM, sharp form: saturation by the exception image E(C) blocks 4,000 constitutions; no law with a named exception inside an E(C)-saturated region is active
+PASS  T3  GRIDLOCK's epitaph: closed form == brute force over all U  30,000 random constitutions, n <= 5
+PASS  T3' GRIDLOCK survival fraction = ((3n+1)/(n+1)^2)^n, n = 1,2,3 complete: 60.4938% at n=2, 24.4141% at n=3
+PASS  T4  BULK MAP is exact on homogeneous ring codes, every modulus 2,000 constitutions x 7 moduli x 2 resolutions

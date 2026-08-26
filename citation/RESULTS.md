@@ -769,9 +769,14 @@ recording, are
 *[measured, this box]*
 
 **Gliders.** 6,834 glider records over 951 representative constitutions; every
-one re-certified from its glider core by `cite.verify_glider` over three full
-periods (battery **C3**, which reads `data/gliders1.txt` and re-runs all 6,834) (the seed itself often has a pre-period, so the naive check on the seed
-fails — a trap worth recording). Weighted `(resolution, p, d)` spectrum:
+one re-certified from its glider **core** over three full periods by battery
+**C3**, which reads `data/gliders1.txt` and re-runs all 6,834. *The word "core"
+is load-bearing, and I got it wrong first:* a glider seed often has a
+pre-period, so `verify_glider(seed, …)` fails on a perfectly good glider. The
+first pass of this analysis reported hundreds of "unverified" gliders before I
+noticed the classifier's own `t₀` was being thrown away. Corrected, and the
+correct routine is now `cite.certify_glider`. Weighted `(resolution, p, d)`
+spectrum:
 
 `(or,1,−1) 6412 · (parity,1,−1) 6156 · (parity,1,+1) 4536 · (or,1,+1) 4536 ·
 (or,4,−1) 1400 · (parity,5,−2) 752 · (or,5,−2) 744 · (parity,11,−2) 720 ·
@@ -1165,7 +1170,7 @@ self-citing clock is a load-bearing component of the Rule 110 construction).
 
 ## 10. Verification battery
 
-`python3 verify_citation.py` — **38/38 checks pass**. Two engines with no code
+`python3 verify_citation.py` — **40/40 checks pass**. Two engines with no code
 in common are used throughout: `cite.py` (one big integer per kind, bitwise
 shifts) and the repository's `xnomos.py` (dict of cell → bitmask).
 
@@ -1208,6 +1213,8 @@ M4  the machine is entrenched                               80 steps, clock and 
 C1  census slice reproduces                                 400 constitutions, deterministic
 C2  census symmetry quotient is sound                       120 orbits, class multiset constant
 C3  every census glider record re-certifies from its core   6,834 records, 3 full periods each
+X1  xnomos.verify_glider certifies census gliders           60 sampled records, its own routine
+X2  xnomos.verify_balanced certifies balanced codes         400 balanced citation codes
 ```
 
 Counting rule for the census claims: **complete enumerations** are the citation
@@ -1228,7 +1235,7 @@ Python 3.11, no dependencies beyond the standard library. From this directory
 
 ```sh
 python3 cite.py                     # engine self-tests (6/6), incl. cross-check vs xnomos
-python3 verify_citation.py          # the 38-check battery                     (~25 min)
+python3 verify_citation.py          # the 40-check battery                     (~25 min)
 python3 specimens.py                # the fauna gallery with certificates      (~1 min)
 python3 specimens.py lacuna ledger  # one or more named specimens
 python3 circuit.py                  # gate inventory + all 256 elementary CA rules (~3 min)

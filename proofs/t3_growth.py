@@ -18,7 +18,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.dirname(HERE))
 
 from t3_fast import compile_rule, glider                       # noqa: E402
-from t3_core import uvw_to_channels                            # noqa: E402
+import json                                                    # noqa: E402
 
 
 def ladder(cls, mode="parity", lmax=28, nsample=700, seed=3, step=2):
@@ -41,6 +41,8 @@ if __name__ == "__main__":
     lmax = int(sys.argv[1]) if len(sys.argv) > 1 else 28
     for cls, mode in [((5, 7, 2), "parity"), ((5, 2, 7), "parity"),
                       ((1, 3, 2), "or")]:
-        print("class %s  mode=%s  (a %d-kind constitution)"
-              % (str(cls), mode, len(uvw_to_channels(*cls))), flush=True)
+        mk = json.load(open(os.path.join(HERE, "t3_minkinds.json")))
+        n, rules = mk["par" if mode == "parity" else "or"][str(cls)]
+        print("class %s  mode=%s  (%d kinds: %s)"
+              % (str(cls), mode, n, rules), flush=True)
         ladder(cls, mode, lmax=lmax)

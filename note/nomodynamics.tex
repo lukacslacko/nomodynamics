@@ -44,7 +44,14 @@ kind---anyone's kind---is motionless in every dimension, window and resolution,
 while two targets suffice, and the smallest traveller is one placed law. The
 same generalization splits the stability theorem by resolution convention and
 produces \emph{balanced constitutions}: codes perpetually active and perfectly
-unchanging.
+unchanging. Dropping instead the tacit assumption that laws are permanent
+inverts the founding theorem---the very first specimen becomes a glider, and a
+packet's speed is set by how long a provision survives unrenewed. Finally the
+system computes: a provision that repeals itself every step is a register, a
+constitution in the resulting normal form is a synchronous AND-NOT network,
+Rule~110 runs inside a $24$-kind constitution, and every Turing machine compiles
+into a finite code---so the field is computation-universal, with halting
+undecidable, while every one of its provisions stands still.
 \end{abstract}
 
 \section{The vacancy}
@@ -456,6 +463,99 @@ active law enacts one, and nothing else survives.~$\square$ With out-degree $2$
 growth appears at once. So one threshold governs both worlds with dual
 consequences: out-degree $\le1$ forbids \emph{motion} under permanence and
 \emph{growth} under impermanence; out-degree $\ge2$ buys each.
+
+\section{The statute book computes}
+Three chapters were spent on motion---proving it impossible, pricing it, and
+finding that it requires mortality. Computation turns out to need none of it.
+
+A guard reads \emph{some law stands at $i+a$ and none stands at $i+b$}: an
+AND-NOT at fixed offsets. Parity resolution makes several authors of one
+provision XOR together. AND-NOT with XOR is functionally complete, and the one
+missing ingredient---\emph{assignment}, since toggles accumulate---is supplied
+by a single observation.
+\begin{lemma}[the self-clearing kind]
+Let a kind $v$ have rule $(0,0,0)$, a vacuously true guard and target $\{v\}$.
+A $v$-law is then active whenever it stands, and it toggles itself. Hence, with
+$f(t)$ the XOR of every other author's toggle of that slot,
+$x(t+1)=x(t)\oplus x(t)\oplus f(t)=f(t)$.
+\end{lemma}
+\noindent \emph{A provision that expires every step is a register: the code
+writes it rather than amending it.} A law nobody amends is a \textbf{gate}; a
+law that repeals itself is a \textbf{wire}.
+\begin{theorem}[Statute--Circuit]
+A constitution in the resulting normal form \emph{is} a synchronous AND-NOT
+network with free XOR fan-in, free fan-out (guards are read-only, so any number
+of gates may cite one slot) and unit delay.
+\end{theorem}
+\begin{theorem}[universality]
+Rule~110 runs inside a $24$-kind window-$1$ constitution at three amendment
+steps per Rule-110 step. Moreover every Turing machine compiles into a
+\emph{finite code} of the founding occupancy-guard sector, its tape supplied by
+a self-extending front; so nomodynamics is computation-universal and halting is
+undecidable for finite codes.
+\end{theorem}
+The Rule-110 certificate is complete rather than sampled: every offset lies
+within $\pm1$, so three steps form a local map on a seven-cell window, and
+running all $2^7$ configurations of $\mathbb{Z}/7$ evaluates that map at every
+one of its inputs, which decides $\mathbb{Z}$ entirely. Prediction is
+\textbf{P-complete} already at dimension~$1$, window~$0$, one cell; by contrast
+the single-author sector is $\mathbb{F}_2$-linear with $\Phi^t=L^t$, so
+prediction \emph{there} lies in NC and is not P-complete unless NC${}={}$P.
+Chapter one's exactly solvable sector is provably the wrong place to look for
+computation---which is precisely why it was solvable.
+
+Two things this does \emph{not} say. Nothing here is minimal: $24$ kinds is
+what one construction needed. And the ballistic route---Life-style glider
+collisions---does not work: $58{,}203$ certified collisions produced no
+reflector, no fan-out, no transparency and no annihilation, one glider family
+freezing everything it touches and another detonating everything it touches,
+both gateless for opposite reasons. Every such zero is a statement about a box.
+
+What the construction does say is worth stating plainly. Every gate law and
+every power law sits exactly where it started, certified over $60$ steps at
+out-degree~$1$:
+\begin{center}
+\emph{A statute book can compute while every one of its provisions stands
+still.}
+\end{center}
+\noindent What moves is not law but information, and information moves because
+guards read across cells. \emph{Motion was never the resource; the vacancy
+clause was.}
+
+\section{Replication}
+Von Neumann's rule-carrying constructor is one of the three fragments this
+field was derived from, so the question is obligatory. Codes do copy
+themselves. \textsc{The Split Decision} (two kinds, two dimensions, citation,
+OR) performs true binary fission---$\Phi^2(S)=\sigma^{(0,-2)}(S)\sqcup
+\sigma^{(0,+2)}(S)$ exactly, the parent not surviving, the children beyond
+interaction range, the debris empty---and at every even $t$ the state is
+exactly $t/2+1$ free exact copies. \textsc{The Engrossment} needs no citation
+at all: plain occupancy guards and parity, the founding semantics, with
+$\Phi^4(S)=S\sqcup\sigma^{(4,4)}(S)$ and $2^{\mathrm{popcount}(t/4)}$ copies.
+
+Two results shape the sector. First, replication here is \emph{not} the known
+additive phenomenon of $\mathbb{F}_2$-linear automata: the replicators fail the
+splitting test---remove one law of four, evolve the halves separately, XOR, and
+the child is simply absent---while the genuinely additive specimens are
+reported as Fredkin and nothing more. (A caution found the hard way:
+$2^{\mathrm{popcount}(t)}$ is \emph{not} a signature of additivity; it survives
+into demonstrably non-additive systems.) Second, the light cone bounds the
+population: $\mathrm{card}(S_t)\le n(s_0+2Rt+1)^D$, so \textbf{exponential
+replication is impossible in every dimension} and no fixed-period doubling can
+survive---every free fission must eventually collide with its own descendants,
+and \textsc{The Engrossment} accordingly doubles at $t=4(2^k-1)$, at
+exponentially stretching intervals, exactly as forced.
+
+Von Neumann's full constructor was not reached, but both of its halves were: a
+code that reads a blueprint carried in its own body and builds a decoded,
+different target from it, and a code that copies an arbitrary blueprint
+faithfully without bound. Neither ever holds two complete copies of its
+machinery at once, and the obstruction is structural---a child built next door
+lies within the interaction radius of its parent, so it can become free only by
+travelling. Hence the sharpest open problem the subject now has: \emph{a
+constructor in nomodynamics is a blueprint-carrying packet that moves.}
+Travelling needs out-degree $\ge2$; reading needs citation; nothing found so
+far forbids the combination.
 
 \section{The frontier, located by theorem}
 The theorems above are cheap to state and were found within two days of the
