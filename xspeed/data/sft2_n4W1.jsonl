@@ -16,3 +16,5 @@
 {"n": 4, "W": 1, "p": 4, "d": 2, "mode": "or", "verdict": "GLIDER", "caps": 0, "secs": 72.6, "chans": [[-1, 0, -1], [-1, 1, 0], [-1, 1, 1], [0, 1, -1]], "cells": [1], "verified": true}
 {"n": 4, "W": 1, "p": 4, "d": 3, "mode": "parity", "verdict": "NONE", "caps": 0, "secs": 100.5}
 {"n": 4, "W": 1, "p": 4, "d": 3, "mode": "or", "verdict": "NONE", "caps": 0, "secs": 99.6}
+{"n": 4, "W": 1, "p": 4, "d": 4, "mode": "parity", "verdict": "GLIDER", "caps": 0, "secs": 124.1, "chans": [[-1, 0, -1], [-1, 0, -1], [-1, 1, -1], [-1, 1, 1]], "cells": [0, 1], "verified": true}
+{"n": 4, "W": 1, "p": 4, "d": 4, "mode": "or", "verdict": "GLIDER", "caps": 0, "secs": 159.2, "chans": [[-1, 0, -1], [-1, 0, -1], [-1, 1, -1], [-1, 1, 1]], "cells": [0, 1], "verified": true}

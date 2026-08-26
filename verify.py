@@ -419,6 +419,24 @@ def chapter2():
           res["kind"] == CYCLE and res["period"] == 8,
           "refutes the census remark that random cycles carry only p = 2, 4")
 
+    # --- the width correction (expedition X-E) --------------------------
+    # MIRROR: a two-kind universe whose displacement-2 gliders are far too
+    # wide for the boxes that "decided" them impossible.
+    C = Const([(0, 1, -1), (0, -1, 1)], [(0, 1), (0, 1)])
+    cells = [2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 14, 16, 18, 19, 20, 21]
+    S = state_of([(c, k) for c in cells for k in (0, 1)])
+    check("MIRROR-2/5: a span-20, 32-law glider with displacement 2",
+          verify_glider(S, C, 5, 2) and not verify_glider(S, C, 5, 2, "or"),
+          "bounded searches decide a box, not a question")
+
+    # TRIAD: the resolution convention decides the SPEED, not just the motion.
+    C = Const([(1, -1, 0), (0, -2, 1), (0, -2, 2)], [(0, 1, 2)] * 3)
+    S = state_of([(0, k) for k in range(3)])
+    check("TRIAD: same seed, p=3 d=5 under parity and p=2 d=3 under OR",
+          verify_glider(S, C, 3, 5) and verify_glider(S, C, 2, 3, "or")
+          and not verify_glider(S, C, 2, 3) and not verify_glider(S, C, 3, 5, "or"),
+          "the convention decides how fast, not merely whether")
+
     # Subluminal motion: a parity glider at speed 1/6.
     C = Const([off("ONO"), off("OEW"), off("WTE")], [(0, 1), (0, 2), (0,)], dim=2)
     S = state_of([((0, 0), 0), ((0, 0), 1)])

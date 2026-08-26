@@ -201,7 +201,8 @@ semantic-lattice sweep found the live axis: **sunset-by-default**, where a law
 lapses unless re-enacted. It is the only semantics in the lattice that breaks
 the Anchor's locality hypothesis, and **free gliders exist there on ℤ with
 own-kind targeting** — 11.4 / 15.4 / 15.5 % of a complete 139,968-code box at
-τ = 1, 2, 3, with speeds 1, 2/3, 1/2, 1/3, 1/4, 1/6.
+τ = 1, 2, 3, with speeds 1, 2/3, 1/2, 1/3, 1/4, 1/6 *within the searched box* (see §5:
+speed sets from bounded searches are narrow-glider statements).
 
 > **What forbids motion on the line is permanence, not own-kind targeting.**
 
@@ -227,7 +228,61 @@ the "powers of two" law itself stands; and a semantic-lattice verdict that
 quorum guards are structurally inert (every confinement theorem here is
 guard-free) except at quorum = {2}, where Gridlock *inverts*.
 
-## 5. Scorecard against the frozen predictions
+## 5. The width correction — what a bounded search actually decides
+
+Expedition X-E was sent to explain why the number of kinds appeared to cap the
+speed. It found that the premise is false, and the way it fails is the more
+valuable result.
+
+> **Bounded searches decide a box, not a question.** Every census in this
+> program used boxes of at most ~26 interior cells. The two-kind universe
+> **MIRROR** (W = 1; rules (0,1,−1) and (0,−1,1), each amending *both* kinds —
+> *a left-edge law pushes right, a right-edge law pushes left*) carries
+> displacement-2 gliders of minimal period 4, 5, 6, 7 and 12, with spans
+> **53, 20, 616, 438, 39**. Not one of them fits in the boxes that "decided"
+> them impossible. Coordinator-verified: MIRROR-2/5, 32 laws over 20 cells,
+> Φ⁵ = σ² under parity and correctly *not* a glider under OR.
+
+A second confound compounds the first: a sweep restricted to **coprime** (p, d)
+is structurally blind to Φ⁴ = σ² whenever Φ² = σ¹ fails — and MIRROR's family
+is exactly of that shape.
+
+**Consequence, applied to this document.** Every "decided impossible" produced
+by a fixed box — in `xamend1d/RESULTS.md` §4.6, in the sunset speed sets of
+`xtheory/`, and in my own earlier summary of the speed spectrum — is a
+statement about **narrow** gliders and is re-labelled as such. The *theorems*
+are untouched: the Out-Degree Law, the supersession no-go, the Tropical Speed
+Law, Path-Sum Confinement and the Balance Theorem are proofs, not box searches.
+It is precisely the census-shaped claims that needed the correction — which is
+the program's own thesis about celebrity samples, arriving on schedule and at
+its own expense.
+
+**What survives, and is sharper.** In the **single-field sector** — every kind
+sharing the same target set, so the system is a one-bit automaton with n
+channels — the measured cap is `|d| ≤ 2` under parity and `|d| ≤ 1` under OR at
+two channels, **for any number of channels and at any width** (33,630
+constitutions decided, 0 undecided, by a new subshift-of-finite-type decider
+that carries *no* width bound at all). The resource that buys `|d| ≥ 3` is
+**another 𝔽₂ field, not another kind**: four kinds in one field cannot reach
+(4,3) at any width; four kinds in two fields reach it with a three-cell seed.
+
+**New theory.** The *Dilation Theorem* — (W, p, d) ↦ (rW, p, rd) — rules out any
+width-independent cap a priori. The *Even-Support Law* (Theorem K): for any
+subset U of kinds with |T_k ∩ U| even for every k, the symmetric difference of
+the supports over U is a constant of the motion, and must vanish in a glider;
+the relevant determinant over 𝔽₂ is the parity of the amendment digraph's cycle
+covers. It strictly generalises X-A's Twin-Kind Lemma (239 non-twin instances;
+27,876 fuzz checks, 0 violations).
+
+**The fourth parity/OR split, and the sharpest.** `TRIAD` (three kinds, W = 2,
+single field, seeded with **one cell** carrying all three): the same seed in the
+same universe is a **p = 3, d = 5** glider under parity and a **p = 2, d = 3**
+glider under OR — different period *and* different displacement
+(coordinator-verified, including that each verdict fails for the other's
+(p, d)). The resolution convention does not merely decide whether a code moves;
+it decides **how fast**.
+
+## 6. Scorecard against the frozen predictions
 
 - **X1 (balance exists, minimum 2 laws, none under OR)** — **HELD** for the
   witness and the OR half (verified); the minimality claim is X-D's.

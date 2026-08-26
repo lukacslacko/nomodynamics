@@ -1,0 +1,3 @@
+n=5 channels, 26334 constitutions
+n=5 p=4 d=3 parity -> NONE caps=0 406s 
+n=5 p=4 d=3 or     -> NONE caps=0 434s 

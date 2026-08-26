@@ -145,9 +145,20 @@ out-degree 2.
 > in chapter one a consequence of linear order, is equally a consequence of
 > legislative narrowness.
 
-Open: why is the numerator of the reduced speed capped at 1 for two kinds and 2
-for three, and uncapped at four? Is any small cross-amendment universe
-computation-universal?
+**A warning that came out of chasing that threshold.** Bounded searches decide a
+*box*. Every census here used boxes of ≤ ~26 interior cells, and the two-kind
+universe `MIRROR` (`W=1`, rules `(0,1,−1)` and `(0,−1,1)`, each amending both
+kinds) carries displacement-2 gliders of minimal period 4, 5, 6, 7, 12 with
+spans **53, 20, 616, 438, 39** — invisible to every one of those boxes, and all
+certified. Sweeps over *coprime* `(p,d)` compound it: they cannot see
+`Φ⁴ = σ²` when `Φ² = σ¹` fails. **Read every "decided impossible" in a fixed box
+as "no narrow glider".** The theorems above are unaffected — they are proofs,
+not box statements — but the speed *spectra* are all narrow-glider statements.
+
+Open: prove the width-free cap that does survive (`|d| ≤ 2` under parity,
+`|d| ≤ 1` under OR, in the single-field sector, at any number of channels), and
+explain why it does not scale with the window. Is any small cross-amendment
+universe computation-universal?
 
 ## Repository map
 

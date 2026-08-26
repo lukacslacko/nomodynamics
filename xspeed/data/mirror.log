@@ -1,0 +1,16 @@
+MIRROR p= 4 d=2 parity -> GLIDER       0s span=53 verified=True
+MIRROR p= 4 d=2 or     -> NONE         0s
+MIRROR p= 4 d=3 parity -> NONE         0s
+MIRROR p= 4 d=3 or     -> NONE         0s
+MIRROR p= 5 d=2 parity -> GLIDER       1s span=20 verified=True
+MIRROR p= 5 d=2 or     -> NONE         0s
+MIRROR p= 5 d=3 parity -> NONE         1s
+MIRROR p= 5 d=3 or     -> NONE         0s
+MIRROR p= 6 d=2 parity -> GLIDER      35s span=616 verified=True
+MIRROR p= 6 d=2 or     -> NONE         2s
+MIRROR p= 6 d=3 parity -> NONE         5s
+MIRROR p= 6 d=3 or     -> NONE         2s
+MIRROR p= 7 d=2 parity -> GLIDER     481s span=438 verified=True
+MIRROR p= 7 d=2 or     -> NONE        12s
+MIRROR p= 7 d=3 parity -> NONE        34s
+MIRROR p= 7 d=3 or     -> NONE        13s

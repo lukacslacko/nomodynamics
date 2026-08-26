@@ -295,11 +295,24 @@ targeting---the Anchor Theorem's real content.
 The theorems above are cheap to state and were found within two days of the
 definition, which is the usual sign that a territory has been entered rather
 than exhausted. Open problems, in the order we would attack them.
-(1)~\emph{Speed quantisation.} At $W=1$ the numerator of the reduced speed is
-capped at $1$ for two kinds and at $2$ for three (speeds $2/3$, $2/5$, $2/7$
-exist; anything with numerator $\ge3$ is decided impossible up to $p\le8$), and
-the cap disappears at four kinds. Neither the trivial bound $|d|/p\le W$ nor
-the Tropical Speed Law mentions the number of kinds: what invariant does?
+(1)~\emph{Speed quantisation, and a warning about boxes.} The apparent law
+``the number of kinds caps the speed'' is an artefact, and the way it failed is
+worth more than the law would have been. Bounded searches decide a \emph{box};
+every census in this program used boxes of at most $\sim$26 interior cells, and
+the two-kind universe \textsc{Mirror} ($W=1$, rules $(0,1,-1)$ and $(0,-1,1)$,
+each amending both kinds) carries displacement-2 gliders of minimal period
+$4,5,6,7,12$ with spans $53$, $20$, $616$, $438$, $39$---all invisible to those
+boxes, and all certified. A second confound compounds it: sweeps over
+\emph{coprime} $(p,d)$ are structurally blind to $\Phi^4=\sigma^2$ when
+$\Phi^2=\sigma^1$ fails. So every ``decided impossible'' in a fixed box, here
+and elsewhere, means \emph{no narrow glider}. What does survive is sharper: in
+the single-field sector (all kinds sharing the same target set, so the system
+is a one-bit automaton with $n$ channels) the measured cap is $|d|\le2$ under
+parity and $|d|\le1$ under OR, \emph{at any width and any number of channels};
+the resource that buys $|d|\ge3$ is another $\mathbb{F}_2$ field, not another
+kind. Prove that cap, and explain why it fails to scale with $W$: at $W=2$ and
+three kinds displacements reach at least $5>2W$, while a dilation
+$(W,p,d)\mapsto(rW,p,rd)$ rules out any width-independent bound a priori.
 (2)~Is any small cross-amendment universe computation-universal? The gate-level
 inventory---what reflects, what annihilates, what survives collision---comes
 first; the claim comes much later, if at all.

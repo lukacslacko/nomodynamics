@@ -100,8 +100,15 @@ def print_sft():
             print("          NONE at any width: %s" % no)
             if cp:
                 print("          UNDECIDED (state cap): %s" % cp)
-        pmax = max(p for (p, d, m) in by)
-        print("  decided for p <= %d, every d in 1..pW, both resolutions\n" % pmax)
+        # largest p for which EVERY d in 1..pW is decided in BOTH resolutions
+        full = 0
+        q = 1
+        while all((q, d, m) in by for d in range(1, q * W + 1)
+                  for m in ("parity", "or")):
+            full = q
+            q += 1
+        print("  COMPLETE for p <= %d (every d in 1..pW, both resolutions); "
+              "partial data above may extend further\n" % full)
 
 
 def print_specimens():

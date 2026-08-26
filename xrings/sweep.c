@@ -23,7 +23,7 @@
 #include <string.h>
 #include <stdint.h>
 
-#define MAXK 4
+#define MAXK 8
 
 static int NK, M, MODE;
 static uint32_t MASK;
