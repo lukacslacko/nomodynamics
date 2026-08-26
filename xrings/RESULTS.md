@@ -76,8 +76,8 @@ sub-census.
 | P2 | rotors appear on odd rings, first at m=5 or 7 | **CONFIRMED — but the size guess was badly wrong, and the shape is a surprise.** No odd-ring rotor exists at m = 3,5,7,11,13,17 at all. The first is **m = 9 with three kinds**, **m = 15 with two**; every odd-ring rotor found anywhere is a **third-turn** (r = ±m/3), so 3 must divide m. |
 | P3 | permutation targeting ⟹ parity ≡ OR on rings | **CONFIRMED.** 0 divergences; Single-Author holds verbatim on ℤ/m. |
 | P4 | balance is parity-only and needs non-injective targeting | **CONFIRMED and made exact.** B(m)=0 under OR, super_or, and every injective target map (26,244 exact counts, 0 violations); exists under parity+non-injective and under supersession with ≥2 kinds; minimum **2 laws**. |
-| P5 | rotation speed of an L-cycle is Σ c per L steps | **REFUTED.** Of the L-cycle rotors, 964 satisfy r·L ≡ s·p (mod m) and **4212 do not**. Σc predicts nothing. |
-| P6 | cross-amendment maxima exceed the own-kind maxima at equal m | **CONFIRMED at equal state space and equal rule pool** (the honest control): 3 own-kind kinds vs 3 kinds in a 3-cycle gives 2→8, 2→8, 4→20, 6→**81**, 6→54 at m=3..7. New resonance family: **powers of 3** (27, 45, 81 at m=6). |
+| P5 | rotation speed of an L-cycle is Σ c per L steps | **REFUTED.** Of the L-cycle rotors, 964 satisfy r·L ≡ s·p (mod m) and **4212 do not**. Σc predicts nothing — but the *right* invariant of L turned up anyway: it is the **odd part of L**, and it governs the period spectrum, not the rotation (§2.3). |
+| P6 | cross-amendment maxima exceed the own-kind maxima at equal m | **CONFIRMED at equal state space and equal rule pool** (the honest control): 3 own-kind kinds vs 3 kinds in a 3-cycle gives 2→8, 2→8, 4→20, 6→**81**, 6→54 at m=3..7; at m=12 it is 23→**144**. New resonance family: **powers of 3** (27, 45, 81 at m=6), explained by the Cycle-Length Law (§2.3). |
 | P7 | ring rotors do not unroll into ℤ gliders | **CONFIRMED.** 17,746 rotor classes released as finite ℤ codes: 0 gliders (48 holdouts survive a 10× budget as anchored ruler fronts). |
 | P8 | supersession has the largest, least structured spectrum | **REFUTED for 1 and 2 kinds.** With one kind, supersession **is** own-kind nomodynamics (Lemma S below) — identical spectra at every m ≤ 20. With two kinds it is *weaker* than own-kind two-kind (maxp 23 vs 80 at m=10): clearing whole cells destroys long orbits. |
 | P9 | everything interesting lives in the all-live 12^L sub-census | **REFUTED.** The m=4 and m=6 rotors need a dead-letter kind as immovable scaffolding: `X:(-1,-1,-1)` is an unsatisfiable statute that never fires yet is load-bearing (it supplies occupancy). Dead letters are structural, not inert. |
@@ -224,23 +224,69 @@ Machine check: **220,968 (kind, m, occupancy) triples, m ≤ 12, 0 violations.**
 **Corollary.** Every own-kind cycle on which the occupancy never changes has
 period a power of 2. Complete check: over all 27 kinds and m ≤ 9 the only
 constant-occupancy period is **1**; over all 144 live two-kind own-kind
-constitutions, m ≤ 7, the only ones are **{1,2}**.
+constitutions, m ≤ 7, the only ones are **{1, 2}**.
 
-**Theorem 2.2 (cross-amendment is block-cyclic).** *(proved)* *For an
-L-cycle permutation constitution the frozen-occupancy step is I+N with N
-block-cyclic: (NX)_{k+1} = σ^{c_k}(g_k · X_k), and N^L is block-diagonal with
-k-th block σ^s ∘ diag(mask), s = Σ_{cycle} c_k.* This is where the
-pre-registration expected unipotency to fail — a nonzero mask on a σ^s block
-would give the operator an element of order m/gcd(s,m). It does not fail.
-*(measured, not proved)*: over **217,728
-(constitution, m, occupancy) triples** (m ≤ 8, all 144 live two-kind rule
-pairs, all three target classes) N is **always nilpotent** — so single steps are
-unipotent under cross-amendment too, and the constant-occupancy period sets are
-{1,2} for the 2-cycle and non-injective classes as well.
+### THE CYCLE-LENGTH LAW — the exact algebraic account
 
-**So the extra periods are NOT a failure of unipotency.** They are periods of
-the *occupancy word* itself. Decomposing every champion cycle as
-p = q · ord(T), q = the occupancy period and T the 𝔽₂ monodromy over q steps:
+This is the sharpest structural result of the expedition, and it answers the
+mission's algebraic question directly.
+
+**Theorem 2.2 (block-cyclic monodromy).** *(proved)* *For an L-cycle
+permutation constitution, the frozen-occupancy step is M = I + N with N
+block-cyclic, (NX)_{k+1} = σ^{c_k}(g_k · X_k); and N^L is block-diagonal, its
+k-th block equal to σ^s ∘ diag(mask), s = Σ_{cycle} c_k.* So on any N-invariant
+subspace where the transported mask acts as the identity and σ^s acts
+trivially, N satisfies y^L = 1, and the operator algebra contains
+
+  𝔽₂[y]/(y^L − 1) = 𝔽₂[y]/((y^{L′} − 1)^{2^v}),  L = 2^v · L′, L′ odd,
+  𝔽₂[y]/(y^{L′} − 1) ≅ ∏_i 𝔽_{2^{d_i}},  d_i = ord of 2 mod the i-th divisor.
+
+*and M = 1 + y.* On the trivial factor (y ↦ 1) M ↦ 0. On a factor 𝔽_{2^d}
+(y ↦ ζ ≠ 1) M ↦ 1 + ζ, a **unit of odd order dividing 2^d − 1**. On the
+nilpotent directions M − 1 is nilpotent and contributes only powers of 2.
+
+**Consequently:** *L a power of two ⟹ L′ = 1 ⟹ the algebra is local, 1 + y is
+nilpotent, and every frozen-occupancy period is a power of 2. An odd factor
+L′ > 1 unlocks odd orders, the largest being 2^{ord_{L′}(2)} − 1.* Own-kind is
+L = 1 and reciprocal amendment is L = 2 — **both powers of two.** That is why
+the two most-studied sectors of nomodynamics are both locked to powers of 2,
+and it is not a coincidence but a fact about 𝔽₂[y]/(y^{2^v} − 1).
+
+**Measured** (`linorder.py`: the exact multiplicative period q(M) of the
+frozen-occupancy operator, over every occupancy of every constitution in the
+class — 1-, 2- and 3-kind classes exhaustive, L ≥ 4 sampled):
+
+| L | odd part L′ | ord_{L′}(2) | predicted max odd order 2^d − 1 | measured q(M) values |
+|---|---|---|---|---|
+| 1 (own-kind) | 1 | — | — | {1, 2, 4} |
+| 2 (reciprocal) | 1 | — | — | {1, 2, 4, 8} |
+| **3** | 3 | 2 | **3** | {1, 2, **3**, 4, **6**, 8, **12**} |
+| 4 | 1 | — | — | {1, 2, 4, 8} |
+| **5** | 5 | 4 | **15** | {1, 2, 4, 8, **15**} |
+| **6** | 3 | 2 | **3** | {1, 2, 4, **6**, 8, **12**, 16} |
+| **7** | 7 | 3 | **7** | {1, 2, 4, **7**, 8} |
+
+Every prediction lands. The L = 5 entry is the prettiest: ord₅(2) = 4, so the
+algebra contains 𝔽₁₆, and the operator realises the *full* multiplicative order
+**15 = 2⁴ − 1** — the same 15 that the own-kind Sunset Parliament had to climb
+to m = 10 to reach, here obtained on a **three-cell ring** because it comes from
+the amendment cycle rather than from the ring. Likewise L = 7 realises
+7 = 2³ − 1 on ℤ/3. And the non-injective two-kind class stays at {1, 2, 4}:
+sharing a target does not lengthen the amendment cycle, so it buys balance
+(§5) but not linear resonance.
+
+> **The Cycle-Length Law.** *The odd part of the amendment cycle is the odd
+> part of the clock.* A constitution in which amendment closes after L steps
+> carries a hidden copy of 𝔽₂[y]/(y^L − 1); when L is a power of two that ring
+> is local and the constitution can only tick in powers of two, however large
+> the parliament. Give the amendment cycle an odd factor and finite fields
+> appear, with them units of odd order, and with them odd periods.
+
+### What the champions actually do
+
+The linear layer is not, however, where the *long* cycles come from. Decomposing
+every champion cycle as p = q · ord(T), q = the occupancy period and T the 𝔽₂
+monodromy over q steps:
 
 | class | m | p | laws | q | ord(T) |
 |---|---|---|---|---|---|
@@ -253,13 +299,16 @@ p = q · ord(T), q = the occupancy period and T the 𝔽₂ monodromy over q ste
 | supersession 2 kinds | 10 | 23 | 8 | 23 | 1 |
 
 In **every** champion q = p and ord(T) = 1: the long period lives entirely in
-the occupancy trajectory, never in a linear resonance sitting on a short
-occupancy loop. *(Interpretation.)* Cross-amendment buys its periods by making
-the occupancy dynamics richer, not by breaking the 𝔽₂ algebra. What it changes
-is **how many laws can be repealed per step and by whom** — under own-kind
-targeting only one author can edit a slot, so occupancy changes are a thin
-sub-dynamics; under cross-amendment the occupancy word can wander much further
-before repeating.
+the occupancy trajectory. So nomodynamics has two independent clocks — a
+**linear clock** governed exactly by the Cycle-Length Law, and a **combinatorial
+clock** in the occupancy word — and the record-holders run on the second. The
+81-cycle on ℤ/6 could not have run on the first: a semisimple element of
+GL(18,2) has order whose 3-part divides 3³ = 27, and unipotent parts contribute
+only powers of 2, so 3⁴ = 81 is out of reach of any frozen-occupancy operator on
+that space. *(Interpretation.)* Cross-amendment buys its record periods by
+making the occupancy word wander further — more laws can be repealed per step,
+and by more authors — while the Cycle-Length Law tells you what the algebra
+alone would allow.
 
 **Lemma S (supersession collapse).** *With a single kind, supersession IS
 own-kind toggling.* With n = 1 a cell is occupied iff kind 0 stands there, so
@@ -666,7 +715,7 @@ those are the new balanced codes.
 | Single-Author on rings: parity ≡ OR under permutation targets | 2,000 random ring states × 8 steps | 0 divergences |
 | dead-letter classification (15 of 27 kinds never fire) | exhaustive on ℤ/7, 27 kinds × 128 states | exact |
 | own-kind nilpotency (Thm 2.1) | 220,968 (kind, m ≤ 12, occupancy) triples | 0 violations |
-| cross-amendment step nilpotency (Thm 2.2) | 217,728 (constitution, m ≤ 8, occupancy) triples | 0 non-nilpotent |
+| Cycle-Length Law: exact q(M) over every frozen occupancy | own-kind 1/2/3-kind, 2-cycle, non-injective classes: exhaustive (m ≤ 10 / 8 / 6); L = 4…7 sampled | predictions match at every L |
 | light cone (Thm 3.1) | 4,000 random perturbations at distance > 2 | 0 leaks |
 | tiling lift (Thm 3.2) | 17,746 rotor classes × q = 2, 3 | 35,492 confirmed, 0 failed |
 | wrapping (Thm 4.3) | 4,000 random (constitution, code) pairs, all semantics | 4,000/4,000 |
@@ -701,14 +750,16 @@ a new resonance family of **powers of three**, where own-kind resonances are
 Mersenne. With two kinds sharing a target, the spectrum on ℤ/m becomes an
 **initial segment**: every period 1 … m is realised for m = 6 and m ≥ 8.
 
-And the mechanism is not the one the pre-registration guessed. Cross-amendment
-does *not* break 𝔽₂ unipotency — the one-step operator stays unipotent on every
-frozen occupancy (217,728 checks), and constant-occupancy cycles still have
-periods in {1, 2}. Every champion cycle decomposes as p = q · ord(T) with
-**q = p and ord(T) = 1**: the whole period lives in the occupancy word. What
-cross-amendment buys is a longer occupancy orbit — more ways for laws to repeal
-each other, so the pattern of *who is present* can wander further before it
-repeats.
+The mechanism splits in two, and both halves are new. The **linear clock**
+obeys an exact law: the frozen-occupancy operator of an L-cycle constitution
+lives in 𝔽₂[y]/(y^L − 1), which is local exactly when L is a power of two — so
+own-kind (L = 1) and reciprocal amendment (L = 2) are *provably* confined to
+periods that are powers of 2, while an odd factor L′ in L produces 𝔽_{2^d}
+factors and units 1 + ζ of odd order up to 2^{ord_{L′}(2)} − 1. Measured and
+matched for L = 1…7: L = 5 realises the full order **15 on a three-cell ring**,
+L = 7 realises **7**. The **combinatorial clock** is the occupancy word, and it
+is where the record-holders live: every champion cycle has q = p, ord(T) = 1.
+Cross-amendment lengthens both.
 
 **Rotors.** Cross-amendment lowers the minimal rotor ring from 6 to **4**;
 supplies the first **kind-relay rotor** (K-6: three kinds pass a four-law packet
@@ -807,7 +858,9 @@ python3 certify.py own own2 own3 recip noninj cyc3 cyc3all super1 super2 super3 
 python3 specimens.py                            # the gallery of section 3.3
 python3 unroll.py                               # tiling lift, wave train, Z release
 python3 deep.py                                 # mechanism, Eden, Z-holdouts
-python3 theory.py                               # Thm 2.1, 2.2, 3.1 machine checks
+python3 theory.py                               # Thm 2.1 and 3.1 machine checks
+python3 linorder.py                             # the Cycle-Length Law, L = 1,2,3
+python3 runL.py ; python3 runL6.py              # the Cycle-Length Law, L = 4,5,6,7
 python3 balance.py                              # transfer matrix + the 26,244 counts
 python3 balwitness.py                           # the 70 constitutions, minimal witness
 

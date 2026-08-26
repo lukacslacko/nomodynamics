@@ -178,6 +178,80 @@ def fig4():
     save(fig, "fig4_gliders")
 
 
+def _grid(S, pad=1):
+    """Occupancy raster of a 2-D state over its own bounding box."""
+    xs = [c[0] for c in S]
+    ys = [c[1] for c in S]
+    img = np.zeros((max(ys) - min(ys) + 1 + 2 * pad,
+                    max(xs) - min(xs) + 1 + 2 * pad), dtype=np.uint8)
+    for (x, y), m in S.items():
+        img[y - min(ys) + pad, x - min(xs) + pad] = min(2, bin(m).count("1"))
+    return img
+
+
+def fig5():
+    """Two dimensions: the plane fills, and a second binary counter."""
+    V = {"O": (0, 0), "E": (1, 0), "W": (-1, 0), "N": (0, -1), "S": (0, 1),
+         "P": (1, -1), "Q": (-1, -1), "R": (1, 1), "T": (-1, 1)}
+
+    def off(s):
+        return tuple(V[ch] for ch in s)
+
+    fig = plt.figure(figsize=(11, 3.2))
+    gs = fig.add_gridspec(1, 3, width_ratios=[1, 1, 2.1], wspace=0.28)
+
+    # (a) LAND GRANT at t = 24: a solid square, |S_t| = (t+1)^2.
+    C = Const([off("OPP"), off("OEE"), off("ONN")], [(0, 1, 2), (1,), (2,)],
+              dim=2)
+    S = state_of([((0, 0), 0)])
+    T = 24
+    for _ in range(T):
+        S = step(S, C)
+    assert card(S) == (T + 1) ** 2
+    ax = fig.add_subplot(gs[0, 0])
+    ax.imshow(_grid(S), cmap=CMAP, vmin=0, vmax=2, interpolation="nearest")
+    ax.set_title(r"LAND GRANT, $t=24$: $|S_t|=(t{+}1)^2$", fontsize=9)
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    # (b) SOWER: half the box.
+    C = Const([off("OEE"), off("ONN")], [(0, 1), (1,)], dim=2)
+    S = state_of([((0, 0), 0)])
+    for _ in range(T):
+        S = step(S, C)
+    ax = fig.add_subplot(gs[0, 1])
+    ax.imshow(_grid(S), cmap=CMAP, vmin=0, vmax=2, interpolation="nearest")
+    ax.set_title(r"SOWER: $\binom{t+2}{2}$, half the box", fontsize=9)
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    # (c) THE ODOMETER: laws in force, log time, resets to four.
+    C = Const([off("OEW"), off("NQR")], [(1,), (0, 1)], dim=2)
+    S = state_of([((0, 0), 0), ((1, 0), 0), ((0, 1), 1)])
+    N = 1 << 14
+    z = []
+    for _ in range(N):
+        z.append(card(S))
+        S = step(S, C)
+    z = np.array(z)
+    pw = [1 << k for k in range(1, 14)]
+    print("  Odometer: |S| at every t=2^k -> %s" % {int(z[p]) for p in pw})
+    ax = fig.add_subplot(gs[0, 2])
+    ax.plot(np.arange(N), z, lw=0.6, color=LINE)
+    for q in pw:
+        ax.axvline(q, color="#c6cbc9", lw=0.7, zorder=0)
+    ax.plot(pw, [z[q] for q in pw], "o", ms=2.6, color="#232830", zorder=3,
+            label=r"$|S_{2^k}| = 4$ exactly")
+    ax.set_xscale("log")
+    ax.legend(fontsize=8, frameon=False, loc="upper left")
+    ax.set_xlabel(r"time (log scale); gridlines at $t=2^k$", fontsize=9)
+    ax.set_ylabel("laws in force", fontsize=9)
+    ax.set_title("THE ODOMETER: three laws, two kinds", fontsize=9)
+
+    fig.subplots_adjust(left=0.02, right=0.99, top=0.90, bottom=0.24)
+    save(fig, "fig5_plane")
+
+
 def save(fig, stem):
     for ext in ("pdf", "png"):
         fig.savefig(HERE / ("%s.%s" % (stem, ext)), dpi=170)
@@ -185,7 +259,8 @@ def save(fig, stem):
     print("wrote %s.{pdf,png}" % stem)
 
 
-FIGS = {"fig1": fig1, "fig2": fig2, "fig3": fig3, "fig4": fig4}
+FIGS = {"fig1": fig1, "fig2": fig2, "fig3": fig3, "fig4": fig4,
+        "fig5": fig5}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(FIGS)

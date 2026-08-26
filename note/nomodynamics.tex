@@ -233,6 +233,31 @@ amends one provision, even somebody else's, cannot move; a law that amends two
 can. Entrenchment, in chapter one a consequence of linear order, is equally a
 consequence of legislative narrowness.
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig5_plane.pdf}
+\caption{Two dimensions. Left: \emph{Land Grant}---one law with two targets,
+and $|S_t|=(t+1)^2$ exactly, a solid growing square: the plane fills, which
+own-kind ray confinement forbids. Middle: \emph{Sower}, two laws, exactly half
+the box. Right: \emph{the Odometer}, three laws of two kinds, a second binary
+counter---quiescent, avalanching at $2^k-1$, and standing at exactly four laws
+at every $t=2^k$ (checked to $t=2^{20}$), with reach growing like
+$(\log t)^2$: bounded population, unbounded memory, never repeating.}
+\label{fig:plane}
+\end{figure}
+The same degree condition governs \emph{growth}. Own-kind two-dimensional
+growth is pinned to axis rays ($\alpha\le1$, a theorem of chapter one); the
+generalisation is exact and cheap: out-degree~$1$ forces
+$|S_t|\le|S_0|(t+1)$---hence $\alpha\le1$ in every dimension, under parity, OR
+and supersession alike---while out-degree~$2$ attains $\alpha=2$ from a single
+placed law (Fig.~\ref{fig:plane}). Ray confinement was never a fact about two
+dimensions; it was a fact about narrow laws. The degrees of the amendment
+digraph turn out to govern the whole zoo: out-degree $\le1$ forbids motion and
+caps growth; out-degree~$\ge2$ buys gliders and area; a kind of \emph{in-degree
+zero}---a provision nobody can amend---is a pump, and yields guns and rakes,
+on $\mathbb{Z}$ as readily as on $\mathbb{Z}^2$. \emph{An entrenched clause is
+a gun.}
+
 Multi-authorship also revives the resolution axis that the Single-Author Lemma
 had made vacuous, and it kills the Dead Letter Theorem in exactly one
 convention.
@@ -244,7 +269,27 @@ point still requires every law blocked, and Dead Letter survives verbatim.
 \end{theorem}
 \noindent A constitution can be perpetually active and perfectly unchanging---
 but only where simultaneous contradictory amendments annul one another instead
-of both taking effect.
+of both taking effect. Balance is governed by the \emph{other} degree: a
+provision with two authors. It is not a curiosity of small codes---balanced
+codes of unbounded size exist with \emph{every} law active at every step, their
+exact count satisfies $a(s)=4a(s-1)-2a(s-2)$, and $70\%$ of the balanced
+verdicts in a complete $143$-million-run census are reached rather than seeded.
+
+Finally, the Anchor Theorem itself has a deeper reading than ``own-kind
+amendment forbids motion''. A sweep of the semantics the referent
+suggests---entrenchment clauses, quorum guards, later-law-wins,
+sunset-by-default---finds that all but one leave the confinement theorems
+untouched (they are guard-free), while \emph{sunset-by-default}, where a law
+lapses unless re-enacted, admits free gliders on $\mathbb{Z}$ with plain
+own-kind targeting: $11$--$15\%$ of a complete $139{,}968$-code box, at speeds
+$1,\ \frac23,\ \frac12,\ \frac13,\ \frac14,\ \frac16$. So there are exactly two
+ways known to make a statute book move:
+\begin{center}
+\emph{legislate broadly (out-degree $\ge2$), or let provisions expire on their
+own.}
+\end{center}
+\noindent What forbids motion on the line is \textbf{permanence}, not own-kind
+targeting---the Anchor Theorem's real content.
 
 \section{The frontier, located by theorem}
 The theorems above are cheap to state and were found within two days of the

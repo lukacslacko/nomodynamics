@@ -212,8 +212,28 @@ footer p{max-width:76ch}
   <div class="caption" id="cap4"></div>
 </section>
 
+
+<section id="plane">
+  <h2><span class="art">&sect;5</span>The Plane</h2>
+  <p class="lede">In the founding system, two-dimensional growth is pinned to
+  <i>axis rays</i>: a code can extend along a line forever but the plane never
+  fills &mdash; a theorem. Give one law a second target and that ceiling breaks at
+  once. Everything below runs on codes of one to four laws.</p>
+  <div class="chips" id="chips5" role="group" aria-label="Plane presets"></div>
+  <div class="controls">
+    <button class="ctl" id="play5">Pause</button>
+    <button class="ctl" id="step5">Step</button>
+    <button class="ctl" id="reset5">Reset</button>
+    <button class="ctl" id="fast5">Fast&nbsp;&times;8</button>
+    <span class="stat" id="stat5"></span>
+  </div>
+  <div class="plate"><canvas id="cv5" width="880" height="380" aria-label="A two-dimensional code, drawn as a grid; colour by law-kind"></canvas></div>
+  <div class="lawline" id="laws5"></div>
+  <div class="caption" id="cap5"></div>
+</section>
+
 <section id="deadlock">
-  <h2><span class="art">&sect;5</span>The Two-Chamber Deadlock</h2>
+  <h2><span class="art">&sect;6</span>The Two-Chamber Deadlock</h2>
   <p class="lede">Two laws, permanently active, forever enacting the same provision at
   the same cell &mdash; and because they enact it simultaneously, it never comes into
   force. The code is fixed forever while nothing in it is at rest: a <b>balanced
@@ -241,7 +261,7 @@ footer p{max-width:76ch}
 </section>
 
 <section id="theorems">
-  <h2><span class="art">&sect;6</span>Six theorems</h2>
+  <h2><span class="art">&sect;7</span>Six theorems</h2>
   <article class="thm">
     <h3><span class="tag">THM&nbsp;1</span>Gridlock</h3>
     <p>In a fully occupied region, every law&rsquo;s vacancy guard fails: solid code is frozen.</p>
@@ -845,6 +865,96 @@ const dwB=constWidget(document.getElementById("cv5b"),6);
 function dReset(){ dwA.load(DEADLOCK,"parity"); dwB.load(DEADLOCK,"or"); }
 dReset();
 
+
+/* ---------- §5 the plane: 2-D cross-amendment ---------- */
+const KCOL=["#e8a33d","#d0685f","#7fb7d9","#9ad07f"];
+function kindColor(mask){
+  if(popc(mask)>1)return "#ffffff";
+  return KCOL[(31-Math.clz32(mask&-mask))%KCOL.length];
+}
+function gridWidget(canvas){
+  const ctx=canvas.getContext("2d");
+  let S=new Map(), C=null, mode="parity", t=0, spec=null;
+  function draw(){
+    ctx.fillStyle="#12141a"; ctx.fillRect(0,0,canvas.width,canvas.height);
+    if(!S.size)return;
+    let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+    for(const [k] of S){ const i=k.indexOf(","), x=+k.slice(0,i), y=+k.slice(i+1);
+      if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y; }
+    const bw=x1-x0+1, bh=y1-y0+1;
+    const cw=Math.max(1,Math.min(14,Math.floor(Math.min(canvas.width/(bw+2),canvas.height/(bh+2)))));
+    const ox=(canvas.width-bw*cw)/2-x0*cw, oy=(canvas.height-bh*cw)/2-y0*cw;
+    for(const [k,mask] of S){
+      const i=k.indexOf(","), x=+k.slice(0,i), y=+k.slice(i+1);
+      ctx.fillStyle=kindColor(mask);
+      ctx.fillRect(x*cw+ox, y*cw+oy, Math.max(cw-(cw>3?0.5:0),1), Math.max(cw-(cw>3?0.5:0),1));
+    }
+  }
+  return {
+    get t(){return t}, get S(){return S},
+    load(sp){ spec=sp; C=sp.C; mode=sp.mode||"parity"; t=0;
+      S=XN.seed(sp.seed,C); draw(); },
+    tick(){ S=XN.step(S,C,mode); t++;
+      if(XN.card(S)>9000||t>spec.cap){ S=XN.seed(spec.seed,C); t=0; }
+      draw(); },
+    redraw:draw,
+  };
+}
+const PLANE=[
+ {name:"LAND GRANT", cap0:"|S_t| = (t+1)² exactly",
+  C:{rules:[[[0,0],[1,-1],[1,-1]],[[0,0],[1,0],[1,0]],[[0,0],[0,-1],[0,-1]]],
+     targets:[[0,1,2],[1],[2]],dim:2,mod:null},
+  seed:[[0,0,0]], cap:90,
+  laws:"A = (here, NE vacant → enact A,B,C to the NE) · B = (here, E vacant → enact B east) · C = (here, N vacant → enact C north) · seed: one A",
+  txt:"<b>One law, and the plane fills.</b> The population is exactly (t+1)² &mdash; a solid, growing square of law. Under own-kind amendment this is impossible: a ray-confinement theorem pins all growth to axis lines, so the plane never fills. The single ingredient that breaks it is one law with <i>two</i> targets."},
+ {name:"SOWER", cap0:"|S_t| = (t+1)(t+2)/2",
+  C:{rules:[[[0,0],[1,0],[1,0]],[[0,0],[0,-1],[0,-1]]],targets:[[0,1],[1]],dim:2,mod:null},
+  seed:[[0,0,0]], cap:110,
+  laws:"A = (here, E vacant → enact A and B east) · B = (here, N vacant → enact B north) · seed: one A",
+  txt:"<b>Half the plane.</b> Two laws instead of three, and the square becomes a triangle: the population is the triangular number (t+1)(t+2)/2, filling exactly half the bounding box forever."},
+ {name:"THE ODOMETER", cap0:"back to 4 laws at every 2ᵏ",
+  C:{rules:[[[0,0],[1,0],[-1,0]],[[0,-1],[-1,-1],[1,1]]],targets:[[1],[0,1]],dim:2,mod:null},
+  seed:[[0,0,0],[1,0,0],[0,1,1]], cap:100000,
+  laws:"A = (here, E vacant → enact B west) · B = (N, NW vacant → enact A and B to the SE) · seed: three laws",
+  txt:"<b>A binary counter made of three provisions.</b> It avalanches on the last tick before every power of two, and at t = 2ᵏ itself the code stands at <b>exactly four laws</b> &mdash; every time, checked to t = 2²⁰. Its reach grows like (log t)², so it is the slowest clock in the field: bounded population, unbounded memory, and never once repeating."},
+ {name:"CIRCUIT COURT", cap0:"a rake: |S_t| = 2t+2",
+  C:{rules:[[[0,0],[1,0],[0,0]],[[0,0],[1,0],[1,0]],[[0,0],[0,-1],[0,0]],[[0,0],[0,-1],[0,-1]]],
+     targets:[[0,1],[0,1],[0,1,2,3],[2,3]],dim:2,mod:null},
+  seed:[[0,0,2],[0,0,3]], cap:150,
+  laws:"four kinds; the travelling head lays a permanent wake · seed: kinds C and D in one cell",
+  txt:"<b>A rake.</b> A travelling head that leaves finished legislation behind it at a steady two laws per step. Guns and rakes need one special ingredient: a kind that <i>nothing can amend</i>. An entrenched clause is a pump."},
+ {name:"SPACESHIP", cap0:"50 laws, period 4, diagonal",
+  C:{rules:[[[1,-1],[-1,-1],[-1,0]],[[0,0],[0,-1],[1,0]],[[0,0],[0,-1],[1,-1]]],
+     targets:[[1],[0,2],[0,1,2]],dim:2,mod:null},
+  seed:[[0,0,0],[0,0,1],[0,0,2]], cap:400,
+  laws:"three kinds from a single cell; after a 22-step transient it settles into a 50-law packet moving diagonally, 4 cells per 4 steps",
+  txt:"<b>A fifty-law spaceship.</b> Three laws stacked in one cell take twenty-two steps to organise, then travel forever as a rigid diagonal packet &mdash; a direction no own-kind law can take, since their targets are axis steps."},
+];
+const pw5=gridWidget(document.getElementById("cv5"));
+let p5=0, p5Running=!reduceMotion, p5Fast=false;
+const chips5=document.getElementById("chips5");
+PLANE.forEach((s,ix)=>{ const b=document.createElement("button"); b.textContent=s.name;
+  b.addEventListener("click",()=>selectPlane(ix)); chips5.appendChild(b); });
+function selectPlane(ix){
+  p5=ix; [...chips5.children].forEach((b,i)=>b.classList.toggle("on",i===ix));
+  pw5.load(PLANE[ix]);
+  document.getElementById("cap5").innerHTML=PLANE[ix].txt;
+  document.getElementById("laws5").textContent=PLANE[ix].laws;
+  stat5();
+}
+function stat5(){
+  document.getElementById("stat5").textContent =
+    "t = "+pw5.t+"   laws in force = "+XN.card(pw5.S)+"   ("+PLANE[p5].cap0+")";
+}
+selectPlane(0);
+const play5=document.getElementById("play5");
+play5.textContent=p5Running?"Pause":"Play";
+play5.addEventListener("click",()=>{p5Running=!p5Running; play5.textContent=p5Running?"Pause":"Play";});
+document.getElementById("step5").addEventListener("click",()=>{pw5.tick(); stat5();});
+document.getElementById("reset5").addEventListener("click",()=>selectPlane(p5));
+const fast5=document.getElementById("fast5");
+fast5.addEventListener("click",()=>{p5Fast=!p5Fast; fast5.classList.toggle("on",p5Fast);});
+
 /* ---------- main loop ---------- */
 let frame=0;
 function loop(){
@@ -853,6 +963,10 @@ function loop(){
   if(gRunning&&frame%2===0){
     gw.tick(); if(gw.gone())gw.load(GLIDERS[gPreset],gMode);
     stat4();
+  }
+  if(p5Running&&frame%(p5Fast?1:4)===0){
+    for(let q=0;q<(p5Fast?8:1);q++)pw5.tick();
+    stat5();
   }
   if(!reduceMotion&&frame%6===0){
     dwA.tick(); dwB.tick();
@@ -877,6 +991,7 @@ if(reduceMotion){
   for(let i=0;i<120;i++)hero.tick();
   for(let i=0;i<62;i++)gw.tick();
   for(let i=0;i<28;i++){dwA.tick(); dwB.tick();}
+  for(let i=0;i<40;i++)pw5.tick(); stat5();
   drawRing(); drawJ(); drawChart(); stat4();
 }
 requestAnimationFrame(loop);

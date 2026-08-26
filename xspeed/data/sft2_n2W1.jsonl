@@ -67,3 +67,7 @@
 {"n": 2, "W": 1, "p": 6, "d": 3, "mode": "or", "verdict": "NONE", "caps": 0, "secs": 62.0}
 {"n": 2, "W": 1, "p": 6, "d": 4, "mode": "parity", "verdict": "NONE", "caps": 0, "secs": 108.1}
 {"n": 2, "W": 1, "p": 6, "d": 4, "mode": "parity", "verdict": "NONE", "caps": 0, "secs": 108.8}
+{"n": 2, "W": 1, "p": 6, "d": 4, "mode": "or", "verdict": "NONE", "caps": 0, "secs": 121.3}
+{"n": 2, "W": 1, "p": 6, "d": 4, "mode": "or", "verdict": "NONE", "caps": 0, "secs": 122.3}
+{"n": 2, "W": 1, "p": 6, "d": 5, "mode": "parity", "verdict": "NONE", "caps": 0, "secs": 199.7}
+{"n": 2, "W": 1, "p": 6, "d": 5, "mode": "parity", "verdict": "NONE", "caps": 0, "secs": 200.9}

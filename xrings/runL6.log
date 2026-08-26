@@ -1,0 +1,7 @@
+  L=6 (odd part 3)  m in [3, 4], 1200 random constitutions per m: q(M) = [1, 2, 4, 6, 8, 12, 16]
+        odd q(M) values: none but 1
+        q=6   first at m=3 [(-1, 1, 0), (-1, 1, 0), (-1, 1, 0), (-1, 1, 0), (-1, 1, -1), (1, -1, 1)] O=011
+        q=12  first at m=4 [(1, -1, 1), (-1, 1, 0), (-1, 1, 0), (-1, 1, 1), (-1, 1, 1), (1, -1, 1)] O=0011
+  L=7 (odd part 7)  m in [3], 500 random constitutions per m: q(M) = [1, 2, 4, 7, 8]
+        odd q(M) values: [1, 7]
+        q=7   first at m=3 [(0, -1, 0), (0, -1, 1), (-1, 1, 0), (-1, 1, 0), (0, 1, -1), (0, -1, 1), (0, 1, -1)] O=011
