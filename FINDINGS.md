@@ -133,6 +133,24 @@ Everything else in the sections above re-verified unchanged: `python3 verify.py`
 (20/20), `python3 xnomos.py` (engine self-tests), `node demo/xengine.test.js`
 (125 universes, 1 528 states, 0 divergences against the Python reference).
 
+- **Ring rotors are barber poles — the chapter's one interpretive error.**
+  The entries above call the ℤ/6 specimen a *moving law-packet* hopping m/2
+  cells per step, and the slogan "circular codes can revolve" followed from it.
+  Both are withdrawn. `Φ(S) = rot₃(S)` is true, but window-1 laws move
+  information at most one cell per step: exactly **two cells change** per step
+  (a repeal at 1, an enactment at 4), and since the seed has no rotational
+  symmetry, 3 is simply the only rotation relating the two states. Nothing
+  travels. Every own-kind ring rotor fails this light-cone test, and releasing
+  19,074 of them onto ℤ produces zero gliders, exactly as the Out-Degree Law
+  requires. **Own-kind nomodynamics contains no transport anywhere — not on the
+  line, and not on the circle.** Genuine ring transport is a wrapped
+  cross-amendment glider (TANDEM-1 turns by one cell per step on every m ≥ 3).
+  Full account: `XFINDINGS.md` §6.
+- **And the reason the clocks were 2-adic** is not own-kind amendment either:
+  the frozen-occupancy operator of an L-cycle constitution lives in
+  𝔽₂[y]/(y^L − 1), which is local exactly when L is a power of two. "All periods
+  are powers of two" was a fact about **cycle length 1**.
+
 ## Reading (theory frame)
 
 **Own-kind nomodynamics is an exactly solvable linear theory in disguise** —
