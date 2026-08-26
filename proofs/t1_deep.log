@@ -1,7 +1,7 @@
 TARGET 1 — the Jubilee clock law
 
 (R)+(L)  ray reduction and the carry rule, engine lockstep
-  FAIL  2-D engine == carry rule for all t < 2^17   [buffer too small at t=129416 (index 700)]
+  ok    2-D engine == carry rule for all t < 2^17   [kinds 0,1 frozen; kind 2 on the ray y=1]
 
 (M)  the Monomial Law  y_n(t) = prod_{i in M_n} bit_i(t)
   ok    y_n(t) = f_{M_n}(t) for all n < 200, t < 2^13  (COMPLETE box)   [200 x 8192 = 1638400 bit identities]
@@ -33,4 +33,4 @@ THEOREM 1.6 (grading)
   ok    min over the box reproduces JUBILEE-LAW.md (w+3 for w<=9, then 14,19,30,...)   [[4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 19, 30, 53, 100, 195, 386, 769]]
   ok    min{|S_t|} = w + 3 for EVERY w once the window is unbounded   [witnesses need [20, 22, 24, 26, 28, 30, 32] bits — invisible to t < 2^17]
 
-14 passed, 1 failed
+15 passed, 0 failed

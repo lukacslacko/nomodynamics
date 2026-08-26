@@ -1,0 +1,25 @@
+==============================================================================
+TANDEM-1   0:[0|-1|1]->0,1 1:[0|-1|0]->0,1
+  glider p=1 d=+1 card=2 span=0
+  mode=parity  wall box: support in cells 0..4, all 768 anchored seeds  ->  132 stationary codes  {'OSC': 132}
+    collisions: N=4056   box: 132 walls x phases x glider phase 0..0 x gap 0..12
+      ABSORBED                4056
+  mode=or  wall box: support in cells 0..4, all 768 anchored seeds  ->  132 stationary codes  {'OSC': 132}
+    collisions: N=4056   box: 132 walls x phases x glider phase 0..0 x gap 0..12
+      ABSORBED                4056
+==============================================================================
+GUN   0:[0|1|0]->0,1 1:[0|1|1]->0,1 2:[0|1|0]->0,1
+  glider p=1 d=+1 card=2 span=0
+  mode=parity  wall box: support in cells 0..3, all 3584 anchored seeds  ->  416 stationary codes  {'BAL': 416}
+    collisions: N=5408   box: 416 walls x phases x glider phase 0..0 x gap 0..12
+      ABSORBED                5408
+  mode=or  wall box: support in cells 0..3, all 3584 anchored seeds  ->  0 stationary codes  {}
+==============================================================================
+SOLO   0:[0|1|0]->1,2 1:[0|1|1]->0 2:[0|1|0]->0
+  glider p=2 d=+1 card=1 span=0
+  mode=parity  wall box: support in cells 0..3, all 3584 anchored seeds  ->  0 stationary codes  {}
+  mode=or  wall box: support in cells 0..3, all 3584 anchored seeds  ->  0 stationary codes  {}
+==============================================================================
+TRIPTYCH   0:[0|1|0]->0,1,2 1:[0|-1|1]->0,1,2 2:[0|1|-1]->0,1,2
+  glider p=1 d=+1 card=9 span=3
+  mode=parity  wall box: support in cells 0..2, all 448 anchored seeds  ->  208 stationary codes  {'OSC': 119, 'DEAD': 24, 'BAL': 65}

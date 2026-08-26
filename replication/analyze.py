@@ -24,7 +24,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 
 from xnomos import Const, state_of, step, card, active_laws, laws   # noqa
-from replib import (to_p, from_p, pstep, radius, shift, components,  # noqa
+from replib import (to_p, from_p, pstep, radius, shift,               # noqa
                     frame1d, frame2d, contains, diff, dist_inf, supp)
 
 

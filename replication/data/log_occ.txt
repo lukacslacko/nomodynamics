@@ -1,0 +1,3 @@
+tasks=89  trials/task=681  kinds=2  cite=False  modes=['parity', 'or', 'super', 'super_or']
+  0/89 hits=505 nonlin=348
+  10/89 hits=5232 nonlin=3706

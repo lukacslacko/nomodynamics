@@ -11,6 +11,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
 \usepackage{titlesec}
 \titlespacing*{\section}{0pt}{10pt}{4pt}
 
@@ -67,20 +68,106 @@ that exist (von~Neumann's rule-carrying constructor cells; Suber's game
 never produced a minimal canonical object, a census, or a theorem.
 
 \section{The object}
-\begin{definition}[nomic chain]
-A \emph{law} is a triple $(a,b,c)\in\{-1,0,1\}^3$ placed at a position
-$i\in\mathbb{Z}$. A \emph{code} is a finite set $S$ of placed laws. A placed
-law $(i,(a,b,c))\in S$ is \emph{active} if some law stands at $i+a$ and no law
-stands at $i+b$. Time is synchronous: every active law flips the presence of
-\emph{its own kind} at $i+c$, flips resolving by parity. Nomic \emph{rings}
-are the same system on $\mathbb{Z}/m$; the $d$-dimensional and window-$w$
-versions replace $\{-1,0,1\}$ by offset sets in $\mathbb{Z}^d$.
+
+\subsection*{2.1\quad The founding system}
+Fix the finite set $K_0=\{-1,0,1\}^3$; its elements are called \emph{kinds}.
+For a kind $k=(a,b,c)$ the three integers are its \emph{precedent}, its
+\emph{exception} and its \emph{target} offset. A \emph{placed law} is a pair
+$(i,k)\in\mathbb{Z}\times K_0$; a \emph{code} is a finite set
+$S\subseteq\mathbb{Z}\times K_0$ of placed laws; $\mathcal{S}$ denotes the set
+of codes. Write
+\[
+  \operatorname{occ}(S)=\{\,i\in\mathbb{Z}\ :\ (i,k)\in S\ \text{for some }k\in K_0\,\}
+\]
+for the set of \emph{occupied} positions.
+
+\begin{definition}[activity]
+A placed law $(i,k)\in S$ with $k=(a,b,c)$ is \emph{active in} $S$ if
+$i+a\in\operatorname{occ}(S)$ and $i+b\notin\operatorname{occ}(S)$. Let $A(S)$
+denote the set of placed laws active in $S$.
 \end{definition}
-There is no board and no external rule table: the law is the only substance.
-The system is parameter-free. All claims below were pre-registered as
-predictions or risks before the first simulation, then settled by censuses
-with machine-checked certificates ($\sim$15.3 million certified runs for the
-no-go results; complete enumerations where stated).
+
+\begin{definition}[nomic chain]\label{def:chain}
+Every $(i,k)\in A(S)$ with $k=(a,b,c)$ \emph{emits a toggle} of the placed law
+$(i+c,k)$. Let $T(S)$ be the multiset of all emitted toggles and let
+$T_{\mathrm{odd}}(S)\subseteq\mathbb{Z}\times K_0$ be the set of placed laws
+occurring in $T(S)$ an odd number of times. The successor of $S$ is
+\[
+  \Phi(S)\;=\;S\ \triangle\ T_{\mathrm{odd}}(S)
+  \qquad(\triangle=\text{symmetric difference}),
+\]
+and the \emph{nomic chain} is the discrete dynamical system
+$(\mathcal{S},\Phi)$, iterated synchronously.
+\end{definition}
+
+\noindent In words: a law acts when the position named by its precedent offset
+is occupied and the position named by its exception offset is empty; its action
+is to insert a law of its own kind at the position named by its target offset if
+none stands there, and to delete it if one does. $\Phi$ is well defined because
+$S$ is finite, hence so are $A(S)$ and $T(S)$.
+
+\begin{example}
+Let $k=(0,1,1)$ and $S_0=\{(0,k)\}$, a single law at the origin. Then
+$\operatorname{occ}(S_0)=\{0\}$; the law is active, since $0+0\in
+\operatorname{occ}(S_0)$ and $0+1\notin\operatorname{occ}(S_0)$; it emits a
+toggle of $(1,k)$, which lies outside $S_0$, so
+$S_1=\Phi(S_0)=\{(0,k),(1,k)\}$. At the next step the law at $0$ is inactive
+($0+1$ is now occupied) while the law at $1$ is active, so
+$S_2=\{(0,k),(1,k),(2,k)\}$, and inductively $S_n=\{(0,k),\dots,(n,k)\}$: the
+kind $(0,1,1)$ fills the line rightwards at one position per step, only ever
+acting at its own frontmost copy. Under the lifetime variant with $\tau=1$ the
+same computation gives $S_n=\{(n,k)\}$ instead --- the single law walks
+(\S7).
+\end{example}
+
+\subsection*{2.2\quad The general object}
+The later chapters each replace exactly one clause. A \emph{constitution}
+consists of a finite set $K$ together with, for every $k\in K$: offsets
+$a_k,b_k,c_k\in\{-w,\dots,w\}^d$, a \emph{target set} $T_k\subseteq K$, and a
+pair of \emph{citations} $g_k,h_k\in K\cup\{\ast\}$. Codes are now finite
+subsets of $\mathbb{Z}^d\times K$. For $x\in K\cup\{\ast\}$ and a position $p$
+write
+\[
+  S\models x@p
+  \quad:\iff\quad
+  \begin{cases} p\in\operatorname{occ}(S) & x=\ast,\\[2pt]
+                (p,x)\in S & x\in K,\end{cases}
+\]
+so $\ast$ reads \emph{some law stands here} and $x\in K$ reads \emph{that
+particular kind stands here}. Then
+\[
+  (i,k)\in A(S)\iff S\models g_k@(i+a_k)\ \text{ and }\ S\not\models h_k@(i+b_k),
+\]
+every active $(i,k)$ emits a toggle of $(i+c_k,t)$ for each $t\in T_k$, and
+$\Phi$ is as in Definition~\ref{def:chain}. The founding system is the case $d=w=1$, $K=K_0$,
+$T_k=\{k\}$ and $g_k=h_k=\ast$; chapter two varies $T_k$, chapter three varies
+$(g_k,h_k)$.
+
+\subsection*{2.3\quad Variants}
+Each of the following substitutes for one clause and leaves the rest intact.
+\begin{itemize}\itemsep1pt \parskip0pt
+\item \emph{Rings.} Replace $\mathbb{Z}^d$ by $(\mathbb{Z}/m)^d$.
+\item \emph{Resolution.} Parity, as above, or \emph{OR}:
+ $\Phi_{\vee}(S)=S\,\triangle\,\operatorname{supp}T(S)$, where a toggle lands if
+ it is emitted at all. The two coincide whenever no placed law receives two
+ toggles in the same step.
+\item \emph{Supersession.} An active law enacts its own kind at $i+c_k$ if that
+ position is empty, and otherwise deletes every law standing there.
+\item \emph{Lifetime $\tau\in\{1,2,\dots\}\cup\{\infty\}$.} Effects are
+ \emph{enactments} rather than toggles: an active law inserts $(i+c_k,t)$ for
+ each $t\in T_k$, and a placed law survives a step only if it is enacted now or
+ has been enacted within the previous $\tau-1$ steps. Chapters one to three are
+ the toggle semantics; chapter four is $\tau<\infty$.
+\end{itemize}
+
+\noindent There is no board, no background and no external rule table: the only
+data is which laws stand where, and the rule a law obeys is the law itself. The
+founding system in particular has no parameters --- $K_0$ has $27$ elements and
+that is the entire specification. All claims below were pre-registered as
+predictions or risks before the first simulation, then settled by censuses with
+machine-checked certificates ($\sim$15.3 million certified runs for the no-go
+results; complete enumerations where stated); \texttt{verify.py} in the archive
+re-derives every named claim from the definitions above.
 
 \section{First theorems: the solvable sector}
 \begin{theorem}[Gridlock]
@@ -318,12 +405,10 @@ targeting---the Anchor Theorem's real content.
 \section{Impermanence: motion is a consequence of mortality}
 Every sector so far assumes a law stands until something repeals it. That
 assumption is load-bearing and nobody had weighed it. Drop it:
-\begin{definition}[sunset-by-default]
-A law lapses unless it is re-enacted. With lifetime $\tau\ge1$, a placed law
-survives a step if some active law enacts it now, or if fewer than $\tau$ steps
-have passed since its last enactment. Effects are \emph{enactments}, not
-toggles; to repeal is to stop re-enacting.
-\end{definition}
+take the lifetime $\tau$ of \S2.3 to be finite, so that effects are enactments
+and a placed law survives only while it keeps being re-enacted. To repeal is
+then simply to stop re-enacting, and $\tau=1$ is the pure case: what stands next
+is exactly what is enacted now.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{fig6_impermanence.pdf}

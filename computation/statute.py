@@ -99,6 +99,27 @@ class Machine:
         self._const = None
         return name
 
+    def reserve(self, name):
+        """Reserve a gate kind now, define it later (for forward references)."""
+        assert name not in self.names, name
+        k = len(self.names)
+        self.names.append(name)
+        self.rules.append(self._z())
+        self.targets.append(())
+        self.guards.append((k, 0))
+        self.gates.append(name)
+        self._const = None
+        return name
+
+    def define(self, name, pos, a, neg, b, c, out):
+        k = self.idx(name)
+        assert name in self.gates, name
+        self.rules[k] = (self._off(a), self._off(b), self._off(c))
+        self.targets[k] = tuple(self.idx(w) for w in out)
+        self.guards[k] = (k if pos == name else self.idx(pos), self.idx(neg))
+        self._const = None
+        return name
+
     def gate(self, name, pos, a, neg, b, c, out):
         """An immortal gate law.
 
@@ -108,16 +129,8 @@ class Machine:
         c   : offset of the target cell.
         out : list of wire names toggled there.
         """
-        assert name not in self.names, name
-        k = len(self.names)
-        self.names.append(name)
-        self.rules.append((self._off(a), self._off(b), self._off(c)))
-        pk = k if pos == name else self.idx(pos)
-        self.targets.append(tuple(self.idx(w) for w in out))
-        self.guards.append((pk, self.idx(neg)))
-        self.gates.append(name)
-        self._const = None
-        return name
+        self.reserve(name)
+        return self.define(name, pos, a, neg, b, c, out)
 
     # -- the constitution --------------------------------------------------
     def const(self):

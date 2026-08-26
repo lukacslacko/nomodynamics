@@ -84,6 +84,17 @@ def closed_card_mask(t, mk):
     return 3 + sum(1 for m in mk if m & ~t == 0)
 
 
+def or_fib(count):
+    """mu_n = (mu_{n-1} | mu_{n-2}) + 1, mu_{-1} = mu_{-2} = 0 — the integer
+    form of the monomial recursion (sigma IS binary increment)."""
+    out, p2, p1 = [], 0, 0
+    for _ in range(count):
+        m = (p1 | p2) + 1
+        out.append(m)
+        p2, p1 = p1, m
+    return out
+
+
 # ---------------------------------------------------- (R) + (L): the reduction
 def carry_step(y):
     z = [0] * len(y)
@@ -304,6 +315,58 @@ def main():
           all(v == w + 3 for w, v, _ in wit),
           "witnesses need %s bits — invisible to t < 2^17"
           % [b for _, _, b in wit])
+
+    # ---- the integer ("OR-Fibonacci") form of the whole law
+    print("\nthe one-line form:  mu_n = (mu_{n-1} | mu_{n-2}) + 1")
+    MU = or_fib(NM)
+    check("sigma is binary increment: mu_n == bitmask(M_n) for n < %d" % NM,
+          MU == MK, "mu = %s ..." % MU[:14])
+    X = dict(SEED)
+    ok = True
+    for t in range(1 << 13):
+        if card(X) != 3 + sum(1 for m in MU if m & ~t == 0):
+            ok = False
+            break
+        X = step(X, JUB)
+    check("|S_t| = 3 + #{n : mu_n AND NOT t == 0} vs the ENGINE, t < 2^13", ok)
+    ok = True
+    for j in range(0, 9):
+        Nj = 3 * (1 << j) - 2
+        if Nj + 2 + Nj > NM:
+            break
+        if MU[Nj] != 1 << (2 * j + 1) or MU[Nj + 1] != 1 << (2 * j + 2):
+            ok = False
+        if any(MU[Nj + 2 + i] != MU[i] + 3 * (1 << (2 * j + 1))
+               for i in range(Nj)):
+            ok = False
+    check("blocks, integer form: mu_{N_j+2+i} = mu_i + 3.2^{2j+1}", ok)
+    pw = [n for n, m in enumerate(MU) if m & (m - 1) == 0]
+    check("mu_n is a power of two for exactly one n per exponent",
+          [MU[n].bit_length() - 1 for n in pw] == list(range(len(pw))),
+          "n = %s" % pw[:10])
+
+    # ---- APERIODICITY, now a theorem
+    print("\nTHEOREM 1.13 (aperiodicity)  the Jubilee orbit is infinite")
+    second = []
+    for k in range(1, 18):
+        Ck = [0] + [n + 1 for n, m in enumerate(MU) if m & ~(1 << k) == 0]
+        second.append(Ck[1] if len(Ck) == 2 else None)
+    check("the state at t = 2^k is {frame} + WNE@(0,1) + WNE@(c_k,1), c_k strictly increasing",
+          all(x is not None for x in second)
+          and second == sorted(second) and len(set(second)) == len(second),
+          "c_k = %s ..." % second[:10])
+    X = dict(SEED)
+    seen = {}
+    dup = None
+    for t in range(1 << 13):
+        f = tuple(sorted(X.items()))
+        if f in seen:
+            dup = (seen[f], t)
+            break
+        seen[f] = t
+        X = step(X, JUB)
+    check("...and the engine finds no exact recurrence in 2^13 steps", dup is None,
+          "the theorem covers ALL t; this is a spot check")
 
     print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
     return 1 if FAIL else 0
