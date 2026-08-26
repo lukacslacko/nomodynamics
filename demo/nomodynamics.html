@@ -140,9 +140,10 @@ footer p{max-width:76ch}
 
 <section id="ring">
   <h2><span class="art">&sect;2</span>The Ring</h2>
-  <p class="lede">On the infinite line, the Anchor Theorem holds: the eldest law can
-  never be repealed, so no law-packet can travel. A circular code has no eldest law
-  &mdash; and it revolves.</p>
+  <p class="lede">A circular code has no eldest law, so the Anchor Theorem has
+  nothing to hold on to &mdash; and codes appear that equal their own rotation. The
+  first of them was reported as this field&rsquo;s first moving law-packet. It was
+  not: see below for the correction, and for what a ring really does supply.</p>
   <div class="chips" id="chips2" role="group" aria-label="Ring presets"></div>
   <div class="controls">
     <button class="ctl" id="play2">Pause</button>
@@ -356,6 +357,12 @@ const popc=v=>{let n=0;while(v){v&=v-1;n++}return n};
 /* heat ramp for law-count */
 const RAMP=["#12141a","#e8a33d","#f6e3ae","#ffffff"];
 const cellColor=n=>RAMP[Math.min(n,3)];
+/* colour by law-kind (used by the ring and plane plates) */
+const KCOL=["#e8a33d","#d0685f","#7fb7d9","#9ad07f"];
+function kindColor(mask){
+  if(popc(mask)>1)return "#ffffff";
+  return KCOL[(31-Math.clz32(mask&-mask))%KCOL.length];
+}
 
 /* ---------- the general cross-amendment engine ----------
    demo/xengine.js verbatim (checked by check_inline.py); its semantics are
@@ -599,37 +606,43 @@ function stat1(){
   document.getElementById("stat1").textContent="t = "+sb.t+"   laws in force = "+n;
 }
 
-/* ---------- §2 ring ---------- */
+/* ---------- §2 ring: now on the general engine, coloured by kind ---------- */
 const cv2=document.getElementById("cv2"), ctx2=cv2.getContext("2d");
-let ringM=6, ringS=new Set(), ringKind=[0,1,-1], ringT=0, ringAngle0=0;
+let ringS=new Map(), ringC=null, ringT=0, ringMode="parity";
 const RINGS=[
- {name:"Ring Rotor ℤ/6", m:6, kind:[0,1,-1], cells:[1,2,5],
-  cap:"<b>The smallest moving law-packet in nomodynamics.</b> Three laws of the kind (0,1,−1) &mdash; &ldquo;while I stand and my right is vacant, repeal my left&rdquo; &mdash; hop three cells per step, forever. It exists precisely because a circle has no eldest law for the Anchor Theorem to hold on to.",
-  laws:"kind (0,1,−1) at cells {1,2,5} of ℤ/6 &mdash; hops m/2 = 3 per step"},
- {name:"Sunset Parliament ℤ/10", m:10, kind:[0,1,-1], cells:[1,3,5,6,7,8,9],
-  cap:"<b>A constitutional cycle of period 15.</b> Seven laws of one kind on a ten-seat ring; the code returns to itself only after 15 steps &mdash; the periods of these parliaments (15, 63, 341&hellip; at resonant sizes) are orders of polynomials over F₂: number theory governing the legislative calendar.",
+ {name:"The Barber Pole ℤ/6", m:6,
+  C:{rules:[[0,1,-1]],targets:[0],dim:1,mod:6}, seed:[[1,0],[2,0],[5,0]],
+  cap:"<b>A code that coincides with its own rotation &mdash; and carries nothing.</b> Three laws of the kind (0,1,−1): &ldquo;while I stand and my right is vacant, repeal my left.&rdquo; Each step the state equals the previous one turned by three cells, so this was first reported as the field&rsquo;s smallest moving law-packet. It isn&rsquo;t. A window-1 law moves information at most one cell per step, and only two cells ever change &mdash; a repeal at 1, an enactment at 4. Nothing travels three cells; the pattern merely looks like its own rotation, the way a barber pole looks like it is climbing.",
+  laws:"kind (0,1,−1) at cells {1,2,5} of ℤ/6 &mdash; Φ(S) = rot₃(S), and exactly two cells change per step"},
+ {name:"Sunset Parliament ℤ/10", m:10,
+  C:{rules:[[0,1,-1]],targets:[0],dim:1,mod:10}, seed:[[1,0],[3,0],[5,0],[6,0],[7,0],[8,0],[9,0]],
+  cap:"<b>A constitutional cycle of period 15.</b> Seven laws of one kind on a ten-seat ring; after a single step it enters a cycle of length fifteen and repeats it forever. The periods of these parliaments &mdash; 15, 63, 341 at resonant sizes &mdash; are orders of polynomials over F₂: number theory governing the legislative calendar.",
   laws:"kind (0,1,−1) at cells {1,3,5,6,7,8,9} of ℤ/10 &mdash; period 15"},
+ {name:"Doctrinal Rotor ℤ/3", m:3,
+  C:{rules:[[0,-1,0],[0,-1,0],[0,-1,0]],targets:[1,2,0],dim:1,mod:3}, seed:[[0,0],[0,1]],
+  cap:"<b>The code is frozen; the doctrine rotates.</b> Three kinds, each repealing the next where it stands. The occupied cells never change &mdash; on its face the statute book is fixed &mdash; while the <i>kinds</i> circulate through those cells and return after three steps. Nothing like this exists when laws amend only their own kind.",
+  laws:"three kinds, all (0,−1,0), targets cyclic X→Y→Z→X · two laws in cell 0 of ℤ/3 · period 3, rotation 0"},
+ {name:"Odd Ring ℤ/15", m:15,
+  C:{rules:[[-1,1,1],[0,1,-1]],targets:[0,0],dim:1,mod:15},
+  seed:[[1,0],[5,0],[6,0],[10,0],[11,0],[12,0],[1,1],[3,1],[6,1],[8,1],[11,1],[13,1]],
+  cap:"<b>The first rotor on an odd ring.</b> Own-kind amendment gives rotors on even rings only &mdash; a theorem, once the block calculus is done. Let two kinds amend a third and odd rings open: twelve laws on fifteen cells, turning by exactly five &mdash; a third of the ring &mdash; every step. Every odd-ring rotor found so far turns by a third.",
+  laws:"X = (−1,1,1) → X · Y = (0,1,−1) → X · twelve laws on ℤ/15 &mdash; Φ = rot₅"},
+ {name:"Q-4 ℤ/4", m:4,
+  C:{rules:[[-1,1,-1],[0,-1,0]],targets:[1,0],dim:1,mod:4}, seed:[[0,0],[0,1],[2,1]],
+  cap:"<b>Cross-amendment lowers the smallest rotating ring from six to four.</b> Two kinds amending each other, three laws, four seats.",
+  laws:"X = (−1,1,−1) → Y · Y = (0,−1,0) → X · laws at cells 0(X), 0(Y), 2(Y) of ℤ/4 &mdash; Φ = rot₂"},
 ];
-function stepRing(){
-  const occ=ringS, m=ringM, [a,b,c]=ringKind, tog=new Map();
-  for(const i of occ){
-    if(occ.has(((i+a)%m+m)%m)&&!occ.has(((i+b)%m+m)%m)){
-      const t=((i+c)%m+m)%m; tog.set(t,!tog.get(t));
-    }
-  }
-  for(const [i,v] of tog){ if(v){ if(occ.has(i))occ.delete(i); else occ.add(i);} }
-  ringT++;
-}
 function drawRing(){
   ctx2.fillStyle="#12141a"; ctx2.fillRect(0,0,cv2.width,cv2.height);
-  const cx=cv2.width/2, cy=cv2.height/2, R=150, r=92, m=ringM;
+  const cx=cv2.width/2, cy=cv2.height/2, R=150, r=92, m=RINGS[ringPreset].m;
   for(let i=0;i<m;i++){
-    const a0=ringAngle0+i*2*Math.PI/m, a1=a0+2*Math.PI/m;
+    const a0=-Math.PI/2+i*2*Math.PI/m, a1=a0+2*Math.PI/m;
     ctx2.beginPath();
     ctx2.arc(cx,cy,R,a0+0.02,a1-0.02);
     ctx2.arc(cx,cy,r,a1-0.02,a0+0.02,true);
     ctx2.closePath();
-    ctx2.fillStyle=ringS.has(i)?"#e8a33d":"#1d212b";
+    const mask=ringS.get(i)||0;
+    ctx2.fillStyle=mask?kindColor(mask):"#1d212b";
     ctx2.fill();
     ctx2.strokeStyle="#2a2f3a"; ctx2.stroke();
     const am=(a0+a1)/2;
@@ -640,6 +653,7 @@ function drawRing(){
   ctx2.fillStyle="#3c4350"; ctx2.font="13px 'IBM Plex Mono', monospace";
   ctx2.fillText("t = "+ringT, cx, cy);
 }
+function stepRing(){ ringS=XN.step(ringS,ringC,ringMode); ringT++; }
 let ringPreset=0, ringRunning=!reduceMotion, ringAcc=0;
 const chips2=document.getElementById("chips2");
 RINGS.forEach((p,ix)=>{
@@ -651,13 +665,12 @@ function selectRing(ix){
   ringPreset=ix;
   [...chips2.children].forEach((b,i)=>b.classList.toggle("on",i===ix));
   const p=RINGS[ix];
-  ringM=p.m; ringKind=p.kind; ringS=new Set(p.cells); ringT=0;
-  ringAngle0=-Math.PI/2;
+  ringC=p.C; ringS=XN.seed(p.seed,p.C); ringT=0;
   document.getElementById("cap2").innerHTML=p.cap;
   document.getElementById("laws2").innerHTML=p.laws;
   drawRing(); stat2();
 }
-function stat2(){ document.getElementById("stat2").textContent="t = "+ringT+"   laws = "+ringS.size; }
+function stat2(){ document.getElementById("stat2").textContent="t = "+ringT+"   laws = "+XN.card(ringS); }
 selectRing(0);
 const play2=document.getElementById("play2");
 play2.textContent=ringRunning?"Pause":"Play";
@@ -875,11 +888,6 @@ dReset();
 
 
 /* ---------- §5 the plane: 2-D cross-amendment ---------- */
-const KCOL=["#e8a33d","#d0685f","#7fb7d9","#9ad07f"];
-function kindColor(mask){
-  if(popc(mask)>1)return "#ffffff";
-  return KCOL[(31-Math.clz32(mask&-mask))%KCOL.length];
-}
 function gridWidget(canvas){
   const ctx=canvas.getContext("2d");
   let S=new Map(), C=null, mode="parity", t=0, spec=null;

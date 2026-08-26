@@ -78,7 +78,7 @@ sub-census.
 | P4 | balance is parity-only and needs non-injective targeting | **CONFIRMED and made exact.** B(m)=0 under OR, super_or, and every injective target map (26,244 exact counts, 0 violations); exists under parity+non-injective and under supersession with ≥2 kinds; minimum **2 laws**. |
 | P5 | rotation speed of an L-cycle is Σ c per L steps | **REFUTED.** Of the L-cycle rotors, 964 satisfy r·L ≡ s·p (mod m) and **4212 do not**. Σc predicts nothing — but the *right* invariant of L turned up anyway: it is the **odd part of L**, and it governs the period spectrum, not the rotation (§2.3). |
 | P6 | cross-amendment maxima exceed the own-kind maxima at equal m | **CONFIRMED at equal state space and equal rule pool** (the honest control): 3 own-kind kinds vs 3 kinds in a 3-cycle gives 2→8, 2→8, 4→20, 6→**81**, 6→54 at m=3..7; at m=12 it is 23→**144**. New resonance family: **powers of 3** (27, 45, 81 at m=6), explained by the Cycle-Length Law (§2.3). |
-| P7 | ring rotors do not unroll into ℤ gliders | **CONFIRMED.** 17,746 rotor classes released as finite ℤ codes: 0 gliders (48 holdouts survive a 10× budget as anchored ruler fronts). |
+| P7 | ring rotors do not unroll into ℤ gliders | **CONFIRMED** — and, as X-E's Out-Degree Law shows, inevitable: 19,074 rotor classes released as finite ℤ codes, 0 gliders (48 holdouts survive a 10× budget as anchored ruler fronts). |
 | P8 | supersession has the largest, least structured spectrum | **REFUTED for 1 and 2 kinds.** With one kind, supersession **is** own-kind nomodynamics (Lemma S below) — identical spectra at every m ≤ 20. With two kinds it is *weaker* than own-kind two-kind (maxp 23 vs 80 at m=10): clearing whole cells destroys long orbits. |
 | P9 | everything interesting lives in the all-live 12^L sub-census | **REFUTED.** The m=4 and m=6 rotors need a dead-letter kind as immovable scaffolding: `X:(-1,-1,-1)` is an unsatisfiable statute that never fires yet is load-bearing (it supplies occupancy). Dead letters are structural, not inert. |
 
@@ -119,9 +119,27 @@ by a different expedition, sharing no code): 4,000 random configurations × 6
 steps × 4 semantics, **0 mismatches**. Every positive claim below is
 re-certified through the xnomos path.
 
-**Scope.** 122,238 complete state-space censuses covering **3.50 × 10¹⁰ codes**,
-every one of them classified exactly — not sampled. Where a claim rests on
-sampling or on SAT decision it says so and gives the bound.
+**Scope discipline — what is complete and what is a box.** A bounded search
+decides a box, not a question (Expedition X-E found MIRROR gliders of span 53,
+616 and 438, invisible to 26-cell boxes). Rings are the one sector where that
+worry can be retired for a whole axis: **a code on ℤ/m cannot be wider than m,
+so enumerating the 2^(n·m) states of ℤ/m is complete over ALL codes of ALL law
+counts** — there is no span bound and no law-count bound to be blind to. What
+the ring censuses below *are* bounded by is stated every time:
+
+* **complete, unbounded in law count and in period**: every `sweep.c` census —
+  the whole state space of ℤ/m for that constitution, every cycle found, every
+  cycle tested for rotorhood at every p up to its own length. Bounded only by
+  *m*, by the number of kinds *n*, and by which constitutions the class contains.
+* **bounded in period**: the SAT decisions (`satrotor.py`) reach much larger m
+  but only decide "is there a rotor with period p ≤ P", P stated in every row.
+* **sampled**: the 21.6 M-seed odd-ring hunt and the L ≥ 4 surveys, labelled as
+  such with their seed counts.
+
+Nothing below says "impossible". Where nothing was found the box is spelled out.
+
+122,238 complete state-space censuses covering **3.50 × 10¹⁰ codes**, every one
+classified exactly, plus 25.4 M sampled seeds and ≈ 97,000 SAT decisions.
 
 ---
 
@@ -205,6 +223,24 @@ semisimple element of GL(18,2) has order dividing lcm{2^d − 1 : d ≤ 18}, who
 3-part is only 3³ = 27, and unipotent parts contribute only powers of 2. So the
 81-cycle is *forced* to be an occupancy phenomenon — which is exactly what §2.3
 measures (its occupancy word has period 81 on the nose).
+
+### 2.2b The three-cell ring: the amendment cycle IS the clock
+
+Fix the smallest ring there is, ℤ/3, and vary only the length L of the
+amendment cycle. Complete state-space enumeration over **every** live
+constitution of each L (so: every code on ℤ/3, any law count):
+
+| L | constitutions enumerated | period set on ℤ/3 | max | min laws for the odd periods |
+|---|---|---|---|---|
+| 1 (own-kind) | all 27 | {1, 2} | 2 | — |
+| 2 (reciprocal) | all 27² = 729 | {1, 2, 4} | 4 | — |
+| 3 | all 27³ = 19,683 | {1, 2, **3**, 4, 6, 8} | 8 | 2 |
+| 5 | all 12⁵ = 248,832 live | {1,…,16, 20, 22, 26, 30, 32, 40, **60**} | **60** | **2** for each of 3, 5, 7, 9, 11, 13, 15 |
+| 7 | 2,500 random live (of 12⁷) | {1,…,12, 14, 16, 32} | 32 | 2 for each of 3, 5, 7, 9 |
+
+Three cells. Two laws. Period 15. Own-kind nomodynamics on the same ring can
+only blink. Nothing about the *ring* changed — only how far a law's amendment
+has to travel around the kind graph before it comes home.
 
 ### 2.3 Where the periods come from — mechanism, proved and measured
 
@@ -337,24 +373,45 @@ away; its guards read one cell further.) Machine check: 4,000 random
 single-cell perturbations at distance > 2 from j — **0** changed cell j.
 
 **Corollary (barber poles).** *If a rotor has min(r, m−r) > 2p then no signal
-travels with the pattern: the apparent rotation is a phase velocity of a
-spatially quasi-periodic code, not transport.* Call these **barber poles**, and
-the ones with min(r, m−r) ≤ 2p **transporting**. Both are realised; over the
-whole census the 17,670 spatial rotor classes split **10,693 transporting to
-6,977 barber-pole**. *This
+travels with the pattern: the apparent rotation is a phase velocity, not
+transport.* Call these **barber poles**; call the rest **light-cone-admissible**
+— the light cone is a *necessary* condition for transport, never a sufficient
+one, and I do not claim more. Over the whole census the 18,990 spatial rotor
+classes split **11,175 light-cone-admissible to 7,815 barber-pole**. *This
 reclassifies the founding specimen*: the ℤ/6 three-law hop-3 rotor of
 `glider-question/RESULTS.md` §4.2 has min(3,3) = 3 > 2·1 — it is a **barber
 pole**, a period-2 blinker whose two phases happen to be half-turns of each
-other. The genuinely-carried objects are the rot-2-per-3-steps "legislative
-wave" of ℤ/10 and the cross-amendment specimens below.
+other.
+
+**And in fact nothing here transports, in the ℤ sense.** Every constitution in
+this census gives each law exactly one target kind, i.e. out-degree 1 — and by
+Expedition X-E's **Out-Degree Law** such a constitution is motionless on ℤ in
+any dimension, window and resolution. My own ℤ-release experiment (§4.4:
+19,074 rotor codes, 0 gliders) is that law's prediction, confirmed rather than
+discovered. So the right reading of a ring rotor is:
+
+> A rotor is a **rotational symmetry of an orbit**, not a moving object. On
+> ℤ/m displacement is defined only modulo m, so "the code advanced r cells" is
+> a statement about the ring's symmetry group, not about anything being
+> carried. The light cone certifies that for the barber poles outright; for the
+> rest the Out-Degree Law says the same codes carry nothing on ℤ. Rings do not
+> smuggle motion past the no-go theorems — they supply a symmetry the line
+> does not have.
+
+Correspondingly, X-E's **Tropical Speed Law** (a glider's velocity lies between
+the extreme cycle means of the amendment digraph) and X-D's **cycle offset-sum
+S_Z** (a glider's velocity is a positive multiple of it) constrain ℤ, not ℤ/m:
+on a ring a displacement of r and of r − m are the same event, so no
+velocity-bounding law can bind. That is precisely why apparent speeds as large
+as m/2 per step occur here.
 
 **Theorem 3.2 (tiling lift).** *If Φ^p(X) = rot_r(τ^j(X)) on ℤ/m (m ≥ 3) then
 the q-fold tiling X^{(q)} on ℤ/(qm) satisfies Φ^p(X^{(q)}) = rot_r(τ^j(X^{(q)}))
 for every q ≥ 1 — same period, same rotation.* *Proof:* the update is a
 window-2 local map (Thm 3.1) and every cell of the tiling has the same
 5-neighbourhood as its preimage; the tiling of a rotation is the rotation of a
-tiling. ∎ Machine check: **all 17,746 rotor classes lifted to ℤ/2m and ℤ/3m —
-35,492 confirmations, 0 failures.** This explains the "extra" rotor classes at
+tiling. ∎ Machine check: **all 19,074 rotor classes lifted to ℤ/2m and ℤ/3m —
+38,148 confirmations, 0 failures.** This explains the "extra" rotor classes at
 composite m (e.g. every rot-3 rotor at m=12 and 18 is the ℤ/6 rotor tiled).
 
 ### 3.2 The census — where rotors live
@@ -399,28 +456,28 @@ certificate below was produced by re-running the specimen through the
 ```
 ### Q-4 — the smallest rotor ring in nomodynamics (own-kind needs m >= 6)
 constitution: X:(-1,1,-1)->Y   Y:(0,-1,0)->X          [parity, ring Z/4]
-Phi^1(S) = rot_2(S)   laws = 3   TRANSPORTING (2 <= 2p = 2)
+Phi^1(S) = rot_2(S)   laws = 3   light-cone-admissible (2 <= 2p = 2)
   t=0  |XY .  Y  . |
   t=1  |Y  .  XY . |
   t=2  |XY .  Y  . |
 
 ### Q-4b — the same ring, a three-step relay (period-6 orbit)
 constitution: X:(0,-1,0)->Y   Y:(0,-1,1)->X           [parity, ring Z/4]
-Phi^3(S) = rot_2(S)   laws = 3   TRANSPORTING (2 <= 2p = 6)
+Phi^3(S) = rot_2(S)   laws = 3   light-cone-admissible (2 <= 2p = 6)
   t=0  |XY .  X  . |      t=3  |X  .  XY . |
   t=1  |X  X  XY . |      t=4  |XY .  X  X |
   t=2  |XY X  XY . |      t=5  |XY .  XY X |
 
 ### R-6 — a four-law wave at rot 2 per step
 constitution: X:(-1,-1,-1)->Y   Y:(0,1,-1)->X         [parity, ring Z/6]
-Phi^1(S) = rot_2(S)   laws = 4   TRANSPORTING (2 <= 2p = 2)
+Phi^1(S) = rot_2(S)   laws = 4   light-cone-admissible (2 <= 2p = 2)
   t=0  |Y X Y . Y .|
   t=1  |Y . Y X Y .|
   t=2  |Y . Y . Y X|
 
 ### K-6 — THE KIND RELAY: three kinds hand the packet forward
 constitution: X:(0,1,-1)->Y  Y:(0,1,-1)->Z  Z:(0,1,-1)->X   [parity, Z/6]
-Phi^1(S) = rot_2 o tau(S)   laws = 4   TRANSPORTING (2 <= 2p = 2)
+Phi^1(S) = rot_2 o tau(S)   laws = 4   light-cone-admissible (2 <= 2p = 2)
   t=0  |Z . X . Y X|
   t=1  |Z Y X . Y .|
   t=2  |Z . X Z Y .|
@@ -464,10 +521,11 @@ there attains the full order 15.
 the *same* rule (0,1,−1) — "while my right-hand seat is vacant, amend the cell
 on my left" — but each kind amends the *next* kind, so the packet advances two
 cells per step **and changes its own legal identity as it goes**; after three
-steps the identity permutation closes at the same moment the ring does. Two
-cells per step is exactly the light-cone speed of Theorem 3.1: this packet is
-carried at the maximum speed the axioms allow. No own-kind constitution has an
-analogue, because own-kind laws cannot repeal each other's kind.
+steps the identity permutation closes at the same moment the ring does. Two cells per step is exactly the light-cone limit of Theorem 3.1 — the fastest
+apparent motion the axioms permit at all. No own-kind constitution has an
+analogue, because own-kind laws cannot repeal each other's kind. (Whether
+anything is *carried* is a question the Out-Degree Law answers in the negative
+for ℤ; on the ring K-6 is the tightest apparent motion there is.)
 
 **D-3 is a species with no own-kind counterpart at all**: with c = 0 nothing
 can move in space, yet the *content* of the seat circulates through the
@@ -476,21 +534,66 @@ amendment cycle forever. Two laws, any ring, odd or even. Call it a
 
 ### 3.4 Odd rings: the sharpest negative, and its exception
 
-*Complete enumerations, zero spatial rotors on every odd ring tested:*
+*Complete enumerations — no law-count bound, no period bound, only the stated
+m and kind count. Zero spatial rotors in every one:*
 
-| class | odd m enumerated completely | states |
-|---|---|---|
-| own-kind, 1 kind, all 27 | 3,5,7,9,11,13,15,17,19 | 27 × Σ2^m |
-| own-kind / 2-cycle / non-injective, 2 kinds, all 729 each | 3,5,7,9,11 | 3 × 729 × Σ4^m |
-| supersession (both resolutions), 2 kinds, all 729 | 3,5,7,9 | 1458 × Σ4^m |
-| own-kind / 3-cycle / supersession, 3 live kinds, all 1728 each | 3,5,7 | 3 × 1728 × Σ8^m |
-| 3-cycle, all 19683 | 3,5 | 19683 × Σ8^m |
+| class | odd m, COMPLETE over every code on ℤ/m |
+|---|---|
+| own-kind, 1 kind, all 27 kinds | 3, 5, 7, 9, 11, 13, 15, 17, 19 |
+| own-kind / 2-cycle / non-injective, 2 kinds, all 729 rule pairs each | 3, 5, 7, 9, 11 |
+| supersession (both resolutions), 2 kinds, all 729 | 3, 5, 7, 9 |
+| own-kind / 3-cycle / supersession, 3 live kinds, all 1728 each | 3, 5, 7 |
+| 3-cycle, all 19,683 constitutions | 3, 5 |
+
+That is a genuine no-go **for those (m, n) boxes** — complete over every code of
+every size on those rings — and nothing beyond them.
 
 *Sampled hunt* (`hunt.c`): **21,600,000 random codes** on odd rings
 m ∈ {5,7,…,21} × n ∈ {2,3,4} kinds × all four semantics × 400 random
 constitutions per cell, each run to its cycle and tested — **0 rotors**. The
 identical sampler on even rings (3,840,000 seeds) found **3,917 rotors in 193
 distinct (m,n,mode,p,r) classes**, so the instrument is not blind.
+
+**Why the base own-kind family is even — a proof, not a survey.** The
+predecessor expeditions established by sweep that the minimal own-kind rotor
+{0, 1, m/2+1} of kind (0,−1,1) exists on every even m ≥ 6 and no odd m. Here is
+the derivation. With one kind, occ = X, and the rule "(0,−1,1): while my left
+seat is vacant, toggle my right" gives
+
+  X′ = X ⊕ σ(E),  E = {i : X[i] = 1, X[i−1] = 0} = the first cell of each block.
+
+So σ(E) is the *second* cell of each block: a block of length ℓ ≥ 2 loses it
+(splitting into a singleton, a gap of 1, and a block of length ℓ−2), and a block
+of length 1 gains it (growing to length 2, or merging if the following gap was
+exactly 1). Encode X as the cyclic word of (block length, following gap) pairs
+(ℓ_i, γ_i), i = 1..β. Restricted to blocks of length ≤ 2 with no merges, the
+step is exactly
+
+  (1, γ) ↦ (2, γ−1),   (2, γ) ↦ (1, γ+1),   i.e.  ℓ′_i = 3 − ℓ_i,
+  γ′_i = γ_i + 2ℓ_i − 3.
+
+A rotor with p = 1 asks that the new word equal the old word rotated by q
+blocks: ℓ_{i+q} = 3 − ℓ_i and γ_{i+q} = γ_i + 2ℓ_i − 3. Sum the second identity
+over one full turn of the β blocks; the left side telescopes to Σγ_i, so
+
+  0 = Σ_i (2ℓ_i − 3) = 2·|X| − 3β  ⟹  |X| = 3β/2  ⟹  **β is even**,
+
+and ℓ alternates between 1 and 2 along the q-shift, so exactly half the blocks
+are singletons. For the minimal case β = 2 we get q = 1, (ℓ₁, ℓ₂) = (2, 1),
+γ₂ = γ₁ + 1, and therefore
+
+  **m = ℓ₁ + γ₁ + ℓ₂ + γ₂ = 3 + γ₁ + (γ₁+1) = 2γ₁ + 4**  (even, ≥ 6),
+  **r = ℓ₁ + γ₁ = γ₁ + 2 = m/2.**
+
+∎  So the whole base family is forced: circumference even and at least 6, hop
+exactly a half-turn, three laws. The witnesses agree cell for cell — γ₁ = 1
+gives X = {0,1,3} on ℤ/6, γ₁ = 2 gives {0,1,4} on ℤ/8, γ₁ = 3 gives {0,1,5} on
+ℤ/10, which are precisely the minimum-cardinality witnesses the census returns,
+and the identity Φ({0,1,γ+2}) = rot_{m/2}({0,1,γ+2}) is machine-checked for
+γ = 1…39 (m = 6, 8, …, 82) in `theory.py`, 0 failures.
+*(This covers one family, not all rotors: blocks of length ≥ 3 and merging
+singletons produce the richer classes at m = 6, 10, 12, …, and no general parity
+argument for those is known — see the open questions.)*
 
 **And yet odd-ring rotors exist — this is the headline of the expedition.**
 The question is decidable rather than merely samplable: "∃ X ≠ 0 with
@@ -500,12 +603,16 @@ sizes far beyond any enumeration, and such an X is automatically recurrent
 (Φ^{p·ord(r)}X = X). `satrotor.py` runs that decision. Validated first on even
 rings, where it reproduces the enumerated classes exactly.
 
-| SAT campaign | scope | rotors |
+| SAT campaign (BOUNDED IN PERIOD — the bound is the point) | scope | rotors |
 |---|---|---|
-| own-kind, 1 kind, all 27 rules, parity + supersession | odd m ≤ 31, p ≤ 6, 4,860 decisions | **0** |
-| 2 live kinds, 3 target classes, 4 semantics | odd m ≤ 17, p ≤ 3, 27,648 decisions | **20 — all at m = 15** |
-| 3 live kinds, 3 target classes, parity | odd m ≤ 13, p ≤ 2, 62,208 decisions | **322 — all at m = 9** |
+| own-kind, 1 kind, all 27 rules, parity + supersession | odd m ≤ 31, **p ≤ 6**, 4,860 decisions | **0 in that box** |
+| 2 live kinds, 3 target classes, 4 semantics | odd m ≤ 17, **p ≤ 3**, 27,648 decisions | **20 — all at m = 15** |
+| 3 live kinds, 3 target classes, parity | odd m ≤ 13, **p ≤ 2**, 62,208 decisions | **322 — all at m = 9** |
 | even-ring controls | m ≤ 12, 2,484 decisions | 1,100 |
+
+A longer-period odd-ring rotor outside these p-boxes is not excluded by any of
+this; only the complete enumerations above exclude anything unconditionally,
+and they stop at m = 11 (2 kinds) / m = 7 (3 kinds).
 
 Every one of the 20 + 322 was re-verified over three full periods by the
 xnomos engine. And **every single odd-ring rotor found, without exception, is
@@ -521,12 +628,16 @@ at m=15, p=1):
 | 3 \| m ? | yes | yes | yes | no | yes | yes | no |
 | rotors (2 kinds) | 0 | 4 (r=5,10) | 4 (r=7,14) | 0 | 4 (r=9,18) | 4 (r=11,22) | 0 |
 
-**The Third-Turn Law (original proposal, evidence-grade).**
-*On an odd ring a rotor exists only as a third-turn, hence only when 3 | m, and
-only when the supercell ℤ/(m/3) has room for the pattern: with two kinds that
-needs m/3 ≥ 5 (so m = 15 is the smallest), with three kinds m/3 ≥ 3 suffices
-(so m = 9). Odd rings with no factor 3 — 5, 7, 11, 13, 17, 25, 35 — carry no
-rotor at all.*
+**The Third-Turn Law (original proposal, evidence-grade — NOT a theorem).**
+*Every odd-ring rotor found in this expedition is a third-turn: r ≡ ±m/3, so
+3 | m; and the supercell ℤ/(m/3) must have room for the pattern — with two
+kinds that needs m/3 ≥ 5 (m = 15 smallest), with three kinds m/3 ≥ 3 suffices
+(m = 9).* The supporting boxes are: complete enumeration for odd m ≤ 11 (2
+kinds) and ≤ 7 (3 kinds); SAT with p ≤ 3 for odd m ≤ 17 and p ≤ 2 for odd
+m ≤ 13; the family scan at p = 1 for m ∈ {9,15,21,25,27,33,35}. A fifth-turn or
+a seventh-turn at larger odd m, or a long-period third-turn at m = 21 that p ≤ 1
+cannot see, would refute the "only" — I expect the *3 | m* half to survive and
+would not bet on the rest.
 
 Minimum law counts at m = 15 (z3 cardinality-minimised): **12** laws for the
 non-injective p=1 rot-5 rotor, **10** for the 2-cycle p=2 rot-5 rotor. At m = 9
@@ -580,9 +691,14 @@ nothing can target. On ℤ/m the front eventually reaches its own rear; the
 moment it does, the anchor becomes a target, and motion becomes possible. *The
 ring is the line whose front eats its own anchor.*
 
-**Corollary 4.4 (the finite chunk does NOT glide).** Releasing a ring rotor's
-laws as a finite code on ℤ gives, over the whole gallery of **17,746 rotor
-classes**: 15,419 CYCLE, 1,955 GROWING, 293 FIXED, 23 BALANCED, 8 EXTINCT, 48
+**Corollary 4.4 (the finite chunk does not glide — and why that was inevitable).**
+Expedition X-E's **Out-Degree Law** already settles this: every constitution
+here gives each law exactly one target kind, and such constitutions are
+motionless on ℤ in every dimension, window and resolution. The experiment below
+is therefore a *confirmation*, not a discovery — but it is a broad one, and it
+is the check that the ring→line map is being computed correctly. Releasing a ring rotor's
+laws as a finite code on ℤ gives, over the whole gallery of **19,074 rotor
+classes**: 16,647 CYCLE, 2,032 GROWING, 309 FIXED, 30 BALANCED, 8 EXTINCT, 48
 holdouts — and **zero gliders**. The 48 holdouts survive a 10× budget (6,000
 steps, span 3,000) still unresolved: they are ruler fronts, the anchored
 aperiodic species of `glider-question/RESULTS.md` §5.2. Pre-registration P7
@@ -734,7 +850,8 @@ those are the new balanced codes.
 | own-kind nilpotency (Thm 2.1) | 220,968 (kind, m ≤ 12, occupancy) triples | 0 violations |
 | Cycle-Length Law: exact q(M) over every frozen occupancy | own-kind 1/2/3-kind, 2-cycle, non-injective classes: exhaustive (m ≤ 10 / 8 / 6); L = 4…7 sampled | predictions match at every L |
 | light cone (Thm 3.1) | 4,000 random perturbations at distance > 2 | 0 leaks |
-| tiling lift (Thm 3.2) | 17,746 rotor classes × q = 2, 3 | 35,492 confirmed, 0 failed |
+| base own-kind rotor family, derived form (§3.4) | γ = 1…39, i.e. m = 6, 8, …, 82 | 0 failures |
+| tiling lift (Thm 3.2) | 19,074 rotor classes × q = 2, 3 | 38,148 confirmed, 0 failed |
 | wrapping (Thm 4.3) | 4,000 random (constitution, code) pairs, all semantics | 4,000/4,000 |
 | transfer-matrix counts vs brute force | 7 constitutions × 4 semantics × m = 4…8 | 0 mismatches |
 | balance impossibility (Thm 5.1.1–3) | 729 rule pairs × 4 semantics × m = 4…12 = 26,244 exact counts | 0 violations |
@@ -743,12 +860,13 @@ those are the new balanced codes.
 | … the same sampler, even-ring control | 3,840,000 codes | 3,917 rotors, 193 classes |
 | odd-ring rotor **decision** by SAT | 4,860 (1 kind, m ≤ 31, p ≤ 6) + 27,648 (2 kinds, m ≤ 17, p ≤ 3) + 62,208 (3 kinds, m ≤ 13, p ≤ 2) | see §3.4 |
 | … SAT decider validated against enumeration | even-ring controls, 2,484 calls | reproduces exactly the enumerated rotor classes |
-| ℤ-release of every ring rotor | 17,746 codes, budget 600 then 6,000 steps | **0 gliders**, 48 permanent holdouts |
+| ℤ-release of every ring rotor | 19,074 codes, budget 600 then 6,000 steps | **0 gliders**, 48 permanent holdouts |
 
-Total: **122,238 complete state-space censuses covering 3.50 × 10¹⁰ codes**,
-plus 25.4 M sampled seeds and ≈ 97,000 SAT decisions. Every number in this
-document is either an exact enumeration or is labelled as a sample / decision
-with its bound.
+Total: **122,238 complete state-space censuses covering 3.50 × 10¹⁰ codes**
+(plus the 251,332 amendment-cycle-length censuses of §2.2b), 25.4 M sampled
+seeds and ≈ 97,000 SAT decisions. Every number in this document is either an
+exact enumeration — complete over all codes of all law counts on that ring — or
+is labelled as a sample or a period-bounded decision with its bound.
 
 ---
 
@@ -778,7 +896,13 @@ L = 7 realises **7**. The **combinatorial clock** is the occupancy word, and it
 is where the record-holders live: every champion cycle has q = p, ord(T) = 1.
 Cross-amendment lengthens both.
 
-**Rotors.** Cross-amendment lowers the minimal rotor ring from 6 to **4**;
+**Rotors.** First, a correction to what the word can mean: on a ring,
+displacement is defined only modulo m, so Φ^p(S) = rot_r(S) is a *rotational
+symmetry of the orbit*, not evidence that anything is carried. The light cone
+(Thm 3.1) proves outright that 7,815 of the 18,990 spatial rotor classes carry
+nothing — the founding ℤ/6 hop-3 specimen among them — and X-E's Out-Degree Law
+proves that none of these constitutions can carry anything on ℤ at all. With
+that said: cross-amendment lowers the minimal rotor ring from 6 to **4**;
 supplies the first **kind-relay rotor** (K-6: three kinds pass a four-law packet
 round ℤ/6 at exactly the light-cone speed, changing legal identity each step);
 supplies a species with no own-kind counterpart at all (**D-3**, the doctrinal
@@ -786,12 +910,12 @@ rotor: the code is frozen in space while its kinds circulate); and — the
 headline — supplies the **first rotors on odd rings**, at m = 9 with three
 kinds and m = 15 with two. Every odd-ring rotor found is a *third-turn*,
 r = ±m/3, so 3 must divide m; odd rings with no factor 3 (5, 7, 11, 13, 17, 25,
-35) carry none in any test performed. The light-cone analysis (Thm 3.1) splits
-the whole rotor zoo — including the founding ℤ/6 specimen — into **transporting
-packets** and **barber poles**, and all odd-ring rotors so far are barber poles.
+35) carry none in any test performed — and all odd-ring rotors so far are barber
+poles. The base own-kind family's evenness is now *proved* (§3.4): its block
+word forces m = 2γ + 4 and hop m/2.
 
 **Ring ↔ line.** Three exact statements. Rotors *tile*: a rotor on ℤ/m lifts to
-ℤ/qm with the same p and r (35,492 confirmations). Rotors *unroll*: the
+ℤ/qm with the same p and r (38,148 confirmations). Rotors *unroll*: the
 m-periodic states of ℤ are Φ_ℤ-invariant and carry exactly the ring dynamics,
 so every ring rotor is a genuine infinite travelling wave on ℤ — of infinite
 support, which is why the Anchor Theorem is untouched. Codes *wrap*: line and
@@ -806,7 +930,7 @@ And the limit is a clean dichotomy: rotors with fixed rotation are tilings and
 converge to infinite wave trains; rotors with r = m/2 keep three laws but
 spread their diameter like m/2 and dissolve into independent anchored fronts.
 The compact ring rotors are exactly the ones whose motion was never transport.
-Released as finite codes on ℤ, **all 17,746 rotor classes fail to glide** — no
+Released as finite codes on ℤ, **all 19,074 rotor classes fail to glide** — no
 counterexample to the cross-amendment no-go from this direction.
 
 **Constitutional algebra.** Balance is exactly multi-authorship. Under OR, under
@@ -827,15 +951,33 @@ for the same reason — a slot with two possible authors has more possible pasts
 > relay, the odd-ring third-turns, the extra reachability — is a consequence of
 > letting two laws speak to the same place at the same time.
 
+### What this expedition does NOT claim, and what it borrows
+
+* Nothing here is a proof that odd-ring rotors are confined to third-turns, or
+  that any odd ring lacks a rotor beyond the enumerated boxes m ≤ 11 (2 kinds)
+  and m ≤ 7 (3 kinds). Those boxes are complete over all codes of all sizes,
+  which is as strong as a ring box gets; outside them the SAT results bound the
+  period and the hunts are samples.
+* The absence of ℤ gliders in the ring→line release is **X-E's Out-Degree Law**,
+  not a finding of mine: out-degree 1 ⟹ motionless on ℤ. Likewise X-E's
+  **Tropical Speed Law** and X-D's **cycle offset-sum S_Z** are ℤ statements;
+  I note in §3.1 why no velocity bound can bind on a ring at all.
+* X-D's result that **sunset-by-default** admits gliders on ℤ under own-kind
+  targeting is the sharpest reason to expect the ring picture to change under
+  that semantics; this expedition did not test it, and the four semantics swept
+  here (`parity`, `or`, `super`, `super_or`) do not include it.
+
 ### Open questions, sharpest first
 
-1. **Is there a transporting rotor on an odd ring?** (min(r, m−r) ≤ 2p, r ≠ 0.)
-   Every odd-ring witness is a barber pole. A negative would read: *causal
-   transport of a law-packet around a ring requires an even ring.*
+1. **Is there a light-cone-admissible rotor on an odd ring?**
+   (min(r, m−r) ≤ 2p with r ≢ 0.) Every odd-ring witness found is a barber pole.
+   A negative would read: *whatever a ring rotor is, an odd ring can only ever
+   do it as a phase, never within the light cone.*
 2. **Prove the Third-Turn Law** — or find an odd-ring rotor whose rotation is
-   not ±m/3. The parity obstruction that forbids odd rings for own-kind is still
-   unidentified; the block/gap calculus of §2.3 gives m = 2γ+4 for the base
-   own-kind family (hence even), but no general argument.
+   not ±m/3. The block/gap calculus of §3.4 proves evenness for the base
+   own-kind family (m = 2γ+4, hop m/2); extending it to blocks of length ≥ 3 and
+   to merging singletons is the obvious next step, and would decide whether
+   own-kind odd rings are excluded outright rather than merely up to m = 31.
 3. **What is the true growth of max period with m under cross-amendment?**
    The 3-cycle class gives 8, 8, 20, 81, 54 for m = 3…7 — non-monotone, and 81
    at m = 6 is 3⁴. Is there a resonance criterion on m analogous to the
@@ -843,7 +985,13 @@ for the same reason — a slot with two possible authors has more possible pasts
 4. **Exact fixed-point and balance counts for n ≥ 3** — the transfer matrix is
    written for 2^n-letter alphabets and n = 2 is done exactly for all m; n = 3
    needs a 1024-context implementation.
-5. **Does the balanced fraction B/F tend to 1?** It is 0.888 at m = 20 for the
+5. **Rings under sunset-by-default.** X-D showed that semantics admits ℤ
+   gliders under own-kind targeting — the one place where the Out-Degree Law's
+   hypotheses are broken by the *update* rather than the target map. The whole
+   ring census here should be re-run under it; my prediction is that odd rings
+   then carry light-cone-admissible rotors at small m, since the ℤ object
+   already moves.
+6. **Does the balanced fraction B/F tend to 1?** It is 0.888 at m = 20 for the
    two-chamber veto and rising; the transfer matrix should settle the limit
    (ratio of dominant eigenvalues).
 
@@ -880,6 +1028,10 @@ python3 linorder.py                             # the Cycle-Length Law, L = 1,2,
 python3 runL.py ; python3 runL6.py              # the Cycle-Length Law, L = 4,5,6,7
 python3 balance.py                              # transfer matrix + the 26,244 counts
 python3 balwitness.py                           # the 70 constitutions, minimal witness
+
+# the amendment-cycle-length censuses of section 2.2b (Z/3, L = 5 and 7)
+python3 -c 'import itertools;R=[(a,b,c) for a in(-1,0,1) for b in(-1,0,1) for c in(-1,0,1) if b and a!=b];L=5;t=[(k+1)%L for k in range(L)];print("\n".join(" ".join([str(L),"3","0"]+[x for r,q in zip(c,t) for x in map(str,r+(q,))]) for c in itertools.product(R,repeat=L)))' > jobs_L57.txt
+./sweep < jobs_L57.txt > $XR_RAW/L5.jsonl          # complete, 248,832 constitutions
 
 ./oddhunt.sh                                    # 21.6 M sampled odd-ring codes
 python3 satrotor.py control                     # SAT decider validated on even rings

@@ -172,12 +172,22 @@ def chapter1_theorems():
 def chapter1_rings():
     print("\nnomic rings")
 
+    # The founding ring specimen: Phi(S) = rot_3(S) holds — but with window-1
+    # laws information moves at most one cell per step, so a rotation of 3 in
+    # one step is NOT transport.  Exactly two cells change (a repeal at 1, an
+    # enactment at 4) and the state merely coincides with its own rotation:
+    # a barber pole.  (Correction to the founding note; see XFINDINGS.md §6.)
     C = Const([(0, 1, -1)], modulus=6)
     S = state_of([(1, 0), (2, 0), (5, 0)])
     T = step(S, C)
-    check("the minimal ring rotor hops m/2 = 3 on Z/6",
+    changed = set(S) ^ set(T)
+    check("the Z/6 specimen coincides with its own rotation by 3",
           set(T) == {(c + 3) % 6 for c in S} and set(step(T, C)) == set(S),
           "{1,2,5} -> {2,4,5} -> {1,2,5}")
+    check("...but it is a barber pole, not transport: 3 > light cone 1",
+          changed == {1, 4} and not any(
+              set(S) == {(c + r) % 6 for c in S} for r in range(1, 6)),
+          "only two cells change per step; S has no rotational symmetry")
 
     fam = []
     for m in range(4, 15, 2):
@@ -436,6 +446,31 @@ def chapter2():
           verify_glider(S, C, 3, 5) and verify_glider(S, C, 2, 3, "or")
           and not verify_glider(S, C, 2, 3) and not verify_glider(S, C, 3, 5, "or"),
           "the convention decides how fast, not merely whether")
+
+    # --- rings under cross-amendment (expedition X-C) --------------------
+    C = Const([(-1, 1, -1), (0, -1, 0)], [1, 0], modulus=4)
+    S = state_of([(0, 0), (0, 1), (2, 1)])
+    check("Q-4: cross-amendment lowers the minimal rotor ring from 6 to 4",
+          step(S, C) == {(c + 2) % 4: v for c, v in S.items()},
+          "three laws on Z/4")
+
+    C = Const([(0, -1, 0)] * 3, [1, 2, 0], modulus=3)
+    S = state_of([(0, 0), (0, 1)])
+    X = dict(S)
+    cells_fixed = True
+    for _ in range(3):
+        X = step(X, C)
+        cells_fixed = cells_fixed and set(X) == set(S)
+    check("D-3: the doctrinal rotor — cells frozen, kinds circulate",
+          cells_fixed and X == S and step(S, C) != S,
+          "no own-kind analogue: occupancy fixed, doctrine rotating, period 3")
+
+    C = Const([(-1, 1, 1), (0, 1, -1)], [0, 0], modulus=15)
+    S = state_of([(c, 0) for c in (1, 5, 6, 10, 11, 12)]
+                 + [(c, 1) for c in (1, 3, 6, 8, 11, 13)])
+    check("O-15: a rotor on an ODD ring, which own-kind never gives",
+          step(S, C) == {(c + 5) % 15: v for c, v in S.items()},
+          "12 laws, rotation 5 = m/3 (the Third-Turn pattern)")
 
     # Subluminal motion: a parity glider at speed 1/6.
     C = Const([off("ONO"), off("OEW"), off("WTE")], [(0, 1), (0, 2), (0,)], dim=2)

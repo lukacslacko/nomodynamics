@@ -217,5 +217,25 @@ def t6(trials=4000, seed=99):
 if __name__ == "__main__":
     b2 = t2()
     t3()
+    b34 = t34()
     b6 = t6()
-    print("\nsummary: T2 violations=%d  T6 violations=%d" % (b2, b6))
+    print("\nsummary: T2 violations=%d  T3.4 violations=%d  T6 violations=%d"
+          % (b2, b34, b6))
+
+
+def t34(hi=40):
+    """The base own-kind rotor family, derived in RESULTS.md S3.4:
+    X = {0, 1, g+2} on Z/(2g+4) satisfies Phi(X) = rot_{m/2}(X) for every
+    g >= 1, and these are exactly the block words (2,g),(1,g+1)."""
+    print("\nT3.4: the derived base family X = {0,1,g+2} on Z/(2g+4)")
+    bad = 0
+    for g in range(1, hi):
+        m = 2 * g + 4
+        X = (1 | 2 | (1 << (2 + g)),)
+        R = Ring([(0, -1, 1)], [0], m)
+        if R.step(X) != R.rot_state(X, m // 2):
+            bad += 1
+            print("   FAILS at g=%d (m=%d)" % (g, m))
+    print("   g = 1..%d  (m = 6, 8, ..., %d): %d failures"
+          % (hi - 1, 2 * (hi - 1) + 4, bad))
+    return bad

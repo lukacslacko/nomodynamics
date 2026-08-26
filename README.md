@@ -63,12 +63,13 @@ vacant, enact/repeal my kind at my target."*
 | **Single Author** | The only law that can flip kind `k=(a,b,c)` at cell `j` is the kind-`k` law at `j−c`. Hence parity ≡ OR resolution *identically*, in every dimension, and per-kind dynamics is occupancy-modulated linear algebra over `𝔽₂`. |
 | **Dead Letter** | A code is a fixed point **iff** every law in it is blocked. *Balanced constitutions* — codes in perpetual self-cancelling activity — do not exist: stability is always gridlock. |
 | **Anchor** | On `ℤ` (any window, any dimension, any guard predicate, either resolution) own-kind toggles of kind `t` land only at `t`'s own offset `c_t`; the extremal law on the trailing side of a finite code is therefore never targeted. **The eldest law cannot be repealed** — so free gliders are impossible. |
-| **Ring rotors** (corollary) | On `ℤ/m` there is no eldest law and the obstruction genuinely vanishes: three laws of the single kind `(0,1,−1)` at cells `{1,2,5}` of `ℤ/6` hop `m/2` cells per step. *Entrenchment is a theorem of linear order: linear statute books are anchored by their oldest provision; circular codes can revolve.* |
+| **Ring codes** (corollary, **corrected**) | On `ℤ/m` there is no eldest law, and codes appear that coincide with their own rotation: three laws of kind `(0,1,−1)` at `{1,2,5}` of `ℤ/6` satisfy `Φ(S) = rot₃(S)`, on every even `m ≥ 6`. **This is not transport.** Window-1 laws move information at most one cell per step, so a rotation of three in one step carries nothing: two cells change (a repeal at 1, an enactment at 4) and the state merely equals its own rotation — a *barber pole*. Own-kind nomodynamics has no transport anywhere, on the line or the circle. |
 
 ```
 t=0  |.XX..X|      X = law (0,1,-1)  ("while I stand and my right is vacant,
 t=1  |..X.XX|                          repeal my left")
-t=2  |.XX..X|      each step the bloc hops m/2 = 3 cells: Φ(S) = rot₃(S)
+t=2  |.XX..X|      Φ(S) = rot₃(S) — but only cells 1 and 4 ever change: the
+                   code coincides with its own rotation, it does not travel
 ```
 
 ## Fauna of the solvable sector

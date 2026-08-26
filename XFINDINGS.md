@@ -282,7 +282,83 @@ glider under OR — different period *and* different displacement
 (p, d)). The resolution convention does not merely decide whether a code moves;
 it decides **how fast**.
 
-## 6. Scorecard against the frozen predictions
+## 6. Rings — and a retraction that reaches back into chapter one
+
+Expedition X-C (`xrings/RESULTS.md`; 122,238 complete state-space censuses =
+3.5 × 10¹⁰ codes. Rings are the one sector where "complete" is honest without a
+width caveat: a ring code cannot be wider than its ring.)
+
+### The retraction
+
+Chapter one's **ring rotors** were reported as *"the first moving law-packets of
+nomodynamics"*, hopping m/2 cells per step — and the founding note, the README
+and the demo all said so. That reading is **wrong**, and X-C caught it.
+
+> On ℤ/m, `Φ(S) = rot_r(S)` says the code coincides with its own rotation. It
+> does **not** say anything travelled. With window-1 laws information moves at
+> most one cell per step, so any rotor with min(r, m−r) > p is *apparent*
+> rotation. In the founding ℤ/6 specimen exactly **two cells change per step** —
+> a repeal at cell 1, an enactment at cell 4 — while the resulting state happens
+> to equal its own rotation by three (coordinator-verified, including that the
+> seed has no rotational symmetry of its own, so r = 3 is the *only* rotation
+> relating the two states). Nothing hops three cells. It is a **barber pole**.
+
+Every own-kind ring rotor found fails the light-cone test, and releasing 19,074
+such ring codes onto ℤ gives **zero** gliders — exactly as the Out-Degree Law
+requires. So the corrected picture is simpler and stronger than the one it
+replaces: **chapter one contains no transport anywhere** — not on the line, and
+not on rings either. Genuine transport on a ring is a wrapped cross-amendment
+glider: TANDEM-1 rotates by one cell per step on every m ≥ 3, inside the light
+cone. The old slogan ("entrenchment is a theorem of linear order; circular codes
+can revolve") is retired; what rings supply is apparent rotation, and what buys
+motion is still out-degree.
+
+### The Cycle-Length Law — why chapter one's clocks were 2-adic
+
+The frozen-occupancy step operator of an L-cycle permutation constitution lives
+in 𝔽₂[y]/(y^L − 1), **which is local exactly when L is a power of two**. So:
+
+> "All periods are powers of two" was never a fact about own-kind amendment. It
+> was a fact about **cycle length 1** — and 1 is a power of two. An odd factor
+> L′ | L contributes 𝔽_{2^d} factors with d = ord_{L′}(2), and the odd periods
+> appear immediately.
+
+Predicted and measured exactly at every L = 1…7: L = 3 → 3, L = 5 → **15**,
+L = 6 → 3·2^k, L = 7 → **7**. And it shows in the dynamics: on ℤ/3, own-kind
+gives periods {1,2}; a 3-cycle gives {1,2,3,4,6,8}; a 5-cycle — complete over
+all 248,832 constitutions — gives {1…16, 20, 22, 26, 30, 32, 40, 60}, i.e.
+**every odd period 3, 5, 7, 9, 11, 13, 15 from two laws on three cells**.
+Controls with the same rule pool and state space (only the target map changes)
+at m = 12: own-kind reaches 12 distinct periods, cross-amendment 36. A new
+resonance family appears at powers of **three** (27, 45, 81) where own-kind gave
+Mersenne numbers (15, 63, 341).
+
+### The rotor gallery (all coordinator-verified)
+
+* **Q-4** — cross-amendment lowers the minimal rotor ring from 6 to **4**:
+  `X = (−1,1,−1) → Y`, `Y = (0,−1,0) → X`, three laws on ℤ/4, `Φ = rot₂`.
+* **D-3, the doctrinal rotor** — three kinds all `(0,−1,0)` with cyclic targets,
+  two laws at one cell of ℤ/3: the **occupied cells never change**, while the
+  *kinds* circulate through them and return after three steps. A code frozen on
+  its face whose doctrine rotates underneath. No own-kind analogue exists.
+* **O-15** — the first rotor on an **odd** ring (prediction X6): twelve laws on
+  ℤ/15 with `Φ = rot₅` exactly. Every odd-ring rotor found has r ≡ ±m/3, so
+  3 | m (the *Third-Turn* pattern, evidence-grade; confirmed at m = 15, 21, 27,
+  33, absent at 9, 25, 35).
+* **K-6** — a kind relay that advances two cells *and* changes kind each step,
+  closing after three.
+
+### Also proved, and one prediction refuted
+
+The own-kind base rotor family is now derived rather than surveyed: the block
+word forces **m = 2γ+4 with hop m/2**, so its restriction to even rings is a
+theorem (γ = 1…39 verified). Balance on rings obeys a trichotomy — fixed ⟹ dead
+under OR, under `super_or`, and under **every injective target map** (26,244
+exact counts, 0 violations) — and under the two-chamber veto **88.8 % of all
+fixed codes on ℤ/20 are balanced**, against 0 % for own-kind. X-C's own
+pre-registrations P5 (Σc predicts rotation), P8 and P9 were refuted and kept.
+
+## 7. Scorecard against the frozen predictions
 
 - **X1 (balance exists, minimum 2 laws, none under OR)** — **HELD** for the
   witness and the OR half (verified); the minimality claim is X-D's.
@@ -309,7 +385,10 @@ it decides **how fast**.
 - **X7 (some semantics from the referent's lattice yields a phenomenon with no
   analogue elsewhere)** — **HELD, and it is the chapter's second theorem-grade
   result**: sunset-by-default admits free gliders on ℤ under own-kind targeting.
-- **X6, X8** — pending.
+- **X6 (cross-amendment rotors appear on odd rings; ≈ 65 %)** — **HELD**:
+  O-15 on ℤ/15, and a Third-Turn pattern (3 | m) across m = 15, 21, 27, 33.
+- **X8 (no universality this cycle; ≈ 90 %)** — **HELD**: it stays open, and no
+  expedition claimed otherwise.
 
 *The pattern worth keeping: the structural intuition (a tropical monovariant
 kills single-target motion) was sound, while the taxonomic guess (which named

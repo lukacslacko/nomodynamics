@@ -1,6 +1,6 @@
-rotor classes over ALL censuses: 17746
-  spatial (r != 0): 17670   pure-screw (r = 0, j != 0): 76
-  light cone among SPATIAL rotors: {'transporting': 10693, 'barber-pole': 6977}
-tiling lift to Z/2m and Z/3m: 35492 confirmed, 0 failed
-finite chunk released on Z: {'FIXED': 293, 'CYCLE': 15419, 'GROWING': 1955, 'BALANCED': 23, 'UNRESOLVED': 48, 'EXTINCT': 8}
+rotor classes over ALL censuses: 19074
+  spatial (r != 0): 18990   pure-screw (r = 0, j != 0): 84
+  light cone among SPATIAL rotors: {'transporting': 11175, 'barber-pole': 7815}
+tiling lift to Z/2m and Z/3m: 38148 confirmed, 0 failed
+finite chunk released on Z: {'FIXED': 309, 'CYCLE': 16647, 'GROWING': 2032, 'BALANCED': 30, 'UNRESOLVED': 48, 'EXTINCT': 8}
   holdouts at 10x budget: {'UNRESOLVED': 48}
