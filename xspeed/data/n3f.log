@@ -1,0 +1,18 @@
+98 jobs (0 already done), 8 workers
+[   1/  98     21s] n3 W1 N20 p4 d3 or                 UNSAT    21.4s
+[   2/  98     29s] n3 W1 N20 p4 d3 parity             UNSAT    29.4s
+[   3/  98     36s] n3 W1 N20 p5 d4 or                 UNSAT    35.5s
+[   4/  98     39s] n3 W1 N20 p5 d4 parity             UNSAT    39.1s
+[   5/  98     42s] n3 W1 N20 p5 d3 or                 UNSAT    42.4s
+[   6/  98     73s] n3 W1 N20 p5 d3 parity             UNSAT    72.9s
+[   7/  98     85s] n3 W1 N20 p6 d5 parity             UNSAT    43.0s
+[   8/  98    105s] n3 W1 N20 p7 d5 or                 UNSAT    65.5s
+[   9/  98    112s] n3 W1 N20 p6 d5 or                 UNSAT    38.8s
+[  10/  98    119s] n3 W1 N20 p8 d6 or                 UNSAT    89.2s
+[  11/  98    121s] n3 W1 N24 p4 d3 parity             UNSAT    35.3s
+[  12/  98    132s] n3 W1 N24 p4 d3 or                 UNSAT    27.1s
+[  13/  98    139s] n3 W1 N20 p8 d6 parity             UNSAT   117.0s
+[  14/  98    156s] n3 W1 N20 p7 d5 parity             UNSAT   120.4s
+[  15/  98    181s] n3 W1 N24 p5 d4 or                 UNSAT    48.8s
+[  16/  98    202s] n3 W1 N24 p5 d4 parity             UNSAT    81.5s
+[  17/  98    209s] n3 W1 N24 p5 d3 or                 UNSAT    90.2s

@@ -1,17 +1,68 @@
 # XAMEND-2D — The two-dimensional cross-amendment sector
 ### Expedition X-B, NOMODYNAMICS / Treeline program · 2026-08-26
 
-**Verdict in one line.** The two structural numbers of a constitution —
-*out-degree* (how many kinds a law amends) and *in-degree* (how many kinds may
-author a given kind) — control the whole sector, and they control **different**
-things. Out-degree 1 forces ray confinement (α ≤ 1) and **forbids gliders in
-every dimension**; out-degree ≥ 2 opens both, and delivers **α = 2 with
-bounding-box fill → 1** (the plane genuinely fills) and **the first free glider
-of nomodynamics** — plus a gun, a rake, and a collision algebra. In-degree ≥ 2
-is what breaks single-authorship: it is the exact condition for *balanced
-constitutions* (which exist only under parity — never under OR, proved and
-confirmed on 81.4 M OR runs) and it is *not* needed for non-2-adic periods, which
-turn out to exist even in pure own-kind 2-D once diagonal offsets are allowed.
+**Verdict in one line.** Out-degree — how many kinds one law amends — decides
+**growth** exactly as it decides motion: out-degree 1 confines every code to a
+finite union of parallel rays, so **α ≤ 1 in every dimension**; out-degree ≥ 2
+reaches **α = 2 with bounding-box fill → 1**, and *the plane genuinely fills*
+(`OPP>ABC OEE>B ONN>C`, from one law, is a solid growing square). That settles
+the frozen prediction **X4**. In 2-D the multi-target sector also yields a
+**glider gun**, a **rake**, a **puffer**, a parity-graded **collision algebra**,
+**subluminal parity gliders** (down to speed 1/6), a **50-law diagonal
+spaceship**, and **THE ODOMETER** — a three-law binary counter whose reach grows
+like (log t)². Balance in 2-D is exactly **parity + in-degree ≥ 2**, is
+**unbounded in size**, and can be **100 % active**.
+
+---
+
+### Priority and attribution (read first)
+
+This expedition ran **concurrently** with X-A (`xamend1d/`) and the coordinator's
+`XFINDINGS.md`, and it must not be read as claiming their results.
+
+**Already established before/independently of this report, by X-A and the
+coordinator** (`XFINDINGS.md` §1–3):
+
+* **The Out-Degree Law** (X-A, Cor. 2.4): out-degree 1 ⟹ no free glider, any
+  offsets, any window, **any dimension**, parity or OR.
+* **The Supersession No-Go** (X-A, Thm 3): no free glider under supersession, any
+  dimension.
+* **The Tropical Speed Law**: p·min(λ_min,0) ≤ d ≤ p·max(λ_max,0) for the extreme
+  cycle means λ of the amendment digraph.
+* **The first free gliders**: SOLO (one placed law, speed ½), TANDEM-1 (two laws
+  in one cell, p = 1, speed 1 — and the coordinator has already verified that it
+  lifts to ℤ² at velocities (1,0), (1,1), (0,1), (−1,1), (2,1)), TRIPTYCH.
+* **Balance is a parity-only phenomenon**, with a 2-law minimal witness.
+* **Ray-bundle confinement** (X-C, `xtheory/` T4d + T5, obtained *concurrently*
+  with §3.2 here and by a different argument): single-target reach lies in
+  finitely many rays of the cycle-sum directions, so growth stays
+  1-dimensional; supersession keeps it. X-C explicitly hands the 2-D census to
+  this expedition ("2-D census: X-B's ground").
+* **Cryptic Unipotency** (X-C, T6): if every reachable cycle has S_Z ≠ 0 then,
+  *on any interval of constant occupancy*, the state evolves by a unipotent
+  𝔽₂ map, so **constant-occupancy** cycles have period a power of 2. §8 below
+  supplies the complementary half — the counterexamples, which are exactly the
+  cycles whose occupancy is *not* constant.
+
+My §3.3 re-derives the no-go by a different route (a *potential-graded anchor*
+rather than a min-plus monovariant) and states it in ℝ^d **cone** form, which is
+the natural several-dimensional shape of the Tropical Speed Law. That is a
+reformulation, **not** a priority claim. The Writ of Removal of §6.1 is
+TANDEM-1's 2-D lift; it appears here because the 2-D machines (§6.3–6.5) are
+built out of it, not as a discovery.
+
+**What is new in this report:** the α-quantified form of confinement
+(Theorem 3, Corollary 3.1 — the same phenomenon as X-C's ray bundle, derived
+independently and stated as an explicit bound |S_t| ≤ |S_0|(t+1)); the
+α = 2 / fill → 1
+constructions and hence the resolution of **X4**; the complete 2-D censuses
+(199.5 M certified classifications) with the class-resolved tables; the 2-D
+machines and interaction physics (gun, rake, puffer, collision algebra, wall);
+**THE ODOMETER**; the 2-D period spectrum, including a **pure own-kind period-3
+oscillator** that refutes the 2-adic regularity once diagonal offsets are
+admitted; the 2-D balance census with unbounded 100 %-active witnesses and z3
+maxima; and the measured null-cycle / opposed-cycle-sums dichotomy over complete
+enumerations.
 
 ---
 
@@ -20,16 +71,16 @@ turn out to exist even in pure own-kind 2-D once diagonal offsets are allowed.
 | # | result | status |
 |---|---|---|
 | 1 | **α = 2 achieved.** `OPP>ABC OEE>B ONN>C` from ONE law fills a solid square: \|S_t\| = (t+1)² exactly, cell support = {(0,0)} ∪ [1,t]², **bounding-box fill → 1**. | proved + certified to t = 200 on an independent engine |
-| 2 | **Generalised Ray-Confinement Theorem.** Every *single-target* constitution (own-kind, relay cross-amendment, supersession) confines its support to a fixed finite union of **parallel rays** of direction V = the cycle sum ⟹ α ≤ 1 in every dimension; V = 0 ⟹ bounded ⟹ eventually periodic. | proved (Thm 3 / Cor 3.1) |
-| 3 | **THE WRIT OF REMOVAL** — `OEO>AB OEE>AB`, seed A+B at one cell: a **2-law free glider**, Φ(S) = σ^(1,0)(S). The first glider in nomodynamics, in *any* dimension. Diagonal variants Φ(S) = σ^(±1,±1)(S) exist — a direction own-kind 2-D provably cannot take. | certified over 5 periods on `xnomos.py` |
-| 4 | **Potential-Anchor Theorem.** No glider exists whenever some u has ⟨d,u⟩ > 0 and ⟨V_Z,u⟩ > 0 for every reachable amendment cycle Z. Corollary: **single-target ⟹ no gliders, any dimension, parity/OR/supersession.** Machine-checked: **0 single-target gliders** anywhere in 199.5 M runs; of the 8,769 two-kind gliders, 100 % possess a **null amendment cycle** (V_Z = 0), and in the 3-kind sample the other permitted hatch — **opposed cycle sums** — accounts for the remaining 4. No glider anywhere admits a separating u. | proved + complete enumeration |
+| 2 | **Generalised Ray-Confinement Theorem** (new). Every *single-target* constitution (own-kind, relay cross-amendment, supersession) confines its support to a fixed finite union of **parallel rays** of direction V = the cycle sum ⟹ α ≤ 1 in every dimension; V = 0 ⟹ bounded ⟹ eventually periodic. This is the **growth** analogue of X-A's Out-Degree Law, and it is what settles X4. | proved (Thm 3 / Cor 3.1) |
+| 3 | **The 2-D glider zoo.** TANDEM-1's 2-D lift (`OEO>AB OEE>AB`, "the Writ of Removal") is X-A's object; new here are the **card-50 diagonal spaceship** `PQW>B ONE>AC ONP>ABC` (p = 4, d = (4,4)), **subluminal parity gliders** at speeds 1/2, 2/5, 1/3, 1/4, **1/6**, and the complete class-resolved 2-D glider census. | certified over 5 periods on `xnomos.py` |
+| 4 | **Potential-Anchor Theorem** (a re-proof of X-A's Out-Degree Law and Supersession No-Go, in ℝ^d cone form). No glider exists whenever some u has ⟨d,u⟩ > 0 and ⟨V_Z,u⟩ > 0 for every reachable amendment cycle Z. Machine-checked in 2-D: **0 single-target gliders** anywhere in 199.5 M runs; of the 8,769 two-kind gliders, 100 % possess a **null amendment cycle** (V_Z = 0), and in the 3-kind sample the other permitted hatch — **opposed cycle sums** — accounts for the remaining 4. No glider anywhere admits a separating u. | re-proved + complete 2-D enumeration |
 | 5 | **A GUN and a RAKE.** `OEO>AB OEE>AB OEO>AB` from one pump law emits a Writ every 2 steps, forever. Adding a north-walking pump gives a rake: one glider dropped per step, \|S_t\| = 2t+2. | certified |
 | 6 | **Collision algebra of writs.** Head-on: **even gap ⟹ mutual transparency** (they occupy one cell and pass through); **odd gap ⟹ mutual arrest** into a frozen 4-law block. A single inert law stops a writ dead. | complete gap sweep 1–14, certified |
 | 7 | **Balance ⟺ two authors, and only under parity.** Φ(S) = S with an active law requires in-degree ≥ 2 *and* parity. OR censuses: **0 balanced runs in 81,400,939**. Balanced codes are unbounded in size and can be **100 % active**: a column of n doubly-occupied cells under `OEO>A OEO>A` is fixed forever with all 2n laws active. | proved + z3-maximal witnesses |
 | 8 | **The 2-adic period conjecture of own-kind nomodynamics is false.** Period 3 occurs in *pure own-kind* 2-D (`EQN>A TQS>B`, 3 laws) as soon as diagonal offsets are admitted. The full sector's period spectrum includes 3, 5, 6, 7, 10, 12, 14, 18, 20, 21, 24, 28, 30, 36, 40, 48, 56, 72, 96, 112, 192. | certified specimens |
 | 9 | **THE ODOMETER** — `OEW>B NQR>AB`, three laws: a width-2 column that **counts in binary**. Card collapses to **four laws** at every t = 2^k and avalanches at t = 2^k − 1; reach ≈ 0.20 (log₂ t)², = 86 cells at t = 2²⁰. Bounded card, unbounded reach ⟹ aperiodic. The slowest clock in the fauna (the Jubilee code's reach is ≈ 1.5√t). | no recurrence in 300,000 hashed steps; 179 survivors of a 3-stage escalation |
 | 10 | **Supersession is inert.** Complete 2-kind Moore + 3-kind sample under supersession, 36.7 M runs: **0 gliders**, in every class — as Cor. 4.2 requires. Its class-0 and class-1 tallies are identical entry by entry, because the semantics ignores the target map altogether. | complete enumeration |
-| 11 | **The smallest glider is ONE LAW.** `OWO>ABC ORQ>A RER>BC`: Φ⁴(S) = σ^(−1,1)(S) with \|S\| = 1. And the largest certified is 50 laws moving diagonally at the speed of light. | certified |
+| 11 | **A one-law 2-D glider** `OWO>ABC ORQ>A RER>BC`: Φ⁴(S) = σ^(−1,1)(S) with \|S\| = 1, speed 1/4. (X-A's SOLO is the 1-D one-law glider; this is its 2-D, diagonal, quarter-speed cousin.) | certified |
 
 ---
 
@@ -42,15 +93,19 @@ See `PREREG.md`. Scorecard:
 | P1a single-target ⟹ α ≤ 1, zero counterexamples | **CONFIRMED** (proved; complete census agrees) |
 | P1b multi-target reaches α = 2 by a "sower" | **CONFIRMED** — and beaten: fill → 1, not 1/2 |
 | P1c a fractal band of intermediate α exists | **CONFIRMED** (see §5.3) |
-| P2a no gliders under single-target | **CONFIRMED** (proved; 0/4.78 M universes) |
-| P2b gliders only where cycle sums fail to fit an open half-plane | **CONFIRMED** — every one of 8,769 has a null cycle |
-| P2c glider ≈ 25 %, rake ≈ 50 %, translating grower ≈ 70 % | **all three found**; I under-rated the glider badly |
+| P2a no gliders under single-target | **CONFIRMED** — and this was *already a theorem*: X-A's Out-Degree Law, published while I was deriving it. My derivation was independent but not first. 0 counterexamples in 199.5 M runs. |
+| P2b gliders only where cycle sums fail to fit an open half-plane | **CONFIRMED** — 8,769/8,769 two-kind gliders have a null cycle; 4 of 870 3-kind gliders use the other hatch, opposed cycle sums |
+| P2c glider ≈ 25 %, rake ≈ 50 %, translating grower ≈ 70 % | **all three found** — and the glider probability was moot: X-A had already found one. My 25 % was badly under-confident on the object and irrelevant on the priority. |
 | P3a odd periods appear under multi-target | **CONFIRMED** (3, 5, 7, 21, …) |
 | P3b single-target stays 2-adic | **REFUTED** — 2,558 non-2-adic single-target runs, 77 of them *own-kind* |
 | P4a balance impossible under single-target | **REFUTED** — 32,214 single-target balanced runs. The right condition is **in-degree**, not out-degree; I had confused the two axes. |
 | P4b balance common and can be large | **CONFIRMED** — 51,972 runs, unbounded size, 100 % active |
 | P4c balance fragile under perturbation | **CONFIRMED** — survives 9–43 % of single-law additions |
-| P5 parity/OR split; higher under multi-target | **CONFIRMED**; and the split is *structural*: OR has no balance at all, parity has no subluminal gliders |
+| P5 parity/OR split; higher under multi-target | **CONFIRMED**; and the split is *structural*: OR has no balance at all (in any class), while parity and OR have different glider zoos (OR has 2.1× as many, and subluminal ones the parity 2-kind sector lacks) |
+
+**Priority note.** P2a and P2b restate, in cone form, results X-A had already
+proved (see the attribution block above). They are scored here because they were
+written down before I read `XFINDINGS.md`, and the record is kept as written.
 
 ---
 
@@ -191,6 +246,17 @@ dimension, under parity, OR and supersession.**
 
 ### 3.3 The Potential-Anchor Theorem (no gliders)
 
+> **Attribution.** The content of Theorem 4 and Corollaries 4.1–4.2 was
+> established first by Expedition X-A (`xamend1d/`, `XFINDINGS.md` §1) as the
+> **Out-Degree Law**, the **Supersession No-Go** and the **Tropical Speed Law**,
+> by a min-plus monovariant. What follows is an independent derivation by a
+> *potential-graded anchor*, stated as a **cone condition in ℝ^d** — the shape
+> the speed law takes in several dimensions, where "λ ≤ 0" becomes "no separating
+> direction u". It is kept here because §6 and §8b test it in 2-D against
+> complete enumerations, and because Corollary 4.3–4.4 (the salient-cone form and
+> the null-cycle/opposed-sums dichotomy) is what the 2-D glider hunt was steered
+> by.
+
 A **free glider** is a finite nonempty S with Φ^p(S) = S + d, d ≠ 0.
 
 **Theorem 4 (Potential Anchor).** *Let S_0 be a glider with displacement d, R
@@ -220,7 +286,9 @@ minimum potential over S_{np} tends to infinity. Contradiction. ∎
 This is the Anchor Theorem of `glider-question/RESULTS.md` with the fixed
 "leftmost law" replaced by a *potential-graded* anchor. Its hypothesis (H1)
 "own-kind effects" is replaced by the much weaker "the amendment cycles all
-point the same way".
+point the same way". In one dimension the hypothesis "∃u with ⟨d,u⟩ > 0 and
+⟨V_Z,u⟩ > 0 ∀Z" reduces to "all cycle means have the sign of d", which is
+exactly the no-go half of X-A's Tropical Speed Law.
 
 **Corollary 4.1 (No free gliders under single-target).** *Out-degree 1 ⟹ no
 glider, in every dimension, under parity and under OR.*
@@ -454,9 +522,16 @@ strata are dominated by thin slabs; the solid quadrant had to be built.
 
 ---
 
-## 6. Mission 2 — the first free glider
+## 6. Mission 2 — gliders in two dimensions
 
-### 6.1 THE WRIT OF REMOVAL
+The existence question was settled by X-A before this report: gliders exist as
+soon as some law has out-degree 2, and TANDEM-1 (two laws in one cell) already
+lifts to ℤ² at arbitrary velocity — coordinator-verified. What §6 adds is the
+**2-D census** of them (complete, class-resolved), the **machines** built out of
+them, and specimens the 1-D sector cannot have: diagonal motion, a 50-law
+spaceship, and subluminal parity motion.
+
+### 6.1 THE WRIT OF REMOVAL — TANDEM-1 in the plane
 
 ```
 constitution : OEO>AB  OEE>AB          (kinds A and B, both targeting {A,B})
@@ -471,21 +546,18 @@ t=3  ....#.....      '#' = both laws in one cell
 t=4  .....#....
 ```
 
-The mechanism in one sentence: **clause A repeals the entire code at its own
-cell while clause B re-enacts the entire code next door.** The Anchor Theorem
-of the 1-D expedition says *the eldest law cannot be repealed* — under
-hypothesis (H1), own-kind effects. Cross-amendment with out-degree 2 breaks
-(H1) exactly: the trailing law is repealed by a **different kind**, and the
-potential argument of Theorem 4 fails precisely because the loop A → A has
-c_A = O, a **null cycle**.
+This is X-A's **TANDEM-1** written in the 2-D constitution format; it is
+reproduced here (and re-certified) because §6.3–6.5 are built out of it. The
+mechanism in one sentence: **clause A repeals the entire code at its own cell
+while clause B re-enacts the entire code next door.** The potential argument of
+Theorem 4 fails on it precisely because the loop A → A has c_A = O — a **null
+cycle**.
 
-The same two clauses work verbatim in 1-D (`xnomos.Const([(0,1,0),(0,1,1)],
-targets=[(0,1),(0,1)], dim=1)`, verified): **the Free Glider Question of
-`glider-question/RESULTS.md` is answered affirmatively in the cross-amendment
-multi-target sector, in every dimension ≥ 1.** In 2-D one gets more: replacing
-c_B by a diagonal offset gives Φ(S) = σ^(±1,±1)(S) — motion in a direction that
-own-kind 2-D provably cannot take (`nomos2d` Thm 3 pins every kind to an axis
-ray).
+Replacing c_B by a diagonal offset gives Φ(S) = σ^(±1,±1)(S), motion in a
+direction own-kind 2-D provably cannot take (`nomos2d` Thm 3 pins every kind to
+an axis ray). The coordinator has already verified the 2-D lift at velocities
+(1,0), (1,1), (0,1), (−1,1), (2,1); the certificates here are a re-check on
+`xnomos.py`, not a new claim.
 
 ### 6.2 The glider zoo (complete 2-kind Moore enumeration)
 
@@ -641,6 +713,14 @@ the **von Neumann** offset set. It is false in the Moore window.
 **Own-kind period 3** — `EQN>A TQS>B`, seed `A@(0,0) B@(1,1)`. Both kinds amend
 only themselves: this is pure own-kind nomodynamics, in-degree ≡ out-degree ≡ 1,
 parity ≡ OR. Certified: Φ³(S₁) = S₁, and Φ(S₁) ≠ S₁, Φ²(S₁) ≠ S₁.
+
+This dovetails exactly with X-C's **Cryptic Unipotency** (`xtheory/` T6): their
+theorem gives period 2^k only on intervals where the *occupancy* is constant.
+The period-3 orbit below has cards 3, 3, 5 — its occupancy changes every step,
+so the unipotent argument never applies to it. Their theorem and this
+counterexample together are the whole story: **2-adic clockwork is a property of
+constant-occupancy stretches, not of the algebra**, and it was the von Neumann
+window that made it look universal.
 
 ```
  t=1     t=2     t=3     t=4=t=1
@@ -929,20 +1009,28 @@ Labels: **[E]** established (proved here or previously, with a proof in §3);
   direction is the amendment cycle sum ⟹ **α ≤ 1** in every dimension, under
   parity, OR *and* supersession; cycle sum 0 ⟹ bounded ⟹ eventually periodic.
   This subsumes `nomos2d` Thm 3 and explains its §7 diagonal staircase.
-* **[E] Potential-Anchor Theorem** (Thm 4) and **no gliders under
-  single-target** (Cor. 4.1) and **under supersession** (Cor. 4.2), in every
-  dimension. The Anchor Theorem's "eldest law" is replaced by a
-  potential-graded anchor; its hypothesis (H1) is weakened from "own-kind
-  effects" to "all reachable amendment cycles point the same way".
+* **[E, X-A's priority]** No gliders under single-target (the **Out-Degree
+  Law**) or under supersession (the **Supersession No-Go**) — first proved by
+  X-A. Theorem 4 here is an independent potential-graded re-proof, stated as a
+  **cone condition in ℝ^d**; Corollaries 4.3–4.4 (salient cone; null cycle vs
+  opposed cycle sums) are the several-dimensional refinement this expedition
+  adds, and they are what the 2-D hunt was steered by.
 * **[E] α = 2 with fill → 1 is attained** (Thm 5, the Land Grant). Together
   with the trivial bound α ≤ dim this **closes the growth-exponent question in
   2-D**: the maximum is exactly 1 for out-degree 1 and exactly 2 for
-  out-degree ≥ 2.
-* **[E] Free gliders exist** — the Writ of Removal, in every dimension ≥ 1;
-  and a gun, a rake, a puffer, and a 50-law diagonal spaceship.
+  out-degree ≥ 2. This resolves the frozen prediction **X4** (which gave 60 %
+  to "cross-amendment breaks α = 1"): it does, but only via multi-target, and
+  the teaser's two-kind relay could never have done it.
+* **[E, X-A's priority]** Free gliders exist as soon as some law has
+  out-degree 2 (SOLO, TANDEM-1, TRIPTYCH). **New here:** a **gun**, a **rake**,
+  a **puffer**, a parity-graded **collision algebra**, a **50-law diagonal
+  spaceship**, a **one-law 2-D glider**, and **subluminal parity gliders** down
+  to speed 1/6 — none of which exists in the 1-D report.
 * **[E] Authorship Lemma** (Thm 1): in-degree ≤ 1 ⟹ parity ≡ OR. The right
   generalisation of the Single-Author Lemma is about **in-degree**, not
-  out-degree.
+  out-degree. (That balance is parity-only, and its 2-law minimum, are the
+  coordinator's and X-D's; the *in-degree* criterion and the 2-D census are
+  this report's.)
 * **[E] Dead Letter under OR** (Thm 2): balanced constitutions cannot exist
   under OR-toggle in any dimension for any constitution; under parity they
   require a kind of in-degree ≥ 2, and 2 placed laws suffice.

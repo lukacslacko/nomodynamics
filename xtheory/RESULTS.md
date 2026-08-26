@@ -870,7 +870,8 @@ codes that expire march.*
 
 ## 7. Verification battery
 
-All in `theorems.py` (sections 1–7), `xsem.py`, `sunset.py`, `specimens.py`;
+All in `theorems.py` (sections 1–7; **42/42 claims PASS**, log in
+`data/battery.log`), `xsem.py`, `sunset.py`, `specimens.py`;
 raw logs in `data/`. Every positive claim is re-checked through the independent
 set-based reference engine `xlib.ref_step`, which shares no code with
 `xnomos.step` (sets vs bitmasks, explicit multisets vs XOR accumulation).
@@ -886,6 +887,7 @@ set-based reference engine `xlib.ref_step`, which shares no code with
 | Dead Letter under OR / super_or | 559,872 codes (complete) + 143,327,232 (census) | 0 balanced |
 | Theorem 7 (non-injectivity) | 600,000 random codes, 1,168 balanced | 0 violations |
 | **Theorem 9 (entrenchment)** | **28,672,000 codes, 207,379 balanced** | **0 violations** |
+| own-kind period-8 minimality | complete over single-kind (0,−1,1) codes, span ≤ 9 | minimal = {0,2,4,6} |
 | Anchor holds in the own-kind block | 139,968 codes × 12 steps (complete) | 0 anchor deaths |
 | **Path-Sum Confinement, 1-D** | **1,200,000 steps over 20,000 trajectories** | **0 escapes** |
 | Path-Sum Confinement, 2-D | 160,000 steps over 4,000 trajectories | 0 escapes |

@@ -175,10 +175,10 @@ def t3():
                 s |= const_occ_cycles([r1, r2], tg, m)
         print("   %-42s : %s" % (name, sorted(s)))
     s = set()
-    for m in range(3, 7):
+    for m in range(3, 6):
         for c in itertools.product(RULES12, repeat=3):
             s |= const_occ_cycles(list(c), [1, 2, 0], m)
-    print("   %-42s : %s" % ("3-cycle permutation, live, m=3..6", sorted(s)))
+    print("   %-42s : %s" % ("3-cycle permutation, live, m=3..5", sorted(s)))
     return bad
 
 

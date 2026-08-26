@@ -129,6 +129,18 @@ def cert_growth(label, seed, formula, T=200, mode="parity"):
     return True, "|S_t| = formula for t = 0..%d" % T
 
 
+def cert_1d_machine(rules, targets, seed, cardfn, T=400, mode="parity"):
+    """A 1-D gun/rake: |S_t| matches the closed form for every t <= T."""
+    X = xnomos.Const(rules, targets=targets, dim=1)
+    S = xnomos.state_of(seed)
+    for t in range(T + 1):
+        if xnomos.card(S) != cardfn(t):
+            return False, "card at t=%d: %d != %d" % (t, xnomos.card(S),
+                                                      cardfn(t))
+        S = xnomos.step(S, X, mode)
+    return True, "1-D: |S_t| = formula for t = 0..%d" % T
+
+
 def cert_odometer(label, seed, T=65536, mode="parity"):
     """No exact recurrence in T fully-hashed steps, plus the 2-adic jubilee
     schedule: a card maximum at every t = 2^k - 1 and a collapse at t = 2^k."""
@@ -276,6 +288,15 @@ add("M2 THE CIRCUIT COURT (rake)", cert_growth,
     lambda t: 2 * t + 2, 200)
 add("M3 writ collision algebra", cert_collision,
     "OEO>AB OEE>AB OWO>CD OWW>CD", (1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+
+# ---- the 1-D machines (answering X-A's open question) --------------------
+add("M4 1-D GUN (the Assize on Z)", cert_1d_machine,
+    [(0, 1, 0), (0, 1, 1), (0, 1, 0)], [(0, 1), (0, 1), (0, 1)],
+    [(0, 2)], lambda t: t + 3, 400)
+add("M5 1-D RAKE (the Circuit Court on Z)", cert_1d_machine,
+    [(0, 1, 0), (0, 1, 1), (0, -1, 0), (0, -1, -1)],
+    [(0, 1), (0, 1), (0, 1, 2, 3), (2, 3)], [(0, 2), (0, 3)],
+    lambda t: 2 * t + 2, 400)
 
 # ---- cryptid -------------------------------------------------------------
 add("K1 THE ODOMETER (2^16 steps)", cert_odometer, "OEW>B NQR>AB",
