@@ -109,7 +109,10 @@ extend? Is any small cross-amendment universe computation-universal?
 | path | contents |
 |---|---|
 | `NOMOS.md` | founding document: derivation, definition, and the pre-registered predictions N1–N6, frozen **before** the first simulation |
-| `FINDINGS.md` | consolidated findings and pre-registration scorecard |
+| `FINDINGS.md` | consolidated findings, corrections, and the pre-registration scorecard |
+| `XNOMOS.md` | charter of chapter two (cross-amendment): the general object, the escape lattice, predictions X1–X8, risk clause |
+| `xnomos.py` | the shared engine: constitutions with amendment targets, 1D/2D/rings, parity / OR / supersession / multi-target, certificates |
+| `verify.py` | the verification battery — re-checks every named claim |
 | `nomos2.py` | reference 1D engine (bitmask, 27 kinds) |
 | `glider-question/` | the free-glider expedition: `RESULTS.md` (Anchor Theorem, full proofs, hypothesis audit), sweep code, ~15.3M certified classifications in `data/` |
 | `rings/` | nomic rings: Single-Author Lemma, Dead Letter Theorem, Sunset Parliament resonances, exact fixed-point counts, Garden-of-Eden algebra |
@@ -123,14 +126,22 @@ extend? Is any small cross-amendment universe computation-universal?
 Python 3.11 + numpy. No other dependencies.
 
 ```sh
-python3 nomos2.py                  # 1D engine, first-contact specimens
-python3 nomos2d/engine2d.py        # 2D engine self-tests
-python3 rings/ring.py              # ring engine
-python3 glider-question/tests.py   # Anchor-Theorem test battery
+python3 verify.py          # re-checks every named claim in this README (~2 s)
+python3 verify.py -v       # ...printing each specimen's spacetime diagram
+python3 xnomos.py          # engine self-tests
+python3 note/figs.py       # regenerate every figure of the note
 ```
 
-Each expedition directory has a `RESULTS.md` whose last section lists the exact
-commands that regenerate its data files.
+`verify.py` is the point of entry: it re-derives the fauna, the four theorems,
+the ring rotors, the Jubilee clock law and the chapter-two specimens from the
+shared engine, independently of the expedition code that originally found them.
+It runs in CI on every push. Two published descriptions have already been
+corrected by it — see the *Corrections* section of `FINDINGS.md`.
+
+Per-expedition code: `python3 nomos2.py` (1D own-kind), `nomos2d/engine2d.py`
+(2D), `rings/ring.py`, `glider-question/tests.py`. Each expedition directory has
+a `RESULTS.md` whose last section lists the exact commands that regenerate its
+data files.
 
 ## Method
 

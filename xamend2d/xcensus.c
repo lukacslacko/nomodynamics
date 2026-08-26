@@ -147,6 +147,7 @@ static uint64_t hashB(const Board *B, int n) {
 
 typedef struct { uint64_t h; int t, ax, ay; } Ent;
 
+static int TRACE = 0;
 static void run(const Univ *U, const int *seed, int nseed, int sem,
                 int maxsteps, int maxcard, Res *R) {
     Board B;
@@ -171,6 +172,15 @@ static void run(const Univ *U, const int *seed, int nseed, int sem,
         if (c > maxc) maxc = c;
         if (c > maxcard) { R->verdict = V_ESCAPE; R->tend = t; R->card = c;
                            R->maxcard = maxc; return; }
+        if (TRACE) {
+            uint64_t all = 0; int ymin=-1, ymax=-1;
+            for (int y = 0; y < NROW; y++) { uint64_t o=0;
+                for (int k=0;k<U->n;k++) o|=B.p[k][y];
+                if (o){ if(ymin<0) ymin=y; ymax=y; all|=o; } }
+            fprintf(stderr, "t=%d card=%d x[%d..%d] y[%d..%d] h=%llx\n", t, c,
+                    all?__builtin_ctzll(all):-1, all?63-__builtin_clzll(all):-1,
+                    ymin, ymax, (unsigned long long)hashB(&B, U->n));
+        }
         uint64_t h = hashB(&B, U->n);
         int idx = (int)(h & (TSIZE - 1));
         while (tab[idx].h && tab[idx].h != h) idx = (idx + 1) & (TSIZE - 1);
@@ -353,6 +363,7 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "--steps")) steps = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--maxcard")) maxcard = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--threads")) nth = atoi(argv[++i]);
+        else if (!strcmp(argv[i], "--trace")) TRACE = 1;
     }
     if (mode == 9) { stdin_mode(sem, steps, maxcard); return 0; }
     mkseeds(0);
