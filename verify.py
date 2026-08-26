@@ -516,6 +516,35 @@ def impermanence():
           card(h[1]) == 1 and card(h[0]) == 8,
           "under permanence the same block is frozen but for its front")
 
+    # Conservation: out-degree 1 can never grow an impermanent code.
+    rng2 = random.Random(3)
+    worst = 0
+    for _ in range(400):
+        n = rng2.randrange(1, 4)
+        Cx = Const([rng2.choice(RULES1) for _ in range(n)],
+                   [rng2.randrange(n) for _ in range(n)])
+        X = state_of([(rng2.randrange(-5, 6), rng2.randrange(n))
+                      for _ in range(rng2.randrange(1, 9))])
+        ages = None
+        for _ in range(30):
+            Y, ages = step_sunset(X, Cx, 1, ages)
+            worst = max(worst, card(Y) - card(X))
+            X = Y
+    check("Conservation: out-degree 1 never grows an impermanent code",
+          worst <= 0, "400 random codes x 30 steps; max increase %d" % worst)
+
+    # LAND GRANT keeps only its two advancing edges: |S_t| = 2t+1.
+    V = {"O": (0, 0), "E": (1, 0), "N": (0, -1), "P": (1, -1)}
+    Cg = Const([tuple(V[c] for c in "OPP"), tuple(V[c] for c in "OEE"),
+                tuple(V[c] for c in "ONN")], [(0, 1, 2), (1,), (2,)], dim=2)
+    X, ages, sz = state_of([((0, 0), 0)]), None, []
+    for _ in range(12):
+        sz.append(card(X))
+        X, ages = step_sunset(X, Cg, 1, ages)
+    check("the plane-filler keeps only its frontier: |S_t| = 2t+1",
+          sz == [2 * i + 1 for i in range(12)],
+          "under permanence the same code gives (t+1)^2")
+
     # The Longevity Law: one code, speed exactly 2/(tau+1).
     C = Const([(0, 1, -1), (0, -1, -1)])
     S = state_of([(0, 0), (2, 1)])

@@ -107,9 +107,15 @@ def resolve(S0, C, mode, T_max=260, N_sep=140, gapmin=3,
       t_res  : the time at which the outcome was certified
       forever: True if the separation certificate extends to t = infinity
     """
-    # global shortcut
+    # global shortcut.  classify() already certifies EXTINCT / FIXED /
+    # BALANCED / CYCLE / GLIDER for the whole state, transients included, so
+    # the decomposition loop below only has to handle the multi-packet case.
     g = classify(dict(S0), C, mode, max_steps=T_max, max_card=max_card,
                  max_span=max_span)
+    if g["kind"] == GLIDER:
+        return {"out": "SINGLE", "parts": [(GLIDER, g["period"],
+                                            g["displacement"], g["card"])],
+                "t_res": g["t"], "forever": True, "global": GLIDER}
     if g["kind"] in (EXTINCT, FIXED, BALANCED, CYCLE):
         return {"out": "SINGLE", "parts": [(g["kind"], g.get("period", 0), 0,
                                             g.get("card", 0))],
@@ -121,7 +127,7 @@ def resolve(S0, C, mode, T_max=260, N_sep=140, gapmin=3,
             return {"out": "SINGLE", "parts": [(EXTINCT, 0, 0, 0)],
                     "t_res": t, "forever": True, "global": EXTINCT}
         comps = clusters(S, gapmin)
-        if len(comps) >= 2 or t > 0:
+        if len(comps) >= 2:
             ok_fin, ok_all, certs = sep_forever(comps, C, mode, N=N_sep)
             if ok_fin and all(c["kind"] in RESOLVED for c in certs):
                 parts = [(c["kind"], c.get("period", 0),

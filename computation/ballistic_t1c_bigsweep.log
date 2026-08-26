@@ -1,2 +1,10 @@
 seeds per universe: 192
 universes: 5832
+
+universes swept: 5832
+universes carrying >=1 glider in the box: 88
+universes with TWO MEETING SPECIES in the box: 0
+
+GUN candidates (>=3 separated clusters at t=90): 0
+
+wrote ballistic_meeting_universes.json

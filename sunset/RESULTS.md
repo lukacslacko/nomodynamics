@@ -145,7 +145,46 @@ motion is permitted.
 > and impermanence removes it. [interpretation, consistent with every
 > measurement here]
 
-## 7. Status and scope
+## 7. Conservation — and the same threshold, dual consequence
+
+**Theorem (Conservation under impermanence).** *With τ = 1 and every law
+amending at most one kind, |S_{t+1}| ≤ |active(S_t)| ≤ |S_t|: the population
+never increases.* [established]
+
+*Proof.* Under τ = 1 the next state is exactly the set of slots enacted this
+step. Each active law enacts one slot (out-degree 1), distinct laws may enact
+the same slot, and nothing else survives. ∎
+
+Verified over 160,000 steps of random out-degree-1 codes: no increase, ever.
+With out-degree 2 growth appears at once — 289 of 2,000 random two-target codes
+grew. So:
+
+| | permanence | impermanence |
+|---|---|---|
+| **out-degree ≤ 1** | no motion (Out-Degree Law) | no growth (Conservation) |
+| **out-degree ≥ 2** | gliders exist | growth exists |
+
+*The same threshold governs both worlds, with dual consequences.* A law that
+amends a single provision cannot move a permanent code and cannot enlarge an
+impermanent one. [interpretation]
+
+**The frontier without the territory.** `LAND GRANT` — the one-law code whose
+population is exactly (t+1)², the specimen that showed the plane can be filled —
+becomes, under impermanence, exactly **two edges of that square**: the top row
+and the right column, |S_t| = 2t+1.
+
+```
+ t = 8, permanence: the solid square      t = 8, impermanence: its two edges
+        ########                                 ########
+        ########                                 .......#
+        ########                                 .......#
+        ########                                 .......#
+        ########                                 .......#
+```
+The settled interior is precisely what impermanence erases; what survives is the
+frontier where enactment is still happening.
+
+## 8. Status and scope
 
 Complete enumerations: all 27 single-kind laws; the 3,645-code two-law box at
 each of six lifetimes (21,870 classifications). Certificates: every glider
