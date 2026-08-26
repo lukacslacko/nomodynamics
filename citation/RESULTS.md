@@ -137,8 +137,8 @@ with `any` reading "some law of any kind". Two immediate structural facts.
 
 **Lemma 0 (citation is inert at one kind).** With `|K| = 1`, `occ(j)` and "a
 kind-0 law stands at `j`" are the same predicate, so all four guard choices give
-the same dynamics. *[established; battery **T1**, complete over all 216 one-kind
-constitutions × all guard choices]* The smallest sector where citation can do
+the same dynamics. *[established; battery **T1**, complete: all 216 one-kind constitutions —
+27 rules × 2 target sets × 4 guard pairs]* The smallest sector where citation can do
 anything is `n = 2`. (Pre-registration **P1** confirmed.)
 
 **Lemma 1 (self-citation at offset zero is degenerate).** `g_k = k` with
@@ -256,8 +256,9 @@ Counting: per kind, the pairs `(g,h)` with `h ∈ {any, k, g}` number `3n+1` out
 *(A remark on the stronger reading. If "solid" is allowed to be heterogeneous —
 different cells carrying different kinds — then interior-freezing for **all**
 solid regions holds iff every kind is either occupancy-blocked (`h_k = any`) or
-a universal dead letter — verified by exhaustive check over all `W = 1` kinds at
-`n = 2` and `n = 3` and all three-cell solid neighbourhoods, 0 counterexamples.
+a universal dead letter — battery **T7** checks this exhaustively over all
+`W = 1` rules, guards and kinds at `n = 2` and `n = 3` against every three-cell
+neighbourhood: 1,782 cases, 0 counterexamples.
 Theorem G is the uniform statement, which is the one that matches the bulk map
 and the motivating example.)*
 
@@ -306,10 +307,11 @@ data.
 > `β` fixes both `∅` and `K`, so a bulk cycle lives in the other `2^n − 2`
 > subsets and **`period ≤ 2^n − 2`**. That bound is **attained** at `n = 2`
 > (period 2) and `n = 3` (period **6**). *[established for the bound; complete
-> census for `n ≤ 3`; battery **T5**]* At `n = 4, 5, 6` a random search over
-> 400 k / 200 k / 200 k bulk data found maxima **11, 12, 21** against the bounds
+> census for `n ≤ 3`; battery **T5**]* At `n = 4, 5, 6` a random search
+> (`python3 bulk.py sample`; 400 k / 200 k / 200 k random bulk data, recorded in
+> `data/bulk_sample.json`) found maxima **11, 14, 16** against the bounds
 > 14, 30, 62 — **[measured, sampled]**; whether `2^n − 2` is attained for
-> `n ≥ 4` is open.
+> `n ≥ 4` is open, and the gap widens fast with `n`.
 
 Pre-registration **P4** confirmed in full.
 
@@ -343,7 +345,7 @@ changes `(g,h)`, not `T`). Therefore:
 The searches agree, and they were run hard because the program's own width
 correction demands it:
 
-* **Complete**, over the whole census box (§5): all 531,441 constitutions with
+* **Complete**, over the whole census box (§6.1): all 531,441 constitutions with
   out-degree ≤ 1 (that is `(27·3·9)²`), × 48 seeds × 2 resolutions =
   **51,018,336 certified classifications**, budgets 200 steps / card 200 /
   span 120, then the entire growing-or-unresolved residue re-run at
@@ -615,7 +617,7 @@ other side, and the boundary advances one cell per step:
 Occupancy never changes; only the *doctrine* does. Chapter one had one
 conversion wave, at speed 2/3, on empty ground and anchored at a point defect.
 This one runs at the speed of light **through written code**, and it converts.
-*[established; battery **F7**: 15 steps, seam speed exactly 1, occupancy
+*[established; battery **F7**: 14 steps, seam speed exactly 1, occupancy
 constant]*
 
 ### 5.6 THE LEDGER — a binary counter on the line
@@ -749,21 +751,26 @@ Split by whether Gridlock survives (Theorem G), parity:
 | GROWING | 1,698,614 | 1,438,174 |
 | UNRESOLVED | **38,400** | **360,342** |
 
-The one strongly non-uniform row is UNRESOLVED: a living bulk makes trajectories
-**9.4×** harder to resolve at fixed budget, which is the census-level signature
-of the new habitat.
+The one strongly non-uniform row is UNRESOLVED, and the right comparison is a
+*rate*, since the two columns cover different numbers of constitutions:
+38,400 / 27,433,728 = **0.140 %** for gridlocked universes against
+360,342 / 17,915,904 = **2.012 %** for living-bulk ones. A living bulk makes a
+trajectory **14.4× harder to resolve** at fixed budget — the census-level
+signature of the new habitat.
 
 **Cycle periods** (parity, weighted, periods capped at 64):
 2 (5,855,368), 4 (1,342,412), 8 (181,468), **3** (52,240), 6 (27,732),
 16 (11,152), 32 (5,460), **9** (3,028), **5** (3,004), 12 (1,824), 64 (1,624),
 **7** (1,396), 18 (1,188), 10, 14, 24, **42**, 28, **54**, 48, … The distinct
-periods realised in the box are
-`{2,3,4,5,6,7,8,9,10,12,14,16,18,20,24,28,32,34,36,40,42,46,48,54,56,64}`.
+periods realised in the box, over both resolutions and capped at 64 by the
+recording, are
+`{2,3,4,5,6,7,8,9,10,12,14,16,18,20,24,28,32,34,36,40,42,46,48,54,56,58,60,64}`
+— parity contributes 5, 34 and 46; OR contributes 58 and 60.
 *[measured, this box]*
 
 **Gliders.** 6,834 glider records over 951 representative constitutions; every
 one re-certified from its glider core by `cite.verify_glider` over three full
-periods (the seed itself often has a pre-period, so the naive check on the seed
+periods (battery **C3**, which reads `data/gliders1.txt` and re-runs all 6,834) (the seed itself often has a pre-period, so the naive check on the seed
 fails — a trap worth recording). Weighted `(resolution, p, d)` spectrum:
 
 `(or,1,−1) 6412 · (parity,1,−1) 6156 · (parity,1,+1) 4536 · (or,1,+1) 4536 ·
@@ -1106,25 +1113,34 @@ every cell of which is occupied at every step. *[established; battery **S8**,
 **F1**, **F6**]*
 
 **Y8 — the impermanence sector is rich; sunset + citation is the easiest place
-to build a machine. HALF CONFIRMED, HALF REFUTED.** Rich, yes, and
-spectacularly: under sunset-by-default with lifetime `τ = 1` (a law lapses
-unless re-enacted, so the next state is exactly the toggle set), a 40,000-
-constitution random sample of the citation box gives **9.31 % certified glider
-runs** — three orders of magnitude above the 0.03 % of the permanent sector —
-with speeds `1, 3/4, 2/3, 1/2, 1/3, 1/4`. But the second half fails on a
-controlled experiment. Complete over the 11,664 occupancy-guard constitutions
-versus a size-matched random citing sample, same seeds, same budgets:
+to build a machine. FIRST HALF CONFIRMED; SECOND HALF REFUTED — but the
+controlled experiment says something better than either.**
 
-| sunset, `τ = 1` | glider runs | glider-bearing constitutions |
-|---|---:|---:|
-| occupancy guards (complete corner, 1,119,744 runs) | 10.44 % | 1,692 = **14.51 %** |
-| citation guards (matched sample, 1,119,744 runs) | 9.33 % | 1,509 = **12.94 %** |
+Under sunset-by-default with lifetime `τ = 1` (a law lapses unless re-enacted,
+so the next state is exactly the toggle set — `cite.step_sunset`), a
+40,000-constitution random sample of the citation box gives **9.31 % certified
+glider runs**, some 320× the 0.029 % of the permanent sector. Rich, yes.
 
-**Citation does not enrich the sunset sector; it slightly thins it.** And the
-machine of §7 was built with *permanent* law and no sunset at all. *[measured;
-the occupancy figure is consistent with X-D's independently measured 11.4 % at
-`τ = 1`, which is a useful cross-check that the two implementations of
-sunset agree]*
+The controlled experiment: the **complete** occupancy-guard corner (11,664
+constitutions) against a size-matched random *citing* sample, same seeds, same
+budgets, 1,119,744 runs each, every glider re-certified from its core
+(`python3 sunset.py`, results in `data/sunset.json`):
+
+| sunset, `τ = 1` | glider runs | glider-bearing | **speeds realised** |
+|---|---:|---:|---|
+| occupancy guards (complete corner) | 116,892 = **10.44 %** | 1,692 = 14.51 % | `1/2, 1` |
+| citation guards (matched sample) | 104,483 = **9.33 %** | 1,515 = 12.99 % | `1/4, 1/3, 1/2, 2/3, 3/4, 1` |
+
+**Citation does not make the sunset sector glider-*richer* — it makes it
+glider-*faster and more varied*.** It thins the count by ~11 % and triples the
+speed spectrum, adding `1/4, 1/3, 2/3, 3/4` which the anonymous-guard corner
+does not realise at all in a complete enumeration. That is the same lesson as
+§6.3: the guard is not a throttle on motion, it is a widener of the reachable
+`(p,d)` set. And the second half of Y8 is simply wrong as a piece of advice —
+the machine of §7 was built with *permanent* law and no sunset at all.
+*[measured; the occupancy figure is consistent with X-D's independently measured
+11.4 % at `τ = 1`, a useful cross-check that the two implementations of sunset
+agree]*
 
 ### 9b. My own pre-registration, scored
 
@@ -1149,7 +1165,7 @@ self-citing clock is a load-bearing component of the Rule 110 construction).
 
 ## 10. Verification battery
 
-`python3 verify_citation.py` — **36/36 checks pass**. Two engines with no code
+`python3 verify_citation.py` — **38/38 checks pass**. Two engines with no code
 in common are used throughout: `cite.py` (one big integer per kind, bitwise
 shifts) and the repository's `xnomos.py` (dict of cell → bitmask).
 
@@ -1164,11 +1180,12 @@ T3' GRIDLOCK fraction = ((3n+1)/(n+1)^2)^n                   complete at n = 1,2
 T4  BULK MAP exact on homogeneous rings, every modulus      2,000 x 7 moduli x 2 resolutions
 T5  bulk period <= 2^n - 2                                  complete n<=3 (2,098,448), sampled n=4,5
 T6  SELF-CITATION at offset 0 is trivial                    3,000 random universes
+T7  heterogeneous solid: blocked <=> h = any or dead letter 1,782 cases, exhaustive at n = 2,3
 S1  SINGLE AUTHOR: in-degree <= 1 => parity == OR           800 universes x 10 steps
 S2  DEAD LETTER under OR: fixed <=> no active law           4,000 universes x 6 states
 S3  BALANCE: fixed-and-active => even cohorts               4,957 balanced citation codes
 S4  ANCHOR (own-kind + citation): trailing law permanent    97,078 states
-S5  PATH-SUM / LINEAR GROWTH bound                          3,000 universes x 40 steps
+S5  PATH-SUM / LINEAR GROWTH bound                          3,000 universes x 39 steps
 S5' the growth bound is TIGHT: card = n(2t+1)               t <= 29, rate 2nW = 6 laws/step
 S6  DILATION survives ("occupancy" -> "cell content")       1,500 universes x 2 x 6 steps
 S7  OUT-DEGREE LAW (Y2): deep search                        80,000 deep runs, zero gliders
@@ -1180,7 +1197,7 @@ F3  PASCAL: card = 2^popcount(t)                            t <= 256 / 64
 F4  THE COPY: every seed replicates at t = 2^j > span       200 random seeds
 F5  THE WRIT: Z'(i) = Z(i-1) exactly                        400 random signal patterns
 F6  PROCESSION: Phi = rot_(+1) on a completely full ring    m = 3..19, both engines
-F7  CONVERSION FRONT: seam speed exactly 1                  15 steps, occupancy constant
+F7  CONVERSION FRONT: seam speed exactly 1                  14 steps, occupancy constant
 F8  THE LEDGER: card 5, reach 2^j+3 at every t = 4^j        j = 1..8, exact
 F9  THE LEDGER is aperiodic                                 400,000 hashed states, card in [3,139]
 F10 THE ODOMETER shares the head-plus-marker form           j = 1..7, exact
@@ -1190,6 +1207,7 @@ M3  Rule 110 long run + xnomos cross-check                  60 + 20 CA steps, Z/
 M4  the machine is entrenched                               80 steps, clock and phases intact
 C1  census slice reproduces                                 400 constitutions, deterministic
 C2  census symmetry quotient is sound                       120 orbits, class multiset constant
+C3  every census glider record re-certifies from its core   6,834 records, 3 full periods each
 ```
 
 Counting rule for the census claims: **complete enumerations** are the citation
@@ -1210,11 +1228,13 @@ Python 3.11, no dependencies beyond the standard library. From this directory
 
 ```sh
 python3 cite.py                     # engine self-tests (6/6), incl. cross-check vs xnomos
-python3 verify_citation.py          # the 36-check battery                     (~20 min)
+python3 verify_citation.py          # the 38-check battery                     (~25 min)
 python3 specimens.py                # the fauna gallery with certificates      (~1 min)
 python3 specimens.py lacuna ledger  # one or more named specimens
 python3 circuit.py                  # gate inventory + all 256 elementary CA rules (~3 min)
 python3 bulk.py                     # the COMPLETE bulk census, n = 2 and 3    (~4 min)
+python3 bulk.py sample              # random search for long bulk orbits, n = 4,5,6
+python3 sunset.py                   # prediction Y8: the sunset sector         (~10 min)
 python3 census.py stage1 --procs 11 # the complete citation box, stage 1       (~3 min, 11 cores)
 python3 census.py stage2 --procs 11 # the deepened residue                     (~35 min)
 python3 fauna.py defect  --procs 4  # the complete travelling-defect hunt      (~4 min)
@@ -1222,9 +1242,10 @@ python3 fauna.py boundary --procs 4 # the complete phase-boundary hunt         (
 ```
 
 Data written to `data/`: `census1.json`, `census2.json`, `gliders1.txt`,
-`residue2.txt` (the runs still unresolved after stage 2), `bulk_census.json`,
-`defect_hits.txt`, `defect_stats.json`, `boundary_hits.txt`,
-`boundary_stats.json`, `battery.log` and the run logs — 4 MB in total.
+`gliders2.txt`, `residue2.txt` (the runs still unresolved after stage 2),
+`bulk_census.json`, `bulk_sample.json`, `sunset.json`, `defect_hits.txt`,
+`defect_stats.json`, `boundary_hits.txt`, `boundary_stats.json`,
+`battery.log` and the run logs — about 4 MB in total.
 `residue1.txt` (27 MB) is a stage-1 → stage-2 intermediate and is deleted after
 use; `census.py stage1` regenerates it.
 
@@ -1252,8 +1273,9 @@ RULE110  = circuit.ECA(110).C        # 13 kinds, W = 1, 2 steps per CA step
 ## 12. Open questions
 
 1. **Is `2^n − 2` the true maximal bulk period for `n ≥ 4`?** It is attained at
-   `n = 2, 3` (complete census). Random search over 400 k bulk data at `n = 4`
-   found only 11 of a possible 14. The bulk map is a finite combinatorial
+   `n = 2, 3` (complete census). Random search finds only 11 of a possible 14 at
+   `n = 4`, 14 of 30 at `n = 5`, 16 of 62 at `n = 6` — the gap widens fast, so
+   the bound is probably not tight. The bulk map is a finite combinatorial
    object — `A(U)` is determined by two citations per kind and `β` by the target
    masks — so this should be decidable outright rather than sampled.
 2. **Turing universality on ℤ.** §7.3 reduces it to a constructor front laying

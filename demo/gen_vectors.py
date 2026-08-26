@@ -36,6 +36,8 @@ def emit(vecs, name, C, seed_pairs, mode, n=12):
                             for r in C.rules],
                   "targets": [list(t) if len(t) > 1 else t[0]
                               for t in C.targets],
+                  "guards": [[None if g is None else g for g in gg]
+                             for gg in C.guards],
                   "dim": C.dim, "mod": C.modulus},
         "seed": js_seed,
         "trace": trace(C, seed_pairs, mode, n),
@@ -83,6 +85,20 @@ def main():
                 cells.append((c % 7 if mod else c, rng.randrange(n)))
         mode = ["parity", "or", "super", "super_or"][i % 4]
         emit(vecs, "rand%03d" % i, C, cells, mode)
+
+    # citation vectors (chapter three): guards that name a kind
+    for i in range(60):
+        n = rng.randrange(2, 4)
+        rules = [tuple(rng.choice(OFF1) for _ in range(3)) for _ in range(n)]
+        targets = [tuple(sorted(rng.sample(range(n), rng.randrange(1, n + 1))))
+                   for _ in range(n)]
+        guards = [(rng.choice([None] + list(range(n))),
+                   rng.choice([None] + list(range(n)))) for _ in range(n)]
+        C = Const(rules, targets, guards=guards)
+        cells = [(rng.randrange(-3, 4), rng.randrange(n))
+                 for _ in range(rng.randrange(1, 6))]
+        emit(vecs, "cite%03d" % i, C, cells,
+             ["parity", "or", "super", "super_or"][i % 4])
 
     # impermanence vectors: {"sunset": tau} alongside the ordinary ones
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent

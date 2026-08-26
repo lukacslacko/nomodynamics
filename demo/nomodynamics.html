@@ -275,8 +275,60 @@ footer p{max-width:76ch}
   <div class="caption" id="cap7"></div>
 </section>
 
+
+<section id="compute">
+  <h2><span class="art">&sect;8</span>The Statute Book Computes</h2>
+  <p class="lede">A guard reads &ldquo;some law stands here <b>and</b> none stands
+  there&rdquo; &mdash; an <i>and-not</i>. Simultaneous amendments of one provision
+  cancel in pairs &mdash; an <i>exclusive or</i>. That is functionally complete;
+  the one thing missing is a way to <i>overwrite</i> rather than accumulate, and a
+  provision that repeals itself every step supplies it. Such a law is a
+  <b>register</b>: the code writes it instead of amending it. Below, a
+  twenty-four-kind constitution running <b>Rule 110</b> &mdash; a universal
+  computation &mdash; three amendment steps per row.</p>
+  <div class="controls">
+    <button class="ctl" id="play8">Pause</button>
+    <button class="ctl" id="reset8">Reset</button>
+    <span class="stat" id="stat8"></span>
+  </div>
+  <div class="split">
+    <div>
+      <div class="plate"><canvas id="cv8a" width="420" height="300" aria-label="The bit decoded from the statute book: Rule 110"></canvas></div>
+      <div class="stat" style="margin-top:6px">what it computes &mdash; the decoded bit</div>
+    </div>
+    <div>
+      <div class="plate"><canvas id="cv8b" width="420" height="300" aria-label="The laws in force that carry the computation"></canvas></div>
+      <div class="stat" style="margin-top:6px">what is actually there &mdash; laws in force, coloured by kind</div>
+    </div>
+  </div>
+  <div class="caption">Left is the classical Rule&nbsp;110 spacetime diagram; right
+  is the same run drawn as what it really is &mdash; provisions standing at
+  positions, amending one another. Every gate law sits exactly where it started:
+  nothing in this machine travels. <b>What moves is not law but information</b>,
+  and it moves because guards read across cells. Since Rule&nbsp;110 is universal,
+  so is this &mdash; and separately, every Turing machine compiles into a finite
+  code of the founding system, which makes halting undecidable here.</div>
+</section>
+
+<section id="replicate">
+  <h2><span class="art">&sect;9</span>Replication</h2>
+  <p class="lede">Von Neumann&rsquo;s rule-carrying constructor is one of the three
+  fragments this field was derived from, so the obligatory question is whether a
+  code can copy itself. It can.</p>
+  <div class="chips" id="chips9" role="group" aria-label="Replicator presets"></div>
+  <div class="controls">
+    <button class="ctl" id="play9">Pause</button>
+    <button class="ctl" id="step9">Step</button>
+    <button class="ctl" id="reset9">Reset</button>
+    <span class="stat" id="stat9"></span>
+  </div>
+  <div class="plate"><canvas id="cv9" width="880" height="360" aria-label="A code copying itself"></canvas></div>
+  <div class="lawline" id="laws9"></div>
+  <div class="caption" id="cap9"></div>
+</section>
+
 <section id="theorems">
-  <h2><span class="art">&sect;8</span>Six theorems</h2>
+  <h2><span class="art">&sect;10</span>Six theorems</h2>
   <article class="thm">
     <h3><span class="tag">THM&nbsp;1</span>Gridlock</h3>
     <p>In a fully occupied region, every law&rsquo;s vacancy guard fails: solid code is frozen.</p>
@@ -426,6 +478,22 @@ function kindColor(mask){
     return { add: function (k, off) { return k + off; } };
   }
 
+  /* Citation guards (chapter three): C.guards[k] = [g, h].  null/undefined
+   * means "any law" -- the founding occupancy semantics.  A kind index names
+   * that particular kind. */
+  function guardOf(C, k) {
+    return (C.guards && C.guards[k]) || [null, null];
+  }
+  function holds(S, x, key) {
+    if (x === null || x === undefined) return S.has(key);
+    return ((S.get(key) || 0) >> x & 1) === 1;
+  }
+  function enabled(S, C, ops, cell, k) {
+    var r = C.rules[k], g = guardOf(C, k);
+    if (!holds(S, g[0], ops.add(cell, r[0]))) return false;
+    return !holds(S, g[1], ops.add(cell, r[1]));
+  }
+
   function targetsOf(C, k) {
     var t = C.targets ? C.targets[k] : k;
     return Array.isArray(t) ? t : [t];
@@ -441,10 +509,8 @@ function kindColor(mask){
     S.forEach(function (mask, cell) {
       for (var k = 0; k < C.rules.length; k++) {
         if (!(mask >> k & 1)) continue;
-        var r = C.rules[k];
-        if (!S.has(ops.add(cell, r[0]))) continue;
-        if (S.has(ops.add(cell, r[1]))) continue;
-        var j = ops.add(cell, r[2]);
+        if (!enabled(S, C, ops, cell, k)) continue;
+        var j = ops.add(cell, C.rules[k][2]);
         var tg = targetsOf(C, k);
         for (var q = 0; q < tg.length; q++) {
           var key = j + "|" + tg[q];
@@ -469,10 +535,8 @@ function kindColor(mask){
     S.forEach(function (mask, cell) {
       for (var k = 0; k < C.rules.length; k++) {
         if (!(mask >> k & 1)) continue;
-        var r = C.rules[k];
-        if (!S.has(ops.add(cell, r[0]))) continue;
-        if (S.has(ops.add(cell, r[1]))) continue;
-        var j = ops.add(cell, r[2]);
+        if (!enabled(S, C, ops, cell, k)) continue;
+        var j = ops.add(cell, C.rules[k][2]);
         if (S.has(j)) {
           clearPar.set(j, (clearPar.get(j) || 0) ^ 1);
           clearAny.add(j);
@@ -495,10 +559,7 @@ function kindColor(mask){
     S.forEach(function (mask, cell) {
       for (var k = 0; k < C.rules.length; k++) {
         if (!(mask >> k & 1)) continue;
-        var r = C.rules[k];
-        if (S.has(ops.add(cell, r[0])) && !S.has(ops.add(cell, r[1]))) {
-          out.push([cell, k]);
-        }
+        if (enabled(S, C, ops, cell, k)) out.push([cell, k]);
       }
     });
     return out;
@@ -538,10 +599,8 @@ function kindColor(mask){
     S.forEach(function (mask, cell) {
       for (var k = 0; k < C.rules.length; k++) {
         if (!(mask >> k & 1)) continue;
-        var r = C.rules[k];
-        if (!S.has(ops.add(cell, r[0]))) continue;
-        if (S.has(ops.add(cell, r[1]))) continue;
-        var j = ops.add(cell, r[2]), tg = targetsOf(C, k);
+        if (!enabled(S, C, ops, cell, k)) continue;
+        var j = ops.add(cell, C.rules[k][2]), tg = targetsOf(C, k);
         for (var q = 0; q < tg.length; q++) enacted.add(j + "|" + tg[q]);
       }
     });
@@ -1134,6 +1193,106 @@ play7.addEventListener("click",()=>{s7Running=!s7Running; play7.textContent=s7Ru
 document.getElementById("step7").addEventListener("click",()=>{sw.tick(); stat7();});
 document.getElementById("reset7").addEventListener("click",()=>selectSunset(s7));
 
+
+/* ---------- §8 Rule 110 inside a constitution ---------- */
+const R110 = (function(){
+  const rules = Array.from({length:12},()=>[0,0,0]).concat(
+    [[0,1,0],[0,0,0],[0,0,0],[-1,0,0],[0,0,0],[0,0,0],
+     [0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0]]);
+  const targets = [[],[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],
+                   [3,4],[5],[10,4],[8],[6],[7],[11],[1,2],[1,2],[1,2],[1,2],[9,2]];
+  const guards = [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],[9,0],
+                  [10,0],[11,0],[1,2],[1,0],[9,0],[5,4],[5,0],[3,0],[10,0],
+                  [6,0],[6,0],[7,0],[8,0],[11,0]];
+  return {rules:rules, targets:targets, guards:guards, dim:1, mod:105};
+})();
+const cv8a=document.getElementById("cv8a"), ctx8a=cv8a.getContext("2d");
+const cv8b=document.getElementById("cv8b"), ctx8b=cv8b.getContext("2d");
+let r110S=null, r110Row=0, r110T=0, r110Running=!reduceMotion;
+const R110M=105, CW8=4;
+function r110Reset(){
+  const seed=[];
+  for(let cell=0;cell<R110M;cell++){
+    for(const k of [12,13,14,15,16,17,18,19,20,21,22,23,9]) seed.push([cell,k]);
+    seed.push([cell, cell===Math.floor(R110M/2)?1:2]);   /* a single 1 */
+  }
+  r110S=XN.seed(seed,R110); r110Row=0; r110T=0;
+  for(const c of [ctx8a,ctx8b]){ c.fillStyle="#12141a"; c.fillRect(0,0,420,300); }
+  r110Draw();
+}
+function r110Draw(){
+  const H=300/CW8|0;
+  if(r110Row>=H){
+    for(const [cv,c] of [[cv8a,ctx8a],[cv8b,ctx8b]]){
+      c.drawImage(cv,0,CW8,420,300-CW8,0,0,420,300-CW8);
+      c.fillStyle="#12141a"; c.fillRect(0,300-CW8,420,CW8);
+    }
+    r110Row=H-1;
+  }
+  const y=r110Row*CW8;
+  ctx8a.fillStyle="#12141a"; ctx8a.fillRect(0,y,420,CW8);
+  ctx8b.fillStyle="#12141a"; ctx8b.fillRect(0,y,420,CW8);
+  for(let cell=0;cell<R110M;cell++){
+    const mask=r110S.get(cell)||0;
+    if(mask>>1&1){ ctx8a.fillStyle="#e8a33d"; ctx8a.fillRect(cell*CW8,y,CW8,CW8); }
+    const n=popc(mask);
+    ctx8b.fillStyle=RAMP[Math.min(n>13?3:(n>12?2:1),3)];
+    ctx8b.fillRect(cell*CW8,y,CW8,CW8);
+  }
+  r110Row++;
+}
+function r110Tick(){
+  for(let i=0;i<3;i++) r110S=XN.step(r110S,R110,"parity");
+  r110T++;
+  if(r110T>400){ r110Reset(); return; }
+  r110Draw();
+  document.getElementById("stat8").textContent =
+    "Rule 110 step "+r110T+"   ("+(3*r110T)+" amendment steps)   laws in force = "+XN.card(r110S);
+}
+r110Reset();
+const play8=document.getElementById("play8");
+play8.textContent=r110Running?"Pause":"Play";
+play8.addEventListener("click",()=>{r110Running=!r110Running; play8.textContent=r110Running?"Pause":"Play";});
+document.getElementById("reset8").addEventListener("click",r110Reset);
+
+/* ---------- §9 replication ---------- */
+const REPL=[
+ {name:"THE SPLIT DECISION", mode:"or", cap0:"t/2+1 free copies",
+  C:{rules:[[[0,0],[-1,-1],[0,-1]],[[0,0],[1,0],[0,1]]],targets:[[0,1],[0,1]],
+     dim:2,mod:null,guards:[[1,0],[1,null]]},
+  seed:[[0,0,0],[0,0,1],[2,0,0],[2,0,1]], cap:120,
+  laws:"A cites kind B in its own cell and no A to its south-west, and writes {A,B} north · B writes {A,B} south · seed: four laws",
+  txt:"<b>True binary fission.</b> Two steps, and the code is replaced by two exact copies of itself, far enough apart never to interact again. The parent does not survive &mdash; it becomes its children. At every even step the state is exactly <i>t</i>/2 + 1 free copies, each a perfect translate, with no debris at all."},
+ {name:"THE ENGROSSMENT", mode:"parity", cap0:"2^popcount(t/4) copies",
+  C:{rules:[[[0,-1],[-1,1],[1,1]],[[0,-1],[0,1],[1,0]]],targets:[[0,1],[0,1]],
+     dim:2,mod:null,guards:null},
+  seed:[[0,0,0],[0,0,1],[0,1,0],[0,1,1]], cap:260,
+  laws:"two kinds, plain occupancy guards, parity &mdash; the founding semantics, with no citation anywhere",
+  txt:"<b>Replication in the founding system.</b> No citation, no special resolution: the ordinary object of &sect;1, in two dimensions. Every four steps the code stands beside a copy of itself displaced by (4,4); the colony reaches 2<sup>popcount(t/4)</sup> copies. It cannot grow faster than polynomially &mdash; the light cone bounds the population &mdash; so the doubling times stretch out exponentially, and every free fission must eventually collide with its own descendants."},
+];
+const rw=gridWidget(document.getElementById("cv9"));
+let r9=0, r9Running=!reduceMotion;
+const chips9=document.getElementById("chips9");
+REPL.forEach((s,ix)=>{ const b=document.createElement("button"); b.textContent=s.name;
+  b.addEventListener("click",()=>selectRepl(ix)); chips9.appendChild(b); });
+function selectRepl(ix){
+  r9=ix; [...chips9.children].forEach((b,i)=>b.classList.toggle("on",i===ix));
+  rw.load(REPL[ix]);
+  document.getElementById("cap9").innerHTML=REPL[ix].txt;
+  document.getElementById("laws9").innerHTML=REPL[ix].laws;
+  stat9();
+}
+function stat9(){
+  document.getElementById("stat9").textContent =
+    "t = "+rw.t+"   laws in force = "+XN.card(rw.S)+"   ("+REPL[r9].cap0+")";
+}
+selectRepl(0);
+const play9=document.getElementById("play9");
+play9.textContent=r9Running?"Pause":"Play";
+play9.addEventListener("click",()=>{r9Running=!r9Running; play9.textContent=r9Running?"Pause":"Play";});
+document.getElementById("step9").addEventListener("click",()=>{rw.tick(); stat9();});
+document.getElementById("reset9").addEventListener("click",()=>selectRepl(r9));
+
 /* ---------- main loop ---------- */
 let frame=0;
 function loop(){
@@ -1148,6 +1307,8 @@ function loop(){
     stat5();
   }
   if(s7Running&&frame%3===0){ sw.tick(); stat7(); }
+  if(r110Running&&frame%2===0) r110Tick();
+  if(r9Running&&frame%5===0){ rw.tick(); stat9(); }
   if(!reduceMotion&&frame%6===0){
     dwA.tick(); dwB.tick();
     if(dwB.t>44)dReset();
@@ -1173,6 +1334,8 @@ if(reduceMotion){
   for(let i=0;i<28;i++){dwA.tick(); dwB.tick();}
   for(let i=0;i<40;i++)pw5.tick(); stat5();
   for(let i=0;i<70;i++)sw.tick(); stat7();
+  for(let i=0;i<74;i++)r110Tick();
+  for(let i=0;i<24;i++)rw.tick(); stat9();
   drawRing(); drawJ(); drawChart(); stat4();
 }
 requestAnimationFrame(loop);

@@ -22,7 +22,7 @@ const window = {matchMedia: () => ({matches: false})};
 let frames = 0, queue = null;
 const requestAnimationFrame = fn => { queue = fn; };
 
-const run = new Function("window", "document", "requestAnimationFrame", js + "\nreturn {GLIDERS, gw, hero, selectGlider, dwA, dwB, PLANE, pw5, selectPlane, SUNSET, sw, selectSunset};");
+const run = new Function("window", "document", "requestAnimationFrame", js + "\nreturn {GLIDERS, gw, hero, selectGlider, dwA, dwB, PLANE, pw5, selectPlane, SUNSET, sw, selectSunset, REPL, rw, selectRepl, r110Tick, r110Reset};");
 const api = run(window, document, requestAnimationFrame);
 
 const t0 = Date.now();
@@ -67,5 +67,16 @@ for (let i = 0; i < api.SUNSET.length; i++) {
   const dt = Date.now() - s;
   console.log(`  ${api.SUNSET[i].name.padEnd(22)} sunset 400 steps in ${String(dt).padStart(4)} ms`);
   if (dt > 5000) { console.log("  ^ TOO SLOW"); process.exit(1); }
+}
+{ const s = Date.now(); api.r110Reset();
+  for (let k = 0; k < 120; k++) api.r110Tick();
+  console.log(`  Rule110               120 rows in ${String(Date.now()-s).padStart(5)} ms`);
+  if (Date.now()-s > 12000) { console.log("  ^ TOO SLOW"); process.exit(1); } }
+for (let i = 0; i < api.REPL.length; i++) {
+  api.selectRepl(i);
+  const s = Date.now();
+  for (let k = 0; k < 200; k++) api.rw.tick();
+  console.log(`  ${api.REPL[i].name.padEnd(22)} 200 steps in ${String(Date.now()-s).padStart(5)} ms`);
+  if (Date.now()-s > 8000) { console.log("  ^ TOO SLOW"); process.exit(1); }
 }
 console.log("headless demo test passed");

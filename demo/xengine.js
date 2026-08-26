@@ -31,6 +31,22 @@
     return { add: function (k, off) { return k + off; } };
   }
 
+  /* Citation guards (chapter three): C.guards[k] = [g, h].  null/undefined
+   * means "any law" -- the founding occupancy semantics.  A kind index names
+   * that particular kind. */
+  function guardOf(C, k) {
+    return (C.guards && C.guards[k]) || [null, null];
+  }
+  function holds(S, x, key) {
+    if (x === null || x === undefined) return S.has(key);
+    return ((S.get(key) || 0) >> x & 1) === 1;
+  }
+  function enabled(S, C, ops, cell, k) {
+    var r = C.rules[k], g = guardOf(C, k);
+    if (!holds(S, g[0], ops.add(cell, r[0]))) return false;
+    return !holds(S, g[1], ops.add(cell, r[1]));
+  }
+
   function targetsOf(C, k) {
     var t = C.targets ? C.targets[k] : k;
     return Array.isArray(t) ? t : [t];
@@ -46,10 +62,8 @@
     S.forEach(function (mask, cell) {
       for (var k = 0; k < C.rules.length; k++) {
         if (!(mask >> k & 1)) continue;
-        var r = C.rules[k];
-        if (!S.has(ops.add(cell, r[0]))) continue;
-        if (S.has(ops.add(cell, r[1]))) continue;
-        var j = ops.add(cell, r[2]);
+        if (!enabled(S, C, ops, cell, k)) continue;
+        var j = ops.add(cell, C.rules[k][2]);
         var tg = targetsOf(C, k);
         for (var q = 0; q < tg.length; q++) {
           var key = j + "|" + tg[q];
@@ -74,10 +88,8 @@
     S.forEach(function (mask, cell) {
       for (var k = 0; k < C.rules.length; k++) {
         if (!(mask >> k & 1)) continue;
-        var r = C.rules[k];
-        if (!S.has(ops.add(cell, r[0]))) continue;
-        if (S.has(ops.add(cell, r[1]))) continue;
-        var j = ops.add(cell, r[2]);
+        if (!enabled(S, C, ops, cell, k)) continue;
+        var j = ops.add(cell, C.rules[k][2]);
         if (S.has(j)) {
           clearPar.set(j, (clearPar.get(j) || 0) ^ 1);
           clearAny.add(j);
@@ -100,10 +112,7 @@
     S.forEach(function (mask, cell) {
       for (var k = 0; k < C.rules.length; k++) {
         if (!(mask >> k & 1)) continue;
-        var r = C.rules[k];
-        if (S.has(ops.add(cell, r[0])) && !S.has(ops.add(cell, r[1]))) {
-          out.push([cell, k]);
-        }
+        if (enabled(S, C, ops, cell, k)) out.push([cell, k]);
       }
     });
     return out;
@@ -143,10 +152,8 @@
     S.forEach(function (mask, cell) {
       for (var k = 0; k < C.rules.length; k++) {
         if (!(mask >> k & 1)) continue;
-        var r = C.rules[k];
-        if (!S.has(ops.add(cell, r[0]))) continue;
-        if (S.has(ops.add(cell, r[1]))) continue;
-        var j = ops.add(cell, r[2]), tg = targetsOf(C, k);
+        if (!enabled(S, C, ops, cell, k)) continue;
+        var j = ops.add(cell, C.rules[k][2]), tg = targetsOf(C, k);
         for (var q = 0; q < tg.length; q++) enacted.add(j + "|" + tg[q]);
       }
     });
