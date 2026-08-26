@@ -73,12 +73,12 @@ sub-census.
 | # | prediction | verdict |
 |---|---|---|
 | P1 | odd periods appear at L=2 and small m, and are common | **CONFIRMED, and stronger than predicted.** Odd period 3 at **m=3** (L=3), at **m=4** (L=2 non-injective). For m ≥ 8 the two-kind non-injective class realises **every** period 1..m. |
-| P2 | rotors appear on odd rings, first at m=5 or 7 | **CONFIRMED but the size guess was badly wrong.** No odd-ring rotor exists at m = 3,5,7,9,11 (complete state spaces) nor at 13 (SAT). The first is at **m = 15**, 12 laws, two kinds. |
+| P2 | rotors appear on odd rings, first at m=5 or 7 | **CONFIRMED — but the size guess was badly wrong, and the shape is a surprise.** No odd-ring rotor exists at m = 3,5,7,11,13,17 at all. The first is **m = 9 with three kinds**, **m = 15 with two**; every odd-ring rotor found anywhere is a **third-turn** (r = ±m/3), so 3 must divide m. |
 | P3 | permutation targeting ⟹ parity ≡ OR on rings | **CONFIRMED.** 0 divergences; Single-Author holds verbatim on ℤ/m. |
 | P4 | balance is parity-only and needs non-injective targeting | **CONFIRMED and made exact.** B(m)=0 under OR, super_or, and every injective target map (26,244 exact counts, 0 violations); exists under parity+non-injective and under supersession with ≥2 kinds; minimum **2 laws**. |
 | P5 | rotation speed of an L-cycle is Σ c per L steps | **REFUTED.** Of the L-cycle rotors, 964 satisfy r·L ≡ s·p (mod m) and **4212 do not**. Σc predicts nothing. |
 | P6 | cross-amendment maxima exceed the own-kind maxima at equal m | **CONFIRMED at equal state space and equal rule pool** (the honest control): 3 own-kind kinds vs 3 kinds in a 3-cycle gives 2→8, 2→8, 4→20, 6→**81**, 6→54 at m=3..7. New resonance family: **powers of 3** (27, 45, 81 at m=6). |
-| P7 | ring rotors do not unroll into ℤ gliders | **CONFIRMED.** 8,332 rotor classes released as finite ℤ codes: 0 gliders (48 holdouts survive a 10× budget as anchored ruler fronts). |
+| P7 | ring rotors do not unroll into ℤ gliders | **CONFIRMED.** 17,746 rotor classes released as finite ℤ codes: 0 gliders (48 holdouts survive a 10× budget as anchored ruler fronts). |
 | P8 | supersession has the largest, least structured spectrum | **REFUTED for 1 and 2 kinds.** With one kind, supersession **is** own-kind nomodynamics (Lemma S below) — identical spectra at every m ≤ 20. With two kinds it is *weaker* than own-kind two-kind (maxp 23 vs 80 at m=10): clearing whole cells destroys long orbits. |
 | P9 | everything interesting lives in the all-live 12^L sub-census | **REFUTED.** The m=4 and m=6 rotors need a dead-letter kind as immovable scaffolding: `X:(-1,-1,-1)` is an unsatisfiable statute that never fires yet is load-bearing (it supplies occupancy). Dead letters are structural, not inert. |
 
@@ -119,7 +119,7 @@ by a different expedition, sharing no code): 4,000 random configurations × 6
 steps × 4 semantics, **0 mismatches**. Every positive claim below is
 re-certified through the xnomos path.
 
-**Scope.** 121,806 complete state-space censuses covering **2.78 × 10¹⁰ codes**,
+**Scope.** 122,238 complete state-space censuses covering **3.50 × 10¹⁰ codes**,
 every one of them classified exactly — not sampled. Where a claim rests on
 sampling or on SAT decision it says so and gives the bound.
 
@@ -132,18 +132,22 @@ sampling or on SAT decision it says so and gives the bound.
 Maximal period attained anywhere in the class, over the complete state space of
 every constitution in it:
 
-| class (all rule combinations in the class) | m=3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
-|---|---|---|---|---|---|---|---|---|---|
-| own-kind, 1 kind (27) | 2 | 2 | 4 | 4 | 4 | 4 | 8 | 15 | 8 |
-| own-kind, 2 kinds (729) | 2 | 2 | 4 | 6 | 6 | 8 | 8 | 80 | 12 |
-| own-kind, 3 live kinds (1728) | 2 | 2 | 4 | 6 | 6 | — | — | — | — |
-| **2-cycle permutation** (reciprocal, 729) | **4** | **6** | **8** | **14** | **16** | **30** | **30** | **80** | **64** |
-| **2 kinds, both amending kind 0** (729) | **4** | **6** | **8** | **14** | **16** | **30** | 18 | 65 | **64** |
-| **3-cycle permutation, live** (1728) | **8** | **8** | **20** | **81** | **54** | — | — | — | — |
-| 3-cycle permutation, all (19683) | 8 | 8 | 20 | — | — | — | — | — | — |
-| supersession, 1 kind (27×2) | 2 | 2 | 4 | 4 | 4 | 4 | 8 | 15 | 8 |
-| supersession, 2 kinds (729×2) | 2 | 2 | 4 | 5 | 4 | 8 | 8 | 23 | — |
-| supersession, 3 live kinds (1728) | 2 | 3 | 6 | 7 | 10 | — | — | — | — |
+| class (all rule combinations in the class) | m=3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12* |
+|---|---|---|---|---|---|---|---|---|---|---|
+| own-kind, 1 kind (27) | 2 | 2 | 4 | 4 | 4 | 4 | 8 | 15 | 8 | 8 |
+| own-kind, 2 kinds (729) | 2 | 2 | 4 | 6 | 6 | 8 | 8 | 80 | 12 | 23* |
+| own-kind, 3 live kinds (1728) | 2 | 2 | 4 | 6 | 6 | — | — | — | — | — |
+| **2-cycle permutation** (reciprocal, 729) | **4** | **6** | **8** | **14** | **16** | **30** | **30** | **80** | **64** | **144\*** |
+| **2 kinds, both amending kind 0** (729) | **4** | **6** | **8** | **14** | **16** | **30** | 18 | 65 | **64** | **144\*** |
+| **3-cycle permutation, live** (1728) | **8** | **8** | **20** | **81** | **54** | — | — | — | — | — |
+| 3-cycle permutation, all (19683) | 8 | 8 | 20 | — | — | — | — | — | — | — |
+| supersession, 1 kind (27×2) | 2 | 2 | 4 | 4 | 4 | 4 | 8 | 15 | 8 | 8 |
+| supersession, 2 kinds (729×2) | 2 | 2 | 4 | 5 | 4 | 8 | 8 | 23 | — | — |
+| supersession, 3 live kinds (1728) | 2 | 3 | 6 | 7 | 10 | — | — | — | — | — |
+
+\* the m=12 column for the two-kind classes uses the 144 live-live rule pairs
+only (2^24 states per constitution); it is an apples-to-apples comparison
+across the three target maps, but a *sub*-census of the 729.
 
 Own-kind, 1 kind, continued (this reproduces Expedition N-C's **Sunset
 Parliament** by an independent code path — complete 2^m state spaces, all 27
@@ -168,6 +172,19 @@ both->kind 0      m= 4 : {1,2,3,4,6}      m=9  : {1,...,10,12,16,18}
                   m=11 : {1,2,3,4,5,6,7,8,9,10,11,12,14,16,18,20,28,32,64}
 3-cycle perm      m= 6 : {1,...,10,12,13,14,15,16,18,20,22,24,27,30,32,45,60,81}
 ```
+
+**The m=12 champion.** With the same 144 live-live rule pairs and the same
+2^24-state space, own-kind targeting tops out at period **23** with 12 distinct
+periods; both cross-amendment target maps reach period **144** with **36**
+distinct periods — 6.3× the maximum, 3× the spectrum. The 144-cycle needs only
+**eight laws**:
+
+```
+constitution:  X : (0,-1,1) amends X     Y : (0,-1,0) amends X     [parity, Z/12]
+seed:          | Y . X . Y . X X Y . X X |            period 144
+```
+and the period set there is {1,…,16} ∪ {18,20,24,26,28,30,32,36,39,40,42,46,48,
+61,62,63,64,80,96,144} — including the odd periods 39, 61 and 63.
 
 **Finding (complete enumeration).** For the two-kind non-injective class,
 **every integer 1 ≤ p ≤ m is attained on ℤ/m for m = 6 and m ≥ 8** (checked
@@ -261,7 +278,8 @@ single-cell perturbations at distance > 2 from j — **0** changed cell j.
 travels with the pattern: the apparent rotation is a phase velocity of a
 spatially quasi-periodic code, not transport.* Call these **barber poles**, and
 the ones with min(r, m−r) ≤ 2p **transporting**. Both are realised; over the
-whole gallery the split is 7,503 transporting to 6,875 barber-pole. *This
+whole census the 17,670 spatial rotor classes split **10,693 transporting to
+6,977 barber-pole**. *This
 reclassifies the founding specimen*: the ℤ/6 three-law hop-3 rotor of
 `glider-question/RESULTS.md` §4.2 has min(3,3) = 3 > 2·1 — it is a **barber
 pole**, a period-2 blinker whose two phases happen to be half-turns of each
@@ -273,8 +291,8 @@ the q-fold tiling X^{(q)} on ℤ/(qm) satisfies Φ^p(X^{(q)}) = rot_r(τ^j(X^{(q
 for every q ≥ 1 — same period, same rotation.* *Proof:* the update is a
 window-2 local map (Thm 3.1) and every cell of the tiling has the same
 5-neighbourhood as its preimage; the tiling of a rotation is the rotation of a
-tiling. ∎ Machine check: **all 8,332 rotor classes lifted to ℤ/2m and ℤ/3m —
-16,664 confirmations, 0 failures.** This explains the "extra" rotor classes at
+tiling. ∎ Machine check: **all 17,746 rotor classes lifted to ℤ/2m and ℤ/3m —
+35,492 confirmations, 0 failures.** This explains the "extra" rotor classes at
 composite m (e.g. every rot-3 rotor at m=12 and 18 is the ℤ/6 rotor tiled).
 
 ### 3.2 The census — where rotors live
@@ -292,6 +310,9 @@ complete state space of every constitution of the class:
 | 3-cycle permutation, live | 0 | **576** | 0 | 2896 | 0 | — | — | — | — | — | — |
 | supersession, 2 kinds | 0 | **32** | 0 | 246 | 0 | 168 | 0 | 370 | — | — | — |
 | supersession, 3 live kinds | 0 | **768** | 0 | 2452 | 0 | — | — | — | — | — | — |
+
+At m=12 over the 144 live-live pairs: own-kind 295 spatial rotor classes,
+2-cycle 506, non-injective 519.
 
 Two facts jump out.
 
@@ -388,26 +409,63 @@ constitutions per cell, each run to its cycle and tested — **0 rotors**. The
 identical sampler on even rings (3,840,000 seeds) found **3,917 rotors in 193
 distinct (m,n,mode,p,r) classes**, so the instrument is not blind.
 
-**And yet odd-ring rotors exist.** Deciding the question by SAT rather than by
-enumeration (`satrotor.py`: the statement "∃ X ≠ 0 with Φ^p(X) = rot_r(X) and
-rot_r(X) ≠ X" is a propositional formula in p·n·m variables) turns up the first
-one at **m = 15** — see specimen O-15 and its reciprocal sibling O-15b. Both
-were re-verified over three full periods by the xnomos engine. Their minimum
-law counts, obtained with a z3 cardinality constraint, are **12** (non-injective,
-p=1, rot 5) and **10** (2-cycle permutation, p=2, rot 5).
+**And yet odd-ring rotors exist — this is the headline of the expedition.**
+The question is decidable rather than merely samplable: "∃ X ≠ 0 with
+Φ^p(X) = rot_r(X) and rot_r(X) ≠ X" is a propositional formula in p·n·m
+variables with only local clauses, so z3 settles it in milliseconds for ring
+sizes far beyond any enumeration, and such an X is automatically recurrent
+(Φ^{p·ord(r)}X = X). `satrotor.py` runs that decision. Validated first on even
+rings, where it reproduces the enumerated classes exactly.
+
+| SAT campaign | scope | rotors |
+|---|---|---|
+| own-kind, 1 kind, all 27 rules, parity + supersession | odd m ≤ 31, p ≤ 6, 4,860 decisions | **0** |
+| 2 live kinds, 3 target classes, 4 semantics | odd m ≤ 17, p ≤ 3, 27,648 decisions | **20 — all at m = 15** |
+| 3 live kinds, 3 target classes, parity | odd m ≤ 13, p ≤ 2, 62,208 decisions | **322 — all at m = 9** |
+| even-ring controls | m ≤ 12, 2,484 decisions | 1,100 |
+
+Every one of the 20 + 322 was re-verified over three full periods by the
+xnomos engine. And **every single odd-ring rotor found, without exception, is
+a THIRD-TURN**: its rotation is r ≡ ±m/3, so Φ^p acts on the code as the rigid
+rotation by one third of the ring and the whole orbit is one rotation orbit of
+length 3p.
+
+Following the family outwards (`oddscan.py`, the four rule pairs that carry it
+at m=15, p=1):
+
+| m | 9 | 15 | 21 | 25 | 27 | 33 | 35 |
+|---|---|---|---|---|---|---|---|
+| 3 \| m ? | yes | yes | yes | no | yes | yes | no |
+| rotors (2 kinds) | 0 | 4 (r=5,10) | 4 (r=7,14) | 0 | 4 (r=9,18) | 4 (r=11,22) | 0 |
+
+**The Third-Turn Law (original proposal, evidence-grade).**
+*On an odd ring a rotor exists only as a third-turn, hence only when 3 | m, and
+only when the supercell ℤ/(m/3) has room for the pattern: with two kinds that
+needs m/3 ≥ 5 (so m = 15 is the smallest), with three kinds m/3 ≥ 3 suffices
+(so m = 9). Odd rings with no factor 3 — 5, 7, 11, 13, 17, 25, 35 — carry no
+rotor at all.*
+
+Minimum law counts at m = 15 (z3 cardinality-minimised): **12** laws for the
+non-injective p=1 rot-5 rotor, **10** for the 2-cycle p=2 rot-5 rotor. At m = 9
+with three kinds the witnesses are of similar density.
 
 So the picture is:
 
-> **Odd rings are not forbidden — they are expensive.** Own-kind nomodynamics
-> never turns an odd ring. Cross-amendment can, but only from m = 15, only with
-> ten to twelve laws, and only as a barber pole: rot 5 = m/3 per step is far
-> outside the light cone, so what rotates is a *phase* of a nearly-5-periodic
-> code, not a carried packet. The 3-fold near-symmetry is doing the work: Φ acts
-> on the code as the rigid third-turn, and the whole orbit is one rotation orbit.
+> **Odd rings are not forbidden — they are expensive, and they can only be
+> turned by thirds.** Own-kind nomodynamics never turns an odd ring at all
+> (0 rotors in complete state spaces up to m = 19 and in 4,860 SAT decisions up
+> to m = 31). Cross-amendment can, from m = 9 with three kinds and m = 15 with
+> two, and always as a barber pole: r = m/3 per step is far outside the light
+> cone, so what rotates is a *phase* of a nearly-(m/3)-periodic code, not a
+> carried packet. On an even ring the cheap symmetry is the half-turn — three
+> laws suffice. On an odd ring the cheapest available is the third-turn, and it
+> costs ten to twelve.
 
-**Open (sharpened).** Is there a *transporting* rotor on any odd ring? None of
-the odd-ring witnesses found is one, and the light cone makes the demand
-severe: it needs min(r, m−r) ≤ 2p with r ≢ 0 (mod m).
+**Open (sharpened, and now the single best question I own).** Is there a
+*transporting* rotor on any odd ring — one with min(r, m−r) ≤ 2p? Every
+odd-ring witness so far is a barber pole. If the answer is no, the theorem
+would read: **causal transport of a law-packet around a ring requires an even
+ring**, and the Anchor Theorem's shadow would extend from ℤ to every odd ℤ/m.
 
 ---
 
@@ -425,8 +483,7 @@ apparent velocity r/p — with **infinite support**, which is exactly why it doe
 not contradict the Anchor Theorem (which assumes a finite law-packet). And the
 "apparent velocity" is genuinely only apparent when the rotor is a barber pole:
 a spatially periodic pattern's phase velocity is unbounded, which is how a
-window-1 system can display motion at speed m/2 per step. Machine: every rotor
-class travels correctly on a 6-fold tiling.
+window-1 system can display motion at speed m/2 per step. Machine: every rotor class travels correctly on a 6-fold tiling.
 
 **Theorem 4.3 (wrapping).** *Let S be a code on ℤ. As long as the ℤ-orbit's
 support stays inside a window of m−2 consecutive cells, the ℤ orbit and the
@@ -441,8 +498,8 @@ moment it does, the anchor becomes a target, and motion becomes possible. *The
 ring is the line whose front eats its own anchor.*
 
 **Corollary 4.4 (the finite chunk does NOT glide).** Releasing a ring rotor's
-laws as a finite code on ℤ gives, over the whole gallery of **8,332 rotor
-classes**: 7,757 CYCLE, 416 GROWING, 86 FIXED, 17 BALANCED, 8 EXTINCT, 48
+laws as a finite code on ℤ gives, over the whole gallery of **17,746 rotor
+classes**: 15,419 CYCLE, 1,955 GROWING, 293 FIXED, 23 BALANCED, 8 EXTINCT, 48
 holdouts — and **zero gliders**. The 48 holdouts survive a 10× budget (6,000
 steps, span 3,000) still unresolved: they are ruler fronts, the anchored
 aperiodic species of `glider-question/RESULTS.md` §5.2. Pre-registration P7
@@ -579,3 +636,175 @@ way (clearing a whole cell destroys information), and has the highest GoE
 fraction of all. Meanwhile the *fixed* fraction rises under cross-amendment —
 those are the new balanced codes.
 
+---
+
+## 6. VERIFICATION BATTERY
+
+| check | scope | result |
+|---|---|---|
+| `xring.py` bitmask engine ≡ `../xnomos.py` reference engine | 4,000 random constitutions × 6 steps × all 4 semantics | 0 mismatches |
+| `sweep.c` ≡ `xring.py` ≡ `xnomos.py` (every reported witness re-run) | 20,966 rotor certificates, each re-verified over **3 full periods** by the xnomos path | **0 failures** |
+| maximal-period certificates re-simulated independently | 122,238 (one per census job) | **0 failures** |
+| stabiliser hygiene (rot_r(S) ≠ S enforced) | every rotor claim | rotation-symmetric false positives removed |
+| Single-Author on rings: parity ≡ OR under permutation targets | 2,000 random ring states × 8 steps | 0 divergences |
+| dead-letter classification (15 of 27 kinds never fire) | exhaustive on ℤ/7, 27 kinds × 128 states | exact |
+| own-kind nilpotency (Thm 2.1) | 220,968 (kind, m ≤ 12, occupancy) triples | 0 violations |
+| cross-amendment step nilpotency (Thm 2.2) | 217,728 (constitution, m ≤ 8, occupancy) triples | 0 non-nilpotent |
+| light cone (Thm 3.1) | 4,000 random perturbations at distance > 2 | 0 leaks |
+| tiling lift (Thm 3.2) | 17,746 rotor classes × q = 2, 3 | 35,492 confirmed, 0 failed |
+| wrapping (Thm 4.3) | 4,000 random (constitution, code) pairs, all semantics | 4,000/4,000 |
+| transfer-matrix counts vs brute force | 7 constitutions × 4 semantics × m = 4…8 | 0 mismatches |
+| balance impossibility (Thm 5.1.1–3) | 729 rule pairs × 4 semantics × m = 4…12 = 26,244 exact counts | 0 violations |
+| balance count agreement (transfer matrix vs complete sweep) | 70 admitting constitutions, m = 3…11 | exact agreement |
+| odd-ring rotor hunt (sampled) | 21,600,000 codes, odd m ≤ 21, n ≤ 4, 4 semantics | 0 rotors |
+| … the same sampler, even-ring control | 3,840,000 codes | 3,917 rotors, 193 classes |
+| odd-ring rotor **decision** by SAT | 4,860 (1 kind, m ≤ 31, p ≤ 6) + 27,648 (2 kinds, m ≤ 17, p ≤ 3) + 62,208 (3 kinds, m ≤ 13, p ≤ 2) | see §3.4 |
+| … SAT decider validated against enumeration | even-ring controls, 2,484 calls | reproduces exactly the enumerated rotor classes |
+| ℤ-release of every ring rotor | 17,746 codes, budget 600 then 6,000 steps | **0 gliders**, 48 permanent holdouts |
+
+Total: **122,238 complete state-space censuses covering 3.50 × 10¹⁰ codes**,
+plus 25.4 M sampled seeds and ≈ 97,000 SAT decisions. Every number in this
+document is either an exact enumeration or is labelled as a sample / decision
+with its bound.
+
+---
+
+## 7. VERDICT
+
+**The period spectrum.** Own-kind nomodynamics on a ring is temporally rigid:
+over all 27 kinds and every m ≤ 20 the attainable periods are
+{1, 2, 4, 8, 16} plus five isolated resonances (3 at m=6 and 12 and 18, 7 at
+m=14, 15 at m=10 and 20, 63 at m=18, 30 at m=20). Adding kinds without
+cross-amendment barely helps — three own-kind kinds on ℤ/6 still top out at 6.
+**Cross-amendment dissolves the rigidity.** With the same rule pool, the same
+state space and the same semantics, changing the target map from the identity
+to a 3-cycle takes the maximum on ℤ/6 from 6 to **81**, and the attainable set
+from {1,2,3,4,6} to twenty-five distinct periods including 27, 45 and 81 —
+a new resonance family of **powers of three**, where own-kind resonances are
+Mersenne. With two kinds sharing a target, the spectrum on ℤ/m becomes an
+**initial segment**: every period 1 … m is realised for m = 6 and m ≥ 8.
+
+And the mechanism is not the one the pre-registration guessed. Cross-amendment
+does *not* break 𝔽₂ unipotency — the one-step operator stays unipotent on every
+frozen occupancy (217,728 checks), and constant-occupancy cycles still have
+periods in {1, 2}. Every champion cycle decomposes as p = q · ord(T) with
+**q = p and ord(T) = 1**: the whole period lives in the occupancy word. What
+cross-amendment buys is a longer occupancy orbit — more ways for laws to repeal
+each other, so the pattern of *who is present* can wander further before it
+repeats.
+
+**Rotors.** Cross-amendment lowers the minimal rotor ring from 6 to **4**;
+supplies the first **kind-relay rotor** (K-6: three kinds pass a four-law packet
+round ℤ/6 at exactly the light-cone speed, changing legal identity each step);
+supplies a species with no own-kind counterpart at all (**D-3**, the doctrinal
+rotor: the code is frozen in space while its kinds circulate); and — the
+headline — supplies the **first rotors on odd rings**, at m = 9 with three
+kinds and m = 15 with two. Every odd-ring rotor found is a *third-turn*,
+r = ±m/3, so 3 must divide m; odd rings with no factor 3 (5, 7, 11, 13, 17, 25,
+35) carry none in any test performed. The light-cone analysis (Thm 3.1) splits
+the whole rotor zoo — including the founding ℤ/6 specimen — into **transporting
+packets** and **barber poles**, and all odd-ring rotors so far are barber poles.
+
+**Ring ↔ line.** Three exact statements. Rotors *tile*: a rotor on ℤ/m lifts to
+ℤ/qm with the same p and r (35,492 confirmations). Rotors *unroll*: the
+m-periodic states of ℤ are Φ_ℤ-invariant and carry exactly the ring dynamics,
+so every ring rotor is a genuine infinite travelling wave on ℤ — of infinite
+support, which is why the Anchor Theorem is untouched. Codes *wrap*: line and
+ring orbits agree exactly until the support reaches the seam. Hence:
+
+> **The ring is the line whose front eats its own anchor.** Entrenchment is a
+> theorem of linear order; a ring has order locally and none globally, and the
+> moment the advancing front meets its own rear the eldest law becomes a
+> target.
+
+And the limit is a clean dichotomy: rotors with fixed rotation are tilings and
+converge to infinite wave trains; rotors with r = m/2 keep three laws but
+spread their diameter like m/2 and dissolve into independent anchored fronts.
+The compact ring rotors are exactly the ones whose motion was never transport.
+Released as finite codes on ℤ, **all 17,746 rotor classes fail to glide** — no
+counterexample to the cross-amendment no-go from this direction.
+
+**Constitutional algebra.** Balance is exactly multi-authorship. Under OR, under
+supersession-OR, and under every injective target map, a fixed code is a dead
+code — the Dead Letter Theorem survives verbatim on every ring (26,244 exact
+counts, 0 violations). Under parity with two kinds sharing a slot, or under
+supersession with two kinds sharing a cell, balanced codes exist from **two
+placed laws** on every ring m ≥ 4, in exactly **70 of the 729** two-kind
+constitutions — and they take over: under the two-chamber veto on ℤ/20,
+**88.8 %** of all fixed codes are balanced. Gridlock stops being the absence of
+activity and becomes its equilibrium. Cross-amendment also makes history more
+writable: the Garden-of-Eden fraction drops by 10–12 points at every ring size,
+for the same reason — a slot with two possible authors has more possible pasts.
+
+> **The law of the expedition.** *One author, one slot: the code can only
+> freeze. Two authors, one slot: the code can be alive and still.* Everything
+> new here — balanced constitutions, the filled-in period spectrum, the kind
+> relay, the odd-ring third-turns, the extra reachability — is a consequence of
+> letting two laws speak to the same place at the same time.
+
+### Open questions, sharpest first
+
+1. **Is there a transporting rotor on an odd ring?** (min(r, m−r) ≤ 2p, r ≠ 0.)
+   Every odd-ring witness is a barber pole. A negative would read: *causal
+   transport of a law-packet around a ring requires an even ring.*
+2. **Prove the Third-Turn Law** — or find an odd-ring rotor whose rotation is
+   not ±m/3. The parity obstruction that forbids odd rings for own-kind is still
+   unidentified; the block/gap calculus of §2.3 gives m = 2γ+4 for the base
+   own-kind family (hence even), but no general argument.
+3. **What is the true growth of max period with m under cross-amendment?**
+   The 3-cycle class gives 8, 8, 20, 81, 54 for m = 3…7 — non-monotone, and 81
+   at m = 6 is 3⁴. Is there a resonance criterion on m analogous to the
+   Sunset Parliament's m ≡ 2 (mod 4)?
+4. **Exact fixed-point and balance counts for n ≥ 3** — the transfer matrix is
+   written for 2^n-letter alphabets and n = 2 is done exactly for all m; n = 3
+   needs a 1024-context implementation.
+5. **Does the balanced fraction B/F tend to 1?** It is 0.888 at m = 20 for the
+   two-chamber veto and rising; the transfer matrix should settle the limit
+   (ratio of dominant eigenvalues).
+
+---
+
+## 8. REPRODUCTION
+
+```sh
+cd xrings
+cc -O3 -march=native -o sweep sweep.c        # complete state-space censuses
+cc -O3 -march=native -o hunt  hunt.c         # sampled rotor hunt
+python3 ../xnomos.py                         # reference-engine self-tests
+python3 xring.py                             # engine == xnomos, 4 semantics
+
+export XR_RAW=./raw                          # raw JSONL lands here (~30 MB)
+python3 campaign.py own                      # own-kind baseline, m=3..20     (2 s)
+python3 campaign.py own2 own3                # the honest own-kind controls  (20 min)
+python3 campaign.py recip                    # 2-cycle permutation, m=3..11   (5 min)
+python3 campaign.py noninj                   # both kinds -> kind 0           (5 min)
+python3 campaign.py cyc3all cyc3             # 3-cycle permutation            (6 min)
+python3 campaign.py super1 super2 super3     # supersession, 1/2/3 kinds      (7 min)
+python3 campaign.py goe                      # Garden-of-Eden census          (1 min)
+python3 campaign.py big2                     # m=12, live-live pairs, 3 classes (9 min)
+
+python3 tables.py                > tables.txt   # every table of section 2
+python3 analyze.py recip noninj cyc3            # period sets + rotor classes
+python3 certify.py own own2 own3 recip noninj cyc3 cyc3all super1 super2 super3 goe big2
+                                                # 20,966 rotor + 122,238 period certs
+python3 specimens.py                            # the gallery of section 3.3
+python3 unroll.py                               # tiling lift, wave train, Z release
+python3 deep.py                                 # mechanism, Eden, Z-holdouts
+python3 theory.py                               # Thm 2.1, 2.2, 3.1 machine checks
+python3 balance.py                              # transfer matrix + the 26,244 counts
+python3 balwitness.py                           # the 70 constitutions, minimal witness
+
+./oddhunt.sh                                    # 21.6 M sampled odd-ring codes
+python3 satrotor.py control                     # SAT decider validated on even rings
+./satrun.sh                                     # the odd-ring SAT decision campaign
+python3 oddrotor.py minimal                     # minimum law count at m=15
+python3 oddscan.py                              # the third-turn family, m up to 35
+```
+
+Files: `xring.py` (engine), `sweep.c` / `hunt.c` (C workhorses), `campaign.py`
+(census driver), `analyze.py` / `tables.py` (reports), `certify.py` (independent
+re-verification), `specimens.py` (gallery), `unroll.py` (ring↔line),
+`balance.py` / `balwitness.py` (constitutional algebra), `theory.py` (theorem
+checks), `deep.py` (mechanism + Eden + holdouts), `satrotor.py` / `oddrotor.py`
+/ `oddscan.py` (the odd-ring decision campaign). Aggregated results in `data/`,
+logs in `*.log` and `tables.txt`.

@@ -1,0 +1,32 @@
+wrote data/periodic_table8_or.csv : 757 orbit representatives
+
+[Theorem A, census scale]  balanced runs with INJECTIVE target map: 0 ; with NON-injective: 0
+[Zero-Sum No-Go, census scale]  810 constitutions have every cycle offset-sum 0 ; total GROWING runs among them: 0 (violations 0)
+                                the other 2106 constitutions produce 15366138 GROWING runs
+
+== behaviour classes of the 757 orbits (span<=8, 8_or) ==
+   -/-/-/-                       580
+   -/grow/-/-                    110
+   -/-/-/ext                      55
+   -/-/odd/-                       6
+   -/grow/-/ext                    4
+   -/grow/odd/-                    1
+   -/-/odd/ext                     1
+
+== non-generic orbits ==
+  (a) totally extinct universes (every seed dies):
+      (0, -1, 0) (0, -1, 0) id
+      (0, -1, 0) (0, -1, 0) swap
+  (b) universes with NO growth at all:
+      642 orbits; cycle-sum profile: Counter({'[0]': 217, '[-1]': 165, '[1]': 129, '[-1, 0]': 36, '[-1, 1]': 28, '[0, 1]': 27, '[-2]': 23, '[2]': 17})
+  (c) universes whose period spectrum contains an ODD period > 1:
+      0 orbits
+  (d) longest cycles:
+      (-1, 1, 0) (0, -1, 1) swap   maxperiod 30  periods [2, 4, 6, 8, 12, 18, 30]
+      (-1, 1, 0) (0, -1, 1) const1 maxperiod 18  periods [2, 4, 6, 8, 12, 18]
+      (-1, 1, 0) (0, 1, -1) swap   maxperiod 16  periods [2, 4, 8, 16]
+      (-1, 1, 0) (0, 1, -1) const1 maxperiod 16  periods [2, 4, 8, 16]
+      (0, -1, 0) (0, -1, 1) swap   maxperiod 16  periods [2, 4, 8, 16]
+      (0, -1, 0) (0, -1, 1) const1 maxperiod 16  periods [2, 4, 8, 16]
+  (e) balance: seeds already balanced vs seeds that REACH balance:
+      no balanced verdicts in this resolution (Dead Letter holds)

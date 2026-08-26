@@ -22,7 +22,9 @@
 #define NROW 68
 #define ORG 2          /* normalised min index (x bit and y row) */
 #define MAXSPAN 59
+#ifndef TBITS
 #define TBITS 16
+#endif
 #define TSIZE (1 << TBITS)
 
 /* offsets: O E W N S NE NW SE SW */
@@ -92,6 +94,7 @@ static int stepB(Board *B, const Univ *U, int sem, int *nact_out) {
             if (!act[y]) continue;
             uint64_t e = emx(act[y], cx);
             int yy = y + cy;
+            if (sem >= 2) { tog[k][yy] |= e; continue; }
             for (int t = 0; t < n; t++)
                 if (U->tgt[k] & (1 << t)) {
                     if (sem) tog[t][yy] |= e; else tog[t][yy] ^= e;
@@ -99,6 +102,28 @@ static int stepB(Board *B, const Univ *U, int sem, int *nact_out) {
         }
     }
     int changed = 0;
+    if (sem >= 2) {
+        /* SUPERSESSION: an active law of kind k enacts kind k at i+c_k when
+         * that cell is EMPTY, and otherwise CLEARS the whole cell.  Clear
+         * votes resolve by parity (sem==2) or by OR (sem==3).  Targets are
+         * ignored by design -- enactment is own-kind (cf. xnomos._step_super). */
+        uint64_t cleared[NROW];
+        for (int y = 0; y < NROW; y++) {
+            uint64_t c = 0;
+            for (int k = 0; k < n; k++) {
+                uint64_t hit = tog[k][y] & occ[y];
+                if (sem == 3) c |= hit; else c ^= hit;
+            }
+            cleared[y] = c;
+        }
+        for (int k = 0; k < n; k++)
+            for (int y = 0; y < NROW; y++) {
+                uint64_t nw = (B->p[k][y] & ~cleared[y]) | (tog[k][y] & ~occ[y]);
+                if (nw != B->p[k][y]) { B->p[k][y] = nw; changed = 1; }
+            }
+        if (nact_out) *nact_out = nact;
+        return changed;
+    }
     for (int k = 0; k < n; k++)
         for (int y = 0; y < NROW; y++)
             if (tog[k][y]) { B->p[k][y] ^= tog[k][y]; changed = 1; }
@@ -444,6 +469,8 @@ typedef struct {
     long long ahist[64]; long long nalpha;
     long long cls[3][V_NVERD]; long long clsnp2[3];
     double amax; char abest[192];
+    double amax_cls[3]; long long ahist_cls[3][64]; long long nalpha_cls[3];
+    char abest_cls[3][192];
     long long done;
 } Acc;
 
@@ -599,9 +626,18 @@ static void *worker(void *arg) {
                                           &fill, &fsz, &bw, &bh);
                     if (al > -0.5) {
                         J->acc.nalpha++;
+                        J->acc.nalpha_cls[cls]++;
                         int bin = (int)(al * 20.0 + 0.5);
                         if (bin < 0) bin = 0; if (bin > 63) bin = 63;
                         J->acc.ahist[bin]++;
+                        J->acc.ahist_cls[cls][bin]++;
+                        if (al > J->acc.amax_cls[cls]) {
+                            J->acc.amax_cls[cls] = al;
+                            ulabel(&U, lab);
+                            snprintf(J->acc.abest_cls[cls], 192,
+                                "alpha=%.3f fill=%.3f sz=%d bbox=%dx%d seed=%d U=%s",
+                                al, fill, fsz, bw, bh, s, lab);
+                        }
                         if (al > J->acc.amax) {
                             J->acc.amax = al;
                             ulabel(&U, lab);
@@ -609,10 +645,10 @@ static void *worker(void *arg) {
                                      "alpha=%.3f fill=%.3f sz=%d bbox=%dx%d seed=%d U=%s",
                                      al, fill, fsz, bw, bh, s, lab);
                         }
-                        if (al >= 1.15 && J->fp) {
+                        if (al >= 1.02 && J->fp) {
                             ulabel(&U, lab);
                             fprintf(J->fp, "ALPHA %.4f %.4f %d %d %d %d %d %s\n",
-                                    al, fill, fsz, bw, bh, s, md, lab);
+                                    al, fill, fsz, bw, bh, s, cls, lab);
                         }
                     }
                 }
@@ -779,6 +815,15 @@ int main(int argc, char **argv) {
         A.nalpha += jobs[i].acc.nalpha;
         if (jobs[i].acc.amax > A.amax) { A.amax = jobs[i].acc.amax;
             strcpy(A.abest, jobs[i].acc.abest); }
+        for (int z = 0; z < 3; z++) {
+            A.nalpha_cls[z] += jobs[i].acc.nalpha_cls[z];
+            for (int b = 0; b < 64; b++)
+                A.ahist_cls[z][b] += jobs[i].acc.ahist_cls[z][b];
+            if (jobs[i].acc.amax_cls[z] > A.amax_cls[z]) {
+                A.amax_cls[z] = jobs[i].acc.amax_cls[z];
+                strcpy(A.abest_cls[z], jobs[i].acc.abest_cls[z]);
+            }
+        }
         for (int c = 0; c < NCAT; c++) {
             A.ncat[c] += jobs[i].acc.ncat[c];
             for (int f = 0; f < jobs[i].acc.nfinds[c] && A.nfinds[c] < FCAP; f++)
@@ -808,6 +853,14 @@ int main(int argc, char **argv) {
         for (int z = 0; z < 64; z++)
             if (A.ahist[z]) printf("AHIST %.2f %lld\n", z / 20.0, A.ahist[z]);
         printf("ALPHA_MAX %s\n", A.abest);
+        for (int z = 0; z < 3; z++) {
+            printf("ALPHA_CLASS %d runs=%lld max=%.3f %s\n", z,
+                   A.nalpha_cls[z], A.amax_cls[z], A.abest_cls[z]);
+            for (int b = 0; b < 64; b++)
+                if (A.ahist_cls[z][b])
+                    printf("AHIST_CLASS %d %.2f %lld\n", z, b / 20.0,
+                           A.ahist_cls[z][b]);
+        }
     }
     for (int c = 0; c < NCAT; c++)
         for (int f = 0; f < A.nfinds[c]; f++)

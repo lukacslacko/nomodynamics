@@ -1,0 +1,12 @@
+  own       : 64 rotor certificates re-verified over 3 full periods, 486 maximal-period certificates re-simulated  [xnomos path]
+  own2      : 912 rotor certificates re-verified over 3 full periods, 6561 maximal-period certificates re-simulated  [xnomos path]
+  own3      : 1914 rotor certificates re-verified over 3 full periods, 8640 maximal-period certificates re-simulated  [xnomos path]
+  recip     : 1684 rotor certificates re-verified over 3 full periods, 6561 maximal-period certificates re-simulated  [xnomos path]
+  noninj    : 1460 rotor certificates re-verified over 3 full periods, 6561 maximal-period certificates re-simulated  [xnomos path]
+  cyc3      : 3492 rotor certificates re-verified over 3 full periods, 8640 maximal-period certificates re-simulated  [xnomos path]
+  cyc3all   : 3828 rotor certificates re-verified over 3 full periods, 59049 maximal-period certificates re-simulated  [xnomos path]
+  super1    : 128 rotor certificates re-verified over 3 full periods, 972 maximal-period certificates re-simulated  [xnomos path]
+  super2    : 1632 rotor certificates re-verified over 3 full periods, 11664 maximal-period certificates re-simulated  [xnomos path]
+  super3    : 3220 rotor certificates re-verified over 3 full periods, 8640 maximal-period certificates re-simulated  [xnomos path]
+  goe       : 1304 rotor certificates re-verified over 3 full periods, 4032 maximal-period certificates re-simulated  [xnomos path]
+TOTAL: 19638 rotor certificates, 121806 period certificates, 0 failures

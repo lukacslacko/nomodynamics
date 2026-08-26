@@ -1,0 +1,58 @@
+
+=== 1. Gridlock ===
+  [PASS] gridlock: no interior law of a solid block is ever active  708588 solid codes checked, 0 violations
+  [PASS] gridlock: solid ring is a fixed point in all 4 semantics   16000 (code, semantics) pairs, 0 violations
+  [PASS] gridlock sharpness: positive-only guard makes solid code fully active 5/5 laws active in a solid block
+
+=== 2. Single-Author / parity == OR ===
+  [PASS] multiplicity>1 implies some kind has in-degree>=2          60000 random (constitution,state) pairs, 0 violations
+  [PASS] parity == OR on every injective-target 2-kind code (span<=4) 209952 codes, 0 divergences
+  [PASS] parity != OR occurs for non-injective targets              209952 codes, 3792 divergences (1.81%)
+  [PASS] minimal parity/OR divergence has exactly 2 placed laws     ((2, 0), ((0, -1, -1), (0, -1, -1), (0, 0), ((0, 3),)))
+
+=== 3. Dead Letter / Balance ===
+  [PASS] Dead Letter survives OR verbatim (2-kind box, span<=4)     559872 codes; balanced: {'parity': 3176, 'or': 0, 'super': 4368, 'super_or': 0}
+  [PASS] Dead Letter survives super_or verbatim                     balanced under super_or = 0
+  [PASS] Dead Letter FAILS under parity (cross-amendment)           3176 balanced codes
+  [PASS] Dead Letter FAILS under super (parity clear-votes cancel)  4368 balanced codes
+  [PASS] Theorem A: balanced => t|A non-injective (single target)   600000 random codes, 1168 balanced, 0 violations
+  [PASS] Theorem B: balanced => some active kind is entrenched      28672000 codes, 207379 balanced, 0 violations
+  [PASS] Theorem B sharpness: multi-target balance with NO entrenched kind 0:[1|-1|-1]->0,1 1:[0|-1|-1]->0,1  seed [(2, 3), (3, 2)]  A=[0, 1]=t(A)
+  [PASS] refutes 'balance needs a present in-degree-0 kind'         in-degrees [1, 1, 2, 0], present [0, 1]
+  [PASS] no 1-law balanced code (distinct targets within a law)     249410 single-law codes, 0 balanced
+  [PASS] degenerate: a law with a repeated target is balanced alone kind (0,-1,-1)->{0,0} at cell 0
+  [PASS] balanced codes of unbounded size (disjoint union, gap 3)   verified for 1,2,5,20,100 copies -> up to 200 active laws
+  [PASS] exact balance count = closed form (run-starts must be doubled) balanced-at-t0 per span [(1, 1, 1), (2, 3, 3), (3, 10, 10), (4, 34, 34), (5, 116, 116), (6, 396, 396), (7, 1352, 1352), (8, 4616, 4616)] ; total 1..8 = 6528 (the C census counts 49024 balanced VERDICTS for this constitution, i.e. 42496 seeds CONVERGE to balance)
+
+=== 4. Anchor / Path-Sum Confinement ===
+  [PASS] Anchor FAILS under cross-amendment: leftmost law repealed  0:[0|1|-1]->1 1:[0|-1|1]->0 seed [(0, 2), (1, 1)] -> [] (2 laws, 2 cells)
+  [PASS] minimal anchor-death witness is a SINGLE placed law        ((1, 0), ((-1, 1, -1), (0, -1, 1), (1, 0), ((0, 2),)))
+  [PASS] anchor death with the code SURVIVING exists                ((1, 0), ((-1, 1, -1), (0, 1, 1), (1, 0), ((0, 2),)))
+  [PASS] Anchor Theorem holds throughout the own-kind block         139968 own-kind codes x 12 steps, 0 anchor deaths
+  [PASS] Path-Sum Confinement holds (1-D, parity)                   1200000 steps over 20000 trajectories, 0 escapes
+  [PASS] Path-Sum Confinement holds (2-D, parity)                   160000 steps over 4000 trajectories, 0 escapes
+  [PASS] supersession: per-kind ray confinement supp_k <= seed_k + N c_k 1000000 steps, 0 escapes
+  [PASS] Zero-Sum No-Go: sum(c) around the cycle = 0 => bounded forever 4000 zero-sum constitutions x 200 steps, 0 escapes; reach-set span <= 8
+  [PASS] reciprocal pair c=(+1,-1): one seed law reaches exactly 2 slots [(0, 0), (1, 1)]
+
+=== 5. Periods and cryptic codes ===
+  [PASS] own-kind W=1 admits periods outside {2,4}                  6 seeds; spectrum [6]; first (((0, 1), (2, 3), (3, 2), (4, 2)), 6) re-verified 3 periods
+  [PASS] cryptic codes exist (constant occupancy, live interior)    62784 cryptic codes; period spectrum {2: 61024, 4: 1760}
+  [PASS] every cryptic period in the 2-kind box is a power of 2     0 non-power-of-2 cryptic codes
+  [PASS] frozen-occupancy non-2-power period requires a ZERO-SUM cycle 20 non-2-power cycles, 1 with frozen occupancy, 0 of those with all cycle sums nonzero
+  [PASS] zero-sum 3-cycle: cryptic code of period 3 (constant occupancy) 0:[0|-1|1]->2 1:[0|1|-1]->0 2:[-1|1|0]->1 seed [(-2, 4), (2, 5), (3, 3)] ; cycle offset-sum 0
+  [PASS] period-30 reciprocal cycle exists and re-verifies          0:[-1|1|0]->1 1:[0|-1|1]->0 seed [(0, 2), (2, 1), (4, 2), (5, 1), (6, 1)] t0=0
+
+=== 6. Glider skeleton lemmas ===
+  [PASS] kind never targeted by an active kind has frozen support   3946042 (kind,step) checks, 0 violations
+  [PASS] control: colonizer is not a glider (verify_glider says no) (0,1,1) speed-1 front
+
+=== 7. New semantics ===
+  [PASS] xsem reproduces xnomos on (toggle, parity) and (toggle, or) 6000 states, 0 mismatches
+  [PASS] Gridlock survives every effect/resolve/entrenchment choice 11664 (semantics, constitution) pairs, 0 live interiors
+  [PASS] Gridlock under quorum guards: alive iff 2 in the quorum set [((0,), False), ((1,), False), ((2,), True), ((0, 1), False), ((0, 2), True), ((1, 2), True), ((0, 1, 2), True)]
+  [PASS] Dead Letter is exactly the cancellation-free semantics     {'toggle+parity': 960, 'toggle+or': 0, 'enact+parity': 25824, 'repeal+parity': 35408, 'override+parity': 11056, 'toggle+parity+immune[0]': 13056}
+  [PASS] SUNSET semantics (tau=1) admits FREE GLIDERS on Z          139968 codes: {'EXTINCT': 115724, 'GLIDER': 15928, 'FIXED': 7540, 'GROWING': 252, 'CYCLE': 504, 'UNRESOLVED': 20} ; 15928 gliders; first re-verified over 3 periods: True
+      first glider: ((-1, -1, -1), (0, -1, -1), (0, 1), ((0, 2),)) {'kind': 'GLIDER', 't': 0, 'period': 1, 'displacement': -1}
+
+41/41 claims PASS

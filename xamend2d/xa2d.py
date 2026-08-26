@@ -375,15 +375,19 @@ def alpha_local(sizes):
 
 # ---------------------------------------------------------------- rendering --
 
-def render(S, C=None, sym=None, pad=0, maxw=100, maxh=60):
-    if not S:
+def render(S, C=None, sym=None, pad=0, maxw=100, maxh=60, window=None):
+    """window = (x0, x1, y0, y1) draws in a FIXED frame (so motion is visible)."""
+    if window is not None:
+        x0, x1, y0, y1 = window
+    elif not S:
         return "(empty)"
-    xs = [c[0] for c in S]
-    ys = [c[1] for c in S]
-    x0, x1 = min(xs) - pad, max(xs) + pad
-    y0, y1 = min(ys) - pad, max(ys) + pad
-    x1 = min(x1, x0 + maxw - 1)
-    y1 = min(y1, y0 + maxh - 1)
+    else:
+        xs = [c[0] for c in S]
+        ys = [c[1] for c in S]
+        x0, x1 = min(xs) - pad, max(xs) + pad
+        y0, y1 = min(ys) - pad, max(ys) + pad
+        x1 = min(x1, x0 + maxw - 1)
+        y1 = min(y1, y0 + maxh - 1)
     sym = sym or "ABCDEFGH"
     rows = []
     for y in range(y1, y0 - 1, -1):

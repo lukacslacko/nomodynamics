@@ -208,7 +208,7 @@ def do_super3():
 def do_big2():
     """m = 12, 13 for the live-live two-kind classes (permutation + non-inj)."""
     jobs = [jobline([r1, r2], tg, m, "parity")
-            for m in (12, 13) for tg in ([1, 0], [0, 0], [0, 1])
+            for m in (12,) for tg in ([1, 0], [0, 0], [0, 1])
             for r1 in RULES12 for r2 in RULES12]
     aggregate(run(jobs, "big2"), "big2")
 

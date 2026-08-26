@@ -1,0 +1,171 @@
+==========================================================================
+SPECIMEN GALLERY — Expedition X-D
+==========================================================================
+
+--- BAL-1  the co-signed repeal (minimal balanced code) ---
+    two kinds, two laws, ONE cell: both active forever, both repeal the (absent) kind-0 law at cell -1, and cancel.
+    constitution : 0:[0|-1|-1]->0 1:[0|-1|-1]->0
+    seed         : [(0, 3)]   (mode=parity)
+    verdict      : {'kind': 'BALANCED', 't': 0, 'period': 1, 'active': 2, 'card': 2}
+    ref-engine agreement over 3 steps: True
+      .#..
+      .#..
+      .#..
+
+--- BAL-2  the two-chamber deadlock ---
+    kinds 0 and 1 both enact kind 2 into the gap at cell 1; under parity the two enactments cancel; under OR the code ignites.
+    constitution : 0:[0|1|1]->2 1:[0|-1|-1]->2 2:[0|1|0]->2
+    seed         : [(0, 1), (2, 2)]   (mode=parity)
+    verdict      : {'kind': 'BALANCED', 't': 0, 'period': 1, 'active': 2, 'card': 2}
+    ref-engine agreement over 3 steps: True
+      .A.B..
+      .A.B..
+      .A.B..
+
+--- BAL-2' the same code under OR ---
+    constitution : 0:[0|1|1]->2 1:[0|-1|-1]->2 2:[0|1|0]->2
+    seed         : [(0, 1), (2, 2)]   (mode=or)
+    verdict      : {'kind': 'FIXED', 't': 1, 'period': 1, 'active': 0, 'card': 3}
+    ref-engine agreement over 3 steps: True
+      .A.B..
+      .ACB..
+      .ACB..
+
+--- BAL-3  balance without a graph-immortal kind ---
+    every PRESENT kind has in-degree >= 1 in the amendment graph; entrenchment is dynamic (kinds 2,3 are absent), not structural.
+    constitution : 0:[0|1|1]->2 1:[0|-1|-1]->2 2:[0|1|0]->0 3:[0|1|0]->1
+    seed         : [(0, 1), (2, 2)]   (mode=parity)
+    verdict      : {'kind': 'BALANCED', 't': 0, 'period': 1, 'active': 2, 'card': 2}
+    ref-engine agreement over 3 steps: True
+      .A.B..
+      .A.B..
+      .A.B..
+
+--- BAL-4  the doubled frontier (balance champion) ---
+    both kinds are the rule (0,-1,0) amending kind 0.  A code is balanced iff every run-start cell carries BOTH kinds.  Exact count of balanced codes of span s: a(s)=4a(s-1)-2a(s-2).
+    constitution : 0:[0|-1|0]->0 1:[0|-1|0]->0
+    seed         : [(0, 3), (1, 1), (3, 3), (4, 2)]   (mode=parity)
+    verdict      : {'kind': 'BALANCED', 't': 0, 'period': 1, 'active': 4, 'card': 6}
+    ref-engine agreement over 3 steps: True
+      .#A.#B..
+      .#A.#B..
+      .#A.#B..
+
+--- BAL-5  multi-target balance, nothing entrenched ---
+    out-degree 2 defeats Theorem B: here A = t(A) = {0,1} and no present kind is unamendable, yet the code is balanced.
+    constitution : 0:[1|-1|-1]->0,1 1:[0|-1|-1]->0,1
+    seed         : [(2, 3), (3, 2)]   (mode=parity)
+    verdict      : {'kind': 'BALANCED', 't': 0, 'period': 1, 'active': 2, 'card': 3}
+    ref-engine agreement over 3 steps: True
+      .#B..
+      .#B..
+      .#B..
+
+--- BAL-6  supersession balance (two clear-votes cancel) ---
+    under 'super' an active law CLEARS an occupied target cell; two clear-votes on one cell cancel under parity.  Own-kind targets: supersession makes balance possible without cross-amendment.
+    constitution : 0:[0|-1|0]->0 1:[0|-1|0]->1
+    seed         : [(0, 3)]   (mode=super)
+    verdict      : {'kind': 'BALANCED', 't': 0, 'period': 1, 'active': 2, 'card': 2}
+    ref-engine agreement over 3 steps: True
+      .#..
+      .#..
+      .#..
+
+--- ANC-1  the self-repealing seed (anchor death from ONE law) ---
+    kind 1 legislates kind 0 ahead of it; kind 0 turns round and repeals kind 1.  The eldest law CAN be repealed.
+    constitution : 0:[-1|1|-1]->1 1:[0|1|1]->0
+    seed         : [(0, 2)]   (mode=parity)
+    verdict      : {'kind': 'FIXED', 't': 2, 'period': 1, 'active': 0, 'card': 1}
+    ref-engine agreement over 6 steps: True
+      .B..
+      .BA.
+      ..A.
+      ..A.
+      ..A.
+      ..A.
+
+--- ANC-2  minimal anchor death (mutual annihilation) ---
+    constitution : 0:[-1|1|-1]->1 1:[0|-1|1]->0
+    seed         : [(0, 2)]   (mode=parity)
+    verdict      : {'kind': 'EXTINCT', 't': 2}
+    ref-engine agreement over 4 steps: True
+      .B..
+      .BA.
+      .
+      .
+
+--- CRY-1  the zero-sum cryptic clock (period 3, frozen occupancy) ---
+    amendment 3-cycle 0->2->1->0 with offsets (+1,0,-1), sum 0.  Occupancy is constant forever: the code looks gridlocked from outside while its kinds rotate with period 3 — the only way to beat the 2-adic clock at constant occupancy.
+    constitution : 0:[0|-1|1]->2 1:[0|1|-1]->0 2:[-1|1|0]->1
+    seed         : [(-2, 4), (2, 5), (3, 3)]   (mode=parity)
+    verdict      : {'kind': 'CYCLE', 't': 0, 'period': 3, 'card': 5}
+    ref-engine agreement over 4 steps: True
+      .C...##..
+      .C...C#..
+      .C...##..
+      .C...##..
+
+--- PER-30  the longest 2-kind cycle in the box ---
+    reciprocal amendment; period 30, the maximum over all 143,327,232 runs of the span-8 census.
+    constitution : 0:[-1|1|0]->1 1:[0|-1|1]->0
+    seed         : [(0, 2), (2, 1), (4, 2), (5, 1), (6, 1)]   (mode=parity)
+    verdict      : {'kind': 'CYCLE', 't': 0, 'period': 30, 'card': 5}
+    ref-engine agreement over 8 steps: True
+      .B.A.BAA..
+      .BAA.B.#..
+      .B.#.BA#A.
+      .BA#AB.##.
+      .B.#AB.#..
+      .BA#.B.#A.
+      .B.A.BA#B.
+      .BAA.B.#B.
+
+--- OWN-6  own-kind W=1 period 6 ---
+    OWN-KIND, window 1: 5 laws in 5 cells, period 6.  The own-kind census reported 'every cycle has period 2 or 4' across 9.07M seeds; that regularity is false — its 5-law stratum was sampled.
+    constitution : 0:[0|-1|1]->0 1:[0|1|-1]->1
+    seed         : [(0, 1), (2, 3), (3, 2), (4, 2)]   (mode=parity)
+    verdict      : {'kind': 'CYCLE', 't': 0, 'period': 6, 'card': 5}
+    ref-engine agreement over 7 steps: True
+      .A.#BB..
+      .AA#AB..
+      .A.##B..
+      .AA#.B..
+      .AB#BB..
+      .A##.B..
+      .A.#BB..
+
+--- COH-6  the six-fold co-signature ---
+    six distinct kinds, all amending the (absent) kind 6 at cell 1: six toggles on one slot, even, cancel.  Works for every even cohort width 2m -- balanced codes with arbitrarily many distinct active kinds.  Delete one actor and the amendment passes.
+    constitution : 0:[0|-1|1]->6 1:[0|-1|1]->6 2:[0|-1|1]->6 3:[0|1|-1]->6 4:[0|1|-1]->6 5:[0|1|-1]->6 6:[0|1|0]->6
+    seed         : [(0, 7), (2, 56)]   (mode=parity)
+    verdict      : {'kind': 'BALANCED', 't': 0, 'period': 1, 'active': 6, 'card': 6}
+    ref-engine agreement over 3 steps: True
+      .#.#..
+      .#.#..
+      .#.#..
+
+  cohort balanced for m=1,2,3,4,6,10: True ; odd cohort balanced: False
+
+==========================================================================
+EXACT BALANCE COUNT (constitution BAL-4)
+  balanced codes of span s (s=1..8 by brute force, then recurrence):
+    [1, 3, 10, 34, 116, 396, 1352, 4616, 15760, 53808, 183712, 627232]
+  recurrence a(s) = 4a(s-1) - 2a(s-2) verified for s=3..8: True
+  growth rate 2+sqrt(2) = 3.414214 ; entropy 1.7716 bits/cell (of 2)
+  => balanced codes are an exponentially large, positive-entropy set:
+     balance is NOT measure zero in law-space.
+
+==========================================================================
+RICHEST BALANCED CODE (search over 4-kind constitutions)
+  active laws 6, distinct active kinds 2, cells 3
+
+--- BAL-RICH  a large balanced constitution ---
+    constitution : 0:[0|-1|1]->3 1:[0|0|0]->3 2:[1|1|1]->2 3:[0|1|1]->3
+    seed         : [(0, 9), (2, 11), (4, 11)]   (mode=parity)
+    verdict      : {'kind': 'BALANCED', 't': 0, 'period': 1, 'active': 6, 'card': 8}
+    ref-engine agreement over 3 steps: True
+      .#.#.#..
+      .#.#.#..
+      .#.#.#..
+
+wrote data/specimens.json (14 specimens)

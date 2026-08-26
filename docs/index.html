@@ -173,8 +173,10 @@ footer p{max-width:76ch}
   <h2><span class="art">&sect;3</span>The Jubilee Code</h2>
   <p class="lede">A two-dimensional code of three law-kinds and about two dozen
   provisions in force at any moment &mdash; aperiodic through 300,000 certified steps.
-  It sits quiescent, and at every power-of-two anniversary the entire code ignites
-  in an avalanche of amendment and collapses back to a handful of laws.</p>
+  It sits quiescent, and on the last tick before every power-of-two anniversary the
+  entire code ignites in an avalanche of amendment &mdash; then, at the anniversary
+  itself, exactly <b>four</b> laws stand. Every time, at every power of two we have
+  checked.</p>
   <div class="controls">
     <button class="ctl" id="play3">Pause</button>
     <button class="ctl" id="fast3">Fast&nbsp;&times;32</button>
@@ -190,8 +192,54 @@ footer p{max-width:76ch}
   The seed is three laws; 791 of 60,000 random codes fall into this same attractor.</div>
 </section>
 
+<section id="motion">
+  <h2><span class="art">&sect;4</span>Motion</h2>
+  <p class="lede">Chapter one proved that nothing on the line can move: the eldest law
+  can never be repealed. The expected escape was laws that amend <i>other</i> laws.
+  That escape is now proved shut &mdash; and the real one is <b>out-degree</b>. A law
+  that amends a single provision, even somebody else&rsquo;s, can never travel. Let one
+  law amend <i>two</i> provisions at once and the statute book walks.</p>
+  <div class="chips" id="chips4" role="group" aria-label="Glider presets"></div>
+  <div class="controls">
+    <button class="ctl" id="play4">Pause</button>
+    <button class="ctl" id="step4">Step</button>
+    <button class="ctl" id="reset4">Reset</button>
+    <button class="ctl" id="mode4" title="Switch how simultaneous contradictory amendments resolve">tally</button>
+    <span class="stat" id="stat4"></span>
+  </div>
+  <div class="plate"><canvas id="cv4" width="880" height="252" aria-label="Spacetime diagram of a travelling law-packet"></canvas></div>
+  <div class="lawline" id="laws4"></div>
+  <div class="caption" id="cap4"></div>
+</section>
+
+<section id="deadlock">
+  <h2><span class="art">&sect;5</span>The Two-Chamber Deadlock</h2>
+  <p class="lede">Two laws, permanently active, forever enacting the same provision at
+  the same cell &mdash; and because they enact it simultaneously, it never comes into
+  force. The code is fixed forever while nothing in it is at rest: a <b>balanced
+  constitution</b>, which chapter one proved impossible.</p>
+  <div class="split">
+    <div>
+      <div class="plate"><canvas id="cv5a" width="420" height="180" aria-label="Under tally resolution the code is fixed forever"></canvas></div>
+      <div class="stat" style="margin-top:6px">tally &mdash; the two enactments cancel: <b>fixed forever, still active</b></div>
+    </div>
+    <div>
+      <div class="plate"><canvas id="cv5b" width="420" height="180" aria-label="Under any-vote resolution the same code ignites"></canvas></div>
+      <div class="stat" style="margin-top:6px">any-vote &mdash; the enactment passes: <b>the code ignites</b></div>
+    </div>
+  </div>
+  <div class="caption">Same two laws, same instant, two conventions for resolving
+  simultaneous amendments. Under <b>tally</b> (an even number of enactments cancels)
+  balance exists; under <b>any-vote</b> (one valid enactment suffices) stability is
+  always gridlock, exactly as in chapter one. In the own-kind system the two
+  conventions are provably <i>the same dynamical system</i> &mdash; every provision has
+  exactly one possible author. Cross-amendment gives a provision two authors, and the
+  convention starts to decide the law of the land: here, whether a constitution can
+  stand perpetually active and perfectly unchanged.</div>
+</section>
+
 <section id="theorems">
-  <h2><span class="art">&sect;4</span>Four theorems from day one</h2>
+  <h2><span class="art">&sect;6</span>Six theorems</h2>
   <article class="thm">
     <h3><span class="tag">THM&nbsp;1</span>Gridlock</h3>
     <p>In a fully occupied region, every law&rsquo;s vacancy guard fails: solid code is frozen.</p>
@@ -200,8 +248,11 @@ footer p{max-width:76ch}
   <article class="thm">
     <h3><span class="tag">THM&nbsp;2</span>Dead Letter</h3>
     <p>A code is stable if and only if every one of its laws is blocked. Codes in
-    perpetual self-cancelling activity do not exist.</p>
-    <p class="read">Stability is always gridlock; there are no living monuments.</p>
+    perpetual self-cancelling activity do not exist &mdash; <b>while laws amend only
+    their own kind</b>. Under cross-amendment the theorem splits: it survives
+    any-vote resolution verbatim and fails under tally, where two laws can cancel
+    each other forever (&sect;5).</p>
+    <p class="read">Stability is gridlock &mdash; unless provisions can annul one another.</p>
   </article>
   <article class="thm">
     <h3><span class="tag">LEM&nbsp;3</span>Single Author</h3>
@@ -218,6 +269,28 @@ footer p{max-width:76ch}
     semantics of the own-kind family. On rings, which have no eldest law, movers
     exist (&sect;2).</p>
     <p class="read">Entrenchment is a theorem of linear order. Circular codes revolve.</p>
+  </article>
+  <article class="thm">
+    <h3><span class="tag">THM&nbsp;5</span>The Out-Degree Law</h3>
+    <p>Let laws amend other kinds freely. If every law still amends <b>at most one</b>
+    of the kinds in play, no code can move &mdash; for any offsets, any window, any
+    dimension, either resolution. This one statement contains the Anchor Theorem, all
+    of reciprocal amendment, and every constitution whose amendment map is a
+    permutation. With <b>two</b> targets, motion appears at once, and the smallest
+    traveller is a single placed law (&sect;4).</p>
+    <p class="read">Cross-amendment was never the escape. Narrowness was the cage:
+    a law that amends one provision cannot move; a law that amends two can.</p>
+  </article>
+  <article class="thm">
+    <h3><span class="tag">THM&nbsp;6</span>Tropical Speed Law</h3>
+    <p>Draw the amendment digraph &mdash; one vertex per kind, an edge of weight
+    <i>c<sub>k</sub></i> from each kind to each kind it amends. A packet of period
+    <i>p</i> and displacement <i>d</i> obeys
+    <span class="stat">p&middot;min(&lambda;<sub>min</sub>,0) &le; d &le; p&middot;max(&lambda;<sub>max</sub>,0)</span>,
+    where &lambda; are the extreme mean weights of the digraph&rsquo;s cycles. If every
+    cycle has weight zero, nothing moves.</p>
+    <p class="read">How fast a statute book can walk is read off the geometry of who
+    amends whom.</p>
   </article>
 </section>
 
@@ -325,7 +398,7 @@ const PRESETS=[
   cap:"<b>Two legal traditions colonize toward each other and meet.</b> The interface freezes with a double-law seam &mdash; both kinds standing on the border cell &mdash; and all activity dies. Contact is gridlock.",
   seed:S=>{for(let i=-44;i<=-37;i++)put(S,i,0,1,1); for(let i=37;i<=44;i++)put(S,i,0,-1,-1)}},
  {name:"Refraction", laws:"(0,1,1) at −48..−41 &middot; wall (−1,1,0) at −30..40",
-  cap:"<b>A front assimilates a sunset wall at half speed.</b> In vacuum the colonizer advances at speed 1; inside the wall it converts the code to its own kind at speed &frac12; &mdash; refraction index 2 &mdash; with a brief scar where they first touch.",
+  cap:"<b>The front does not repeal the old code &mdash; it waits for it to expire.</b> The wall is a sunset code: its far end perpetually repeals itself, so it erodes at speed 1 while the colonizer stands blocked. Then the front fills the vacated ground, also at speed 1. Two speed-1 processes over the same stretch: a wall of length L is cleared at time exactly max(2L, x&#8320;+L) &mdash; the &ldquo;refraction index 2&rdquo;.",
   seed:S=>{for(let i=-48;i<=-41;i++)put(S,i,0,1,1); for(let i=-30;i<=40;i++)put(S,i,-1,1,0)}},
  {name:"Conversion Wave", laws:"lattice (−1,1,0) even cells &middot; probe (0,1,1) at 0",
   cap:"<b>A porous code, one planted provision, a one-way wave.</b> The probe converts the open lattice into solid gridlock behind an advancing front, anchored forever at the cell where it was planted.",
@@ -511,11 +584,264 @@ const fast3=document.getElementById("fast3");
 fast3.addEventListener("click",()=>{jFast=!jFast; fast3.classList.toggle("on",jFast);});
 document.getElementById("reset3").addEventListener("click",jReset);
 
+/* ---------- the general cross-amendment engine ----------
+   demo/xengine.js verbatim (checked by check_inline.py); its semantics are
+   differentially tested against the Python reference xnomos.py:
+   125 universes, 1,528 states, 0 divergences. */
+/* BEGIN xengine.js */
+/* xengine.js — the cross-amendment engine of nomodynamics, for the demo.
+ *
+ * Mirrors xnomos.py exactly (see xengine.test.js, which checks both against
+ * vectors generated by the Python reference).  Inlined into the demo page.
+ *
+ * A constitution:  {rules:[[a,b,c],...], targets:[t,...], dim:1|2, mod:null|m}
+ *   1-D offsets are integers; 2-D offsets are [dx,dy] pairs.
+ *   targets[k] is a kind index, or an array of kind indices (multi-target).
+ * A state: Map key -> bitmask of kinds present.  Key is the cell itself in 1-D
+ *   (a number) and "x,y" in 2-D.
+ * Modes: "parity" (odd number of toggles flips), "or" (>=1 flips),
+ *   "super" / "super_or" (supersession: enact own kind on empty ground,
+ *   else clear the whole cell).
+ */
+(function (root) {
+  "use strict";
+
+  function makeOps(C) {
+    if (C.dim === 2) {
+      return {
+        add: function (k, off) {
+          var p = k.split(",");
+          return (+p[0] + off[0]) + "," + (+p[1] + off[1]);
+        }
+      };
+    }
+    if (C.mod) {
+      var m = C.mod;
+      return { add: function (k, off) { return ((k + off) % m + m) % m; } };
+    }
+    return { add: function (k, off) { return k + off; } };
+  }
+
+  function targetsOf(C, k) {
+    var t = C.targets ? C.targets[k] : k;
+    return Array.isArray(t) ? t : [t];
+  }
+
+  function step(S, C, mode) {
+    mode = mode || "parity";
+    var ops = makeOps(C);
+    if (mode === "super" || mode === "super_or") {
+      return stepSuper(S, C, ops, mode === "super_or");
+    }
+    var tog = new Map();          // key|kind -> parity or count-flag
+    S.forEach(function (mask, cell) {
+      for (var k = 0; k < C.rules.length; k++) {
+        if (!(mask >> k & 1)) continue;
+        var r = C.rules[k];
+        if (!S.has(ops.add(cell, r[0]))) continue;
+        if (S.has(ops.add(cell, r[1]))) continue;
+        var j = ops.add(cell, r[2]);
+        var tg = targetsOf(C, k);
+        for (var q = 0; q < tg.length; q++) {
+          var key = j + "|" + tg[q];
+          tog.set(key, mode === "or" ? 1 : ((tog.get(key) || 0) ^ 1));
+        }
+      }
+    });
+    var out = new Map(S);
+    tog.forEach(function (v, key) {
+      if (!v) return;
+      var ix = key.lastIndexOf("|");
+      var cell = key.slice(0, ix), k = +key.slice(ix + 1);
+      if (C.dim !== 2) cell = +cell;
+      var nm = (out.get(cell) || 0) ^ (1 << k);
+      if (nm) out.set(cell, nm); else out.delete(cell);
+    });
+    return out;
+  }
+
+  function stepSuper(S, C, ops, orResolve) {
+    var enact = new Map(), clearPar = new Map(), clearAny = new Set();
+    S.forEach(function (mask, cell) {
+      for (var k = 0; k < C.rules.length; k++) {
+        if (!(mask >> k & 1)) continue;
+        var r = C.rules[k];
+        if (!S.has(ops.add(cell, r[0]))) continue;
+        if (S.has(ops.add(cell, r[1]))) continue;
+        var j = ops.add(cell, r[2]);
+        if (S.has(j)) {
+          clearPar.set(j, (clearPar.get(j) || 0) ^ 1);
+          clearAny.add(j);
+        } else {
+          enact.set(j, (enact.get(j) || 0) | (1 << k));
+        }
+      }
+    });
+    var out = new Map(S);
+    (orResolve ? clearAny : new Set(
+      Array.from(clearPar.keys()).filter(function (j) { return clearPar.get(j); })
+    )).forEach(function (j) { out.delete(j); });
+    enact.forEach(function (m, j) { out.set(j, (out.get(j) || 0) | m); });
+    out.forEach(function (m, j) { if (!m) out.delete(j); });
+    return out;
+  }
+
+  function activeLaws(S, C) {
+    var ops = makeOps(C), out = [];
+    S.forEach(function (mask, cell) {
+      for (var k = 0; k < C.rules.length; k++) {
+        if (!(mask >> k & 1)) continue;
+        var r = C.rules[k];
+        if (S.has(ops.add(cell, r[0])) && !S.has(ops.add(cell, r[1]))) {
+          out.push([cell, k]);
+        }
+      }
+    });
+    return out;
+  }
+
+  function card(S) {
+    var n = 0;
+    S.forEach(function (m) { for (var v = m; v; v &= v - 1) n++; });
+    return n;
+  }
+
+  function seed(pairs, C) {
+    var S = new Map();
+    pairs.forEach(function (p) {
+      var cell = C && C.dim === 2 ? p[0] + "," + p[1] : p[0];
+      var k = C && C.dim === 2 ? p[2] : p[1];
+      S.set(cell, (S.get(cell) || 0) | (1 << k));
+    });
+    return S;
+  }
+
+  var API = { step: step, activeLaws: activeLaws, card: card, seed: seed };
+  if (typeof module !== "undefined" && module.exports) module.exports = API;
+  else root.XN = API;
+})(typeof globalThis !== "undefined" ? globalThis : this);
+/* END xengine.js */
+
+/* ---------- §4 motion: cross-amendment gliders ---------- */
+function constWidget(canvas, cw){
+  const ctx=canvas.getContext("2d");
+  const W=canvas.width/cw|0, H=canvas.height/cw|0, half=W>>1;
+  let S=new Map(), C=null, mode="parity", row=0, t=0;
+  function clear(){ ctx.fillStyle="#12141a"; ctx.fillRect(0,0,canvas.width,canvas.height); row=0; t=0; }
+  function drawRow(){
+    if(row>=H){
+      ctx.drawImage(canvas,0,cw,canvas.width,canvas.height-cw,0,0,canvas.width,canvas.height-cw);
+      ctx.fillStyle="#12141a"; ctx.fillRect(0,canvas.height-cw,canvas.width,cw);
+      row=H-1;
+    }
+    const y=row*cw;
+    ctx.fillStyle="#12141a"; ctx.fillRect(0,y,canvas.width,cw);
+    for(const [i,mask] of S){
+      const x=i+half;
+      if(x>=0&&x<W){ ctx.fillStyle=cellColor(popc(mask)); ctx.fillRect(x*cw,y,cw,cw); }
+    }
+    row++;
+  }
+  return {
+    get t(){return t}, get S(){return S}, get W(){return W},
+    load(spec,m){ C=spec.C; mode=m||spec.mode;
+      const off=spec.at!==undefined?spec.at:(spec.dir>0?-(half-8):(half-8));
+      S=XN.seed(spec.seed.map(p=>[p[0]+off,p[1]]),C); clear(); drawRow(); },
+    tick(){ S=XN.step(S,C,mode); t++; drawRow(); },
+    gone(){ if(!S.size)return true;
+      let vis=false; for(const [i] of S){ if(i>=-half&&i<half)vis=true; }
+      return !vis; },
+  };
+}
+const GLIDERS=[
+ {name:"TANDEM-1", dir:1, mode:"parity",
+  C:{rules:[[0,-1,1],[0,-1,0]],targets:[[0,1],[0,1]],dim:1,mod:null},
+  seed:[[0,0],[0,1]],
+  laws:"A = (0,−1,1) → {A,B}   ·   B = (0,−1,0) → {A,B}   ·   seed: A and B in one cell   ·   period 1, speed 1",
+  cap:"<b>The minimal traveller: two laws standing in a single cell.</b> One enacts the pair one cell ahead; the other repeals the pair where it stands. Speed 1 &mdash; the fastest a packet can move &mdash; and it repeats every single step. The same constitution travels in <i>any</i> direction in the plane, knight&rsquo;s moves included, and revolves on <i>every</i> ring; the own-kind rotors of &sect;2 needed an even ring of six or more."},
+ {name:"SOLO", dir:1, mode:"parity",
+  C:{rules:[[0,1,0],[0,1,1],[0,1,0]],targets:[[1,2],[0],[0]],dim:1,mod:null},
+  seed:[[0,0]],
+  laws:"A = (0,1,0) → {B,C}   ·   B = (0,1,1) → {A}   ·   C = (0,1,0) → {A}   ·   seed: one A   ·   period 2, speed ½",
+  cap:"<b>One law, travelling forever.</b> Nothing here amends its own kind. The lone provision enacts two others onto its own cell; between them they re-enact it one cell along and clear the pair. Two steps per cell &mdash; the smallest moving object in the field, and a complete refutation of the idea that a statute book needs a legislature to move."},
+ {name:"DOUBLET", dir:-1, mode:"parity",
+  C:{rules:[[1,-1,1],[0,-1,-1]],targets:[[0,1],[0,1]],dim:1,mod:null},
+  seed:[[0,0],[0,1],[1,0],[1,1]],
+  laws:"A = (1,−1,1) → {A,B}   ·   B = (0,−1,−1) → {A,B}   ·   seed: both kinds in two adjacent cells   ·   period 1, speed 1 (leftward)",
+  cap:"<b>The caterpillar.</b> Two cells wide: the leading law enacts the pair one cell on, its partner repeals the pair at the trailing end. Enactment at the head, repeal at the tail, every step &mdash; the statute book crawls."},
+ {name:"TRIPTYCH", dir:1, mode:"parity",
+  C:{rules:[[0,1,0],[0,-1,1],[0,1,-1]],targets:[[0,1,2],[0,1,2],[0,1,2]],dim:1,mod:null},
+  seed:[[0,0],[0,1],[0,2],[1,0],[1,1],[1,2],[3,0],[3,1],[3,2]],
+  laws:"A = (0,1,0), B = (0,−1,1), C = (0,1,−1), each → {A,B,C}   ·   seed: all three kinds at cells 0, 1, 3   ·   period 1, speed 1",
+  cap:"<b>A packet that moves under one resolution convention and not the other.</b> Two of its kinds enact the same provision at the same instant, and the cancellation is load-bearing: switch the button above to <i>any-vote</i> and the traveller dies on the spot. In the own-kind system of chapter one the two conventions are provably the same dynamical system &mdash; here the convention decides whether the law can travel at all."},
+ {name:"QUADRILLE", dir:-1, mode:"parity",
+  C:{rules:[[0,1,0],[0,1,0],[0,1,-1],[0,1,-1]],targets:[[1,2],[0,3],[1,3],[0,2]],dim:1,mod:null},
+  seed:[[0,0],[0,1],[0,2],[0,3]],
+  laws:"A→{B,C}, B→{A,D}, C→{B,D}, D→{A,C}; A,B = (0,1,0), C,D = (0,1,−1)   ·   seed: all four kinds in one cell   ·   period 1, speed 1",
+  cap:"<b>Fully cross: not one law amends its own kind.</b> Four provisions in a single cell; two of them between them clear the cell, the other two re-enact all four one cell on. Nothing is self-referential anywhere in this constitution, and it still moves."},
+ {name:"PICKET PUFFER", dir:1, mode:"or", at:-60,
+  C:{rules:[[0,1,1],[0,-1,1]],targets:[[0,1],[0,1]],dim:1,mod:null},
+  seed:[[0,0],[5,1]],
+  laws:"A = (0,1,1) → {A,B}   ·   B = (0,−1,1) → {A,B}   ·   seed: A at 0, B at 5   ·   any-vote resolution",
+  cap:"<b>A puffer: a speed-1 front that leaves a periodic wake behind it.</b> The code grows by about 1.5 laws per step forever, laying down a repeating picket of legislation. Motion and growth at once &mdash; the first structure in the field that both travels and builds."},
+];
+const gw=constWidget(document.getElementById("cv4"),4);
+let gRunning=!reduceMotion, gPreset=0, gMode=null;
+const chips4=document.getElementById("chips4");
+GLIDERS.forEach((g,ix)=>{
+  const b=document.createElement("button"); b.textContent=g.name;
+  b.addEventListener("click",()=>selectGlider(ix));
+  chips4.appendChild(b);
+});
+const mode4=document.getElementById("mode4");
+function modeLabel(m){ return m==="or"?"any-vote":"tally"; }
+function selectGlider(ix){
+  gPreset=ix; gMode=GLIDERS[ix].mode;
+  [...chips4.children].forEach((b,i)=>b.classList.toggle("on",i===ix));
+  gw.load(GLIDERS[ix],gMode);
+  mode4.textContent=modeLabel(gMode);
+  document.getElementById("cap4").innerHTML=GLIDERS[ix].cap;
+  document.getElementById("laws4").textContent=GLIDERS[ix].laws;
+}
+selectGlider(0);
+const play4=document.getElementById("play4");
+play4.textContent=gRunning?"Pause":"Play";
+play4.addEventListener("click",()=>{gRunning=!gRunning; play4.textContent=gRunning?"Pause":"Play";});
+document.getElementById("step4").addEventListener("click",()=>{gw.tick(); stat4();});
+document.getElementById("reset4").addEventListener("click",()=>gw.load(GLIDERS[gPreset],gMode));
+mode4.addEventListener("click",()=>{
+  gMode=gMode==="or"?"parity":"or";
+  mode4.textContent=modeLabel(gMode);
+  mode4.classList.toggle("on",gMode!==GLIDERS[gPreset].mode);
+  gw.load(GLIDERS[gPreset],gMode);
+});
+function stat4(){
+  let n=0; for(const [,m] of gw.S)n+=popc(m);
+  document.getElementById("stat4").textContent="t = "+gw.t+"   laws in force = "+n;
+}
+
+/* ---------- §5 the two-chamber deadlock ---------- */
+const DEADLOCK={
+  C:{rules:[[0,1,1],[0,-1,-1],[0,1,0]],targets:[[2],[2],[2]],dim:1,mod:null},
+  seed:[[0,0],[2,1]], at:0, dir:1, mode:"parity"};
+const dwA=constWidget(document.getElementById("cv5a"),6);
+const dwB=constWidget(document.getElementById("cv5b"),6);
+function dReset(){ dwA.load(DEADLOCK,"parity"); dwB.load(DEADLOCK,"or"); }
+dReset();
+
 /* ---------- main loop ---------- */
 let frame=0;
 function loop(){
   frame++;
   if(!reduceMotion&&frame%3===0)heroLoop();
+  if(gRunning&&frame%2===0){
+    gw.tick(); if(gw.gone())gw.load(GLIDERS[gPreset],gMode);
+    stat4();
+  }
+  if(!reduceMotion&&frame%6===0){
+    dwA.tick(); dwB.tick();
+    if(dwB.t>44)dReset();
+  }
   if(sbRunning){
     const sp=+document.getElementById("speed1").value;
     const per=sp<=4?[8,6,4,2][sp-1]||2:1, reps=sp>4?sp-4:1;
@@ -531,9 +857,11 @@ function loop(){
   requestAnimationFrame(loop);
 }
 if(reduceMotion){
-  /* draw a filled static band for the hero instead of animating */
+  /* draw filled static bands instead of animating */
   for(let i=0;i<120;i++)hero.tick();
-  drawRing(); drawJ(); drawChart();
+  for(let i=0;i<62;i++)gw.tick();
+  for(let i=0;i<28;i++){dwA.tick(); dwB.tick();}
+  drawRing(); drawJ(); drawChart(); stat4();
 }
 requestAnimationFrame(loop);
 </script>

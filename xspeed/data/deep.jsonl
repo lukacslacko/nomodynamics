@@ -1,0 +1,11 @@
+{"label": "n3 W1 N16 p4 d3 parity", "status": "UNSAT", "secs": 8.86, "n": 3, "W": 1, "N": 16, "p": 4, "d": 3, "mode": "parity", "nv": 3595, "nc": 11976}
+{"label": "n3 W1 N16 p6 d5 parity", "status": "UNSAT", "secs": 11.57, "n": 3, "W": 1, "N": 16, "p": 6, "d": 5, "mode": "parity", "nv": 5339, "nc": 17824}
+{"label": "n3 W1 N16 p5 d4 parity", "status": "UNSAT", "secs": 16.73, "n": 3, "W": 1, "N": 16, "p": 5, "d": 4, "mode": "parity", "nv": 4467, "nc": 14900}
+{"label": "n3 W1 N16 p5 d3 parity", "status": "UNSAT", "secs": 29.25, "n": 3, "W": 1, "N": 16, "p": 5, "d": 3, "mode": "parity", "nv": 4467, "nc": 14900}
+{"label": "n3 W1 N16 p7 d5 parity", "status": "UNSAT", "secs": 33.43, "n": 3, "W": 1, "N": 16, "p": 7, "d": 5, "mode": "parity", "nv": 6211, "nc": 20748}
+{"label": "n3 W1 N16 p8 d5 parity", "status": "UNSAT", "secs": 75.0, "n": 3, "W": 1, "N": 16, "p": 8, "d": 5, "mode": "parity", "nv": 7083, "nc": 23672}
+{"label": "n3 W1 N16 p7 d4 parity", "status": "UNSAT", "secs": 97.52, "n": 3, "W": 1, "N": 16, "p": 7, "d": 4, "mode": "parity", "nv": 6211, "nc": 20748}
+{"label": "n3 W1 N16 p9 d5 parity", "status": "UNSAT", "secs": 172.17, "n": 3, "W": 1, "N": 16, "p": 9, "d": 5, "mode": "parity", "nv": 7955, "nc": 26596}
+{"label": "n3 W1 N16 p7 d3 parity", "status": "UNSAT", "secs": 305.42, "n": 3, "W": 1, "N": 16, "p": 7, "d": 3, "mode": "parity", "nv": 6211, "nc": 20748}
+{"label": "n3 W1 N16 p8 d3 parity", "status": "UNSAT", "secs": 507.74, "n": 3, "W": 1, "N": 16, "p": 8, "d": 3, "mode": "parity", "nv": 7083, "nc": 23672}
+{"label": "n3 W1 N16 p9 d4 parity", "status": "UNSAT", "secs": 528.76, "n": 3, "W": 1, "N": 16, "p": 9, "d": 4, "mode": "parity", "nv": 7955, "nc": 26596}

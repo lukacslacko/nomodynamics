@@ -155,6 +155,9 @@ def main(suf="8_parity"):
     print("  (e) balance: seeds already balanced vs seeds that REACH balance:")
     tb = sum(d["balanced"] for d in rows)
     t0 = sum(d.get("balanced0", 0) for d in rows)
+    if tb == 0:
+        print("      no balanced verdicts in this resolution (Dead Letter holds)")
+        return
     print("      %d balanced verdicts, of which %d were balanced at t=0 "
           "(%.1f%%) and %d CONVERGED to balance (%.1f%%)"
           % (tb, t0, 100.0 * t0 / tb, tb - t0, 100.0 * (tb - t0) / tb))

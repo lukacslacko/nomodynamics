@@ -13,6 +13,7 @@ from xa2d import (Const, MOORE, OFF, state, classify, card, active,
 
 OFFIDX = {OFF[c]: i for i, c in enumerate("OEWNSPQRT")}
 IDXOFF = [OFF[c] for c in "OEWNSPQRT"]
+EXE = "./xcensus2"
 VMAP = {"extinct": EXTINCT, "fixed": FIXED, "balanced": BALANCED,
         "cycle": CYCLE, "glider": GLIDER, "escape": GROWING,
         "unres": UNRESOLVED}
@@ -49,8 +50,8 @@ def main(N=3000, steps=200, seed=1):
             parts += [str(x), str(y), str(k)]
         lines.append(" ".join(parts))
 
-    for sem, semname in ((0, "parity"), (1, "or")):
-        out = subprocess.run(["./xcensus", "--mode", "9", "--sem", str(sem),
+    for sem, semname in ((0, "parity"), (1, "or"), (2, "super"), (3, "super_or")):
+        out = subprocess.run([EXE, "--mode", "9", "--sem", str(sem),
                               "--steps", str(steps), "--maxcard", "900"],
                              input="\n".join(lines) + "\n",
                              capture_output=True, text=True).stdout.split("\n")

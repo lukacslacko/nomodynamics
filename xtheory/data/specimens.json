@@ -543,6 +543,87 @@
   },
   "certified": true
  },
+ "COH-6  the six-fold co-signature": {
+  "rules": [
+   [
+    0,
+    -1,
+    1
+   ],
+   [
+    0,
+    -1,
+    1
+   ],
+   [
+    0,
+    -1,
+    1
+   ],
+   [
+    0,
+    1,
+    -1
+   ],
+   [
+    0,
+    1,
+    -1
+   ],
+   [
+    0,
+    1,
+    -1
+   ],
+   [
+    0,
+    1,
+    0
+   ]
+  ],
+  "targets": [
+   [
+    6
+   ],
+   [
+    6
+   ],
+   [
+    6
+   ],
+   [
+    6
+   ],
+   [
+    6
+   ],
+   [
+    6
+   ],
+   [
+    6
+   ]
+  ],
+  "seed": [
+   [
+    0,
+    7
+   ],
+   [
+    2,
+    56
+   ]
+  ],
+  "mode": "parity",
+  "verdict": {
+   "kind": "BALANCED",
+   "t": 0,
+   "period": 1,
+   "active": 6,
+   "card": 6
+  },
+  "certified": true
+ },
  "BAL-RICH  a large balanced constitution": {
   "rules": [
    [

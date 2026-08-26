@@ -301,7 +301,9 @@ def s_dead_letter():
         tot_s += b
     claim("exact balance count = closed form (run-starts must be doubled)",
           all(a == b for _, a, b in per),
-          "per span %s ; total span<=8 = %d (census says 49024)" % (per, tot_s))
+          "balanced-at-t0 per span %s ; total 1..8 = %d "
+          "(the C census counts 49024 balanced VERDICTS for this constitution, "
+          "i.e. 42496 seeds CONVERGE to balance)" % (per, tot_s))
 
 
 # ================================================== 4. ANCHOR & CONFINEMENT

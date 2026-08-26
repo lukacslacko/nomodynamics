@@ -1,0 +1,13 @@
+m=9   hits=0    (p,rot) seen: []   [32 calls, 1s]
+m=15  hits=4    (p,rot) seen: [(1, 5), (1, 10)]   [64 calls, 3s]
+m=21  hits=4    (p,rot) seen: [(1, 7), (1, 14)]   [96 calls, 10s]
+m=25  hits=0    (p,rot) seen: []   [128 calls, 20s]
+m=27  hits=4    (p,rot) seen: [(1, 9), (1, 18)]   [160 calls, 30s]
+m=33  hits=4    (p,rot) seen: [(1, 11), (1, 22)]   [192 calls, 49s]
+m=35  hits=0    (p,rot) seen: []   [224 calls, 93s]
+
+m=15 minimal-p witness:
+    m=15  p=1 rot=5   laws=12  barber-pole   cert=True  |#X.Y.#..Y.#X.YX|
+      t=0 |#X.Y.#..Y.#X.YX|
+      t=1 |#X.YX#X.Y.#..Y.|
+      t=2 |#..Y.#X.YX#X.Y.|

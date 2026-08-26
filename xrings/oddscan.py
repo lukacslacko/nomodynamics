@@ -5,7 +5,7 @@ import sys, time
 from oddrotor import find, report
 PAIRS = [((1,-1,0),(0,1,-1)), ((1,-1,-1),(0,-1,1)),
          ((0,1,-1),(-1,1,1)), ((0,-1,1),(-1,1,0))]
-MS = [9, 15, 21, 25, 27, 33, 35, 39, 45]
+MS = [9, 15, 21, 25, 27, 33, 35]
 hits = {}
 t0=time.time(); calls=0
 for m in MS:
@@ -14,7 +14,7 @@ for m in MS:
         for rules in ((r1,r2),(r2,r1)):
             for tg in ([1,0],[0,0]):
                 for mode in ("parity","or"):
-                    for p in (1,2):
+                    for p in (1,):
                         calls += 1
                         w = find(list(rules), tg, mode, m, p, list(range(1,m)))
                         if w: got.append((p, w[0], rules, tuple(tg), mode, w[1]))

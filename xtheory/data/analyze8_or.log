@@ -1,0 +1,60 @@
+== symmetry quotient ==
+constitutions 2916 -> orbits 757 ; orbit-size histogram {2: 53, 4: 702, 1: 2}
+census vector constant on every orbit: True (0 violations)
+
+== aggregate census (8_or, 2916 constitutions x 49152 seeds = 143327232 runs) ==
+  extinct         266574    0.19%
+  fixed         85330564   59.54%
+  balanced             0    0.00%
+  cycle         42363956   29.56%
+  glider               0    0.00%
+  growing       15366138   10.72%
+  unresolved           0    0.00%
+
+== by target map ==
+  target map            extinct    fixed balanced    cycle   glider  growing unresolved
+  const-0 (both->0)       0.02%   59.17%    0.00%   30.50%    0.00%   10.31%    0.00%
+  id (own-kind)           0.42%   61.82%    0.00%   18.88%    0.00%   18.89%    0.00%
+  swap (reciprocal)       0.29%   57.98%    0.00%   38.36%    0.00%    3.38%    0.00%
+  const-1 (both->1)       0.02%   59.17%    0.00%   30.50%    0.00%   10.31%    0.00%
+  (raw counts, id)       150586 22150120        0  6763998        0  6767104        0
+
+== period spectrum (from the per-constitution period bitmask) ==
+  const-0 (both->0)    [2, 4, 6, 8, 12, 16, 18]
+  id (own-kind)        [2, 4, 6, 8]
+  swap (reciprocal)    [2, 4, 6, 8, 12, 16, 18, 30]
+  const-1 (both->1)    [2, 4, 6, 8, 12, 16, 18]
+  ALL                  [2, 4, 6, 8, 12, 16, 18, 30]   (max period seen: 30)
+  runs with non-power-of-2 period: 46640
+
+== interesting residue ==
+  constitutions with a GLIDER          : 0
+  constitutions with an UNRESOLVED seed: 0 (total 0 seeds)
+  constitutions with a BALANCED seed   : 0 (total 0 seeds, max active 0)
+  constitutions with a non-2-power p   : 28
+      0:(-1,1,0)->1 1:(0,-1,1)->0  n=5592  periodmask=[2, 4, 6, 8, 12, 18, 30]
+      0:(-1,1,0)->1 1:(0,-1,1)->1  n=5592  periodmask=[2, 4, 6, 8, 12, 18]
+      0:(0,-1,1)->1 1:(-1,1,0)->0  n=5592  periodmask=[2, 4, 6, 8, 12, 18, 30]
+      0:(0,-1,1)->0 1:(-1,1,0)->0  n=5592  periodmask=[2, 4, 6, 8, 12, 18]
+      0:(0,1,-1)->1 1:(1,-1,0)->0  n=5592  periodmask=[2, 4, 6, 8, 12, 18, 30]
+      0:(0,1,-1)->0 1:(1,-1,0)->0  n=5592  periodmask=[2, 4, 6, 8, 12, 18]
+      0:(1,-1,0)->1 1:(0,1,-1)->0  n=5592  periodmask=[2, 4, 6, 8, 12, 18, 30]
+      0:(1,-1,0)->1 1:(0,1,-1)->1  n=5592  periodmask=[2, 4, 6, 8, 12, 18]
+  longest transient: 18
+      0:(-1,1,-1)->0 1:(0,-1,1)->1  transient=18
+      0:(0,-1,1)->0 1:(-1,1,-1)->1  transient=18
+      0:(0,1,-1)->0 1:(1,-1,1)->1  transient=18
+      0:(1,-1,1)->0 1:(0,1,-1)->1  transient=18
+      0:(0,-1,0)->1 1:(0,-1,0)->0  transient=16
+  extinction champions:
+      0:(0,-1,0)->0 1:(0,-1,0)->1  extinct=49152/49152
+      0:(0,-1,0)->1 1:(0,-1,0)->0  extinct=49152/49152
+      0:(0,1,0)->0 1:(0,1,0)->1  extinct=49152/49152
+      0:(0,1,0)->1 1:(0,1,0)->0  extinct=49152/49152
+      0:(-1,1,0)->0 1:(0,1,0)->1  extinct=6528/49152
+  balance champions:
+      0:(-1,-1,-1)->0 1:(-1,-1,-1)->1  balanced=0/49152 maxactive=0
+      0:(-1,-1,-1)->1 1:(-1,-1,-1)->0  balanced=0/49152 maxactive=0
+      0:(-1,-1,-1)->0 1:(-1,-1,-1)->0  balanced=0/49152 maxactive=0
+      0:(-1,-1,-1)->1 1:(-1,-1,-1)->1  balanced=0/49152 maxactive=0
+      0:(-1,-1,-1)->0 1:(-1,-1,0)->1  balanced=0/49152 maxactive=0
