@@ -8,7 +8,7 @@ and the repository's `xnomos.py` (dict of cell -> bitmask).  Every positive
 claim below is a machine-checked witness re-verified by the other engine or by
 an independent closed form.
 
-    python3 verify_citation.py          # ~1-2 minutes
+    python3 verify_citation.py          # ~20 min on a quiet machine
     python3 verify_citation.py -q       # summary only
 """
 
@@ -265,6 +265,43 @@ def t6():
     return True, "3,000 random universes"
 
 
+@check("T7  heterogeneous solid regions: blocked <=> h_k = ANY or dead letter")
+def t7():
+    """The parenthetical of RESULTS.md 3.1, checked exhaustively at W = 1."""
+    tested = 0
+    for n in (2, 3):
+        full = (1 << n) - 1
+
+        def act(k, rule, guard, mm1, m0, mp1):
+            a, b, _ = rule
+            g, h = guard
+            cells = {-1: mm1, 0: m0, 1: mp1}
+            ma, mb = cells[a], cells[b]
+            prec = (ma != 0) if g is None else ((ma >> g) & 1)
+            exc = (mb != 0) if h is None else ((mb >> h) & 1)
+            return bool(prec) and not exc
+
+        for rule in ct.RULES:
+            for g in [None] + list(range(n)):
+                for h in [None] + list(range(n)):
+                    for k in range(n):
+                        solid_blocked = True
+                        ever = False
+                        for m0 in range(1, full + 1):
+                            if not (m0 >> k) & 1:
+                                continue
+                            for mm1 in range(0, full + 1):
+                                for mp1 in range(0, full + 1):
+                                    if act(k, rule, (g, h), mm1, m0, mp1):
+                                        ever = True
+                                        if mm1 and mp1:
+                                            solid_blocked = False
+                        if solid_blocked != ((h is None) or (not ever)):
+                            return False, (n, rule, g, h, k)
+                        tested += 1
+    return True, "%d (kind, rule, guard) cases, n = 2 and 3, exhaustive" % tested
+
+
 # --------------------------------------------- chapter-two survival theorems
 
 @check("S1  SINGLE AUTHOR: in-degree <= 1 => parity == OR, under citation")
@@ -443,6 +480,31 @@ def s8():
     return True, "m = 3..24, odd and even, r=1 <= p*W=1 (inside the light cone)"
 
 
+@check("S9  SUNSET + citation: every reported glider re-certifies")
+def s9():
+    rng = random.Random(19)
+    n_gl = 0
+    K = ct.all_kinds(2)
+    seeds = ct.seeds_span(3, 2)
+    for _ in range(300):
+        k1, k2 = K[rng.randrange(len(K))], K[rng.randrange(len(K))]
+        C = ct.Cit([k1[0], k2[0]], [k1[1], k2[1]], [k1[2], k2[2]])
+        for s in seeds:
+            for mode in ("parity", "or"):
+                r = ct.classify_sunset(list(s), C, mode, max_steps=200,
+                                       max_card=200, max_span=120)
+                if r["kind"] != ct.GLIDER:
+                    continue
+                core = list(s)
+                for _ in range(r["t"]):
+                    core = ct.step_sunset(core, C, mode)
+                if not ct.verify_glider_sunset(core, C, r["period"],
+                                               r["displacement"], mode):
+                    return False, C.label()
+                n_gl += 1
+    return True, "%d sunset gliders re-certified over 3 full periods" % n_gl
+
+
 # ---------------------------------------------------------------- specimens
 
 @check("F1  LACUNA: Phi = rot_(+1) on Z/m, occupancy constant, both engines")
@@ -564,6 +626,61 @@ def f7():
     return True, "15 steps, occupancy constant, seam speed exactly 1"
 
 
+@check("F8  THE LEDGER: card 5 and reach 2^j+3 at every t = 4^j, exactly")
+def f8():
+    head = {(0, 0), (0, 1), (2, 1)}
+    F = ct.state_fields(sp.LEDGER_SEED, 2)
+    hits = 0
+    for t in range(1, 4 ** 8 + 1):
+        F = ct.step_fields(F, sp.LEDGER, "parity")
+        b = t.bit_length() - 1
+        if t >= 4 and (t & (t - 1)) == 0 and b % 2 == 0:
+            j = b // 2
+            if set(ct.fields_to_pairs(F)) != head | {(2 ** j + 2, 0),
+                                                     (2 ** j + 2, 1)}:
+                return False, j
+            hits += 1
+    return True, "j = 1..8 exact (t up to 65,536); head + doubling marker"
+
+
+@check("F9  THE LEDGER is aperiodic: no exact recurrence in 400,000 steps")
+def f9():
+    F = ct.state_fields(sp.LEDGER_SEED, 2)
+    seen = set()
+    lo = hi = None
+    for t in range(400000):
+        fe = tuple(F)
+        if fe in seen:
+            return False, t
+        seen.add(fe)
+        c = ct.card_fields(F)
+        lo = c if lo is None else min(lo, c)
+        hi = c if hi is None else max(hi, c)
+        F = ct.step_fields(F, sp.LEDGER, "parity")
+    return True, "400,000 fully hashed states, card in [%d,%d] (bounded)" % (lo, hi)
+
+
+@check("F10 THE ODOMETER shares the head-plus-marker form at t = 4^j")
+def f10():
+    V = {"O": (0, 0), "E": (1, 0), "W": (-1, 0), "N": (0, -1), "S": (0, 1),
+         "P": (1, -1), "Q": (-1, -1), "R": (1, 1), "T": (-1, 1)}
+    C = X.Const([tuple(V[c] for c in "OEW"), tuple(V[c] for c in "NQR")],
+                targets=[(1,), (0, 1)], dim=2)
+    head = {((0, 0), 0), ((1, 0), 0), ((0, 1), 1)}
+    S = X.state_of([((0, 0), 0), ((1, 0), 0), ((0, 1), 1)])
+    n = 0
+    for t in range(1, 4 ** 7 + 1):
+        S = X.step(S, C)
+        b = t.bit_length() - 1
+        if t >= 4 and (t & (t - 1)) == 0 and b % 2 == 0:
+            j = b // 2
+            if set((c, k) for c, k in X.laws(S)) != head | {
+                    ((0, 3 * 2 ** (j - 1)), 1)}:
+                return False, j
+            n += 1
+    return True, "j = 1..7 exact, root-compass reading (verify.py's own off())"
+
+
 # -------------------------------------------------------------- the machine
 
 @check("M1  gate inventory: BUFFER NOT ANDNOT AND XOR OR FANOUT, 7/7")
@@ -657,6 +774,25 @@ def c2():
             elif tally != base:
                 return False, C.label()
     return True, "120 orbits; class multiset constant on every orbit"
+
+
+@check("C3  every census glider record re-certifies from its glider core")
+def c3():
+    import census
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "data", "gliders1.txt")
+    if not os.path.exists(path):
+        return True, "SKIPPED (data/gliders1.txt absent; run census.py stage1)"
+    n = 0
+    for line in open(path):
+        a = line.split()
+        C = census.const_of(int(a[0]), int(a[1]))
+        S = census.SEEDS[int(a[2])]
+        res, core, ok = ct.certify_glider(list(S), C, a[3], **census.S1)
+        if not ok:
+            return False, C.label()
+        n += 1
+    return True, "%d records, Phi^p = sigma^d over three full periods" % n
 
 
 if __name__ == "__main__":

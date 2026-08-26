@@ -11,11 +11,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from t4_verify import row_ring, row_state
 from t4_ring import rotor_certificate, verify_rotation_recurrence, verify_via_xnomos
 from t4_lift import lift_report
+from t4_analyze import opener
 
 paths = sys.argv[1:]
 rows = []
 for p in paths:
-    rows += [json.loads(l) for l in open(p)]
+    rows += [json.loads(l) for l in opener(p)]
 rng = random.Random(11)
 lc = [r for r in rows if r["lc"]]
 rest = [r for r in rows if not r["lc"]]

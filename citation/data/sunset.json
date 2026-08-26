@@ -1,0 +1,109 @@
+{
+ "box_sample": {
+  "label": "SUNSET, 40k random sample of the box",
+  "constitutions": 40000,
+  "runs": 3840000,
+  "classes": {
+   "EXTINCT": 3294421,
+   "FIXED": 171540,
+   "GLIDER": 357354,
+   "GROWING": 12236,
+   "UNRESOLVED": 24,
+   "CYCLE": 4425
+  },
+  "glider_bearing": 5246,
+  "glider_bearing_pct": 13.115,
+  "certified_gliders": 357354,
+  "speeds": [
+   0.25,
+   0.3333333333333333,
+   0.5,
+   0.6666666666666666,
+   0.75,
+   1.0
+  ],
+  "spectrum": {
+   "1,-1": 171712,
+   "1,1": 171162,
+   "2,1": 4358,
+   "2,-1": 4071,
+   "2,-2": 2309,
+   "2,2": 2156,
+   "3,3": 480,
+   "3,-3": 424,
+   "4,-2": 182,
+   "4,2": 144,
+   "3,2": 134,
+   "4,3": 127
+  }
+ },
+ "occupancy_corner": {
+  "label": "SUNSET + occupancy guards (COMPLETE)",
+  "constitutions": 11664,
+  "runs": 1119744,
+  "classes": {
+   "EXTINCT": 939100,
+   "GLIDER": 116892,
+   "FIXED": 57160,
+   "GROWING": 4608,
+   "CYCLE": 1984
+  },
+  "glider_bearing": 1692,
+  "glider_bearing_pct": 14.506172839506172,
+  "certified_gliders": 116892,
+  "speeds": [
+   0.5,
+   1.0
+  ],
+  "spectrum": {
+   "1,-1": 55852,
+   "1,1": 55852,
+   "2,-1": 1330,
+   "2,1": 1330,
+   "2,-2": 720,
+   "2,2": 720,
+   "3,-3": 368,
+   "3,3": 368,
+   "4,-2": 176,
+   "4,2": 176
+  }
+ },
+ "citing_matched": {
+  "label": "SUNSET + citation (matched sample)",
+  "constitutions": 11664,
+  "runs": 1119744,
+  "classes": {
+   "EXTINCT": 956416,
+   "GLIDER": 104483,
+   "FIXED": 53863,
+   "GROWING": 3112,
+   "CYCLE": 1862,
+   "UNRESOLVED": 8
+  },
+  "glider_bearing": 1515,
+  "glider_bearing_pct": 12.988683127572017,
+  "certified_gliders": 104483,
+  "speeds": [
+   0.25,
+   0.3333333333333333,
+   0.5,
+   0.6666666666666666,
+   0.75,
+   1.0
+  ],
+  "spectrum": {
+   "1,1": 50845,
+   "1,-1": 49353,
+   "2,-1": 1239,
+   "2,1": 1155,
+   "2,-2": 710,
+   "2,2": 701,
+   "4,2": 138,
+   "3,-3": 96,
+   "3,1": 49,
+   "4,-2": 48,
+   "3,3": 48,
+   "3,2": 38
+  }
+ }
+}

@@ -591,6 +591,51 @@ def impermanence():
           obs == want, "tau = 1..12, displacement fixed at 2, period = tau+1")
 
 
+def replication():
+    """Chapter six: codes that copy themselves (replication/RESULTS.md)."""
+    print("\nself-replication")
+
+    # THE SPLIT DECISION: true binary fission -- the parent does not survive.
+    SPLIT = Const([((0, 0), (-1, -1), (0, -1)), ((0, 0), (1, 0), (0, 1))],
+                  [(0, 1), (0, 1)], dim=2, guards=[(1, 0), (1, None)])
+    S0 = state_of([((0, 0), 0), ((0, 0), 1), ((2, 0), 0), ((2, 0), 1)])
+    X = dict(S0)
+    for _ in range(2):
+        X = step(X, SPLIT, "or")
+    want = {}
+    for (x, y), m in S0.items():
+        want[(x, y - 2)] = want.get((x, y - 2), 0) | m
+        want[(x, y + 2)] = want.get((x, y + 2), 0) | m
+    fission = X == want and all(c not in X for c in S0)
+    X, counts = dict(S0), []
+    for tt in range(1, 41):
+        X = step(X, SPLIT, "or")
+        if tt % 2 == 0:
+            counts.append(card(X) // 4)
+    check("THE SPLIT DECISION: binary fission, the parent does not survive",
+          fission and counts == [i + 1 for i in range(1, 21)],
+          "exactly t/2+1 free exact copies at every even t")
+
+    # THE ENGROSSMENT: replication in the FOUNDING semantics -- occupancy
+    # guards, parity, no citation anywhere.
+    ENG = Const([((0, -1), (-1, 1), (1, 1)), ((0, -1), (0, 1), (1, 0))],
+                [(0, 1), (0, 1)], dim=2)
+    E0 = state_of([((0, 0), 0), ((0, 0), 1), ((0, 1), 0), ((0, 1), 1)])
+    X = dict(E0)
+    for _ in range(4):
+        X = step(X, ENG, "parity")
+    want = dict(E0)
+    for (x, y), m in E0.items():
+        want[(x + 4, y + 4)] = want.get((x + 4, y + 4), 0) | m
+    okE = X == want
+    X = dict(E0)
+    for tt in range(1, 125):
+        X = step(X, ENG, "parity")
+    check("THE ENGROSSMENT: self-replication in the founding semantics",
+          okE and card(X) // 4 == 2 ** bin(124 // 4).count("1"),
+          "Phi^4(S) = S + shift(4,4); copies = 2^popcount(t/4)")
+
+
 def computation():
     """Chapter five: the field computes (computation/RESULTS.md)."""
     print("\ncomputation")
@@ -694,6 +739,7 @@ def main():
     chapter1_jubilee()
     chapter2()
     impermanence()
+    replication()
     computation()
     print("\n%d checks passed, %d failed" % (len(PASS), len(FAIL)))
     if FAIL:

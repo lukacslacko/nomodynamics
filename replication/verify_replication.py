@@ -54,6 +54,10 @@ MOOT_SEED = state_of([((0, 0), 0), ((0, 0), 1), ((2, 0), 0), ((2, 0), 1)])
 PASCAL = Const([(O, E, N)], dim=2)
 PASCAL_SEED = state_of([((0, 0), 0)])
 
+SPLIT = Const([((0, 0), (-1, -1), (0, -1)), ((0, 0), (1, 0), (0, 1))],
+              [(0, 1), (0, 1)], dim=2, guards=[(1, 0), (1, None)])
+SPLIT_SEED = state_of([((0, 0), 0), ((0, 0), 1), ((2, 0), 0), ((2, 0), 1)])
+
 QUORUM = Const([((-1, -1), (0, -1), (1, -1)),
                 ((0, 0), (0, -1), (1, -1))], [(0, 1), (0, 1)], dim=2)
 QUORUM_SEED = state_of([((0, 0), 1), ((1, 1), 0)])
@@ -227,6 +231,27 @@ def main():
             for r in frame2d(S, (-1, 7, -1, 6)):
                 print("        " + r)
             S = step(S, C, "parity")
+
+    sec("4a. THE SPLIT DECISION — p=2 binary fission, monotone colony")
+    ok7, info = certify(SPLIT_SEED, SPLIT, "or", 2, [(0, -2), (0, 2)])
+    check("Phi^2(S) = sigma^(0,-2)S u sigma^(0,2)S, gap %s, debris %s -- the "
+          "parent does NOT survive" % (info.get("gaps"), info.get("debris")),
+          ok7 and info["exact"])
+    P = to_p(SPLIT_SEED)
+    for _ in range(2):
+        P = pstep(P, SPLIT, "or")
+    check("independent engine: exact equality",
+          P == to_p(shift(SPLIT_SEED, (0, -2), 2)) |
+          to_p(shift(SPLIT_SEED, (0, 2), 2)))
+    ev = exact_events(SPLIT, SPLIT_SEED, "or", 198)
+    check("at EVERY even t the state is exactly t/2+1 free copies "
+          "(max %d at t=198)" % max(c for _, c, _ in ev),
+          all(c == t // 2 + 1 for t, c, _ in ev) and
+          len(ev) == 99 and max(c for _, c, _ in ev) == 100)
+    f, t = split_fail(SPLIT, SPLIT_SEED, "or", 2)
+    check("superposition fails for %d of %d splittings" % (f, t), f > 0)
+    check("the constitution CITES kinds %s" % sorted(SPLIT.cites()),
+          SPLIT.cited)
 
     sec("4b. THE QUORUM — the minimal non-additive replicator, 2 placed laws")
     ok6, info = certify(QUORUM_SEED, QUORUM, "super_or", 4, [(0, 0), (4, -4)])

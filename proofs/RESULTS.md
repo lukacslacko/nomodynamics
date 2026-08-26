@@ -45,7 +45,7 @@ theorems for **every** k, not just the sixteen measured. The grading's max half
 is a theorem for every w; its **min half as published is a box artefact of
 `t < 2^17` and is corrected here.***
 
-Certificates: `python3 proofs/t1_jubilee.py --deep` — 27/27, complete over
+Certificates: `python3 proofs/t1_jubilee.py --deep` — 29/29, complete over
 `t < 2^17` against `xnomos.step` on the original 2-D specimen.
 
 ### 1.1 The specimen and the reduction to a ray *[established]*
@@ -189,7 +189,9 @@ M_n  {0}   {1}   {2}  {0,1,2}  {3}  {4}  {0,3,4}  {1,3,4}  {2,3,4}  {0..4}   {5}
 
 *Certificate*: `y_n(t) = f_{M_n}(t)` for all `n < 200` and all `t < 2^13`
 (1 638 400 bit identities, complete box); Lemma 1.4 on every `M ⊆ [0,6]` with
-`|M| ≤ 4` over `t < 2^10` (99 sets × 1024, complete box); the closed form against
+over `t < 2^10` (all 512 subsets × 1024 = 524 288 identities, complete box, and
+the referee's independent run widened it to all 512 subsets × `t < 2^12`); the
+closed form against
 `xnomos.step` for every `t < 2^17` (complete box).
 
 ### 1.3 The block structure *[established]*
@@ -216,9 +218,15 @@ since `M_{N_j−2} ⊆ [0,2j]`), and
 For (3) use the *shift rule*: **if `M ⊆ [0,2j]` and `M ≠ [0,2j]` then
 `σ(M ∪ Q_j) = σ(M) ∪ Q_j`** — because then `q = mex(M) ≤ 2j`, so
 `mex(M ∪ Q_j) = q` as well, and `Q_j` sits entirely above `q`. Now
-`M_{N_j+2} = σ({2j+2} ∪ {2j+1}) = σ(∅ ∪ Q_j) = {0} ∪ Q_j = M_0 ∪ Q_j`, and
-`M_{N_j+3} = σ((M_0∪Q_j) ∪ {2j+2}) = σ(M_0 ∪ Q_j) = σ(M_0) ∪ Q_j = M_1 ∪ Q_j`;
-for `2 ≤ i < N_j`,
+`M_{N_j+2} = σ({2j+2} ∪ {2j+1}) = σ(∅ ∪ Q_j) = {0} ∪ Q_j = M_0 ∪ Q_j`, which is
+clause (3) for `i = 0`. **If `j = 0` then `N_0 = 1` and `i = 0` is the only case,
+so we are done**; the next two lines are for `j ≥ 1`, where `N_j ≥ 4`. (The
+restriction is not cosmetic: at `j = 0` the line below would read
+`M_4 = M_1 ∪ Q_0 = {1,2}`, and in fact `M_4 = {3}` — the shift rule's hypothesis
+`M ⊊ [0,2j]` fails for `M = M_0 = {0} = [0,0]`.) For `i = 1`,
+`M_{N_j+3} = σ((M_0∪Q_j) ∪ {2j+2}) = σ(M_0 ∪ Q_j) = σ(M_0) ∪ Q_j = M_1 ∪ Q_j`,
+the shift rule applying because `M_0 = {0} ⊊ [0,2j]` once `j ≥ 1`; and for
+`2 ≤ i < N_j`,
 `M_{N_j+2+i} = σ((M_{i−1}∪M_{i−2}) ∪ Q_j) = σ(M_{i−1}∪M_{i−2}) ∪ Q_j = M_i ∪ Q_j`,
 the shift rule applying because `M_{i−1}∪M_{i−2} = [0,2j]` would force
 `M_i = {2j+1} ⊄ [0,2j]`, contradicting (1). Finally
@@ -231,10 +239,22 @@ Two consequences used below.
 > `n ∈ {0} ∪ {N_j, N_j+1 : j ≥ 0}`, and then `M_0 = {0}`, `M_{N_j} = {2j+1}`,
 > `M_{N_j+1} = {2j+2}`. **Every `k ≥ 0` occurs as `M_n = {k}` for exactly one `n`.**
 
+*Proof.* Every index other than `0`, `N_j`, `N_j+1` is of the form `N_j+2+i` with
+`0 ≤ i < N_j`, and then `M_n = M_i ∪ Q_j` has at least `1 + 2 = 3` elements (the
+`M_i` are non-empty and disjoint from `Q_j ⊆ [2j+1, 2j+2]`). The listed indices
+give the singletons `{0}`, `{2j+1}`, `{2j+2}` — i.e. each `k ≥ 0` exactly once
+(`k = 0` from `M_0`; `k = 2j+1` from `M_{N_j}`; `k = 2j+2` from `M_{N_j+1}`). ∎
+
 > **Corollary 1.9 (initial segments).** `{n : M_n ⊆ [0,K]} = [0, A(K))` where
 > ```
 > A(−1) = 0,   A(2j) = N_j = 3·2^j − 2,   A(2j+1) = N_j + 1 = 3·2^j − 1.
 > ```
+
+*Proof.* By Theorem 1.7(1), `M_n ⊆ [0,2j]` for every `n < N_j`; and every
+`n ≥ N_j` has `M_n ∩ [2j+1, 2j+2] ≠ ∅` (`{2j+1}`, `{2j+2}`, or a copy containing
+`Q_j` — and for `n ≥ N_{j+1}` induct). So `{n : M_n ⊆ [0,2j]} = [0, N_j)`, and
+`{n : M_n ⊆ [0,2j+1]}` adds exactly the index `N_j`, whose monomial is `{2j+1}`.
+Both sets are initial segments. ∎
 
 ### 1.4 The three laws
 
@@ -268,9 +288,11 @@ the state is the frame plus `WNE@(0,1)` and `WNE@(m_k+1, 1)`, so the
 > `3·2^{(k−2)/2}` (even `k`)** — `1, 2, 3, 5, 6, 11, 12, 23, 24, 47, 48, 95, 96,
 > 191, …` — engine-verified for `k = 0..14`,
 
-and the crest is `3·2^{⌊(k−1)/2⌋} + O(1) ≍ 1.5·√t`, doubling every *second* power
-of two exactly because the substitution of Theorem 1.7 consumes **two** new bits
-per doubling.
+and the crest is `3·2^{⌊(k−1)/2⌋} + O(1) = Θ(√t)` — precisely,
+`|S_{2^k−1}| / 2^{k/2}` oscillates between `3/2 = 1.5` (even `k`) and
+`3/√2 ≈ 2.12` (odd `k`), doubling every *second* power of two exactly because the
+substitution of Theorem 1.7 consumes **two** new bits per doubling. (`nomos2d`'s
+"≈ 1.5√t" is the lower envelope.)
 
 > ### **THEOREM 1.12 (the grading).** Write `w = w(t)` for the binary weight, and
 > group the bit positions into the singleton `{0}` and the pairs
@@ -291,8 +313,11 @@ list is the level-`j` list, plus the two singletons `{2j+1},{2j+2}` (contributin
 `a_j`), plus a copy of the level-`j` list tagged with `Q_j` (contributing `F_j`
 only when both bits of `P_j` are present).
 
-*Max.* Only the multiset of operations matters (`a_j = 0` is the identity and
-there are infinitely many `j`), and `F ↦ 2F+2` should follow `F ↦ F+1`, so with
+*Max.* Order is what matters, and every order is available: `a_j = 0` is the
+identity and there are infinitely many `j`, so any multiset of non-identity
+operations can be applied in any order we like. Within a fixed multiset the
+`+1`s should come first, by the exchange computation
+`(+1 then double) = 2(F+1)+2 = 2F+4 > 2F+3 = (double then +1)`. So with
 `d` doublings and `s` single steps, `ε_0 + s + 2d = w`, the value is
 `2^d(ε_0+s+2) − 2 = 2^d(w+2−2d) − 2`. The ratio test `g(d+1)/g(d) ≥ 1 ⟺ w−2d ≥ 2`
 puts the optimum at `d = ⌊w/2⌋`: `2^{w/2}·2 − 2` for even `w` and
@@ -326,8 +351,10 @@ Jubilee.** Seventeen bit positions offer only the singleton `{0}` and eight pair
 `P_0,…,P_7`, so at most `1 + 8 = 9` units of weight can be spent without filling a
 pair — and a filled pair forces a doubling. For `w ≥ 10` the box *compels* the
 expensive operation. Theorem 1.12 gives `min = w+3` for every `w`; the witnesses
-for `w = 10,…,16` need 20, 22, 24, 26, 28, 30, 32 bits and are invisible below
-`2^17`.
+for `w = 10,…,16` used here — `W = {1,3,…,2w−1}` — occupy 20, 22, 24, 26, 28,
+30, 32 bits. (They are not the cheapest: `W = {0,1,3,5,…,2w−3}` also attains
+`w+3` and needs only `2w−2` bits, so `w = 10` is already visible at `t < 2^18`.
+What no 17-bit window can show is `w+3` for **any** `w ≥ 10`.)
 
 *Certificate on the engine, at a scale the engine can reach.* Take `w = 8` and the
 box `t < 2^13` (thirteen bit positions: `{0}` plus six pairs, so `1+6 = 7` cheap
@@ -392,14 +419,16 @@ fully-hashed steps"*. It is aperiodic, full stop.
 
 *Proof.* By Theorem 1.10 and Corollary 1.8, at `t = 2^k` the state is the frame
 plus `WNE@(0,1)` plus a single `WNE@(m_k+1, 1)`, where `m_k` is the unique index
-with `μ_{m_k} = 2^k`; by Theorem 1.7, `m_k = 3·2^{⌊(k−1)/2⌋} − 2` or `−1`, which
-is strictly increasing in `k`. So the states at `t = 1, 2, 4, 8, …` are pairwise
-distinct, the orbit is infinite, and a deterministic map cannot return to an
-already-visited state. ∎
+with `μ_{m_k} = 2^k`; by Theorem 1.7, `m_k = k` for `k ≤ 2` and thereafter
+`m_{2j+1} = 3·2^j − 2`, `m_{2j+2} = 3·2^j − 1`, which is strictly increasing in
+`k` (`0,1,2,4,5,10,11,22,23,46,47,…`). So the states at `t = 1, 2, 4, 8, …` are pairwise
+distinct, so the orbit is infinite — and an eventually periodic orbit has
+finitely many states. ∎
 
-The same argument, through Theorem 2.3, gives **aperiodicity of THE ODOMETER**
-— previously "no recurrence in 300 000 hashed steps; 179 survivors of a 3-stage
-escalation."
+The same argument, through Theorem 2.3, gives **aperiodicity of the Odometer
+`O⁻`** (§2.0 says which machine that is) — previously "no recurrence in 300 000
+hashed steps; 179 survivors of a 3-stage escalation." For the other reading `O⁺`
+aperiodicity stays a measurement; nothing here bears on it.
 
 ### 1.8 Why four: the general law, and a new family *[established]*
 
@@ -435,50 +464,98 @@ power of two* — the `+1` is a carry, an OR of numbers below `2^k` stays below
 the Jubilee — the block substitution, the `√t` crest, the pair recursion — is
 decoration on that one sentence.
 
-> **Corollary (the field's two clocks are one theorem).** `I = {1}` gives
-> `μ_n = n+1`, so `wt(y(t)) = 2^{w(t)} − 1`: these are chapter one's **Pascal
-> columns**, `|S_t| = 2^{popcount(t)}`. `I = {1,2}` is the **Jubilee**. The Pascal
-> growers and the Jubilee clock are the depth-1 and depth-2 members of one family,
-> and the reset law holds in both — unbounded in the first, bounded in the second.
+> **Corollary.** `I = {1}` gives `μ_n = n+1`, so
+> `wt(y(t)) = #{n : n+1 ⊑ t} = 2^{w(t)} − 1`.
 
-*Certificate*: complete over all 16 profiles `I ⊆ [1,5]` with `1 ∈ I` (strict
-monotonicity and one-hit-per-power-of-two over 3 000 terms each); `I = {1}`
-reproduces `2^{popcount(t)} − 1` for all `t < 2^12`.
+*[interpretation]* That is chapter one's **Pascal column** law, `2^{popcount(t)}`,
+one frame apart: in the Jubilee's frame the depth-1 counter would read
+`|S_t| = 3 + 2^{w(t)} − 1 = 2^{w(t)} + 2`, whereas `nomos2d`'s perpendicular
+colonizer — a *different, one-law* specimen — reads `2^{popcount(t)}` on the nose.
+What is a theorem is that the same counter word drives both. **The Pascal growers
+and the Jubilee clock are the depth-1 and depth-2 members of one family**, and the
+reset law of Theorem 1.14 holds in both — unbounded in the first, bounded in the
+second.
+
+*Certificate*: complete over all **32** profiles `I ⊆ [1,6]` with `1 ∈ I` (strict
+monotonicity and one-hit-per-power-of-two over 3 000 terms each); the hypothesis
+`1 ∈ I` is necessary — `I = {2}` gives `1,1,2,2,3,3,…`, hitting each power of two
+twice; `I = {1}` reproduces `2^{popcount(t)} − 1` for all `t < 2^12`.
 
 #### A prediction, then the engine
 
 Moving the Jubilee's *precedent* guard `s` cells west — kind 2 becomes
 `((−s,0), N, E)`, seeded with kind 2 at `c = 0,…,max(s,1)−1` — realises profile
-`I = {1, s+1}` with a frame of `2 + max(s,1)` permanently blocked laws. Theorem
+`I = {1, s+1}` with a frame of `2 + max(s,1)` permanent laws (all blocked except
+the kind-2 law at `c = max(s,1) − 1`, which is permanently *active* and supplies
+the boundary condition). Theorem
 1.14 therefore predicts, **before running anything**:
 
 > `|S_{2^k}| = max(s,1) + 3`, constant in `k`, for every `s ≥ 0`.
 
 Engine result (`xnomos.step`, `k = 1..12`):
 
-| s | 0 | 1 (**the Jubilee**) | 2 | 3 | 4 |
-|---|---|---|---|---|---|
-| `\|S_{2^k}\|` | 4 | **4** | 5 | 6 | 7 |
+| s | 0 | 1 (**the Jubilee**) | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|---|
+| `\|S_{2^k}\|` | 4 | **4** | 5 | 6 | 7 | 8 |
 
-Exact, at every `k`, for every `s`. The Jubilee Code is `s = 1` of an infinite
+Exact, at every `k = 1..12`, for every `s`. The Jubilee Code is `s = 1` of an infinite
 family of jubilee clocks, and its celebrated **4** is `1 + 3` — one surviving
 monomial on top of a three-law frame.
 
 ---
 
-## 2. TARGET 2 — the four-law coincidence: **CLOSED, and it broke**
+## 2. TARGET 2 — the four-law coincidence: **CLOSED, and it broke twice**
 
-*It is not a coincidence and it is not a normal form. **The two machines are the
-same machine.** THE ODOMETER is the Jubilee Code running at half speed, with its
-carry buffer materialised as laws. The map exists and is exhibited below; the
-Odometer's clock law is a corollary of Theorem 1.10.*
+*The coincidence dissolves, and not in the way the question expected. There are
+**two** machines in the repository under the name THE ODOMETER, because two files
+use opposite vertical compasses. Exactly one of them has the four-law reset — and
+that one **is the Jubilee Code**, at half speed, by an exact conjugacy exhibited
+below. The other, the machine whose table `xamend2d/RESULTS.md` §11.2 actually
+publishes, does **not** reset to four laws at every power of two.*
 
-Certificates: `python3 proofs/t2_odometer.py --deep` — 16/16.
+Certificates: `python3 proofs/t2_odometer.py --deep` — 15/15.
+*(Repository under concurrent edit; all quotations re-checked at commit `42e40ca`.)*
 
-**Pre-registration Y4 is REFUTED in its main clause** (I predicted 60 % that the
-two machines are *not* conjugate) and held in its subordinate one (the "4" is
-indeed a fixed frame plus a weight-one counter word). The record stands as
-written.
+### 2.0 Two Odometers *[established — read this first]*
+
+`xamend2d/xa2d.py` sets `N = (0,+1)`, `S = (0,−1)`, `NW = (−1,+1)`, `SE = (1,−1)`.
+The root `verify.py` and `nomos2d/` set `N = (0,−1)`, `S = (0,+1)`,
+`NW = (−1,−1)`, `SE = (1,+1)`. The **rules** of a specimen are written in compass
+letters, but the **seed** `A@(0,0), A@(1,0), B@(0,1)` is written in coordinates —
+so flipping the compass without flipping the seed is *not* a symmetry. The string
+`OEW>B NQR>AB` therefore names two genuinely different dynamical systems:
+
+| | rules as offsets | where it appears | `\|S_{2^k}\|`, k = 1…17 |
+|---|---|---|---|
+| **O⁺** = `OEW>B NQR>AB` in `xa2d` letters | `((0,0),(1,0),(−1,0))`, `((0,1),(−1,1),(1,−1))` | `xamend2d/RESULTS.md` §11.2's table, `gallery.py`, the demo | `5,5,6,4,6,4,4,6,4,4,4,6,4,4,4,4,6` |
+| **O⁻** = the same string in root letters (`OEW>B STP>AB` in `xa2d` letters) | `((0,0),(1,0),(−1,0))`, `((0,−1),(−1,−1),(1,1))` | root `verify.py`'s battery entry, `XFINDINGS.md` §3's crest list | `4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4` |
+
+Both rows are from one engine (`xnomos.step`), one seed, `t ≤ 2^17`. And the two
+**engines** agree: `xnomos.step` and `xa2d.step` run in lockstep on identical
+constitutions with **0 divergences in 400 random 2-D systems × 6 steps**. The
+clash is the offset dictionary, nothing else.
+
+**Consequence for the target as posed.** Target 2 asked about a machine that
+"returns to exactly four laws at every `t = 2^k` … with reach growing like
+`(log t)²`". *No machine does both.* `O⁻` has the reset (`XFINDINGS.md` §3's crest
+list `6, 9, 12, 18, 21, 36, 39, 72, 75` is `O⁻`'s, verbatim); `O⁺` has the
+`(log t)²`-looking reach and does not reset. So the "coincidence" was a composite
+of two different objects, and it dissolves twice over:
+
+* on `O⁺` there is nothing to explain — it does **not** quiesce to four laws;
+* on `O⁻` there is everything to explain, and the explanation is total:
+  **`O⁻` is the Jubilee Code.** Sections 2.1–2.3 prove it.
+
+Everything from here to §2.3 is about **`O⁻`** — the machine that carries the
+four-law reset and that the field's own battery registers under that name. §2.4
+returns to `O⁺` and says what must be repaired in the published record.
+
+**Pre-registration Y4, scored honestly.** Y4 predicted (60 %) that the two
+machines are *not* conjugate. On `O⁻` it is **REFUTED**: they are conjugate, and
+the conjugacy is exact. On `O⁺` the prediction is **vacuous**, because `O⁺` never
+had the property the coincidence was about. Y4's subordinate clause — that the
+`4` is a fixed frame plus a weight-one counter word — **held**. The record stands
+as written.
 
 ### 2.1 The Odometer's reduction *[established]*
 
@@ -486,13 +563,10 @@ Specimen (`xamend2d/`): two kinds, cross-amendment, three laws.
 `A = (O, E, W) → {B}`, `B = (N, NW, SE) → {A, B}`, seed
 `A@(0,0)`, `A@(1,0)`, `B@(0,1)`.
 
-> **Which Odometer.** Compass as in the root `verify.py` and `nomos2d/`:
+> **Which Odometer.** `O⁻` throughout §§2.1–2.3 (see §2.0): compass
 > `O=(0,0)`, `E=(1,0)`, `W=(−1,0)`, `N=(0,−1)`, `S=(0,1)`, `NW=(−1,−1)`,
-> `SE=(1,1)`. That is the specimen registered in the field's battery
-> (`verify.py`, "THE ODOMETER: |S| = 4 at every power of two") and the one whose
-> crest list `XFINDINGS.md` §3 quotes — i.e. the object Target 2 is about.
-> `xamend2d/xa2d.py` uses the **opposite** vertical compass, so the same specimen
-> string names a different machine there; §2.4 separates the two and it matters.
+> `SE=(1,1)` — the reading of the root `verify.py` and `nomos2d/`, and the one
+> that carries the four-law reset.
 
 > **Lemma 2.1 (the frame).** `A@(0,0)` and `A@(1,0)` stand forever;
 > `A@(0,0)` is permanently blocked and `A@(1,0)` is permanently active;
@@ -543,8 +617,8 @@ buffer they created. So column 1 empties, column 2 is never written, and
 
 ### 2.2 The map *[established — this is the answer to Target 2]*
 
-> ### **THEOREM 2.3 (the Odometer is the Jubilee).** Put `D = C + 1`. Then the
-> Odometer's two-step map on its even-time states is **exactly** the Jubilee's
+> ### **THEOREM 2.3 (`O⁻` is the Jubilee).** Put `D = C + 1`. Then `O⁻`'s
+> two-step map on its even-time states is **exactly** the Jubilee's
 > one-step carry automaton `K` of Lemma 1.3:
 > ```
 >       D ↦ D Δ {y+1 : y ∈ D, (y = 1 or y−1 ∈ D)}   ≅   K
@@ -563,7 +637,7 @@ buffer they created. So column 1 empties, column 2 is never written, and
 card is `2` (frame `A`s) `+ |D_u| = 2 + |C_u| = |S^J_u|` by Lemma 1.3. The odd-time
 card is `2 + (|D_u| + 1) + 2|α_u| = 3 + |C_u| + 2·act(C_u)`. ∎
 
-> ### **COROLLARY 2.4 (the Odometer's clock law).**
+> ### **COROLLARY 2.4 (`O⁻`'s clock law — `XFINDINGS.md` §3's measurement, proved).**
 > `|S^O_{2^k}| = |S^J_{2^{k−1}}| = 4` for every `k ≥ 1`, and
 > `|S^O_{2^k−1}| = 6 + 3·A(k−2)`, i.e. `9·2^{(k−2)/2}` for even `k ≥ 2` and
 > `9·2^{(k−3)/2} + 3` for odd `k ≥ 3` (and `6` at `k = 1`).
@@ -578,10 +652,10 @@ crest list of `XFINDINGS.md` §3, now closed-form.
 
 ### 2.3 What the coincidence actually was *[interpretation]*
 
-The two constitutions are **not** isomorphic — one is own-kind (out-degree 1),
-the other has out-degree 2 — and no conjugacy of *constitutions* exists. What
-exists is a **common renormalisation**: both are implementations of the single
-one-dimensional automaton
+The Jubilee and `O⁻` are **not** isomorphic as constitutions — one is own-kind
+(out-degree 1), the other has out-degree 2 — and no conjugacy of *constitutions*
+exists. What exists is a **common renormalisation**: both are implementations of
+the single one-dimensional automaton
 
 ```
       K :  C ↦ C Δ { c+1 : c ∈ C, (c = 0 or c−1 ∈ C) }        (C ⊆ ℕ, 0 ∈ C)
@@ -592,9 +666,10 @@ and they differ only in *how they schedule the carry*.
 * The **Jubilee** is a **one-phase** implementation. Own-kind targeting makes the
   update `𝔽₂`-linear-modulated-by-occupancy, and synchrony computes the whole
   carry set from the old state in a single tick. Its cost is that it needs three
-  kinds — two of them a permanently blocked *frame* supplying the boundary
-  conditions `y_{−1} = y_{−2} = 1`.
-* The **Odometer** is a **two-phase** implementation: *fetch* (materialise the
+  kinds — a three-law *frame*: two permanently blocked laws and one permanently
+  active counter cell `WNE@(0,1)`, which is what supplies the boundary condition
+  `y_{−1} = y_{−2} = 1`.
+* **`O⁻`** is a **two-phase** implementation: *fetch* (materialise the
   pending carries as real laws in column `x = 1`) then *write back*. Its cost is
   a factor of two in time; its saving is one kind. Materialising a carry means
   writing **two** kinds into one cell — a carry marker `A` and its shadow `B` —
@@ -609,70 +684,72 @@ is a simulation, and the simulation is exact. The reset constant is
            +  1  (monomials M_n equal to the singleton {k}: exactly one).
 ```
 
-Both machines carry the same frame size, so both read 4. *The two binary counters
-of the field are one counter with two clocks.*
+Both carry the same frame size, so both read 4. *The two binary counters of the
+field are one counter with two clocks.*
 
-### 2.4 A correction: **two machines wear the name THE ODOMETER** *[established]*
+And that also settles the target's fallback question — *"if they are genuinely
+different, explain why 4 is forced in each"*. It is not forced at all: Theorem
+1.14 and Corollary 1.15 exhibit machines in the same family whose reset constant
+is 5, 6, 7, 8. What **is** forced, for every lazy counter with `1 ∈ I`, is the
+`+1`: the counter word has weight exactly one at every power of two, and the rest
+of the constant is bookkeeping.
 
-`xamend2d/RESULTS.md` headline 9 says of `OEW>B NQR>AB`: *"Card collapses to
-four laws at every `t = 2^k` … reach ≈ 0.20 (log₂ t)², = 86 cells at `t = 2²⁰`
-… the slowest clock in the fauna."* Theorem 2.3 says the Odometer's reach must
-be the Jubilee's, `≍ 1.5√t`. Both cannot be right. Chasing it down produced a
-correction of a kind this program has not had before.
+### 2.4 What must be repaired in the published record *[established]*
 
-**The repo carries two opposite compasses.** `xamend2d/xa2d.py` sets
-`N = (0,+1)`, `S = (0,−1)`, `NW = (−1,+1)`, `SE = (1,−1)`. The root `verify.py`
-and `nomos2d/` set `N = (0,−1)`, `S = (0,+1)`, `NW = (−1,−1)`, `SE = (1,+1)`.
-The string `"OEW>B NQR>AB"` therefore names **two different constitutions**, and
-because the seed `A@(0,0), A@(1,0), B@(0,1)` is *not* mirrored along with them,
-the two orbits are genuinely different dynamical systems — not reflections of one
-another.
+*(Repository under concurrent edit; every quotation re-checked in the working
+tree at commit `42e40ca`, where both appear verbatim.)*
 
-*The engines are innocent.* `xnomos.step` and `xa2d.step` were run in lockstep on
-**identical** constitutions and states: **0 divergences in 400 random 2-D systems
-× 6 steps**. The clash is the offset dictionary, nothing else.
+**(i) `xamend2d/RESULTS.md` headline 9's four-law clause is false for the machine
+it tabulates.** Headline 9 says of `OEW>B NQR>AB`: *"Card collapses to **four
+laws** at every `t = 2^k` … reach ≈ 0.20 (log₂ t)², = 86 cells at `t = 2²⁰`."*
+Read in `xamend2d`'s own compass, that specimen is `O⁺`, and
 
-Run through one engine (`xnomos.step`), from the same seed, out to `t = 2^16`:
+```
+   |S_{2^k}|  for k = 0..17 :  4, 5, 5, 6, 4, 6, 4, 4, 6, 4, 4, 4, 6, 4, 4, 4, 4, 6
+```
 
-| | `\|S_{2^k}\|`, k = 1…16 | crests at 2^k−1, k = 1…9 | height at 2^k, k = 10,12,14,16 |
-|---|---|---|---|
-| **O⁻** (root compass) | `4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4` | `6,9,12,18,21,36,39,72,75` | `49, 97, 193, 385` |
-| **O⁺** (xa2d compass) | `5,5,6,4,6,4,4,6,4,4,4,6,4,4,4,4` | `4,7,12,12,21,21,30,39,39` | `20, 26, 38, 47` |
+— six laws at `k = 3, 5, 8, 12, 17`, five at `k = 1, 2`. The counterexample is
+**printed in the report's own table two pages later** (§11.2 records `card = 6` at
+`t = 2^12`) and was not read. The *reach* half of headline 9 is fine: `O⁺`'s
+heights at `k = 10, 12, 14, 15, 16, 17` are `20, 26, 38, 44, 47, 50`, exactly as
+published, and §11.2's crest row `57, 75, 111, 138` and width row `2, 3, 2, 2`
+reproduce entry for entry on `xnomos.step`. Whether that reach is genuinely
+`Θ((log t)²)` is `xamend2d`'s own open item §11.3(7) and **stays open**; nothing
+here bears on it. (The advertised fit quality is optimistic — the residual at
+`k = 17` is `0.20·17² = 57.8` against a measured `50`, about +16 %, not "within
+8 %".)
 
-Two conclusions, and they pull in opposite directions.
+**(ii) `XFINDINGS.md` §3's Odometer paragraph mixes the two machines.** Its
+crest list `6, 9, 12, 18, 21, 36, 39, 72, 75` and its "returns to **exactly four
+laws** at every `t = 2^k` (14/14 verified)" are `O⁻`'s and are **correct — now a
+theorem** (Corollary 2.4). Its "reach ≈ 0.20 (log₂ t)² out to `t = 2²⁰`" is
+`O⁺`'s. The sentence that follows — *"Two machines found in different sectors by
+different methods both quiesce to exactly four laws at every power of two
+[interpretation: unexplained, and the most suggestive coincidence on the
+board]"* — is the one this expedition was sent to explain, and the explanation is
+that **there are not two machines**: the one that quiesces to four laws is the
+Jubilee.
 
-1. **`O⁻` is the machine of `XFINDINGS.md` §3 and of the root battery** — its crest
-   list `6, 9, 12, 18, 21, 36, 39, 72, 75` is quoted there verbatim, and
-   `verify.py`'s odometer check is on it. It resets to four laws at every power of
-   two, and by Theorem 2.3 that is now a **theorem** rather than a measurement.
-   Its reach is `≍ 1.5√t`. *This is the machine whose coincidence with the Jubilee
-   Target 2 asked about, and it **is** the Jubilee.*
-2. **`O⁺` is the machine tabulated in `xamend2d/RESULTS.md` §11.2** — its heights
-   `20, 26, 38, 47` and crests `57, 75, 111, 138` reproduce that table entry for
-   entry, so the table is *correct for the object it measured*. But **`O⁺` does not
-   have the four-law reset**: `|S_{2^k}|` is `5, 5, 6` at `k = 1,2,3` and `6` again
-   at `k = 5, 8, 12`. The published table records `card = 6` at `t = 2^12` in the
-   very row whose caption asserts the collapse to four — *the counterexample was
-   printed and not read.* So headline 9's four-law claim is **false for the machine
-   it tabulates**, while the `(log t)²` reach — a fit, never a theorem — does
-   belong to that machine.
+**(iii) The root `verify.py` battery entry is `O⁻`.** Its check ("THE ODOMETER:
+|S| = 4 at every power of two") passes, and is now a theorem for every `k`, not a
+measurement to `2^{12}`.
 
-> **The correction, stated once.** *The Odometer's four-law reset and its
-> `(log t)²` reach are properties of two **different** machines.* The four-law
-> machine is the Jubilee, and its reach is `√t`; the polylog-reach machine does
-> not reset to four. The two claims were joined by a compass — and that join is
-> exactly what made the Jubilee coincidence look like a coincidence between
-> independent objects.
+**(iv) Recommended repo fixes** — not applied here; this expedition does not edit
+other expeditions' records:
 
-The qualitative claims survive for both: bounded card, unbounded reach, hence
-aperiodic. And `xamend2d`'s own open question (§11.3 item 7) — *"[O] Is the
-Odometer's `(log t)²` reach exact?"* — is well posed for the first time: it is a
-question about `O⁺`, and it stays **open**. For `O⁻` there is no polylog reach to
-ask about.
+1. Give the two compasses distinct names, or print the compass with every
+   specimen string. The clash silently renames any specimen whose **seed** is not
+   symmetric under `y ↦ −y`; the Odometer is such a specimen, and there may be
+   others in the shared battery.
+2. Re-label `xamend2d` headline 9: drop the four-law clause, or state it for
+   `O⁻ = OEW>B STP>AB` (in `xa2d` letters), which is the machine that has it.
+3. Split `XFINDINGS.md` §3's Odometer paragraph in two along the same line.
+4. `gallery.py` §9b/9c and the demo pages (`docs/index.html`,
+   `demo/nomodynamics.html`) inherit headline 9's text and need the same split.
 
-*Recommended repo fixes* — not applied here, since this expedition does not edit
-other expeditions' records: give the two compasses distinct names, or state the
-compass in every specimen string; re-label `xamend2d` headline 9 and its
-`gallery.py` note; and mark the four-law demo in `docs/index.html` and
-`demo/nomodynamics.html` as `O⁻`.
-
+> **The methodological point.** `XFINDINGS.md` §5 taught the field that a bounded
+> search decides a box, not a question. This is the same lesson one level down:
+> **a specimen name decides an object only together with its coordinate
+> convention.** Two files, two compasses, one name — and a coincidence appeared
+> between an object that had the property and an object that had the other
+> property. Neither measurement was wrong. The *join* was.

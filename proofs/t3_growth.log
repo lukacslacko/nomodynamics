@@ -1,0 +1,4 @@
+class (5, 7, 2)  mode=parity  (a 8-kind constitution)
+   span  4 : max |d0| =     8   seed [0, 2, 3]
+   span  6 : max |d0| =     8   seed [0, 2, 3, 4, 5]
+   span  8 : max |d0| =    16   seed [0, 3, 4, 7]

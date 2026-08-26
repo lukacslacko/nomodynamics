@@ -37,7 +37,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
 os.makedirs(DATA, exist_ok=True)
 
-MODULI = (11, 13)
+MODULI = (11, 13)            # defect hunt
+BOUNDARY_MODULI = (12,)      # boundary hunt
 MODES = ("parity", "or")
 
 
@@ -125,7 +126,7 @@ def _boundary(chunk):
                 for b in range(len(ph)):
                     if a == b:
                         continue
-                    for m in (12,):
+                    for m in BOUNDARY_MODULI:
                         U, V = ph[a], ph[b]
                         half = (1 << (m // 2)) - 1
                         S = tuple(((half if k in U else 0)
@@ -197,7 +198,8 @@ def run(which, procs, n):
     with open(os.path.join(DATA, "%s_stats.json" % which), "w") as fh:
         json.dump({"stats": dict(stats), "hits": len(hits),
                    "box": len(KINDS) ** 2, "reps": len(R),
-                   "moduli": list(MODULI)}, fh, indent=1)
+                   "moduli": list(MODULI if which == "defect"
+                                  else BOUNDARY_MODULI)}, fh, indent=1)
 
 
 if __name__ == "__main__":

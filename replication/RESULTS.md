@@ -262,7 +262,8 @@ Unbounded, so rung 3 in the (only possible, by Corollary A1) polynomial sense.
     Φ⁴(A) Δ Φ⁴(B)        = {(0,0):AB, (0,1):AB}
 ```
 
-- **(N3)** 497 of 4000 random overlapping pairs violate superposition.
+- **(N3)** 503 of 4000 random overlapping pairs violate superposition — but
+  see §6.1: N3 is a fact about the constitution, not about the replicator.
 - **(N4)** the far-apart control holds, as Lemma S requires.
 
 So: **the copy is not the superposition of the copies of the parts.** This is
@@ -272,6 +273,59 @@ not Fredkin's additive self-reproduction; the four laws of the seed must act
 *(Curiosity, [M]: the copy count still obeys `2^popcount`, the classic additive
 signature. **The `2^popcount` law is therefore not diagnostic of additivity** —
 it survives into a demonstrably non-additive system.)*
+
+### 3.1a THE SPLIT DECISION — p = 2, a true binary fission, colony `t/2 + 1`
+
+*2-D · 2 kinds · Moore offsets · **citation guards** · OR resolution · seed of
+4 placed laws in 2 cells.* Found in the 2-D citation census; the cleanest
+replicator of the expedition.
+
+```python
+SPLIT = Const([((0,0), (-1,-1), (0,-1)),      # kind A: writes {A,B} SOUTH
+               ((0,0), (1,0),   (0,1))],      # kind B: writes {A,B} NORTH
+              [(0,1), (0,1)], dim=2,
+              guards=[(1, 0),                 # A: "kind B stands HERE and no
+                                              #     kind A stands south-west"
+                      (1, None)])             # B: "kind B stands HERE and
+                                              #     nothing stands east"
+SEED = state_of([((0,0),0), ((0,0),1), ((2,0),0), ((2,0),1)])
+MODE = "or"
+```
+
+**Certificate — the parent does not survive; it becomes two children.**
+
+```
+   Φ²(S) = σ^(0,−2)(S)  ⊔  σ^(0,+2)(S)      EXACTLY, debris ∅, gap 4 > 2R = 2
+```
+```
+   t=0            t=1            t=2            t=3            t=4
+   ......         ......         ......         ......         .#.#..
+   ......         ......         ......         .#.#..         ......
+   ......         ......         .#.#..         .#.#..         ......
+   ......         .#.#..         ......         .#.#..         ......
+   .#.#..         .#.#..         ......         ......         .#.#..
+   ......         .#.#..         ......         .#.#..         ......
+   ......         ......         .#.#..         .#.#..         ......
+   ......         ......         ......         .#.#..         ......
+   card 4         card 12        card 8         card 24        card 12
+```
+
+**Colony — rung 3, and monotone.** At *every* even time the state is **exactly**
+`t/2 + 1` free copies of the seed and nothing else:
+
+| t | 2 | 4 | 6 | 8 | 10 | … | 198 |
+|---|---|---|---|---|---|---|---|
+| free exact copies | 2 | 3 | 4 | 5 | 6 | … | **100** |
+
+No 2^popcount collapse: the copies pile up steadily, spaced 4 apart on a
+vertical line. The mechanism is worth naming — **OR resolution is what stops
+the Fredkin cancellation.** Under parity a fission cascade annihilates its own
+middle and the population falls back to `2^popcount`; under OR the coincident
+enactments merge instead of cancelling, and the binomial spread survives
+intact.
+
+Non-additive: **8 of 10** splittings of the seed violate superposition, and
+`Φ ≠ L` on 136 of 139 steps.
 
 ### 3.1b THE QUORUM — the minimal non-additive replicator: **two placed laws**
 
@@ -480,6 +534,7 @@ differs from the unconditional linear one.
 | PICKET PUFFER | ch.2, OR | 2→106 | 19 | **0** | 63/64 | 1 |
 | TANDEM-1 glider | ch.2 | 2→2 | 0 | 0 | 0/40 | 0 |
 | **THE MOOT** | this expedition | 4→60 | 84 | **21** | 0/140 | 3, additive |
+| **THE SPLIT DECISION** | this expedition | 4→284 | 210 | **71** | 137/140 | **3, non-additive** |
 | **THE QUORUM** | this expedition | 2→16 | 128 | **32** | 140/140 | **3, non-additive** |
 | **THE PRECEDENT** (1-D) | this expedition | 4→11 | 2 | **2** | 140/140 | **2, non-additive** |
 | **THE ENGROSSMENT** | this expedition | 4→32 | 128 | **32** | 140/140 | **3, non-additive** |
@@ -539,15 +594,39 @@ debris 2, never zero, and never periodic — it grows). Requiring the copies to
 be whole *causal components* is what kills this, and it is the only formulation
 I found that does.
 
-### 5.2 ℤ, citation guards — partial, and **non-empty**
+### 5.2 ℤ, citation guards — **complete**, and full
 
-`sweep1d.py --span 3 --steps 60 --cardcap 300 --modes parity,or --cite`, same
-seed set, guards `(g,h) ∈ {any,0,1}²` per kind (81 guard pairs per
-constitution): 1 062 882 tasks in all. This run was still in progress at
-write-up; the reported figures cover the enumeration prefix stated in
-§8 (repro), and it has already produced **THE PRECEDENT** (§3.2) and thousands
-of exact rung-2 replicators, including non-additive ones. Citation is
-**not** inert here — it is the difference between an empty box and a full one.
+`sweep1d.py --span 2 --steps 60 --cardcap 300 --modes parity,or --cite`. The
+same constitutions as §5.1 but with every citation guard: `(g,h) ∈ {any,0,1}²`
+per kind, **81 guard pairs per constitution**, so 729 × 9 × 81 = 531 441
+constitutions × 2 modes = **1 062 882 tasks, complete**; seeds of span ≤ 2 with
+both ends occupied (9 of them); 9 565 938 runs.
+
+| | |
+|---|---|
+| hits (≥ 2 exact-translate causal components) | **72 832** |
+| of which debris-free — **rung 2-exact** | **71 784** |
+| distinct (constitution, mode) with an exact hit | 70 008 |
+| exact hits whose constitution **cites a kind** | **71 784** |
+| exact hits with **pure occupancy guards** | **0** |
+
+That last pair of rows is the cleanest result of the census, because both are
+measured **inside one box**: the occupancy corner of the citation box —
+`g = h = any` throughout, which is exactly chapters one and two — contributes
+**zero** of the 71 784 replicators, and every other corner contributes. In this
+box, **citation is the enabling ingredient of replication on the line.**
+Prediction Y5 named the citation sector; on ℤ it is not merely a place where
+replicators happen to be, it is the only place in the box where they are.
+
+Two cautions kept explicit. (i) At span ≤ 2 only ~1 % of the exact hits are
+non-additive (sampled 128, `p ≤ 16`): the overwhelming majority are the cheap
+vacuous-guard construction of §3.5. The non-additive 1-D specimen THE PRECEDENT
+needs a **span-3** seed and was found in a separate, partial span-3 run
+(360 000 of 1 062 882 tasks dispatched in enumeration order, 52 489 hits,
+`data/sweep1d_cite.txt`) which was abandoned unfinished — its figures are a
+prefix, not a box. (ii) §5.1 and §5.2 differ in seed span (3 vs 2) as well as
+in guards; the span-3 occupancy box is the larger of the two and is still
+empty, so the contrast is not an artefact of the seed set.
 
 ### 5.3 ℤ², random sampling of the Moore box
 
@@ -556,22 +635,30 @@ Moore offsets (729 rules per kind), target set a uniform nonempty subset of the
 kinds, mode uniform from the list, guards occupancy or (with `--cite`) uniform
 over `{any}∪K` in both positions. Seeds: **all** mask assignments on nine fixed
 cell-shapes (single cell; the three dominoes; the two spaced dominoes; two
-trominoes; the square) — 183 seeds at 2 kinds, 3 339 at 3 kinds. Budget 40–48
-steps, card cap 400, exact-recurrence cut.
+trominoes; the square) — **183 seeds** at 2 kinds. Budget 40–48 steps, card cap
+400, exact-recurrence cut.
 
-| run | kinds | modes | constitutions sampled | seeds each | runs | rung-2 exact hits | of which non-additive |
+| run | kinds | modes | constitutions sampled | seeds each | runs | rung-2 exact hits | of which guard-driven |
 |---|---|---|---|---|---|---|---|
 | `data/t2d.txt` | 2 | parity, OR | 4 000 | 183 | 732 000 | 1 900 (1 299 with ≥2-cell seeds) | 710 |
 | `data/s2d_occ.txt` | 2 | all 4 | 60 000 | 183 | 10 980 000 | 41 166 | 29 076 |
-| `data/s2d_cite.txt` | 2 + citation | parity, OR | 60 000 | 183 | 10 980 000 | (see §8) | |
-| `data/s2d_k3.txt` | 3 | parity, OR | 30 000 | 3 339 | 100 170 000 | (see §8) | |
+| `data/s2d_cite.txt` | 2 + citation | parity, OR | 60 000 | 183 | 10 980 000 | 30 345 | 16 769 |
 
-Rung-2 exact replicators are **common** in 2-D. In `s2d_occ.txt`, 10 931
-distinct (constitution, mode) pairs out of 60 000 sampled — about **1 in 5.5** —
-carry a rung-2-exact replicator for some seed in the box; 34 599 of the 41 166
-hits have a ≥2-cell seed. That is the opposite of what the complete 1-D box
-says, and the gap between §5.1 and §5.3 is the most striking single number in
-this expedition.
+("guard-driven" = `Φ^t ≠ L^t` for some `t ≤ p`; the stricter splitting test is
+sampled below.) A 3-kind run was started and abandoned as too slow to finish
+within this cycle; nothing is reported from it.
+
+Rung-2 exact replicators are **common** in 2-D. Distinct (constitution, mode)
+pairs carrying at least one: **10 931 of 60 000** occupancy-guarded (about 1 in
+5.5) and **7 737 of 60 000** citation-guarded (1 in 7.8); 34 599 of the 41 166
+occupancy hits have a ≥2-cell seed. That is the opposite of what the complete
+1-D occupancy box says. Put §5.1, §5.2 and §5.3 side by side and the shape of
+the answer is: **on ℤ, replication needs citation (occupancy box: 0 of
+1 180 980 runs; citation box: 71 784 replicators, every one of them citing);
+in ℤ² it needs neither citation nor an exotic resolution — plain occupancy
+guards and parity already give it, in about one sampled constitution in five.**
+Dimension is what makes replication ordinary; citation is what makes it
+possible at all on the line.
 
 How many of them are genuinely non-additive (splitting test N2, on the seed's
 own splittings, at the first exact event) — measured on random subsamples,
@@ -581,6 +668,7 @@ own splittings, at the first exact event) — measured on random subsamples,
 |---|---|---|
 | `s2d_occ.txt`, parity/OR | 182 | 23 (**13 %**) |
 | `s2d_occ.txt`, supersession / supersession-OR | 183 | 3 (2 %) |
+| `s2d_cite.txt`, constitutions that actually cite a kind | 201 | 34 (**17 %**) |
 | `t2d.txt` (parity/OR), scored exhaustively by `rank.py` | 1 299 | 371 (**29 %**) fail N2 *and* differ from `L` at the event |
 
 Non-additive replication is therefore not a freak: it is a **substantial
@@ -608,10 +696,22 @@ stating.**
   replicator's two copies evolve independently after fission says **nothing**
   about additivity.
 - **Unconditional superposition is false**, and grossly so. Measured here on
-  4 000 random overlapping pairs each: colonizer `(0,1,1)` 2 046 failures;
-  sunset `(0,−1,1)` 2 046; TANDEM-1 1 894; MIRROR 1 604; PICKET PUFFER (OR)
-  1 936; THE ENGROSSMENT 497. There is no `𝔽₂`-linearity theorem in this
-  program that is not conditioned on frozen occupancy, and there could not be.
+  4 000 random overlapping pairs each (`linearity_report(..., seed=1)`):
+  colonizer `(0,1,1)` **2 046** failures; sunset `(0,−1,1)` 2 046; TANDEM-1
+  1 894; MIRROR 1 604; PICKET PUFFER (OR) 1 936; THE ENGROSSMENT 503; THE
+  SPLIT DECISION 412; **THE MOOT 505**. There is no `𝔽₂`-linearity theorem in
+  this program that is not conditioned on frozen occupancy, and there could not
+  be.
+
+  That last entry is the one to stare at. **THE MOOT's constitution is
+  thoroughly non-linear as a map, and its replicator is nevertheless perfectly
+  additive**, because the orbit of *that seed* never leaves the region where
+  every guard passes. So a random-pair superposition test (N3) tells you about
+  the constitution and says nothing about the replicator; only N1 and N2, which
+  look at the orbit and at the seed's own splittings, decide whether a given
+  replication event is Fredkin's phenomenon or not. Reporting N3 alone would
+  have made every specimen here look "nonlinear", which would have been
+  worthless.
 
 ### 6.2 What is refuted — [M], with certificates
 
@@ -626,6 +726,7 @@ self-reproduction". Result:
 | Pascal column | 2 | own-kind | never | yes, 0/70 | — (1-law seed) | **additive** |
 | THE MOOT | 2 | multi-target | never | yes, 0/200 | 0 / 10 fail | **additive** |
 | 1-D phantom citation | 1 | citation | never | yes, 0/200 | 0 / 10 fail | **additive** |
+| **THE SPLIT DECISION** | 2 | citation, OR | yes | no, 136/139 | **8 / 10 fail** | **non-additive** |
 | **THE QUORUM** | 2 | supersession-OR | yes | no | **2 / 2 fail** | **non-additive** |
 | **THE PRECEDENT** | 1 | citation, out-degree 1 | yes | no, 200/200 | **10 / 10 fail** | **non-additive** |
 | **THE ENGROSSMENT** | 2 | multi-target, occupancy | yes | no, 140/140 | **8 / 10 fail** | **non-additive** |
@@ -695,8 +796,8 @@ not proved here and is the natural next theorem.
 ## 7. Verdict
 
 **Highest rung actually reached: RUNG 3** — an unbounded colony of pairwise
-free, exact, debris-free copies — and reached twice, once additively and once
-not.
+free, exact, debris-free copies — reached in both an additive form (which is
+the known Fredkin phenomenon) and a non-additive one (which is not).
 
 - **Rung 1** — reached, and cheap, exactly as the mission suspected. The Pascal
   columns qualify; so do LAND GRANT, SOWER and the PICKET PUFFER; so does a
@@ -705,16 +806,21 @@ not.
 - **Rung 2 (exact)** — reached, with certificates on two engines, by **THE
   ENGROSSMENT** (`Φ⁴(S) = S ⊔ σ^{(4,4)}S`, gap 4 > 2R = 2, debris ∅, 2-D,
   occupancy guards, parity), by **THE QUORUM** (the same at
-  `σ^{(4,−4)}` from a seed of *two* placed laws, under supersession-OR), and by
+  `σ^{(4,−4)}` from a seed of *two* placed laws, under supersession-OR), by
+  **THE SPLIT DECISION** (`Φ²(S) = σ^{(0,−2)}S ⊔ σ^{(0,2)}S` — a true binary
+  fission in which the parent does not survive, citation guards, OR), and by
   **THE PRECEDENT** on ℤ (`Φ⁸(S) = S ⊔ σ⁵S`, gap 3 > 2R = 2, debris ∅,
-  citation guards). All three are non-additive.
-- **Rung 3** — reached: THE ENGROSSMENT reaches 64 simultaneous free exact
-  copies at `t = 252` and the count is unbounded (`2^popcount(t/4)`); THE MOOT
-  reaches 85. Reached in the *only* sense in which it can be reached: the
-  mission's "exponential colony" is **provably empty in every dimension**
-  (Corollary A1), and every fixed-period doubling **must** break down within
-  `O(log t)` generations (Corollary A2) — which is exactly what the specimens
-  do, doubling at `t = 4(2^k − 1)`.
+  citation guards). All four are non-additive.
+- **Rung 3** — reached: **THE SPLIT DECISION** is exactly `t/2 + 1` free exact
+  copies at every even `t` (100 of them at `t = 198`), THE ENGROSSMENT reaches
+  64 at `t = 252` (`2^popcount(t/4)`), THE MOOT 85.
+  Reached in the *only* sense in which it can be reached: the mission's
+  "exponential colony" is **provably empty in every dimension** (Corollary A1),
+  and no fixed-period doubling can survive (Corollary A2). The two specimens
+  show the two ways out. THE ENGROSSMENT keeps doubling but its doubling period
+  doubles too (`t = 4(2^k − 1)`, the copies colliding in between). THE SPLIT
+  DECISION never doubles at all: it adds exactly one copy every two steps, so
+  the colony is linear in `t` from the start and never has to break down.
 - **Rung 4** — **not reached**, as pre-registered. What was built is its
   defining half: **THE ENGROSSING CLERK**, an 8-kind citation machine that reads
   a blueprint written in its own body and constructs a *different, decoded*
@@ -825,7 +931,10 @@ The censuses (long):
 python3 sweep1d.py --span 3 --steps 60 --cardcap 300 \
         --modes parity,or,super,super_or --out data/sweep1d.txt
 
-# 5.2  1-D citation box (long; enumeration order ri,rj,ti,tj,gi,gj,mode)
+# 5.2  complete 1-D citation box        (~7 min on 12 cores)  -> 71 784 exact
+python3 sweep1d.py --span 2 --steps 60 --cardcap 300 --modes parity,or \
+        --cite --out data/sweep1d_cite2.txt
+# ... and the abandoned span-3 prefix that produced THE PRECEDENT
 python3 sweep1d.py --span 3 --steps 60 --cardcap 300 --modes parity,or \
         --cite --out data/sweep1d_cite.txt
 
@@ -836,11 +945,9 @@ python3 sweep2d.py --trials 60000 --kinds 2 --steps 48 --seed 1 \
         --modes parity,or,super,super_or --out data/s2d_occ.txt
 python3 sweep2d.py --trials 60000 --kinds 2 --steps 48 --seed 2 --cite \
         --modes parity,or --out data/s2d_cite.txt
-python3 sweep2d.py --trials 30000 --kinds 3 --steps 48 --seed 3 \
-        --modes parity,or --out data/s2d_k3.txt
 
 # scoring a hit file against the strict definition + both additivity tests
-python3 rank.py data/s2d_occ.txt --top 20 --T 130
+python3 rank.py data/s2d_occ.txt.gz --top 20 --T 130
 ```
 
 | file | contents |
@@ -853,7 +960,7 @@ python3 rank.py data/s2d_occ.txt --top 20 --T 130
 | `constructor.py` | THE ENGROSSING CLERK (§3.6) |
 | `scribe.py` | THE SCRIBE (§3.7) |
 | `verify_replication.py` | re-checks every claim in this file |
-| `data/` | hit files; header line of each records its exact scope |
+| `data/` | hit files, gzipped (`zcat` them, or pass the `.gz` path straight to `rank.py`); the header line of each records its exact scope |
 
 ### Errata / cautions
 

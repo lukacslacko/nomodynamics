@@ -1,0 +1,38 @@
+PASS  E1  bitfield engine == xnomos, random citation universes       600 universes x 2 resolutions x 8 steps
+PASS  E2  ring engine == xnomos on Z/m, random citation universes    300 universes x 2 resolutions x 6 steps
+PASS  T1  citation is INERT at n = 1 (complete: 216 constitutions)   216 one-kind constitutions, all guard choices identical
+PASS  T2  PLENUM: beta(K) = K, i.e. the full plenum is always frozen 20,000 random constitutions, n <= 5
+PASS  T2' PLENUM, sharp form: saturation by the exception image E(C) blocks 4,000 constitutions; no law with a named exception inside an E(C)-saturated region is active
+PASS  T3  GRIDLOCK's epitaph: closed form == brute force over all U  30,000 random constitutions, n <= 5
+PASS  T3' GRIDLOCK survival fraction = ((3n+1)/(n+1)^2)^n, n = 1,2,3 complete: 60.4938% at n=2, 24.4141% at n=3
+PASS  T4  BULK MAP is exact on homogeneous ring codes, every modulus 2,000 constitutions x 7 moduli x 2 resolutions
+PASS  T5  bulk period <= 2^n - 2 (complete for n <= 3, sampled n = 4,5) n=2: 1,296 complete; n=3: 2,097,152 complete; n=4,5 sampled
+PASS  T6  SELF-CITATION at offset 0 is trivial (tautology / contradiction) 3,000 random universes
+PASS  S1  SINGLE AUTHOR: in-degree <= 1 => parity == OR, under citation 800 in-degree<=1 citation universes x 10 steps
+PASS  S2  DEAD LETTER under OR: fixed <=> no active law (nonempty targets) 4,000 citation universes x 6 states
+PASS  S3  BALANCE: fixed-and-active under parity => even cohorts     4957 balanced citation codes, every slot even
+PASS  S4  ANCHOR (own-kind + citation): the trailing law is never repealed 97078 states; c_k>0 trailing laws never repealed
+PASS  S5  PATH-SUM / LINEAR GROWTH: card <= n*(2Wt + span0 + 1)      3,000 universes x 40 steps
+PASS  S5' the linear growth bound is TIGHT: card = n(2t+1) attained  card = 3(2t+1) exactly for t <= 29 (rate 2nW = 6 laws/step)
+PASS  S6  DILATION survives citation with 'occupancy' -> 'cell content' 1,500 universes x 2 resolutions x 6 steps
+PASS  S7  OUT-DEGREE LAW (Y2): no glider at out-degree <= 1, deep search 80000 deep runs at out-degree 1, zero gliders
+PASS  S8  Y7: TANDEM-1 rotates one cell per step on every ring 3 <= m <= 24 m = 3..24, odd and even, r=1 <= p*W=1 (inside the light cone)
+PASS  S9  SUNSET + citation: every reported glider re-certifies      2549 sunset gliders re-certified over 3 full periods
+PASS  F1  LACUNA: Phi = rot_(+1) on Z/m, occupancy constant, both engines m in {5,7,8,11,13,16,21,32}; every cell occupied at all times
+PASS  F2  SIX SESSIONS: bulk period 6 = 2^3-2 on Z/m, both engines   m = 2..13, both engines, period exactly 6
+PASS  F3  PASCAL: card = 2^popcount(t) for t <= 256, both engines    t <= 256 (cite), t <= 64 (xnomos)
+PASS  F4  THE COPY: every seed replicates at t = 2^j > span          200 random seeds, all j with 2^j > span
+PASS  F5  THE WRIT: Z'(i) = Z(i-1) exactly, random signal patterns   400 random signal patterns on 24 cells
+PASS  F6  PROCESSION: Phi = rot_(+1) on a completely full ring       m = 3..19, both engines
+PASS  F7  CONVERSION FRONT: the seam advances exactly one cell per step 15 steps, occupancy constant, seam speed exactly 1
+PASS  F8  THE LEDGER: card 5 and reach 2^j+3 at every t = 4^j, exactly j = 1..8 exact (t up to 65,536); head + doubling marker
+PASS  F9  THE LEDGER is aperiodic: no exact recurrence in 400,000 steps 400,000 fully hashed states, card in [3,139] (bounded)
+PASS  F10 THE ODOMETER shares the head-plus-marker form at t = 4^j   j = 1..7 exact, root-compass reading (verify.py's own off())
+PASS  M1  gate inventory: BUFFER NOT ANDNOT AND XOR OR FANOUT, 7/7   7/7 truth tables exact
+PASS  M2  all 256 elementary CA rules simulated exactly on a ring    256 rules, Z/11, 16 CA steps, 2 random seeds each
+PASS  M3  Rule 110 long run + xnomos cross-check                     60 CA steps (cite) + 20 CA steps (xnomos), Z/23
+PASS  M4  the machine is entrenched: gate kinds are never lost       80 steps: the clock stands at every cell, phases alternate
+PASS  C1  census slice reproduces (independent re-run of 400 constitutions) deterministic, 69 tallies
+PASS  C2  census symmetry quotient is sound: orbits have constant census 120 orbits; class multiset constant on every orbit
+
+36/36 checks passed

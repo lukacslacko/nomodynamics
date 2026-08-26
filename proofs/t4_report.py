@@ -4,6 +4,30 @@ t4_report.py -- TARGET 4: the consolidated tables, printed from the raw data.
 
 Run after the censuses in t4_data/.  Every number quoted in the write-up is
 printed here.
+
+REPRODUCTION (from proofs/, Python 3.11 + numpy + z3):
+
+    python3 t4_ring.py                  # the independent engine == xnomos
+    python3 t4_tandem.py                # (a) TANDEM-1 certificates, m = 3..60
+    python3 t4_lift.py                  # (b) Lemma W, speed cap, Theorem B,
+                                        #     O-15, the HOLE rotor
+    python3 t4_odlaw.py 10              # Theorem D: randomised + COMPLETE
+                                        #     d = +-1 sweeps, m = 3..10   (7 min)
+    python3 t4_census.py n1             # complete 1-kind census, m = 3..22 (4 min)
+    python3 t4_census.py n2 3 8         # complete 2-kind census, m = 3..8 (13 min)
+    python3 t4_census.py n2 9 9         # ...        m = 9                (13 min)
+    python3 t4_census.py od1 10 11      # out-degree<=1 only, m = 10, 11  (40 min)
+    python3 t4_sat.py control           # SAT decider sanity check
+    python3 t4_sat.py own               # SAT: 1 kind, m = 3..41, p <= 6   (6 min)
+    python3 t4_sat.py od1 9 11 13 15 21 # SAT: 2 kinds out-degree 1, odd m,
+                                        #     p <= 3                     (40 min)
+    python3 t4_zbox.py 9                # bounded Z-glider search in the
+                                        #     counterexample constitutions
+    python3 t4_verify.py                # re-certification battery, all data
+    python3 t4_recert.py t4_data/*.gz   # ... with the LC rows in full
+    python3 t4_analyze.py t4_data/*.gz  # light-cone / tropical classification
+    python3 t4_report.py                # the consolidated tables (this file)
+    python3 t4_specimens.py             # the gallery, every frame re-certified
 """
 
 from __future__ import annotations
@@ -86,13 +110,13 @@ def counterexamples(rows):
 
 
 if __name__ == "__main__":
-    r1 = block([os.path.join(D, "t4_n1.jsonl")],
+    r1 = block(sorted(glob.glob(os.path.join(D, "t4_n1.jsonl*"))),
                "1 KIND -- all 27 rules x 2 target maps, m = 3..22, "
                "COMPLETE over all 2^m codes and all periods")
-    r2 = block(sorted(glob.glob(os.path.join(D, "t4_n2_*.jsonl"))),
+    r2 = block(sorted(glob.glob(os.path.join(D, "t4_n2_*.jsonl*"))),
                "2 KINDS -- all 729 rule pairs x all 16 target maps, "
                "parity+or, COMPLETE over all 2^(2m) codes and all periods")
-    r3 = block(sorted(glob.glob(os.path.join(D, "t4_od1_*.jsonl"))),
+    r3 = block(sorted(glob.glob(os.path.join(D, "t4_od1_*.jsonl*"))),
                "2 KINDS, OUT-DEGREE <= 1 -- all 729 rule pairs x the 9 maps "
                "with |T_k| <= 1, parity+or, COMPLETE")
     counterexamples(r1 + r2 + r3)

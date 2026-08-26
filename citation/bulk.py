@@ -115,7 +115,43 @@ def certify_ring(C, U, m, mode="parity"):
     return t0, p, res
 
 
+def sample_big(n, trials, seed=5, mode="parity"):
+    """Random search for long bulk orbits at n >= 4 (the complete enumeration
+    is out of reach: ((n+1)^2 * 2^n)^n = 2.56e10 already at n = 4)."""
+    import random
+    rng = random.Random(seed)
+    gs = [None] + list(range(n))
+    best, bc = 1, None
+    for _ in range(trials):
+        C = ct.Cit([(0, 0, 0)] * n,
+                   [tuple(k for k in range(n) if rng.random() < .5)
+                    for _ in range(n)],
+                   [(rng.choice(gs), rng.choice(gs)) for _ in range(n)])
+        for u in range(1, (1 << n) - 1):
+            U = frozenset(k for k in range(n) if (u >> k) & 1)
+            t0, p, seq = ct.bulk_orbit(C, U, mode)
+            if p > best:
+                best, bc = p, (C, t0, p, seq, U)
+    return best, bc
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "sample":
+        big = {}
+        for n, tr in ((4, 400000), (5, 200000), (6, 200000)):
+            best, bc = sample_big(n, tr)
+            C, t0, p, seq, U = bc
+            print("n=%d  %d random bulk data: best period %d  (bound 2^n-2 = %d)"
+                  % (n, tr, best, 2 ** n - 2))
+            print("     %s" % C.label())
+            print("     orbit: %s" % " -> ".join(
+                "{" + ",".join(map(str, sorted(v))) + "}" for v in seq[t0:]))
+            big["n%d" % n] = {"trials": tr, "best_period": best,
+                              "bound": 2 ** n - 2, "constitution": C.label()}
+        with open(os.path.join(DATA, "bulk_sample.json"), "w") as fh:
+            json.dump(big, fh, indent=1)
+        print("wrote data/bulk_sample.json")
+        raise SystemExit
     out = {}
     for n in (2, 3):
         for mode in ("parity", "or"):

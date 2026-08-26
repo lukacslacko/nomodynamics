@@ -598,3 +598,79 @@ def _tests():
 
 if __name__ == "__main__":
     _tests()
+
+
+# ------------------------------------------------- sunset-by-default (Y8)
+# A law lapses unless re-enacted: with lifetime tau = 1 the next state is
+# exactly the set of slots receiving an odd (parity) / at least one (OR)
+# toggle.  This is the semantics X-D found free gliders in under own-kind
+# targeting; here it is combined with citation guards.
+
+def step_sunset(F, C, mode="parity"):
+    n = C.n
+    occ = 0
+    for f in F:
+        occ |= f
+    tog = [0] * n
+    for k in range(n):
+        fk = F[k]
+        if not fk:
+            continue
+        a, b, c = C.rules[k]
+        g, h = C.guards[k]
+        act = fk & _sr(occ if g is None else F[g], a)
+        if not act:
+            continue
+        act &= ~_sr(occ if h is None else F[h], b)
+        if not act:
+            continue
+        sh = _sl(act, c)
+        if mode == "or":
+            for t in C.targets[k]:
+                tog[t] |= sh
+        else:
+            for t in C.targets[k]:
+                tog[t] ^= sh
+    return tog
+
+
+def classify_sunset(F0, C, mode="parity", max_steps=200, max_card=200,
+                    max_span=120):
+    F = list(F0)
+    seen_exact, seen_norm = {}, {}
+    for t in range(max_steps):
+        occ = 0
+        for f in F:
+            occ |= f
+        if occ == 0:
+            return {"kind": EXTINCT, "t": t}
+        fe = tuple(F)
+        if fe in seen_exact:
+            p = t - seen_exact[fe]
+            return {"kind": FIXED if p == 1 else CYCLE, "t": seen_exact[fe],
+                    "period": p, "card": card_fields(F)}
+        seen_exact[fe] = t
+        nm, lo = norm_fields(F)
+        if nm in seen_norm:
+            t0, lo0 = seen_norm[nm]
+            if lo - lo0:
+                return {"kind": GLIDER, "t": t0, "period": t - t0,
+                        "displacement": lo - lo0, "card": card_fields(F)}
+        else:
+            seen_norm[nm] = (t, lo)
+        if card_fields(F) > max_card:
+            return {"kind": GROWING, "t": t}
+        if occ.bit_length() - ((occ & -occ).bit_length() - 1) > max_span:
+            return {"kind": GROWING, "t": t}
+        F = step_sunset(F, C, mode)
+    return {"kind": UNRESOLVED, "t": max_steps}
+
+
+def verify_glider_sunset(F0, C, p, d, mode="parity", reps=3):
+    F = list(F0)
+    for r in range(1, reps + 1):
+        for _ in range(p):
+            F = step_sunset(F, C, mode)
+        if F != [_sl(f, d * r) for f in F0]:
+            return False
+    return True

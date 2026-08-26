@@ -1,0 +1,28 @@
+SUNSET, 40k random sample of the box: 40000 constitutions, 3840000 runs
+    EXTINCT       3294421  85.792%
+    GLIDER         357354   9.306%
+    FIXED          171540   4.467%
+    GROWING         12236   0.319%
+    CYCLE            4425   0.115%
+    UNRESOLVED         24   0.001%
+    glider-bearing constitutions: 5246 = 13.12%   (all 357354 gliders re-certified)
+    speeds: [0.25, 0.3333333333333333, 0.5, 0.6666666666666666, 0.75, 1.0]
+SUNSET + occupancy guards (COMPLETE): 11664 constitutions, 1119744 runs
+    EXTINCT        939100  83.867%
+    GLIDER         116892  10.439%
+    FIXED           57160   5.105%
+    GROWING          4608   0.412%
+    CYCLE            1984   0.177%
+    glider-bearing constitutions: 1692 = 14.51%   (all 116892 gliders re-certified)
+    speeds: [0.5, 1.0]
+SUNSET + citation (matched sample): 11664 constitutions, 1119744 runs
+    EXTINCT        956416  85.414%
+    GLIDER         104483   9.331%
+    FIXED           53863   4.810%
+    GROWING          3112   0.278%
+    CYCLE            1862   0.166%
+    UNRESOLVED          8   0.001%
+    glider-bearing constitutions: 1515 = 12.99%   (all 104483 gliders re-certified)
+    speeds: [0.25, 0.3333333333333333, 0.5, 0.6666666666666666, 0.75, 1.0]
+
+wrote data/sunset.json

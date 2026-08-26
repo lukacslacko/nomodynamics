@@ -1,2 +1,6 @@
   m=9    0 hits  (18144 calls, 352 s)
   m=11   0 hits  (36288 calls, 685 s)
+  m=13   0 hits  (54432 calls, 1095 s)
+  m=15   0 hits  (72576 calls, 1690 s)
+  m=21   0 hits  (90720 calls, 2190 s)
+od1: 90720 SAT decisions, 0 light-cone-admissible rotors found

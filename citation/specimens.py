@@ -324,6 +324,48 @@ advances one cell per step.""")
           % agree(CONV, pairs, "parity", 7))
 
 
+# =============================================================== 6b. THE LEDGER
+
+LEDGER = ct.Cit([(-1, -1, 0), (0, 0, 1)], [(1,), (0, 1)], [(1, 0), (1, 0)])
+LEDGER_SEED = [(0, 0), (0, 1), (2, 1)]
+
+
+def ledger():
+    band("6b. THE LEDGER — a binary counter on the LINE: three laws, two kinds")
+    print("""  0:(-1,-1,0) cite(1,0) ->{1}     1:(0,0,1) cite(1,0) ->{0,1}
+  seed: A and B at cell 0, B at cell 2   (three laws)
+
+Bounded population, unbounded reach, hence aperiodic — the 1-D analogue of the
+Jubilee Code and the Odometer, which are both two-dimensional.  At t = 4^j the
+state is EXACTLY a fixed three-law head plus a two-law marker that doubles its
+distance:
+
+      S(4^j)  =  { A@0, B@0, B@2 }  u  { A@(2^j+2), B@(2^j+2) }
+
+so card = 5 at every t = 4^j and the reach is exactly sqrt(t) + 3.""")
+    F = ct.state_fields(LEDGER_SEED, 2)
+    print()
+    for t in range(20):
+        print("    t=%2d |%s|" % (t, ct.render_fields(F, -3, 14)))
+        F = ct.step_fields(F, LEDGER, "parity")
+    print()
+    F = ct.state_fields(LEDGER_SEED, 2)
+    head = {(0, 0), (0, 1), (2, 1)}
+    for t in range(1, 4 ** 8 + 1):
+        F = ct.step_fields(F, LEDGER, "parity")
+        b = t.bit_length() - 1
+        if t >= 4 and (t & (t - 1)) == 0 and b % 2 == 0:
+            j = b // 2
+            pts = set(ct.fields_to_pairs(F))
+            occ = F[0] | F[1]
+            span = occ.bit_length() - ((occ & -occ).bit_length() - 1)
+            want = head | {(2 ** j + 2, 0), (2 ** j + 2, 1)}
+            print("    t=4^%-2d = %-7d card=%d span=%-5d head+marker exact: %s"
+                  % (j, t, ct.card_fields(F), span, pts == want))
+    print("    agrees with xnomos over 3000 steps: %s"
+          % agree(LEDGER, LEDGER_SEED, "parity", 3000))
+
+
 # ============================================================ 7. THE MACHINE
 
 def machine():
@@ -352,7 +394,7 @@ def machine():
 
 
 NAMES = dict(gridlock=gridlock, lacuna=lacuna, six=six, pascal=pascal,
-             writ=writ, conversion=conversion, machine=machine)
+             writ=writ, conversion=conversion, ledger=ledger, machine=machine)
 
 if __name__ == "__main__":
     todo = sys.argv[1:] or list(NAMES)

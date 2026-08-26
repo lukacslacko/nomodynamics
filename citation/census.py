@@ -168,7 +168,12 @@ def _work2(chunk):
 def stage2(procs):
     t0 = time.time()
     rows = []
-    with open(os.path.join(DATA, "residue1.txt")) as fh:
+    path = os.path.join(DATA, "residue1.txt")
+    if not os.path.exists(path):
+        sys.exit("data/residue1.txt missing (it is a large intermediate and is "
+                 "not kept in the repository).  Run `python3 census.py stage1` "
+                 "first; it regenerates it.")
+    with open(path) as fh:
         for line in fh:
             a, b, c, m = line.split()
             rows.append((int(a), int(b), int(c), m))

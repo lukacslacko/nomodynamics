@@ -1,0 +1,16 @@
+  64/343  35s  CAP=0  maxd0=1
+  128/343  176s  CAP=0  maxd0=1
+  192/343  350s  CAP=0  maxd0=1
+  256/343  484s  CAP=0  maxd0=4
+  320/343  667s  CAP=0  maxd0=4
+
+mode=or  pmax=6  CAP=0
+REALISABLE GENERATORS (p0,d0), p0 <= 6, ANY number of kinds, ANY pattern width:
+   (p0,d0)=(1, 1)    e.g. class=(0, 0, 5) seed=[0, 1]
+   (p0,d0)=(2, 1)    e.g. class=(1, 0, 7) seed=[1]
+   (p0,d0)=(2, 2)    e.g. class=(4, 0, 7) seed=[0]
+   (p0,d0)=(3, 3)    e.g. class=(5, 6, 5) seed=[0, 1]
+   (p0,d0)=(4, 4)    e.g. class=(4, 2, 6) seed=[0, 1, 2]
+   max d0 = 4
+NOT realisable as a generator (p0<=6): [(3, 1), (3, 2), (4, 1), (4, 2), (4, 3), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)]
+wrote /Users/lukacs/claude/math/program/phase6/proofs/t3_gen_or_p6.jsonl

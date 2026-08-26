@@ -17,7 +17,11 @@ GOLD = exact, |supp(seed)| >= 2, splitfail > 0 and atp — a replicator whose
 doubling is neither the unconditional linear map nor a superposition of its
 own parts.
 
-Usage: python3 rank.py data/s2d_occ.txt [--top 20] [--T 130]
+Reads the `key=value|key=value` hit files written by sweep2d.py (plain or
+.gz).  sweep1d.py writes a positional format and is scored inline in RESULTS.md
+section 5; this script skips lines it cannot parse.
+
+Usage: python3 rank.py data/s2d_occ.txt.gz [--top 20] [--T 130]
 """
 
 from __future__ import annotations
@@ -82,12 +86,22 @@ def score(C, S0, mode, T=130, cardcap=3000):
             "anchors": anch1, "events": ev[:8], "R": R}
 
 
+def _open(path):
+    if path.endswith(".gz"):
+        import gzip
+        return gzip.open(path, "rt")
+    return open(path)
+
+
 def parse(path):
     out = []
-    for line in open(path):
+    for line in _open(path):
         if line.startswith("#"):
             continue
-        d = dict(kv.split("=", 1) for kv in line.strip().split("|"))
+        parts = line.strip().split("|")
+        if not all("=" in x for x in parts):          # sweep1d positional file
+            continue
+        d = dict(kv.split("=", 1) for kv in parts)
         if int(d.get("deb", "1")) != 0:
             continue
         seed = ast.literal_eval(d["seed"])

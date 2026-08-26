@@ -25,6 +25,7 @@ Usage:  python3 t4_census.py n1            # 1 kind, m = 3..22, all 27 rules
 
 from __future__ import annotations
 
+import gzip
 import itertools
 import json
 import os
@@ -272,8 +273,8 @@ def census(rules_list, target_maps, ms, n, modes=("parity", "or"),
                   % (m, time.time() - t0, len(rows)), flush=True)
     if dump:
         os.makedirs(OUT, exist_ok=True)
-        path = os.path.join(OUT, "t4_%s.jsonl" % tag)
-        with open(path, "w") as fh:
+        path = os.path.join(OUT, "t4_%s.jsonl.gz" % tag)
+        with gzip.open(path, "wt") as fh:
             for r in rows:
                 fh.write(json.dumps(r) + "\n")
         if verbose:

@@ -29,6 +29,7 @@ import xnomos
 from t4_ring import (Ring, rotor_certificate, verify_rotation_recurrence,
                      verify_via_xnomos, vacant_arc)
 from t4_lift import lift_report, zconst
+from t4_analyze import opener
 
 W = 1
 
@@ -47,7 +48,7 @@ def row_state(r):
 def main(paths, xnomos_sample=4000, seed=5):
     rows = []
     for p in paths:
-        with open(p) as fh:
+        with opener(p) as fh:
             rows += [json.loads(l) for l in fh]
     print("rows to re-certify: %d" % len(rows))
     rng = random.Random(seed)
@@ -116,5 +117,6 @@ if __name__ == "__main__":
     if not paths:
         d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "t4_data")
         paths = [os.path.join(d, f) for f in sorted(os.listdir(d))
-                 if f.endswith(".jsonl") and not f.startswith("t4_sat")]
+                 if (f.endswith(".jsonl") or f.endswith(".jsonl.gz"))
+                 and not f.startswith("t4_sat")]
     sys.exit(0 if main(paths) == 0 else 1)

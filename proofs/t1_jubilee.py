@@ -170,8 +170,8 @@ def main():
     import itertools
     bad = None
     tested = 0
-    for r in range(0, 5):
-        for M in itertools.combinations(range(7), r):
+    for r in range(0, 10):
+        for M in itertools.combinations(range(9), r):
             M = frozenset(M)
             sg = sigma(M)
             acc = 0
@@ -185,8 +185,9 @@ def main():
                 break
         if bad:
             break
-    check("partial-sum lemma on every M subset [0,6], |M|<=4, t < 2^10",
-          bad is None, "%d sets x 1024 times, COMPLETE box" % tested)
+    check("partial-sum lemma on EVERY M subset [0,8], t < 2^10",
+          bad is None, "%d sets x 1024 = %d identities, COMPLETE box"
+          % (tested, tested * 1024))
 
     # ---- (B) the block structure
     print("\n(B)  the block structure  N_j = 3.2^j - 2")
@@ -438,7 +439,7 @@ def main():
         return out
     bad = []
     fams = 0
-    for R in range(1, 6):
+    for R in range(1, 7):
         for r in range(1, R + 1):
             for I in it.combinations(range(1, R + 1), r):
                 if 1 not in I or max(I) != R:
@@ -455,8 +456,17 @@ def main():
                         hit[m.bit_length() - 1] = hit.get(m.bit_length() - 1, 0) + 1
                 if any(hit.get(k, 0) != 1 for k in range(KM)):
                     bad.append((I, "power of two missed/repeated"))
-    check("every I subset [1,5] with 1 in I: mu strictly increasing, each 2^k once",
-          not bad, "%d families, COMPLETE box over I subset [1,5]" % fams)
+    check("every I subset [1,6] with 1 in I: mu strictly increasing, each 2^k once",
+          not bad, "%d families, COMPLETE box over I subset [1,6]" % fams)
+    # the hypothesis 1 in I is necessary
+    bad2 = []
+    for I in ((2,), (2, 3), (3,), (2, 4)):
+        MU2 = or_fib_I(I, 400)
+        if all(MU2[i] < MU2[i + 1] for i in range(len(MU2) - 1)):
+            bad2.append(I)
+    check("...and 1 in I is necessary: I = {2},{2,3},{3},{2,4} are NOT increasing",
+          not bad2, "e.g. I={2} gives 1,1,2,2,3,3,... — each 2^k twice")
+
     # I = {1} is the Pascal column law |S_t| = 2^popcount(t)
     MU1 = or_fib_I((1,), 1 << 14)
     ok = all(sum(1 for m in MU1 if m & ~t == 0) == (1 << bin(t).count("1")) - 1
@@ -468,7 +478,7 @@ def main():
     print("\nCOROLLARY 1.15 (the Jubilee family)  guard moved s cells west")
     Ejub, Wjub, Njub, Sjub = (1, 0), (-1, 0), (0, -1), (0, 1)
     rows = []
-    for sw in range(0, 5):
+    for sw in range(0, 6):
         Cn = Const([(Ejub, Sjub, Njub), (Sjub, Njub, Sjub),
                     ((-sw, 0), (0, -1), (1, 0))], dim=2)
         S0 = state_of([((-1, 0), 0), ((-1, 1), 1)]
@@ -480,7 +490,7 @@ def main():
                 vals.add(card(Xs))
             Xs = step(Xs, Cn)
         rows.append((sw, sorted(vals), max(sw, 1) + 3))
-    check("|S_{2^k}| is constant = max(s,1)+3 for s = 0..4, k = 1..12 (ENGINE)",
+    check("|S_{2^k}| is constant = max(s,1)+3 for s = 0..5, k = 1..12 (ENGINE)",
           all(v == [pr] for _, v, pr in rows),
           "s -> reset: %s" % [(sw, v[0]) for sw, v, _ in rows])
 

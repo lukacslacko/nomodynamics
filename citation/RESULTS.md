@@ -115,6 +115,7 @@ exception clause goes vacuous. From that one device:
 | **Linearisation** | A tautologous guard makes the step map exactly `F ↦ (I+N)F` over 𝔽₂. **Every additive CA of that shape lives in the citation sector** — including Sierpinski growth on ℤ with **own-kind** targeting, out-degree 1, window 1: chapter one's tamest corner, which chapter one proved contains only colonizers and blinkers. |
 | **A replicator (Y5)** | `(I+N)^{2^j} = I + N^{2^j}`, so at every `t = 2^j` past the seed's span **every finite code** stands beside a disjoint copy of itself. Proved, not found; universal, not special. |
 | **The substrate (Y3)** | Gate inventory complete (BUFFER, NOT, AND-NOT, AND, XOR, OR, FAN-OUT, all one step, all truth tables machine-checked) and, beyond the charter's prediction, **all 256 elementary cellular automata are simulated exactly** by citation constitutions with ≤ 15 kinds and window 1, at two nomodynamics steps per CA step. Rule 110 runs inside nomodynamics. |
+| **A counter on the line** | **THE LEDGER** — three laws, two kinds, window 1, on ℤ: bounded population, unbounded reach, aperiodic, and `S(4^j) = {A@0,B@0,B@2} ⊔ {A@(2^j+2),B@(2^j+2)}` **exactly** — card 5 and reach `√t + 3` at every power of four. The first 1-D binary counter in the field, and it fixes prediction Y6's normal form (*head ⊔ doubling marker*), while refuting the claim that the reset number 4 is forced. |
 | **New fauna** | **LACUNA** — a hole running at the speed of light through a *completely occupied* code, occupancy never changing. **THE SIX SESSIONS** — a solid block whose interior cycles with period 6 while its **surface is frozen**: the exact inversion of "all dynamics is surface dynamics". **THE WRIT / PROCESSION** — a signal, and a full ring that revolves by one cell per step. **THE CONVERSION FRONT** — one solid phase eating another. |
 | **A casualty nobody flagged** | **Cryptic Unipotency** (`xtheory` Thm 6) and the whole 𝔽₂-linear front layer of chapters one and two **fail under citation**: they assume the guard is a function of occupancy alone, so that freezing occupancy freezes the guard mask. Under citation the guard is a function of the evolving kind-fields and the step map is a **degree-3 polynomial** map, not an occupancy-modulated linear one. |
 
@@ -255,8 +256,10 @@ Counting: per kind, the pairs `(g,h)` with `h ∈ {any, k, g}` number `3n+1` out
 *(A remark on the stronger reading. If "solid" is allowed to be heterogeneous —
 different cells carrying different kinds — then interior-freezing for **all**
 solid regions holds iff every kind is either occupancy-blocked (`h_k = any`) or
-a universal dead letter. Theorem G is the uniform statement, which is the one
-that matches the bulk map and the motivating example.)*
+a universal dead letter — verified by exhaustive check over all `W = 1` kinds at
+`n = 2` and `n = 3` and all three-cell solid neighbourhoods, 0 counterexamples.
+Theorem G is the uniform statement, which is the one that matches the bulk map
+and the motivating example.)*
 
 ### 3.2 The bulk map — a new invariant, and a habitat
 
@@ -480,9 +483,11 @@ occupancy   h = any     active laws:  1        citation  h = kind 1   active law
 ```
 
 On the left the block grows at its surface and its interior never changes; on
-the right every one of the ten interior laws fires at once and the block turns
-into a Pascal triangle. `h_1 = 1 ∉ {any, 0, g_0}`, so Theorem G says Gridlock is
-dead for this constitution — and it is.
+the right every one of the ten laws fires at once and the block turns into a
+Pascal triangle — because with `h_0 = 1` and kind 1 never enacted, kind 0 is
+unconditionally active and the step map is `F ↦ F ⊕ (F≪1)` (Theorem L).
+`h_0 = 1 ∉ {any, 0, g_0} = {any, 0}`, so Theorem G says Gridlock is dead for
+this constitution — and it is.
 
 ### 5.2 LACUNA — a hole travelling through a *completely occupied* code
 
@@ -613,6 +618,53 @@ This one runs at the speed of light **through written code**, and it converts.
 *[established; battery **F7**: 15 steps, seam speed exactly 1, occupancy
 constant]*
 
+### 5.6 THE LEDGER — a binary counter on the line
+
+Found in the census residue (§6.4), which is what a residue is for.
+
+```
+0 : (-1,-1,0)  cite(1,0) ->{1}
+1 : ( 0, 0,1)  cite(1,0) ->{0,1}
+seed: sections 0 and 1 at cell 0, section 1 at cell 2      (three laws)
+```
+
+```
+   t= 0 |...#.B............|      # = both sections
+   t= 1 |...#.B#...........|      A = section 0 only
+   t= 2 |...#.BB...........|      B = section 1 only
+   t= 3 |...#.BA#..........|
+   t= 4 |...#.B.#..........|
+   t= 5 |...#.B##..........|
+   t= 6 |...#.BB#..........|
+   t= 7 |...#.BAB..........|
+   t= 8 |...#.B.B#.........|
+   t= 9 |...#.B#BB.........|
+   t=10 |...#.BBBA#........|
+   t=11 |...#.BAA.#........|
+```
+
+Bounded population (card ∈ [3, 139] over 400,000 fully hashed steps, no exact
+recurrence), unbounded reach — hence **aperiodic**. And the reset is exact:
+
+> **The Ledger's law.** *For every `j ≥ 1`,*
+> ```
+>     S(4^j)  =  { A@0, B@0, B@2 }  ⊔  { A@(2^j+2), B@(2^j+2) }
+> ```
+> *— a fixed three-law head plus a two-law marker at distance `2^j + 2`. Hence
+> `card(S(4^j)) = 5` and `reach(S(4^j)) = √t + 3`, exactly, at every power of
+> four.* *[established by computation; verified `j = 1…11`, i.e. to
+> `t = 4,194,304`; battery **F8**, **F9**]*
+
+This is the **first binary counter of nomodynamics in one dimension**. The
+Jubilee Code (chapter one, 2-D, ~26 laws) and the Odometer (chapter two, 2-D,
+3 laws) are both planar; the Ledger is three laws and two kinds on ℤ. The
+citation guard is doing all the work, and the control is one line long: **strip
+the citations from exactly these rules and this seed — replace `cite(1,0)` by
+`cite(any,any)` — and the code is a dead letter at `t = 0`**, fixed with zero
+active laws. Same offsets, same targets, same seed; anonymous guard, nothing
+happens; named guard, a counter that is still running at `t = 4,194,304`.
+See §9, Y6, for what it says about the "four-law reset".
+
 ---
 
 ## 6. The census
@@ -733,7 +785,8 @@ Speeds realised: `1, 1/2, 2/5, 1/4, 1/5, 2/11, 1/6`. Glider core spans run to
 ### 6.4 Stage 2 — the residue, deepened
 
 All 1,790,842 growing-or-unresolved representative runs were re-run with the
-budget raised 7.5× in time and 12.5× in span:
+budget raised 7.5× in time and 12.5× in span. Counts here are **per orbit
+representative** (not weighted by orbit size, unlike §6.3):
 
 | | count | share of residue |
 |---|---:|---:|
@@ -747,6 +800,17 @@ budget raised 7.5× in time and 12.5× in span:
 **Zero new gliders.** In particular the residue contains no wide glider of the
 MIRROR type inside `span ≤ 1500`, `p ≤ 1500` — which is the honest form of the
 statement, and it is why the deepening was run at all.
+
+**The interesting residue.** The 222,219 still-unresolved runs come from 10,805
+distinct constitutions, of which **94.0 % have a living bulk** (Theorem G fails)
+against 39.5 % in the box at large — the sharpest single correlate of Gridlock's
+death anywhere in this census. They are not runaway growers: on a 150-run sample
+at `t = 1500` the median card is **20** and the median span **51**, with a
+measured growth exponent `d log card / d log t` of median **0.65** over
+`t ∈ [400, 1500]`. In other words the residue is dominated by **slow bounded
+machines with creeping reach** — cryptids of exactly the Odometer's type. A
+sweep of 1,500 of them to `t = 4000` isolated **802** with card ≤ 24 and span
+< 300; the cleanest is **THE LEDGER** (§5.6). *[measured]*
 
 ### 6.5 Two hunts inside solid code
 
@@ -771,3 +835,452 @@ Both hunts are **complete over the citation box** (237,006 representatives, all
 > Speeds `1` and `5/6` (a `(p,r) = (36,−30)` family). *[measured, complete over
 > the box]*
 
+
+---
+
+## 7. The statute machine (prediction Y3)
+
+### 7.1 The gate inventory
+
+A citation guard is literally `p ∧ ¬q` on kind-fields at fixed offsets, and
+parity resolution XORs the toggles of all authors of a slot. So **one
+nomodynamics step applies to every target field an arbitrary XOR of AND-NOT
+terms over the neighbourhood.** Gate laws are placed at a cell, cite two data
+kinds and write into an output kind; the whole inventory is one step deep:
+
+```
+BUFFER  R = P            gate(P, phi)                       00->0 01->0 10->1 11->1
+NOT     R = ~P           gate(SELF@0, phi) + gate(P, phi)   00->1 01->1 10->0 11->0
+ANDNOT  R = P & ~Q       gate(P, Q)                         00->0 01->0 10->1 11->0
+AND     R = P & Q        gate(P, phi) + gate(P, Q)          00->0 01->0 10->0 11->1
+XOR     R = P ^ Q        gate(P, phi) + gate(Q, phi)        00->0 01->1 10->1 11->0
+OR      R = P | Q        gate(Q, phi) + gate(P, Q)          00->0 01->1 10->1 11->1
+FANOUT  R1 = R2 = P      gate(P, phi) -> {R1, R2}           (multi-target)
+```
+
+All seven truth tables are machine-checked (battery **M1**). `phi` is the
+phantom (Lemma 2); `SELF@0` is self-citation at offset 0, the constant `1`
+(Lemma 1). Fan-out is exactly the multi-target device of chapter two, so
+**out-degree — which chapter two identified as the price of motion — is also
+the price of fan-out.**
+
+### 7.2 Every elementary cellular automaton, exactly
+
+The gates give algebraic degree ≤ 2 per step (a guard reads two cells), so a
+degree-3 rule needs one scratch field and two steps. The obstacle is that a gate
+has only two clauses, and gating it on a clock phase would consume one of them.
+The fix uses the substrate itself:
+
+> **The self-citing clock.** One kind `CK` with `a = 0`, `g = CK`, `h = φ` is
+> unconditionally active (Lemma 1). Place it at every cell and let its target
+> set be *the entire gate alphabet*. Then every gate kind is toggled on and off
+> at every cell at every step: the phase-1 gates are **placed** only on even
+> steps and the phase-2 gates only on odd steps. Being present *is* the phase,
+> so both guard clauses stay free for data.
+
+Compilation (`circuit.py`): put the CA state in kind `S`, a scratch product in
+kind `U`.
+*Phase 1:* `U(i) ^= S(i−1)·S(i)`, realised as `x ⊕ (x ∧ ¬y)`.
+*Phase 2:* `S(i) ^= f(S(i−1),S(i),S(i+1)) ⊕ S(i)`, with the cubic monomial
+supplied by `U(i)·S(i+1)`, and `U` cleared by re-applying the same product
+(`S` is unchanged since phase 1, so the same value is XORed back).
+
+> **Theorem M.** *For every one of the 256 elementary cellular automata there is
+> a citation constitution with **at most 15 kinds** and **window `W = 1`** such
+> that on ℤ/m, for every `m ≥ 3`, two nomodynamics steps restricted to the `S`
+> field are exactly one CA step, and the machine kinds are invariant.*
+> *[established by construction; battery **M2**: all 256 rules, ℤ/11, 16 CA
+> steps, 2 random seeds each, exact; **M3**: Rule 110 for 60 CA steps on ℤ/23
+> and 20 more on the independent `xnomos` engine; **M4**: the clock stands at
+> every cell and the phases alternate for 80 steps; and a separate check at the
+> smallest moduli, `m = 3…8` × 8 rules × 3 seeds × 12 CA steps, 0 failures]*
+> Kinds needed: min 8, max 15, mean 12.0.
+
+Rule 110 inside nomodynamics, from a single 1 on ℤ/30 (13 kinds, `W = 1`):
+
+```
+    ............................#.
+    ...........................##.
+    ..........................###.
+    .........................##.#.
+    ........................#####.
+    .......................##...#.
+    ......................###..##.
+    .....................##.#.###.
+    ....................#######.#.
+    ...................##.....###.
+    ..................###....##.#.
+    .................##.#...#####.
+```
+
+**Prediction Y3 — CONFIRMED and exceeded.** The charter asked for a gate-level
+inventory (≈ 0.7) and gave ≈ 0.35 to a completed universality construction. The
+inventory is complete, and the substrate is shown to be **CA-complete
+cell-for-cell at the same window** — strictly more than a gate list, strictly
+less than Turing universality on ℤ.
+
+### 7.3 The separation, and what is *not* proved
+
+> **Corollary (citation is not a relabelling of chapter two).** Every occupancy
+> constitution satisfies Gridlock: its uniform solid regions are interior-frozen
+> (`h_k = any` for all `k`, so Theorem G applies). The Pascal clause is a
+> citation constitution with a uniform solid region that is not interior-frozen.
+> Since "uniform solid regions are interior-frozen" is invariant under the only
+> symmetries of the object (mirror and kind relabelling), no occupancy
+> constitution is isomorphic to it. *[established]* Chapter three's risk clause
+> — "citation is inert, every phenomenon a relabelling on a larger alphabet" —
+> is therefore closed, and closed by a theorem rather than by a specimen.
+
+**What is not proved.** Turing universality on ℤ. A code is finite, so the gate
+laws can only be laid over a finite region, and a machine needs unbounded tape.
+The route is visible and is offered at the **[original proposal]** tier: the
+simulated CA's light cone advances at `1/2` cell per nomodynamics step (two
+steps per CA step), while a *constructor front* laying gate kinds advances at
+1 cell per step, so a front can outrun the computation it feeds and lay tape
+(and Rule 110's period-14 background) ahead of it forever. Building that front —
+and proving it never disturbs the region behind it — was not attempted here.
+Ring simulation gives space-bounded computation only; on a ring every orbit is
+eventually periodic, so no undecidability follows from it.
+
+---
+
+## 8. The institutional reading
+
+Chapter three's referent is the most concrete of the three: statutes cite each
+other by section number, and a citation is a *name*, not a proximity. Four
+things the mathematics actually says, and nothing beyond them.
+
+**1. A complete code is not a frozen code.** Chapter one's Gridlock said that
+where the law is dense, nothing can happen: every provision's exception clause
+is satisfied by its crowded neighbourhood, so the interior of a written code is
+inert and all change happens at the frontier. That is an artefact of anonymity.
+The moment a provision says *"unless section 9 is in force"* rather than
+*"unless something is in force nearby"*, a fully written code can act
+everywhere at once. Theorem G makes the condition exact and, read as law, it is
+almost a slogan: **a full code freezes only if every exception clause refers to
+nothing in particular, to the provision itself, or to its own precedent. One
+reference to a third party anywhere in the code and the interior wakes up.** The
+fraction of two-kind constitutions that stay frozen is 60 %; at three kinds it
+is 24 %; at six, 0.34 %. *Codification does not produce stasis; anonymity did.*
+
+**2. What "total law" would have to mean.** The plenum theorem survives (Y1):
+saturate a region and it freezes. But the saturation that matters is by the
+**exception image** — the set of provisions that are *cited as exceptions* —
+and a constitution can name, as an exception, a provision that is never enacted.
+So the frozen state is no longer something a busy legislature drifts into; it is
+a target the drafters would have to hit deliberately, including by enacting
+provisions whose only function is to be cited. *Total law is still total stasis.
+It has stopped being cheap.*
+
+**3. Self-citation is not cross-citation, and the difference is structural.**
+A provision that cites *itself at its own location* is degenerate: as a
+precedent it is a tautology (Lemma 1), as an exception it is a contradiction —
+the provision either says nothing or repeals its own condition. Cross-citation
+is what carries content, and one particular cross-citation — naming a section
+that is never enacted — is what makes a provision act **unconditionally**, which
+no anonymous guard can do (Lemma 2). Everything in this chapter descends from
+that asymmetry. *[established; the reading is interpretation, the two lemmas
+are not.]*
+
+**4. Entrenchment becomes architecture.** A kind nobody amends is immortal.
+Chapter two noticed that such a provision is a *pump*. Under citation it is
+better than that: because a law can now act regardless of its surroundings, an
+entrenched provision placed at every cell is a **circuit element**. The
+constitutions of §7 split cleanly into an entrenched part that nobody can amend
+— the clock and the gates, standing at every cell forever — and an amendable
+part that carries the state. The machine is the entrenched law; the data is the
+ordinary law. That is not an analogy imposed on the mathematics: it is the
+literal in-degree-0 / in-degree-≥1 split of the amendment digraph, and it is
+what makes the Rule 110 construction work. *A statute book that entrenches
+enough of itself stops being a body of rules and becomes a computer, with the
+un-entrenched provisions as its memory.*
+
+
+---
+
+## 9. Scorecard against the frozen predictions Y1–Y8
+
+**Y1 — the plenum still freezes. CONFIRMED, and hollowed out.** Theorem P; the
+sharp criterion is saturation by the *exception image* `E(C)`, not by `K`, and
+`E(C)` may name kinds the dynamics never enacts. Structurally the plenum theorem
+*is* the statement `β(K) = K` for the bulk map, and Gridlock's exact epitaph
+`h_k ∈ {any, k, g_k}` is the promised characterisation in terms of the citation
+digraph. *[established]*
+
+**Y2 — the Out-Degree Law survives citation verbatim. CONFIRMED.** By proof
+audit (the monovariant never reads the guard), by 51,018,336 complete
+classifications at out-degree ≤ 1 with a deepened residue, and by 80,000 deep
+random runs: **zero gliders**. The charter's stated *reason* ("guards only thin
+the actor set") is **wrong** — citation can make strictly more laws active than
+occupancy — and this was flagged in the pre-registration before the audit ran.
+The tropical monovariant has no hole; chapter two needs no re-audit on this
+axis. *[established]*
+
+**Y3 — citation is the computational substrate. CONFIRMED, and exceeded.**
+Charter: ≈ 0.7 for a gate-level inventory with AND, NOT and fan-out; ≈ 0.35 for
+a completed universality construction. Delivered: the full inventory (7/7 truth
+tables, one step each) **and** an exact simulation of all 256 elementary
+cellular automata by ≤ 15-kind, window-1 citation constitutions at two steps per
+CA step, including Rule 110. Full Turing universality on ℤ is **not** completed
+— a code is finite and the machine must build its own tape; the constructor
+front that would do it is sketched in §7.3 at the *original proposal* tier.
+*[established for the simulation; original proposal for universality]*
+
+**Y4 — growth stays linear. CONFIRMED, and it is a triviality plus a sharp
+constant.** `|S_t| ≤ n(2Wt + span₀ + 1)` in 1-D for any constitution whatsoever
+(light cone × `n` laws per cell), and Path-Sum Confinement gives the same
+guard-free. The bound is **attained**: a three-kind citation constitution with
+`card = 3(2t+1)` exactly, i.e. the maximal rate `2nW = 6` laws per step
+(battery **S5'**). *[established]*
+
+**Y5 — a replicator exists. CONFIRMED, in the strongest form available.** Not a
+special organism but a property of a constitution: in the Pascal clause **every**
+finite code satisfies `S_{2^j} = S₀ ⊔ (S₀ + 2^j)` for every `2^j > span(S₀)`.
+Proved (Frobenius over 𝔽₂), machine-checked on 200 random seeds, cross-checked
+on the independent engine. The charter gave this ≈ 0.4. *[established]*
+
+**Y6 — the four-law reset is not a coincidence. PREMISE REFUTED; the normal
+form CONFIRMED and made exact; the "4 is forced" half REFUTED.**
+
+*The premise.* Re-measuring **THE ODOMETER** (`OEW>B NQR>AB`, seed
+`A@(0,0) A@(1,0) B@(0,1)`, parity) with `xnomos` gives card at `t = 2^k`,
+`k = 0…13`, of
+
+```
+4, 5, 5, 6, 4, 6, 4, 4, 6, 4, 4, 4, 6, 4
+```
+
+— **not four at every power of two**. The reason is a compass ambiguity: the
+root `verify.py` (lines 353–354) and `note/figs.py` use `N = (0,−1)`, while
+`xamend2d/xa2d.py` (lines 29–35) and `xamend2d/RESULTS.md` use `N = (0,+1)`, so
+the string `NQR` names two different rules and hence two different machines that
+share the name. Under the root compass the card sequence is `6, 4, 4, 4, …`,
+and the four-law claim is true. **This was already diagnosed inside the
+repository** — `proofs/RESULTS.md` §2.4, "two machines wear the name THE
+ODOMETER", certified by `proofs/t2_odometer.py` — by a concurrent expedition;
+the finding above is an independent reproduction of it, not a new discovery.
+What is still uncorrected at the time of writing is `XFINDINGS.md` §3,
+`xamend2d/RESULTS.md` headline 9 and §11.2 (whose own table already shows
+card 6 at `t = 2¹²`, two lines above prose claiming four), and the two HTML
+demos. *[measured, both engines]*
+
+*The explanation.* Y6 predicted that the Jubilee Code and the Odometer are two
+instances of one binary-counter normal form, with the 4 forced by it. **The
+first half is confirmed and can now be stated exactly; the second half is
+refuted.**
+
+Chapter three supplies a third counter, and its own (§5.6, THE LEDGER: three
+laws, two kinds, window 1, on ℤ). Both it and the Odometer have the *same* exact
+shape at every power of four — **a fixed head, plus one marker whose distance
+doubles**:
+
+| | at `t = 4^j` | card | reach |
+|---|---|---:|---|
+| **THE ODOMETER** (2-D, root-compass reading) | `{A@(0,0), A@(1,0), B@(0,1)} ⊔ {B@(0, 3·2^{j−1})}` | **4** = 3 + 1 | `3·2^{j−1} + 1 = 1.5√t + 1` |
+| **THE LEDGER** (1-D, this chapter) | `{A@0, B@0, B@2} ⊔ {A@(2^j+2), B@(2^j+2)}` | **5** = 3 + 2 | `2^j + 3 = √t + 3` |
+
+*[established by computation: the Odometer form verified exactly for `j = 1…8`,
+the Ledger's for `j = 1…11`; battery **F8**, **F10**]*
+
+So there **is** one normal form — *head ⊔ doubling marker*, reach `Θ(√t)`,
+constant card at every `t = 4^j`, and a carry avalanche in between — and it now
+has a witness in each of the two dimensions. But **the 4 is not forced**: it is
+just `|head| + |marker|` for that particular machine, and the Ledger returns to
+**five**. What is forced is the *shape*, not the number. The Jubilee Code's
+reported reach `≈ 1.5√t` fits the same family; it was not re-examined here.
+
+The replicator reading is also refuted: neither counter's reset state is two
+disjoint translates of a common core, so `card(S_{2^j}) = 2·card(S₀)` — the
+Fredkin signature that chapter three's additive sector genuinely produces
+(§4.2) — is **not** the mechanism. The counters carry a marker; the replicators
+carry a copy. *[the normal form is established; the reading of it is
+interpretation]*
+
+
+**Y7 — light-cone-admissible odd-ring rotors exist. CONFIRMED (a check, as the
+charter said).** TANDEM-1 satisfies `Φ = rot_{+1}` **exactly** on every ring
+`3 ≤ m ≤ 24`, odd and even alike, with `|r| = 1 ≤ p·W = 1` — inside the light
+cone, so genuine transport. Chapter three adds two more full-ring rotors of its
+own that chapter one could not have: **PROCESSION** and **LACUNA**, both on rings
+every cell of which is occupied at every step. *[established; battery **S8**,
+**F1**, **F6**]*
+
+**Y8 — the impermanence sector is rich; sunset + citation is the easiest place
+to build a machine. HALF CONFIRMED, HALF REFUTED.** Rich, yes, and
+spectacularly: under sunset-by-default with lifetime `τ = 1` (a law lapses
+unless re-enacted, so the next state is exactly the toggle set), a 40,000-
+constitution random sample of the citation box gives **9.31 % certified glider
+runs** — three orders of magnitude above the 0.03 % of the permanent sector —
+with speeds `1, 3/4, 2/3, 1/2, 1/3, 1/4`. But the second half fails on a
+controlled experiment. Complete over the 11,664 occupancy-guard constitutions
+versus a size-matched random citing sample, same seeds, same budgets:
+
+| sunset, `τ = 1` | glider runs | glider-bearing constitutions |
+|---|---:|---:|
+| occupancy guards (complete corner, 1,119,744 runs) | 10.44 % | 1,692 = **14.51 %** |
+| citation guards (matched sample, 1,119,744 runs) | 9.33 % | 1,509 = **12.94 %** |
+
+**Citation does not enrich the sunset sector; it slightly thins it.** And the
+machine of §7 was built with *permanent* law and no sunset at all. *[measured;
+the occupancy figure is consistent with X-D's independently measured 11.4 % at
+`τ = 1`, which is a useful cross-check that the two implementations of
+sunset agree]*
+
+### 9b. My own pre-registration, scored
+
+| | outcome |
+|---|---|
+| **P1** citation inert at `n = 1` | **HELD** (Lemma 0, complete over 216 constitutions) |
+| **P2** plenum holds but hollows out; sharp form is `E(C)` | **HELD** (Theorem P) |
+| **P3** Gridlock ⟺ `h_k ∈ {any, k, g_k}` | **HELD exactly** (Theorem G) |
+| **P4** the bulk is a map `β : 2^K → 2^K`, exact on rings, `β(K)=K` | **HELD** (Theorem B) |
+| **P5** Y2 survives; the charter's *reason* is wrong | **HELD in both halves** |
+| **P6** the unconditional law is the whole mechanism; linear CAs appear | **HELD** (Lemma 2, Theorem L) |
+| **P7** Frobenius replication | **HELD** (Theorem R) |
+| **P8** gate inventory + full CA simulation; universality on ℤ not completed | **HELD in all three parts** |
+| **P9** census shape: gliders *rarer per constitution* under citation | **REFUTED.** 0.377 % (occupancy corner) vs 0.403 % (citing) — indistinguishable, if anything slightly higher. The rest of P9 held: 75 % extinct/fixed/balanced, 0.88 % unresolved at stage 1. |
+| **P10** linear growth is trivial and the rate `2Wn` is attained | **HELD** (battery **S5'**) |
+| **P11** self-citation at offset 0 is degenerate | **HELD for the stated lemma, REFUTED in its gloss.** I added that "self-citation cannot make a law unconditionally active, cross-citation can". Wrong: `g_k = k, a_k = 0` makes the *precedent* clause unconditionally true, and that is exactly what powers the machine's clock in §7.2. What self-citation cannot do is vacate the *exception* clause in a region carrying its own kind. |
+
+Two of eleven refuted, one of them in a way that turned out to matter (the
+self-citing clock is a load-bearing component of the Rule 110 construction).
+
+---
+
+## 10. Verification battery
+
+`python3 verify_citation.py` — **36/36 checks pass**. Two engines with no code
+in common are used throughout: `cite.py` (one big integer per kind, bitwise
+shifts) and the repository's `xnomos.py` (dict of cell → bitmask).
+
+```
+E1  bitfield engine == xnomos, random citation universes    600 universes x 2 resolutions x 8 steps
+E2  ring engine == xnomos on Z/m                            300 universes x 2 resolutions x 6 steps
+T1  citation is INERT at n = 1                              216 one-kind constitutions, complete
+T2  PLENUM: beta(K) = K                                     20,000 random constitutions, n <= 5
+T2' PLENUM, sharp form: E(C)-saturation blocks              4,000 constitutions
+T3  GRIDLOCK's epitaph: closed form == brute force          30,000 random constitutions, n <= 5
+T3' GRIDLOCK fraction = ((3n+1)/(n+1)^2)^n                   complete at n = 1,2,3
+T4  BULK MAP exact on homogeneous rings, every modulus      2,000 x 7 moduli x 2 resolutions
+T5  bulk period <= 2^n - 2                                  complete n<=3 (2,098,448), sampled n=4,5
+T6  SELF-CITATION at offset 0 is trivial                    3,000 random universes
+S1  SINGLE AUTHOR: in-degree <= 1 => parity == OR           800 universes x 10 steps
+S2  DEAD LETTER under OR: fixed <=> no active law           4,000 universes x 6 states
+S3  BALANCE: fixed-and-active => even cohorts               4,957 balanced citation codes
+S4  ANCHOR (own-kind + citation): trailing law permanent    97,078 states
+S5  PATH-SUM / LINEAR GROWTH bound                          3,000 universes x 40 steps
+S5' the growth bound is TIGHT: card = n(2t+1)               t <= 29, rate 2nW = 6 laws/step
+S6  DILATION survives ("occupancy" -> "cell content")       1,500 universes x 2 x 6 steps
+S7  OUT-DEGREE LAW (Y2): deep search                        80,000 deep runs, zero gliders
+S8  Y7: TANDEM-1 rotates 1 cell/step on every ring          m = 3..24
+S9  SUNSET + citation: every reported glider re-certifies    2,549 sunset gliders, 3 full periods
+F1  LACUNA: Phi = rot_(+1), occupancy constant              m in {5,7,8,11,13,16,21,32}
+F2  SIX SESSIONS: bulk period 6 = 2^3-2                     m = 2..13, both engines
+F3  PASCAL: card = 2^popcount(t)                            t <= 256 / 64
+F4  THE COPY: every seed replicates at t = 2^j > span       200 random seeds
+F5  THE WRIT: Z'(i) = Z(i-1) exactly                        400 random signal patterns
+F6  PROCESSION: Phi = rot_(+1) on a completely full ring    m = 3..19, both engines
+F7  CONVERSION FRONT: seam speed exactly 1                  15 steps, occupancy constant
+F8  THE LEDGER: card 5, reach 2^j+3 at every t = 4^j        j = 1..8, exact
+F9  THE LEDGER is aperiodic                                 400,000 hashed states, card in [3,139]
+F10 THE ODOMETER shares the head-plus-marker form           j = 1..7, exact
+M1  gate inventory                                          7/7 truth tables
+M2  all 256 elementary CA rules simulated exactly           Z/11, 16 CA steps, 2 seeds each
+M3  Rule 110 long run + xnomos cross-check                  60 + 20 CA steps, Z/23
+M4  the machine is entrenched                               80 steps, clock and phases intact
+C1  census slice reproduces                                 400 constitutions, deterministic
+C2  census symmetry quotient is sound                       120 orbits, class multiset constant
+```
+
+Counting rule for the census claims: **complete enumerations** are the citation
+box of §6.1 (944,784 constitutions × 48 seeds × 2 resolutions = 90,699,264
+weighted classifications, plus the 1,790,842-run deepened residue), the bulk
+census (1,296 at `n = 2` and 2,097,152 at `n = 3`, each × 2 resolutions × all
+`2^n` phases — and *no box caveat*, because `β` is a finite object), the defect
+hunt (7,496,602 ring runs) and the boundary hunt (2,238,660 ring runs), and the
+sunset occupancy corner (1,119,744 runs). Everything else is a **sample** with
+its size stated.
+
+---
+
+## 11. Reproducing
+
+Python 3.11, no dependencies beyond the standard library. From this directory
+(the parent must be on `PYTHONPATH`, or run from the repository root):
+
+```sh
+python3 cite.py                     # engine self-tests (6/6), incl. cross-check vs xnomos
+python3 verify_citation.py          # the 36-check battery                     (~20 min)
+python3 specimens.py                # the fauna gallery with certificates      (~1 min)
+python3 specimens.py lacuna ledger  # one or more named specimens
+python3 circuit.py                  # gate inventory + all 256 elementary CA rules (~3 min)
+python3 bulk.py                     # the COMPLETE bulk census, n = 2 and 3    (~4 min)
+python3 census.py stage1 --procs 11 # the complete citation box, stage 1       (~3 min, 11 cores)
+python3 census.py stage2 --procs 11 # the deepened residue                     (~35 min)
+python3 fauna.py defect  --procs 4  # the complete travelling-defect hunt      (~4 min)
+python3 fauna.py boundary --procs 4 # the complete phase-boundary hunt         (~3 min)
+```
+
+Data written to `data/`: `census1.json`, `census2.json`, `gliders1.txt`,
+`residue2.txt` (the runs still unresolved after stage 2), `bulk_census.json`,
+`defect_hits.txt`, `defect_stats.json`, `boundary_hits.txt`,
+`boundary_stats.json`, `battery.log` and the run logs — 4 MB in total.
+`residue1.txt` (27 MB) is a stage-1 → stage-2 intermediate and is deleted after
+use; `census.py stage1` regenerates it.
+
+Paste-ready specimens (`cite.Cit(rules, targets, guards)`; `None` = *any*):
+
+```python
+LACUNA   = Cit([(0,-1,0),(0,0,0)], [(0,),(0,)], [(None,0),(None,0)])
+           # seed on Z/m: every cell carries {0,1} except one cell carrying {1}
+SIX      = Cit([(-1,1,0)]*3, [(0,1),(1,2),(0,1,2)], [(None,1),(None,2),(None,0)])
+           # seed: a solid block (or a full ring) of kind-0 laws
+PASCAL   = Cit([(0,0,1),(0,0,0)], [(0,),(1,)], [(0,1),(1,0)])
+           # seed: any finite set of kind-0 laws.  Replicates at t = 2^j > span
+WRIT     = Cit([(0,0,0),(0,0,1),(0,0,0),(0,0,0)], [(),(0,),(0,),()],
+               [(3,3),(0,3),(0,3),(3,3)])
+           # seed: kinds 1 and 2 at every cell, kind 0 (the signal) anywhere
+CONVERT  = Cit([(-1,-1,-1)]*2, [(0,1),(0,1)], [(None,0),(None,1)])
+           # seed: a block of kind-0 laws beside a block of kind-1 laws
+LEDGER   = Cit([(-1,-1,0),(0,0,1)], [(1,),(0,1)], [(1,0),(1,0)])
+           # seed: [(0,0),(0,1),(2,1)] -- three laws, parity
+RULE110  = circuit.ECA(110).C        # 13 kinds, W = 1, 2 steps per CA step
+```
+
+---
+
+## 12. Open questions
+
+1. **Is `2^n − 2` the true maximal bulk period for `n ≥ 4`?** It is attained at
+   `n = 2, 3` (complete census). Random search over 400 k bulk data at `n = 4`
+   found only 11 of a possible 14. The bulk map is a finite combinatorial
+   object — `A(U)` is determined by two citations per kind and `β` by the target
+   masks — so this should be decidable outright rather than sampled.
+2. **Turing universality on ℤ.** §7.3 reduces it to a constructor front laying
+   gate kinds at speed 1 ahead of a computation whose light cone advances at
+   1/2. That is the sharpest open question of this chapter, and it now looks
+   like engineering rather than discovery.
+3. **What replaces Cryptic Unipotency?** The step map is degree ≤ 3 over 𝔽₂ and
+   the "freeze the occupancy and linearise" technique is gone (§3.4). Is there a
+   citation analogue — freeze the *cited* fields, linearise in the rest — and
+   does it give a period theorem? The census's period spectrum
+   (`{2,…,64}` including 3, 5, 7, 9, 42, 54) is currently unexplained.
+4. **A wide-glider search in the citation sector.** Every glider number here is
+   a narrow-glider statement: seeds of span ≤ 3, cores of span ≤ 15, residue
+   deepened only to span 1500. MIRROR's span-616 glider was found by a
+   dedicated subshift decider, not by a box; the same tool has never been
+   pointed at citation constitutions.
+5. **Does citation change the density of balance?** The cohort theorem survives
+   verbatim, but 13.5 % of this box classifies as BALANCED and that is a large
+   share for a phenomenon chapter one proved impossible. Chapter two's exact
+   counting recursion `a(s) = 4a(s−1) − 2a(s−2)` for balanced codes was derived
+   with anonymous guards; the citation analogue is not known.
+6. **Why `head ⊔ doubling marker`?** Two machines in two dimensions, found by
+   different expeditions with different methods, have *literally the same* exact
+   form at every power of four (§9, Y6). Is there a theorem forcing it — some
+   carry-propagation argument that says a bounded-card, unbounded-reach code on
+   a window-1 lattice must look like this? The Ledger, being three laws on ℤ,
+   is small enough to be analysed by hand, and that is the obvious next move.
+7. **Two dimensions.** Everything here is 1-D. The bulk map is dimension-free
+   (Theorem B never uses the offsets), so bulk oscillators and the plenum
+   theorem lift immediately; the fauna and the census do not.

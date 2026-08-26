@@ -435,7 +435,69 @@ not claimed: minimality (24 and 31 kinds are what these constructions happened t
 need), and **the strict own-kind sector of chapter one remains open** — every
 construction here uses cross-amendment, even where out-degree is 1.
 
-## 8. Scorecard against the frozen predictions
+## 8. Self-replication — and it is not Fredkin's
+
+Expedition Y-C (`replication/RESULTS.md`, 37/37 own battery). Both headline
+specimens re-verified by the coordinator.
+
+The mission pre-registered a four-rung hierarchy and reached **rung 3**: an
+unbounded colony of free, exact, debris-free copies.
+
+* **THE SPLIT DECISION** (2 kinds, 2-D, citation, OR) performs true binary
+  fission: `Φ²(S) = σ^(0,−2)(S) ⊔ σ^(0,+2)(S)` **exactly** — the parent does not
+  survive, the children are separated by more than the interaction radius, and
+  the debris is empty. At every even t the state is exactly t/2+1 free exact
+  copies (verified to 100 copies at t = 198).
+* **THE ENGROSSMENT** needs no citation at all — plain occupancy guards and
+  parity, the **founding semantics**: `Φ⁴(S) = S ⊔ σ^(4,4)(S)`, with
+  `2^popcount(t/4)` copies (64 at t = 252, verified).
+
+**The hoped-for theorem is refuted.** I expected replication here to be the
+known additive (Fredkin) phenomenon of 𝔽₂-linear automata. The decisive test is
+splitting — does `Φᵖ(S) = Φᵖ(A) Δ Φᵖ(B)` over splittings `S = A ⊔ B`? — and the
+replicators fail it: THE ENGROSSMENT 8/10, THE PRECEDENT 10/10, THE QUORUM 2/2.
+Remove one law of four, evolve the halves, XOR them, and *the child is simply
+absent*. Two traps were identified and avoided: **`2^popcount(t)` is not a
+signature of additivity** (it survives into a demonstrably non-additive system),
+and a random-pair superposition test measures the *constitution*, not the
+replicator. The genuinely additive specimens are reported as Fredkin and nothing
+more.
+
+**A no-go worth as much as the specimens.** `card(S_t) ≤ n(s₀+2Rt+1)^D` — the
+light cone bounds the population polynomially — so **exponential replication is
+impossible in every dimension**, and no fixed-period doubling can survive: every
+free fission must eventually self-collide. THE ENGROSSMENT accordingly doubles
+at t = 4(2^k−1), at exponentially stretching intervals, exactly as forced.
+
+**The fauna audit bites, and was run honestly.** LAND GRANT, SOWER, PICKET
+PUFFER and the colonizer block are **rung 1 only** — a solid growing region
+trivially contains translates of its sub-blocks, which is why rung 2 demands
+whole *causal components*. Every gun and rake is **rung 0**: not one lays copies
+of its own head. The Pascal column is rung 3 but was ruled degenerate by the
+expedition's own pre-registered clause.
+
+**Rung 4 (von Neumann's constructor) was not reached, as pre-registered**, but
+both halves were built: **THE ENGROSSING CLERK** reads a blueprint carried in
+its own body and constructs a decoded, *different* target from it, and **THE
+SCRIBE** copies an arbitrary blueprint faithfully without bound. Neither ever
+holds two complete copies of its machinery at once, and the reason is
+structural: a child built next door is within the interaction radius of its
+parent, so it can only become free by *travelling*. Hence the sharpest open
+question the program now has:
+
+> **A rung-4 object in nomodynamics is a blueprint-carrying packet that moves.**
+> Chapter two says travelling needs out-degree ≥ 2; chapter three says reading
+> needs citation; nothing found so far forbids the combination — and nobody has
+> built it.
+
+**Scope.** Complete on ℤ: 6,561 occupancy constitutions × 4 modes × 45 seeds
+(1,180,980 runs, 0 hits) and 531,441 citation constitutions × 2 modes × 9 seeds
+(9,565,938 runs, 71,784 rung-2 hits — **every one of them citing a kind, none
+with pure occupancy guards**, so on the line citation is the enabler). Sampled in
+2-D: ≈22.7M runs, 71,511 exact hits, roughly one sampled constitution in 5.5
+carrying one. Every zero is labelled a box result.
+
+## 9. Scorecard against the frozen predictions
 
 - **X1 (balance exists, minimum 2 laws, none under OR)** — **HELD** for the
   witness and the OR half (verified); the minimality claim is X-D's.

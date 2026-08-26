@@ -19,6 +19,7 @@ Usage: python3 t4_analyze.py t4_data/t4_n1.jsonl [...]
 
 from __future__ import annotations
 
+import gzip
 import itertools
 import json
 import os
@@ -68,10 +69,14 @@ def tropical_ok(rules, targets, used, m, p, d):
     return False, a, b, uniq
 
 
+def opener(path):
+    return gzip.open(path, "rt") if path.endswith(".gz") else open(path)
+
+
 def load(paths):
     rows = []
     for path in paths:
-        with open(path) as fh:
+        with opener(path) as fh:
             for line in fh:
                 rows.append(json.loads(line))
     return rows

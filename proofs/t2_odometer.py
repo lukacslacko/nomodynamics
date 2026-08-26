@@ -174,8 +174,8 @@ def main():
           crestO == [6, 9, 12, 18, 21, 36, 39, 72, 75],
           "%s  (matches XFINDINGS Sec.3)" % crestO)
 
-    # ------------------------------------------- the reach: a correction
-    print("\nthe Odometer's reach  [CORRECTION to xamend2d/RESULTS.md headline 9]")
+    # ------------------------------------------------- O-minus's reach
+    print("\nthe reach of O- (the four-law machine)")
     X = dict(OSEED)
     KMAX = 16 if deep else 14
     heights = {}
@@ -193,22 +193,13 @@ def main():
         return 3 * (1 << j) - 2 if k % 2 == 1 else 3 * (1 << j) - 1
 
     pred = {k: m_index(k - 1) + 3 for k in heights if k >= 1}
-    ok = all(heights[k] == pred[k] for k in pred)
-    check("height(2^k) = m_{k-1} + 3 exactly, k = 1..%d (engine)" % KMAX, ok,
+    check("height_{O-}(2^k) = m_{k-1} + 3 exactly, k = 1..%d (engine)" % KMAX,
+          all(heights[k] == pred[k] for k in pred),
           "%s" % [heights[k] for k in sorted(heights) if k >= 1])
-    fit = [(k, heights[k], round(0.20 * k * k, 1)) for k in sorted(heights)
-           if k >= 8]
-    check("the published fit 0.20 (log2 t)^2 is REFUTED",
-          all(h > 1.5 * f for _, h, f in fit),
-          "measured vs fit: %s" % fit)
-    k20 = m_index(19) + 3
-    check("height at t = 2^20 is %d, not the published 86" % k20, k20 != 86,
-          "reach = 3.2^{floor((k-2)/2)} + O(1) ~ 1.5 sqrt(t), same order as the "
-          "Jubilee's — because it IS the Jubilee")
     ratios = [heights[k] / math.sqrt(1 << k) for k in sorted(heights) if k >= 8]
-    check("height(2^k) / 2^{k/2} stays in (1.0, 1.6): Theta(sqrt t), not polylog",
+    check("height_{O-}(2^k) / 2^{k/2} oscillates in (1.0, 1.6): Theta(sqrt t)",
           all(1.0 < r < 1.6 for r in ratios),
-          "%s  (it oscillates because the reach doubles every SECOND power)"
+          "%s  (it doubles every SECOND power, as the Jubilee's reach does)"
           % [round(r, 3) for r in ratios])
 
     # --------- TWO machines wear the name THE ODOMETER
@@ -224,7 +215,7 @@ def main():
                      [(1,), (0, 1)], dim=2)
 
     prof = {}
-    KM = 16
+    KM = 17 if deep else 16
     for nm, Vc in (("root", ROOTC), ("xa2d", XA2DC)):
         Cn = build(Vc)
         Xn = dict(OSEED)
@@ -253,6 +244,13 @@ def main():
           and prof["xa2d"][0][12] == 6,
           "heights 20,26,38,47 and crests 57,75,111,138 at k=10,12,14,16, "
           "card 6 at t=2^12 — all as published")
+    check("XA2D-compass heights at k=10,12,14,15,16,17 are 20,26,38,44,47,50 "
+          "— the published reach figures are CORRECT for O+",
+          [prof["xa2d"][2][k] for k in (10, 12, 14, 15, 16, 17)]
+          == [20, 26, 38, 44, 47, 50] if KM >= 17 else
+          [prof["xa2d"][2][k] for k in (10, 12, 14, 15, 16)]
+          == [20, 26, 38, 44, 47],
+          "no correction to the reach half of xamend2d headline 9 is needed")
     check("ROOT-compass profile is the one XFINDINGS Sec.3 quotes",
           [prof["root"][1][k] for k in range(1, 10)]
           == [6, 9, 12, 18, 21, 36, 39, 72, 75])

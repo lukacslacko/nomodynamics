@@ -8,3 +8,4 @@ tasks=89  trials/task=681  kinds=2  cite=True  modes=['parity', 'or']
   60/89 hits=20846 nonlin=11520
   70/89 hits=24264 nonlin=13428
   80/89 hits=27630 nonlin=15271
+done: 30345 hits (16769 nonlinear) -> data/s2d_cite.txt
