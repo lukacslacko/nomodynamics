@@ -22,7 +22,7 @@ const window = {matchMedia: () => ({matches: false})};
 let frames = 0, queue = null;
 const requestAnimationFrame = fn => { queue = fn; };
 
-const run = new Function("window", "document", "requestAnimationFrame", js + "\nreturn {GLIDERS, gw, hero, selectGlider, dwA, dwB, PLANE, pw5, selectPlane};");
+const run = new Function("window", "document", "requestAnimationFrame", js + "\nreturn {GLIDERS, gw, hero, selectGlider, dwA, dwB, PLANE, pw5, selectPlane, SUNSET, sw, selectSunset};");
 const api = run(window, document, requestAnimationFrame);
 
 const t0 = Date.now();
@@ -60,4 +60,12 @@ for (let i = 0; i < api.PLANE.length; i++) {
   if (dt > 8000) { console.log("  ^ TOO SLOW"); process.exit(1); }
 }
 function XNcard(S){ let n=0; S.forEach(m=>{for(let v=m;v;v&=v-1)n++}); return n; }
+for (let i = 0; i < api.SUNSET.length; i++) {
+  api.selectSunset(i);
+  const s = Date.now();
+  for (let k = 0; k < 400; k++) api.sw.tick();
+  const dt = Date.now() - s;
+  console.log(`  ${api.SUNSET[i].name.padEnd(22)} sunset 400 steps in ${String(dt).padStart(4)} ms`);
+  if (dt > 5000) { console.log("  ^ TOO SLOW"); process.exit(1); }
+}
 console.log("headless demo test passed");

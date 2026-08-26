@@ -125,7 +125,56 @@
     return S;
   }
 
-  var API = { step: step, activeLaws: activeLaws, card: card, seed: seed };
+  /* --- impermanence: a law lapses unless re-enacted (see sunset/sunset.py) --
+   * Effects are ENACTMENTS, not toggles.  `ages` maps "cell|kind" to the number
+   * of steps since that law was last enacted; a law survives while age < tau.
+   * Returns {S, ages}. */
+  function stepSunset(S, C, tau, ages) {
+    var ops = makeOps(C);
+    tau = tau || 1;
+    if (!ages) {
+      ages = new Map();
+      S.forEach(function (mask, cell) {
+        for (var k = 0; k < C.rules.length; k++)
+          if (mask >> k & 1) ages.set(cell + "|" + k, 0);
+      });
+    }
+    var enacted = new Set();
+    S.forEach(function (mask, cell) {
+      for (var k = 0; k < C.rules.length; k++) {
+        if (!(mask >> k & 1)) continue;
+        var r = C.rules[k];
+        if (!S.has(ops.add(cell, r[0]))) continue;
+        if (S.has(ops.add(cell, r[1]))) continue;
+        var j = ops.add(cell, r[2]), tg = targetsOf(C, k);
+        for (var q = 0; q < tg.length; q++) enacted.add(j + "|" + tg[q]);
+      }
+    });
+    var out = new Map(), na = new Map();
+    enacted.forEach(function (key) {
+      var ix = key.lastIndexOf("|");
+      var cell = key.slice(0, ix), k = +key.slice(ix + 1);
+      if (C.dim !== 2) cell = +cell;
+      out.set(cell, (out.get(cell) || 0) | (1 << k));
+      na.set(key, 0);
+    });
+    S.forEach(function (mask, cell) {
+      for (var k = 0; k < C.rules.length; k++) {
+        if (!(mask >> k & 1)) continue;
+        var key = cell + "|" + k;
+        if (enacted.has(key)) continue;
+        var age = (ages.get(key) || 0) + 1;
+        if (age < tau) {
+          out.set(cell, (out.get(cell) || 0) | (1 << k));
+          na.set(key, age);
+        }
+      }
+    });
+    return {S: out, ages: na};
+  }
+
+  var API = { step: step, activeLaws: activeLaws, card: card, seed: seed,
+              stepSunset: stepSunset };
   if (typeof module !== "undefined" && module.exports) module.exports = API;
   else root.XN = API;
 })(typeof globalThis !== "undefined" ? globalThis : this);

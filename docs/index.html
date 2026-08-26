@@ -261,8 +261,32 @@ footer p{max-width:76ch}
   stand perpetually active and perfectly unchanged.</div>
 </section>
 
+
+<section id="impermanence">
+  <h2><span class="art">&sect;7</span>Impermanence</h2>
+  <p class="lede">Every section above assumes a law stays in force until something
+  repeals it. Drop that &mdash; let each provision lapse unless it is re-enacted
+  &mdash; and the founding theorem inverts. The colonizer of &sect;1, which fills
+  the line and leaves finished code behind it, becomes a law that simply
+  <b>walks</b>.</p>
+  <div class="chips" id="chips7" role="group" aria-label="Impermanence presets"></div>
+  <div class="controls">
+    <button class="ctl" id="play7">Pause</button>
+    <button class="ctl" id="step7">Step</button>
+    <button class="ctl" id="reset7">Reset</button>
+    <span class="speed">a law lives
+      <input type="range" id="tau7" min="1" max="12" value="1"
+             aria-label="How many steps a law survives without re-enactment">
+      <span class="stat" id="taulab">1 step</span></span>
+    <span class="stat" id="stat7"></span>
+  </div>
+  <div class="plate"><canvas id="cv7" width="880" height="300" aria-label="A code under sunset-by-default; time downward"></canvas></div>
+  <div class="lawline" id="laws7"></div>
+  <div class="caption" id="cap7"></div>
+</section>
+
 <section id="theorems">
-  <h2><span class="art">&sect;7</span>Six theorems</h2>
+  <h2><span class="art">&sect;8</span>Six theorems</h2>
   <article class="thm">
     <h3><span class="tag">THM&nbsp;1</span>Gridlock</h3>
     <p>In a fully occupied region, every law&rsquo;s vacancy guard fails: solid code is frozen.</p>
@@ -506,7 +530,56 @@ function kindColor(mask){
     return S;
   }
 
-  var API = { step: step, activeLaws: activeLaws, card: card, seed: seed };
+  /* --- impermanence: a law lapses unless re-enacted (see sunset/sunset.py) --
+   * Effects are ENACTMENTS, not toggles.  `ages` maps "cell|kind" to the number
+   * of steps since that law was last enacted; a law survives while age < tau.
+   * Returns {S, ages}. */
+  function stepSunset(S, C, tau, ages) {
+    var ops = makeOps(C);
+    tau = tau || 1;
+    if (!ages) {
+      ages = new Map();
+      S.forEach(function (mask, cell) {
+        for (var k = 0; k < C.rules.length; k++)
+          if (mask >> k & 1) ages.set(cell + "|" + k, 0);
+      });
+    }
+    var enacted = new Set();
+    S.forEach(function (mask, cell) {
+      for (var k = 0; k < C.rules.length; k++) {
+        if (!(mask >> k & 1)) continue;
+        var r = C.rules[k];
+        if (!S.has(ops.add(cell, r[0]))) continue;
+        if (S.has(ops.add(cell, r[1]))) continue;
+        var j = ops.add(cell, r[2]), tg = targetsOf(C, k);
+        for (var q = 0; q < tg.length; q++) enacted.add(j + "|" + tg[q]);
+      }
+    });
+    var out = new Map(), na = new Map();
+    enacted.forEach(function (key) {
+      var ix = key.lastIndexOf("|");
+      var cell = key.slice(0, ix), k = +key.slice(ix + 1);
+      if (C.dim !== 2) cell = +cell;
+      out.set(cell, (out.get(cell) || 0) | (1 << k));
+      na.set(key, 0);
+    });
+    S.forEach(function (mask, cell) {
+      for (var k = 0; k < C.rules.length; k++) {
+        if (!(mask >> k & 1)) continue;
+        var key = cell + "|" + k;
+        if (enacted.has(key)) continue;
+        var age = (ages.get(key) || 0) + 1;
+        if (age < tau) {
+          out.set(cell, (out.get(cell) || 0) | (1 << k));
+          na.set(key, age);
+        }
+      }
+    });
+    return {S: out, ages: na};
+  }
+
+  var API = { step: step, activeLaws: activeLaws, card: card, seed: seed,
+              stepSunset: stepSunset };
   if (typeof module !== "undefined" && module.exports) module.exports = API;
   else root.XN = API;
 })(typeof globalThis !== "undefined" ? globalThis : this);
@@ -981,6 +1054,96 @@ document.getElementById("reset5").addEventListener("click",()=>selectPlane(p5));
 const fast5=document.getElementById("fast5");
 fast5.addEventListener("click",()=>{p5Fast=!p5Fast; fast5.classList.toggle("on",p5Fast);});
 
+
+/* ---------- §7 impermanence: laws lapse unless re-enacted ---------- */
+function sunsetWidget(canvas, cw){
+  const ctx=canvas.getContext("2d");
+  const W=canvas.width/cw|0, H=canvas.height/cw|0, half=W>>1;
+  let S=new Map(), ages=null, C=null, tau=1, row=0, t=0, spec=null;
+  function clear(){ ctx.fillStyle="#12141a"; ctx.fillRect(0,0,canvas.width,canvas.height); row=0; t=0; }
+  function drawRow(){
+    if(row>=H){
+      ctx.drawImage(canvas,0,cw,canvas.width,canvas.height-cw,0,0,canvas.width,canvas.height-cw);
+      ctx.fillStyle="#12141a"; ctx.fillRect(0,canvas.height-cw,canvas.width,cw);
+      row=H-1;
+    }
+    const y=row*cw;
+    ctx.fillStyle="#12141a"; ctx.fillRect(0,y,canvas.width,cw);
+    for(const [i,mask] of S){
+      const x=i+half;
+      if(x>=0&&x<W){ ctx.fillStyle=kindColor(mask); ctx.fillRect(x*cw,y,cw,cw); }
+    }
+    row++;
+  }
+  return {
+    get t(){return t}, get S(){return S},
+    load(sp,tv){ spec=sp; C=sp.C; tau=tv;
+      S=XN.seed(sp.seed.map(p=>[p[0]+(sp.at||0),p[1]]),C); ages=null;
+      clear(); drawRow(); },
+    setTau(tv){ tau=tv; this.load(spec,tv); },
+    tick(){ const r=XN.stepSunset(S,C,tau,ages); S=r.S; ages=r.ages; t++;
+      if(!S.size||t>260){ this.load(spec,tau); return; }
+      let vis=false; for(const [i] of S) if(i>=-half&&i<half) vis=true;
+      if(!vis){ this.load(spec,tau); return; }
+      drawRow(); },
+  };
+}
+const SUNSET=[
+ {name:"The Walking Clause", at:-100, fixTau:1,
+  C:{rules:[[0,1,1]],targets:[0],dim:1,mod:null}, seed:[[0,0]],
+  laws:"the colonizer (0,1,1), one law &mdash; &ldquo;while I stand and my right is vacant, enact my kind to the right&rdquo;",
+  cap:"<b>The same law that fills the line under permanence simply walks under impermanence.</b> It enacts its successor one cell along, and then &mdash; having nothing to re-enact it &mdash; lapses. The Anchor Theorem says no code on the line can travel; its hidden hypothesis was that laws are permanent. Exactly six of the twenty-seven kinds survive their first step at all: those whose precedent is themselves and whose exception is elsewhere. Four of them walk. Two re-enact themselves where they stand and never move again."},
+ {name:"The Self-Renewing Clause", at:0, fixTau:1,
+  C:{rules:[[0,1,0]],targets:[0],dim:1,mod:null}, seed:[[0,0]],
+  laws:"kind (0,1,0), one law &mdash; enacts its own kind at its own cell",
+  cap:"<b>The only way to be permanent in an impermanent world.</b> This provision re-enacts itself, in place, every step, forever. Every other surviving law is in motion; this one is the fixed point of the whole sector &mdash; a statute whose entire content is its own renewal."},
+ {name:"Solid Code", at:-6, fixTau:1,
+  C:{rules:[[0,1,1]],targets:[0],dim:1,mod:null},
+  seed:[[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0]],
+  laws:"eight colonizer laws standing side by side",
+  cap:"<b>Gridlock&rsquo;s mirror.</b> Under permanence a solid block is frozen: every vacancy guard fails, and all dynamics is surface dynamics. Under impermanence the same block evaporates in a single step &mdash; nothing in the interior is re-enacted &mdash; and only the front survives, as a walker. In both worlds only the surface matters: in one it is the only part that moves, in the other the only part that lives."},
+ {name:"The Longevity Dial", at:40, fixTau:null,
+  C:{rules:[[0,1,-1],[0,-1,-1]],targets:[0,1],dim:1,mod:null},
+  seed:[[0,0],[2,1]],
+  laws:"A = (0,1,−1) · B = (0,−1,−1) · seed: A at 0, B at 2 &mdash; drag the lifetime and watch the speed change",
+  cap:"<b>Longevity is friction.</b> One code, one seed, one dial: how many steps a provision survives without being re-enacted. The packet always moves two cells &mdash; but it must wait for its own tail to lapse before it can move again, so its speed is exactly <b>2/(&tau;+1)</b>. Certified for every lifetime from 1 to 12. Push the dial to the right and legal change slows to a crawl; in the limit where nothing ever lapses, it stops altogether &mdash; and that limit is the Anchor Theorem."},
+];
+const sw=sunsetWidget(document.getElementById("cv7"),4);
+let s7=0, s7Running=!reduceMotion, s7Tau=1;
+const chips7=document.getElementById("chips7");
+SUNSET.forEach((s,ix)=>{ const b=document.createElement("button"); b.textContent=s.name;
+  b.addEventListener("click",()=>selectSunset(ix)); chips7.appendChild(b); });
+const tau7=document.getElementById("tau7"), taulab=document.getElementById("taulab");
+function speedText(){
+  if(SUNSET[s7].fixTau!==null) return "";
+  const p=s7Tau+1, d=2, g=(a,b)=>b?g(b,a%b):a, q=g(d,p);
+  return "   speed " + (d/q) + "/" + (p/q);
+}
+function selectSunset(ix){
+  s7=ix; [...chips7.children].forEach((b,i)=>b.classList.toggle("on",i===ix));
+  if(SUNSET[ix].fixTau!==null){ s7Tau=SUNSET[ix].fixTau; tau7.value=s7Tau; tau7.disabled=true; }
+  else { tau7.disabled=false; s7Tau=+tau7.value; }
+  taulab.textContent=s7Tau+(s7Tau===1?" step":" steps");
+  sw.load(SUNSET[ix],s7Tau);
+  document.getElementById("cap7").innerHTML=SUNSET[ix].cap;
+  document.getElementById("laws7").innerHTML=SUNSET[ix].laws;
+  stat7();
+}
+function stat7(){
+  document.getElementById("stat7").textContent =
+    "t = "+sw.t+"   laws in force = "+XN.card(sw.S)+speedText();
+}
+tau7.addEventListener("input",()=>{
+  s7Tau=+tau7.value; taulab.textContent=s7Tau+(s7Tau===1?" step":" steps");
+  sw.setTau(s7Tau); stat7();
+});
+selectSunset(3);
+const play7=document.getElementById("play7");
+play7.textContent=s7Running?"Pause":"Play";
+play7.addEventListener("click",()=>{s7Running=!s7Running; play7.textContent=s7Running?"Pause":"Play";});
+document.getElementById("step7").addEventListener("click",()=>{sw.tick(); stat7();});
+document.getElementById("reset7").addEventListener("click",()=>selectSunset(s7));
+
 /* ---------- main loop ---------- */
 let frame=0;
 function loop(){
@@ -994,6 +1157,7 @@ function loop(){
     for(let q=0;q<(p5Fast?8:1);q++)pw5.tick();
     stat5();
   }
+  if(s7Running&&frame%3===0){ sw.tick(); stat7(); }
   if(!reduceMotion&&frame%6===0){
     dwA.tick(); dwB.tick();
     if(dwB.t>44)dReset();
@@ -1018,6 +1182,7 @@ if(reduceMotion){
   for(let i=0;i<62;i++)gw.tick();
   for(let i=0;i<28;i++){dwA.tick(); dwB.tick();}
   for(let i=0;i<40;i++)pw5.tick(); stat5();
+  for(let i=0;i<70;i++)sw.tick(); stat7();
   drawRing(); drawJ(); drawChart(); stat4();
 }
 requestAnimationFrame(loop);

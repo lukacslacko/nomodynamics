@@ -84,6 +84,41 @@ def main():
         mode = ["parity", "or", "super", "super_or"][i % 4]
         emit(vecs, "rand%03d" % i, C, cells, mode)
 
+    # impermanence vectors: {"sunset": tau} alongside the ordinary ones
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent
+                           / "sunset"))
+    from sunset import step_sunset                                # noqa: E402
+
+    def strace(C, seed_pairs, tau, n):
+        S, ages = state_of(seed_pairs), None
+        out = []
+        for _ in range(n):
+            out.append(sorted(([key(c, C.dim), m] for c, m in S.items()),
+                              key=lambda r: r[0]))
+            S, ages = step_sunset(S, C, tau, ages)
+        return out
+
+    for i in range(60):
+        n = rng.randrange(1, 4)
+        rules = [tuple(rng.choice(OFF1) for _ in range(3)) for _ in range(n)]
+        targets = [rng.randrange(n) for _ in range(n)]
+        if i % 5 == 0:
+            targets = [tuple(sorted(rng.sample(range(n), rng.randrange(1, n + 1))))
+                       for _ in range(n)]
+        C = Const(rules, targets)
+        cells = [(rng.randrange(-3, 4), rng.randrange(n))
+                 for _ in range(rng.randrange(1, 5))]
+        tau = rng.randrange(1, 5)
+        vecs.append({
+            "name": "sun%03d" % i, "mode": "parity", "sunset": tau,
+            "const": {"rules": [list(r) for r in C.rules],
+                      "targets": [list(x) if len(x) > 1 else x[0]
+                                  for x in C.targets],
+                      "dim": 1, "mod": None},
+            "seed": [[c, k] for c, k in cells],
+            "trace": strace(C, cells, tau, 12),
+        })
+
     json.dump(vecs, sys.stdout)
 
 

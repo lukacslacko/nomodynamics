@@ -207,49 +207,61 @@ class Machine:
 
 
 def gadget(spec):
-    """Build a one-gate machine computing `spec` on wires U,V -> Y at one cell.
+    """Build a machine computing `spec` on input wires U,V -> output Y at one cell.
 
-    spec is a name from GATES below.
+    The inputs are held by IMMORTAL SOURCE laws `srcU`, `srcV` (a source law is
+    placed iff its input bit is 1), so nothing is poked into the state by hand:
+    the whole experiment is one code evolving under one constitution.
     """
     M = Machine()
     M.wire("U")
     M.wire("V")
     M.wire("Y")
-    if spec == "ANDNOT":                      # u & ~v            1 law
+    M.gate("srcU", "srcU", 0, NIL, 0, 0, ["U"])    # holds u forever
+    M.gate("srcV", "srcV", 0, NIL, 0, 0, ["V"])    # holds v forever
+    if spec == "ANDNOT":                      # u & ~v                    1 law
         M.gate("g", "U", 0, "V", 0, 0, ["Y"])
-    elif spec == "BUF":                       # u                 1 law
+    elif spec == "BUF":                       # u                         1 law
         M.gate("g", "U", 0, NIL, 0, 0, ["Y"])
-    elif spec == "NOT":                       # ~u                2 laws
+    elif spec == "NOT":                       # ~u                        1 law
         M.gate("g", "g", 0, "U", 0, 0, ["Y"])
-    elif spec == "AND":                       # u & v             2 laws
-        M.wire("Vb")
-        M.gate("nv", "nv", 0, "V", 0, 0, ["Vb"])   # Vb <- ~v      (stage 1)
-        M.gate("g", "U", 0, "Vb", 0, 0, ["Y"])     # needs U held  (stage 2)
-    elif spec == "OR":                        # u | v = ~(~u & ~v)
-        M.wire("Ub")
-        M.wire("Vb")
-        M.gate("nu", "nu", 0, "U", 0, 0, ["Ub"])
-        M.gate("nv", "nv", 0, "V", 0, 0, ["Vb"])
-        M.gate("g", "Ub", 0, "Vb", 0, 0, ["Y"])    # ~u & ~v
-        M.gate("one", "one", 0, NIL, 0, 0, ["Y"])  # XOR 1  ->  ~(~u&~v)
-    elif spec == "XOR":                       # u ^ v             2 laws
+    elif spec == "XOR":                       # u ^ v                     2 laws
         M.gate("gu", "U", 0, NIL, 0, 0, ["Y"])
         M.gate("gv", "V", 0, NIL, 0, 0, ["Y"])
-    elif spec == "NAND":                      # ~(u & v)
+    elif spec == "AND":                       # u & v = U & ~(~v)         2 laws
+        M.wire("Vb")
+        M.gate("nv", "nv", 0, "V", 0, 0, ["Vb"])       # Vb <- ~v
+        M.gate("g", "U", 0, "Vb", 0, 0, ["Y"])         # Y  <- u & v
+    elif spec == "NAND":                      # ~(u & v)                  3 laws
         M.wire("Vb")
         M.gate("nv", "nv", 0, "V", 0, 0, ["Vb"])
         M.gate("g", "U", 0, "Vb", 0, 0, ["Y"])
+        M.gate("one", "one", 0, NIL, 0, 0, ["Y"])      # XOR 1
+    elif spec == "OR":                        # u | v = ~(~u & ~v)        3 laws
+        M.wire("Ub")
+        M.gate("nu", "nu", 0, "U", 0, 0, ["Ub"])       # Ub <- ~u
+        M.gate("g", "Ub", 0, "V", 0, 0, ["Y"])         # ~u & ~v
+        M.gate("one", "one", 0, NIL, 0, 0, ["Y"])      # XOR 1
+    elif spec == "XNOR":                      # ~(u ^ v)                  3 laws
+        M.gate("gu", "U", 0, NIL, 0, 0, ["Y"])
+        M.gate("gv", "V", 0, NIL, 0, 0, ["Y"])
         M.gate("one", "one", 0, NIL, 0, 0, ["Y"])
-    elif spec == "FANOUT":                    # y1 = y2 = y3 = u
+    elif spec == "IMPL":                      # u -> v  = ~(u & ~v)       2 laws
+        M.gate("g", "U", 0, "V", 0, 0, ["Y"])
+        M.gate("one", "one", 0, NIL, 0, 0, ["Y"])
+    elif spec == "ZERO":                       # constant 0: no gate at all
+        pass
+    elif spec == "ONE":                        # constant 1                1 law
+        M.gate("one", "one", 0, NIL, 0, 0, ["Y"])
+    elif spec in ("FANOUT", "FANOUT1"):
         M.wire("Y2")
         M.wire("Y3")
-        M.gate("g1", "U", 0, NIL, 0, 0, ["Y"])
-        M.gate("g2", "U", 0, NIL, 0, 0, ["Y2"])
-        M.gate("g3", "U", 0, NIL, 0, 0, ["Y3"])
-    elif spec == "FANOUT1":                   # one law, three sinks
-        M.wire("Y2")
-        M.wire("Y3")
-        M.gate("g1", "U", 0, NIL, 0, 0, ["Y", "Y2", "Y3"])
+        if spec == "FANOUT":                   # three readers of one wire
+            M.gate("g1", "U", 0, NIL, 0, 0, ["Y"])
+            M.gate("g2", "U", 0, NIL, 0, 0, ["Y2"])
+            M.gate("g3", "U", 0, NIL, 0, 0, ["Y3"])
+        else:                                  # one law, three sinks
+            M.gate("g1", "U", 0, NIL, 0, 0, ["Y", "Y2", "Y3"])
     else:
         raise ValueError(spec)
     return M
@@ -262,14 +274,23 @@ TRUTH = {
     "AND":    lambda u, v: u & v,
     "OR":     lambda u, v: u | v,
     "XOR":    lambda u, v: u ^ v,
+    "XNOR":   lambda u, v: 1 - (u ^ v),
     "NAND":   lambda u, v: 1 - (u & v),
+    "IMPL":   lambda u, v: 1 - (u & (1 - v)),
+    "ZERO":   lambda u, v: 0,
+    "ONE":    lambda u, v: 1,
 }
-DEPTH = {"ANDNOT": 1, "BUF": 1, "NOT": 1, "AND": 2, "OR": 2, "XOR": 1,
-         "NAND": 2}
+DEPTH = {"ANDNOT": 1, "BUF": 1, "NOT": 1, "XOR": 1, "IMPL": 1, "ZERO": 0,
+         "ONE": 1, "AND": 2, "OR": 2, "NAND": 2, "XNOR": 1}
+SETTLE = 6            # steps the output must stay correct after the depth
 
 
 def certify_gate(spec, verbose=False):
-    """Exhaustive truth-table certificate for a one-cell gadget."""
+    """Exhaustive truth-table certificate: 2^2 inputs x SETTLE observations.
+
+    Nothing is written into the state after t = 0; the sources are part of the
+    constitution, so this is one code evolving under one law.
+    """
     M = gadget(spec)
     assert not M.check_normal_form(), M.check_normal_form()
     f = TRUTH[spec]
@@ -277,24 +298,24 @@ def certify_gate(spec, verbose=False):
     rows = []
     for u in (0, 1):
         for v in (0, 1):
-            S = M.code([(0, g) for g in M.gates])
-            if u:
-                M.write(S, 0, "U", 1)
-            if v:
-                M.write(S, 0, "V", 1)
-            # inputs must be HELD for depth-2 gadgets: re-assert every step
-            for t in range(d):
-                S = M.run(S, 1)
-                if t < d - 1:
-                    M.write(S, 0, "U", u)
-                    M.write(S, 0, "V", v)
+            pl = [(0, g) for g in M.gates
+                  if not (g == "srcU" and not u) and not (g == "srcV" and not v)]
+            pl += [(0, "U")] * u + [(0, "V")] * v      # inputs already asserted
+            S = M.code(pl)
+            S = M.run(S, d)
             got = M.read(S, 0, "Y")
-            rows.append((u, v, got, f(u, v)))
-            if got != f(u, v):
+            stable = True
+            T = dict(S)
+            for _ in range(SETTLE):
+                T = M.run(T, 1)
+                if M.read(T, 0, "Y") != got:
+                    stable = False
+            rows.append((u, v, got, f(u, v), stable))
+            if got != f(u, v) or not stable:
                 return False, rows
     if verbose:
         for r in rows:
-            print("   u=%d v=%d -> %d (want %d)" % r)
+            print("   u=%d v=%d -> %d (want %d) stable=%s" % r)
     return True, rows
 
 
@@ -303,13 +324,14 @@ def certify_fanout():
         M = gadget(spec)
         assert not M.check_normal_form()
         for u in (0, 1):
-            S = M.code([(0, g) for g in M.gates])
-            if u:
-                M.write(S, 0, "U", 1)
-            S = M.run(S, 1)
-            for w in ("Y", "Y2", "Y3"):
-                if M.read(S, 0, w) != u:
-                    return False
+            pl = [(0, g) for g in M.gates if not (g == "srcU" and not u)]
+            pl = [p for p in pl if p[1] != "srcV"] + [(0, "U")] * u
+            S = M.code(pl)
+            for _ in range(SETTLE):
+                S = M.run(S, 1)
+                for w in ("Y", "Y2", "Y3"):
+                    if M.read(S, 0, w) != u:
+                        return False
     return True
 
 
@@ -393,13 +415,17 @@ def certify_selfclear(trials=2000, seed=11):
 def _main():
     ok = 0
     print("STATUTE MACHINE — gate certificates (citation sector, W=1, parity)")
-    for spec in ("BUF", "NOT", "ANDNOT", "XOR", "AND", "OR", "NAND"):
+    print("  %-7s %5s %5s %5s  %-6s %s" % ("gate", "depth", "laws", "kinds",
+                                           "table", "verdict"))
+    for spec in ("ZERO", "ONE", "BUF", "NOT", "ANDNOT", "IMPL", "XOR", "XNOR",
+                 "AND", "NAND", "OR"):
         good, rows = certify_gate(spec)
         M = gadget(spec)
-        print("  %-7s depth %d, %d gate laws, %d kinds : %s   %s" % (
-            spec, DEPTH[spec], len(M.gates), len(M.names),
+        ngl = len([g for g in M.gates if not g.startswith("src")])
+        print("  %-7s %5d %5d %5d  %-6s %s" % (
+            spec, DEPTH[spec], ngl, len(M.names),
             "".join(str(r[2]) for r in rows), "OK" if good else "FAIL"))
-        assert good
+        assert good, rows
         ok += 1
     assert certify_fanout()
     print("  FANOUT  free (read-only guards): 1->3 by 3 laws and by 1 law  OK")

@@ -18,5 +18,9 @@ jobs:
           node demo/xengine.test.js
       - name: demo inlined engine is verbatim
         run: python3 check_inline.py
+      - name: docs copy matches the demo
+        run: |
+          python3 sync_demo.py
+          git diff --exit-code docs/index.html
       - name: demo runs headless without hanging
         run: node demo/headless_test.js 3000

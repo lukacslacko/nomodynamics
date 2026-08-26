@@ -118,34 +118,38 @@ def make_step(rules, targets, guards, mode):
 
 # --------------------------------------------------------------- copy finding
 
-def free_copies(St, rel, mask0, R):
-    """Max family of pairwise free (gap > 2R) copies of the seed in St.
+def components(St, R):
+    """Split the state into causal components: maximal runs of cells whose
+    consecutive gaps are <= 2R.  Two different components cannot read, block
+    or write onto each other in one step (Lemma S)."""
+    cells = sorted(St)
+    comps, cur = [], [cells[0]]
+    for c in cells[1:]:
+        if c - cur[-1] > 2 * R:
+            comps.append(cur)
+            cur = [c]
+        else:
+            cur.append(c)
+    comps.append(cur)
+    return comps
 
-    rel: list of (offset-from-anchor, mask), rel[0] = (0, mask0).
-    Returns list of anchor cells, or [] if fewer than two.
+
+def comp_copies(St, rel, R):
+    """Components of St that are EXACT translates of the seed.
+
+    Returns (anchors_of_matching_components, n_components, debris_card).
     """
-    anchors = []
-    for cell, m in St.items():
-        if (m & mask0) != mask0:
-            continue
-        ok = True
-        for r, mm in rel:
-            if (St.get(cell + r, 0) & mm) != mm:
-                ok = False
-                break
-        if ok:
-            anchors.append(cell)
-    if len(anchors) < 2:
-        return []
-    lo = rel[0][0]
-    hi = max(r for r, _ in rel)
-    anchors.sort()
-    # copies are intervals [a+lo, a+hi]; free iff next start - prev end > 2R
-    chosen = [anchors[0]]
-    for a in anchors[1:]:
-        if a + lo - (chosen[-1] + hi) > 2 * R:
-            chosen.append(a)
-    return chosen if len(chosen) >= 2 else []
+    comps = components(St, R)
+    anchors, deb = [], 0
+    seedmap = dict(rel)
+    for cs in comps:
+        lo = cs[0]
+        if len(cs) == len(rel) and all(
+                St[c] == seedmap.get(c - lo, -1) for c in cs):
+            anchors.append(lo)
+        else:
+            deb += sum(bin(St[c]).count("1") for c in cs)
+    return anchors, len(comps), deb
 
 
 def seeds_of_span(span, n=2):
@@ -197,15 +201,8 @@ def run_one(args):
             seen.add(key)
             if cd < 2 * card0:
                 continue
-            fam = free_copies(S, rel, mask0, R)
+            fam, ncomp, deb = comp_copies(S, rel, R)
             if len(fam) >= 2:
-                cov = {}
-                for a in fam:
-                    for r, m in rel:
-                        cov[a + r] = cov.get(a + r, 0) | m
-                deb = 0
-                for c, m in S.items():
-                    deb += bin(m & ~cov.get(c, 0)).count("1")
                 cand = (deb, -len(fam), t, tuple(fam), cd)
                 if best is None or cand < best:
                     best = cand

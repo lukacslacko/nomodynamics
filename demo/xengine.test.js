@@ -20,7 +20,7 @@ function snapshot(S, dim) {
 let fails = 0, steps = 0;
 for (const v of vecs) {
   const C = v.const;
-  let S = XN.seed(v.seed, C);
+  let S = XN.seed(v.seed, C), ages = null;
   for (let t = 0; t < v.trace.length; t++) {
     const got = JSON.stringify(snapshot(S, C.dim));
     const want = JSON.stringify(v.trace[t]);
@@ -34,7 +34,8 @@ for (const v of vecs) {
       break;
     }
     steps++;
-    S = XN.step(S, C, v.mode);
+    if (v.sunset) { const r = XN.stepSunset(S, C, v.sunset, ages); S = r.S; ages = r.ages; }
+    else S = XN.step(S, C, v.mode);
   }
 }
 console.log(
