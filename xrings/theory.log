@@ -1,0 +1,21 @@
+T2: own-kind window-1 nilpotency on every frozen occupancy
+   (kind, m, occupancy) triples tested: 220968   violations: 0
+
+T3: is the ONE-STEP operator unipotent under cross-amendment?
+   (constitution, m, occupancy) triples tested: 217728
+   N^(n*m) != 0 (i.e. NOT nilpotent, one step NOT unipotent): 71594
+     first non-nilpotent own-kind: m=3 (-1, 1, -1) (-1, 1, 0) O=0b1
+     first non-nilpotent 2-cycle: m=3 (-1, 1, -1) (0, -1, 1) O=0b1
+     first non-nilpotent non-injective: m=3 (-1, 1, 0) (-1, 1, -1) O=0b1
+
+T3b: periods of CONSTANT-OCCUPANCY cycles (complete)
+   own-kind 1 kind, all 27, m=3..9            : [1]
+   own-kind 2 live kinds, m=3..7              : [1, 2]
+   2-cycle permutation, 2 live kinds, m=3..7  : [1, 2, 4]
+   non-injective, 2 live kinds, m=3..7        : [1, 2, 4]
+   3-cycle permutation, live, m=3..5          : [1, 2, 3, 4, 6, 12]
+
+T6: light cone — S_{t+1}(j) depends only on S_t(j-2..j+2)
+   4000 random single-cell perturbations at distance > 2: 0 influenced the centre cell
+
+summary: T2 violations=0  T6 violations=0

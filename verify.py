@@ -338,6 +338,70 @@ def chapter2():
     check("Out-Degree Law: no glider when every law amends one kind",
           bad is None, "6,000 random single-target seeds")
 
+    # --- two dimensions (expedition X-B) --------------------------------
+    V = {"O": (0, 0), "E": (1, 0), "W": (-1, 0), "N": (0, -1), "S": (0, 1),
+         "P": (1, -1), "Q": (-1, -1), "R": (1, 1), "T": (-1, 1)}
+    r = lambda s: tuple(V[ch] for ch in s)          # noqa: E731
+
+    # LAND GRANT: one law, and the plane fills — |S_t| = (t+1)^2 exactly.
+    C = Const([r("OPP"), r("OEE"), r("ONN")], [(0, 1, 2), (1,), (2,)], dim=2)
+    S = state_of([((0, 0), 0)])
+    sizes, X = [], dict(S)
+    for _ in range(10):
+        sizes.append(card(X))
+        X = step(X, C)
+    check("LAND GRANT: one law fills the plane, |S_t| = (t+1)^2",
+          sizes == [(t + 1) ** 2 for t in range(10)],
+          "own-kind growth is pinned to rays; out-degree 2 gives area")
+
+    # A gun on the LINE: an immortal kind (in-degree 0) pumps forever.
+    C = Const([(0, 1, 0), (0, 1, 1), (0, 1, 0)], [(0, 1), (0, 1), (0, 1)])
+    S = state_of([(0, 2)])
+    sizes, X = [], dict(S)
+    for _ in range(14):
+        sizes.append(card(X))
+        X = step(X, C)
+    check("a gun on Z: an entrenched clause emits packets forever",
+          sizes[1:] == [2 * (t // 2) + 3 for t in range(1, 14)],
+          "in-degree 0 is the pump the Anchor Theorem could not have")
+
+    # THE ODOMETER: the second binary counter, also resetting to four laws.
+    C = Const([r("OEW"), r("NQR")], [(1,), (0, 1)], dim=2)
+    S = state_of([((0, 0), 0), ((1, 0), 0), ((0, 1), 1)])
+    z, X = [], dict(S)
+    for _ in range(1 << 12):
+        z.append(card(X))
+        X = step(X, C)
+    check("THE ODOMETER: |S| = 4 at every power of two",
+          {z[1 << k] for k in range(1, 12)} == {4},
+          "crests %s" % [z[(1 << k) - 1] for k in range(3, 9)])
+
+    # PERPETUAL SESSION: a large balanced code, every law active.
+    C = Const([r("OEO"), r("OEO")], [(0,), (0,)], dim=2)
+    S = state_of([((0, y), k) for y in range(20) for k in (0, 1)])
+    check("PERPETUAL SESSION: 40 laws, all 40 active, fixed forever",
+          verify_balanced(S, C) and len(active_laws(S, C)) == 40
+          and step(S, C, "or") != S,
+          "balance needs in-degree 2 and parity; OR breaks it")
+
+    # Collision algebra: even gap passes through, odd gap freezes.
+    C = Const([r("OEO"), r("OEE"), r("OWO"), r("OWW")],
+              [(0, 1), (0, 1), (2, 3), (2, 3)], dim=2)
+    verdict = []
+    for gap in (6, 7, 8, 9):
+        X = state_of([((0, 0), 0), ((0, 0), 1), ((gap, 0), 2), ((gap, 0), 3)])
+        for _ in range(40):
+            X = step(X, C)
+        verdict.append(bool(active_laws(X, C)))
+    check("collisions: even gap passes through, odd gap freezes",
+          verdict == [True, False, True, False], "gaps 6,7,8,9")
+
+    # Subluminal motion: a parity glider at speed 1/6.
+    C = Const([r("ONO"), r("OEW"), r("WTE")], [(0, 1), (0, 2), (0,)], dim=2)
+    S = state_of([((0, 0), 0), ((0, 0), 1)])
+    check("a subluminal glider: speed 1/6", verify_glider(S, C, 6, (-1, 0)),
+          "the speed spectrum is not just 1 and 1/2")
+
 
 def main():
     print("nomodynamics — verification battery")
