@@ -338,6 +338,13 @@ def build(sp: Spec):
             dsel = {dd: C.new() for dd in d}
             C.exactly_one(list(dsel.values()))
             for dd, sel in dsel.items():
+                # (a) forward: every t=0 law must have an image inside the box
+                for i in range(N):
+                    if cell(i + dd) is None:
+                        for k in range(n):
+                            if x[0][i][k] is not False:
+                                C.add(-sel, -x[0][i][k])
+                # (b) backward: every t=p cell equals its t=0 preimage
                 for j in range(N):
                     src = cell(j - dd)
                     for k in range(n):
@@ -356,6 +363,10 @@ def build(sp: Spec):
                         C.add(-sel, -u, v)
                         C.add(-sel, u, -v)
         else:
+            for i in range(N):
+                if cell(i + d) is None:
+                    for k in range(n):
+                        C.assert_(C.NOT(x[0][i][k]))
             for j in range(N):
                 src = cell(j - d)
                 for k in range(n):
@@ -444,7 +455,35 @@ def solve(sp: Spec, solver="cadical195", timeout=None, verbose=False,
         if not r:
             return "UNSAT", dict(nv=C.nv, nc=len(C.cls))
         model = set(l for l in S.get_model() if l > 0)
-    return "SAT", extract(meta, model)
+    info = extract(meta, model)
+    info["certified"] = certify(info)
+    if sp.assert_glider and not info["certified"]:
+        raise AssertionError("UNCERTIFIED SAT MODEL — encoder bug: %r" % info)
+    return "SAT", info
+
+
+def certify(info, reps=3):
+    """Independent re-verification of a SAT model by the xnomos engine.
+
+    Every positive claim of this expedition passes through here.  Returns True
+    only if xnomos.verify_glider confirms Phi^p(S) = sigma^d(S) over `reps`
+    full periods, AND xnomos's own frames match the CNF's frames exactly.
+    """
+    import xnomos
+    sp = info["spec"]
+    if not sp.assert_glider:
+        return None
+    Cn = xnomos.Const(info["rules"], list(info["targets"]), modulus=sp.modulus)
+    S = {c: m for c, m in info["frames"][0].items() if m}
+    if not S:
+        return False
+    T = dict(S)
+    for t in range(1, sp.p + 1):
+        T = xnomos.step(T, Cn, sp.mode)
+        want = {c: m for c, m in info["frames"][t].items() if m}
+        if T != want:
+            return False
+    return xnomos.verify_glider(S, Cn, sp.p, info["d"], sp.mode)
 
 
 def val(sig, model):

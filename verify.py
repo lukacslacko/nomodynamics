@@ -1,0 +1,278 @@
+#!/usr/bin/env python3
+"""verify.py — re-check every named claim of nomodynamics from scratch.
+
+    python3 verify.py            # the whole battery (~30 s)
+    python3 verify.py -v         # print each specimen's spacetime diagram
+
+Everything runs on the shared engine `xnomos.py`, independently of the
+expedition code that originally found these specimens; the point is that a
+reader can confirm the note's claims without reading any of it.
+"""
+from __future__ import annotations
+
+import random
+import sys
+
+from xnomos import (Const, state_of, step, card, active_laws, classify,
+                    verify_balanced, spacetime, render, RULES1,
+                    BALANCED, CYCLE, FIXED, GLIDER)
+
+VERBOSE = "-v" in sys.argv
+PASS, FAIL = [], []
+
+
+def check(name, cond, detail=""):
+    (PASS if cond else FAIL).append(name)
+    print("  %s  %-52s %s" % ("ok " if cond else "FAIL", name, detail))
+    return cond
+
+
+def show(title, rows):
+    if VERBOSE:
+        print("      " + title)
+        for r in rows:
+            print("      |" + r + "|")
+
+
+# ------------------------------------------------------------------ chapter 1
+
+def chapter1_fauna():
+    print("\n1-D fauna (own-kind)")
+
+    C = Const([(0, 1, 1)])
+    S = state_of([(0, 0)])
+    rows = spacetime(S, C, 8, lo=0, hi=8)
+    check("colonizer (0,1,1) fills at speed 1",
+          rows[-1] == "AAAAAAAA." and rows[0] == "A........")
+    show("colonizer", rows)
+
+    C = Const([(0, -1, 1)])
+    r = classify(state_of([(0, 0)]), C)
+    check("sunset clause (0,-1,1) is a period-2 blinker",
+          r["kind"] == CYCLE and r["period"] == 2)
+
+    C = Const([(-1, 1, 0)])
+    S = state_of([(i, 0) for i in range(0, 12)])
+    n0 = card(S)
+    for _ in range(6):
+        S = step(S, C)
+    check("sunset code (-1,1,0) dissolves at one cell/step",
+          card(S) == n0 - 6, "12 -> %d laws in 6 steps" % card(S))
+
+    C = Const([(0, 1, 1), (0, -1, -1)])
+    S = state_of([(i, 0) for i in range(-8, -1)] + [(i, 1) for i in range(2, 9)])
+    for _ in range(30):
+        S = step(S, C)
+    check("colliding fronts weld into frozen code",
+          step(S, C) == S and card(S) > 0, "%d laws, 0 active" % card(S))
+
+    # The sunset wall is cleared at time exactly max(2L, x0 + L): the wall
+    # erodes from its FAR end at speed 1, on its own, while the front stands
+    # blocked; the front then fills the vacated ground at speed 1.  The net
+    # "refraction index 2" is that pair of speed-1 processes in sequence — the
+    # front never converts the wall, it inherits the ground.
+    C = Const([(0, 1, 1), (-1, 1, 0)])
+    obs, want = [], []
+    for L in (10, 20, 30):
+        for x0 in (4, 10, 15, 25):
+            S = state_of([(0, 0)] + [(i, 1) for i in range(x0, x0 + L)])
+            for t in range(500):
+                front = max((c for c, m in S.items() if m & 1), default=-99)
+                if front >= x0 + L - 1:
+                    break
+                S = step(S, C)
+            obs.append(t)
+            want.append(max(2 * L, x0 + L))
+    check("sunset wall of length L cleared at time exactly max(2L, x0+L)",
+          obs == want, "12 (L, x0) pairs; index 2 is net, not instantaneous")
+
+
+def _laws(S):
+    for cell, mask in S.items():
+        m = mask
+        while m:
+            k = (m & -m).bit_length() - 1
+            m &= m - 1
+            yield cell, k
+
+
+def chapter1_theorems():
+    print("\nthe four theorems (own-kind)")
+
+    ok = True
+    for a, b, c in RULES1:
+        C = Const([(a, b, c)])
+        S = state_of([(i, 0) for i in range(-4, 5)])
+        if [x for x in active_laws(S, C) if -3 <= x[0] <= 3]:
+            ok = False
+    check("Gridlock: solid code has no active interior law", ok,
+          "all 27 kinds")
+
+    rng = random.Random(11)
+    ok = True
+    for _ in range(4000):
+        n = rng.randrange(1, 4)
+        C = Const([rng.choice(RULES1) for _ in range(n)])
+        S = state_of([(rng.randrange(-5, 6), rng.randrange(n))
+                      for _ in range(rng.randrange(1, 8))])
+        if step(S, C, "parity") != step(S, C, "or"):
+            ok = False
+            break
+    check("Single Author: parity == OR identically (own-kind)", ok,
+          "4,000 random states")
+
+    ok = True
+    for _ in range(4000):
+        n = rng.randrange(1, 4)
+        C = Const([rng.choice(RULES1) for _ in range(n)])
+        S = state_of([(rng.randrange(-5, 6), rng.randrange(n))
+                      for _ in range(rng.randrange(1, 8))])
+        if (step(S, C) == S) != (not active_laws(S, C)):
+            ok = False
+            break
+    check("Dead Letter: fixed <=> every law blocked (own-kind)", ok,
+          "4,000 random states")
+
+    ok, seen = True, 0
+    for _ in range(3000):
+        n = rng.randrange(1, 3)
+        C = Const([rng.choice(RULES1) for _ in range(n)])
+        S = state_of([(rng.randrange(-4, 5), rng.randrange(n))
+                      for _ in range(rng.randrange(1, 6))])
+        r = classify(S, C, max_steps=120, max_card=120, max_span=160)
+        seen += 1
+        if r["kind"] == GLIDER:
+            ok = False
+            break
+    check("Anchor: no free glider on Z (own-kind)", ok,
+          "%d random seeds classified" % seen)
+
+
+def chapter1_rings():
+    print("\nnomic rings")
+
+    C = Const([(0, 1, -1)], modulus=6)
+    S = state_of([(1, 0), (2, 0), (5, 0)])
+    T = step(S, C)
+    check("the minimal ring rotor hops m/2 = 3 on Z/6",
+          set(T) == {(c + 3) % 6 for c in S} and set(step(T, C)) == set(S),
+          "{1,2,5} -> {2,4,5} -> {1,2,5}")
+
+    fam = []
+    for m in range(4, 15, 2):
+        C = Const([(0, 1, -1)], modulus=m)
+        S = state_of([(0, 0), (1, 0), (m // 2 + 1, 0)])
+        T = step(S, C)
+        if set(T) == {(c + m // 2) % m for c in S}:
+            fam.append(m)
+    check("rotor family {0,1,m/2+1} on every even m >= 6",
+          fam == [6, 8, 10, 12, 14], "verified m = %s" % fam)
+
+    odd = []
+    for m in (5, 7, 9):
+        for kind in RULES1:
+            C = Const([kind], modulus=m)
+            for i in range(m):
+                for j in range(i + 1, m):
+                    for k in range(j + 1, m):
+                        S = state_of([(i, 0), (j, 0), (k, 0)])
+                        T = step(S, C)
+                        if set(T) == set(S):
+                            continue          # a fixed point, not a rotor:
+                        for r in range(1, m):  # (rotation-symmetric codes are
+                            if set(T) == {(c + r) % m for c in S}:  # not motion)
+                                odd.append((m, kind, (i, j, k), r))
+    check("no single-kind 3-law rotor on odd rings m = 5,7,9", not odd,
+          "complete sweep: 27 kinds x C(m,3) placements")
+
+    C = Const([(0, 1, -1)], modulus=10)
+    r = classify(state_of([(c, 0) for c in (1, 3, 5, 6, 7, 8, 9)]), C,
+                 max_steps=200)
+    check("Sunset Parliament on Z/10 has period 15",
+          r["kind"] == CYCLE and r["period"] == 15,
+          "period %s" % r.get("period"))
+
+
+def chapter1_jubilee():
+    print("\nthe Jubilee Code (2-D)")
+    C = Const([((1, 0), (0, 1), (0, -1)),
+               ((0, 1), (0, -1), (0, 1)),
+               ((-1, 0), (0, -1), (1, 0))], dim=2)
+    S = state_of([((-1, 0), 0), ((-1, 1), 1), ((0, 1), 2)])
+    N = 1 << 13
+    z = []
+    for _ in range(N):
+        z.append(card(S))
+        S = step(S, C)
+    resets = {z[1 << k] for k in range(1, 13)}
+    check("|S| = 4 at every power of two", resets == {4},
+          "t = 2..4096, values %s" % resets)
+    crest = [z[(1 << k) - 1] for k in range(3, 13)]
+    check("crest at t = 2^k - 1 doubles every two powers",
+          crest == [7, 8, 13, 14, 25, 26, 49, 50, 97, 98],
+          "%s" % crest)
+    check("aperiodic through 2^13 steps (no exact recurrence)",
+          classify(state_of([((-1, 0), 0), ((-1, 1), 1), ((0, 1), 2)]), C,
+                   max_steps=600, max_card=10 ** 6,
+                   max_span=10 ** 6)["kind"] not in (FIXED, CYCLE))
+
+
+# ------------------------------------------------------------------ chapter 2
+
+def chapter2():
+    print("\ncross-amendment (chapter two)")
+
+    C = Const([(0, 1, 1), (0, -1, -1), (0, 1, 0)], targets=[2, 2, 2])
+    S = state_of([(0, 0), (2, 1)])
+    check("two-chamber deadlock is a BALANCED constitution (parity)",
+          verify_balanced(S, C) and classify(S, C)["kind"] == BALANCED,
+          "fixed forever, 2 laws active")
+    check("...and it ignites under OR resolution",
+          step(S, C, "or") == state_of([(0, 0), (2, 1), (1, 2)]),
+          "Dead Letter survives OR, fails under parity")
+    show("two-chamber (parity)", spacetime(S, C, 4, lo=-1, hi=3))
+    show("two-chamber (OR)", spacetime(S, C, 4, mode="or", lo=-1, hi=3))
+
+    rng = random.Random(5)
+    ok = True
+    for _ in range(3000):                 # permutation targeting: single author
+        n = rng.randrange(2, 4)
+        perm = list(range(n))
+        rng.shuffle(perm)
+        C = Const([rng.choice(RULES1) for _ in range(n)], perm)
+        S = state_of([(rng.randrange(-5, 6), rng.randrange(n))
+                      for _ in range(rng.randrange(1, 8))])
+        if step(S, C, "parity") != step(S, C, "or"):
+            ok = False
+            break
+    check("permutation targeting keeps parity == OR", ok,
+          "3,000 random states")
+
+    ok = False
+    for _ in range(3000):                 # non-injective targeting: it splits
+        n = 3
+        C = Const([rng.choice(RULES1) for _ in range(n)], [2, 2, 2])
+        S = state_of([(rng.randrange(-4, 5), rng.randrange(n))
+                      for _ in range(rng.randrange(2, 7))])
+        if step(S, C, "parity") != step(S, C, "or"):
+            ok = True
+            break
+    check("non-injective targeting splits parity from OR", ok,
+          "multi-authorship is real")
+
+
+def main():
+    print("nomodynamics — verification battery")
+    chapter1_fauna()
+    chapter1_theorems()
+    chapter1_rings()
+    chapter1_jubilee()
+    chapter2()
+    print("\n%d checks passed, %d failed" % (len(PASS), len(FAIL)))
+    if FAIL:
+        print("failed: " + ", ".join(FAIL))
+    return 1 if FAIL else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -19,3 +19,12 @@
    m=19  consts=54     periods=[1, 2, 4, 8, 16] maxp=16 rotor_classes=0 balanced=0
    m=20  consts=54     periods=[1, 2, 4, 8, 15, 16, 30] maxp=30 rotor_classes=10 balanced=0
 == run super2 ==
+  [super2] 11664 jobs, 90.5s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/super2.jsonl
+   m=3   consts=1458   periods=[1, 2] maxp=2 rotor_classes=0 balanced=348
+   m=4   consts=1458   periods=[1, 2] maxp=2 rotor_classes=1 balanced=1432
+   m=5   consts=1458   periods=[1, 2, 4] maxp=4 rotor_classes=0 balanced=4700
+   m=6   consts=1458   periods=[1, 2, 3, 4, 5] maxp=5 rotor_classes=3 balanced=17852
+   m=7   consts=1458   periods=[1, 2, 4] maxp=4 rotor_classes=0 balanced=64764
+   m=8   consts=1458   periods=[1, 2, 3, 4, 5, 6, 8] maxp=8 rotor_classes=6 balanced=241656
+   m=9   consts=1458   periods=[1, 2, 4, 6, 8] maxp=8 rotor_classes=0 balanced=871692
+   m=10  consts=1458   periods=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15] maxp=23 rotor_classes=8 balanced=3135528

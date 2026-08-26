@@ -1,1 +1,6 @@
 == run cyc3all ==
+  [cyc3all] 59049 jobs, 67.0s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/cyc3all.jsonl
+   m=3   consts=19683  periods=[1, 2, 3, 4, 6, 8] maxp=8 rotor_classes=1 balanced=0
+   m=4   consts=19683  periods=[1, 2, 3, 4, 5, 6, 8] maxp=8 rotor_classes=4 balanced=0
+   m=5   consts=19683  periods=[1, 2, 3, 4, 6, 8, 9, 10, 12, 14, 16, 18, 20] maxp=20 rotor_classes=1 balanced=0
+== run cyc3 ==
