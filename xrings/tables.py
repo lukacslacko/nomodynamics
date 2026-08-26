@@ -61,8 +61,10 @@ def main():
              lambda r: r["mode"] == 2),
         line("super2", "supersession, 2 kinds (729)",
              lambda r: r["mode"] == 2),
-        line("super2or", "supersession-OR, 2 kinds (729)"),
+        line("super2", "supersession-OR, 2 kinds (729)",
+             lambda r: r["mode"] == 3),
         line("super3", "supersession, 3 live kinds (1728)"),
+        line("big2", "m=12, live-live pairs, 3 target maps"),
     ]
     print("### maximal period attained (complete state-space enumeration)\n")
     ms = list(range(3, 21))

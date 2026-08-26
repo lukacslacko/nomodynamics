@@ -256,6 +256,14 @@ targeting only one author can edit a slot, so occupancy changes are a thin
 sub-dynamics; under cross-amendment the occupancy word can wander much further
 before repeating.
 
+**A second collapse.** The `super` / `super_or` clear-resolution axis changes
+**nothing** about the period spectrum: at every m ≤ 10 the two-kind
+supersession classes have identical maximal periods and identical period sets
+under both resolutions (complete enumeration, 729 rule pairs each). It changes
+everything about *balance* (§5.1): 4,337,972 balanced codes under `super`,
+**zero** under `super_or`. The resolution axis is a statement about
+simultaneous cancellation, not about dynamics.
+
 **Lemma S (supersession collapse).** *With a single kind, supersession is
 own-kind toggling.* With n=1 a cell is occupied iff kind 0 stands there, so
 "enact if empty, clear if occupied" is exactly "toggle kind 0", and the clear

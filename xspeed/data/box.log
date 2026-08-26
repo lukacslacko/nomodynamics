@@ -52,3 +52,4 @@
 [  51/  56    355s] n3 W3 N32 p5 d14 parity box26      SAT       2.5s
 [  52/  56    439s] n3 W3 N32 p4 d11 parity box26      SAT     114.6s
 [  53/  56    512s] n3 W2 N30 p6 d11 parity box26      UNSAT   233.6s
+[  54/  56    576s] n3 W2 N30 p5 d9 parity box26       UNSAT   300.3s

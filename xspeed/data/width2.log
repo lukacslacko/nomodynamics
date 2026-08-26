@@ -1,1 +1,3 @@
 42 scans, 3 workers
+[  1/ 42     40s] n2 W1 p9 d1                UNSAT wmin=None  [[14, 'UNSAT', 1.5], [18, 'UNSAT', 1.9], [22, 'UNSAT', 2.2], [26, 'UNSAT', 2.5], [30, 'UNSAT', 3.6], [34, 'UNSAT', 4.0], [38, 'UNSAT', 3.7], [42, 'UNSAT', 5.7], [46, 'UNSAT', 6.8], [50, 'UNSAT', 7.8]]
+[  2/ 42     66s] n2 W1 p9 d5                UNSAT wmin=None  [[14, 'UNSAT', 0.5], [18, 'UNSAT', 0.9], [22, 'UNSAT', 1.2], [26, 'UNSAT', 1.2], [30, 'UNSAT', 2.7], [34, 'UNSAT', 2.4], [38, 'UNSAT', 2.6], [42, 'UNSAT', 4.8], [46, 'UNSAT', 3.7], [50, 'UNSAT', 6.7]]

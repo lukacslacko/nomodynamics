@@ -51,3 +51,4 @@
 {"label": "n3 W3 N32 p5 d14 parity box26", "status": "SAT", "secs": 2.5, "n": 3, "W": 3, "N": 32, "p": 5, "d": 14, "mode": "parity", "rules": [[0, -1, 2], [0, -3, -2], [0, -2, 3]], "tgt": [[1, 2], [0], [0, 1, 2]], "dfound": 14, "seed": {"3": 1, "5": 6, "8": 6, "9": 1, "10": 6, "11": 7, "13": 7, "14": 7}, "certified": true}
 {"label": "n3 W3 N32 p4 d11 parity box26", "status": "SAT", "secs": 114.61, "n": 3, "W": 3, "N": 32, "p": 4, "d": 11, "mode": "parity", "rules": [[0, -2, 2], [-2, 3, 3], [3, -2, 0]], "tgt": [[0, 1, 2], [0, 1, 2], [0, 1, 2]], "dfound": 11, "seed": {"3": 7, "4": 7, "7": 7, "8": 7}, "certified": true}
 {"label": "n3 W2 N30 p6 d11 parity box26", "status": "UNSAT", "secs": 233.61, "n": 3, "W": 2, "N": 30, "p": 6, "d": 11, "mode": "parity", "nv": 12689, "nc": 44191}
+{"label": "n3 W2 N30 p5 d9 parity box26", "status": "UNSAT", "secs": 300.29, "n": 3, "W": 2, "N": 30, "p": 5, "d": 9, "mode": "parity", "nv": 10605, "nc": 36917}
