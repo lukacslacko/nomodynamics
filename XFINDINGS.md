@@ -115,8 +115,11 @@ forever, `|S_t| = 2⌊t/2⌋+3` (verified). An entrenched clause is a *gun*.
 `B = (N,NW,SE) → {A,B}`. Its population returns to **exactly four laws at every
 t = 2^k** (14/14 verified, t < 2^15), crests at 2^k−1 (6, 9, 12, 18, 21, 36,
 39, 72, 75, …, doubling every second power), and its reach grows like
-≈ 0.20 (log₂ t)² out to t = 2²⁰ — bounded population, unbounded reach, hence
-aperiodic. It is the second binary counter in the field and the slowest clock
+**1.5·√t** — coordinator-measured to t = 2¹⁷, the ratio reach/√t sitting at
+exactly 1.500 at every even power of two. (The first report of this machine
+gave the reach as ≈ 0.20(log₂ t)²; that is **wrong**, and two later
+expeditions caught it independently. Bounded population with unbounded reach,
+hence aperiodic, is unaffected.) It is the second binary counter in the field and the slowest clock
 in it (the Jubilee's reach goes like √t). *Two machines found in different
 sectors by different methods both quiesce to exactly four laws at every power of
 two* [interpretation: unexplained, and the most suggestive coincidence on the
@@ -144,6 +147,15 @@ gliders with **no null cycle**, the first sighting of the no-go theorem's other
 escape hatch; and — inside *own-kind* 2-D once diagonal offsets are allowed — a
 **period-3** oscillator, which kills the 2-adic period conjecture in its own
 home sector.
+
+**A correction to this section.** The Odometer's reach was first reported here
+as polylogarithmic. It is **Θ(√t)**: coordinator-measured to t = 2¹⁷ with
+reach/√t = 1.500 exactly at every even power of two. Two independent
+expeditions flagged it, and the same pair also found that *two different
+machines had been carrying the name "Odometer"* under opposite compass
+conventions — a reminder that in this program a specimen is its offsets, never
+its name. The four-law reset itself was verified by the coordinator directly
+from the offsets and stands.
 
 ### The organizing principle
 

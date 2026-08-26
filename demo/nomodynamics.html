@@ -1064,7 +1064,7 @@ const PLANE=[
   C:{rules:[[[0,0],[1,0],[-1,0]],[[0,-1],[-1,-1],[1,1]]],targets:[[1],[0,1]],dim:2,mod:null},
   seed:[[0,0,0],[1,0,0],[0,1,1]], cap:100000,
   laws:"A = (here, E vacant → enact B west) · B = (N, NW vacant → enact A and B to the SE) · seed: three laws",
-  txt:"<b>A binary counter made of three provisions.</b> It avalanches on the last tick before every power of two, and at t = 2ᵏ itself the code stands at <b>exactly four laws</b> &mdash; every time, checked to t = 2²⁰. Its reach grows like (log t)², so it is the slowest clock in the field: bounded population, unbounded memory, and never once repeating."},
+  txt:"<b>A binary counter made of three provisions.</b> It avalanches on the last tick before every power of two, and at t = 2ᵏ itself the code stands at <b>exactly four laws</b> &mdash; every time, checked to t = 2²⁰. Its reach grows like 1.5&radic;<span style="text-decoration:overline">t</span> &mdash; bounded population, unbounded memory, and never once repeating."},
  {name:"CIRCUIT COURT", cap0:"a rake: |S_t| = 2t+2",
   C:{rules:[[[0,0],[1,0],[0,0]],[[0,0],[1,0],[1,0]],[[0,0],[0,-1],[0,0]],[[0,0],[0,-1],[0,-1]]],
      targets:[[0,1],[0,1],[0,1,2,3],[2,3]],dim:2,mod:null},

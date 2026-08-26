@@ -225,7 +225,7 @@ def fig5():
     ax.set_xticks([])
     ax.set_yticks([])
 
-    # (c) THE ODOMETER: laws in force, log time, resets to four.
+    # (c) THE ODOMETER: laws in force, log time, resets to four (reach ~ 1.5*sqrt(t)).
     C = Const([off("OEW"), off("NQR")], [(1,), (0, 1)], dim=2)
     S = state_of([((0, 0), 0), ((1, 0), 0), ((0, 1), 1)])
     N = 1 << 14

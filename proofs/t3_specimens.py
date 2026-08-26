@@ -27,9 +27,12 @@ import xnomos                                                    # noqa: E402
 
 SPECIMENS = [
     # name, rules, seed cells, p, d, mode, note
-    ("CONVEYOR", [(0, 1, 0), (1, -1, 0), (-1, 1, 0), (0, 1, 1)],
+    ("CONVEYOR (2 kinds)", [(0, -1, 0), (0, 1, 1)],
      [0, 1, 2, 5, 7, 8], 1, 1, "parity",
-     "Phi = sigma EXACTLY: every finite code whatsoever is a glider"),
+     "Phi = sigma EXACTLY, in BOTH resolutions: every finite code is a "
+     "glider"),
+    ("CONVEYOR under OR", [(0, -1, 0), (0, 1, 1)],
+     [0, 1, 2, 5, 7, 8], 1, 1, "or", "the same, OR resolution"),
     ("MIRROR-2/5 (X-E, replicated)", [(0, 1, -1), (0, -1, 1)],
      [2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 14, 16, 18, 19, 20, 21], 5, 2, "parity",
      "the published two-kind d=2 glider"),
@@ -99,7 +102,7 @@ def check(name, rules, cells, p, d, mode, note, show=0):
 def main():
     print("TARGET 3 -- single-field specimens, certified by xnomos alone\n")
     for sp in SPECIMENS:
-        check(*sp, show=(6 if sp[0].startswith(("CONVEYOR", "TRIAD",
+        check(*sp, show=(6 if sp[0].startswith(("CONVEYOR (", "TRIAD",
                                                 "STEP-3/3-OR")) else 0))
         print()
 
@@ -107,15 +110,16 @@ def main():
     print("CONVEYOR, the whole theorem: Phi(S) = S+1 for every finite code")
     import random
     rng = random.Random(0)
-    C, n = const([(0, 1, 0), (1, -1, 0), (-1, 1, 0), (0, 1, 1)])
+    C, n = const([(0, -1, 0), (0, 1, 1)])
     bad = 0
     for _ in range(2000):
         cells = {rng.randrange(-12, 13) for _ in range(rng.randrange(1, 12))}
         X = {c: (1 << n) - 1 for c in cells}
-        for mode in ("parity",):
+        for mode in ("parity", "or"):
             if xnomos.step(X, C, mode) != {c + 1: (1 << n) - 1 for c in cells}:
                 bad += 1
-    print("   2000 random codes, %d exceptions to Phi = sigma\n" % bad)
+    print("   2000 random codes x 2 resolutions, %d exceptions to Phi = "
+          "sigma\n" % bad)
     assert bad == 0
 
     # dilation: the same objects at every window

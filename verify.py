@@ -384,9 +384,21 @@ def chapter2():
     for _ in range(1 << 12):
         z.append(card(X))
         X = step(X, C)
+    reach = []
+    X2, Y2 = state_of([((0, 0), 0), ((1, 0), 0), ((0, 1), 1)]), None
+    for tt in range(1, (1 << 12) + 1):
+        X2 = step(X2, C)
+        if tt in (1 << 8, 1 << 10, 1 << 12):
+            xs = [c[0] for c in X2]
+            ys = [c[1] for c in X2]
+            reach.append(round(max(max(xs) - min(xs), max(ys) - min(ys))
+                               / tt ** 0.5, 3))
     check("THE ODOMETER: |S| = 4 at every power of two",
           {z[1 << k] for k in range(1, 12)} == {4},
           "crests %s" % [z[(1 << k) - 1] for k in range(3, 9)])
+    check("...and its reach is 1.5*sqrt(t), not polylogarithmic",
+          reach == [1.5, 1.5, 1.5],
+          "reach/sqrt(t) at t = 2^8, 2^10, 2^12 (a first report said (log t)^2)")
 
     # PERPETUAL SESSION: a large balanced code, every law active.
     C = Const([off("OEO"), off("OEO")], [(0,), (0,)], dim=2)
