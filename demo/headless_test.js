@@ -22,7 +22,7 @@ const window = {matchMedia: () => ({matches: false})};
 let frames = 0, queue = null;
 const requestAnimationFrame = fn => { queue = fn; };
 
-const run = new Function("window", "document", "requestAnimationFrame", js + "\nreturn {GLIDERS, gw, hero, selectGlider, dwA, dwB, PLANE, pw5, selectPlane, SUNSET, sw, selectSunset, REPL, rw, selectRepl, r110Tick, r110Reset};");
+const run = new Function("window", "document", "requestAnimationFrame", js + "\nreturn {GLIDERS, gw, hero, selectGlider, dwA, dwB, PLANE, pw5, selectPlane, SUNSET, sw, selectSunset, REPL, rw, selectRepl, CITE, cw2, selectCite, r110Tick, r110Reset};");
 const api = run(window, document, requestAnimationFrame);
 
 const t0 = Date.now();
@@ -77,6 +77,13 @@ for (let i = 0; i < api.REPL.length; i++) {
   const s = Date.now();
   for (let k = 0; k < 200; k++) api.rw.tick();
   console.log(`  ${api.REPL[i].name.padEnd(22)} 200 steps in ${String(Date.now()-s).padStart(5)} ms`);
+  if (Date.now()-s > 8000) { console.log("  ^ TOO SLOW"); process.exit(1); }
+}
+for (let i = 0; i < api.CITE.length; i++) {
+  api.selectCite(i);
+  const s = Date.now();
+  for (let k = 0; k < 300; k++) { api.cw2.tick(); if (api.cw2.gone()) api.selectCite(i); }
+  console.log(`  ${api.CITE[i].name.padEnd(22)} cite   300 steps in ${String(Date.now()-s).padStart(5)} ms`);
   if (Date.now()-s > 8000) { console.log("  ^ TOO SLOW"); process.exit(1); }
 }
 console.log("headless demo test passed");

@@ -107,6 +107,15 @@ footer{
 }
 footer p{max-width:76ch}
 .smallrule{border:none; border-top:1px solid var(--rule); margin:26px 0}
+.nav{
+  display:flex; flex-wrap:wrap; gap:6px 14px; margin:26px 0 0;
+  font-family:"Source Sans 3", system-ui, sans-serif; font-size:12.5px;
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  padding:10px 0;
+}
+.nav a{color:var(--ink-soft); text-decoration:none; white-space:nowrap}
+.nav a:hover{color:var(--seal)}
+.nav a:focus-visible{outline:2px solid var(--seal); outline-offset:2px}
 </style>
 
 <div class="wrap">
@@ -120,6 +129,10 @@ footer p{max-width:76ch}
 </header>
 <div class="plate" id="hero-plate"><canvas id="hero" width="880" height="120" aria-label="A continuously running nomic chain painting its spacetime history"></canvas></div>
 <div class="stat" style="margin-top:8px">the masthead is live, time flowing downward: first two legal traditions colonize toward each other and weld &mdash; then a convoy of travelling law-packets, which the founding theorems proved impossible and the second chapter builds</div>
+
+<nav class="nav" aria-label="Sections">
+  <a href="#line">1 Statute Line</a><a href="#ring">2 Ring</a><a href="#jubilee">3 Jubilee</a><a href="#motion">4 Motion</a><a href="#plane">5 Plane</a><a href="#deadlock">6 Deadlock</a><a href="#impermanence">7 Impermanence</a><a href="#cite">8 Citation</a><a href="#compute">9 Computation</a><a href="#replicate">10 Replication</a><a href="#theorems">11 Theorems</a>
+</nav>
 
 <section id="line">
   <h2><span class="art">&sect;1</span>The Statute Line</h2>
@@ -276,8 +289,28 @@ footer p{max-width:76ch}
 </section>
 
 
+
+<section id="cite">
+  <h2><span class="art">&sect;8</span>Citation</h2>
+  <p class="lede">Every guard so far reads only <i>presence</i>: a law can tell
+  that something stands nearby, never what it is. Real statutes cite by name
+  &mdash; &ldquo;while section 5 is in force and section 9 has been repealed.&rdquo;
+  Give guards that power and the one theorem that had survived every other change
+  finally breaks.</p>
+  <div class="chips" id="chipsC" role="group" aria-label="Citation presets"></div>
+  <div class="controls">
+    <button class="ctl" id="playC">Pause</button>
+    <button class="ctl" id="stepC">Step</button>
+    <button class="ctl" id="resetC">Reset</button>
+    <span class="stat" id="statC"></span>
+  </div>
+  <div class="plate"><canvas id="cvC" width="880" height="300" aria-label="A code under citation guards"></canvas></div>
+  <div class="lawline" id="lawsC"></div>
+  <div class="caption" id="capC"></div>
+</section>
+
 <section id="compute">
-  <h2><span class="art">&sect;8</span>The Statute Book Computes</h2>
+  <h2><span class="art">&sect;9</span>The Statute Book Computes</h2>
   <p class="lede">A guard reads &ldquo;some law stands here <b>and</b> none stands
   there&rdquo; &mdash; an <i>and-not</i>. Simultaneous amendments of one provision
   cancel in pairs &mdash; an <i>exclusive or</i>. That is functionally complete;
@@ -311,7 +344,7 @@ footer p{max-width:76ch}
 </section>
 
 <section id="replicate">
-  <h2><span class="art">&sect;9</span>Replication</h2>
+  <h2><span class="art">&sect;10</span>Replication</h2>
   <p class="lede">Von Neumann&rsquo;s rule-carrying constructor is one of the three
   fragments this field was derived from, so the obligatory question is whether a
   code can copy itself. It can.</p>
@@ -328,7 +361,7 @@ footer p{max-width:76ch}
 </section>
 
 <section id="theorems">
-  <h2><span class="art">&sect;10</span>Six theorems</h2>
+  <h2><span class="art">&sect;11</span>Six theorems</h2>
   <article class="thm">
     <h3><span class="tag">THM&nbsp;1</span>Gridlock</h3>
     <p>In a fully occupied region, every law&rsquo;s vacancy guard fails: solid code is frozen.</p>
@@ -759,6 +792,11 @@ const RINGS=[
   seed:[[1,0],[5,0],[6,0],[10,0],[11,0],[12,0],[1,1],[3,1],[6,1],[8,1],[11,1],[13,1]],
   cap:"<b>The first rotor on an odd ring.</b> Own-kind amendment gives rotors on even rings only &mdash; a theorem, once the block calculus is done. Let two kinds amend a third and odd rings open: twelve laws on fifteen cells, turning by exactly five &mdash; a third of the ring &mdash; every step. Every odd-ring rotor found so far turns by a third.",
   laws:"X = (−1,1,1) → X · Y = (0,1,−1) → X · twelve laws on ℤ/15 &mdash; Φ = rot₅"},
+ {name:"LACUNA ℤ/9", m:9,
+  C:{rules:[[0,-1,0],[0,0,0]],targets:[[0],[0]],dim:1,mod:9,guards:[[null,0],[null,0]]},
+  seed:[[0,0],[0,1],[1,0],[1,1],[2,0],[2,1],[3,1],[4,0],[4,1],[5,0],[5,1],[6,0],[6,1],[7,0],[7,1],[8,0],[8,1]],
+  cap:"<b>A hole travelling at lightspeed through a completely written code.</b> Every seat carries both provisions except one, which is missing the first. Nothing is enacted and nothing is repealed &mdash; the occupancy never changes at all &mdash; and yet the <i>gap</i> moves one seat per step, forever. This is what citation buys: a law can tell <i>which</i> provision is missing next door, so the absence itself becomes the signal.",
+  laws:"A = (0,−1,0) citing &ldquo;no A at my left&rdquo; · B = (0,0,0) citing &ldquo;no A here&rdquo; · both write A · ℤ/9 full but for one missing A &mdash; Φ = rot₊₁"},
  {name:"Q-4 ℤ/4", m:4,
   C:{rules:[[-1,1,-1],[0,-1,0]],targets:[1,0],dim:1,mod:4}, seed:[[0,0],[0,1],[2,1]],
   cap:"<b>Cross-amendment lowers the smallest rotating ring from six to four.</b> Two kinds amending each other, three laws, four seats.",
@@ -1064,7 +1102,7 @@ const PLANE=[
   C:{rules:[[[0,0],[1,0],[-1,0]],[[0,-1],[-1,-1],[1,1]]],targets:[[1],[0,1]],dim:2,mod:null},
   seed:[[0,0,0],[1,0,0],[0,1,1]], cap:100000,
   laws:"A = (here, E vacant → enact B west) · B = (N, NW vacant → enact A and B to the SE) · seed: three laws",
-  txt:"<b>A binary counter made of three provisions.</b> It avalanches on the last tick before every power of two, and at t = 2ᵏ itself the code stands at <b>exactly four laws</b> &mdash; every time, checked to t = 2²⁰. Its reach grows like 1.5&radic;<span style="text-decoration:overline">t</span> &mdash; bounded population, unbounded memory, and never once repeating."},
+  txt:"<b>A binary counter made of three provisions.</b> It avalanches on the last tick before every power of two, and at t = 2ᵏ itself the code stands at <b>exactly four laws</b> &mdash; every time, checked to t = 2²⁰. Its reach grows like 1.5&middot;&radic;t &mdash; bounded population, unbounded memory, and never once repeating."},
  {name:"CIRCUIT COURT", cap0:"a rake: |S_t| = 2t+2",
   C:{rules:[[[0,0],[1,0],[0,0]],[[0,0],[1,0],[1,0]],[[0,0],[0,-1],[0,0]],[[0,0],[0,-1],[0,-1]]],
      targets:[[0,1],[0,1],[0,1,2,3],[2,3]],dim:2,mod:null},
@@ -1293,6 +1331,47 @@ play9.addEventListener("click",()=>{r9Running=!r9Running; play9.textContent=r9Ru
 document.getElementById("step9").addEventListener("click",()=>{rw.tick(); stat9();});
 document.getElementById("reset9").addEventListener("click",()=>selectRepl(r9));
 
+
+/* ---------- §8 citation ---------- */
+const CITE=[
+ {name:"Gridlock Dies", dir:1, mode:"parity", at:-40,
+  C:{rules:[[0,1,1],[0,1,1]],targets:[[1],[0]],dim:1,mod:null,guards:[[null,1],[null,0]]},
+  seed:Array.from({length:10},(_,i)=>[i,0]),
+  laws:"A = (0,1,1) → B citing &ldquo;no B to my right&rdquo; · B = (0,1,1) → A citing &ldquo;no A to my right&rdquo; · seed: ten A laws side by side",
+  cap:"<b>The founding theorem, broken.</b> A solid block is frozen in every earlier section: each law&rsquo;s vacancy clause looks at an occupied cell and fails, so <i>all dynamics is surface dynamics</i>. Here the vacancy clause names a <i>kind</i> instead &mdash; and inside a block of ten laws of the other kind, it is satisfied. All ten laws act at once, where occupancy guards would leave exactly one. The interior of a written code can move."},
+ {name:"PASCAL", dir:1, mode:"parity", at:-20,
+  C:{rules:[[0,0,1],[0,0,0]],targets:[[0],[1]],dim:1,mod:null,guards:[[0,1],[1,0]]},
+  seed:[[0,0]],
+  laws:"A = (0,0,1) → A citing &ldquo;A here, no B here&rdquo; · B = (0,0,0) → B citing &ldquo;B here, no A here&rdquo; · seed: one A",
+  cap:"<b>Sierpinski, from the tamest corner of the field.</b> Own-kind amendment, one target apiece &mdash; exactly the sector chapter one proved exactly solvable and motionless. Citation alone turns it into the Pascal triangle mod 2: the population is <b>2<sup>popcount(t)</sup></b> at every step, so at t = 2<sup>k</sup> just two laws stand and at t = 2<sup>k</sup>−1 there are 2<sup>k</sup> of them."},
+ {name:"LEDGER", dir:1, mode:"parity", at:-60,
+  C:{rules:[[-1,-1,0],[0,0,1]],targets:[[1],[0,1]],dim:1,mod:null,guards:[[1,0],[1,0]]},
+  seed:[[0,0],[0,1],[2,1]],
+  laws:"A = (−1,−1,0) → B citing &ldquo;B at my left&rdquo; · B = (0,0,1) → {A,B} citing &ldquo;B here&rdquo; · seed: three laws",
+  cap:"<b>A binary counter written in three provisions.</b> Five laws stand at every moment, forever; a head sits at the origin and a single marker walks outward, standing at cell 2<sup>j</sup>+2 exactly when t = 4<sup>j</sup> &mdash; verified to t = 65,536. Its reach grows like √t and it never repeats. Strip the citations from these same three rules and the code is a dead letter at the first step."},
+];
+const cw2=constWidget(document.getElementById("cvC"),4);
+let cIx=0, cRunning=!reduceMotion;
+const chipsC=document.getElementById("chipsC");
+CITE.forEach((s,ix)=>{ const b=document.createElement("button"); b.textContent=s.name;
+  b.addEventListener("click",()=>selectCite(ix)); chipsC.appendChild(b); });
+function selectCite(ix){
+  cIx=ix; [...chipsC.children].forEach((b,i)=>b.classList.toggle("on",i===ix));
+  cw2.load(CITE[ix],CITE[ix].mode);
+  document.getElementById("capC").innerHTML=CITE[ix].cap;
+  document.getElementById("lawsC").innerHTML=CITE[ix].laws;
+  statC();
+}
+function statC(){
+  document.getElementById("statC").textContent="t = "+cw2.t+"   laws in force = "+XN.card(cw2.S);
+}
+selectCite(1);
+const playC=document.getElementById("playC");
+playC.textContent=cRunning?"Pause":"Play";
+playC.addEventListener("click",()=>{cRunning=!cRunning; playC.textContent=cRunning?"Pause":"Play";});
+document.getElementById("stepC").addEventListener("click",()=>{cw2.tick(); statC();});
+document.getElementById("resetC").addEventListener("click",()=>selectCite(cIx));
+
 /* ---------- main loop ---------- */
 let frame=0;
 function loop(){
@@ -1307,6 +1386,7 @@ function loop(){
     stat5();
   }
   if(s7Running&&frame%3===0){ sw.tick(); stat7(); }
+  if(cRunning&&frame%3===0){ cw2.tick(); if(cw2.gone())cw2.load(CITE[cIx],CITE[cIx].mode); statC(); }
   if(r110Running&&frame%2===0) r110Tick();
   if(r9Running&&frame%5===0){ rw.tick(); stat9(); }
   if(!reduceMotion&&frame%6===0){
@@ -1334,6 +1414,7 @@ if(reduceMotion){
   for(let i=0;i<28;i++){dwA.tick(); dwB.tick();}
   for(let i=0;i<40;i++)pw5.tick(); stat5();
   for(let i=0;i<70;i++)sw.tick(); stat7();
+  for(let i=0;i<60;i++)cw2.tick(); statC();
   for(let i=0;i<74;i++)r110Tick();
   for(let i=0;i<24;i++)rw.tick(); stat9();
   drawRing(); drawJ(); drawChart(); stat4();

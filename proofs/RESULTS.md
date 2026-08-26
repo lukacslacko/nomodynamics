@@ -753,3 +753,241 @@ other expeditions' records:
 > convention.** Two files, two compasses, one name — and a coincidence appeared
 > between an object that had the property and an object that had the other
 > property. Neither measurement was wrong. The *join* was.
+
+---
+
+## 3. TARGET 3 — the width-free speed cap: **REFUTED**
+
+*The hardest target was not hard in the end, because the statement is false. The
+**Single-Field Cap** — `|d| ≤ 2` under parity, `|d| ≤ 1` under OR at two channels,
+"for any number of channels and at any width" — fails at three kinds under parity
+and at three kinds under OR. The certified record at window 1 in the single-field
+sector is `|d₀| = 128`, carried by **four** kinds. And the "tension" with the
+Dilation Theorem was never a tension: it is an equivocation on the word* width.
+
+Certificates: `python3 proofs/t3_verify.py` — 14/14, every specimen re-certified
+through `xnomos.verify_glider` **and** `xnomos.classify` **and** an independent
+primitivity test (no proper divisor of `(p,d)` works). Deeper machinery and the
+complete censuses: `t3_core.py`, `t3_decide.py`, `t3_theory.py`, `t3_gensweep.py`
+(§8 lists them; **35 209 width-unbounded decisions, 0 undecided**).
+
+### 3.1 The counterexamples *[established — certified specimens]*
+
+Single field means `T_k = K` for every kind: all kinds are written together, so
+the code is a one-bit automaton with `n` channels. All rows below are `W = 1`,
+single field, and `(p₀,d₀)` is the **minimal** period and the displacement across
+it.
+
+| name | kinds | rules | seed | res. | `(p₀,d₀)` |
+|---|---|---|---|---|---|
+| **QUINT-3/5** | 5 | `(0,−1,0) (0,−1,1) (0,1,−1) (0,1,0) (0,1,1)` | **one cell** | parity | **(5, 3)** |
+| **TRIAD-4/4** | **3** | `(1,−1,0) (−1,1,−1) (−1,1,1)` | `{0..4}` | parity | **(4, 4)** |
+| **QUINT-5/5** | 5 | `(0,−1,0) (0,−1,1) (0,1,0) (−1,1,−1) (−1,1,1)` | **one cell** | parity | (5, 5) |
+| **SEPTET-7/7** | 5 | `(0,−1,0) (0,−1,1) (0,1,−1) (0,1,0) (−1,1,1)` | `{0,6}` | parity | (7, 7) |
+| **HALFTONE-32** | 4 | `(0,−1,0) (0,1,−1) (0,1,0) (0,1,1)` | `{0,1,6,8}` | parity | (32, 32) |
+| **ODOMETER-64** | 4 | `(0,−1,−1) (0,−1,0) (0,−1,1) (0,1,0)` | 7 cells, span 11 | parity | (64, −64) |
+| **ODOMETER-128** | 4 | *same* | 14 cells, span 16 | parity | **(128, −128)** |
+| **OR-ODOMETER-16** | **3** | `(0,−1,−1) (−1,1,0) (1,−1,0)` | 11 cells, span 15 | **or** | **(16, −16)** |
+
+**QUINT-3/5 is the one that needs no argument at all.** Five kinds stacked in a
+**single cell**; `Φ⁵ = σ³`; `gcd(5,3) = 1`, so `(5,3)` is primitive on arithmetic
+alone — no minimality inference is required to read it. `|d| = 3 > 2`.
+Its five ticks:
+
+```
+   .#....       {1}
+   ##....       {0,1}
+   ###...       {0,1,2}
+   .#.#..       {1,3}
+   ####..       {0,1,2,3}
+   ....#.       {4}      = t = 0, shifted by +3
+```
+
+**TRIAD-4/4 is the sharpest**: three kinds, five cells, `Φ⁴ = σ⁴` while `Φ¹ ≠ σ¹`
+and `Φ² ≠ σ²` — it lands squarely in the `n = 3` cell that the published table
+gives as `|d| ≤ 2`, with `|d₀| = 4`.
+
+**The Field-Count Threshold goes with it.** `XFINDINGS.md` §5 says *"the resource
+that buys `|d| ≥ 3` is another 𝔽₂ **field**, not another kind"*. Every specimen
+above is single-field — one field, `rank_{𝔽₂} = 1`. What buys `|d| ≥ 3` is a
+third kind.
+
+*What survives, and is now stronger.* The companion no-go is not only intact but
+generalised: **`(4,3)` is impossible for every number of kinds**, not merely for
+`n ≤ 4` — a complete decision over all 512 parity classes (§3.2), with no bound
+on the pattern span. So the original observation *"four kinds in one field cannot
+reach (4,3) at any width"* was right, and is now a theorem about the whole sector.
+
+### 3.2 What replaces the cap: the sector is **finite** *[established]*
+
+The reason "for any number of channels" could be asserted at all is real, and it
+is better than the cap it was used to support.
+
+> **Theorem A (Type Reduction, `W = 1`, single field).** A `W = 1` law is live
+> only for four guard pairs, and each is a statement about the two neighbours
+> `λ = [i−1 ∈ S]`, `ρ = [i+1 ∈ S]` of the cell it stands on:
+> `(0,−1)` fires iff `λ=0`; `(0,+1)` iff `ρ=0`; `(−1,+1)` iff `λ=1, ρ=0`;
+> `(+1,−1)` iff `ρ=1, λ=0`. Hence a cell's **entire** emission depends only on its
+> **type**:
+>
+> | type | `(λ,ρ)` | emits |
+> |---|---|---|
+> | isolated | (0,0) | `u` |
+> | left end | (0,1) | `v` |
+> | right end | (1,0) | `w` |
+> | **interior** | (1,1) | **`0`** — Gridlock, as a type |
+>
+> with `u,v,w ∈ 𝔽₂³` indexed by the offset `c ∈ {−1,0,1}`. So the whole dynamics
+> is the triple `(u,v,w)`: **exactly 512 parity dynamics and 343 OR dynamics**,
+> every one realised by a constitution with **at most six kinds**.
+
+*Consequence.* "For any number of channels" is a **finite** question, and it can
+be *decided* rather than sampled. `xspeed`'s 33 630 constitutions with `n ≤ 5`
+reach 485 of the 512 parity classes and 335 of the 343 OR classes; the 27 + 8
+classes they miss are exactly those that need six kinds. *The census was a large
+sample of a small set, and nobody knew the set was small.*
+
+> **Theorem B (front speed).** For any window `W`, any resolution:
+> `max Φ(S) ≤ max S + W` and `min Φ(S) ≥ min S − W`. Hence **`|d| ≤ p·W`** for
+> every glider — and at `W = 1`, `|d| ≤ p`.
+>
+> *Proof.* A cell `j` is toggled only by an active law at `j − c_k`, and that law
+> stands on an occupied cell, so `j ≤ max S + W`. ∎
+
+**This is the only width-free bound in the sector, and it is attained — by two
+laws, from any seed at all.**
+
+> **CONVEYOR.** `A = (0,−1,0)`, `B = (0,1,1)`, single field. Then
+> `Φ(S) = σ(S)` **identically**, for every finite code `S` and in **both**
+> resolutions.
+>
+> *Proof.* An emission reaches `j` from the kind-`A` law at `j` (needs `j ∈ S`,
+> `j−1 ∉ S`) and from the kind-`B` law at `j−1` (needs `j−1 ∈ S`, `j ∉ S`); the
+> two are mutually exclusive, so parity ≡ OR here and
+> `N(j) = [j ∈ S] ⊕ [j−1 ∈ S]`. Then `s'_j = s_j ⊕ N(j) = s_{j−1}`. ∎
+>
+> *"While I stand and my left is vacant, repeal me; while I stand and my right is
+> vacant, enact my successor."* The rear evaporates, the front paves: **every
+> statute book in this universe marches at speed 1 forever.** Certificate: 2 000
+> random codes × 2 resolutions, 0 exceptions.
+
+### 3.3 The corrected census *[measured — complete decisions, no pattern-width bound, every number of kinds]*
+
+Decided by a column-subshift generator decider carrying **no** bound on the
+pattern span, augmented with one flag per prime `q | gcd(p,d)` so that it answers
+*"is `(p,d)` a **minimal**-period generator?"* rather than *"does `Φ^p = σ^d`?"*.
+Brute-force validated against a 13-cell box: 1 260 questions, 19 positives, 0 misses.
+
+**Parity, `W = 1`, single field, all 512 classes, `p₀ ≤ 6`:**
+realisable `(1,1) (2,1) (2,2) (3,1) (3,2) (3,3) (4,1) (4,2) (4,4) (5,2) (5,3)
+(5,5) (6,2) (6,6)`; impossible at any span and any number of kinds
+`(4,3) (5,1) (5,4) (6,1) (6,3) (6,4) (6,5)`.
+
+**OR, `W = 1`, single field, all 343 classes, `p₀ ≤ 6`:** realisable
+`(1,1) (2,1) (2,2) (3,3) (4,4)` and **nothing else** — reduced speeds `{1, 1/2}`
+only. *The OR sector is far more rigid in speed than parity; this is a fifth
+parity/OR split, and the sharpest structural one yet.*
+
+**By number of kinds** (complete, `p₀ ≤ 6`, any span):
+
+| kinds | parity max `\|d₀\|` | OR max `\|d₀\|` |
+|---|---|---|
+| ≤ 2 | **2** ✓ (confirms the published cap) | **1** ✓ (confirms it) |
+| ≤ 3 | **4** ✗ | **4** ✗ |
+| any | ≥ 128 (certified) | ≥ 16 (certified) |
+
+Beyond `p₀ = 6`, certified `|d₀|` values at `W = 1`: parity
+**3, 4, 5, 6, 7, 8, 15, 16, 18, 32, 38, 64, 128**; OR **3, 4, 8, 16**. Against
+code span, in one four-kind universe:
+
+```
+   span    4    6    8   10   12   14   16   18   20
+   |d₀|    8    8   16   32   64   64  128   64  128
+```
+
+— powers of two, growing with the span.
+
+### 3.4 The diagnosis, and the dilation tension *[established]*
+
+**One unchecked sentence.** `xspeed/RESULTS.md` §4 reads:
+
+> *"`(2,2), (3,3), (4,4), (5,5)` also solve `Φᵖ = σᵈ` but are iterates of the
+> period-1 TANDEM glider, not minimal-period objects."*
+
+The inference is invalid: *a `(1,1)` glider existing somewhere in a universe does
+not make every `(p,p)` solution in that universe its iterate* — the `(p,p)`
+solution is a **different pattern**. The four-kind universe
+`{(−1,1,−1),(1,−1,0),(0,1,1),(1,−1,1)}` has both a `(1,1)` glider (seed `{0,1,2}`)
+and, from seed `{0,1}`, a genuinely minimal period-3 glider with `d₀ = 3`. The
+diagonal entries `(3,3)`, `(4,4)`, `(5,5)`, `(6,6)` are **already in `xspeed`'s
+own Table A** in the *realisable* column. **The data was right; only the reading
+was wrong.** At `n ≤ 2` the inference happens to be correct; it first bites at
+three kinds, which is exactly where the cap was asserted.
+
+> **The dual of the width correction.** `XFINDINGS.md` §5 warned that a
+> coprime-only sweep is blind to `Φ⁴ = σ²`. The **opposite** blindness — reading
+> the non-coprime diagonal as automatically imprimitive — was not guarded, and
+> that is precisely where the counterexamples live. *Minimal period must be
+> decided, not inferred from a witness.*
+
+**The dilation "tension" is an equivocation.** Three candidate escapes were
+tested and **all three are false**:
+
+* *"dilation does not preserve the single-field sector"* — **false** (this was my
+  pre-registered guess Y5, and it is wrong): dilation rescales offsets and leaves
+  the target sets alone, so `T_k = K` stays `T_k = K`. Certified: ODOMETER-64
+  dilated by `r = 2, 3` is single-field at `W = 2, 3` with `(p,d) = (64, −128)`
+  and `(64, −192)`.
+* *"the dilated object is not a glider of the same kind"* — **false**: `i ↦ r·i`
+  is injective, so the generator maps `(p₀,d₀) ↦ (p₀, r·d₀)` exactly.
+* *"the `W = 2` three-kind `|d| = 5` example is not single-field"* — **false**:
+  its targets are `{0,1,2}` for all three kinds.
+
+> **The resolution.** The corpus uses "width" for two different things: the
+> **window** `W` (the offset radius of the rules) and the **pattern span** (what
+> the subshift decider removes the bound on — `sft.py`'s docstring says "with NO
+> bound on the width of the pattern"). The Single-Field Cap is a statement at
+> **fixed window `W = 1`** over patterns of unbounded **span**; the Dilation
+> Theorem moves the **window**. *The two statements never met.* `README.md` and
+> `XFINDINGS.md` §5 should read **"at any pattern span, at window 1"**.
+
+And with the true `W = 1` record at `|d₀| = 128`, dilation now supplies
+`|d₀| ≥ 128r` at window `r` — ≥ 256 at `W = 2`, ≥ 384 at `W = 3` (`r = 2,3`
+certified). That retires the puzzle `xspeed` §15 posed — *"at `W = 2` with three
+kinds displacements reach at least 5 > 2W, so why does the cap not scale?"* —
+**there was no cap to scale.**
+
+### 3.5 What stays conjectural, and the obstruction *[original proposal]*
+
+> **Conjecture T3-U.** In the single-field sector at `W = 1`, `sup |d₀| = ∞`:
+> there is **no** width-free cap on displacement per minimal period, in either
+> resolution. The only universal bound is Theorem B's `|d| ≤ p·W`, attained at
+> both ends — by CONVEYOR at `p₀ = 1` and by ODOMETER-128 at `p₀ = 128`.
+
+*Evidence*: the certified ladder `8, 16, 32, 64, 128` growing with the code span
+inside one four-kind universe; the values are `2^k` and elsewhere `2^k − 1` — the
+signature of orders of polynomials over `𝔽₂`, the same arithmetic that produced
+the Sunset Parliament's exact periods 15, 63, 341.
+
+**The obstruction, named.** Theorem C (front trichotomy) shows that when the
+front advances at *every* step, a glider has `d = p`, i.e. it is a **finite
+periodic point of `Ψ = σ^{−1}∘Φ`**, and `d₀ = p₀` is its minimal `Ψ`-period. So a
+cap `|d₀| ≤ C` would assert that *every finite periodic point of each of 226
+explicitly given cellular automata has period ≤ C* — a CA periodic-point
+question, for which no monovariant is available. Two concrete walls:
+
+1. **Decision cost.** The column subshift for `(q,q)` has state space `2^{4q}`;
+   the decider returns CAP from `q = 8` up. The `q = 32, 64, 128` objects were
+   found by simulation, not decided.
+2. **Nonlinearity is forced, and Gridlock forces it.** Writing the emission out,
+   `E_c(i) = s_i[u_c + (u_c+w_c)s_{i−1} + (u_c+v_c)s_{i+1} + (u_c+v_c+w_c)s_{i−1}s_{i+1}]`.
+   `Φ` is `𝔽₂`-linear **only** when `u = v = w = 0`, i.e. only when it is trivial:
+   the interior type's silence — **Gridlock** — is exactly the quadratic term. So
+   the polynomial-order machinery that closed the Sunset Parliament cannot be
+   applied verbatim, even though the observed periods look exactly like its
+   output.
+
+*The sharpest next step in this sector*: find the algebraic conjugacy that
+explains the `2^k` minimal periods of ODOMETER-64/128. It would settle T3-U, and
+— given §1 — it is hard not to suspect it lands on the same carry automaton.
+
