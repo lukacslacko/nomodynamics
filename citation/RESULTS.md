@@ -797,17 +797,40 @@ Speeds realised: `1, 1/2, 2/5, 1/4, 1/5, 2/11, 1/6`. Glider core spans run to
 ### 6.4 Stage 2 — the residue, deepened
 
 All 1,790,842 growing-or-unresolved representative runs were re-run with the
-budget raised 7.5× in time and 12.5× in span. Counts here are **per orbit
-representative** (not weighted by orbit size, unlike §6.3):
+budget raised 7.5× in time and 12.5× in span, and re-aggregated with orbit
+weights so the result composes with §6.3:
 
-| | count | share of residue |
-|---|---:|---:|
-| GROWING (still) | 748,107 | 41.8 % |
-| BALANCED | 566,863 | 31.7 % |
-| CYCLE | 245,656 | 13.7 % |
-| UNRESOLVED (still) | 222,219 | 12.4 % |
-| FIXED | 7,997 | 0.4 % |
-| **GLIDER** | **0** | **0 %** |
+| | parity | | OR | |
+|---|---:|---:|---:|---:|
+| GROWING (still) | 1,469,720 | 41.57 % | 1,516,930 | 41.96 % |
+| BALANCED | 1,124,888 | 31.82 % | 1,138,800 | 31.50 % |
+| CYCLE | 484,400 | 13.70 % | 496,620 | 13.74 % |
+| UNRESOLVED (still) | 440,826 | 12.47 % | 446,578 | 12.35 % |
+| FIXED | 15,696 | 0.44 % | 16,292 | 0.45 % |
+| **GLIDER** | **0** | **0 %** | **0** | **0 %** |
+| *total* | *3,535,530* | | *3,615,220* | |
+
+The weighted totals reproduce the stage-1 GROWING + UNRESOLVED rows exactly
+(3,136,788 + 398,742 and 3,210,014 + 405,206), which is the arithmetic check
+that the two stages cover the same runs. Per orbit representative the same
+figures are 748,107 / 566,863 / 245,656 / 222,219 / 7,997 / 0.
+
+**The census, final.** Composing the two stages gives the complete weighted
+class distribution over the box — 45,349,632 certified classifications per
+resolution, with only the UNRESOLVED row still budget-limited:
+
+| class | parity | | OR | |
+|---|---:|---:|---:|---:|
+| EXTINCT | 308,094 | 0.679 % | 325,646 | 0.718 % |
+| FIXED | 27,896,104 | 61.514 % | 27,972,634 | 61.682 % |
+| BALANCED | 7,247,252 | 15.981 % | 6,925,620 | 15.271 % |
+| CYCLE | 7,974,336 | 17.584 % | 8,148,188 | 17.968 % |
+| **GLIDER** | **13,300** | **0.029 %** | **14,036** | **0.031 %** |
+| GROWING | 1,469,720 | 3.241 % | 1,516,930 | 3.345 % |
+| UNRESOLVED | 440,826 | 0.972 % | 446,578 | 0.985 % |
+
+Deepening the budget moved a third of the residue into BALANCED and an eighth
+into CYCLE, and left **1.0 %** of the whole box genuinely undecided.
 
 **Zero new gliders.** In particular the residue contains no wide glider of the
 MIRROR type inside `span ≤ 1500`, `p ≤ 1500` — which is the honest form of the
@@ -1303,8 +1326,8 @@ RULE110  = circuit.ECA(110).C        # 13 kinds, W = 1, 2 steps per CA step
    dedicated subshift decider, not by a box; the same tool has never been
    pointed at citation constitutions.
 5. **Does citation change the density of balance?** The cohort theorem survives
-   verbatim, but 13.5 % of this box classifies as BALANCED and that is a large
-   share for a phenomenon chapter one proved impossible. Chapter two's exact
+   verbatim, but **16.0 %** of this box classifies as BALANCED after the
+   residue is deepened, and that is a large share for a phenomenon chapter one proved impossible. Chapter two's exact
    counting recursion `a(s) = 4a(s−1) − 2a(s−2)` for balanced codes was derived
    with anonymous guards; the citation analogue is not known.
 6. **Why `head ⊔ doubling marker`?** Two machines in two dimensions, found by

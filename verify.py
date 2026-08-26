@@ -603,6 +603,55 @@ def impermanence():
           obs == want, "tau = 1..12, displacement fixed at 2, period = tau+1")
 
 
+def citation():
+    """Chapter three: guards that name a kind (citation/RESULTS.md)."""
+    print("\ncitation")
+
+    # Gridlock dies: a solid block whose exception clause names an absent kind.
+    C = Const([(0, 1, 1), (0, 1, 1)], targets=[1, 0], guards=[(None, 1), (None, 0)])
+    S = state_of([(i, 0) for i in range(10)])
+    Cocc = Const([(0, 1, 1), (0, 1, 1)], targets=[1, 0])
+    check("Gridlock dies under citation: a solid block comes alive",
+          len(active_laws(S, C)) == 10 and len(active_laws(S, Cocc)) == 1,
+          "10 of 10 laws active, against 1 of 10 under occupancy guards")
+
+    # LACUNA: the HOLE travels; the occupancy never changes.
+    m = 9
+    C = Const([(0, -1, 0), (0, 0, 0)], [(0,), (0,)],
+              guards=[(None, 0), (None, 0)], modulus=m)
+    S = {c: 0b11 for c in range(m)}
+    S[3] &= ~0b01
+    X = step(S, C)
+    check("LACUNA: a hole travels at one cell per step through a full code",
+          X == {(c + 1) % m: v for c, v in S.items()} and set(X) == set(S),
+          "Phi = rot(+1) exactly, occupancy constant")
+
+    # LEDGER: a 1-D binary counter of card 5, exact at t = 4^j.
+    C = Const([(-1, -1, 0), (0, 0, 1)], [(1,), (0, 1)], guards=[(1, 0), (1, 0)])
+    S0 = state_of([(0, 0), (0, 1), (2, 1)])
+    okj = []
+    for j in range(1, 7):
+        X = dict(S0)
+        for _ in range(4 ** j):
+            X = step(X, C)
+        okj.append(X == state_of([(0, 0), (0, 1), (2, 1),
+                                  (2 ** j + 2, 0), (2 ** j + 2, 1)]))
+    Cocc = Const([(-1, -1, 0), (0, 0, 1)], [(1,), (0, 1)])
+    check("LEDGER: a 1-D binary counter of card 5, exact at t = 4^j",
+          all(okj) and step(S0, Cocc) == S0,
+          "j = 1..6; the same rules without citation are a dead letter at t=0")
+
+    # PASCAL: Sierpinski from own-kind, out-degree-1 rules.
+    C = Const([(0, 0, 1), (0, 0, 0)], [(0,), (1,)], guards=[(0, 1), (1, 0)])
+    X, sz = state_of([(0, 0)]), []
+    for tt in range(1, 17):
+        X = step(X, C)
+        sz.append(card(X))
+    check("PASCAL: |S_t| = 2^popcount(t), own-kind and out-degree 1",
+          sz == [2 ** bin(i).count("1") for i in range(1, 17)],
+          "Sierpinski on Z, opened by citation alone")
+
+
 def replication():
     """Chapter six: codes that copy themselves (replication/RESULTS.md)."""
     print("\nself-replication")
@@ -751,6 +800,7 @@ def main():
     chapter1_jubilee()
     chapter2()
     impermanence()
+    citation()
     replication()
     computation()
     print("\n%d checks passed, %d failed" % (len(PASS), len(FAIL)))

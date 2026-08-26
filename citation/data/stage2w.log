@@ -1,1 +1,4 @@
 stage-2 residue runs: 1790842
+stage2 done in 2909.8 s
+{'CYCLE': 245656, ('W', 'parity', 'CYCLE'): 484400, ('W', 'or', 'CYCLE'): 496620, 'BALANCED': 566863, ('W', 'parity', 'BALANCED'): 1124888, ('W', 'or', 'BALANCED'): 1138800, 'GROWING': 748107, ('W', 'or', 'GROWING'): 1516930, ('W', 'parity', 'GROWING'): 1469720, 'UNRESOLVED': 222219, ('W', 'parity', 'UNRESOLVED'): 440826, ('W', 'or', 'UNRESOLVED'): 446578, 'FIXED': 7997, ('W', 'parity', 'FIXED'): 15696, ('W', 'or', 'FIXED'): 16292}
+new gliders found in the residue: 0

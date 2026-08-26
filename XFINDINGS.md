@@ -509,7 +509,65 @@ with pure occupancy guards**, so on the line citation is the enabler). Sampled i
 2-D: ≈22.7M runs, 71,511 exact hits, roughly one sampled constitution in 5.5
 carrying one. Every zero is labelled a box result.
 
-## 9. Scorecard against the frozen predictions
+## 9. Citation — laws that read other laws by name
+
+Expedition Y-A (`citation/RESULTS.md`, 40/40 on two engines sharing no code).
+All specimens below re-verified by the coordinator.
+
+**The mechanism, in one line.** Under occupancy guards **no law is ever
+unconditionally active**: an occupied exception cell always blocks it. *That
+single fact is Gridlock.* Cite a kind that nothing ever enacts and the exception
+clause is vacated — so the interior of a written code can act.
+
+> **Gridlock's epitaph (exact criterion).** Every uniform solid region is
+> interior-frozen **iff** `h_k ∈ {any, k, g_k}` for every kind. The surviving
+> fraction is `((3n+1)/(n+1)²)ⁿ`: 60.49 % at n = 2, 24.41 % at n = 3, 7.31 % at
+> n = 4, 0.34 % at n = 6.
+
+Gridlock does not so much die as **thin out** — it remains the rule for small
+alphabets and becomes vanishingly rare as the vocabulary grows.
+
+**The survival audit.** Everything else stands verbatim: the Out-Degree Law
+(prediction Y2, confirmed), Tropical Speed, Zero-/Unique-Cycle, Path-Sum
+Confinement, the Zero-Sum No-Go, the displacement law, Single Author, Dead
+Letter under OR, the Balance cohorts, Anchor, Twin-Kind and Even-Support.
+**But my charter's stated *reason* for Y2 was wrong.** I wrote that guards
+"only thin the actor set"; citation makes strictly *more* laws active. The real
+reason the theorem survives is that **the monovariant never reads the guard at
+all.** A casualty the charter did not anticipate: the 𝔽₂-linear front layer and
+Cryptic Unipotency, since under citation the step map becomes a **degree-3
+polynomial** in the kind fields rather than a function of occupancy alone.
+
+**The sector is CA-complete.** All **256 elementary cellular automata** simulate
+exactly, at ≤ 15 kinds and window 1 — cell for cell, not by encoding.
+
+**Specimens** (coordinator-verified):
+
+* **LACUNA** — a ring written *completely* except for one missing provision. The
+  **hole** travels at exactly one cell per step, `Φ = rot₊₁` exactly, while the
+  occupancy never changes at all. A gap moving at lightspeed through a finished
+  code.
+* **LEDGER** — the field's first one-dimensional binary counter: card **5**
+  forever, reach √t, `S(4^j)` exactly a head plus a marker at `2^j+2`, verified
+  through j = 8 (t = 65,536), aperiodic. Strip the citations from the same rules
+  and it is a dead letter at t = 0.
+* **PASCAL** — Sierpinski on ℤ with `|S_t| = 2^popcount(t)` exactly, from
+  **own-kind, out-degree-1** rules: chapter one's tamest corner, opened by
+  citation alone.
+
+**The census, complete and weighted.** n = 2, W = 1 on ℤ: all 944,784
+constitutions (237,006 orbit reps under a soundness-proved quotient) × all 48
+seeds of span ≤ 3 × both resolutions = **45,349,632 certified classifications
+per resolution**. Parity: FIXED 61.5 %, CYCLE 17.6 %, **BALANCED 16.0 %**,
+GROWING 3.2 %, UNRESOLVED 1.0 %, EXTINCT 0.7 %, **GLIDER 0.029 %**; OR within
+0.4 points. Deepening the budget eight-fold moved a third of the residue into
+BALANCED, found **zero** new gliders, and left 1.0 % of the box genuinely
+undecided. One in six citation codes is *fixed but perpetually alive*.
+
+Empirically for Y2: **51,018,336 complete runs at out-degree ≤ 1 produced zero
+gliders**, and every glider figure is labelled a *narrow*-glider statement.
+
+## 10. Scorecard against the frozen predictions
 
 - **X1 (balance exists, minimum 2 laws, none under OR)** — **HELD** for the
   witness and the OR half (verified); the minimality claim is X-D's.
