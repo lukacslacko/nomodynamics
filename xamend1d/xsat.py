@@ -340,22 +340,18 @@ def build(sp: Spec):
             for dd, sel in dsel.items():
                 for j in range(N):
                     src = cell(j - dd)
-                    o = False if src is None else x[0][src][k := 0]
                     for k in range(n):
-                        o = False if src is None else x[0][src][k]
-                        u, v = x[p][j][k], o
+                        u = x[p][j][k]
+                        v = False if src is None else x[0][src][k]
                         if u is False and v is False:
                             continue
-                        if u is False:
-                            C.add(-sel, *( [-v] if v is not True else []))
-                            if v is True:
-                                C.add(-sel)
+                        if u is True and v is True:
                             continue
-                        if v is False:
-                            C.add(-sel, -u)
-                            continue
-                        if v is True:
-                            C.add(-sel, u)
+                        if isinstance(u, bool) or isinstance(v, bool):
+                            # one side constant: sel forces the other
+                            if isinstance(u, bool):
+                                u, v = v, u          # v is now the constant
+                            C.add(-sel, u if v is True else -u)
                             continue
                         C.add(-sel, -u, v)
                         C.add(-sel, u, -v)
@@ -472,6 +468,11 @@ def extract(meta, model):
             r.append(hits[0])
         rules.append(tuple(r))
         targets.append(tuple(m for m in range(n) if val(meta["tgt"][k][m], model)))
+    disp = sp.d
+    if meta.get("dsel"):
+        hits = [dd for dd, s in meta["dsel"].items() if val(s, model)]
+        assert len(hits) == 1, hits
+        disp = hits[0]
     frames = []
     for s in range(p + 1):
         st = {}
@@ -483,4 +484,4 @@ def extract(meta, model):
             if msk:
                 st[i] = msk
         frames.append(st)
-    return dict(rules=rules, targets=targets, frames=frames, spec=sp)
+    return dict(rules=rules, targets=targets, frames=frames, spec=sp, d=disp)

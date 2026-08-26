@@ -1,0 +1,21 @@
+== run super1 ==
+  [super1] 972 jobs, 3.3s -> /private/tmp/claude-501/-Users-lukacs-claude-math/772c7aef-de26-4501-b1db-98c290170bdf/scratchpad/raw/super1.jsonl
+   m=3   consts=54     periods=[1, 2] maxp=2 rotor_classes=0 balanced=0
+   m=4   consts=54     periods=[1, 2] maxp=2 rotor_classes=0 balanced=0
+   m=5   consts=54     periods=[1, 2, 4] maxp=4 rotor_classes=0 balanced=0
+   m=6   consts=54     periods=[1, 2, 3, 4] maxp=4 rotor_classes=3 balanced=0
+   m=7   consts=54     periods=[1, 2, 4] maxp=4 rotor_classes=0 balanced=0
+   m=8   consts=54     periods=[1, 2, 4] maxp=4 rotor_classes=1 balanced=0
+   m=9   consts=54     periods=[1, 2, 4, 8] maxp=8 rotor_classes=0 balanced=0
+   m=10  consts=54     periods=[1, 2, 4, 8, 15] maxp=15 rotor_classes=4 balanced=0
+   m=11  consts=54     periods=[1, 2, 4, 8] maxp=8 rotor_classes=0 balanced=0
+   m=12  consts=54     periods=[1, 2, 3, 4, 6, 8] maxp=8 rotor_classes=7 balanced=0
+   m=13  consts=54     periods=[1, 2, 4, 8] maxp=8 rotor_classes=0 balanced=0
+   m=14  consts=54     periods=[1, 2, 4, 7, 8] maxp=8 rotor_classes=6 balanced=0
+   m=15  consts=54     periods=[1, 2, 4, 8] maxp=8 rotor_classes=0 balanced=0
+   m=16  consts=54     periods=[1, 2, 4, 8] maxp=8 rotor_classes=3 balanced=0
+   m=17  consts=54     periods=[1, 2, 4, 8, 16] maxp=16 rotor_classes=0 balanced=0
+   m=18  consts=54     periods=[1, 2, 3, 4, 8, 16, 63] maxp=63 rotor_classes=8 balanced=0
+   m=19  consts=54     periods=[1, 2, 4, 8, 16] maxp=16 rotor_classes=0 balanced=0
+   m=20  consts=54     periods=[1, 2, 4, 8, 15, 16, 30] maxp=30 rotor_classes=10 balanced=0
+== run super2 ==
