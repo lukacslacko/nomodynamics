@@ -106,6 +106,33 @@ rings/) launched. Scored against the pre-registrations in NOMOS.md §3.*
   some classes is conjectured with evidence (glider-question/). The wild sector
   is one honest generalization away, with its doorway located exactly.
 
+## Corrections and sharpenings (2026-08-26, from `verify.py` and `note/figs.py`)
+
+Re-checking the founding specimens on the independent general engine
+(`xnomos.py`) changed two published descriptions. Both are recorded here rather
+than silently edited above.
+
+- **Refraction is a net effect, not a half-speed march — the mechanism above is
+  wrong.** A sunset wall of length L standing in a colonizer's path is cleared
+  at time **exactly max(2L, x₀+L)** (x₀ = the front's initial distance to the
+  wall; verified for all twelve (L, x₀) pairs with L ∈ {10,20,30}, x₀ ∈
+  {4,10,15,25}). The wall erodes from its **far** end at speed 1 *on its own*,
+  because its rightmost law sees vacancy ahead and repeals itself; the front
+  meanwhile stands blocked, and then fills the vacated ground at speed 1. Two
+  speed-1 processes in sequence over the same L cells give the observed index
+  of 2. *The colonizer never converts the wall: it waits for the old code to
+  sunset and takes the vacancy.* The note's and the demo's captions say
+  "converts it to its own kind at speed ½" and must be fixed.
+- **The Jubilee clock is sharper than "avalanches at t = 2^k".** The crest is at
+  t = 2^k − 1 (counter full) and the code collapses to **exactly four laws at
+  every t = 2^k** (16/16 exact, complete through t < 2^17); crest height doubles
+  every *two* powers of two, and the population is graded by the binary weight
+  of t. Full statement and tables: `nomos2d/JUBILEE-LAW.md`.
+
+Everything else in the sections above re-verified unchanged: `python3 verify.py`
+(20/20), `python3 xnomos.py` (engine self-tests), `node demo/xengine.test.js`
+(125 universes, 1 528 states, 0 divergences against the Python reference).
+
 ## Reading (theory frame)
 
 **Own-kind nomodynamics is an exactly solvable linear theory in disguise** —

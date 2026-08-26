@@ -241,7 +241,12 @@ def build(sp: Spec):
     # ---- target matrix ---------------------------------------------------
     # tgt[k][m] : an active law of kind k toggles kind m at i + c_k
     tgt = [[False] * n for _ in range(n)]
-    if sp.perm_cycle is not None:
+    if sp.mode in ("super", "super_or"):
+        # supersession ignores the target matrix (an active law enacts its OWN
+        # kind); pin it to the identity so no free variables are wasted.
+        for k in range(n):
+            tgt[k][k] = True
+    elif sp.perm_cycle is not None:
         assert n == sp.perm_cycle
         for k in range(n):
             tgt[k][(k + 1) % n] = True
