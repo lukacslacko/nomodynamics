@@ -396,6 +396,28 @@ def chapter2():
     check("collisions: even gap passes through, odd gap freezes",
           verdict == [True, False, True, False], "gaps 6,7,8,9")
 
+    # --- structure theory (expedition X-D) ------------------------------
+    C = Const([(0, -1, -1), (0, -1, -1)], targets=[0, 0])
+    S = state_of([(0, 0), (0, 1)])
+    check("BAL-1: the minimal balanced code is two laws in ONE cell",
+          verify_balanced(S, C) and len(active_laws(S, C)) == 2
+          and step(S, C, "or") != S,
+          "both forever propose the same amendment; it never passes")
+
+    C = Const([(0, -1, 1), (0, 1, -1), (-1, 1, 0)], targets=[2, 0, 1])
+    S = state_of([(-2, 2), (2, 0), (2, 2), (3, 0), (3, 1)])
+    r = classify(S, C, max_steps=200)
+    check("CRY-1: a period-3 cycle at constant occupancy",
+          r["kind"] == CYCLE and r["period"] == 3,
+          "own-kind linearity would force a power of two")
+
+    C = Const([(0, -1, 1)])
+    S = state_of([(0, 0), (2, 0), (4, 0), (6, 0)])
+    r = classify(S, C, max_steps=200)
+    check("OWN-8: an own-kind period-8 oscillator",
+          r["kind"] == CYCLE and r["period"] == 8,
+          "refutes the census remark that random cycles carry only p = 2, 4")
+
     # Subluminal motion: a parity glider at speed 1/6.
     C = Const([r("ONO"), r("OEW"), r("WTE")], [(0, 1), (0, 2), (0,)], dim=2)
     S = state_of([((0, 0), 0), ((0, 0), 1)])

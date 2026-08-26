@@ -77,3 +77,38 @@ if __name__ == "__main__":
     survey([[0,0]], RULES12, 2, range(3, 9), "non-injective [0,0], m=3..8")
     survey([[0,1,2]], RULES12, 3, range(3, 7), "own-kind, 3 live kinds, m=3..6")
     survey([[1,2,0]], RULES12, 3, range(3, 7), "3-cycle permutation, m=3..6")
+
+
+def predict(L):
+    """Odd part L' of L; F2[y]/(y^L'-1) = prod F_{2^d}, d = ord_{L'/factor}(2).
+    Orders of 1+zeta divide 2^d - 1 on each nontrivial factor."""
+    Lp = L
+    while Lp % 2 == 0:
+        Lp //= 2
+    return Lp
+
+
+def survey_L(L, ms, ntrials, seed=7):
+    """Random L-cycle constitutions: which q(M) appear?"""
+    import random
+    rng = random.Random(seed)
+    tg = [(k + 1) % L for k in range(L)]
+    qs = {}
+    for m in ms:
+        for _ in range(ntrials):
+            rules = [rng.choice(RULES12) for _ in range(L)]
+            R = Ring(rules, tg, m)
+            for O in range(1 << m):
+                q = mult_period(step_matrix(R, O), cap=600)
+                if q not in qs:
+                    qs[q] = (m, tuple(rules), O)
+    odd = sorted(q for q in qs if q and q % 2)
+    print("  L=%d (odd part %d)  m in %s, %d random constitutions per m: "
+          "q(M) = %s" % (L, predict(L), list(ms), ntrials, sorted(qs)))
+    print("        odd q(M) values: %s" % (odd if odd != [1] else "none but 1"))
+    for q in sorted(qs):
+        if q and q & (q - 1):
+            m, rules, O = qs[q]
+            print("        q=%-3d first at m=%d %s O=%s"
+                  % (q, m, list(rules), format(O, '0%db' % m)))
+    return qs
