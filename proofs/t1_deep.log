@@ -1,0 +1,36 @@
+TARGET 1 — the Jubilee clock law
+
+(R)+(L)  ray reduction and the carry rule, engine lockstep
+  FAIL  2-D engine == carry rule for all t < 2^17   [buffer too small at t=129416 (index 700)]
+
+(M)  the Monomial Law  y_n(t) = prod_{i in M_n} bit_i(t)
+  ok    y_n(t) = f_{M_n}(t) for all n < 200, t < 2^13  (COMPLETE box)   [200 x 8192 = 1638400 bit identities]
+
+     the partial-sum lemma  sum_{s<t} f_M(s) = f_{sigma(M)}(t)
+  ok    partial-sum lemma on every M subset [0,6], |M|<=4, t < 2^10   [99 sets x 1024 times, COMPLETE box]
+
+(B)  the block structure  N_j = 3.2^j - 2
+  ok    blocks verified for j = 0..8 (N_j up to 766)
+  ok    the singletons M_n = {k} are exactly one per k   [k = 0..20 each realised exactly once, at n = [0, 1, 2, 4, 5, 10, 11, 22]...]
+
+(C)  the closed form  |S_t| = 3 + #{n : M_n subset supp_2(t)}
+  ok    engine |S_t| == closed form for all t < 2^17  (COMPLETE box)   [131072 steps of xnomos.step]
+
+THEOREM 1.4 (reset)   |S_{2^k}| = 4 for every k >= 0
+  ok    closed form gives 4 at t = 2^0 .. 2^16   [values {4}]
+  ok    ...because #{n : M_n = {k}} = 1 for every k <= 16
+
+THEOREM 1.5 (crest)   |S_{2^k-1}| = 3.2^{floor((k-1)/2)} + 1 (k odd), +2 (k even)
+  ok    crest formula, k = 3..17   [[7, 8, 13, 14, 25, 26, 49, 50, 97, 98, 193, 194, 385, 386, 769]]
+  ok    ...matches JUBILEE-LAW.md table
+  ok    t = 2^k - 1 is the UNIQUE maximiser of |S_t| over t < 2^k, k=1..14
+
+THEOREM 1.6 (grading)
+  ok    pair recursion F_{j+1} = F_j(1+[a_j=2]) + a_j reproduces F, t < 2^13   [a_j = |W n {2j+1,2j+2}|]
+  ok    max{|S_t| : w(t)=w} = 2^{w/2+1}+1 (w even), 3.2^{(w-1)/2}+1 (w odd)   [over ALL t; w = 0..29]
+
+     the measured min/max table inside the box t < 2^17
+  ok    min over the box reproduces JUBILEE-LAW.md (w+3 for w<=9, then 14,19,30,...)   [[4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 19, 30, 53, 100, 195, 386, 769]]
+  ok    min{|S_t|} = w + 3 for EVERY w once the window is unbounded   [witnesses need [20, 22, 24, 26, 28, 30, 32] bits — invisible to t < 2^17]
+
+14 passed, 1 failed

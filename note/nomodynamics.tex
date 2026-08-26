@@ -315,6 +315,63 @@ own.}
 \noindent What forbids motion on the line is \textbf{permanence}, not own-kind
 targeting---the Anchor Theorem's real content.
 
+\section{Impermanence: motion is a consequence of mortality}
+Every sector so far assumes a law stands until something repeals it. That
+assumption is load-bearing and nobody had weighed it. Drop it:
+\begin{definition}[sunset-by-default]
+A law lapses unless it is re-enacted. With lifetime $\tau\ge1$, a placed law
+survives a step if some active law enacts it now, or if fewer than $\tau$ steps
+have passed since its last enactment. Effects are \emph{enactments}, not
+toggles; to repeal is to stop re-enacting.
+\end{definition}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig6_impermanence.pdf}
+\caption{Impermanence. The colonizer $(0,1,1)$---the same law, the same guard,
+the same target---\emph{fills} the line when provisions are permanent and
+\emph{walks} when they lapse. Third panel: one code, one seed, and the lifetime
+$\tau$ as a dial; the packet always moves two cells but must wait for its own
+tail to lapse, so its speed is exactly $2/(\tau+1)$ (measured points, certified
+$\tau\le12$). Right: \emph{Land Grant}, whose population is $(t+1)^2$ under
+permanence, keeps only the two advancing edges of that square.}
+\label{fig:sunset}
+\end{figure}
+\begin{theorem}[Lone Survivor]
+Under $\tau=1$ a single placed law of kind $(a,b,c)$ survives its first step iff
+$a=0$ and $b\neq0$---its precedent is itself and its exception is elsewhere. It
+then translates by $c$ forever: it \emph{walks} if $c\neq0$ and renews itself in
+place if $c=0$. The other $21$ of the $27$ kinds vanish in one step.
+\end{theorem}
+So chapter one's very first specimen becomes a glider (Fig.~\ref{fig:sunset}),
+and the Anchor Theorem's locality hypothesis---\emph{a slot receiving no toggle
+is unchanged}---is revealed as permanence itself. Structurally the term is
+visible in the monovariant: $\mathrm{supp}_t(n{+}1)\subseteq
+\mathrm{supp}_t(n)\cup(\mathrm{supp}_s(n)+c_s)$, whose first summand is a
+\textbf{weight-zero self-loop} in the tropical digraph---exactly what pins the
+minimum. Impermanence deletes it, the cycle means may go positive, and motion
+is permitted. The statistics invert with it: in the complete two-law box
+($3{,}645$ codes per lifetime) extinction becomes the generic fate ($\approx
+64\%$) where gridlock had been, and gliders---\emph{impossible} in the whole
+own-kind permanent sector---occur in $\approx23\%$ of codes at every lifetime
+tested.
+
+Gridlock inverts rather than merely failing. A solid block is frozen under
+permanence because every vacancy guard fails; under impermanence it
+\emph{evaporates}, since nothing re-enacts the interior, and eight colonizer
+laws collapse in one step to a single walker. \emph{In both worlds only the
+surface matters: in one it is the only part that moves, in the other the only
+part that lives.}
+\begin{theorem}[Conservation]
+Under $\tau=1$, if every law amends at most one kind then
+$|S_{n+1}|\le|\mathrm{active}(S_n)|\le|S_n|$: an impermanent code can never
+grow.
+\end{theorem}
+\emph{Proof.} The next state is exactly the set of slots enacted now; each
+active law enacts one, and nothing else survives.~$\square$ With out-degree $2$
+growth appears at once. So one threshold governs both worlds with dual
+consequences: out-degree $\le1$ forbids \emph{motion} under permanence and
+\emph{growth} under impermanence; out-degree $\ge2$ buys each.
+
 \section{The frontier, located by theorem}
 The theorems above are cheap to state and were found within two days of the
 definition, which is the usual sign that a territory has been entered rather

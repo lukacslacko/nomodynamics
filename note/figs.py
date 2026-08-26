@@ -252,6 +252,79 @@ def fig5():
     save(fig, "fig5_plane")
 
 
+def fig6():
+    """Impermanence: the same law walks, and longevity is friction."""
+    sys.path.insert(0, str(HERE.parent / "sunset"))
+    from sunset import step_sunset, classify_sunset          # noqa: E402
+
+    def sraster(S0, C, steps, lo, hi, tau=1):
+        S, ages = dict(S0), None
+        rows = []
+        for _ in range(steps):
+            row = np.zeros(hi - lo + 1, dtype=np.uint8)
+            for cell, mask in S.items():
+                if lo <= cell <= hi:
+                    row[cell - lo] = min(2, bin(mask).count("1"))
+            rows.append(row)
+            S, ages = step_sunset(S, C, tau, ages)
+        return np.array(rows)
+
+    fig = plt.figure(figsize=(11, 3.3))
+    gs = fig.add_gridspec(1, 4, width_ratios=[1, 1, 1.5, 1.1], wspace=0.3)
+
+    C = Const([(0, 1, 1)])
+    S = state_of([(0, 0)])
+    ax = fig.add_subplot(gs[0, 0])
+    ax.imshow(raster(S, C, 26, 0, 26), cmap=CMAP, vmin=0, vmax=2,
+              interpolation="nearest", aspect="auto")
+    ax.set_title("permanence: it fills", fontsize=9)
+    ax.set_ylabel("time  " + r"$\rightarrow$", fontsize=9)
+    ax.set_xticks([])
+
+    ax = fig.add_subplot(gs[0, 1])
+    ax.imshow(sraster(S, C, 26, 0, 26), cmap=CMAP, vmin=0, vmax=2,
+              interpolation="nearest", aspect="auto")
+    ax.set_title("impermanence: it walks", fontsize=9)
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    # the longevity dial: one code, speed 2/(tau+1)
+    C2 = Const([(0, 1, -1), (0, -1, -1)])
+    S2 = state_of([(0, 0), (2, 1)])
+    taus, speeds = [], []
+    for tau in range(1, 13):
+        r = classify_sunset(S2, C2, tau=tau, max_steps=400)
+        taus.append(tau)
+        speeds.append(abs(r["displacement"]) / r["period"])
+    ax = fig.add_subplot(gs[0, 2])
+    xs = np.linspace(1, 12, 200)
+    ax.plot(xs, 2 / (xs + 1), lw=1.0, color="#9aa3ae", zorder=1,
+            label=r"$2/(\tau+1)$")
+    ax.plot(taus, speeds, "o", ms=4, color=LINE, zorder=2, label="measured")
+    ax.set_xlabel(r"lifetime $\tau$ (steps a law survives unrenewed)",
+                  fontsize=8.5)
+    ax.set_ylabel("speed", fontsize=9)
+    ax.set_title("longevity is friction", fontsize=9)
+    ax.legend(fontsize=8, frameon=False)
+    ax.set_ylim(0, 1.05)
+
+    # the frontier without the territory
+    V = {"O": (0, 0), "E": (1, 0), "N": (0, -1), "P": (1, -1)}
+    Cg = Const([tuple(V[c] for c in "OPP"), tuple(V[c] for c in "OEE"),
+                tuple(V[c] for c in "ONN")], [(0, 1, 2), (1,), (2,)], dim=2)
+    X, ages = state_of([((0, 0), 0)]), None
+    for _ in range(16):
+        X, ages = step_sunset(X, Cg, 1, ages)
+    ax = fig.add_subplot(gs[0, 3])
+    ax.imshow(_grid(X), cmap=CMAP, vmin=0, vmax=2, interpolation="nearest")
+    ax.set_title("the plane-filler,\nkeeping only its frontier", fontsize=9)
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    fig.subplots_adjust(left=0.05, right=0.99, top=0.86, bottom=0.18)
+    save(fig, "fig6_impermanence")
+
+
 def save(fig, stem):
     for ext in ("pdf", "png"):
         fig.savefig(HERE / ("%s.%s" % (stem, ext)), dpi=170)
@@ -260,7 +333,7 @@ def save(fig, stem):
 
 
 FIGS = {"fig1": fig1, "fig2": fig2, "fig3": fig3, "fig4": fig4,
-        "fig5": fig5}
+        "fig5": fig5, "fig6": fig6}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(FIGS)
