@@ -52,11 +52,15 @@ class Const:
     targets : list of int (single target) or tuple of ints (multi-target)
     dim     : 1 or 2
     modulus : None for Z^d, or m for the ring Z/m (1D only)
+    guards  : list of (g, h), the CITATION guards of chapter three.  g is the
+              kind that must STAND at i+a and h the kind that must be ABSENT at
+              i+b; None means "any law" — the founding occupancy semantics.
+              guards=None gives occupancy guards throughout (chapters 1-2).
     """
 
-    __slots__ = ("rules", "targets", "dim", "modulus", "n")
+    __slots__ = ("rules", "targets", "dim", "modulus", "n", "guards", "cited")
 
-    def __init__(self, rules, targets=None, dim=1, modulus=None):
+    def __init__(self, rules, targets=None, dim=1, modulus=None, guards=None):
         self.rules = [tuple(r) for r in rules]
         self.n = len(rules)
         if targets is None:
@@ -64,6 +68,13 @@ class Const:
         self.targets = [t if isinstance(t, tuple) else (t,) for t in targets]
         self.dim = dim
         self.modulus = modulus
+        if guards is None:
+            guards = [(None, None)] * self.n
+        self.guards = [tuple(g) for g in guards]
+        # cited: does any guard name a kind?  (False = the founding semantics,
+        # and the fast path in step())
+        self.cited = any(g is not None or h is not None
+                         for g, h in self.guards)
 
     # -- offsets -----------------------------------------------------------
     def add(self, cell, off):
@@ -91,6 +102,10 @@ class Const:
                 x = t[x]
             out.append(len(cyc))
         return sorted(out)
+
+    def cites(self):
+        """The kinds named by guards (chapter three), as a set."""
+        return {x for g in self.guards for x in g if x is not None}
 
     def label(self):
         def o(x):
@@ -127,14 +142,30 @@ def card(S):
     return sum(bin(m).count("1") for m in S.values())
 
 
+def enabled(S, C, cell, k):
+    """Does the guard of the kind-k law at `cell` pass?
+
+    Occupancy guard (g is None): some law of ANY kind must stand at i+a.
+    Citation guard (g = kind):    a law of THAT kind must stand at i+a.
+    Likewise for the vacancy clause at i+b.
+    """
+    a, b, _ = C.rules[k]
+    g, h = C.guards[k]
+    pa = C.add(cell, a)
+    if g is None:
+        if pa not in S:
+            return False
+    elif not (S.get(pa, 0) >> g) & 1:
+        return False
+    pb = C.add(cell, b)
+    if h is None:
+        return pb not in S
+    return not (S.get(pb, 0) >> h) & 1
+
+
 def active_laws(S, C):
     """The laws whose guard passes, as (cell, kind) pairs."""
-    out = []
-    for cell, k in laws(S):
-        a, b, _ = C.rules[k]
-        if C.add(cell, a) in S and C.add(cell, b) not in S:
-            out.append((cell, k))
-    return out
+    return [(cell, k) for cell, k in laws(S) if enabled(S, C, cell, k)]
 
 
 # ------------------------------------------------------------------ the update
@@ -148,12 +179,13 @@ def step(S, C, mode="parity"):
     tog = defaultdict(int)            # cell -> xor mask (parity)
     hit = defaultdict(int)            # cell -> or  mask (or)
     for cell, k in laws(S):
-        a, b, c = C.rules[k]
-        if C.add(cell, a) in S and C.add(cell, b) not in S:
-            j = C.add(cell, c)
-            for t in C.targets[k]:
-                tog[j] ^= 1 << t
-                hit[j] |= 1 << t
+        if not enabled(S, C, cell, k):
+            continue
+        _, _, c = C.rules[k]
+        j = C.add(cell, c)
+        for t in C.targets[k]:
+            tog[j] ^= 1 << t
+            hit[j] |= 1 << t
     use = hit if mode == "or" else tog
     out = dict(S)
     for j, x in use.items():
@@ -173,9 +205,11 @@ def _step_super(S, C, or_resolve=False):
     clear_par = defaultdict(int)      # parity count of clear votes
     clear_any = set()
     for cell, k in laws(S):
-        a, b, c = C.rules[k]
-        if C.add(cell, a) in S and C.add(cell, b) not in S:
-            j = C.add(cell, c)
+        if not enabled(S, C, cell, k):
+            continue
+        _, _, c = C.rules[k]
+        j = C.add(cell, c)
+        if True:
             if j in S:
                 clear_par[j] ^= 1
                 clear_any.add(j)
