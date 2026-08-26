@@ -6,3 +6,8 @@ PASS  T2' PLENUM, sharp form: saturation by the exception image E(C) blocks 4,00
 PASS  T3  GRIDLOCK's epitaph: closed form == brute force over all U  30,000 random constitutions, n <= 5
 PASS  T3' GRIDLOCK survival fraction = ((3n+1)/(n+1)^2)^n, n = 1,2,3 complete: 60.4938% at n=2, 24.4141% at n=3
 PASS  T4  BULK MAP is exact on homogeneous ring codes, every modulus 2,000 constitutions x 7 moduli x 2 resolutions
+PASS  T5  bulk period <= 2^n - 2 (complete for n <= 3, sampled n = 4,5) n=2: 1,296 complete; n=3: 2,097,152 complete; n=4,5 sampled
+PASS  T6  SELF-CITATION at offset 0 is trivial (tautology / contradiction) 3,000 random universes
+PASS  T7  heterogeneous solid regions: blocked <=> h_k = ANY or dead letter 1782 (kind, rule, guard) cases, n = 2 and 3, exhaustive
+PASS  S1  SINGLE AUTHOR: in-degree <= 1 => parity == OR, under citation 800 in-degree<=1 citation universes x 10 steps
+PASS  S2  DEAD LETTER under OR: fixed <=> no active law (nonempty targets) 4,000 citation universes x 6 states

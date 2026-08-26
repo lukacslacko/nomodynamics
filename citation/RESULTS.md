@@ -991,8 +991,11 @@ the provision either says nothing or repeals its own condition. Cross-citation
 is what carries content, and one particular cross-citation — naming a section
 that is never enacted — is what makes a provision act **unconditionally**, which
 no anonymous guard can do (Lemma 2). Everything in this chapter descends from
-that asymmetry. *[established; the reading is interpretation, the two lemmas
-are not.]*
+that asymmetry. Degenerate is not the same as useless, though: the tautologous
+self-citation is precisely the always-active clause that drives the machine's
+clock in §7.2 — a provision whose only content is that it always applies is the
+one component a computer cannot do without. *[established; the reading is
+interpretation, the two lemmas are not.]*
 
 **4. Entrenchment becomes architecture.** A kind nobody amends is immortal.
 Chapter two noticed that such a provision is a *pump*. Under citation it is

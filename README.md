@@ -6,10 +6,13 @@ theorems, and fauna of the resulting universe.
 
 📄 **[The founding note (PDF)](note/nomodynamics.pdf)** · 🖥 **[Live demo](https://lukacslacko.github.io/nomodynamics/)** · MIT licensed
 
-*Two chapters so far: an exactly solvable own-kind sector where **the eldest law
-cannot be repealed**, and a second where laws amend each other and it turns out
-that **motion is bought with out-degree** — one target buys oscillation, two buy
-travel.*
+*An exactly solvable founding sector where **the eldest law cannot be repealed**;
+a second where laws amend each other and **motion is bought with out-degree**; a
+third where laws cite each other by name; a fourth where they **expire unless
+re-enacted**, and motion turns out to be a consequence of mortality. And then the
+whole thing **computes**: Rule 110 runs inside a 24-kind constitution, every
+Turing machine compiles into a finite code, and halting is undecidable — while
+every provision stands perfectly still.*
 
 ---
 
@@ -161,6 +164,64 @@ Open: prove the width-free cap that does survive (`|d| ≤ 2` under parity,
 explain why it does not scale with the window. Is any small cross-amendment
 universe computation-universal?
 
+## Chapters three to six
+
+**Citation — laws that read other laws by name.** The founding guard reads only
+*presence*: a law can see that something stands nearby, never what it is. Real
+statutes cite by name ("while section 5 is in force and section 9 has been
+repealed"), and giving guards that power kills the one theorem that had survived
+everything else. In a solid block of ten laws, occupancy guards leave exactly
+**one** active law — Gridlock, *all dynamics is surface dynamics* — while a
+citation guard leaves **all ten**, and the block fills in and grows. See
+`CITATION.md` and `citation/`.
+
+**Impermanence — motion is a consequence of mortality.** Every sector above
+assumes a law stands until repealed. Drop it, and chapter one's very first
+specimen — the colonizer that fills the line — becomes a single law that
+**walks**. The Anchor Theorem's locality hypothesis *was* permanence: persistence
+is a weight-zero self-loop in the tropical digraph, and a zero-loop is exactly
+what pins the trailing edge.
+
+| | |
+|---|---|
+| **Lone Survivor** | A lone law survives iff its precedent is itself and its exception is elsewhere — and then its **velocity is its target offset**, diagonals included. Complete over all 27 kinds on ℤ and all 729 on ℤ². |
+| **Gridlock's mirror** | A solid block is frozen under permanence and *evaporates* under impermanence. In both worlds only the surface matters: in one it is the only part that moves, in the other the only part that lives. |
+| **The Longevity Law** | One code, one seed, one dial: with a provision surviving τ steps unrenewed, the packet's speed is exactly **2/(τ+1)** — certified τ = 1…12. *Longevity is friction*, and the Anchor Theorem is the τ → ∞ limit. |
+| **Conservation** | With out-degree 1 an impermanent code can never grow. So one threshold governs both worlds: out-degree ≤ 1 forbids **motion** under permanence and **growth** under impermanence. |
+
+**Computation — and it computes standing still.** A guard is an AND-NOT; parity
+makes co-authors XOR; and *a provision that repeals itself every step is a
+register*, since `x(t+1) = x(t) ⊕ x(t) ⊕ f(t) = f(t)`. A law nobody amends is a
+**gate**, a law that repeals itself is a **wire**, and a constitution in that
+normal form **is** a synchronous AND-NOT network.
+
+* **Rule 110** runs inside a 24-kind window-1 constitution, three amendment steps
+  per Rule-110 step. The certificate is *complete, not sampled*: all offsets lie
+  within ±1, so three steps form a local map on a 7-cell window and all 2⁷
+  configurations of ℤ/7 evaluate it at every input — deciding ℤ.
+* **Every Turing machine compiles into a finite code** of the founding
+  occupancy-guard sector. Nomodynamics is **computation-universal**; halting for
+  finite codes is **undecidable**.
+* Prediction is **P-complete** at dimension 1, window 0, one cell — while the
+  single-author sector is 𝔽₂-linear and lies in **NC**. Chapter one's solvable
+  sector is provably the wrong place to look for computation, which is why it was
+  solvable.
+* Every gate law sits exactly where it started, certified over 60 steps:
+  > **A statute book can compute while every one of its provisions stands still.**
+  > What moves is not law but information, and information moves because guards
+  > read across cells. *Motion was never the resource — the vacancy clause was.*
+
+**Replication.** `THE SPLIT DECISION` performs true binary fission —
+`Φ²(S) = σ^(0,−2)(S) ⊔ σ^(0,+2)(S)` exactly, the parent not surviving, no debris
+— giving exactly `t/2+1` free exact copies at every even t. `THE ENGROSSMENT`
+replicates in the **founding semantics**, no citation at all. This is *not* the
+known additive (Fredkin) phenomenon: the replicators fail the splitting test.
+And the light cone bounds the population, `card(S_t) ≤ n(s₀+2Rt+1)^D`, so
+**exponential replication is impossible in every dimension** — every free fission
+must eventually collide with its own descendants. Von Neumann's constructor was
+not reached; both halves were, and the obstruction is exactly that *a constructor
+here must be a blueprint-carrying packet that moves*.
+
 ## Repository map
 
 | path | contents |
@@ -177,6 +238,10 @@ universe computation-universal?
 | `rings/` | nomic rings: Single-Author Lemma, Dead Letter Theorem, Sunset Parliament resonances, exact fixed-point counts, Garden-of-Eden algebra |
 | `nomos2d/` | two dimensions: ray-confinement theorem, pinwheel rotors, Pascal columns, the Jubilee Code, interaction chart, cross-amendment teaser |
 | `note/` | the founding note (LaTeX source, figures, compiled PDF) |
+| `sunset/` | impermanence: the engine, the Longevity Law, Conservation |
+| `computation/` | Rule 110, the Turing compiler, the gate table, P-completeness |
+| `replication/` | replicators, the additivity refutation, the light-cone bound |
+| `citation/` | chapter three |
 | `demo/` | interactive web demo (single self-contained HTML file) |
 | `docs/` | the same demo, published via GitHub Pages |
 
@@ -191,8 +256,9 @@ python3 xnomos.py          # engine self-tests
 python3 note/figs.py       # regenerate every figure of the note
 ```
 
-`verify.py` is the point of entry: it re-derives the fauna, the four theorems,
-the ring rotors, the Jubilee clock law and the chapter-two specimens from the
+`verify.py` is the point of entry: it re-derives the fauna, the theorems, the
+ring codes, the Jubilee clock law, the chapter-two specimens, the impermanence
+laws, Rule 110 and the replicators from the
 shared engine, independently of the expedition code that originally found them.
 It runs in CI on every push. Two published descriptions have already been
 corrected by it — see the *Corrections* section of `FINDINGS.md`.
