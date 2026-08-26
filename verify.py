@@ -14,7 +14,7 @@ import random
 import sys
 
 from xnomos import (Const, state_of, step, card, active_laws, classify,
-                    verify_balanced, spacetime, render, RULES1,
+                    verify_balanced, verify_glider, spacetime, render, RULES1,
                     BALANCED, CYCLE, FIXED, GLIDER)
 
 VERBOSE = "-v" in sys.argv
@@ -280,6 +280,61 @@ def chapter2():
             break
     check("non-injective targeting splits parity from OR", ok,
           "multi-authorship is real")
+
+    # --- the first free gliders (expedition X-A) -------------------------
+    C = Const([(0, -1, 1), (0, -1, 0)], [(0, 1), (0, 1)])
+    S = state_of([(1, 0), (1, 1)])
+    check("TANDEM-1: two laws in one cell, period 1, speed 1",
+          verify_glider(S, C, 1, 1) and classify(S, C)["kind"] == GLIDER,
+          "the minimal period-1 glider")
+    show("TANDEM-1", spacetime(S, C, 6, lo=0, hi=9))
+
+    C = Const([(0, 1, 0), (0, 1, 1), (0, 1, 0)], [(1, 2), (0,), (0,)])
+    S = state_of([(1, 0)])
+    check("SOLO: a single placed law, period 2, speed 1/2",
+          verify_glider(S, C, 2, 1), "the smallest glider of all")
+    show("SOLO", spacetime(S, C, 6, lo=0, hi=9))
+
+    C = Const([(0, 1, 0), (0, -1, 1), (0, 1, -1)], [(0, 1, 2)] * 3)
+    S = state_of([(c, k) for c in (1, 2, 4) for k in range(3)])
+    check("TRIPTYCH: a glider under parity that is not one under OR",
+          verify_glider(S, C, 1, 1) and not verify_glider(S, C, 1, 1, "or"),
+          "author multiplicity 2 — the resolution axis decides motion")
+
+    C = Const([(0, -1, 1), (0, -1, 0)], [(0, 1), (0, 1)])
+    lifts = []
+    for vel in ((1, 0), (1, 1), (0, 1), (-1, 1), (2, 1)):
+        w = (-vel[0], -vel[1])
+        C2 = Const([((0, 0), w, vel), ((0, 0), w, (0, 0))], [(0, 1), (0, 1)],
+                   dim=2)
+        S2 = state_of([((1, 1), 0), ((1, 1), 1)])
+        lifts.append(verify_glider(S2, C2, 1, vel))
+    check("TANDEM-1 lifts to 2-D at any velocity (knight move included)",
+          all(lifts), "own-kind 2-D motion is pinned to axis rays")
+
+    rots = []
+    for m in range(3, 13):
+        C3 = Const([(0, -1, 1), (0, -1, 0)], [(0, 1), (0, 1)], modulus=m)
+        S3 = state_of([(1, 0), (1, 1)])
+        T3 = step(S3, C3)
+        rots.append(set(T3) == {(c + 1) % m for c in S3} and set(T3) != set(S3))
+    check("...and rotates on every ring m >= 3", all(rots),
+          "own-kind rotors need even m >= 6")
+
+    # Out-Degree Law spot check: single-target constitutions never move.
+    bad = None
+    for _ in range(6000):
+        n = rng.randrange(2, 4)
+        C = Const([rng.choice(RULES1) for _ in range(n)],
+                  [rng.randrange(n) for _ in range(n)])
+        S = state_of([(rng.randrange(-3, 4), rng.randrange(n))
+                      for _ in range(rng.randrange(1, 6))])
+        if classify(S, C, max_steps=140, max_card=140,
+                    max_span=200)["kind"] == GLIDER:
+            bad = (C.label(), sorted(S))
+            break
+    check("Out-Degree Law: no glider when every law amends one kind",
+          bad is None, "6,000 random single-target seeds")
 
 
 def main():

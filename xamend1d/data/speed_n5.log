@@ -6,3 +6,4 @@ Speed spectrum: does the numerator bound rise with n?  (W=1, parity, min_outdeg=
   d/p=2/5   n3:no   n4:YES  n5:YES  n6:YES
   d/p=5/6   n3:no   n4:YES  n5:YES  n6:YES
   d/p=3/7   n3:no   n4:YES  n5:YES  n6:YES
+  d/p=4/7   n3:no   n4:YES  n5:YES  n6:YES
