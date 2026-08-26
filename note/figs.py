@@ -172,7 +172,7 @@ def fig4():
     S = state_of([(c, k) for c in (1, 2, 4) for k in range(3)])
     assert verify_glider(S, C, 1, 1)
     panel(axes[2], raster(S, C, 40, 0, 44),
-          "TRIPTYCH: moves under parity, dies under OR")
+          "TRIPTYCH: travels under parity, not under OR")
 
     fig.tight_layout()
     save(fig, "fig4_gliders")
