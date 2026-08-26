@@ -15,3 +15,4 @@
 {"label": "n3 W1 N24 p5 d4 or", "status": "UNSAT", "secs": 48.78, "n": 3, "W": 1, "N": 24, "p": 5, "d": 4, "mode": "or", "nv": 6587, "nc": 21796}
 {"label": "n3 W1 N24 p5 d4 parity", "status": "UNSAT", "secs": 81.54, "n": 3, "W": 1, "N": 24, "p": 5, "d": 4, "mode": "parity", "nv": 6947, "nc": 23236}
 {"label": "n3 W1 N24 p5 d3 or", "status": "UNSAT", "secs": 90.21, "n": 3, "W": 1, "N": 24, "p": 5, "d": 3, "mode": "or", "nv": 6587, "nc": 21796}
+{"label": "n3 W1 N24 p5 d3 parity", "status": "UNSAT", "secs": 149.77, "n": 3, "W": 1, "N": 24, "p": 5, "d": 3, "mode": "parity", "nv": 6947, "nc": 23236}

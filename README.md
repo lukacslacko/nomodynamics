@@ -6,6 +6,11 @@ theorems, and fauna of the resulting universe.
 
 📄 **[The founding note (PDF)](note/nomodynamics.pdf)** · 🖥 **[Live demo](https://lukacslacko.github.io/nomodynamics/)** · MIT licensed
 
+*Two chapters so far: an exactly solvable own-kind sector where **the eldest law
+cannot be repealed**, and a second where laws amend each other and it turns out
+that **motion is bought with out-degree** — one target buys oscillation, two buy
+travel.*
+
 ---
 
 ## Why this object did not exist
@@ -89,20 +94,53 @@ t=2  |.XX..X|      each step the bloc hops m/2 = 3 cells: Φ(S) = rot₃(S)
 2D own-kind growth obeys a **ray-confinement theorem**: each kind is pinned to
 one axis ray, so the plane never fills (measured growth exponent α ≤ 0.99).
 
-## The frontier, located by theorem
+## Chapter two: what motion costs
 
 Everything above holds because laws amend only their **own** kind — the tame
-simplification. Real law amends *other* law, and by the Single-Author Lemma
-**cross-amendment** is precisely the escape from the solvable sector.
-Charted escape lattice: state-dependent targeting (*supersession*),
-permutation targeting with a fixed-point-free cycle (*reciprocal amendment*),
-multi-target laws, and leaving `ℤ` (rings — where rotors already exist).
-First probes confirm the door is real: parity and OR genuinely diverge there,
-odd periods appear, and diagonal motion — impossible under ray confinement —
-unlocks in 2D.
+simplification. Real law amends *other* law. Generalize minimally: a
+**constitution** is a finite kind set `K`, each kind `k` carrying a rule
+`(a_k,b_k,c_k)` and a **target set** `T_k ⊆ K`; an active law of kind `k` at `i`
+toggles every kind of `T_k` at `i+c_k`. Own-kind is `T_k = {k}`. Nothing
+external is added — out-degree 1 makes the amendment digraph a functional graph,
+so a kind is a pointed finite graph with a triple at each node (*"I am (a,b,c),
+and I amend the law that is (a′,b′,c′) and amends…"*), and own-kind laws are
+exactly its self-loops.
 
-Open: does cross-amendment admit a free glider on `ℤ`, or does a deeper no-go
-extend? Is any small cross-amendment universe computation-universal?
+The expected escape was cross-kind targeting. It isn't.
+
+| | |
+|---|---|
+| **Out-Degree Law** | If, restricted to the kinds a pattern uses, every law amends **at most one** kind, no free glider exists — any offsets, any window, any dimension, parity or OR. This *contains* the Anchor Theorem (self-loops), reciprocal amendment, and every permutation constitution of every cycle length. |
+| **Supersession no-go** | State-dependent supersession targeting — *enact your own kind on empty ground, clear the whole cell if occupied* — admits no free glider in any dimension: creation is still own-kind, so every kind must push forward, and then nothing can clear the rearmost cell. |
+| **Tropical Speed Law** | For a glider of period `p`, displacement `d`: `p·min(λ_min,0) ≤ d ≤ p·max(λ_max,0)`, with `λ` the extreme cycle means of the amendment digraph. Every cycle of weight zero, or an acyclic digraph ⟹ nothing moves. |
+| **Balance** | Under parity, two active laws whose enactments cancel leave a code **fixed forever while still alive** — a *balanced constitution*, minimum two placed laws. Under OR none exists at any size: Dead Letter survives that convention verbatim. |
+
+The proofs run on a tropical (min-plus) monovariant `Ψ = min_t(α_t + w_t)` over
+the kinds' trailing edges, refined by a tight-cycle argument.
+
+**The threshold is exact — out-degree 2 suffices, and the travellers are tiny:**
+
+| name | what it is | p | d |
+|---|---|---|---|
+| **SOLO** | *one placed law*, travelling forever; no law in the constitution amends its own kind | 2 | +1 |
+| **TANDEM-1** | two laws in a **single cell** at speed 1 — the maximum. Lifts to `ℤ²` at *any* velocity, knight moves included, and revolves on **every** ring `m ≥ 3` | 1 | +1 |
+| **TRIPTYCH** | travels under parity; under OR it does not move at all but detonates into a lattice growing 3 laws/step | 1 | +1 |
+
+The cleanest evidence for the law is a controlled experiment: three semantics
+sharing guards, offsets and destruction rule exactly, differing only in the
+out-degree of the *creation* channel — **0** gliders in 1,119,744 complete
+classifications at out-degree 1, **3,424** certified gliders in 279,936 at
+out-degree 2.
+
+> **Cross-amendment was never the obstruction; narrowness was.** A law that
+> amends a single provision — even somebody else's — can never move. Motion in a
+> statute book requires laws that amend several provisions at once. Entrenchment,
+> in chapter one a consequence of linear order, is equally a consequence of
+> legislative narrowness.
+
+Open: why is the numerator of the reduced speed capped at 1 for two kinds and 2
+for three, and uncapped at four? Is any small cross-amendment universe
+computation-universal?
 
 ## Repository map
 
@@ -115,6 +153,8 @@ extend? Is any small cross-amendment universe computation-universal?
 | `verify.py` | the verification battery — re-checks every named claim |
 | `nomos2.py` | reference 1D engine (bitmask, 27 kinds) |
 | `glider-question/` | the free-glider expedition: `RESULTS.md` (Anchor Theorem, full proofs, hypothesis audit), sweep code, ~15.3M certified classifications in `data/` |
+| `xamend1d/` | chapter two on ℤ: the Out-Degree Law and the first gliders — 1,930 SAT decisions, ~24.7bn certified classifications, `demo.py` re-certifies every specimen |
+| `XFINDINGS.md` | chapter-two findings and the scorecard against the frozen predictions |
 | `rings/` | nomic rings: Single-Author Lemma, Dead Letter Theorem, Sunset Parliament resonances, exact fixed-point counts, Garden-of-Eden algebra |
 | `nomos2d/` | two dimensions: ray-confinement theorem, pinwheel rotors, Pascal columns, the Jubilee Code, interaction chart, cross-amendment teaser |
 | `note/` | the founding note (LaTeX source, figures, compiled PDF) |

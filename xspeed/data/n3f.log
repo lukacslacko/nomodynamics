@@ -16,3 +16,4 @@
 [  15/  98    181s] n3 W1 N24 p5 d4 or                 UNSAT    48.8s
 [  16/  98    202s] n3 W1 N24 p5 d4 parity             UNSAT    81.5s
 [  17/  98    209s] n3 W1 N24 p5 d3 or                 UNSAT    90.2s
+[  18/  98    262s] n3 W1 N24 p5 d3 parity             UNSAT   149.8s
