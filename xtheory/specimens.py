@@ -150,6 +150,15 @@ def main():
               "census reported 'every cycle has period 2 or 4' across 9.07M "
               "seeds; that regularity is false — its 5-law stratum was sampled.")
 
+    # 10b. own-kind period 8 from ONE kind
+    C = Const([(0, -1, 1)])
+    S = state_of([(0, 0), (2, 0), (4, 0), (6, 0)])
+    show("OWN-8  the eight-fold sunset (one kind, own-kind, period 8)", C, S,
+         steps=9,
+         note="the sunset clause (0,-1,1) alone, four laws at {0,2,4,6}: "
+              "period 8.  Smallest single-kind (0,-1,1) code with a period "
+              "outside {2,4} (complete search of all such codes of span <= 9).")
+
     # 11. the cohort construction: balance of any even width, any kind count
     def cohort(m):
         n = 2 * m + 1

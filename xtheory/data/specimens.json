@@ -543,6 +543,46 @@
   },
   "certified": true
  },
+ "OWN-8  the eight-fold sunset (one kind, own-kind, period 8)": {
+  "rules": [
+   [
+    0,
+    -1,
+    1
+   ]
+  ],
+  "targets": [
+   [
+    0
+   ]
+  ],
+  "seed": [
+   [
+    0,
+    1
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    6,
+    1
+   ]
+  ],
+  "mode": "parity",
+  "verdict": {
+   "kind": "CYCLE",
+   "t": 0,
+   "period": 8,
+   "card": 4
+  },
+  "certified": true
+ },
  "COH-6  the six-fold co-signature": {
   "rules": [
    [

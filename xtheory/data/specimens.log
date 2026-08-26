@@ -134,6 +134,22 @@ SPECIMEN GALLERY — Expedition X-D
       .A##.B..
       .A.#BB..
 
+--- OWN-8  the eight-fold sunset (one kind, own-kind, period 8) ---
+    the sunset clause (0,-1,1) alone, four laws at {0,2,4,6}: period 8.  Smallest single-kind (0,-1,1) code with a period outside {2,4} (complete search of all such codes of span <= 9).
+    constitution : 0:[0|-1|1]->0
+    seed         : [(0, 1), (2, 1), (4, 1), (6, 1)]   (mode=parity)
+    verdict      : {'kind': 'CYCLE', 't': 0, 'period': 8, 'card': 4}
+    ref-engine agreement over 9 steps: True
+      .A.A.A.A..
+      .AAAAAAAA.
+      .A.AAAAAA.
+      .AAA.AAAA.
+      .A.A.A.AA.
+      .AAAAAAA..
+      .A.AAAAA..
+      .AAA.AAA..
+      .A.A.A.A..
+
 --- COH-6  the six-fold co-signature ---
     six distinct kinds, all amending the (absent) kind 6 at cell 1: six toggles on one slot, even, cancel.  Works for every even cohort width 2m -- balanced codes with arbitrarily many distinct active kinds.  Delete one actor and the amendment passes.
     constitution : 0:[0|-1|1]->6 1:[0|-1|1]->6 2:[0|-1|1]->6 3:[0|1|-1]->6 4:[0|1|-1]->6 5:[0|1|-1]->6 6:[0|1|0]->6
@@ -168,4 +184,4 @@ RICHEST BALANCED CODE (search over 4-kind constitutions)
       .#.#.#..
       .#.#.#..
 
-wrote data/specimens.json (14 specimens)
+wrote data/specimens.json (15 specimens)

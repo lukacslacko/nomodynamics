@@ -157,7 +157,7 @@ j ∈ i + D(k′,k) + c_k ⊆ i + D(k′,m). Slots that persist are covered by t
 hypothesis, and deletions only shrink the support. ∎
 
 **Corollary 3.1 (Generalised Ray Confinement).** *Suppose every kind has
-out-degree 1 (own-kind, single-target cross-amendment, or supersession). Then G
+out-degree 1 — own-kind (T = id) or single-target cross-amendment. Then G
 is a functional graph. Let Z be the terminal cycle of the component of k, with
 length L and cycle sum V_Z = Σ_{j ∈ Z} c_j. Then D(k,m) is contained in a
 finite set together with finitely many arithmetic progressions of common
@@ -166,8 +166,9 @@ difference V_Z. Consequently*
   (plus a finite set): **α ≤ 1**. Sharply: a law reached after r amendment
   steps cannot exist before time r, and out-degree 1 makes r ↦ (kind, offset)
   a function, so |S_t| ≤ |S_0|·(t+1) — in **every dimension**;*
-* *if V_Z = 0 the support is **bounded**, so the orbit lives in a finite state
-  space and is eventually periodic.*
+* *if every component reachable from the seed has V_Z = 0, the support is
+  **bounded**, so the orbit lives in a finite state space and is eventually
+  periodic.*
 
 *Proof.* With out-degree 1 the walk out of k is unique: k, t(k), t²(k), …, so
 D(k,m) = { D_r(k) : t^r(k) = m } with D_r(k) = Σ_{s<r} c_{t^s(k)}. After the
@@ -224,12 +225,13 @@ point the same way".
 **Corollary 4.1 (No free gliders under single-target).** *Out-degree 1 ⟹ no
 glider, in every dimension, under parity and under OR.*
 
-*Proof.* Let c be an amendment component meeting S_0, V_c its terminal cycle
-sum. By Cor. 3.1 its laws live in (finite) ∪ (rays of direction V_c). If
-V_c = 0 that region is finite and cannot contain S_0 + nd for all n. So
-V_c ≠ 0, and since S_0 + nd must lie in the ray region for every n we get
-d ∈ ℝ_{>0}·V_c. Take u = d: then ⟨d,u⟩ > 0 and ⟨V_c,u⟩ > 0 for every present
-component. With out-degree 1 every reachable cycle *is* the terminal cycle of a
+*Proof.* Let 𝒞 be an amendment component meeting S_0 and V_𝒞 its terminal
+cycle sum. By Cor. 3.1 the laws of kinds in 𝒞 live in (a finite set) ∪ (rays of
+direction V_𝒞). If V_𝒞 = 0 that region is finite and cannot contain the
+translates of the 𝒞-laws of S_0 by nd for all n. So V_𝒞 ≠ 0, and since those
+translates must lie in the ray region for every n we get d ∈ ℝ_{>0}·V_𝒞. Take
+u = d: then ⟨d,u⟩ = |d|² > 0 and ⟨V_𝒞,u⟩ > 0 for every component present in
+S_0. With out-degree 1 every reachable cycle *is* the terminal cycle of such a
 component, so 𝒵 is covered. Theorem 4 applies. ∎
 
 **Corollary 4.2 (No gliders under supersession).** *Proof.* Creation is
@@ -260,8 +262,11 @@ with zero net displacement.
 universes × 6 canonical seeds × 2 semantics: **2,804 (parity) + 5,965 (OR)
 certified gliders; 0 of them single-target; 100 % of them possess a null
 amendment cycle; 0 of them admit a separating u** (checked over all u in
-[−8,8]² for each). The theorem is not merely unrefuted — its escape hatch is
-the *only* place gliders were found.
+[−8,8]² for each). In the 3-kind sample the second hatch opens too: 866 of the
+870 parity gliders have a null cycle and **4 instead have opposed cycle sums**
+(§8b) — and again **0 admit a separating u**. The theorem is not merely
+unrefuted — the two configurations its proof cannot exclude are the *only*
+places gliders were found.
 
 ### 3.4 Area filling
 
@@ -289,10 +294,10 @@ t = 0..200 on `xnomos.py`.
 **Corollary 5.1 (The α dichotomy is complete in 2-D).** Trivially
 |S_t| ≤ |K|(2t+1)^d, so α ≤ d always. Combining with Cor. 3.1 and Theorem 5:
 
-| out-degree | max α in ℤ² | max bounding-box fill |
+| out-degree | max α in ℤ² | support geometry |
 |---|---|---|
-| 1 (own-kind / relay / supersession) | **1** (theorem) | 0 (measure-zero: a finite union of rays) |
-| ≥ 2 | **2** (attained) | **→ 1** (attained) |
+| 1 (own-kind / relay; also supersession) | **1** (theorem) | a finite union of parallel rays — a 1-dimensional set, of zero area density in the plane |
+| ≥ 2 | **2** (attained) | a solid region; bounding-box fill → **1** (attained) |
 
 The two-kind minimum for α = 2 is the **Sower** `OEE>AB ONN>B` from one law:
 |S_t| = (t+1)(t+2)/2, a solid triangle, fill → 1/2. Three kinds buy the
@@ -313,14 +318,15 @@ FIXED / BALANCED / CYCLE / GLIDER certificates; a separate 256 × 260 and
 * `xa2d.py` dict engine ≡ `xnomos.py` — 4,000 random universes × 4 modes
   (parity / OR / super / super_or), state equality: **4,000/4,000**.
 * `xa2d.py` numpy engine ≡ dict engine — 400 universes × 25 steps: **400/400**.
-* `xcensus` (C) ≡ `xa2d.py` — 8,000 random 2- and 3-kind Moore universes ×
-  2 semantics, agreeing on verdict, period, displacement, card and active-law
-  count: **8,000/8,000** (repeated at 4,000, 3,000 and 2,000 after every
-  subsequent change to the C source).
+* `xcensus` (C) ≡ `xa2d.py` — random 2- and 3-kind Moore universes × **4**
+  semantics (parity / OR / supersession / supersession-OR), agreeing on verdict,
+  period, displacement, card and active-law count: **3,000/3,000 in each of the
+  four**, re-run after every change to the C source (and 8,000/8,000 for
+  parity+OR before supersession was added).
 * α engine ≡ numpy engine — full size sequences |S_t| for t = 0..120 identical
   on 7 designed universes.
 * **Every positive claim** in this file is re-certified in `verify.py` by
-  `xnomos.py`, which this expedition did not write: **15/15 PASS**.
+  `xnomos.py`, which this expedition did not write: **29/29 PASS** (§13).
 
 **Two bugs found and fixed during validation** (recorded because they are the
 kind of thing that silently fakes results): (i) the first C board discarded
@@ -338,17 +344,28 @@ Python↔C duel, not by eyeballing.
    *complete* enumeration of the 2-kind sector over the full Moore offset set
    {−1,0,1}² up to the seed family. (Seeds with only B are redundant because
    the universe set is closed under kind swap.)
-2. **2-kind von Neumann census.** 125 × 125 × 9 = 140,625 universes × the same
-   6 seeds × 2 semantics = 1,687,500 runs (a strict sub-case, kept as a
-   cross-check of the Moore run).
-3. **Growth-exponent sweep.** One α measurement per universe that produced any
+2. **2-kind von Neumann census with a rich seed family.** 125 × 125 × 9 =
+   140,625 universes × **all 255 nonempty 2-kind codes inside a 2 × 2 box** ×
+   2 semantics = **71,718,750 runs**. Also a 6-seed von Neumann run
+   (1,687,500 runs) kept as a cross-check.
+3. **Supersession census.** The same 4,782,969 universes × 6 seeds =
+   28,697,814 runs under supersession (§6.6).
+4. **Growth-exponent sweep.** One α measurement per universe that produced any
    escaping run: **573,598 universes** measured on a 256 × 260 board over 120
-   steps; every candidate with α ≥ 1.05 (34,584 of them) re-measured on a
-   640 × 650 board over 300 steps.
+   steps; every candidate with α ≥ 1.05 re-measured on a 640 × 650 board over
+   300 steps.
 
-**Samples** (explicitly not complete): the 3-kind sector (§7), the escalation
-of the unresolved pool (§8), and the designed-specimen work (§5, §9), which is
-construction, not search.
+Totals. Complete enumerations: 57,395,628 (2-kind Moore, parity+OR) +
+71,718,750 (2-kind vN, 255 codes, parity+OR) + 1,687,500 (2-kind vN, 6 seeds,
+parity+OR) + 28,697,814 (2-kind Moore, supersession) = **159,499,692 runs**.
+Samples: 32,000,000 (3-kind, parity+OR) + 8,000,000 (3-kind, supersession) =
+40,000,000. **199.5 million certified classifications in all.**
+
+**Samples** (explicitly not complete): the 3-kind sector (§8b — 2,000,000
+reproducible random universes × 8 seeds × 2 semantics, plus 1,000,000 × 8 under
+supersession), the escalation of the unresolved pool (§11), and the
+designed-specimen work (§5.4, §6.3–6.4, §9.3), which is construction, not
+search.
 
 
 ---
@@ -359,11 +376,11 @@ construction, not search.
 
 α is decided by **out-degree alone**, and the decision is complete:
 
-| class | definition | α | fill of the bounding box |
+| class | definition | α | support geometry |
 |---|---|---|---|
-| **0** | all out-degrees 1, all in-degrees 1 (permutation constitutions; own-kind is the identity case) | ≤ 1 (Cor. 3.1) | 0 |
-| **1** | all out-degrees 1, some in-degree ≥ 2 | ≤ 1 (Cor. 3.1) | 0 |
-| **2** | some out-degree ≥ 2 | **= 2 attained** (Thm 5) | **→ 1 attained** |
+| **0** | all out-degrees 1, all in-degrees 1 (permutation constitutions; own-kind is the identity case) | ≤ 1 (Cor. 3.1) | union of parallel rays |
+| **1** | all out-degrees 1, some in-degree ≥ 2 | ≤ 1 (Cor. 3.1) | union of parallel rays |
+| **2** | some out-degree ≥ 2 | **= 2 attained** (Thm 5) | solid area; bbox fill **→ 1 attained** |
 
 Note Σ_m indeg(m) = Σ_k |T(k)|, so out-degree ≥ 2 *forces* in-degree ≥ 2
 somewhere: class 2 ⊂ multi-author. The converse fails — class 1 is exactly the
@@ -374,9 +391,18 @@ gap, and it is where the two axes come apart.
 Every one of the 4,782,969 complete 2-kind Moore universes that produced an
 escaping run had its growth exponent measured once (573,598 universes; a
 256 × 260 board, 120 steps, least-squares slope of log|S_t| against log t over
-the last two thirds). **Every universe with measured α ≥ 1.15 is class 2:
-34,584 of them, and 0 from class 0 or class 1.** The per-class maxima are in
-`cen_moore_parity_alpha.txt` (`ALPHA_CLASS` lines).
+the last two thirds). The **maximum measured exponent, by class**:
+
+| class | universes measured | max measured α | the maximiser |
+|---|---|---|---|
+| 0 (permutation) | 98,614 | **1.091** | `OTW>B NQR>A`, a 2 × 54 sliver — i.e. a ray, exactly as Cor. 3.1 demands |
+| 1 (single-target, multi-author) | 88,982 | **1.008** | `OEW>B EWW>B`, a 120 × 1 line |
+| 2 (multi-target) | 386,002 | **3.186** (finite-time; see §5.3) | `PQT>AB PTW>B`, 96 × 96 |
+
+The class-0 maximum of 1.091 is finite-time noise on a 51-law pattern in a
+2 × 54 box — its *shape* is a ray, as the theorem requires. **Every universe
+with measured α ≥ 1.15 is class 2: 34,584 of them, and 0 from class 0 or class
+1.**
 
 That is a complete enumeration of the 2-kind sector, and it agrees with the
 theorem exactly.
@@ -388,11 +414,16 @@ Short-window fits can exceed the trivial bound α ≤ 2 — a pattern trapped in
 stage-1 α ≥ 1.05 was re-run on a 640 × 650 board for 300 steps and split by two
 independent tests (`refine2.py`):
 
-* **power law**: |log₂(S₁₅₀/S₇₅) − log₂(S₃₀₀/S₁₅₀)| ≤ 0.15;
-* **expanding**: the bounding box at t = 300 has a side ≥ 150.
+* **power law**: |log₂(S₁₅₀/S₇₅) − log₂(S₃₀₀/S₁₅₀)| ≤ 0.15 — the growth really
+  is a power law, not a transient burst;
+* **2-D expanding**: *both* sides of the bounding box at t = 300 are ≥ 100 — the
+  support really is spreading in two directions. (A 302 × 58 slab can look like
+  α = 2 for a while as its width fills in, and then saturate to a ray: those are
+  reported separately as slabs.)
 
-Only runs passing both carry an asymptotic α; the rest are bounded-box
-transients (they belong to §10, the cryptid pool, not here).
+Only runs passing both carry an asymptotic α; the rest are 1-dimensional slabs
+or bounded-box transients — the latter are the cryptid pool of §11, not
+growers.
 
 ### 5.4 The designed area-fillers
 
@@ -915,11 +946,12 @@ Labels: **[E]** established (proved here or previously, with a proof in §3);
 ### Measured (complete enumerations, exact counts stated)
 
 * **[I]** Over the complete 2-kind Moore census (4,782,969 universes × 6
-  seeds × 2 semantics) and the complete 2-kind von Neumann census (140,625
-  universes × all 255 codes in a 2×2 box × 2 semantics) and a 2,000,000-universe
-  3-kind sample (× 8 seeds × 2 semantics) — **162.8 M certified classifications
-  in all** — there is **not one** glider outside class 2 and **not one**
-  balanced code outside classes 1–2 or under OR.
+  seeds × 2 semantics), the complete 2-kind von Neumann census (140,625
+  universes × all 255 codes in a 2×2 box × 2 semantics), the supersession
+  census, and a 2,000,000-universe 3-kind sample (× 8 seeds × 2 semantics) —
+  **199.5 M certified classifications in all** — there is **not one** glider
+  outside class 2, **not one** glider under supersession, and **not one**
+  balanced code in class 0 or under OR.
 * **[I]** Every universe with a measured growth exponent ≥ 1.15 (34,584 of the
   573,598 measured) is class 2; none is class 0 or 1.
 * **[I]** 8,769 of the 2-kind gliders and 866 of the 870 3-kind parity gliders

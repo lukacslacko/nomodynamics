@@ -62,9 +62,11 @@ in the battery (`python3 verify.py`):
   axis rays by ray confinement), and it rotates on **every** ring m ≥ 3
   (own-kind rotors need even m ≥ 6). Coordinator-verified for velocities
   (1,0), (1,1), (0,1), (−1,1), (2,1) and for m = 3…12.
-* **TRIPTYCH** moves under parity and does **not** under OR: with author
-  multiplicity 2, the resolution convention — vacuous in all of chapter one —
-  decides whether a law-packet moves at all.
+* **TRIPTYCH** moves under parity and does **not** under OR — under OR the same
+  seed stops travelling and detonates into a two-sided sparse lattice growing by
+  3 laws per step (verified to t = 500, 1 503 laws). With author multiplicity 2,
+  the resolution convention — vacuous throughout chapter one — decides whether a
+  law-packet travels or explodes.
 
 ## 3. Balanced constitutions (coordinator, then X-D)
 

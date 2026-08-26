@@ -507,6 +507,35 @@ def s_periods():
           ok, "%d seeds; spectrum %s; first %s re-verified 3 periods"
           % (len(hits), sorted({h[1] for h in hits}), hits[0] if hits else None))
 
+    # (a2) the strongest form: ONE kind, own-kind, period 8; and it is minimal
+    C = Const([(0, -1, 1)])
+    S = state_of([(0, 0), (2, 0), (4, 0), (6, 0)])
+    r = classify(dict(S), C, max_steps=200)
+    P = to_pairs(S)
+    ok = True
+    for _ in range(3):
+        for _ in range(8):
+            P = ref_step(P, C)
+        ok = ok and P == to_pairs(S)
+    # minimality over ALL single-kind (0,-1,1) codes of span <= 9
+    best = None
+    for span in range(1, 10):
+        for m in range(1, 1 << span):
+            if not (m & 1) or not (m >> (span - 1) & 1):
+                continue
+            T = {i: 1 for i in range(span) if m >> i & 1}
+            rr = classify(dict(T), C, max_steps=200)
+            if rr["kind"] == "CYCLE" and rr["period"] not in (2, 4):
+                k = (len(T), span)
+                if best is None or k < best[0]:
+                    best = (k, sorted(T), rr["period"])
+        if best:
+            break
+    claim("ONE kind, own-kind, W=1: period 8 (and it is the minimal such code)",
+          r["kind"] == "CYCLE" and r["period"] == 8 and ok
+          and best[1] == [0, 2, 4, 6] and best[2] == 8,
+          "(0,-1,1) at {0,2,4,6}; minimal non-{2,4} single-kind code = %s" % (best,))
+
     # (b) cryptic codes (constant occupancy) — do they exist, what periods?
     spec = Counter()
     nonpow = []

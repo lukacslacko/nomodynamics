@@ -8,6 +8,11 @@ two-kind universe.*
 `[measured]` = exact count over a stated box, complete unless marked `sampled`;
 `[proposal]` = original conjecture / interpretation, not established.**
 
+*Contents: §0 verdict · §1 pre-registration · §2 setting · §3 survival audit ·
+§4 the Balance Theorem · §5 the periodic table · §6 the semantic lattice ·
+§7 verification battery · §8 scorecard · §9 verdict and open questions ·
+App. A specimens · App. B reproduction.*
+
 ---
 
 ## 0. Verdict in one page
@@ -378,28 +383,44 @@ and period 28 in a 4-kind permutation constitution.
 
 `glider-question/RESULTS.md` §5.2 reports, across 9.07 M W=1 own-kind seeds,
 "every cycle has period 2 or 4 … window-1 own-kind nomodynamics is temporally
-rigid: blink or freeze." **That regularity is false.** Its ≤4-law/5-cell strata
-were complete but its 5- and 6-law strata were sampled, and the counterexamples
-live there:
+rigid: blink or freeze." **That regularity is false, and it does not even need
+cross-amendment or a second kind to break.** The counterexamples live just
+outside the complete strata of that census (which were ≤4 laws in 5 cells, and
+5–6 laws in 6 cells by sampling):
 
 ```
-OWN-6   own-kind, W = 1, two kinds, 5 laws in 5 cells, PERIOD 6
-        kind A = (0,-1, 1)     (the sunset clause)
-        kind B = (0, 1,-1)     (its mirror)
-        seed: A@0, {A,B}@2, B@3, B@4
+OWN-8   ONE kind, own-kind, W = 1:  the sunset clause (0,-1,1)
+        four laws, at cells {0, 2, 4, 6}          ->  PERIOD 8
 
-  .A.#BB.      t=0
-  .AA#AB.      Re-verified over three full periods through the
-  .A.##B.      independent reference engine of xlib.py.
-  .AA#.B.      The complete span-<=8 two-kind own-kind block also
-  .AB#BB.      contains period 8.
-  .A##.B.
-  .A.#BB.      t=6 = t=0
+  .A.A.A.A..     t=0                Smallest code of this kind with a period
+  .AAAAAAAA.     t=1                outside {2,4}: 4 laws in span 7 (complete
+  .A.AAAAAA.     t=2                search over all single-kind (0,-1,1) codes
+  .AAA.AAAA.     t=3                of span <= 9).  Re-verified over three
+  .A.A.A.AA.     t=4                full periods through the independent
+  .AAAAAAA..     t=5                reference engine of xlib.py.
+  .A.AAAAA..     t=6
+  .AAA.AAA..     t=7
+  .A.A.A.A..     t=8 = t=0
 ```
 
-The own-kind period spectrum at W=1 is therefore at least {2,4,6,8}. The
-*theorems* of the own-kind sector are untouched; only this census-level
-regularity falls.
+A two-kind period-6 companion, also own-kind W=1 (5 laws in 5 cells, inside
+that census's *sampled* 5-law stratum):
+
+```
+OWN-6   kind A = (0,-1, 1)   (the sunset clause)     seed: A@0, {A,B}@2,
+        kind B = (0, 1,-1)   (its mirror)                  B@3, B@4
+
+  .A.#BB.   .AA#AB.   .A.##B.   .AA#.B.   .AB#BB.   .A##.B.   .A.#BB.
+    t=0       t=1       t=2       t=3       t=4       t=5     t=6 = t=0
+```
+
+`[measured, complete]` The own-kind block of the span-≤8 two-kind box has period
+spectrum **{2, 4, 6, 8}**; 104 of its 729 constitutions realise period 8.
+The *theorems* of the own-kind sector are untouched — the Anchor Theorem holds
+throughout that block in our own check (139,968 codes × 12 steps, 0 violations).
+Only the census-level regularity falls, and it falls because its high-law strata
+were sampled rather than enumerated. Own-kind nomodynamics is not "blink or
+freeze"; it is 2-adic, and 8 is a power of 2.
 
 ---
 
@@ -796,11 +817,17 @@ but creation is still own-kind, so `[proved]` **ray confinement survives**
 (supp_k ⊆ seed_k + ℕ·c_k) and with it linear growth and the displacement law.
 
 **(d) Enact-only / repeal-only — BARREN dynamically, INSTRUCTIVE
-taxonomically.** Monotone in each slot, so every orbit reaches a fixed point in
-at most (number of slots) steps: no cycles, no gliders, nothing. But they
-exhibit the second species of balance — **redundant** balance (the amendment
-passes and changes nothing) as against the **cancelling** balance of parity.
-`[measured]` 25,824 and 35,408 balanced codes in the span-≤3 box.
+taxonomically.** `[proved]` Each slot is monotone (0→1 only, or 1→0 only), so a
+periodic orbit must be constant: **no cycles of period ≥ 2 and no gliders**
+(a glider would force S ⊆ S+v for a finite nonempty S and v ≠ 0). Repeal-only
+additionally has a shrinking support, so every orbit terminates; enact-only can
+still grow forever. `[measured, complete]` two-kind box, span ≤ 3, 139,968
+codes: **enact-only** fixed 82,402 · balanced 44,040 · growing 12,862 ·
+unresolved 664 · **no cycle, no glider**; **repeal-only** fixed 85,278 ·
+balanced 53,636 · extinct 1,054 · **nothing else at all**. What they do exhibit
+is the second species of balance — **redundant** balance (the amendment passes
+and changes nothing) as against the **cancelling** balance of parity: 25,824
+and 35,408 codes are balanced already at t = 0.
 
 **(e) SUNSET BY DEFAULT — the live axis, and the answer to the field's
 central question.** `[measured, complete]` Laws lapse after τ steps without
@@ -883,8 +910,8 @@ confinement checks, and the odd-period probe of §T6.
 
 ## 8. Pre-registration scorecard
 
-| # | prediction | outcome |
-|---|---|---|
+| prediction | outcome |
+|---|---|
 | P1 Gridlock survives verbatim | **HELD** |
 | P1 Single-Author fails, survives at in-degree ≤ 1 | **HELD** — sharpened to an iff |
 | P1 Dead Letter fails under parity, survives OR | **HELD** — sharpened to the strictness criterion |
@@ -912,8 +939,11 @@ confinement checks, and the odd-period probe of §T6.
 | P4.5 enact/repeal-only barren; second species of balance | **HELD** |
 | P5 the true generalisation is about cycle offset-sums | **HELD** (Theorem 4, Corollaries 4.2–4.4, Theorem 6) |
 
-Score: 19 held, 3 half, 4 refuted. The four refutations (P2.3, P2.7, P3.3,
-P3.5) are the most informative results in the report.
+Score over 26 predictions: **19 held, 4 half, 3 refuted.** The three outright
+refutations (P2.3 the coordinator's duality, P2.7 balance-as-coincidence,
+P3.5 extinction) plus the half-refutation P3.3 (own-kind periods) are the most
+informative results in the report — each one cost a belief and bought a
+theorem or a specimen.
 
 ---
 
@@ -975,7 +1005,7 @@ sector, the census-level regularity "every W=1 cycle has period 2 or 4".
 
 ---
 
-## 9b. Specimen cards (paste-ready)
+## Appendix A. Specimen cards (paste-ready)
 
 Machine-readable in [`data/specimens.json`](data/specimens.json); the
 constructor calls below are literal `xnomos.py` API.
@@ -983,6 +1013,12 @@ constructor calls below are literal `xnomos.py` API.
 ```python
 import sys; sys.path.insert(0, "..")          # xnomos.py lives one level up
 from xnomos import Const, state_of, classify, spacetime
+
+# OWN-8  "the eight-fold sunset" -- OWN-KIND, one kind, W=1, period 8.
+#        Refutes the own-kind census regularity "every W=1 cycle has period
+#        2 or 4" without leaving the solvable sector at all.
+C = Const([(0,-1,1)])
+S = state_of([(0,0), (2,0), (4,0), (6,0)])         # CYCLE, period 8
 
 # BAL-1  "the co-signed repeal" -- the minimal balanced constitution.
 #        Two laws, two kinds, ONE cell.  Both active forever; both repeal the
@@ -1030,7 +1066,7 @@ All six were re-run from these exact lines and reproduce the stated verdicts.
 
 ---
 
-## 10. Reproduction
+## Appendix B. Reproduction
 
 ```sh
 cd xtheory

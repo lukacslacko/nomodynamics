@@ -1320,7 +1320,7 @@ All code lives in this directory and imports the shared engine
 | `hypaudit.py` | hypothesis audit for Theorem 3; independent from-scratch engine, validated against `xnomos`. |
 | `demo.py` | the specimen gallery (7 gliders + the PICKET PUFFER + the 2-D and ring lifts), every one re-verified from scratch at display time. |
 | `fastcensus.c`, `fastlib.py`, `validate_fast.py`, `census.py`, `nearmiss.py` | the bit-parallel C census and its 390,175-check validation gate (§9.6). |
-| `e3_*.py` | the independent E3 census (§9.4). |
+| `e3_*.py` | the independent E3 census (§9.4). `e3_specimens.py` is a self-certifying specimen book: it re-verifies every headline glider from the literal numbers and prints its spacetime diagram. |
 
 ```sh
 cd /Users/lukacs/claude/math/program/phase6/xamend1d
@@ -1339,6 +1339,7 @@ python3 sharpness.py 3 12 3 parity   # complete n=3 classification (9,261 univer
 python3 hypaudit.py                  # SUPER-CROSS / SUPER-MULTI controlled experiment
 python3 validate_fast.py             # C-engine validation gate (390,175 checks)
 python3 census.py                    # the ~24.7 bn-classification brute-force census
+python3 e3_specimens.py              # sub-expedition specimen book, self-certifying
 ```
 
 Ready to paste into any demo:

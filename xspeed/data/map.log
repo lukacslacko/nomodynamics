@@ -206,3 +206,4 @@
 [ 205/ 208    542s] n3 W1 N16 p8 d3 parity             UNSAT   504.5s
 [ 206/ 208    661s] n3 W2 N18 p6 d5 parity             SAT     436.1s
 [ 207/ 208    700s] n4 W1 N16 p7 d5 parity             SAT     568.8s
+[ 208/ 208    768s] n3 W1 N16 p8 d1 parity             UNSAT   738.7s
