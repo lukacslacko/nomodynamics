@@ -434,6 +434,16 @@ Phi^1(S) = rot_0 o tau^2(S)   laws = 2   no spatial motion
   t=2  |YZ .  . |
   t=3  |XY .  . |
 
+### C-3 — PERIOD 7 FROM TWO LAWS ON THE THREE-CELL RING
+constitution (a 7-cycle of amendment, so the odd part of L is 7):
+   X:(0,-1,0)->Y   Y:(0,-1,1)->Z   Z:(-1,1,0)->W   W:(-1,1,0)->V
+   V:(0,1,-1)->U   U:(0,-1,1)->T   T:(0,1,-1)->X            [parity, Z/3]
+Phi^7(S) = S, minimal.  laws = 2.  Own-kind on Z/3: period set {1,2}, full stop.
+  t=0  |XY .    .   |      t=4  |XYU V    .   |
+  t=1  |X  Z    .   |      t=5  |X   ZVT  .   |
+  t=2  |XY ZW   .   |      t=6  |YU  ZWVT .   |
+  t=3  |X  V    .   |      t=7  = t=0
+
 ### O-15 — THE FIRST ROTOR ON AN ODD RING
 constitution: X:(-1,1,1)->X   Y:(0,1,-1)->X           [parity, ring Z/15]
 Phi^1(S) = rot_5(S)   laws = 12   barber pole (5 > 2p = 2)
@@ -442,6 +452,13 @@ Phi^1(S) = rot_5(S)   laws = 12   barber pole (5 > 2p = 2)
   t=2  |X  XY .  Y  .  X  XY X  Y  .  .  XY .  Y  . |
   t=3  = t=0                     (a rigid third-turn of the ring)
 ```
+
+**C-3 is the Cycle-Length Law made flesh.** Two laws, three cells — the
+smallest ring there is — and a period of **7**, where own-kind nomodynamics on
+ℤ/3 can only blink or freeze. The 7 does not come from the ring at all; it comes
+from 𝔽₈ ⊂ 𝔽₂[y]/(y⁷ − 1), the field the amendment cycle drags in behind it. The
+same trick at L = 5 gives period 5 on ℤ/3, and the frozen-occupancy operator
+there attains the full order 15.
 
 **K-6 is the qualitatively new mechanism the mission asked for.** Every law is
 the *same* rule (0,1,−1) — "while my right-hand seat is vacant, amend the cell

@@ -4,6 +4,16 @@
 what replaces the ones that fall, and the complete classification of the
 two-kind universe.*
 
+> **Coordinator's note (added after this report was filed).** Expedition X-E
+> subsequently showed that a bounded search decides a *box*, not a question: the
+> two-kind `MIRROR` universe carries displacement-2 gliders of span 53, 616 and
+> 438, far outside the ~26-cell boxes used here, and sweeps over *coprime*
+> `(p, d)` cannot see `Φ⁴ = σ²` when `Φ² = σ¹` fails. **Every "decided
+> impossible" below that comes from a fixed box is a statement about _narrow_
+> gliders.** The theorems are unaffected — they are proofs, not searches. See
+> `../XFINDINGS.md` §5.
+
+
 **Honesty labels used throughout: `[proved]` = theorem with proof given here;
 `[measured]` = exact count over a stated box, complete unless marked `sampled`;
 `[proposal]` = original conjecture / interpretation, not established.**

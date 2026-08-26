@@ -21,6 +21,7 @@ from xring import Ring, decode                       # noqa: E402
 from certify import certify_rotor                    # noqa: E402
 
 SYM = "XYZW"
+SYM7 = "XYZWVUT"
 MODENUM = {"parity": 0, "or": 1, "super": 2, "super_or": 3}
 
 
@@ -150,6 +151,32 @@ def main():
         show("O-15b — the reciprocal-amendment odd-ring rotor",
              rules, tg, mode, m, X, p, r)
         break
+
+    # ---- the Cycle-Length Law made flesh: period 7 from two laws on Z/3 ----
+    r7 = [(0, -1, 0), (0, -1, 1), (-1, 1, 0), (-1, 1, 0), (0, 1, -1),
+          (0, -1, 1), (0, 1, -1)]
+    t7 = [(k + 1) % 7 for k in range(7)]
+    R = Ring(r7, t7, 3, "parity")
+    X = (1, 1, 0, 0, 0, 0, 0)                    # kinds X and Y at cell 0
+    from certify import certify_period
+    ok = certify_period(r7, t7, 3, "parity", X, 7)
+    print("\n### C-3 — PERIOD 7 FROM TWO LAWS ON THE THREE-CELL RING")
+    print("constitution (a 7-cycle of amendment):")
+    for k in range(7):
+        print("   %s:(%d,%d,%d) amends %s" % (SYM7[k], *r7[k], SYM7[t7[k]]))
+    print("Phi^7(S) = S, minimal   laws = 2   certificate: %s"
+          % ("VERIFIED by xnomos" if ok else "FAILED"))
+    print("own-kind nomodynamics on Z/3 has period set {1,2} — full stop.")
+    Y = X
+    for t in range(8):
+        cells = []
+        for i in range(3):
+            ks = "".join(SYM7[k] for k in range(7) if (Y[k] >> i) & 1)
+            cells.append(ks if ks else ".")
+        w = max(len(c) for c in cells)
+        print("  t=%-2d |%s|" % (t, " ".join(c.ljust(w) for c in cells)))
+        Y = R.step(Y)
+    assert ok
 
 
 if __name__ == "__main__":

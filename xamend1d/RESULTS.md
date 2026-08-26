@@ -3,6 +3,16 @@
 *Successor charter of `glider-question/RESULTS.md`: does 1-D nomodynamics admit a
 free glider once a law may amend **another kind**?*
 
+> **Coordinator's note (added after this report was filed).** Expedition X-E
+> subsequently showed that a bounded search decides a *box*, not a question: the
+> two-kind `MIRROR` universe carries displacement-2 gliders of span 53, 616 and
+> 438, far outside the ~26-cell boxes used here, and sweeps over *coprime*
+> `(p, d)` cannot see `Φ⁴ = σ²` when `Φ² = σ¹` fails. **Every "decided
+> impossible" below that comes from a fixed box is a statement about _narrow_
+> gliders.** The theorems are unaffected — they are proofs, not searches. See
+> `../XFINDINGS.md` §5.
+
+
 ---
 
 ## 0. Pre-registration (written before the first run; kept verbatim)
