@@ -394,7 +394,7 @@ FIXED / BALANCED / CYCLE / GLIDER certificates; a separate 256 × 260 and
 * α engine ≡ numpy engine — full size sequences |S_t| for t = 0..120 identical
   on 7 designed universes.
 * **Every positive claim** in this file is re-certified in `verify.py` by
-  `xnomos.py`, which this expedition did not write: **29/29 PASS** (§13).
+  `xnomos.py`, which this expedition did not write: **31/31 PASS** (§13).
 
 **Two bugs found and fixed during validation** (recorded because they are the
 kind of thing that silently fakes results): (i) the first C board discarded
@@ -491,7 +491,55 @@ independent tests (`refine2.py`):
 
 Only runs passing both carry an asymptotic α; the rest are 1-dimensional slabs
 or bounded-box transients — the latter are the cryptid pool of §11, not
-growers.
+growers. Of the 36,796 stage-1 candidates:
+
+| | count |
+|---|---|
+| power law **and** 2-D expanding | **21,705** |
+| power law but a slab (one bbox side < 100) | 4,078 |
+| not a power law / bounded box (cryptid candidates) | 11,348 |
+
+**The α histogram of the 21,705 genuine 2-D growers** (bin 0.05, from the
+second octave):
+
+| α | 0.5–0.7 | 0.95–1.05 | 1.1–1.5 | 1.55–1.9 | **1.95–2.05** | 2.1–2.4 |
+|---|---|---|---|---|---|---|
+| count | 672 | 1,103 | 321 | 1,439 | **15,538** | 2,200 |
+
+The mass is overwhelmingly at **α = 2**: 15,538 of 21,705 (72 %) sit in
+[1.95, 2.05]. Multi-target does not merely permit area filling — in this sector
+it is the *typical* behaviour once the growth is 2-dimensional at all.
+
+**The α > 2 tail is finite-time, and one can watch it converge.** 7,362 runs
+measured α > 2.02 over the second octave, which is impossible asymptotically
+(|S_t| ≤ |K|(2t+1)²). Re-running the 210 largest on a 1408 × 1400 board to
+t = 640 and taking a **third** octave [320,640] shows monotone descent toward 2:
+
+| universe | e₁ = [75,150] | e₂ = [150,300] | e₃ = [320,640] |
+|---|---|---|---|
+| `WPR>AB SQE>AB` | 2.652 | 2.792 | **2.448** |
+| `OTP>AB SNQ>AB` | 2.457 | 2.353 | **2.259** |
+| `OQR>AB OPT>AB` | 2.336 | 2.254 | **2.218** |
+| `OPQ>AB OQW>A` | 2.441 | 2.313 | **2.203** |
+
+These are sparse fractal fronts whose *density* is still rising inside a
+linearly-growing box; the exponent is converging to 2 from above, slowly. The
+theorem, not the measurement, is what pins the ceiling.
+
+**The intermediate band exists** (P1c). 1,857 of the 2-D growers sit strictly
+in 1.05 < α < 1.9, with a broad hump near 1.6 (878 universes). Examples:
+
+| α | fill | bbox at t = 300 | universe |
+|---|---|---|---|
+| 1.07 | 0.046 | 202 × 108 | `OSS>B RTQ>AB` |
+| 1.27 | 0.015 | 236 × 178 | `QPR>AB ORE>A` |
+| 1.46 | 0.026 | 148 × 133 | `OQN>B QTR>AB` |
+| 1.65 | 0.027 | 301 × 301 | `PQE>B OWP>AB` |
+| 1.85 | 0.080 | 127 × 162 | `QSS>B QER>AB` |
+
+Low fill at every one of them: these are **2-D fractal dusts**, the
+cross-amendment analogue of the Pascal column of `nomos2d` §2, now genuinely
+two-dimensional.
 
 ### 5.4 The designed area-fillers
 
@@ -515,9 +563,12 @@ bbox 301×301, fill 0.993, octave exponent 1.990.
 |S_t| = (t+1)(t+2)/2 exactly, a solid triangle, fill → 1/2, octave exponent
 1.986 at t = 300. One law, one out-degree-2 clause.
 
-The best fill found by *search* (as opposed to design) in the 2-kind sector is
-0.679 (`OQP>B WEE>AB`, α = 2.04 at 300 steps, bbox 302 × 58) — the searched
-strata are dominated by thin slabs; the solid quadrant had to be built.
+The best **bounding-box fill** found by *search* rather than design, among
+universes with a certified 2-D power law, is **0.5575** — `OEE>AB WQP>A` at
+t = 640, bbox 641 × 260, |S| = 179,163, third-octave exponent 2.019. That is a
+**two-kind** universe, so two kinds can exceed the Sower's 1/2; but nothing
+found by search comes near the designed Land Grant's 0.993. Solid area filling
+had to be built, not stumbled on.
 
 
 ---
@@ -610,7 +661,7 @@ t=1  #...........      neighbour is clear, enacting a fresh A+B pair on its own
 t=2  ##..........      cell.  The pair walks off as a Writ; two steps later the
 t=3  #.#.........      east is clear again and C fires again.
 t=5  #.#.#.......
-t=7  #.#.#.#.....      |S_t| = t + 3;  an infinite periodic stream of certified
+t=7  #.#.#.#.....      |S_t| = 2*floor(t/2)+3;  an infinite stream of certified
 t=9  #.#.#.#.#...      free gliders, spacing 2, from a single law.
 ```
 
@@ -636,6 +687,34 @@ diagonal comb of receding gliders.
         ......#.
         .......#
 ```
+
+### 6.4b Both machines run on the line as well — answering X-A's open question
+
+`xamend1d/RESULTS.md` closes with: *"The TANDEM universe has none (complete
+8-cell census). Does **any** cross-amendment universe contain a gun, a puffer,
+or a rake?"* It does, and the constitutions are tiny. Both of the machines above
+descend to ℤ verbatim (certified in `verify.py` M4, M5, on `xnomos.py`, dim = 1):
+
+```
+1-D GUN     A = (0,+1, 0) -> {A,B}    B = (0,+1,+1) -> {A,B}
+            C = (0,+1, 0) -> {A,B}    seed: one C at cell 0
+            |S_t| = 2*floor(t/2) + 3, verified to t = 400
+
+  t=0  C.............     t=6  ##.#.#........
+  t=1  #.............     t=7  #.#.#.#.......
+  t=3  #.#...........     t=9  #.#.#.#.#.....
+
+1-D RAKE    A = (0,+1, 0) -> {A,B}    B = (0,+1,+1) -> {A,B}
+            C = (0,-1, 0) -> {A,B,C,D}   D = (0,-1,-1) -> {C,D}
+            seed: C and D in one cell;  |S_t| = 2t + 2, verified to t = 400
+
+  t=3  .......##.#.#....      a west-walking pump laying down a train of
+  t=6  ....##.#.#.#.#.#.      east-walking TANDEM-1 gliders, one per step
+```
+
+So the gun / rake question is not 2-D-specific: it needed a *third* kind (an
+immortal pump — a kind nobody amends) rather than a second dimension. The
+missing ingredient in the TANDEM universe was in-degree 0, not geometry.
 
 ### 6.5 What the theorem buys
 
@@ -1004,11 +1083,14 @@ Labels: **[E]** established (proved here or previously, with a proof in §3);
 
 ### Decided (proved)
 
-* **[E] Generalised Ray Confinement** (Thm 3, Cor. 3.1). Out-degree 1 ⟹ the
-  support of every code lies in a fixed finite union of parallel rays whose
+* **[E] Generalised Ray Confinement** (Thm 3, Cor. 3.1; obtained concurrently
+  and independently by X-C as the *ray bundle*, `xtheory/` T5). Out-degree 1 ⟹
+  the support of every code lies in a fixed finite union of parallel rays whose
   direction is the amendment cycle sum ⟹ **α ≤ 1** in every dimension, under
   parity, OR *and* supersession; cycle sum 0 ⟹ bounded ⟹ eventually periodic.
-  This subsumes `nomos2d` Thm 3 and explains its §7 diagonal staircase.
+  This subsumes `nomos2d` Thm 3 and explains its §7 diagonal staircase. The
+  quantitative form |S_t| ≤ |S_0|(t+1) and the complete 2-D verification are
+  this report's.
 * **[E, X-A's priority]** No gliders under single-target (the **Out-Degree
   Law**) or under supersession (the **Supersession No-Go**) — first proved by
   X-A. Theorem 4 here is an independent potential-graded re-proof, stated as a
@@ -1037,6 +1119,11 @@ Labels: **[E]** established (proved here or previously, with a proof in §3);
 * **[E] Balance is unbounded and can be totally active**: for `OEO>A OEO>A`,
   every code with both kinds on every occupied cell is fixed, with an
   activity fraction that can be 1.
+* **[E] Guns and rakes exist** — answering the open question at the end of
+  `xamend1d/RESULTS.md` §10. THE ASSIZE (a period-2 gun from one law) and THE
+  CIRCUIT COURT (a rake, one glider dropped per step) work in 2-D **and
+  verbatim on ℤ**. The missing ingredient in the TANDEM universe was a kind of
+  **in-degree 0** — an immortal pump — not a second dimension.
 
 ### Measured (complete enumerations, exact counts stated)
 
@@ -1056,7 +1143,15 @@ Labels: **[E]** established (proved here or previously, with a proof in §3);
 * **[I]** The period spectrum is not 2-adic. Non-power-of-2 periods occur in
   every class, including **pure own-kind** (class 0) with Moore offsets:
   periods 3, 6, 12 there, up to 192 in class 2. The `nomos2d` regularity is an
-  artefact of the von Neumann window.
+  artefact of the von Neumann window — and X-C's **Cryptic Unipotency** (T6)
+  says exactly why it looked universal: powers of two are forced only on
+  intervals of *constant occupancy*, which the counterexamples never have.
+* **[I] THE ODOMETER** and its family: 179 of 297,344 unresolved runs survive
+  300,000 fully-hashed steps; the named specimen has bounded card (4 at every
+  epoch) with reach ≈ 0.20(log₂ t)² measured to t = 2²⁰ — bounded card,
+  unbounded reach, hence aperiodic. 83 of the 179 are strict 2-adic odometers;
+  the rest are mixed-radix (peaks at 3·2^k − 1 and similar), which own-kind
+  nomodynamics never produced.
 
 ### Open
 
@@ -1075,17 +1170,29 @@ Labels: **[E]** established (proved here or previously, with a proof in §3);
    the glider's motion always confined to that layer? A positive answer would
    give a structure theorem for gliders — the analogue of "a Life glider is a
    4-phase object" — rather than just an existence result.
-4. **[O] Can α = 2 be attained with two kinds at fill → 1?** The Sower reaches
-   fill 1/2 with two kinds; the Land Grant needs three for fill → 1. The
-   L¹ light cone makes 1/2 look like the two-kind ceiling — is that a theorem?
+4. **[O] What is the two-kind fill ceiling?** The Sower reaches 1/2 by design;
+   the complete search finds 0.5575 (`OEE>AB WQP>A`, third-octave α = 2.019);
+   the three-kind Land Grant reaches 0.993. Is there a bound below 1 for two
+   kinds — the two-generator displacement monoid {p·c_A + q·c_B : p+q ≤ t}
+   is a triangle, and its own bounding box has fill exactly |det(c_A,c_B)| /
+   (2·Δx·Δy) ≤ 1/2 for Moore offsets — or can a pattern occupy a *sub*-region
+   of that triangle densely and beat it? The measured 0.5575 says the naive
+   bound is not the answer.
 5. **[O] Universality.** With a gun, a rake, a wall (dead letters), and a
    collision algebra whose outcome depends on the parity of the gap, the
    ingredients of a glider-logic computation are present. Is 2-D
    cross-amendment nomodynamics Turing-complete? Nothing here settles it, but
    for the first time the question is not obviously hopeless.
-6. **[O] The 2-adic clock.** Periods 3, 5, 7, 21, 192 exist, but powers of 2
-   still dominate by four orders of magnitude (3,859,579 period-2 cycles versus
-   6,328 period-3). Is there a quantitative law behind the suppression?
+6. **[O] The 2-adic clock, quantitatively.** X-C's Cryptic Unipotency explains
+   *why* powers of two dominate; it does not explain *by how much*. Measured:
+   3,859,579 period-2 cycles against 6,328 period-3 and 2 period-5 in the same
+   complete census. Is the suppression governed by the expected length of a
+   constant-occupancy stretch?
+7. **[O] Is the Odometer's (log t)² reach exact?** Measured heights
+   20, 26, 38, 44, 47, 50, 74, 86 at t = 2^k for k = 10, 12, 14, 15, 16, 17,
+   19, 20 fit 0.20 k² to 8 %. A closed form would make its aperiodicity a
+   theorem rather than a measurement — as the Jubilee code's √t law did for
+   `nomos2d`.
 
 
 ---
@@ -1108,39 +1215,45 @@ Certificate forms:
 * **GUN** — the pump cell's law-set is p-periodic and |S_t| is exactly linear
   through t = 200.
 * **COLLISION** — the outcome for each gap is checked against the parity rule.
+* **CRYPTID** — no exact recurrence in 2^16 fully-hashed steps, *and* the
+  card collapses to ≤ 8 at every t = 2^k with an avalanche at t = 2^k − 1,
+  *and* the reach is strictly increasing across those epochs.
 
 ```
 $ python3 verify.py
-[PASS] G1  Writ of Removal (E)          Phi^1 = sigma^(1,0), 5 periods, card 2
-[PASS] G1' Writ of Removal (OR)         Phi^1 = sigma^(1,0), 5 periods, card 2
-[PASS] G2  diagonal Writ (NE)           Phi^1 = sigma^(1,1), 5 periods, card 2
-[PASS] G2' diagonal Writ (NW)           Phi^1 = sigma^(-1,1), 5 periods, card 2
-[PASS] G3  4-law glider                 Phi^1 = sigma^(1,0), card 4
-[PASS] G4  p=4 card-7 glider            Phi^4 = sigma^(4,0), core t0=10
-[PASS] G4' p=4 card-7 mirror            Phi^4 = sigma^(0,4), core t0=10
-[PASS] G5  subluminal (OR, speed 1/2)   Phi^2 = sigma^(-1,0), card 2
-[PASS] G6  ONE-LAW glider (speed 1/4)   Phi^4 = sigma^(-1,1), card 1
-[PASS] G7  no null cycle (opposed sums) Phi^4 = sigma^(-2,0), card 1
-[PASS] G8  card-50 diagonal spaceship   Phi^4 = sigma^(4,4), core t0=22, card 50
-[PASS] G9  subluminal parity, speed 1/6 Phi^6 = sigma^(-1,0), card 2
-[PASS] G10 card-18, p=1, diagonal       Phi^1 = sigma^(-1,-1), core t0=5
-[PASS] G11 1-D Writ of Removal          Phi(S) = sigma^1(S) in dimension 1
-[PASS] C1  own-kind period 3            Phi^3(S_1) = S_1, card 3
-[PASS] C2  reciprocal period 3          Phi^3(S_1) = S_1, card 2
-[PASS] C3  period 5                     Phi^5(S_0) = S_0, card 3
-[PASS] C4  period 7                     Phi^7(S_1) = S_1, card 5
-[PASS] C5  period 192                   Phi^192(S_0) = S_0, card 3
-[PASS] C6  period 112 (card 111)        Phi^112(S_92) = S_92
-[PASS] M1  THE ASSIZE (glider gun)      pump 2-periodic, |S_t| linear to t=200
-[PASS] M2  THE CIRCUIT COURT (rake)     |S_t| = 2t+2 for t = 0..200
-[PASS] M3  writ collision algebra       gaps 1..10 obey the parity rule
-[PASS] B1  two-chamber (2 laws, minimal) fixed with 2 active laws
-[PASS] B2  PERPETUAL SESSION (40 laws)  fixed with 40 active laws (100 %)
-[PASS] B3  TWO CHAMBERS (non-local)     fixed with 12 active laws
-[PASS] A1  THE SOWER   |S_t| = (t+1)(t+2)/2  for t = 0..200
-[PASS] A2  THE LAND GRANT |S_t| = (t+1)^2 and exact support, t = 0..200
+[PASS] G1 Writ of Removal (E)         Phi^1 = sigma^(1, 0) over 5 periods (core at t0=0, card 2)
+[PASS] G1' Writ of Removal (OR)       Phi^1 = sigma^(1, 0) over 5 periods (core at t0=0, card 2)
+[PASS] G2 diagonal Writ (NE)          Phi^1 = sigma^(1, 1) over 5 periods (core at t0=0, card 2)
+[PASS] G2' diagonal Writ (NW)         Phi^1 = sigma^(-1, 1) over 5 periods (core at t0=0, card 2)
+[PASS] G3 4-law glider                Phi^1 = sigma^(1, 0) over 5 periods (core at t0=0, card 4)
+[PASS] G4 p=4 card-7 glider           Phi^4 = sigma^(4, 0) over 5 periods (core at t0=10, card 7)
+[PASS] G4' p=4 card-7 mirror          Phi^4 = sigma^(0, 4) over 5 periods (core at t0=10, card 7)
+[PASS] G5 subluminal (OR, speed 1/2)  Phi^2 = sigma^(-1, 0) over 5 periods (core at t0=0, card 2)
+[PASS] G6 ONE-LAW glider (speed 1/4)  Phi^4 = sigma^(-1, 1) over 5 periods (core at t0=0, card 1)
+[PASS] G7 no null cycle (opposed sums) Phi^4 = sigma^(-2, 0) over 5 periods (core at t0=0, card 1)
+[PASS] G8 card-50 diagonal spaceship  Phi^4 = sigma^(4, 4) over 5 periods (core at t0=22, card 50)
+[PASS] G9 subluminal parity, speed 1/6 Phi^6 = sigma^(-1, 0) over 5 periods (core at t0=0, card 2)
+[PASS] G10 card-18, p=1, diagonal     Phi^1 = sigma^(-1, -1) over 5 periods (core at t0=5, card 18)
+[PASS] G11 1-D Writ of Removal        Phi(S) = sigma^1(S) in dimension 1 (xnomos, dim=1)
+[PASS] C1 own-kind period 3           Phi^3(S_1) = S_1 over 3 periods (card 3)
+[PASS] C2 reciprocal period 3         Phi^3(S_1) = S_1 over 3 periods (card 2)
+[PASS] C3 period 5                    Phi^5(S_0) = S_0 over 3 periods (card 3)
+[PASS] C4 period 7                    Phi^7(S_1) = S_1 over 3 periods (card 5)
+[PASS] C5 period 192                  Phi^192(S_0) = S_0 over 3 periods (card 3)
+[PASS] C6 period 112 (card 111)       Phi^112(S_92) = S_92 over 3 periods (card 111)
+[PASS] M1 THE ASSIZE (glider gun)     pump is 2-periodic and |S_t| grows by 2 per 2 steps through t=200
+[PASS] M2 THE CIRCUIT COURT (rake)    |S_t| = formula for t = 0..200
+[PASS] M3 writ collision algebra      gaps [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]: odd -> frozen 4-law block, even -> one-cell merge then separation
+[PASS] M4 1-D GUN (the Assize on Z)   1-D: |S_t| = formula for t = 0..400
+[PASS] M5 1-D RAKE (the Circuit Court on Z) 1-D: |S_t| = formula for t = 0..400
+[PASS] K1 THE ODOMETER (2^16 steps)   no recurrence in 65536 hashed steps; card collapses to <=8 at every t=2^k (k=8..16) with an avalanche at t=2^k-1; height 14 -> 47
+[PASS] B1 two-chamber (2 laws, minimal) fixed with 2 active laws (card 2)
+[PASS] B2 PERPETUAL SESSION (40 laws, 100% active) fixed with 40 active laws (card 40)
+[PASS] B3 TWO CHAMBERS (non-local, distance 2) fixed with 12 active laws (card 12)
+[PASS] A1 THE SOWER  |S_t| = (t+1)(t+2)/2 |S_t| = formula for t = 0..200
+[PASS] A2 THE LAND GRANT |S_t| = (t+1)^2 card and exact cell support match for t = 0..200
 
-verification battery: 28/28 PASS (independent engine: xnomos.py)
+verification battery: 31/31 PASS (independent engine: xnomos.py)
 ```
 
 Engine-level cross-validation is in `validate_c.py`: 3,000 random 2- and
@@ -1164,9 +1277,10 @@ four, re-run after every change to the C source.
 | `balance.py` | z3 search for maximal balanced constitutions |
 | `refine_alpha.py`, `refine2.py` | two-stage growth-exponent refinement |
 | `gallery.py` → `gallery.txt` | the specimen gallery with ASCII frames |
-| `escalate.sh`, `runcensus.sh`, `run2.sh`, `SUPER_RUN.sh`, `runall.sh` | run scripts for the censuses and the cascade |
+| `runcensus.sh`, `SUPER_RUN.sh`, `escalate.sh`, `refine.sh`, `cleanup_data.sh` | run scripts: the censuses, the supersession pass, the cryptid cascade, the two-stage α refinement, and the data trim |
 | `cen_*.txt` | census summaries (tallies, class breakdown, period histograms, α histograms, exemplar finds) |
-| `data/*.gz` | the per-run dumps: gliders, balanced codes, non-power-of-2 cycles, unresolved runs, α measurements, and the escalation stages (gzipped; each well under 5 MB) |
+| `alpha_stage1.txt`, `alpha_stage2.txt` | the two growth-exponent refinement reports |
+| `data/*.gz` | per-run dumps, gzipped, 1.9 MB in total: `*_events` holds **every** glider / balanced / non-power-of-2 record in full; `*_bulk_sample` is a 1-in-37 subsample of the two bulk categories (unresolved, escaped); `alpha_measurements` holds every stage-1 α ≥ 1.02 record; `escC/escD*` the cryptid cascade |
 
 ### Repro
 
@@ -1179,7 +1293,7 @@ clang -O3 -march=native -pthread -DTBITS=20  -o xdeep   xcensus.c -lm
 python3 validate_c.py 3000            # C == Python on 3000 universes x 4 semantics
 
 # 1. the certificate battery (the only thing a positive claim rests on)
-python3 verify.py                     # 29/29 PASS
+python3 verify.py                     # 31/31 PASS
 
 # 2. complete 2-kind Moore census, both semantics  (~45 s each, 12 threads)
 ./xcensus --mode 0 --sem 0 --steps 300 --dump data/mp2 > cen_moore_parity.txt

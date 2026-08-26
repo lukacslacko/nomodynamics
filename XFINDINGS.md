@@ -68,7 +68,7 @@ in the battery (`python3 verify.py`):
   the resolution convention — vacuous throughout chapter one — decides whether a
   law-packet travels or explodes.
 
-## 3. Balanced constitutions (coordinator, then X-D)
+## 2b. Balanced constitutions (coordinator, then X-D)
 
 The own-kind **Dead Letter Theorem** says stability is always gridlock: a code
 is fixed iff every law in it is blocked. Under cross-amendment it fails.
@@ -85,6 +85,81 @@ is fixed iff every law in it is blocked. Under cross-amendment it fails.
 *A constitution can be perpetually active and perfectly unchanging — but only if
 contradictory simultaneous amendments cancel rather than both taking effect.*
 
+## 3. Two dimensions: the plane fills, and the degrees govern everything
+
+Expedition X-B (`xamend2d/RESULTS.md`; 199.5M certified classifications,
+31/31 battery on the independent engine). Every headline below was re-verified
+by the coordinator on `xnomos.py`.
+
+**Growth (prediction X4, settled).** Own-kind 2-D growth is pinned to axis rays,
+α ≤ 1 — a chapter-one theorem. The generalisation is exact:
+
+> **Out-degree 1 ⟹ |S_t| ≤ |S₀|(t+1), hence α ≤ 1 in every dimension**
+> (parity, OR, supersession alike). **Out-degree ≥ 2 ⟹ α = 2 is attainable,
+> with bounding-box fill → 1.**
+
+The witness is one law. **LAND GRANT** — kinds `A = (O,NE,NE) → {A,B,C}`,
+`B = (O,E,E) → {B}`, `C = (O,N,N) → {C}`, seeded with a single `A` — has
+`|S_t| = (t+1)²` **exactly** (verified t ≤ 8, support `{(0,0)} ∪ [1,t]²`): a
+solid growing square. *The plane fills.* Chapter one's ray confinement was not a
+fact about two dimensions; it was a fact about narrow laws.
+
+**Guns and rakes exist — and they run on ℤ.** The ingredient X-A's travelling
+packets were missing is not a second dimension but a kind of **in-degree 0**: a
+provision nobody can amend, which therefore stands forever and pumps. On the
+line, `A = (0,1,0) → {A,B}`, `B = (0,1,1) → {A,B}`, `C = (0,1,0) → {A,B}`
+seeded with a single immortal `C` emits a periodic stream of two-law shots
+forever, `|S_t| = 2⌊t/2⌋+3` (verified). An entrenched clause is a *gun*.
+
+**The Odometer.** Three laws, two kinds: `A = (O,E,W) → {B}`,
+`B = (N,NW,SE) → {A,B}`. Its population returns to **exactly four laws at every
+t = 2^k** (14/14 verified, t < 2^15), crests at 2^k−1 (6, 9, 12, 18, 21, 36,
+39, 72, 75, …, doubling every second power), and its reach grows like
+≈ 0.20 (log₂ t)² out to t = 2²⁰ — bounded population, unbounded reach, hence
+aperiodic. It is the second binary counter in the field and the slowest clock
+in it (the Jubilee's reach goes like √t). *Two machines found in different
+sectors by different methods both quiesce to exactly four laws at every power of
+two* [interpretation: unexplained, and the most suggestive coincidence on the
+board].
+
+**Balance is governed by in-degree, not out-degree.** X-B's own prediction that
+balance needs out-degree ≥ 2 was refuted and the record kept:
+
+> Balance requires **parity resolution and in-degree ≥ 2** — a provision with
+> two authors whose enactments cancel. Minimum two placed laws; 0 balanced codes
+> in 81.4M OR runs.
+
+Balanced codes can be large and fully alive: **PERPETUAL SESSION** — twenty
+copies each of `A = (O,E,O) → {A}` and `B = (O,E,O) → {A}` stacked in a column —
+is fixed forever with **all forty laws active at every step** (verified). A
+parliament in permanent session that never changes a word.
+
+**Collision algebra.** Head-on writs obey a parity rule: **even gap ⟹ mutual
+transparency** (both packets pass through and continue), **odd gap ⟹ a frozen
+four-law arrest** (verified at gaps 6–9). A dead letter is a wall.
+
+**Also new**: a card-50 diagonal spaceship; a **one-law** 2-D glider (period 4,
+diagonal); subluminal parity gliders down to speed **1/6** (verified); four
+gliders with **no null cycle**, the first sighting of the no-go theorem's other
+escape hatch; and — inside *own-kind* 2-D once diagonal offsets are allowed — a
+**period-3** oscillator, which kills the 2-adic period conjecture in its own
+home sector.
+
+### The organizing principle
+
+Chapter one's phenomena were governed by the *order* of ℤ (the eldest law).
+Chapter two's are governed by the **degree sequence of the amendment digraph**:
+
+| structure | consequence |
+|---|---|
+| out-degree ≤ 1 everywhere | nothing moves (Out-Degree Law); growth α ≤ 1 |
+| out-degree ≥ 2 | gliders exist; α = 2 attainable — the plane fills |
+| in-degree ≥ 2, parity | balanced constitutions exist (and can be fully active) |
+| in-degree ≥ 2, OR | nothing: Dead Letter survives verbatim |
+| in-degree 0 (immortal kind) | a pump — guns and rakes, on ℤ as well as ℤ² |
+
+*Who amends whom, counted, decides what the statute book can do.*
+
 ## 4. Scorecard against the frozen predictions
 
 - **X1 (balance exists, minimum 2 laws, none under OR)** — **HELD** for the
@@ -100,7 +175,10 @@ contradictory simultaneous amendments cancel rather than both taking effect.*
   wrong in both halves: supersession is provably dead, and motion lives in the
   multi-target sector I did not name. A glider was found — a period-1 one with
   two laws in one cell.
-- **X4–X8** — pending the other expeditions.
+- **X4 (cross-amendment breaks α = 1; ≈ 60 %)** — **HELD**, and settled in both
+  directions: α ≤ 1 is a theorem exactly when out-degree ≤ 1, and α = 2 is
+  attained by a one-law seed the moment out-degree reaches 2.
+- **X5–X8** — pending the remaining expeditions.
 
 *The pattern worth keeping: the structural intuition (a tropical monovariant
 kills single-target motion) was sound, while the taxonomic guess (which named

@@ -292,7 +292,7 @@ add("M3 writ collision algebra", cert_collision,
 # ---- the 1-D machines (answering X-A's open question) --------------------
 add("M4 1-D GUN (the Assize on Z)", cert_1d_machine,
     [(0, 1, 0), (0, 1, 1), (0, 1, 0)], [(0, 1), (0, 1), (0, 1)],
-    [(0, 2)], lambda t: 1 if t == 0 else t + 3, 400)
+    [(0, 2)], lambda t: 1 if t == 0 else 2 * (t // 2) + 3, 400)
 add("M5 1-D RAKE (the Circuit Court on Z)", cert_1d_machine,
     [(0, 1, 0), (0, 1, 1), (0, -1, 0), (0, -1, -1)],
     [(0, 1), (0, 1), (0, 1, 2, 3), (2, 3)], [(0, 2), (0, 3)],

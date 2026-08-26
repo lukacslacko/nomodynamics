@@ -73,7 +73,7 @@ own-kind object can move diagonally at all.""")
          note="""C is a pump: nobody amends C, so it is immortal; it enacts a fresh
 A+B pair on its own cell whenever its east neighbour is clear. The pair
 walks away as a Writ, the east clears, and C fires again. One law in,
-an infinite periodic stream of free gliders out.  |S_t| = t + 3.""")
+an infinite periodic stream of free gliders out.  |S_t| = 2*floor(t/2)+3.""")
 
     show("4. THE CIRCUIT COURT  —  a rake (a gun that walks)",
          "OEO>AB OEE>AB ONO>ABCD ONN>CD", [(0, 0, 2), (0, 0, 3)], 8,

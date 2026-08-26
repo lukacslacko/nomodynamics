@@ -110,7 +110,7 @@ Legend: A B C D = a single law of that kind at the cell;
   C is a pump: nobody amends C, so it is immortal; it enacts a fresh
   A+B pair on its own cell whenever its east neighbour is clear. The pair
   walks away as a Writ, the east clears, and C fires again. One law in,
-  an infinite periodic stream of free gliders out.  |S_t| = t + 3.
+  an infinite periodic stream of free gliders out.  |S_t| = 2*floor(t/2)+3.
 ========================================================================
   t = 0     |S_t| = 1    
     C...........

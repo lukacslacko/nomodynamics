@@ -419,8 +419,12 @@ spectrum **{2, 4, 6, 8}**; 104 of its 729 constitutions realise period 8.
 The *theorems* of the own-kind sector are untouched — the Anchor Theorem holds
 throughout that block in our own check (139,968 codes × 12 steps, 0 violations).
 Only the census-level regularity falls, and it falls because its high-law strata
-were sampled rather than enumerated. Own-kind nomodynamics is not "blink or
-freeze"; it is 2-adic, and 8 is a power of 2.
+were sampled rather than enumerated. And the failure is *double*: period 8
+breaks "blink or freeze", and the two-kind period **6** breaks "all periods are
+powers of 2" **inside the own-kind sector itself**. Theorem 6 explains why
+neither is a contradiction: 2-adicity is a theorem only at *constant occupancy*,
+and both specimens oscillate their occupancy — the sunset clause is precisely
+the rule that does.
 
 ---
 

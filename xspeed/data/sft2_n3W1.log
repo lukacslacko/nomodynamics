@@ -1,0 +1,22 @@
+n=3 W=1: 1140 constitutions
+p=1 d=1 parity GLIDER  caps=0 0s [[-1, 0, -1], [-1, 1, -1], [-1, 1, 1]]
+p=1 d=1 or     GLIDER  caps=0 0s [[-1, 0, -1], [-1, 1, -1], [-1, 1, 1]]
+p=2 d=1 parity GLIDER  caps=0 0s [[-1, 1, -1], [-1, 1, 0], [0, -1, 1]]
+p=2 d=1 or     GLIDER  caps=0 0s [[-1, 1, 0], [-1, 1, 1], [0, 1, -1]]
+p=2 d=2 parity GLIDER  caps=0 0s [[-1, 0, -1], [-1, 1, -1], [0, 1, 1]]
+p=2 d=2 or     GLIDER  caps=0 0s [[-1, 0, -1], [-1, 1, -1], [0, 1, 1]]
+p=3 d=1 parity NONE    caps=0 0s 
+p=3 d=1 or     NONE    caps=0 0s 
+p=3 d=2 parity NONE    caps=0 1s 
+p=3 d=2 or     NONE    caps=0 1s 
+p=3 d=3 parity GLIDER  caps=0 1s [[-1, 0, -1], [-1, 1, -1], [-1, 1, 1]]
+p=3 d=3 or     GLIDER  caps=0 1s [[-1, 0, -1], [-1, 1, -1], [-1, 1, 1]]
+p=4 d=1 parity NONE    caps=0 3s 
+p=4 d=1 or     NONE    caps=0 3s 
+p=4 d=2 parity GLIDER  caps=0 2s [[-1, 0, -1], [0, -1, 1], [0, 1, -1]]
+p=4 d=2 or     GLIDER  caps=0 6s [[-1, 1, 0], [-1, 1, 1], [0, 1, -1]]
+p=4 d=3 parity NONE    caps=0 9s 
+p=4 d=3 or     NONE    caps=0 10s 
+p=4 d=4 parity GLIDER  caps=0 15s [[-1, 0, -1], [-1, 1, -1], [-1, 1, 1]]
+p=4 d=4 or     GLIDER  caps=0 12s [[-1, 0, -1], [-1, 1, -1], [-1, 1, 1]]
+p=5 d=1 parity NONE    caps=0 27s 

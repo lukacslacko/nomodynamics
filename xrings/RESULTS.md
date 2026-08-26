@@ -334,8 +334,12 @@ nomodynamics has *no* rotor at m=4 (complete: 27 kinds × 16 states; 729
 two-kind constitutions × 256 states; 1728 three-kind × 4096). Cross-amendment
 has 88 classes there. The smallest is three laws (specimen **Q-4** below).
 
-**(B) Odd rings are almost, but not quite, forbidden.** Every complete
-enumeration on an odd ring returns zero spatial rotors — see §3.4.
+**(B) Odd rings look forbidden — until you look past where enumeration can
+reach.** Every complete enumeration listed above returns zero spatial rotors on
+every odd ring. But the enumerable range stops just short of where the first
+ones live: m = 9 needs three kinds (2^27 states per constitution, 1728
+constitutions — out of reach) and m = 15 needs two (2^30 per constitution).
+SAT reaches both. See §3.4 — this is the expedition's headline.
 
 ### 3.3 The gallery
 

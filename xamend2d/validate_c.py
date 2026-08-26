@@ -13,7 +13,7 @@ from xa2d import (Const, MOORE, OFF, state, classify, card, active,
 
 OFFIDX = {OFF[c]: i for i, c in enumerate("OEWNSPQRT")}
 IDXOFF = [OFF[c] for c in "OEWNSPQRT"]
-EXE = "./xcensus2"
+EXE = "./xcensus"
 VMAP = {"extinct": EXTINCT, "fixed": FIXED, "balanced": BALANCED,
         "cycle": CYCLE, "glider": GLIDER, "escape": GROWING,
         "unres": UNRESOLVED}
