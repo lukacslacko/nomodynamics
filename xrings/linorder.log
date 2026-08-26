@@ -1,0 +1,10 @@
+multiplicative period q(M) of the frozen-occupancy step operator
+  own-kind, 1 kind, all 27, m=3..10              q(M) values: [1, 2, 4]
+  own-kind, 2 live kinds, m=3..8                 q(M) values: [1, 2, 4]
+  2-cycle permutation, m=3..8                    q(M) values: [1, 2, 4, 8]
+  non-injective [0,0], m=3..8                    q(M) values: [1, 2, 4]
+  own-kind, 3 live kinds, m=3..6                 q(M) values: [1, 2, 4]
+  3-cycle permutation, m=3..6                    q(M) values: [1, 2, 3, 4, 6, 8, 12]
+      q=3   first at m=3 [(-1, 1, -1), (0, -1, -1), (1, -1, -1)] -> [1, 2, 0]  O=001
+      q=6   first at m=4 [(-1, 1, -1), (-1, 1, 0), (0, 1, 1)] -> [1, 2, 0]  O=0011
+      q=12  first at m=4 [(-1, 1, -1), (-1, 1, 0), (-1, 1, 1)] -> [1, 2, 0]  O=0011

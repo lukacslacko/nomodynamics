@@ -160,14 +160,83 @@ Chapter two's are governed by the **degree sequence of the amendment digraph**:
 
 *Who amends whom, counted, decides what the statute book can do.*
 
-## 4. Scorecard against the frozen predictions
+## 4. The structure theory, and the second escape from the Anchor
+
+Expedition X-D (`xtheory/RESULTS.md`; 42/42 battery on an independent set-based
+engine sharing no code with `xnomos`, 286M-run complete periodic table).
+
+**The survival audit.**
+
+| chapter-one theorem | verdict under cross-amendment |
+|---|---|
+| Gridlock | **survives verbatim**, across the whole semantic lattice (its only hypothesis is that the guard contains a vacancy clause) |
+| Single-Author / parity ≡ OR | **survives iff amendment in-degree ≤ 1** (⟺ the target map is a permutation); splits at **two laws in one cell** |
+| Dead Letter | **fails under parity, survives under OR** — it holds exactly when the resolution is *strict* |
+| Anchor (permanence of the eldest law) | **fails from one placed law**; replaced by Path-Sum Confinement + a Zero-Sum No-Go |
+| 2-D ray confinement | fails as stated; the reach is a finite union of rays ℕ·S_Z, so diagonals are exactly the cycles with diagonal offset-sum |
+| "all periods are powers of two" | **fails** — the cross-amendment spectrum runs to 30 |
+
+**The organising invariant** is the **cycle offset-sum** S_Z = Σ_{k∈Z} c_k over
+cycles of the amendment digraph. Path-Sum Confinement bounds support by path
+sums (linear growth in every dimension); the **Zero-Sum No-Go** says that if
+every reachable cycle has S_Z = 0 the code is bounded forever (39.8M-run
+complete certificate); and a glider's velocity is always a **positive multiple
+of S_Z**. *Where chapter one read the order of ℤ, chapter two reads the
+arithmetic of the amendment digraph's cycles.*
+
+**Balance, final form.** Under parity a code is fixed iff its active laws
+partition into **cohorts**: even-sized groups of *distinct* kinds proposing the
+same amendment at the same cell. Minimum two laws — and the minimal witness
+puts both **in a single cell**: `BAL-1`, kinds 0 and 1 both (0,−1,−1) both
+targeting kind 0, stacked at one cell, active forever, fixed forever (verified;
+changes under OR). Balance is not measure zero: the exact count satisfies
+a(s) = 4a(s−1) − 2a(s−2), entropy 1.7716 of 2 bits per cell — and 70.1 % of the
+1,572,788 balanced verdicts in the complete census are *reached* rather than
+seeded, refuting X-D's own prediction that balance is a seeding artefact.
+**My duality (X2) is refuted outright**: balance can exist with every present
+kind amendable (`BAL-3`). Entrenchment in balance is *dynamic*, not structural.
+
+**The second escape — and the deeper reading of the Anchor Theorem.** X-D's
+semantic-lattice sweep found the live axis: **sunset-by-default**, where a law
+lapses unless re-enacted. It is the only semantics in the lattice that breaks
+the Anchor's locality hypothesis, and **free gliders exist there on ℤ with
+own-kind targeting** — 11.4 / 15.4 / 15.5 % of a complete 139,968-code box at
+τ = 1, 2, 3, with speeds 1, 2/3, 1/2, 1/3, 1/4, 1/6.
+
+> **What forbids motion on the line is permanence, not own-kind targeting.**
+
+Two independent escapes, then, and together they say something the founding
+note could not: a statute book can move only if its provisions either
+**legislate broadly** (out-degree ≥ 2, X-A) or **expire on their own**
+(sunset-by-default, X-D). Permanent, narrow law is motionless — that is the
+Anchor Theorem's real content.
+
+**Convergence worth recording.** X-D's complete two-kind periodic table
+(2,916 constitutions × 49,152 seeds × 2 resolutions = **286,654,464 certified
+runs**, 757 symmetry orbits, census constant on every orbit) reports
+**zero gliders** — and X-D flagged that as its sharpest open question, having
+run concurrently without X-A's result. It is not open: the box is entirely
+single-target, so the zero is exactly the empirical shadow of the Out-Degree
+Law. Two expeditions, different methods, same wall.
+
+**Also**: `CRY-1`, a period-3 cycle at constant occupancy (verified), where
+own-kind linearity would force a power of two; `OWN-8`, one own-kind law
+(0,−1,1) at cells {0,2,4,6} with period **8** (verified), refuting the
+chapter-one census remark that random-seed cycles carry only periods 2 and 4 —
+the "powers of two" law itself stands; and a semantic-lattice verdict that
+quorum guards are structurally inert (every confinement theorem here is
+guard-free) except at quorum = {2}, where Gridlock *inverts*.
+
+## 5. Scorecard against the frozen predictions
 
 - **X1 (balance exists, minimum 2 laws, none under OR)** — **HELD** for the
   witness and the OR half (verified); the minimality claim is X-D's.
 - **X2 (the duality: motion needs every kind amendable, balance needs an
-  immortal kind)** — **superseded**. The true dichotomy is out-degree, not
-  amendability: TANDEM-1's kinds are mutually amendable *and* multi-target. What
-  survives is the balance half.
+  immortal kind)** — **REFUTED in both halves, and replaced by a better pair.**
+  Motion is governed by *out-degree*, not amendability; balance by *in-degree*
+  and parity, and X-D exhibits balance with every present kind amendable, so the
+  entrenchment in balance is dynamic rather than structural. The surviving
+  statement is the degree table in §3.
 - **X3 (no glider in E2; supersession the likelier home of motion; a rake before
   a clean glider; ≈35 % that a certified 1-D glider appears)** — **half right,
   and instructively so**. The E2 no-go held *and* was proved by exactly the
@@ -178,7 +247,14 @@ Chapter two's are governed by the **degree sequence of the amendment digraph**:
 - **X4 (cross-amendment breaks α = 1; ≈ 60 %)** — **HELD**, and settled in both
   directions: α ≤ 1 is a theorem exactly when out-degree ≤ 1, and α = 2 is
   attained by a one-law seed the moment out-degree reaches 2.
-- **X5–X8** — pending the remaining expeditions.
+- **X5 (odd periods appear under non-injective targeting and supersession;
+  permutation constitutions keep 2^a·L-type periods)** — **HELD**: the complete
+  two-kind spectrum is {2,3,4,5,6,7,8,9,10,12,14,16,18,30}, with the odd periods
+  contributed by the constant (non-injective) target maps exactly as predicted.
+- **X7 (some semantics from the referent's lattice yields a phenomenon with no
+  analogue elsewhere)** — **HELD, and it is the chapter's second theorem-grade
+  result**: sunset-by-default admits free gliders on ℤ under own-kind targeting.
+- **X6, X8** — pending.
 
 *The pattern worth keeping: the structural intuition (a tropical monovariant
 kills single-target motion) was sound, while the taxonomic guess (which named

@@ -63,3 +63,5 @@
 {"n": 2, "W": 1, "p": 6, "d": 2, "mode": "or", "verdict": "NONE", "caps": 0, "secs": 35.3}
 {"n": 2, "W": 1, "p": 6, "d": 3, "mode": "parity", "verdict": "NONE", "caps": 0, "secs": 59.8}
 {"n": 2, "W": 1, "p": 6, "d": 3, "mode": "parity", "verdict": "NONE", "caps": 0, "secs": 58.5}
+{"n": 2, "W": 1, "p": 6, "d": 3, "mode": "or", "verdict": "NONE", "caps": 0, "secs": 61.5}
+{"n": 2, "W": 1, "p": 6, "d": 3, "mode": "or", "verdict": "NONE", "caps": 0, "secs": 62.0}
