@@ -1,0 +1,24 @@
+ring m=3 3-law: 60516 seeds -> {'fixed': 53438, 'cycle': 7050, 'extinct': 28}
+ring m=4 3-law: 118836 seeds -> {'fixed': 100126, 'cycle': 18630, 'extinct': 80}
+ring m=5 3-law: 196839 seeds -> {'fixed': 162635, 'cycle': 34072, 'extinct': 132}
+ring m=6 3-law: 294525 seeds -> {'fixed': 240819, 'cycle': 53496, 'extinct': 192, 'ROTOR': 18}
+ring m=7 3-law: 411894 seeds -> {'fixed': 334680, 'cycle': 76954, 'extinct': 260}
+ROTORS: 18
+  m=6 slots=(7, 69, 150) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(10, 38, 119) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(11, 38, 92) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(11, 64, 92) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(11, 65, 146) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(11, 73, 92) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(11, 92, 119) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(11, 92, 145) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(11, 92, 154) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(16, 69, 150) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(15, 34, 96) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(15, 42, 123) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(15, 43, 96) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(15, 69, 96) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(15, 96, 115) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(15, 96, 124) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(15, 96, 150) {'period': 1, 'rot': 3, 'm': 6} verified=True
+  m=6 slots=(19, 38, 119) {'period': 1, 'rot': 3, 'm': 6} verified=True

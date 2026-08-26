@@ -1,0 +1,38 @@
+== THE SUNSET PARLIAMENT: max period of the (0,-1,1) universe vs m ==
+ m= 2: MAXP=    1   #states-on-cycles=2   top periods [(1, 2)]   argmax occ-pattern 0b0   (0s)
+ m= 3: MAXP=    2   #states-on-cycles=8   top periods [(1, 2), (2, 3)]   argmax occ-pattern 0b1   (0s)
+ m= 4: MAXP=    2   #states-on-cycles=10   top periods [(1, 2), (2, 4)]   argmax occ-pattern 0b1   (0s)
+ m= 5: MAXP=    4   #states-on-cycles=32   top periods [(1, 2), (2, 5), (4, 5)]   argmax occ-pattern 0b101   (0s)
+ m= 6: MAXP=    4   #states-on-cycles=56   top periods [(1, 2), (2, 12), (3, 2), (4, 6)]   argmax occ-pattern 0b101   (0s)
+ m= 7: MAXP=    4   #states-on-cycles=128   top periods [(1, 2), (2, 21), (4, 21)]   argmax occ-pattern 0b101   (0s)
+ m= 8: MAXP=    4   #states-on-cycles=226   top periods [(1, 2), (2, 32), (4, 40)]   argmax occ-pattern 0b101   (0s)
+ m= 9: MAXP=    8   #states-on-cycles=512   top periods [(1, 2), (2, 57), (4, 63), (8, 18)]   argmax occ-pattern 0b1010101   (0s)
+ m=10: MAXP=   15   #states-on-cycles=992   top periods [(2, 100), (4, 150), (8, 20), (15, 2)]   argmax occ-pattern 0b101010111   (0s)
+ m=11: MAXP=    8   #states-on-cycles=2048   top periods [(1, 2), (2, 165), (4, 297), (8, 66)]   argmax occ-pattern 0b1010101   (0s)
+ m=12: MAXP=    8   #states-on-cycles=4000   top periods [(3, 2), (4, 612), (6, 4), (8, 120)]   argmax occ-pattern 0b1010101   (0s)
+ m=13: MAXP=    8   #states-on-cycles=8192   top periods [(1, 2), (2, 481), (4, 1235), (8, 286)]   argmax occ-pattern 0b1010101   (0s)
+ m=14: MAXP=    8   #states-on-cycles=16256   top periods [(2, 812), (4, 2450), (7, 18), (8, 588)]   argmax occ-pattern 0b1010101   (0s)
+ m=15: MAXP=    8   #states-on-cycles=32768   top periods [(1, 2), (2, 1373), (4, 4925), (8, 1290)]   argmax occ-pattern 0b1010101   (0s)
+ m=16: MAXP=    8   #states-on-cycles=65026   top periods [(1, 2), (2, 2336), (4, 9648), (8, 2720)]   argmax occ-pattern 0b1010101   (0s)
+ m=17: MAXP=   16   #states-on-cycles=131072   top periods [(2, 3961), (4, 19159), (8, 5270), (16, 272)]   argmax occ-pattern 0b101010101010101   (0s)
+ m=18: MAXP=   63   #states-on-cycles=261632   top periods [(4, 37950), (8, 11412), (16, 288), (63, 8)]   argmax occ-pattern 0b10101010101010111   (0s)
+ m=19: MAXP=   16   #states-on-cycles=524288   top periods [(2, 11381), (4, 74689), (8, 23522), (16, 912)]   argmax occ-pattern 0b101010101010101   (0s)
+ m=20: MAXP=   30   #states-on-cycles=1047040   top periods [(8, 49160), (15, 2), (16, 1600), (30, 16)]   argmax occ-pattern 0b11111111111111011101   (0s)
+ m=21: MAXP=   16   #states-on-cycles=2097152   top periods [(2, 32721), (4, 289275), (8, 101934), (16, 3696)]   argmax occ-pattern 0b101010101010101   (1s)
+ m=22: MAXP=  341   #states-on-cycles=4192256   top periods [(4, 568106), (8, 211068), (16, 7392), (341, 6)]   argmax occ-pattern 0b101010101010101010111   (2s)
+ sequence: [1, 2, 2, 4, 4, 4, 4, 8, 15, 8, 8, 8, 8, 8, 8, 16, 63, 16, 30, 16, 341]
+
+== complete 2-kind universes at m=8 ==
+   new best: p=2 kinds=((-1, 1, -1), (-1, 1, 0))
+   new best: p=8 kinds=((-1, 1, -1), (0, -1, 1))
+ best 2-kind at m=8: period 8 kinds=((-1, 1, -1), (0, -1, 1))
+
+== certified <=6-law seeds for best cycles (basin search) ==
+ m=8 pair ((-1, 1, -1), (0, -1, 1)): period 8; min-law state in basin: 9 laws, basin size 24
+   seed: [(0, (-1, 1, -1)), (0, (0, -1, 1)), (2, (-1, 1, -1)), (2, (0, -1, 1)), (4, (-1, 1, -1)), (4, (0, -1, 1)), (6, (-1, 1, -1)), (6, (0, -1, 1)), (7, (0, -1, 1))]
+ m=6 pair [(0, -1, 1), (0, 1, -1)]: period 6; min-law seed 5 laws, basin 6
+   seed: [(0, (0, -1, 1)), (0, (0, 1, -1)), (2, (0, 1, -1)), (4, (0, -1, 1)), (5, (0, -1, 1))]
+ m=10 sunset: period 15; min-law seed 6 laws, basin 30
+   seed: [(0, (0, -1, 1)), (2, (0, -1, 1)), (4, (0, -1, 1)), (6, (0, -1, 1)), (8, (0, -1, 1)), (9, (0, -1, 1))]
+
+total 36s

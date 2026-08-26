@@ -1,0 +1,187 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+\title{\bfseries Nomodynamics: The Mathematics of Self-Amending Law\\
+\large A founding note}
+\author{The Treeline Program}
+\date{August 26, 2026}
+
+\begin{document}
+\maketitle
+\vspace{-2em}
+\begin{abstract}
+\noindent Game theory formalized games with fixed rules; Conway's deletion of the
+\emph{players} gave cellular automata and the Game of Life. The orthogonal
+deletion---removing the \emph{fixity of the rules}---was never taken, although
+rules that amend rules are humanity's oldest formal practice. We introduce a
+minimal, parameter-free mathematical object native to that vacancy: a system
+whose only substance is laws acting on laws. Its founding (``own-kind'')
+semantics turns out to be exactly solvable, with short theorems that carry
+immediate institutional readings: fully occupied codes are frozen
+(\emph{gridlock}); stable codes are always fully blocked (\emph{dead letters});
+and on the integer line \emph{the eldest law cannot be repealed}, which makes
+free-moving law-packets impossible---while on circular codes, which have no
+eldest law, moving packets provably exist. The solvable sector exhibits a small
+charismatic fauna (colonizers, sunset clauses, welds, refraction, rotating
+packets, and an aperiodic avalanche machine locked to powers of two), and its
+unique escape hatch---laws amending \emph{other} laws---is located by theorem.
+\end{abstract}
+
+\section{The vacancy}
+Three observations, from a systematic survey of how new mathematical ontologies
+have historically been found, converge on one empty cell.
+(\emph{i})~The deletion grid: von Neumann--Morgenstern formalized $2$-player
+fixed-rule games; puzzles are the $1$-player case; Conway's
+``$0$-player games'' are cellular automata. Along the orthogonal axis---rule
+fixity---no elementary mathematics exists.
+(\emph{ii})~The reduction shadow: computability theory's founding reduction,
+``without loss of generality the program is fixed,'' is valid for
+\emph{what can be computed} (universality lets a fixed machine simulate a
+self-modifying one) but silently discards the \emph{behavioral} questions: what
+do small self-amending systems actually do? Nobody looked, because the
+reduction said one need not.
+(\emph{iii})~The practiced verb: constitutions and statutes---self-amending by
+essence---are the oldest running formal systems, yet ``amend'' was never
+objectified the way Church and Turing objectified ``compute.'' The fragments
+that exist (von~Neumann's rule-carrying constructor cells; Suber's game
+\emph{Nomic}, 1982; self-modifying Petri nets, 1978; algorithmic chemistry)
+never produced a minimal canonical object, a census, or a theorem.
+
+\section{The object}
+\begin{definition}[nomic chain]
+A \emph{law} is a triple $(a,b,c)\in\{-1,0,1\}^3$ placed at a position
+$i\in\mathbb{Z}$. A \emph{code} is a finite set $S$ of placed laws. A placed
+law $(i,(a,b,c))\in S$ is \emph{active} if some law stands at $i+a$ and no law
+stands at $i+b$. Time is synchronous: every active law flips the presence of
+\emph{its own kind} at $i+c$, flips resolving by parity. Nomic \emph{rings}
+are the same system on $\mathbb{Z}/m$; the $d$-dimensional and window-$w$
+versions replace $\{-1,0,1\}$ by offset sets in $\mathbb{Z}^d$.
+\end{definition}
+There is no board and no external rule table: the law is the only substance.
+The system is parameter-free. All claims below were pre-registered as
+predictions or risks before the first simulation, then settled by censuses
+with machine-checked certificates ($\sim$15.3 million certified runs for the
+no-go results; complete enumerations where stated).
+
+\section{First theorems: the solvable sector}
+\begin{theorem}[Gridlock]
+In a fully occupied region every law's vacancy guard fails; a solid code is
+frozen. All dynamics is surface dynamics.
+\end{theorem}
+\begin{lemma}[Single Author]
+The only law that can ever flip kind $k=(a,b,c)$ at position $j$ is the
+kind-$k$ law at $j-c$. Hence parity and idempotent (``OR'') resolution
+coincide identically, in every dimension, and per-kind dynamics is
+occupancy-modulated linear algebra over $\mathbb{F}_2$.
+\end{lemma}
+\begin{theorem}[Dead Letter]
+A code is a fixed point iff every law in it is blocked. In particular
+\emph{balanced constitutions}---codes in perpetual self-cancelling
+activity---do not exist: stability is always gridlock.
+\end{theorem}
+\begin{theorem}[Anchor]
+On $\mathbb{Z}$ (any window, any dimension, any guard predicate, either
+resolution semantics), own-kind toggles of kind $t$ land only at $t$'s own
+offset $c_t$; consequently the extremal law on the trailing side of a finite
+code is never targeted: \emph{the eldest law cannot be repealed}. No finite
+code satisfies $\Phi^p(S)=\sigma^d(S)$ with $d\neq0$: free gliders are
+impossible.
+\end{theorem}
+\begin{corollary}[Ring rotors]
+On $\mathbb{Z}/m$ there is no eldest law, and the obstruction genuinely
+vanishes: the minimal moving law-packet of nomodynamics is three laws of the
+single kind $(0,1,-1)$ at cells $\{1,2,5\}$ of $\mathbb{Z}/6$, hopping $m/2=3$
+cells per step (Fig.~\ref{fig:rotor}); such rotors exist on every even
+$m\ge6$ and on no odd ring ($\le$3-law sweeps complete for $m\le7$).
+\emph{Entrenchment is a theorem of linear order: linear statute books are
+anchored by their oldest provision; circular codes can revolve.}
+\end{corollary}
+\begin{remark}
+The lemma explains the observed clockwork: every exact cycle found across
+$\sim$140{,}000 seeds has period a power of two, and single-kind ring codes
+(the ``Sunset Parliament'') attain exact maximal periods $15$, $63$, $341$ at
+resonant circumferences $m\equiv2\ (\mathrm{mod}\ 4)$---orders of
+$\mathbb{F}_2$-polynomials governing constitutional cycles.
+\end{remark}
+
+\section{Fauna of the solvable sector}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig1_spacetime.pdf}
+\caption{Window-1 nomic chains (time downward). Left: the \emph{colonizer}
+$(0,1,1)$---``while I stand and my right is vacant, enact my kind to the
+right''---only its frontmost copy is ever active. Middle: two traditions
+meet and \emph{weld} into frozen code with a double-law seam. Right: a
+colonizer assimilates a self-eroding \emph{sunset wall} at half speed
+(refraction index $\approx2$), with a transient scar at contact.}
+\label{fig:spacetime}
+\end{figure}
+\begin{figure}[t]
+\centering
+\begin{minipage}{0.30\textwidth}
+\includegraphics[width=\textwidth]{fig2_rotor.pdf}
+\end{minipage}\hfill
+\begin{minipage}{0.66\textwidth}
+\includegraphics[width=\textwidth]{fig3_jubilee.pdf}
+\end{minipage}
+\caption{Left (\ref{fig:rotor}): the minimal ring rotor. Right: the
+\emph{Jubilee Code}, a $\sim$26-law two-dimensional machine, aperiodic through
+300{,}000 fully-hashed steps, quiescent except at $t=2^k$ when the whole code
+ignites and collapses---a binary counter native to law-space, and an
+attractor: $791$ of $60{,}000$ random seeds converge to its family.}
+\label{fig:rotor}
+\end{figure}
+The one-dimensional chain is a calculus of fronts (Fig.~\ref{fig:spacetime}):
+\emph{colonizers} (2 of the 27 kinds) fill the line at speed 1;
+the \emph{sunset clause} $(0,-1,1)$ forever enacts a subordinate its own
+presence then blocks (period 2); \emph{sunset codes} dissolve from their
+newest end; colliding fronts \emph{weld}; porous codes support one-way
+\emph{conversion waves} (speed $2/3$); walls facing a front sort into opaque
+(19/27), pulsing (3/27), and effectively transparent (5/27) classes.
+In two dimensions a \emph{ray-confinement theorem} pins each kind to one axis
+ray (quadrants never fill), and the fauna adds 239 certified half-turn
+\emph{pinwheel rotors}, Pascal-column growers with
+$|S_t| = 2^{\mathrm{popcount}(t)}$, and the Jubilee Code (Fig.~\ref{fig:rotor},
+right). Finite rings admit an exact fixed-point count (transfer matrix,
+brute-force verified), a predecessor algebra with Garden-of-Eden fraction
+peaking $\approx33\%$ at mid-density, and a unique minimal taut architecture
+(the two-law \emph{mutual-veto} pair).
+
+\section{The frontier, located by theorem}
+Everything above holds because laws amend only their own kind---the tame
+simplification. Real law amends \emph{other} law, and by the Single Author
+Lemma, \emph{cross-amendment} (effects that target other kinds) is precisely
+the escape from the solvable sector: multi-author targets break both the
+anchor and the linearity. First probes confirm the door is real: parity and
+OR semantics genuinely diverge there, and diagonal motion---impossible under
+ray confinement---unlocks in 2D. Open problems: (1)~does cross-amendment
+admit free gliders on $\mathbb{Z}$, or does a deeper no-go extend?
+(2)~is any small cross-amendment universe computation-universal?
+(3)~classify ring-rotor families (which $m$, which hop groups);
+(4)~the Jubilee attractor's basin: why do $>1\%$ of random seeds fall in?
+(5)~the reception question the founding practice suggests: which theorems of
+own-kind nomodynamics survive into semantics faithful to actual amendment
+procedures (supersession, entrenchment clauses, quorum guards)?
+
+\vspace{4pt}
+\noindent\textbf{Methods.} Definition and predictions were frozen before the
+first run; censuses carry machine-checked certificates (recurrence,
+translation-recurrence, rotation-recurrence); complete enumerations: 1- and
+2-law seeds ($W{=}1$), $\le$4-law/5-cell patterns (8.1M), ring sweeps
+$m\le12$; the Anchor and Dead Letter theorems have short combinatorial proofs
+checked against 15.3M runs with zero violations. Full records: the Treeline
+program archive, \texttt{phase6/}.
+\end{document}

@@ -1,0 +1,4 @@
+[super_5law_sample] sampled sweep: k=5, 500000 distinct canonical seeds of 526942395 (0.09% of space), rng=20260831
+[super_5law_sample] 200000/500000 tally={'big-growth': 34216, 'fixed': 131630, 'cycle': 33697, 'extinct': 457} 237s
+[super_5law_sample] 400000/500000 tally={'big-growth': 68470, 'fixed': 262979, 'cycle': 67598, 'extinct': 953} 461s
+[super_5law_sample] DONE n=500000 tally={'big-growth': 85615, 'fixed': 328658, 'cycle': 84552, 'extinct': 1175} wall=574.3s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/super_5law_sample.json

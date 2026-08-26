@@ -1,0 +1,382 @@
+{
+ "tally_p": {
+  "fixed": 105,
+  "extinct": 4,
+  "growth": 12,
+  "cycle-2": 4
+ },
+ "tally_o": {
+  "fixed": 105,
+  "extinct": 4,
+  "growth": 12,
+  "cycle-2": 4
+ },
+ "nontrivial": [
+  [
+   5,
+   "OEO",
+   {
+    "v": "extinct",
+    "t": 1,
+    "hw": 0
+   }
+  ],
+  [
+   6,
+   "OEE",
+   {
+    "v": "growth",
+    "t": 1500,
+    "sz": 1501,
+    "hw": 1500
+   }
+  ],
+  [
+   7,
+   "OEW",
+   {
+    "v": "cycle",
+    "t0": 0,
+    "p": 2,
+    "sz": 1
+   }
+  ],
+  [
+   8,
+   "OEN",
+   {
+    "v": "growth",
+    "t": 2047,
+    "sz": 2048,
+    "hw": 2047
+   }
+  ],
+  [
+   9,
+   "OES",
+   {
+    "v": "growth",
+    "t": 2047,
+    "sz": 2048,
+    "hw": 2047
+   }
+  ],
+  [
+   10,
+   "OWO",
+   {
+    "v": "extinct",
+    "t": 1,
+    "hw": 0
+   }
+  ],
+  [
+   11,
+   "OWE",
+   {
+    "v": "cycle",
+    "t0": 0,
+    "p": 2,
+    "sz": 1
+   }
+  ],
+  [
+   12,
+   "OWW",
+   {
+    "v": "growth",
+    "t": 1500,
+    "sz": 1501,
+    "hw": 1500
+   }
+  ],
+  [
+   13,
+   "OWN",
+   {
+    "v": "growth",
+    "t": 2047,
+    "sz": 2048,
+    "hw": 2047
+   }
+  ],
+  [
+   14,
+   "OWS",
+   {
+    "v": "growth",
+    "t": 2047,
+    "sz": 2048,
+    "hw": 2047
+   }
+  ],
+  [
+   15,
+   "ONO",
+   {
+    "v": "extinct",
+    "t": 1,
+    "hw": 0
+   }
+  ],
+  [
+   16,
+   "ONE",
+   {
+    "v": "growth",
+    "t": 2047,
+    "sz": 2048,
+    "hw": 2047
+   }
+  ],
+  [
+   17,
+   "ONW",
+   {
+    "v": "growth",
+    "t": 2047,
+    "sz": 2048,
+    "hw": 2047
+   }
+  ],
+  [
+   18,
+   "ONN",
+   {
+    "v": "growth",
+    "t": 1500,
+    "sz": 1501,
+    "hw": 1500
+   }
+  ],
+  [
+   19,
+   "ONS",
+   {
+    "v": "cycle",
+    "t0": 0,
+    "p": 2,
+    "sz": 1
+   }
+  ],
+  [
+   20,
+   "OSO",
+   {
+    "v": "extinct",
+    "t": 1,
+    "hw": 0
+   }
+  ],
+  [
+   21,
+   "OSE",
+   {
+    "v": "growth",
+    "t": 2047,
+    "sz": 2048,
+    "hw": 2047
+   }
+  ],
+  [
+   22,
+   "OSW",
+   {
+    "v": "growth",
+    "t": 2047,
+    "sz": 2048,
+    "hw": 2047
+   }
+  ],
+  [
+   23,
+   "OSN",
+   {
+    "v": "cycle",
+    "t0": 0,
+    "p": 2,
+    "sz": 1
+   }
+  ],
+  [
+   24,
+   "OSS",
+   {
+    "v": "growth",
+    "t": 1500,
+    "sz": 1501,
+    "hw": 1500
+   }
+  ]
+ ],
+ "growth_info": [
+  {
+   "k": 6,
+   "name": "OEE",
+   "alpha": 0.99,
+   "size300": 301,
+   "maxsize": 301,
+   "minsize_late": 151,
+   "bboxw": 301,
+   "bboxh": 1,
+   "aspect": 301.0,
+   "fill": 1.0,
+   "boundary_ratio": 1.0,
+   "n": 301
+  },
+  {
+   "k": 8,
+   "name": "OEN",
+   "alpha": 0.438,
+   "size300": 16,
+   "maxsize": 256,
+   "minsize_late": 2,
+   "bboxw": 1,
+   "bboxh": 301,
+   "aspect": 301.0,
+   "fill": 0.053,
+   "boundary_ratio": 1.0,
+   "n": 16
+  },
+  {
+   "k": 9,
+   "name": "OES",
+   "alpha": 0.438,
+   "size300": 16,
+   "maxsize": 256,
+   "minsize_late": 2,
+   "bboxw": 1,
+   "bboxh": 301,
+   "aspect": 301.0,
+   "fill": 0.053,
+   "boundary_ratio": 1.0,
+   "n": 16
+  },
+  {
+   "k": 12,
+   "name": "OWW",
+   "alpha": 0.99,
+   "size300": 301,
+   "maxsize": 301,
+   "minsize_late": 151,
+   "bboxw": 301,
+   "bboxh": 1,
+   "aspect": 301.0,
+   "fill": 1.0,
+   "boundary_ratio": 1.0,
+   "n": 301
+  },
+  {
+   "k": 13,
+   "name": "OWN",
+   "alpha": 0.438,
+   "size300": 16,
+   "maxsize": 256,
+   "minsize_late": 2,
+   "bboxw": 1,
+   "bboxh": 301,
+   "aspect": 301.0,
+   "fill": 0.053,
+   "boundary_ratio": 1.0,
+   "n": 16
+  },
+  {
+   "k": 14,
+   "name": "OWS",
+   "alpha": 0.438,
+   "size300": 16,
+   "maxsize": 256,
+   "minsize_late": 2,
+   "bboxw": 1,
+   "bboxh": 301,
+   "aspect": 301.0,
+   "fill": 0.053,
+   "boundary_ratio": 1.0,
+   "n": 16
+  },
+  {
+   "k": 16,
+   "name": "ONE",
+   "alpha": 0.438,
+   "size300": 16,
+   "maxsize": 256,
+   "minsize_late": 2,
+   "bboxw": 301,
+   "bboxh": 1,
+   "aspect": 301.0,
+   "fill": 0.053,
+   "boundary_ratio": 1.0,
+   "n": 16
+  },
+  {
+   "k": 17,
+   "name": "ONW",
+   "alpha": 0.438,
+   "size300": 16,
+   "maxsize": 256,
+   "minsize_late": 2,
+   "bboxw": 301,
+   "bboxh": 1,
+   "aspect": 301.0,
+   "fill": 0.053,
+   "boundary_ratio": 1.0,
+   "n": 16
+  },
+  {
+   "k": 18,
+   "name": "ONN",
+   "alpha": 0.99,
+   "size300": 301,
+   "maxsize": 301,
+   "minsize_late": 151,
+   "bboxw": 1,
+   "bboxh": 301,
+   "aspect": 301.0,
+   "fill": 1.0,
+   "boundary_ratio": 1.0,
+   "n": 301
+  },
+  {
+   "k": 21,
+   "name": "OSE",
+   "alpha": 0.438,
+   "size300": 16,
+   "maxsize": 256,
+   "minsize_late": 2,
+   "bboxw": 301,
+   "bboxh": 1,
+   "aspect": 301.0,
+   "fill": 0.053,
+   "boundary_ratio": 1.0,
+   "n": 16
+  },
+  {
+   "k": 22,
+   "name": "OSW",
+   "alpha": 0.438,
+   "size300": 16,
+   "maxsize": 256,
+   "minsize_late": 2,
+   "bboxw": 301,
+   "bboxh": 1,
+   "aspect": 301.0,
+   "fill": 0.053,
+   "boundary_ratio": 1.0,
+   "n": 16
+  },
+  {
+   "k": 24,
+   "name": "OSS",
+   "alpha": 0.99,
+   "size300": 301,
+   "maxsize": 301,
+   "minsize_late": 151,
+   "bboxw": 1,
+   "bboxh": 301,
+   "aspect": 301.0,
+   "fill": 1.0,
+   "boundary_ratio": 1.0,
+   "n": 301
+  }
+ ]
+}

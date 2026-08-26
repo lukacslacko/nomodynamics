@@ -1,0 +1,58 @@
+validation 1: forward consistency (full universe)
+  OK: every step(x) has >=1 predecessor; examples verified by step()
+validation 2: EXACT cross-check vs brute-forced closed subuniverse
+  OK m=3: solver == full functional-graph in-degree for every state
+  OK m=4: solver == full functional-graph in-degree for every state
+
+== in-degree of the EMPTY BOOK (one-step extinctions + itself) ==
+ m=2: indeg(empty) = 7  closed-form sum 3^|O| (no flanked cell): 7  match=True
+ m=3: indeg(empty) = 37  closed-form sum 3^|O| (no flanked cell): 37  match=True
+ m=4: indeg(empty) = 67  closed-form sum 3^|O| (no flanked cell): 67  match=True
+ m=5: indeg(empty) = 241  closed-form sum 3^|O| (no flanked cell): 241  match=True
+ m=6: indeg(empty) = 775  closed-form sum 3^|O| (no flanked cell): 775  match=True
+ m=7: indeg(empty) = 2101  closed-form sum 3^|O| (no flanked cell): 2101  match=True
+ m=8: indeg(empty) = 6595  closed-form sum 3^|O| (no flanked cell): 6595  match=True
+ m=9: indeg(empty) = 19873  closed-form sum 3^|O| (no flanked cell): 19873  match=True
+ m=10: indeg(empty) = 58567  closed-form sum 3^|O| (no flanked cell): 58567  match=True
+
+== GoE census among ALL sparse codes (exact, full 27-kind universe) ==
+ m=3 n=1: GoE 0/81 = 0.0000   max indeg 32   (0s)
+ m=3 n=2: GoE 624/3240 = 0.1926   max indeg 36   (1s)
+ m=4 n=1: GoE 0/108 = 0.0000   max indeg 65   (0s)
+ m=4 n=2: GoE 448/5778 = 0.0775   max indeg 81   (5s)
+ m=5 n=1: GoE 0/135 = 0.0000   max indeg 197   (0s)
+ m=5 n=2: GoE 520/9045 = 0.0575   max indeg 225   (19s)
+ m=6 n=1: GoE 0/162 = 0.0000   max indeg 680   (1s)
+ m=6 n=2: GoE 600/13041 = 0.0460   max indeg 792   (58s)
+
+== single-law GoE anatomy (m=5): which lone statutes are un-enactable? ==
+  GoE single laws (0): []
+  enactable single laws (27): [((-1, -1, -1), 169), ((-1, -1, 0), 169), ((-1, -1, 1), 169), ((-1, 0, -1), 169), ((-1, 0, 0), 169), ((-1, 0, 1), 169), ((-1, 1, -1), 197), ((-1, 1, 0), 121), ((-1, 1, 1), 121), ((0, -1, -1), 57), ((0, -1, 0), 57), ((0, -1, 1), 133), ((0, 0, -1), 169), ((0, 0, 0), 169), ((0, 0, 1), 169), ((0, 1, -1), 133), ((0, 1, 0), 57), ((0, 1, 1), 57), ((1, -1, -1), 121), ((1, -1, 0), 121), ((1, -1, 1), 197), ((1, 0, -1), 169), ((1, 0, 0), 169), ((1, 0, 1), 169), ((1, 1, -1), 169), ((1, 1, 0), 169), ((1, 1, 1), 169)]
+
+== GoE fraction vs seed density (sampled, exact per state) ==
+ m=4 lam=0.1 : GoE fraction 0.010   max indeg 67
+ m=4 lam=0.3 : GoE fraction 0.052   max indeg 67
+ m=4 lam=0.5 : GoE fraction 0.090   max indeg 67
+ m=4 lam=1.0 : GoE fraction 0.182   max indeg 67
+ m=4 lam=2.0 : GoE fraction 0.177   max indeg 49
+ m=4 lam=4.0 : GoE fraction 0.033   max indeg 16
+ m=6 lam=0.1 : GoE fraction 0.007   max indeg 775
+ m=6 lam=0.3 : GoE fraction 0.062   max indeg 775
+ m=6 lam=0.5 : GoE fraction 0.113   max indeg 775
+ m=6 lam=1.0 : GoE fraction 0.290   max indeg 775
+ m=6 lam=2.0 : GoE fraction 0.260   max indeg 361
+ m=6 lam=4.0 : GoE fraction 0.050   max indeg 16
+ m=8 lam=0.1 : GoE fraction 0.016   max indeg 6595
+ m=8 lam=0.3 : GoE fraction 0.080   max indeg 6595
+ m=8 lam=0.5 : GoE fraction 0.168   max indeg 6595
+ m=8 lam=1.0 : GoE fraction 0.332   max indeg 3976
+ m=8 lam=2.0 : GoE fraction 0.344   max indeg 480
+ m=8 lam=4.0 : GoE fraction 0.052   max indeg 16
+
+== uniform-measure GoE: theory ==
+ GoE states are non-fixed (fixed points are their own predecessor);
+ non-fixed fraction = 1 - F(m)/2^(27m) ~= m * 2^-27  (Task 1, exact).
+ So under the uniform measure the reachable set has full measure:
+ GoE fraction <= m * 7.45e-9.  Irreversibility is a SPARSE-sector affair.
+
+total 123s

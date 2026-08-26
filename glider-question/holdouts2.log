@@ -1,0 +1,3 @@
+[holdouts] w2_le2_duel: 504 -> {'slow-holdout': 504} (27s)
+[holdouts] w2_3law_duel_sample: 14677 -> {'slow-holdout': 14665, 'big-growth': 12} (665s)
+[holdouts] DONE wall=666s

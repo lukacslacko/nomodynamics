@@ -1,0 +1,86 @@
+=== PHASE w1core start Wed Aug 26 01:12:43 CEST 2026 ===
+[w1_le3_duel] complete sweep: sizes (1, 2, 3), canonical seeds = 200133
+[w1_le3_duel] 200133/200133 tally={'cycle': 35594, 'fixed': 137640, 'big-growth': 26762, 'extinct': 137} 105s
+[w1_le3_duel] DONE n=200133 tally={'cycle': 35594, 'fixed': 137640, 'big-growth': 26762, 'extinct': 137} wall=104.9s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/w1_le3_duel.json
+=== PHASE w1core end Wed Aug 26 01:14:28 CEST 2026 ===
+=== PHASE w2core start Wed Aug 26 01:14:28 CEST 2026 ===
+[w2_le2_duel] complete sweep: sizes (1, 2), canonical seeds = 70375
+[w2_le2_duel] DONE n=70375 tally={'fixed': 52096, 'big-growth': 8247, 'extinct': 138, 'cycle': 9390, 'slow-holdout': 504} wall=72.5s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/w2_le2_duel.json
+[w2_3law_duel_sample] sampled sweep: k=3, 1000000 distinct canonical seeds of 19786500 (5.05% of space), rng=20260826
+[w2_3law_duel_sample] 200000/1000000 tally={'fixed': 123348, 'cycle': 44614, 'big-growth': 29027, 'slow-holdout': 2984, 'extinct': 27} 169s
+[w2_3law_duel_sample] 400000/1000000 tally={'fixed': 246392, 'cycle': 89846, 'big-growth': 57746, 'slow-holdout': 5959, 'extinct': 57} 312s
+[w2_3law_duel_sample] 600000/1000000 tally={'fixed': 369324, 'cycle': 134729, 'big-growth': 86966, 'slow-holdout': 8903, 'extinct': 78} 496s
+[w2_3law_duel_sample] 800000/1000000 tally={'fixed': 492655, 'cycle': 179655, 'big-growth': 115835, 'slow-holdout': 11745, 'extinct': 110} 651s
+[w2_3law_duel_sample] 1000000/1000000 tally={'fixed': 615976, 'cycle': 224332, 'big-growth': 144877, 'slow-holdout': 14677, 'extinct': 138} 778s
+[w2_3law_duel_sample] DONE n=1000000 tally={'fixed': 615976, 'cycle': 224332, 'big-growth': 144877, 'slow-holdout': 14677, 'extinct': 138} wall=778.3s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/w2_3law_duel_sample.json
+=== PHASE w2core end Wed Aug 26 01:28:39 CEST 2026 ===
+=== PHASE super start Wed Aug 26 01:28:39 CEST 2026 ===
+[super_le3] complete sweep: sizes (1, 2, 3), canonical seeds = 200133
+[super_le3] 200133/200133 tally={'cycle': 28141, 'fixed': 143062, 'big-growth': 26958, 'extinct': 1972} 127s
+[super_le3] DONE n=200133 tally={'cycle': 28141, 'fixed': 143062, 'big-growth': 26958, 'extinct': 1972} wall=127.1s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/super_le3.json
+[super_4law_sample] sampled sweep: k=4, 500000 distinct canonical seeds of 7873740 (6.35% of space), rng=20260827
+[super_4law_sample] 200000/500000 tally={'fixed': 135972, 'cycle': 30169, 'big-growth': 32725, 'extinct': 1134} 144s
+[super_4law_sample] 400000/500000 tally={'fixed': 272363, 'cycle': 59892, 'big-growth': 65479, 'extinct': 2266} 264s
+[super_4law_sample] DONE n=500000 tally={'fixed': 340468, 'cycle': 74911, 'big-growth': 81814, 'extinct': 2807} wall=379.9s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/super_4law_sample.json
+=== PHASE super end Wed Aug 26 01:37:06 CEST 2026 ===
+=== PHASE verify start Wed Aug 26 01:37:06 CEST 2026 ===
+[verify] W1-parity: 20000 random trajectories x 300 steps, violations=0
+[verify] W1-or: 20000 random trajectories x 300 steps, violations=0
+[verify] W2-parity: 8000 random trajectories x 300 steps, violations=0
+[verify] W2-or: 8000 random trajectories x 300 steps, violations=0
+[verify] DONE wall=362.4s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/verify_anchors.json
+=== PHASE verify end Wed Aug 26 01:43:09 CEST 2026 ===
+=== PHASE w1ext4 start Wed Aug 26 01:43:09 CEST 2026 ===
+[w1_4law_parity] complete sweep: sizes (4,), canonical seeds = 7873740
+[w1_4law_parity] 200000/7873740 tally={'fixed': 146077, 'cycle': 36632, 'big-growth': 17291} 66s
+[w1_4law_parity] 400000/7873740 tally={'fixed': 292305, 'cycle': 68151, 'big-growth': 39544} 135s
+[w1_4law_parity] 600000/7873740 tally={'fixed': 433226, 'cycle': 106047, 'big-growth': 60727} 210s
+[w1_4law_parity] 800000/7873740 tally={'fixed': 581576, 'cycle': 135743, 'big-growth': 82681} 276s
+[w1_4law_parity] 1000000/7873740 tally={'fixed': 723903, 'cycle': 173512, 'big-growth': 102585} 355s
+[w1_4law_parity] 1200000/7873740 tally={'fixed': 862873, 'cycle': 207315, 'big-growth': 129812} 422s
+[w1_4law_parity] 1400000/7873740 tally={'fixed': 1011270, 'cycle': 241773, 'big-growth': 146957} 501s
+[w1_4law_parity] 1600000/7873740 tally={'fixed': 1147666, 'cycle': 279309, 'big-growth': 173025} 572s
+[w1_4law_parity] 1800000/7873740 tally={'fixed': 1299509, 'cycle': 308922, 'big-growth': 191569} 641s
+[w1_4law_parity] 2000000/7873740 tally={'fixed': 1435437, 'cycle': 348644, 'big-growth': 215919} 719s
+[w1_4law_parity] 2200000/7873740 tally={'fixed': 1584880, 'cycle': 378994, 'big-growth': 236126} 799s
+[w1_4law_parity] 2400000/7873740 tally={'fixed': 1725528, 'cycle': 414845, 'big-growth': 259627} 872s
+[w1_4law_parity] 2600000/7873740 tally={'fixed': 1867229, 'cycle': 450380, 'big-growth': 282391} 938s
+[w1_4law_parity] 2800000/7873740 tally={'fixed': 2012386, 'cycle': 482612, 'big-growth': 305002} 993s
+[w1_4law_parity] 3000000/7873740 tally={'fixed': 2152182, 'cycle': 518567, 'big-growth': 329251} 1057s
+[w1_4law_parity] 3200000/7873740 tally={'fixed': 2301322, 'cycle': 549036, 'big-growth': 349642} 1117s
+[w1_4law_parity] 3400000/7873740 tally={'fixed': 2312908, 'cycle': 552364, 'big-growth': 534728} 1638s
+[w1_4law_parity] 3600000/7873740 tally={'fixed': 2347714, 'cycle': 571032, 'big-growth': 681207, 'extinct': 47} 1841s
+[w1_4law_parity] 3800000/7873740 tally={'fixed': 2489754, 'cycle': 603645, 'big-growth': 706456, 'extinct': 145} 1882s
+[w1_4law_parity] 4000000/7873740 tally={'fixed': 2522946, 'cycle': 743025, 'big-growth': 733838, 'extinct': 191} 1924s
+[w1_4law_parity] 4200000/7873740 tally={'fixed': 2557613, 'cycle': 888815, 'big-growth': 753381, 'extinct': 191} 1957s
+[w1_4law_parity] 4400000/7873740 tally={'fixed': 2707712, 'cycle': 917907, 'big-growth': 774190, 'extinct': 191} 1986s
+[w1_4law_parity] 4600000/7873740 tally={'fixed': 2854068, 'cycle': 951898, 'big-growth': 793843, 'extinct': 191} 2014s
+[w1_4law_parity] 4800000/7873740 tally={'fixed': 2999564, 'cycle': 987338, 'big-growth': 812907, 'extinct': 191} 2041s
+[w1_4law_parity] 5000000/7873740 tally={'fixed': 3149872, 'cycle': 1017568, 'big-growth': 832369, 'extinct': 191} 2071s
+[w1_4law_parity] 5200000/7873740 tally={'fixed': 3273049, 'cycle': 1077671, 'big-growth': 849089, 'extinct': 191} 2095s
+[w1_4law_parity] 5400000/7873740 tally={'fixed': 3363431, 'cycle': 1167028, 'big-growth': 869322, 'extinct': 219} 2127s
+[w1_4law_parity] 5600000/7873740 tally={'fixed': 3502227, 'cycle': 1200310, 'big-growth': 897167, 'extinct': 296} 2171s
+[w1_4law_parity] 5800000/7873740 tally={'fixed': 3653914, 'cycle': 1227761, 'big-growth': 918029, 'extinct': 296} 2201s
+[w1_4law_parity] 6000000/7873740 tally={'fixed': 3704132, 'cycle': 1235355, 'big-growth': 1060217, 'extinct': 296} 2439s
+[w1_4law_parity] 6200000/7873740 tally={'fixed': 3833990, 'cycle': 1269077, 'big-growth': 1096581, 'extinct': 352} 2479s
+[w1_4law_parity] 6400000/7873740 tally={'fixed': 3924794, 'cycle': 1349382, 'big-growth': 1125444, 'extinct': 380} 2521s
+[w1_4law_parity] 6600000/7873740 tally={'fixed': 4018201, 'cycle': 1436403, 'big-growth': 1145016, 'extinct': 380} 2544s
+[w1_4law_parity] 6800000/7873740 tally={'fixed': 4169239, 'cycle': 1468263, 'big-growth': 1162118, 'extinct': 380} 2568s
+[w1_4law_parity] 7000000/7873740 tally={'fixed': 4321501, 'cycle': 1499108, 'big-growth': 1179011, 'extinct': 380} 2590s
+[w1_4law_parity] 7200000/7873740 tally={'fixed': 4473216, 'cycle': 1530392, 'big-growth': 1196012, 'extinct': 380} 2612s
+[w1_4law_parity] 7400000/7873740 tally={'fixed': 4626038, 'cycle': 1560362, 'big-growth': 1213220, 'extinct': 380} 2636s
+[w1_4law_parity] 7600000/7873740 tally={'fixed': 4776607, 'cycle': 1592363, 'big-growth': 1230650, 'extinct': 380} 2660s
+[w1_4law_parity] 7800000/7873740 tally={'fixed': 4927128, 'cycle': 1624310, 'big-growth': 1248182, 'extinct': 380} 2683s
+[w1_4law_parity] DONE n=7873740 tally={'fixed': 4980060, 'cycle': 1637795, 'big-growth': 1255505, 'extinct': 380} wall=2692.0s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/w1_4law_parity.json
+=== PHASE w1ext4 end Wed Aug 26 02:28:01 CEST 2026 ===
+=== PHASE hunt56 start Wed Aug 26 02:28:01 CEST 2026 ===
+[hunt_5law_6cells_or] sampled sweep: k=5, 500000 distinct canonical seeds of 526942395 (0.09% of space), rng=20260828
+[hunt_5law_6cells_or] 200000/500000 tally={'fixed': 121696, 'big-growth': 33532, 'cycle': 44769, 'extinct': 3} 56s
+[hunt_5law_6cells_or] 400000/500000 tally={'fixed': 243747, 'big-growth': 66982, 'cycle': 89266, 'extinct': 5} 106s
+[hunt_5law_6cells_or] DONE n=500000 tally={'fixed': 304445, 'big-growth': 83887, 'cycle': 111661, 'extinct': 7} wall=131.8s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/hunt_5law_6cells_or.json
+[hunt_6law_6cells_or] sampled sweep: k=6, 500000 distinct canonical seeds of 15348477249 (0.00% of space), rng=20260829
+[hunt_6law_6cells_or] 200000/500000 tally={'cycle': 45380, 'fixed': 116913, 'big-growth': 37707} 84s
+[hunt_6law_6cells_or] 400000/500000 tally={'cycle': 90716, 'fixed': 234362, 'big-growth': 74921, 'extinct': 1} 140s
+[hunt_6law_6cells_or] DONE n=500000 tally={'cycle': 113339, 'fixed': 293266, 'big-growth': 93394, 'extinct': 1} wall=168.7s -> /Users/lukacs/claude/math/program/phase6/glider-question/data/hunt_6law_6cells_or.json
+=== PHASE hunt56 end Wed Aug 26 02:33:01 CEST 2026 ===
+CAMPAIGN COMPLETE

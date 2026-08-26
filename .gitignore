@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# LaTeX build artefacts (the PDF itself is committed)
+*.aux
+*.out
+*.toc
+note/*.log
+note/latex*.log

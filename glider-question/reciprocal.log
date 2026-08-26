@@ -1,0 +1,20 @@
+OK: diagonal kinds reproduce the own-kind system (400 random states)
+[reciprocal] complete <=2-law/5-cell: 2391849 canonical seeds, duel mode
+[reciprocal] 201000/2391849 {'fixed': 171127, 'cycle': 27240, 'big-growth': 2625, 'extinct': 8} 48s
+[reciprocal] 402000/2391849 {'fixed': 341847, 'cycle': 54874, 'big-growth': 5271, 'extinct': 8} 92s
+[reciprocal] 600000/2391849 {'fixed': 509304, 'cycle': 82766, 'big-growth': 7922, 'extinct': 8} 144s
+[reciprocal] 801000/2391849 {'fixed': 678278, 'cycle': 111895, 'big-growth': 10813, 'extinct': 14} 185s
+[reciprocal] 1002000/2391849 {'fixed': 793726, 'cycle': 183238, 'big-growth': 24944, 'extinct': 92} 417s
+[reciprocal] 1200000/2391849 {'fixed': 860237, 'cycle': 304978, 'big-growth': 34605, 'extinct': 180} 521s
+[reciprocal] 1401000/2391849 {'fixed': 1027664, 'cycle': 336095, 'big-growth': 37061, 'extinct': 180} 571s
+[reciprocal] 1602000/2391849 {'fixed': 1106030, 'cycle': 454662, 'big-growth': 40998, 'extinct': 310} 761s
+[reciprocal] 1800000/2391849 {'fixed': 1254627, 'cycle': 496360, 'big-growth': 48679, 'extinct': 334} 962s
+[reciprocal] 2001000/2391849 {'fixed': 1406152, 'cycle': 540021, 'big-growth': 54467, 'extinct': 360} 1034s
+[reciprocal] 2202000/2391849 {'fixed': 1578234, 'cycle': 565964, 'big-growth': 57442, 'extinct': 360} 1077s
+[reciprocal] le2 DONE 2391849: {'fixed': 1740675, 'cycle': 591246, 'big-growth': 59568, 'extinct': 360} cycles={2: 542248, 4: 48408, 6: 358, 8: 224, 12: 8}
+[reciprocal3] 102000/400000 {'cycle': 34092, 'fixed': 64904, 'big-growth': 3004} 1196s
+[reciprocal3] 201000/400000 {'cycle': 67276, 'fixed': 127709, 'big-growth': 6015} 1263s
+[reciprocal3] 300000/400000 {'cycle': 100341, 'fixed': 190645, 'big-growth': 9014} 1322s
+[reciprocal3] 400000/400000 {'cycle': 133629, 'fixed': 254235, 'big-growth': 12136} 1377s
+[reciprocal] 3law sample DONE 400000/3936383730: {'cycle': 133629, 'fixed': 254235, 'big-growth': 12136}
+[reciprocal] wall 1379s -> data/reciprocal_w1.json

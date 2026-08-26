@@ -1,0 +1,529 @@
+<title>Nomodynamics</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{
+  --paper:#eef0ec; --ink:#232830; --ink-soft:#4c5462; --rule:#c6cbc9;
+  --rule-strong:#9aa3ae; --seal:#96342f; --seal-ink:#ffffff;
+  --plate:#12141a; --plate-edge:#2a2f3a; --chip:#e3e6e0; --chip-on:#96342f;
+  --amber:#e8a33d;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171a20; --ink:#e6e2d6; --ink-soft:#a8a89b; --rule:#333a46;
+    --rule-strong:#4a5260; --seal:#d0685f; --seal-ink:#171a20;
+    --chip:#232833; --chip-on:#d0685f;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171a20; --ink:#e6e2d6; --ink-soft:#a8a89b; --rule:#333a46;
+  --rule-strong:#4a5260; --seal:#d0685f; --seal-ink:#171a20;
+  --chip:#232833; --chip-on:#d0685f;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Libre Caslon Text", Georgia, serif;
+  margin:0; line-height:1.62; font-size:16px;
+}
+.wrap{max-width:880px; margin:0 auto; padding:0 20px 80px}
+header{padding:56px 0 8px; border-bottom:3px double var(--rule-strong)}
+.eyebrow{
+  font-family:"Source Sans 3", system-ui, sans-serif; font-size:12px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft);
+}
+h1{
+  font-size:clamp(42px,7vw,64px); font-weight:700; margin:6px 0 10px;
+  letter-spacing:.01em; text-wrap:balance;
+}
+.epigraph{
+  font-style:italic; font-size:19px; max-width:62ch; margin:8px 0 26px;
+  color:var(--ink);
+}
+.epigraph b{font-style:normal}
+#hero-plate{margin:0 0 -3px}
+section{margin-top:52px}
+h2{
+  font-size:26px; font-weight:700; margin:0 0 4px;
+  text-wrap:balance;
+}
+h2 .art{
+  color:var(--seal); font-size:15px; vertical-align:middle;
+  font-family:"IBM Plex Mono", monospace; margin-right:10px; letter-spacing:.06em;
+}
+.lede{color:var(--ink-soft); max-width:66ch; margin:6px 0 18px}
+p{max-width:66ch}
+.plate{
+  background:var(--plate); border:1px solid var(--plate-edge); border-radius:4px;
+  padding:10px; overflow-x:auto;
+}
+.plate canvas{display:block; width:100%; image-rendering:pixelated; background:#12141a}
+.controls{
+  display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:14px 0 10px;
+  font-family:"Source Sans 3", system-ui, sans-serif;
+}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 4px}
+button{
+  font-family:"Source Sans 3", system-ui, sans-serif; font-size:14px; font-weight:600;
+  background:var(--chip); color:var(--ink); border:1px solid var(--rule-strong);
+  border-radius:3px; padding:6px 14px; cursor:pointer;
+}
+button:hover{border-color:var(--seal)}
+button:focus-visible{outline:2px solid var(--seal); outline-offset:2px}
+button.on{background:var(--chip-on); color:var(--seal-ink); border-color:var(--chip-on)}
+button.ctl{min-width:74px}
+.speed{display:flex; align-items:center; gap:6px; font-size:13px; color:var(--ink-soft)}
+input[type=range]{accent-color:var(--seal)}
+.caption{
+  font-size:14.5px; color:var(--ink-soft); max-width:70ch; margin-top:10px;
+  border-left:2px solid var(--rule-strong); padding-left:12px;
+}
+.caption b{color:var(--ink)}
+.lawline{
+  font-family:"IBM Plex Mono", monospace; font-size:12.5px; color:var(--ink-soft);
+  margin-top:8px; overflow-x:auto; white-space:nowrap;
+}
+.split{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media(max-width:700px){.split{grid-template-columns:1fr}}
+.stat{
+  font-family:"IBM Plex Mono", monospace; font-variant-numeric:tabular-nums;
+  font-size:13px; color:var(--ink-soft);
+}
+.stat b{color:var(--ink); font-weight:500}
+article.thm{
+  border-top:1px solid var(--rule); padding:16px 0 4px; margin-top:8px;
+}
+article.thm h3{
+  font-size:17px; margin:0 0 6px; font-weight:700;
+}
+article.thm h3 .tag{
+  font-family:"IBM Plex Mono", monospace; font-size:12px; color:var(--seal);
+  letter-spacing:.06em; margin-right:8px;
+}
+article.thm p{margin:4px 0; font-size:15.5px}
+article.thm .read{font-style:italic; color:var(--ink-soft); font-size:14.5px}
+footer{
+  margin-top:64px; border-top:3px double var(--rule-strong); padding-top:18px;
+  font-size:13.5px; color:var(--ink-soft); font-family:"Source Sans 3", system-ui, sans-serif;
+}
+footer p{max-width:76ch}
+.smallrule{border:none; border-top:1px solid var(--rule); margin:26px 0}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">A new mathematical territory &middot; founded 26 August 2026</div>
+  <h1>Nomodynamics</h1>
+  <p class="epigraph">&ldquo;A law is a triple of neighbor-offsets placed on the line;
+  <b>while some law stands at its first offset and none at its second, it flips the
+  presence of its own kind at its third.</b> All standing laws act at once.&rdquo;
+  &mdash; there is no board and no rulebook: the law is the only substance.</p>
+</header>
+<div class="plate" id="hero-plate"><canvas id="hero" width="880" height="120" aria-label="A continuously running nomic chain painting its spacetime history"></canvas></div>
+<div class="stat" style="margin-top:8px">the masthead is live: two legal traditions colonize toward each other, weld, and are re-seeded &mdash; time flows downward</div>
+
+<section id="line">
+  <h2><span class="art">&sect;1</span>The Statute Line</h2>
+  <p class="lede">Six verified specimens of the one-dimensional system. Pick one;
+  time paints downward, one row per step. Brighter cells hold more than one law.</p>
+  <div class="chips" id="chips1" role="group" aria-label="Specimen presets"></div>
+  <div class="controls">
+    <button class="ctl" id="play1">Pause</button>
+    <button class="ctl" id="step1">Step</button>
+    <button class="ctl" id="reset1">Reset</button>
+    <span class="speed">slow <input type="range" id="speed1" min="1" max="12" value="4" aria-label="Simulation speed"> fast</span>
+    <span class="stat" id="stat1"></span>
+  </div>
+  <div class="plate"><canvas id="cv1" width="880" height="320" aria-label="Spacetime diagram of the selected specimen"></canvas></div>
+  <div class="lawline" id="laws1"></div>
+  <div class="caption" id="cap1"></div>
+</section>
+
+<section id="ring">
+  <h2><span class="art">&sect;2</span>The Ring</h2>
+  <p class="lede">On the infinite line, the Anchor Theorem holds: the eldest law can
+  never be repealed, so no law-packet can travel. A circular code has no eldest law
+  &mdash; and it revolves.</p>
+  <div class="chips" id="chips2" role="group" aria-label="Ring presets"></div>
+  <div class="controls">
+    <button class="ctl" id="play2">Pause</button>
+    <button class="ctl" id="step2">Step</button>
+    <button class="ctl" id="reset2">Reset</button>
+    <span class="stat" id="stat2"></span>
+  </div>
+  <div class="split">
+    <div class="plate"><canvas id="cv2" width="420" height="420" aria-label="The ring, drawn as a ring; occupied cells are lit"></canvas></div>
+    <div>
+      <div class="caption" id="cap2"></div>
+      <div class="lawline" id="laws2" style="white-space:normal"></div>
+    </div>
+  </div>
+</section>
+
+<section id="jubilee">
+  <h2><span class="art">&sect;3</span>The Jubilee Code</h2>
+  <p class="lede">A two-dimensional code of three law-kinds and about two dozen
+  provisions in force at any moment &mdash; aperiodic through 300,000 certified steps.
+  It sits quiescent, and at every power-of-two anniversary the entire code ignites
+  in an avalanche of amendment and collapses back to a handful of laws.</p>
+  <div class="controls">
+    <button class="ctl" id="play3">Pause</button>
+    <button class="ctl" id="fast3">Fast&nbsp;&times;32</button>
+    <button class="ctl" id="reset3">Reset</button>
+    <span class="stat" id="stat3"></span>
+  </div>
+  <div class="split">
+    <div class="plate"><canvas id="cv3" width="420" height="420" aria-label="The Jubilee Code, live"></canvas></div>
+    <div class="plate"><canvas id="cv3b" width="420" height="420" aria-label="Laws in force over time; gridlines at powers of two"></canvas></div>
+  </div>
+  <div class="caption">Left: laws in force (color by kind; white where kinds stack).
+  Right: <b>laws in force vs. time</b>, log-time; faint verticals at t&nbsp;=&nbsp;2<sup>k</sup>.
+  The seed is three laws; 791 of 60,000 random codes fall into this same attractor.</div>
+</section>
+
+<section id="theorems">
+  <h2><span class="art">&sect;4</span>Four theorems from day one</h2>
+  <article class="thm">
+    <h3><span class="tag">THM&nbsp;1</span>Gridlock</h3>
+    <p>In a fully occupied region, every law&rsquo;s vacancy guard fails: solid code is frozen.</p>
+    <p class="read">All dynamics is surface dynamics. Total law is total stasis.</p>
+  </article>
+  <article class="thm">
+    <h3><span class="tag">THM&nbsp;2</span>Dead Letter</h3>
+    <p>A code is stable if and only if every one of its laws is blocked. Codes in
+    perpetual self-cancelling activity do not exist.</p>
+    <p class="read">Stability is always gridlock; there are no living monuments.</p>
+  </article>
+  <article class="thm">
+    <h3><span class="tag">LEM&nbsp;3</span>Single Author</h3>
+    <p>The only law that can ever flip kind (a,b,c) at position j is the law of that
+    same kind at j&minus;c. Every provision has exactly one potential author, so all
+    resolution semantics coincide and each kind evolves linearly over F&#8322;.</p>
+    <p class="read">This is why every observed cycle has period a power of two.</p>
+  </article>
+  <article class="thm">
+    <h3><span class="tag">THM&nbsp;4</span>Anchor</h3>
+    <p>On the integer line the extremal law on the trailing side is never targeted:
+    <b>the eldest law cannot be repealed</b>. Hence no finite code can translate
+    &mdash; free-moving law-packets are impossible in every window, dimension, and
+    semantics of the own-kind family. On rings, which have no eldest law, movers
+    exist (&sect;2).</p>
+    <p class="read">Entrenchment is a theorem of linear order. Circular codes revolve.</p>
+  </article>
+</section>
+
+<footer>
+  <p><b>Where this came from.</b> The territory was located by a research program on
+  how mathematics finds new territory: game theory formalized fixed-rule games and
+  Conway deleted the players (the Game of Life); the orthogonal deletion &mdash;
+  the fixity of the rules &mdash; was never taken, though rules amending rules are
+  humanity&rsquo;s oldest formal practice. The definition and its predictions were
+  frozen before the first simulation; every specimen above is machine-certified,
+  and the no-go theorems were checked against 15.3 million certified runs. The
+  door out of this solvable sector is <i>cross-amendment</i> &mdash; laws that amend
+  other kinds &mdash; where the linearity provably breaks. That territory is open.</p>
+  <p>The Treeline program &middot; founding note &amp; full archive: <span class="stat">phase6/</span> &middot; August 2026</p>
+</footer>
+</div>
+
+<script>
+"use strict";
+/* ---------- shared 1D engine: cell = 27-bit mask over kinds (a,b,c) in {-1,0,1}^3 ---------- */
+const OFF=[-1,0,1];
+const KINDS=[]; for(const a of OFF)for(const b of OFF)for(const c of OFF)KINDS.push([a,b,c]);
+const KIDX=(a,b,c)=>(a+1)*9+(b+1)*3+(c+1);
+function stepChain(S){ // S: Map pos->mask
+  const tog=new Map();
+  for(const [i,mask] of S){
+    let m=mask;
+    while(m){
+      const k=31-Math.clz32(m&-m); m&=m-1;
+      const [a,b,c]=KINDS[k];
+      if(S.has(i+a)&&!S.has(i+b)){
+        const t=i+c; tog.set(t,(tog.get(t)||0)^(1<<k));
+      }
+    }
+  }
+  for(const [i,x] of tog){
+    const nm=(S.get(i)||0)^x;
+    if(nm)S.set(i,nm); else S.delete(i);
+  }
+  return S;
+}
+const popc=v=>{let n=0;while(v){v&=v-1;n++}return n};
+/* heat ramp for law-count */
+const RAMP=["#12141a","#e8a33d","#f6e3ae","#ffffff"];
+const cellColor=n=>RAMP[Math.min(n,3)];
+
+const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- generic scrolling spacetime widget ---------- */
+function chainWidget(canvas, cw){
+  const ctx=canvas.getContext("2d");
+  const W=canvas.width/cw|0, H=canvas.height/cw|0;
+  let S=new Map(), row=0, t=0;
+  function drawRow(){
+    if(row>=H){ // scroll up one row
+      ctx.drawImage(canvas,0,cw,canvas.width,canvas.height-cw,0,0,canvas.width,canvas.height-cw);
+      ctx.fillStyle="#12141a"; ctx.fillRect(0,canvas.height-cw,canvas.width,cw);
+      row=H-1;
+    }
+    const y=row*cw, half=W>>1;
+    ctx.fillStyle="#12141a"; ctx.fillRect(0,y,canvas.width,cw);
+    for(const [i,mask] of S){
+      const x=i+half;
+      if(x>=0&&x<W){ ctx.fillStyle=cellColor(popc(mask)); ctx.fillRect(x*cw,y,cw,cw); }
+    }
+    row++;
+  }
+  function clear(){ ctx.fillStyle="#12141a"; ctx.fillRect(0,0,canvas.width,canvas.height); row=0; t=0; }
+  return {
+    ctx,W,H,
+    get t(){return t}, get S(){return S},
+    seed(fn){ S=new Map(); fn(S); clear(); drawRow(); },
+    tick(){ stepChain(S); t++; drawRow(); },
+  };
+}
+const put=(S,i,a,b,c)=>S.set(i,(S.get(i)||0)|(1<<KIDX(a,b,c)));
+
+/* ---------- masthead ---------- */
+const hero=chainWidget(document.getElementById("hero"),4);
+function heroSeed(S){
+  const g=6+((Math.random()*26)|0);
+  for(let i=-g-40;i<=-g-33;i++)put(S,i,0,1,1);
+  for(let i=g+33;i<=g+40;i++)put(S,i,0,-1,-1);
+}
+hero.seed(heroSeed);
+let heroCount=0;
+function heroLoop(){
+  hero.tick(); heroCount++;
+  if(heroCount>170){ heroCount=0; hero.seed(heroSeed); }
+}
+
+/* ---------- §1 sandbox ---------- */
+const sb=chainWidget(document.getElementById("cv1"),4);
+const PRESETS=[
+ {name:"Colonizer", laws:"(0,1,1) at 0",
+  cap:"<b>One law populates the line.</b> &ldquo;While I stand and my right is vacant, enact my kind to the right.&rdquo; Only the frontmost copy is ever active; the wake it leaves is inert &mdash; a solid, finished code.",
+  seed:S=>put(S,0,0,1,1)},
+ {name:"Sunset Clause", laws:"(0,−1,1) at 0",
+  cap:"<b>A law that forever enacts a subordinate its own presence then blocks.</b> The pair repeals and re-enacts with period 2 &mdash; the smallest living legislation.",
+  seed:S=>put(S,0,0,-1,1)},
+ {name:"Sunset Code", laws:"(−1,1,0) at −7..7",
+  cap:"<b>A statute block that dissolves from its newest end.</b> The edge law, seeing vacancy ahead, perpetually repeals itself &mdash; the code sunsets at one cell per step, no outside force required.",
+  seed:S=>{for(let i=-7;i<=7;i++)put(S,i,-1,1,0)}},
+ {name:"The Weld", laws:"(0,1,1) at −44..−37 &middot; (0,−1,−1) at 37..44",
+  cap:"<b>Two legal traditions colonize toward each other and meet.</b> The interface freezes with a double-law seam &mdash; both kinds standing on the border cell &mdash; and all activity dies. Contact is gridlock.",
+  seed:S=>{for(let i=-44;i<=-37;i++)put(S,i,0,1,1); for(let i=37;i<=44;i++)put(S,i,0,-1,-1)}},
+ {name:"Refraction", laws:"(0,1,1) at −48..−41 &middot; wall (−1,1,0) at −30..40",
+  cap:"<b>A front assimilates a sunset wall at half speed.</b> In vacuum the colonizer advances at speed 1; inside the wall it converts the code to its own kind at speed &frac12; &mdash; refraction index 2 &mdash; with a brief scar where they first touch.",
+  seed:S=>{for(let i=-48;i<=-41;i++)put(S,i,0,1,1); for(let i=-30;i<=40;i++)put(S,i,-1,1,0)}},
+ {name:"Conversion Wave", laws:"lattice (−1,1,0) even cells &middot; probe (0,1,1) at 0",
+  cap:"<b>A porous code, one planted provision, a one-way wave.</b> The probe converts the open lattice into solid gridlock behind an advancing front, anchored forever at the cell where it was planted.",
+  seed:S=>{for(let i=-104;i<=104;i+=2)put(S,i,-1,1,0); put(S,0,0,1,1)}},
+];
+let sbRunning=!reduceMotion, sbPreset=0;
+const chips1=document.getElementById("chips1");
+PRESETS.forEach((p,ix)=>{
+  const b=document.createElement("button"); b.textContent=p.name;
+  b.addEventListener("click",()=>selectPreset(ix));
+  chips1.appendChild(b);
+});
+function selectPreset(ix){
+  sbPreset=ix;
+  [...chips1.children].forEach((b,i)=>b.classList.toggle("on",i===ix));
+  sb.seed(PRESETS[ix].seed);
+  document.getElementById("cap1").innerHTML=PRESETS[ix].cap;
+  document.getElementById("laws1").textContent="seed: "+PRESETS[ix].laws;
+}
+selectPreset(0);
+const play1=document.getElementById("play1");
+play1.textContent=sbRunning?"Pause":"Play";
+play1.addEventListener("click",()=>{sbRunning=!sbRunning; play1.textContent=sbRunning?"Pause":"Play";});
+document.getElementById("step1").addEventListener("click",()=>{sb.tick(); stat1();});
+document.getElementById("reset1").addEventListener("click",()=>selectPreset(sbPreset));
+function stat1(){
+  let n=0; for(const [,m] of sb.S)n+=popc(m);
+  document.getElementById("stat1").textContent="t = "+sb.t+"   laws in force = "+n;
+}
+
+/* ---------- §2 ring ---------- */
+const cv2=document.getElementById("cv2"), ctx2=cv2.getContext("2d");
+let ringM=6, ringS=new Set(), ringKind=[0,1,-1], ringT=0, ringAngle0=0;
+const RINGS=[
+ {name:"Ring Rotor ℤ/6", m:6, kind:[0,1,-1], cells:[1,2,5],
+  cap:"<b>The smallest moving law-packet in nomodynamics.</b> Three laws of the kind (0,1,−1) &mdash; &ldquo;while I stand and my right is vacant, repeal my left&rdquo; &mdash; hop three cells per step, forever. It exists precisely because a circle has no eldest law for the Anchor Theorem to hold on to.",
+  laws:"kind (0,1,−1) at cells {1,2,5} of ℤ/6 &mdash; hops m/2 = 3 per step"},
+ {name:"Sunset Parliament ℤ/10", m:10, kind:[0,1,-1], cells:[1,3,5,6,7,8,9],
+  cap:"<b>A constitutional cycle of period 15.</b> Seven laws of one kind on a ten-seat ring; the code returns to itself only after 15 steps &mdash; the periods of these parliaments (15, 63, 341&hellip; at resonant sizes) are orders of polynomials over F₂: number theory governing the legislative calendar.",
+  laws:"kind (0,1,−1) at cells {1,3,5,6,7,8,9} of ℤ/10 &mdash; period 15"},
+];
+function stepRing(){
+  const occ=ringS, m=ringM, [a,b,c]=ringKind, tog=new Map();
+  for(const i of occ){
+    if(occ.has(((i+a)%m+m)%m)&&!occ.has(((i+b)%m+m)%m)){
+      const t=((i+c)%m+m)%m; tog.set(t,!tog.get(t));
+    }
+  }
+  for(const [i,v] of tog){ if(v){ if(occ.has(i))occ.delete(i); else occ.add(i);} }
+  ringT++;
+}
+function drawRing(){
+  ctx2.fillStyle="#12141a"; ctx2.fillRect(0,0,cv2.width,cv2.height);
+  const cx=cv2.width/2, cy=cv2.height/2, R=150, r=92, m=ringM;
+  for(let i=0;i<m;i++){
+    const a0=ringAngle0+i*2*Math.PI/m, a1=a0+2*Math.PI/m;
+    ctx2.beginPath();
+    ctx2.arc(cx,cy,R,a0+0.02,a1-0.02);
+    ctx2.arc(cx,cy,r,a1-0.02,a0+0.02,true);
+    ctx2.closePath();
+    ctx2.fillStyle=ringS.has(i)?"#e8a33d":"#1d212b";
+    ctx2.fill();
+    ctx2.strokeStyle="#2a2f3a"; ctx2.stroke();
+    const am=(a0+a1)/2;
+    ctx2.fillStyle="#5d6675"; ctx2.font="12px 'IBM Plex Mono', monospace";
+    ctx2.textAlign="center"; ctx2.textBaseline="middle";
+    ctx2.fillText(String(i), cx+Math.cos(am)*(R+18), cy+Math.sin(am)*(R+18));
+  }
+  ctx2.fillStyle="#3c4350"; ctx2.font="13px 'IBM Plex Mono', monospace";
+  ctx2.fillText("t = "+ringT, cx, cy);
+}
+let ringPreset=0, ringRunning=!reduceMotion, ringAcc=0;
+const chips2=document.getElementById("chips2");
+RINGS.forEach((p,ix)=>{
+  const b=document.createElement("button"); b.textContent=p.name;
+  b.addEventListener("click",()=>selectRing(ix));
+  chips2.appendChild(b);
+});
+function selectRing(ix){
+  ringPreset=ix;
+  [...chips2.children].forEach((b,i)=>b.classList.toggle("on",i===ix));
+  const p=RINGS[ix];
+  ringM=p.m; ringKind=p.kind; ringS=new Set(p.cells); ringT=0;
+  ringAngle0=-Math.PI/2;
+  document.getElementById("cap2").innerHTML=p.cap;
+  document.getElementById("laws2").innerHTML=p.laws;
+  drawRing(); stat2();
+}
+function stat2(){ document.getElementById("stat2").textContent="t = "+ringT+"   laws = "+ringS.size; }
+selectRing(0);
+const play2=document.getElementById("play2");
+play2.textContent=ringRunning?"Pause":"Play";
+play2.addEventListener("click",()=>{ringRunning=!ringRunning; play2.textContent=ringRunning?"Pause":"Play";});
+document.getElementById("step2").addEventListener("click",()=>{stepRing(); drawRing(); stat2();});
+document.getElementById("reset2").addEventListener("click",()=>selectRing(ringPreset));
+
+/* ---------- §3 Jubilee ---------- */
+const cv3=document.getElementById("cv3"), ctx3=cv3.getContext("2d");
+const cv3b=document.getElementById("cv3b"), ctx3b=cv3b.getContext("2d");
+/* 2D own-kind engine, 3 kinds; compass E=(1,0) W=(-1,0) N=(0,-1) S=(0,1) */
+const JT=[[[1,0],[0,1],[0,-1]],  /* ESN */
+          [[0,1],[0,-1],[0,1]],  /* SNS */
+          [[-1,0],[0,-1],[1,0]]];/* WNE */
+const JCOL=["#e8a33d","#d0685f","#7fb7d9"];
+let jS,jT,jSizes,jRunning=!reduceMotion,jFast=false;
+const jkey=(x,y)=>x+","+y;
+function jReset(){
+  jS=new Map(); jT=0; jSizes=[];
+  jAdd(-1,0,0); jAdd(-1,1,1); jAdd(0,1,2);
+  drawJ(); drawChart(); stat3();
+}
+function jAdd(x,y,k){ const K=jkey(x,y); jS.set(K,(jS.get(K)||0)|(1<<k)); }
+function jStep(){
+  const occ=jS, tog=new Map();
+  for(const [K,mask] of occ){
+    const [x,y]=K.split(",").map(Number);
+    for(let k=0;k<3;k++){
+      if(!(mask>>k&1))continue;
+      const [A,B,C]=JT[k];
+      if(occ.has(jkey(x+A[0],y+A[1]))&&!occ.has(jkey(x+B[0],y+B[1]))){
+        const TK=jkey(x+C[0],y+C[1])+"|"+k;
+        tog.set(TK,(tog.get(TK)||0)^1);
+      }
+    }
+  }
+  for(const [TK,v] of tog){
+    if(!v)continue;
+    const [K,ks]=TK.split("|"); const k=+ks;
+    const nm=(jS.get(K)||0)^(1<<k);
+    if(nm)jS.set(K,nm); else jS.delete(K);
+  }
+  jT++;
+  let n=0; for(const [,m] of jS)n+=popc(m);
+  jSizes.push(n);
+}
+function drawJ(){
+  ctx3.fillStyle="#12141a"; ctx3.fillRect(0,0,cv3.width,cv3.height);
+  let reach=8;
+  for(const K of jS.keys()){
+    const [x,y]=K.split(",").map(Number);
+    reach=Math.max(reach,Math.abs(x),Math.abs(y));
+  }
+  const cw=Math.max(1,Math.min(9,Math.floor(cv3.width/(2*reach+6))));
+  const cx=cv3.width/2, cy=cv3.height/2;
+  for(const [K,mask] of jS){
+    const [x,y]=K.split(",").map(Number);
+    const n=popc(mask);
+    ctx3.fillStyle = n>1 ? "#ffffff" : JCOL[31-Math.clz32(mask)];
+    ctx3.fillRect(cx+x*cw, cy+y*cw, Math.max(cw-1,1), Math.max(cw-1,1));
+  }
+}
+function drawChart(){
+  ctx3b.fillStyle="#12141a"; ctx3b.fillRect(0,0,cv3b.width,cv3b.height);
+  const W=cv3b.width,H=cv3b.height,pad=28;
+  const T=Math.max(jSizes.length,16), maxS=Math.max(40,...jSizes);
+  const X=t=>pad+(Math.log2(t+1)/Math.log2(T+1))*(W-pad-8);
+  const Y=s=>H-18-(s/maxS)*(H-40);
+  ctx3b.strokeStyle="#242a35";
+  for(let k=2;(1<<k)<=T;k++){
+    const x=X(1<<k);
+    ctx3b.beginPath(); ctx3b.moveTo(x,12); ctx3b.lineTo(x,H-18); ctx3b.stroke();
+    ctx3b.fillStyle="#4a5260"; ctx3b.font="10px 'IBM Plex Mono', monospace";
+    ctx3b.textAlign="center"; ctx3b.fillText("2^"+k,x,H-6);
+  }
+  ctx3b.strokeStyle="#e8a33d"; ctx3b.lineWidth=1.2; ctx3b.beginPath();
+  for(let t=0;t<jSizes.length;t++){
+    const x=X(t+1), y=Y(jSizes[t]);
+    if(t===0)ctx3b.moveTo(x,y); else ctx3b.lineTo(x,y);
+  }
+  ctx3b.stroke(); ctx3b.lineWidth=1;
+  ctx3b.fillStyle="#8891a0"; ctx3b.font="11px 'IBM Plex Mono', monospace";
+  ctx3b.textAlign="left"; ctx3b.fillText("laws in force: "+(jSizes[jSizes.length-1]||3),pad,14);
+}
+function stat3(){
+  let n=0; for(const [,m] of jS)n+=popc(m);
+  document.getElementById("stat3").textContent="t = "+jT+"   laws in force = "+n;
+}
+jReset();
+const play3=document.getElementById("play3");
+play3.textContent=jRunning?"Pause":"Play";
+play3.addEventListener("click",()=>{jRunning=!jRunning; play3.textContent=jRunning?"Pause":"Play";});
+const fast3=document.getElementById("fast3");
+fast3.addEventListener("click",()=>{jFast=!jFast; fast3.classList.toggle("on",jFast);});
+document.getElementById("reset3").addEventListener("click",jReset);
+
+/* ---------- main loop ---------- */
+let frame=0;
+function loop(){
+  frame++;
+  if(!reduceMotion&&frame%3===0)heroLoop();
+  if(sbRunning){
+    const sp=+document.getElementById("speed1").value;
+    const per=sp<=4?[8,6,4,2][sp-1]||2:1, reps=sp>4?sp-4:1;
+    if(frame%Math.max(per,1)===0){ for(let r=0;r<reps;r++)sb.tick(); }
+    stat1();
+  }
+  if(ringRunning){ ringAcc++; if(ringAcc>=30){ringAcc=0; stepRing(); drawRing(); stat2();} }
+  if(jRunning){
+    const reps=jFast?32:2;
+    for(let r=0;r<reps;r++)jStep();
+    drawJ(); if(frame%4===0)drawChart(); stat3();
+  }
+  requestAnimationFrame(loop);
+}
+if(reduceMotion){
+  /* draw a filled static band for the hero instead of animating */
+  for(let i=0;i<120;i++)hero.tick();
+  drawRing(); drawJ(); drawChart();
+}
+requestAnimationFrame(loop);
+</script>

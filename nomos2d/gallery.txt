@@ -1,0 +1,169 @@
+==========================================================================
+SPECIMEN 1: THE JUBILEE CODE (bounded-size aperiodic creeper; universal holdout attractor)
+  seed: (-1,0)ESN  (-1,1)SNS  (0,1)WNE   [3 laws; equivalent machines arise from hundreds of 2-4 law seeds]
+  certificate: no recurrence in 300,000 fully-hashed steps; quiescent size ~26, max 771; frontier = 3*2^m after avalanche epochs t = 2^k  (hw ~ 1.5*sqrt(t))
+--------------------------------------------------------------------------
+anatomy (A=ESN anchor, B=WNE chain, C=SNS pump), t=48:
+...............
+.CB.....B....B.
+.A.............
+...............
+[x -2..12, y -1..2]
+
+the avalanche clock: last frontier advances in a 300k-step run:
+  ... 130961..131072 (dense burst to hw=767), then silence, then a single
+  advance at t = 262144 = 2^18 exactly (hw -> 768).  Size during t=131020..131080:
+  161 194 193 258 129 162 161 194 161 194 193 258 161 226 225 290 225 290 289 418 129 194 193 258 193 258 257 386 193 258 257 322 257 322 321 450 193 258 257 322 257 322 321 450 257 386 385 514 385 514 513 770 4 6 5 7 5 7 6 9
+  (a carry avalanche sweeps the whole 767-cell extent and collapses)
+==========================================================================
+SPECIMEN 2: THE APPELLATE COLUMN (perpendicular colonizer, single law OEN)
+  seed: (0,0)OEN  -- a=self, b=East, c=North: growth direction ORTHOGONAL to guard; impossible in 1D
+  certificate: exact law size(t) = 2^popcount(t); support = Pascal-mod-2 column, height t; unbounded, never extinct (origin persists), size dips to 2 at t = 2^k
+--------------------------------------------------------------------------
+spacetime of the column (x=0 line shown horizontally, t downward 0..31):
+  t= 0 |#...............................| size 1
+  t= 1 |##..............................| size 2
+  t= 2 |#.#.............................| size 2
+  t= 3 |####............................| size 4
+  t= 4 |#...#...........................| size 2
+  t= 5 |##..##..........................| size 4
+  t= 6 |#.#.#.#.........................| size 4
+  t= 7 |########........................| size 8
+  t= 8 |#.......#.......................| size 2
+  t= 9 |##......##......................| size 4
+  t=10 |#.#.....#.#.....................| size 4
+  t=11 |####....####....................| size 8
+  t=12 |#...#...#...#...................| size 4
+  t=13 |##..##..##..##..................| size 8
+  t=14 |#.#.#.#.#.#.#.#.................| size 8
+  t=15 |################................| size 16
+  t=16 |#...............#...............| size 2
+  t=17 |##..............##..............| size 4
+  t=18 |#.#.............#.#.............| size 4
+  t=19 |####............####............| size 8
+  t=20 |#...#...........#...#...........| size 4
+  t=21 |##..##..........##..##..........| size 8
+  t=22 |#.#.#.#.........#.#.#.#.........| size 8
+  t=23 |########........########........| size 16
+  t=24 |#.......#.......#.......#.......| size 4
+  t=25 |##......##......##......##......| size 8
+  t=26 |#.#.....#.#.....#.#.....#.#.....| size 8
+  t=27 |####....####....####....####....| size 16
+  t=28 |#...#...#...#...#...#...#...#...| size 8
+  t=29 |##..##..##..##..##..##..##..##..| size 16
+  t=30 |#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.| size 16
+  t=31 |################################| size 32
+  (Sierpinski triangle: the column IS Pascal's triangle mod 2)
+==========================================================================
+SPECIMEN 3: THE PINWHEEL ORDINANCE (half-turn rotor: state maps to its own 180-deg rotation each step)
+  seed: (0,-1)NEW  (1,-1)NEW  (1,0)SWE   [NEW and SWE are a 180-degree type pair]
+  certificate: VERIFIED: S_1 == rot180(S_0) + (2,-1); hence period 2 overall.  engine check: True
+--------------------------------------------------------------------------
+ t=0  (A=NEW, B=SWE)
+   ....
+   ..B.
+   .AA.
+   ....
+   [x -1..2, y -2..1]
+ t=1  (A=NEW, B=SWE)
+   ....
+   .BB.
+   .A..
+   ....
+   [x 0..3, y -2..1]
+ t=2  (A=NEW, B=SWE)
+   ....
+   ..B.
+   .AA.
+   ....
+   [x -1..2, y -2..1]
+ t=3  (A=NEW, B=SWE)
+   ....
+   .BB.
+   .A..
+   ....
+   [x 0..3, y -2..1]
+ THEOREM: quarter-turn pinwheels need >= 4 rotation-closed types; none found
+ in 48,000 C4-closed seeds.  Half-turn rotors, by contrast, are a family:
+ a targeted {k,k,R2k} hunt (hunt_rot3.py) finds 238 / 30,000 (0.8%), all
+ 3-law period-1-mod-rot180 flip-flops, across many type pairs
+ (OEW/OWE, NSN/SNS, EWE/WEW, ONS/OSN, ESN/WNS, ...).
+==========================================================================
+SPECIMEN 4: THE RIGHT-OF-WAY DOCTRINE (crossing rays: priority by arrival time)
+  seed: OEE ray from (0,0) + ONN column from (6,-6) (tie)  vs  from (6,-3) (column first)
+  certificate: deterministic crossing law: tie -> mutual transparency (both fronts pass through the shared cell); prior occupancy -> permanent weld; a blinking Pascal-trail gate delays a crossing ray 0..3 steps depending on phase
+--------------------------------------------------------------------------
+ tie (seeded equidistant), t=12 -- the ray sails through the crossing:
+   ...............
+   .......B.......
+   .......B.......
+   .......B.......
+   .......B.......
+   .......B.......
+   .......B.......
+   .AAAAAA&AAAAAA.
+   .......B.......
+   .......B.......
+   .......B.......
+   .......B.......
+   .......B.......
+   .......B.......
+   ...............
+   [x -1..13, y -7..7]
+ column arrives first, t=12 -- the ray welds at x=5 forever:
+   .........
+   .......B.
+   .......B.
+   .......B.
+   .......B.
+   .......B.
+   .......B.
+   .......B.
+   .......B.
+   .......B.
+   .AAAAAAB.
+   .......B.
+   .......B.
+   .......B.
+   .........
+   [x -1..7, y -4..10]
+==========================================================================
+SPECIMEN 5: THE TWO-CHAMBER AMENDMENT (cross-amendment: parity and OR finally split; the plane opens diagonally)
+  seed: universe A=OSS->A, B=OES->A, both at (-1,0)  |  and relay A=ONE->B, B=OEN->A seeded A@(0,0)
+  certificate: with target-kind extension, two authors can hit one (cell,kind): 20/4000 random seeds diverge between parity and OR; relay seeds walk DIAGONAL staircases -- a direction unreachable by own-kind laws (whose c-offsets are axis-aligned) -- though support stays 1-dimensional
+--------------------------------------------------------------------------
+ divergence witness: A=OSS->A + B=OES->A, laws A,B stacked at (-1,0):
+   parity: both authors toggle A at (-1,-1); toggles cancel -> FIXED at t=0
+   OR:     the double enactment passes -> sustained colonization, +1 law/step
+           (verified 3000 steps: size 2 -> 3001)
+ relay staircase (A=ONE->B, B=OEN->A from one A law): EVER-OCCUPIED set
+ through t=48 -- own-kind Theorem 3 confines support to AXIS rays; the
+ cross-amendment relay escapes into a diagonal (still 1-D):
+   ...........................
+   .........................#.
+   ........................##.
+   .......................##..
+   ......................##...
+   .....................##....
+   ....................##.....
+   ...................##......
+   ..................##.......
+   .................##........
+   ................##.........
+   ...............##..........
+   ..............##...........
+   .............##............
+   ............##.............
+   ...........##..............
+   ..........##...............
+   .........##................
+   ........##.................
+   .......##..................
+   ......##...................
+   .....##....................
+   ....##.....................
+   ...##......................
+   ..##.......................
+   .##........................
+   ...........................
+   [x -1..25, y -1..25]
