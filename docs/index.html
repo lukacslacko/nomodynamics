@@ -323,10 +323,18 @@ footer p{max-width:76ch}
   the fixity of the rules &mdash; was never taken, though rules amending rules are
   humanity&rsquo;s oldest formal practice. The definition and its predictions were
   frozen before the first simulation; every specimen above is machine-certified,
-  and the no-go theorems were checked against 15.3 million certified runs. The
-  door out of this solvable sector is <i>cross-amendment</i> &mdash; laws that amend
-  other kinds &mdash; where the linearity provably breaks. That territory is open.</p>
-  <p>The Treeline program &middot; founding note &amp; full archive: <span class="stat">phase6/</span> &middot; August 2026</p>
+  and one command re-checks every claim on this page from scratch.</p>
+  <p><b>What the second chapter changed.</b> Letting laws amend one another does
+  not by itself buy motion: a constitution whose laws each amend a single
+  provision is motionless in every dimension and every convention. What buys
+  motion is <b>out-degree</b> &mdash; or, quite differently, <b>impermanence</b>:
+  where laws lapse unless re-enacted, packets travel even under own-kind
+  amendment. What forbids motion on the line is permanence, not self-reference.
+  And a caution earned the hard way: a bounded search decides a <i>box</i>, not a
+  question &mdash; this field's own censuses ruled out gliders that turned out to
+  be six hundred cells wide.</p>
+  <p>The Treeline program &middot; note, archive and verification battery:
+  <span class="stat">github.com/lukacslacko/nomodynamics</span> &middot; August 2026</p>
 </footer>
 </div>
 
@@ -820,6 +828,16 @@ const GLIDERS=[
   seed:[[0,0],[5,1]],
   laws:"A = (0,1,1) → {A,B}   ·   B = (0,−1,1) → {A,B}   ·   seed: A at 0, B at 5   ·   any-vote resolution",
   cap:"<b>A puffer: a speed-1 front that leaves a periodic wake behind it.</b> The code grows by about 1.5 laws per step forever, laying down a repeating picket of legislation. Motion and growth at once &mdash; the first structure in the field that both travels and builds."},
+ {name:"MIRROR", dir:1, mode:"parity", at:-70,
+  C:{rules:[[0,1,-1],[0,-1,1]],targets:[[0,1],[0,1]],dim:1,mod:null},
+  seed:[[2,0],[2,1],[3,0],[3,1],[4,0],[4,1],[6,0],[6,1],[7,0],[7,1],[8,0],[8,1],[9,0],[9,1],[10,0],[10,1],[12,0],[12,1],[13,0],[13,1],[14,0],[14,1],[16,0],[16,1],[18,0],[18,1],[19,0],[19,1],[20,0],[20,1],[21,0],[21,1]],
+  laws:"A = (0,1,−1) → {A,B}   ·   B = (0,−1,1) → {A,B}   ·   seed: 32 laws over 20 cells   ·   period 5, displacement 2",
+  cap:"<b>The glider that was too wide to find.</b> A left-edge law pushes right, a right-edge law pushes left; a thirty-two-law block of them shuffles two cells rightward every five steps. Exhaustive searches had ruled displacement 2 out at two kinds &mdash; but they searched boxes of about twenty-six cells, and this universe's family runs to spans of 53, 438 and 616. A bounded search decides a <i>box</i>, not a question. Switch to <i>any-vote</i> and the motion vanishes."},
+ {name:"TRIAD", dir:1, mode:"parity", at:-60,
+  C:{rules:[[1,-1,0],[0,-2,1],[0,-2,2]],targets:[[0,1,2],[0,1,2],[0,1,2]],dim:1,mod:null},
+  seed:[[0,0],[0,1],[0,2]],
+  laws:"three kinds, window 2, all amending all three   ·   one cell   ·   parity: p=3, d=5   ·   any-vote: p=2, d=3",
+  cap:"<b>The convention decides the speed.</b> One cell holding three laws. Under <i>tally</i> it travels five cells every three steps; under <i>any-vote</i>, the same seed in the same constitution travels three cells every two. Not \u201cmoves or doesn\u2019t\u201d &mdash; a different velocity from the same law. In the founding system the two conventions are provably the same dynamical system."},
 ];
 const gw=constWidget(document.getElementById("cv4"),4);
 let gRunning=!reduceMotion, gPreset=0, gMode=null;
